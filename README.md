@@ -49,7 +49,7 @@ The research was conducted as a collaboration between Niamh McCombe and Claude (
 
 If you use this work, please cite the blog post:
 
-> McCombe, N. (2026). *Embodied Cognition in Transformers: image schemas, metaphorical mappings, and computational grounding in language models trained on text alone.*
+> McCombe, N. (2026). *Embodied Cognition in Transformers: image schemas, metaphorical mappings, and substrate coupling in language models trained on text alone.*
 
 A paper version is in preparation.
 
