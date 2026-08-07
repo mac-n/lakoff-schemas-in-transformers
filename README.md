@@ -51,3 +51,7 @@ If you use this work, please cite the blog post:
 > McAllister, N. (2026). *Embodied Cognition in Transformers: image schemas, metaphorical mappings, and computational grounding in language models trained on text alone.*
 
 A paper version is in preparation.
+
+## License
+
+Code is MIT-licensed; written content and figures are CC BY 4.0. See `LICENSE` and `LICENSE-CONTENT.md`.
