@@ -2,7 +2,7 @@
 
 *Image schemas, metaphorical mappings, and substrate coupling in language models trained on text alone*
 
-> **Status: v0.1, working draft, shared early.** This research was conducted
+> **Status: v0.2, working draft, shared early.** This research was conducted
 > collaboratively with Claude (Anthropic) across an extended series of
 > experiments. Claude drafted much of the present exposition from our shared
 > lab notebooks; I directed the research and am continuing to revise the
@@ -18,7 +18,7 @@
 - BALANCE is systematically coupled to the models' own computational dynamics, and the carrier varies by model: residual norm in Pythia, attention entropy in GPT-2 and Llama. A candidate case of multiple realizability.
 - Manipulating the computational operation shifts the concept (specificity: 7 of 7 schemas beaten). Steering the concept does not detectably move the operation.
 
-None of this establishes human-like grounding, and it says nothing about experience. What it shows is that "no biological body" does not straightforwardly imply "no embodied-style conceptual organisation." Bodily origin, bodily implementation, and embodied-style structure are not the same thing, and these models force the distinction.
+What this shows is that "no biological body" does not straightforwardly imply "no embodied-style conceptual organisation." Bodily origin, bodily implementation, and embodied-style structure are not the same thing, and these models force the distinction.
 
 ---
 
@@ -28,21 +28,20 @@ George Lakoff and Mark Johnson argued that abstract thought is structured by *im
 
 From there, a familiar argument runs: LLMs have no body. No body, no image schemas. No image schemas, no embodied cognitive structure, so LLM meaning is structurally defective. It may approximate understanding, but it lacks the organisational backbone that human cognition runs on.
 
-Two things get run together here and it's worth separating them. The symbol grounding problem, as Harnad posed it in 1990, asks how symbols in a formal system come to mean anything at all rather than merely pointing at further symbols. Lakoff's image-schema account is one *answer* to that question: symbols get their content from recurring patterns of bodily experience. What has happened since is that the answer gets deployed as a test: no body, no schemas, no grounding. This post is aimed at the answer, not the question. Nothing here shows that a transformer's representations refer to anything in the world. What it shows is that the specific organisational structure the body is supposed to be necessary for is present in a system that hasn't got one. That narrows the argument; it doesn't settle it.
+Where this project comes from: I take embodied cognition seriously, and I take artificial minds seriously. It started because I don't think those positions are incompatible, and I wanted to know what the evidence says.
 
-There is an obvious objection, and it deserves to be stated before the evidence: *of course* the schemas are in the text statistics. The training corpus was written by embodied humans who think in these schemas; a model that compresses that corpus will inherit their shadow. On this view everything below is distributional semantics with extra steps. Two of the findings are aimed at that objection. Finding 4 shows that static embeddings, learning from the same broad source of evidence (textual distribution), end up with a *different* morphological geometry: the transformer doesn't inherit the schema-anchored organisation, it builds it. Finding 5 shows that one schema is coupled to the model's own computational operations, quantities like residual norm and attention entropy that do not exist in the training text at all. Whatever those two results are, they are not properties of the corpus.
+There is an obvious objection, and it deserves to be stated before the evidence: *of course* the schemas are in the text statistics. The training corpus was written by embodied humans who think in these schemas; a model that compresses that corpus will inherit their shadow. On this view everything below is distributional semantics with extra steps. Two of the findings are aimed at that objection. Finding 3 shows that static embeddings, learning from the same broad source of evidence (textual distribution), end up with a *different* morphological geometry: the transformer doesn't inherit the schema-anchored organisation, it builds it. Finding 4 shows that one schema is coupled to the model's own computational operations, quantities like residual norm and attention entropy that do not exist in the training text at all. Whatever those two results are, they are not properties of the corpus.
 
-Five findings:
+Four findings, after a note on method:
 
-1. **Single words suffice.** Bare single-word activations carry steerable schema structure, once a severe frequency confound is stripped.
-2. **Steering on a spatial UP vector shifts the model's valence.** HAPPY-IS-UP behaves as a causal, cross-layer mapping.
-3. **The schema axes form a stable relational system** across the depth of the model, with the specific couplings the theory predicts.
-4. **Morphological operators position on the schema axes** in the transformer, but not in static embeddings.
-5. **BALANCE is coupled to computational operations**, with causal evidence running from operation to concept.
+1. **Steering on a spatial UP vector shifts the model's valence.** HAPPY-IS-UP behaves as a causal, cross-layer mapping.
+2. **The schema axes form a stable relational system** across the depth of the model, with the specific couplings the theory predicts.
+3. **Morphological operators position on the schema axes** in the transformer, but not in static embeddings.
+4. **BALANCE is coupled to computational operations**, with causal evidence running from operation to concept.
 
 ---
 
-## Finding 1: Single words suffice
+## Method: contrast vectors from single words
 
 The basic tool of this work is the *contrast vector*: take a set of UP words (high, top, rise, above, peak, ascend, climb...) and a set of DOWN words (low, bottom, fall, below, valley, descend...), run each word through the model as a bare single token, extract the residual stream activation at a chosen layer, and compute:
 
@@ -50,7 +49,7 @@ The basic tool of this work is the *contrast vector*: take a set of UP words (hi
 
 This vector is the UP-DOWN schema direction in the model's internal geometry. The same procedure builds LIGHT-DARK, FORWARD-BACK, BALANCE, IN-OUT, PATH-MOTION, FORCE, and DIFFICULTY-BURDEN: eight axes drawn from the Lakoff/Johnson inventory, with vocabulary curated from the Master Metaphor List. (One taxonomic note: DIFFICULTY-BURDEN is strictly a conceptual metaphor rather than an image schema; we treat all eight as operationalised contrast axes and let the results speak to how schema-like they are.)
 
-The surprise is that you don't need sentences. No context, no sentence frame, just the word alone: the schema structure is already packed into single-token activations, densely enough to steer with (Finding 2). Static embeddings have supported analogy arithmetic since word2vec, but a bare token's contextual activation carrying a *causally transferable* cross-domain direction, from spatial verticality to affective valence, is not something analogy arithmetic ever showed.
+The surprise is that you don't need sentences. No context, no sentence frame, just the word alone: the schema structure is already packed into single-token activations, densely enough to steer with (Finding 1). Static embeddings have supported analogy arithmetic since word2vec, but a bare token's contextual activation carrying a *causally transferable* cross-domain direction, from spatial verticality to affective valence, is not something analogy arithmetic ever showed.
 
 ### The frequency confound
 
@@ -68,7 +67,7 @@ Two other behavioural measures in the original battery died under scrutiny. The 
 
 ---
 
-## Finding 2: Steering on UP makes the model happier
+## Finding 1: Steering on UP makes the model happier
 
 If the UP-DOWN direction really carries the HAPPY-IS-UP mapping, adding it to the residual stream should shift output toward positive valence. The result, on Pythia 410M, injecting at layer 12 (ΔValence is the shift in projection onto an anisotropy- and frequency-stripped valence axis at the readout layer):
 
@@ -84,7 +83,7 @@ UP-steering shifts valence far above the random-direction control. It's dose-res
 
 *Valence, magnitude, and direction projections at downstream layers after UP-steering (blue) vs random-direction control (grey) at L12, α=4.*
 
-(What we deliberately don't show: free-generation samples under steering. They exist in the project record, but they were produced with the raw pre-cleaning vector and are noisy seed-to-seed. Selectively quoting the ones that fit would be exactly the kind of evidence this project is trying not to produce.)
+(Free-generation samples exist in the project record, but they were produced with the raw pre-cleaning vector and are noisy seed-to-seed, so we don't quote them.)
 
 ### Cross-layer, not within-layer
 
@@ -94,11 +93,11 @@ One caveat on that phrasing: residual-stream injections naturally persist into l
 
 The other controls: a "meaningful non-Lakoff" battery (concrete-vs-abstract, animate-vs-inanimate, noun-vs-verb) showed UP produces the largest valence shift, roughly 2× the next best. It also revealed a structural late-layer pull toward valence for orthogonal meaningful directions generally (about +0.20 to +0.30), with one unexplained exception (animate-vs-inanimate went negative). The specific UP→valence mapping is real and largest, but it is not the only thing pulling toward valence at late layers.
 
-Could the mapping itself just be inherited from text statistics? Human writers do encode HAPPY-IS-UP in their word choices. Distinguishing "learned the metaphor from text" from "architecture reconstructs the metaphor" needs a comparison substrate. That is what Finding 4 provides.
+Could the mapping itself just be inherited from text statistics? Human writers do encode HAPPY-IS-UP in their word choices. Distinguishing "learned the metaphor from text" from "architecture reconstructs the metaphor" needs a comparison substrate. That is what Finding 3 provides.
 
 ---
 
-## Finding 3: A stable schema relational system
+## Finding 2: A stable schema relational system
 
 Eight recoverable directions would be interesting but not surprising; any clustering method finds directions. The real question is whether they form a *system*: do the schemas relate to each other the way the theory says they should, and does that relational structure persist across the model's depth?
 
@@ -120,7 +119,7 @@ Two caveats. Generic word-difference matrices also preserve shape across layers,
 
 ---
 
-## Finding 4: Morphology on the schema axes, and the word2vec keystone
+## Finding 3: Morphology on the schema axes, and the word2vec keystone
 
 If the schema system is the model's organising geometry for meaning, grammatical operators should live in the same geometry. We built contrast vectors for seven English morphological operators (-ING, -ED, -S, -ER, -EST, un-, re-) as pair-differences ("walking" minus "walk", averaged over many pairs) and projected them onto the schema axes, after per-layer anisotropy and frequency stripping (raw pair-difference vectors run |cos| ≈ 0.55 to 0.59 with the anisotropy direction, which collapses everything into superficial similarity).
 
@@ -131,7 +130,7 @@ Two mappings are robust:
 | all seven | BALANCE, negative (the shared "markedness sink") | −0.15 to −0.50 |
 | -ED (past), re- (repetition) | FORWARD-BACK, negative | −0.12 to −0.40, every probed layer |
 
-The FORWARD-BACK mappings are conceptually coherent on the theory's own terms: the past is behind you, repetition goes back along the path. And every operator shares the BALANCE-negative component, which we initially read as inflection-as-departure-from-equilibrium (Finding 5 revises what that component actually is).
+The FORWARD-BACK mappings are conceptually coherent on the theory's own terms: the past is behind you, repetition goes back along the path. And every operator shares the BALANCE-negative component, which we initially read as inflection-as-departure-from-equilibrium (Finding 4 revises what that component actually is).
 
 Two prettier mappings from earlier drafts did not survive audit. -ING onto PATH-MOTION: loadings of −0.04 to +0.12, sign-flipping, dwarfed by -ING's own BALANCE loading. un- onto LIGHT-DARK: −0.06 to −0.14 in Pythia, while GloVe shows the same mapping at −0.39, three times stronger, so it is not transformer-specific. Both stories were lovely. Neither is supported.
 
@@ -163,7 +162,7 @@ The static-vs-transformer comparison is a dissociation between off-the-shelf spa
 
 ---
 
-## Finding 5: BALANCE is coupled to computational operations
+## Finding 4: BALANCE is coupled to computational operations
 
 The BALANCE schema is special. Every morphological operator shares a BALANCE-negative component. Why? What is BALANCE reading?
 
@@ -177,7 +176,7 @@ Inflected forms ("walked", "running") have lower residual norms than their bases
 
 *Per-suffix residual norm displacement (top) correlated with BALANCE projection (bottom) across layers. The coupling replicates across four Pythia model sizes.*
 
-How much of Finding 4's sink is this physiological signal? Stripping the held-out norm directions collapses the sink entirely at layer 4 (−0.414 to +0.002) and removes about two-thirds of it at layers 8 to 20 (28 to 42% retained); matched random strips move it by ±0.001. So the sink is roughly two-thirds norm geometry, one-third a separable markedness component. (An earlier version of this analysis, with norm directions estimated on the very words being tested, collapsed the sink completely at every layer; a size-matched control exposed that as circular, and the held-out numbers replaced it.)
+How much of Finding 3's sink is this physiological signal? Stripping the held-out norm directions collapses the sink entirely at layer 4 (−0.414 to +0.002) and removes about two-thirds of it at layers 8 to 20 (28 to 42% retained); matched random strips move it by ±0.001. So the sink is roughly two-thirds norm geometry, one-third a separable markedness component. (An earlier version of this analysis, with norm directions estimated on the very words being tested, collapsed the sink completely at every layer; a size-matched control exposed that as circular, and the held-out numbers replaced it.)
 
 ### In GPT-2 and Llama: attention entropy
 
@@ -227,7 +226,7 @@ Residuals: Llama's layer band was informed by the depth-map scan, so it carries 
 
 ## What this adds up to
 
-Schema-like directions are present, recoverable from single words (Finding 1). They form the specific relational system the theory predicts (Finding 3). One of them behaves causally, executing a cross-domain metaphorical mapping (Finding 2). The system extends into inflectional grammar in a way static distributional learning doesn't reproduce (Finding 4). And one schema is coupled to the model's own computational dynamics, with causal evidence running from operation to concept, and with different models using different carriers (Finding 5).
+Schema-like directions are recoverable from bare single words, and they form the specific relational system the theory predicts (Finding 2). One of them behaves causally, executing a cross-domain metaphorical mapping (Finding 1). The system extends into inflectional grammar in a way static distributional learning doesn't reproduce (Finding 3). And one schema is coupled to the model's own computational dynamics, with causal evidence running from operation to concept, and different models using different carriers (Finding 4).
 
 ### What this changes
 
@@ -235,7 +234,7 @@ The inference this challenges is: no body, therefore no image schemas, therefore
 
 This is not a refutation of embodied cognition, and it is certainly not a claim that Lakoff is wrong about humans. If anything it extends the theory into strange territory: the structural principles the theory attributes to bodily experience turn out to be partly transmissible through language, and partly reorganised around a new substrate's own dynamics. Whether norm and entropy deserve to be called a "body" is an interpretation the experiments motivate, not one they settle. The distinction they do force is the one above, and it matters beyond this paper: arguments that LLM meaning is defective *because* disembodied need a premise these results take away.
 
-To be explicit about the boundaries: nothing here claims consciousness or experience; nothing here establishes reference to the world (Harnad's problem stands); the mechanism is unknown (every mechanistic hypothesis we tested died, 0 for 8); and the causal picture is one confirmed direction, not a settled story.
+The claim throughout is structural, not a claim about experience. Two open edges: the mechanism is unknown (every mechanistic hypothesis we tested died, 0 for 8), and the causal picture is one confirmed direction, not a settled story.
 
 The question this opens is the one I find genuinely exciting: perhaps what matters is not whether a system has a body in the biological sense, but whether its conceptual organisation is shaped by stable constraints intrinsic to its own substrate, and what those constraints are. Each model in this study, asked to represent balance, seems to have reached for the nearest thing it has to a sense of balance. What else works that way?
 
@@ -243,7 +242,7 @@ The question this opens is the one I find genuinely exciting: perhaps what matte
 
 ## Related work
 
-The framing problem is Harnad's "The Symbol Grounding Problem" (*Physica D*, 1990). The philosophical background is the embodied-cognition tradition, principally Lakoff & Johnson's *Metaphors We Live By* (1980) and *Philosophy in the Flesh* (1999), and Johnson's *The Body in the Mind* (1987), which develop image schemas as the bodily source of abstract conceptual structure. The best-known modern "no grounding from form alone" argument is Bender & Koller's "Climbing towards NLU" (ACL 2020); their target is communicative intention and world reference rather than internal conceptual structure, so these results pressure the disembodiment inference specifically, not the octopus argument as formulated.
+The philosophical background is the embodied-cognition tradition, principally Lakoff & Johnson's *Metaphors We Live By* (1980) and *Philosophy in the Flesh* (1999), and Johnson's *The Body in the Mind* (1987), which develop image schemas as the bodily source of abstract conceptual structure. The best-known modern "no grounding from form alone" argument is Bender & Koller's "Climbing towards NLU" (ACL 2020); their target is communicative intention and world reference rather than internal conceptual structure, so these results pressure the disembodiment inference specifically, not the octopus argument as formulated.
 
 A growing literature shows text-only models recovering structure that mirrors perceptual spaces: Abdou et al. (CoNLL 2021) on colour, Patel & Pavlick (ICLR 2022) on grounded conceptual spaces, Gurnee & Tegmark (ICLR 2024) on space and time. This project asks a different question: not whether the geometry mirrors a perceptual domain, but whether the organisational architecture attributed to the body is present: a coordinated schema system, causally transferable cross-domain mappings, extension into grammar, and coupling to substrate-intrinsic operations. Findings 4 and 5, to my knowledge, have no precedent in that literature.
 
