@@ -1,0 +1,98 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:19,  3.65it/s]Loading weights:  42%|████▏     | 122/292 [00:00<00:00, 402.08it/s]Loading weights:  64%|██████▍   | 187/292 [00:00<00:00, 462.90it/s]Loading weights:  85%|████████▌ | 249/292 [00:00<00:00, 455.75it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 417.18it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+
+Collecting residuals for 578 words at all 24 layers...
+  100/578
+  200/578
+  300/578
+  400/578
+  500/578
+
+==============================================================================
+PER-AXIS CROSS-LAYER STABILITY (working range L4-L22)
+==============================================================================
+
+  --- LAKOFF ---
+  axis                              adj mean   adj min   xL mean    xL min
+  BALANCE                             +0.938    +0.632    +0.744    +0.320
+  DIFFICULTY-BURDEN                   +0.945    +0.744    +0.772    +0.384
+  FORCE                               +0.953    +0.745    +0.794    +0.431
+  FORWARD-BACK                        +0.949    +0.719    +0.774    +0.413
+  IN-OUT_CLEAN                        +0.958    +0.713    +0.834    +0.493
+  LIGHT-DARK                          +0.953    +0.800    +0.796    +0.467
+  PATH-MOTION                         +0.942    +0.684    +0.765    +0.359
+  UP-DOWN                             +0.952    +0.716    +0.805    +0.407
+
+  --- MORPHOLOGY ---
+  axis                              adj mean   adj min   xL mean    xL min
+  ED_past                             +0.953    +0.706    +0.727    +0.337
+  ER_comparative                      +0.951    +0.675    +0.728    +0.306
+  EST_superlative                     +0.954    +0.697    +0.739    +0.337
+  ING_progressive                     +0.955    +0.715    +0.735    +0.364
+  RE_repetition                       +0.951    +0.667    +0.724    +0.336
+  S_plural                            +0.949    +0.642    +0.713    +0.296
+  UN_negation                         +0.954    +0.654    +0.736    +0.313
+
+  --- LOGICAL_OPERATORS ---
+  axis                              adj mean   adj min   xL mean    xL min
+  affirmation_negation                +0.969    +0.668    +0.904    +0.581
+  cause_contrast                      +0.959    +0.731    +0.820    +0.449
+  conditional_assertion               +0.955    +0.624    +0.837    +0.476
+  conjunction_disjunction             +0.963    +0.666    +0.874    +0.506
+  necessity_possibility               +0.957    +0.726    +0.821    +0.517
+
+  --- QUANTIFIERS ---
+  axis                              adj mean   adj min   xL mean    xL min
+  cardinal_many_few                   +0.947    +0.730    +0.781    +0.376
+  distributive_collective             +0.937    +0.671    +0.748    +0.330
+  precise_vague                       +0.949    +0.758    +0.773    +0.392
+  universal_affirmative_negative      +0.944    +0.648    +0.792    +0.401
+  universal_existential               +0.965    +0.662    +0.882    +0.521
+
+  --- DETERMINERS ---
+  axis                              adj mean   adj min   xL mean    xL min
+  definite_indefinite                 +0.975    +0.578    +0.949    +0.559
+  interrogative_assertive             +0.976    +0.576    +0.953    +0.565
+  possessive_neutral                  +0.977    +0.600    +0.955    +0.587
+  proximal_distal                     +0.979    +0.629    +0.958    +0.613
+  sing_plur_demonstrative             +0.978    +0.611    +0.957    +0.604
+
+==============================================================================
+RANKING — all axes by cross-layer mean cos (most stable first)
+==============================================================================
+
+  rank   cluster               axis                               xL mean  adj mean
+  1      DETERMINERS           proximal_distal                     +0.958    +0.979
+  2      DETERMINERS           sing_plur_demonstrative             +0.957    +0.978
+  3      DETERMINERS           possessive_neutral                  +0.955    +0.977
+  4      DETERMINERS           interrogative_assertive             +0.953    +0.976
+  5      DETERMINERS           definite_indefinite                 +0.949    +0.975
+  6      LOGICAL_OPERATORS     affirmation_negation                +0.904    +0.969
+  7      QUANTIFIERS           universal_existential               +0.882    +0.965
+  8      LOGICAL_OPERATORS     conjunction_disjunction             +0.874    +0.963
+  9      LOGICAL_OPERATORS     conditional_assertion               +0.837    +0.955
+  10     LAKOFF                IN-OUT_CLEAN                        +0.834    +0.958
+  11     LOGICAL_OPERATORS     necessity_possibility               +0.821    +0.957
+  12     LOGICAL_OPERATORS     cause_contrast                      +0.820    +0.959
+  13     LAKOFF                UP-DOWN                             +0.805    +0.952
+  14     LAKOFF                LIGHT-DARK                          +0.796    +0.953
+  15     LAKOFF                FORCE                               +0.794    +0.953
+  16     QUANTIFIERS           universal_affirmative_negative      +0.792    +0.944
+  17     QUANTIFIERS           cardinal_many_few                   +0.781    +0.947
+  18     LAKOFF                FORWARD-BACK                        +0.774    +0.949
+  19     QUANTIFIERS           precise_vague                       +0.773    +0.949
+  20     LAKOFF                DIFFICULTY-BURDEN                   +0.772    +0.945
+  21     LAKOFF                PATH-MOTION                         +0.765    +0.942
+  22     QUANTIFIERS           distributive_collective             +0.748    +0.937
+  23     LAKOFF                BALANCE                             +0.744    +0.938
+  24     MORPHOLOGY            EST_superlative                     +0.739    +0.954
+  25     MORPHOLOGY            UN_negation                         +0.736    +0.954
+  26     MORPHOLOGY            ING_progressive                     +0.735    +0.955
+  27     MORPHOLOGY            ER_comparative                      +0.728    +0.951
+  28     MORPHOLOGY            ED_past                             +0.727    +0.953
+  29     MORPHOLOGY            RE_repetition                       +0.724    +0.951
+  30     MORPHOLOGY            S_plural                            +0.713    +0.949

@@ -1,0 +1,144 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Using device: mps
+
+Loading Pythia 410m...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 10804.05it/s]
+Model loaded. 24 layers, d_model=1024
+
+Building contrast vectors at all 24 layers...
+  Directions: ['UP', 'LIGHT', 'IN', 'FORWARD', 'YANG', 'BEVERAGE']
+  UP        pos=rising/ascending/... neg=falling/sinking/...
+  LIGHT     pos=bright/illuminated/... neg=dark/dim/...
+  IN        pos=inside/contained/... neg=outside/exposed/...
+  FORWARD   pos=forward/ahead/... neg=backward/behind/...
+  YANG      pos=fire/hot/... neg=water/cold/...
+  BEVERAGE  pos=coffee/espresso/... neg=beer/wine/...
+
+Saved to /Users/macn/Documents/embeddingexp/contrast_vectors_410m.pt
+
+================================================================================
+Cosine similarities between directions at selected layers
+(YANG-LIGHT and YANG-DARK are the Niamh hypothesis test;
+ BEVERAGE-anything should be near zero if the sham is well-chosen)
+================================================================================
+
+Layer 0:
+  cos(UP       , LIGHT    ) = -0.0401
+  cos(UP       , IN       ) = +0.0158
+  cos(UP       , FORWARD  ) = -0.0269
+  cos(UP       , YANG     ) = +0.0232   <-- discriminant: should be lower than LIGHT-YANG if YANG is LIGHT-specific
+  cos(UP       , BEVERAGE ) = +0.0637   <-- sham; should be near 0
+  cos(LIGHT    , IN       ) = -0.0252
+  cos(LIGHT    , FORWARD  ) = -0.0210
+  cos(LIGHT    , YANG     ) = -0.0068   <-- Niamh hypothesis: positive value supports LIGHT-as-yang
+  cos(LIGHT    , BEVERAGE ) = +0.0006   <-- sham; should be near 0
+  cos(IN       , FORWARD  ) = -0.0429
+  cos(IN       , YANG     ) = -0.0159
+  cos(IN       , BEVERAGE ) = +0.0889   <-- sham; should be near 0
+  cos(FORWARD  , YANG     ) = +0.0875
+  cos(FORWARD  , BEVERAGE ) = -0.1693   <-- sham; should be near 0
+  cos(YANG     , BEVERAGE ) = -0.0264   <-- sham; should be near 0
+
+Layer 4:
+  cos(UP       , LIGHT    ) = -0.1854
+  cos(UP       , IN       ) = -0.2600
+  cos(UP       , FORWARD  ) = +0.4266
+  cos(UP       , YANG     ) = +0.3657   <-- discriminant: should be lower than LIGHT-YANG if YANG is LIGHT-specific
+  cos(UP       , BEVERAGE ) = -0.2969   <-- sham; should be near 0
+  cos(LIGHT    , IN       ) = +0.1853
+  cos(LIGHT    , FORWARD  ) = -0.3314
+  cos(LIGHT    , YANG     ) = -0.2776   <-- Niamh hypothesis: positive value supports LIGHT-as-yang
+  cos(LIGHT    , BEVERAGE ) = +0.2621   <-- sham; should be near 0
+  cos(IN       , FORWARD  ) = -0.4499
+  cos(IN       , YANG     ) = -0.3204
+  cos(IN       , BEVERAGE ) = +0.3139   <-- sham; should be near 0
+  cos(FORWARD  , YANG     ) = +0.4823
+  cos(FORWARD  , BEVERAGE ) = -0.4565   <-- sham; should be near 0
+  cos(YANG     , BEVERAGE ) = -0.3724   <-- sham; should be near 0
+
+Layer 8:
+  cos(UP       , LIGHT    ) = -0.9429
+  cos(UP       , IN       ) = -0.9592
+  cos(UP       , FORWARD  ) = +0.9687
+  cos(UP       , YANG     ) = +0.9598   <-- discriminant: should be lower than LIGHT-YANG if YANG is LIGHT-specific
+  cos(UP       , BEVERAGE ) = -0.9352   <-- sham; should be near 0
+  cos(LIGHT    , IN       ) = +0.9649
+  cos(LIGHT    , FORWARD  ) = -0.9648
+  cos(LIGHT    , YANG     ) = -0.9570   <-- Niamh hypothesis: positive value supports LIGHT-as-yang
+  cos(LIGHT    , BEVERAGE ) = +0.9367   <-- sham; should be near 0
+  cos(IN       , FORWARD  ) = -0.9849
+  cos(IN       , YANG     ) = -0.9739
+  cos(IN       , BEVERAGE ) = +0.9581   <-- sham; should be near 0
+  cos(FORWARD  , YANG     ) = +0.9795
+  cos(FORWARD  , BEVERAGE ) = -0.9627   <-- sham; should be near 0
+  cos(YANG     , BEVERAGE ) = -0.9517   <-- sham; should be near 0
+
+Layer 12:
+  cos(UP       , LIGHT    ) = -0.2627
+  cos(UP       , IN       ) = -0.3466
+  cos(UP       , FORWARD  ) = +0.4106
+  cos(UP       , YANG     ) = +0.3579   <-- discriminant: should be lower than LIGHT-YANG if YANG is LIGHT-specific
+  cos(UP       , BEVERAGE ) = -0.2265   <-- sham; should be near 0
+  cos(LIGHT    , IN       ) = +0.3424
+  cos(LIGHT    , FORWARD  ) = -0.4059
+  cos(LIGHT    , YANG     ) = -0.4428   <-- Niamh hypothesis: positive value supports LIGHT-as-yang
+  cos(LIGHT    , BEVERAGE ) = +0.2036   <-- sham; should be near 0
+  cos(IN       , FORWARD  ) = -0.5405
+  cos(IN       , YANG     ) = -0.3867
+  cos(IN       , BEVERAGE ) = +0.2917   <-- sham; should be near 0
+  cos(FORWARD  , YANG     ) = +0.5292
+  cos(FORWARD  , BEVERAGE ) = -0.3864   <-- sham; should be near 0
+  cos(YANG     , BEVERAGE ) = -0.2548   <-- sham; should be near 0
+
+Layer 16:
+  cos(UP       , LIGHT    ) = -0.1874
+  cos(UP       , IN       ) = -0.3446
+  cos(UP       , FORWARD  ) = +0.4157
+  cos(UP       , YANG     ) = +0.4431   <-- discriminant: should be lower than LIGHT-YANG if YANG is LIGHT-specific
+  cos(UP       , BEVERAGE ) = -0.3006   <-- sham; should be near 0
+  cos(LIGHT    , IN       ) = +0.3088
+  cos(LIGHT    , FORWARD  ) = -0.2973
+  cos(LIGHT    , YANG     ) = -0.3407   <-- Niamh hypothesis: positive value supports LIGHT-as-yang
+  cos(LIGHT    , BEVERAGE ) = +0.1769   <-- sham; should be near 0
+  cos(IN       , FORWARD  ) = -0.4821
+  cos(IN       , YANG     ) = -0.3097
+  cos(IN       , BEVERAGE ) = +0.2520   <-- sham; should be near 0
+  cos(FORWARD  , YANG     ) = +0.5192
+  cos(FORWARD  , BEVERAGE ) = -0.3972   <-- sham; should be near 0
+  cos(YANG     , BEVERAGE ) = -0.3429   <-- sham; should be near 0
+
+Layer 20:
+  cos(UP       , LIGHT    ) = -0.7633
+  cos(UP       , IN       ) = -0.8642
+  cos(UP       , FORWARD  ) = +0.8842
+  cos(UP       , YANG     ) = +0.8467   <-- discriminant: should be lower than LIGHT-YANG if YANG is LIGHT-specific
+  cos(UP       , BEVERAGE ) = -0.7590   <-- sham; should be near 0
+  cos(LIGHT    , IN       ) = +0.8480
+  cos(LIGHT    , FORWARD  ) = -0.8606
+  cos(LIGHT    , YANG     ) = -0.8226   <-- Niamh hypothesis: positive value supports LIGHT-as-yang
+  cos(LIGHT    , BEVERAGE ) = +0.7618   <-- sham; should be near 0
+  cos(IN       , FORWARD  ) = -0.9488
+  cos(IN       , YANG     ) = -0.8892
+  cos(IN       , BEVERAGE ) = +0.8217   <-- sham; should be near 0
+  cos(FORWARD  , YANG     ) = +0.9126
+  cos(FORWARD  , BEVERAGE ) = -0.8492   <-- sham; should be near 0
+  cos(YANG     , BEVERAGE ) = -0.7976   <-- sham; should be near 0
+
+Layer 23:
+  cos(UP       , LIGHT    ) = -0.9829
+  cos(UP       , IN       ) = -0.9956
+  cos(UP       , FORWARD  ) = +0.9987
+  cos(UP       , YANG     ) = +0.9941   <-- discriminant: should be lower than LIGHT-YANG if YANG is LIGHT-specific
+  cos(UP       , BEVERAGE ) = -0.9966   <-- sham; should be near 0
+  cos(LIGHT    , IN       ) = +0.9902
+  cos(LIGHT    , FORWARD  ) = -0.9907
+  cos(LIGHT    , YANG     ) = -0.9938   <-- Niamh hypothesis: positive value supports LIGHT-as-yang
+  cos(LIGHT    , BEVERAGE ) = +0.9894   <-- sham; should be near 0
+  cos(IN       , FORWARD  ) = -0.9993
+  cos(IN       , YANG     ) = -0.9938
+  cos(IN       , BEVERAGE ) = +0.9955   <-- sham; should be near 0
+  cos(FORWARD  , YANG     ) = +0.9972
+  cos(FORWARD  , BEVERAGE ) = -0.9983   <-- sham; should be near 0
+  cos(YANG     , BEVERAGE ) = -0.9958   <-- sham; should be near 0
+
+Done.

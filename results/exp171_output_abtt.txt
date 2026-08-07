@@ -1,0 +1,60 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+==============================================================================
+SYNTHETIC SELF-TEST (worlds: i=split real, ii=no split, iii=split+noise)
+==============================================================================
+  world i: r_deriv +0.982  r_infl +0.155  Δr CI [+0.705, +0.881]
+  world ii: r_deriv +0.982  r_infl +0.947  Δr CI [-0.022, +0.094]
+  world iii: r_deriv +0.917  r_infl +0.218  Δr CI [+0.247, +0.760]
+  discriminates i (confirm): True  ii (no-split): True  iii (ordering under noise): True
+  SELF-TEST PASS
+Runtime exclusions (burned/anchor collisions):
+  ER_comparative     kept 14  dropped [('strong', 'stronger'), ('weak', 'weaker'), ('smooth', 'smoother'), ('rough', 'rougher')]
+  EST_superlative    kept 10  dropped [('strong', 'strongest'), ('weak', 'weakest')]
+  ING_progressive    kept 14  dropped [('drive', 'driving')]
+  ED_past            kept 12  dropped []
+  S_plural           kept 15  dropped []
+  UN_negation        kept 12  dropped []
+  RE_repetition      kept 14  dropped [('enter', 'reenter')]
+
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 5139.32it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+  100/518
+  200/518
+  300/518
+  400/518
+  500/518
+
+T4 sink on held-out pairs (Pythia L12 BALANCE column, INFL): [-0.332 -0.2   -0.258 -0.31  -0.229]  -> all negative: True
+
+Loading glove-wiki-gigaword-300 ...
+  vocab hit 518/518; missing e.g. []
+  [static strip: ABTT top-3 PCs, per frozen prereg commitment]
+  vs Pythia L12: r_deriv +0.630  r_infl +0.512  Δr plug-in +0.118 (boot mean +0.141) CI95 [-0.010, +0.291]
+    [L4 secondary] r_deriv +0.663  r_infl +0.534  Δr plug-in +0.129
+    [L20 secondary] r_deriv +0.484  r_infl +0.487  Δr plug-in -0.003
+
+Loading word2vec-google-news-300 ...
+  vocab hit 515/518; missing e.g. ['and', 'of', 'to']
+  [static strip: ABTT top-3 PCs, per frozen prereg commitment]
+  vs Pythia L12: r_deriv +0.553  r_infl +0.412  Δr plug-in +0.141 (boot mean +0.165) CI95 [+0.004, +0.320]
+    [L4 secondary] r_deriv +0.529  r_infl +0.533  Δr plug-in -0.004
+    [L20 secondary] r_deriv +0.402  r_infl +0.369  Δr plug-in +0.033
+
+Loading fasttext-wiki-news-subwords-300 ...
+  vocab hit 518/518; missing e.g. []
+  [static strip: ABTT top-3 PCs, per frozen prereg commitment]
+  vs Pythia L12: r_deriv +0.536  r_infl +0.277  Δr plug-in +0.259 (boot mean +0.268) CI95 [+0.084, +0.444]
+    [L4 secondary] r_deriv +0.447  r_infl +0.283  Δr plug-in +0.165
+    [L20 secondary] r_deriv +0.425  r_infl +0.180  Δr plug-in +0.245
+
+T3 static-static inflectional agreement (glove↔word2vec): r = +0.743  (>= 0.5: True)
+
+==============================================================================
+VERDICT vs PREREG_exp171.md decision rule
+==============================================================================
+  T1 ordering per binding substrate: {'glove-wiki-gigaword-300': True, 'word2vec-google-news-300': True}  -> True
+  T2 Δr CI95 excludes 0: {'glove-wiki-gigaword-300': False, 'word2vec-google-news-300': True}  -> 1/2
+  T3 True (r=+0.743)   T4 True
+  -> SPLIT_PARTIAL — directionally confirmed; difference test mixed/underpowered; keep 'descriptive' language where failed.

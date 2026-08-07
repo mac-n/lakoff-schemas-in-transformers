@@ -1,0 +1,562 @@
+Loading glove-wiki-gigaword-300...
+  vocab size: 400000
+
+Building PCA-input axes (cluster set, 11 axes from exp40)...
+
+Building target axes (independent from PCA-input set)...
+  [target_SALIENCE] missing words (1): ['backgrounded']
+  target_SALIENCE built from 11/12 pairs
+  target_MOTION    built from 12/12 pairs
+  target_EQ_RUN    built from 14/14 pairs
+
+========================================================================
+PCA on cluster axes (11 axes — matches exp40 cluster-only run)
+========================================================================
+
+Variance per PC:
+  PC1:  20.6%   (cumulative:  20.6%)
+  PC2:  17.3%   (cumulative:  37.9%)
+  PC3:  12.4%   (cumulative:  50.3%)
+  PC4:  11.2%   (cumulative:  61.5%)
+  PC5:   9.3%   (cumulative:  70.9%)
+  PC6:   8.7%   (cumulative:  79.6%)
+  PC7:   6.3%   (cumulative:  85.9%)
+  PC8:   5.3%   (cumulative:  91.2%)
+  PC9:   4.5%   (cumulative:  95.7%)
+  PC10:   4.3%   (cumulative: 100.0%)
+
+========================================================================
+CENTRAL TEST: target-axis cosines with PCs
+========================================================================
+
+Predictions:
+  target_SALIENCE  high on PC1 if PC1 is salience-as-primitive;
+                   LOW on PC1 if PC1 is just the V x A diagonal
+  target_MOTION    high on PC2 if MOTION is a real primitive
+  target_EQ_RUN    high on PC3 if EQ-vs-RUNAWAY is a real primitive
+
+                      PC1      PC2      PC3      PC4      PC5      PC6    
+  --------------------------------------------------------------------
+  target_SALIENCE     -0.174  -0.280  -0.056  +0.024  -0.058  -0.039  
+  target_MOTION       -0.094  +0.051  +0.022  +0.054  +0.017  -0.072  
+  target_EQ_RUN       +0.290  +0.011  +0.205  -0.073  -0.124  -0.042  
+
+========================================================================
+Per-target deep dive
+========================================================================
+
+--- target_SALIENCE ---
+  Best PC alignments (sorted by |cos|):
+    PC2 (17.3% var): cos = -0.2797
+    PC7 ( 6.3% var): cos = +0.1974
+    PC1 (20.6% var): cos = -0.1743
+    PC5 ( 9.3% var): cos = -0.0583
+    PC3 (12.4% var): cos = -0.0556
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: +0.4861
+     COHERENCE: +0.4247
+           BAL: +0.3825
+            FB: +0.3625
+            UD: +0.3606
+  Positive pole words:
+    +0.5101  prominent
+    +0.4796  including
+    +0.4558  first
+    +0.4456  addition
+    +0.4374  major
+    +0.4366  notable
+    +0.4286  noted
+    +0.4277  also
+    +0.4192  important
+    +0.4160  one
+  Negative pole words:
+    +0.5190  valueless
+    +0.5184  unfocused
+    +0.4935  uninteresting
+    +0.4822  inoffensive
+    +0.4788  pathetically
+    +0.4783  inattentive
+    +0.4754  unimaginative
+    +0.4736  unimportant
+    +0.4712  inconsequential
+    +0.4657  inarticulate
+
+--- target_MOTION ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = -0.0937
+    PC7 ( 6.3% var): cos = -0.0735
+    PC6 ( 8.7% var): cos = -0.0721
+    PC8 ( 5.3% var): cos = +0.0674
+    PC4 (11.2% var): cos = +0.0538
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+          PATH: +0.2911
+            FB: +0.1925
+            UD: +0.1918
+       AROUSAL: +0.1823
+           BAL: +0.1424
+  Positive pole words:
+    +0.3876  skiing
+    +0.3869  racing
+    +0.3763  sprint
+    +0.3722  diving
+    +0.3711  spectacular
+    +0.3668  championships
+    +0.3593  speed
+    +0.3516  run
+    +0.3503  track
+    +0.3484  jump
+  Negative pole words:
+    +0.4883  kneeling
+    +0.4422  slouched
+    +0.4287  reclining
+    +0.4103  glumly
+    +0.3947  reclined
+    +0.3935  knelt
+    +0.3800  hunched
+    +0.3740  seated
+    +0.3730  slouching
+    +0.3711  lounging
+
+--- target_EQ_RUN ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = +0.2901
+    PC3 (12.4% var): cos = +0.2047
+    PC8 ( 5.3% var): cos = -0.1543
+    PC7 ( 6.3% var): cos = -0.1408
+    PC5 ( 9.3% var): cos = -0.1243
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: -0.2861
+            LD: +0.2180
+       VALENCE: +0.2167
+          LOSS: +0.1638
+     COHERENCE: +0.0871
+  Positive pole words:
+    +0.3360  restoring
+    +0.3153  interpreting
+    +0.3121  modifying
+    +0.3081  tempering
+    +0.3038  adjusting
+    +0.3024  atoning
+    +0.2969  effecting
+    +0.2965  erred
+    +0.2888  accomplishing
+    +0.2820  nyts
+  Negative pole words:
+    +0.4604  mushrooming
+    +0.4443  spiralling
+    +0.4424  spiraling
+    +0.4295  escalating
+    +0.4231  raging
+    +0.4213  engulfed
+    +0.4143  erupted
+    +0.3860  raged
+    +0.3851  escalated
+    +0.3807  sparked
+
+Saved: exp52_results.npz
+Loading glove-wiki-gigaword-300...
+
+Building PCA input axes (cluster set)...
+
+Building target axes...
+  [target_SALIENCE] missing words (1): ['backgrounded']
+  target_GOAL_DIRECTED built from 14/14 pairs
+
+========================================================================
+TEST 1: target_EQ_RUN residualized against PC1
+========================================================================
+
+Question: after stripping out the V x A diagonal contribution, does
+the EQUILIBRIUM-vs-RUNAWAY signal survive on PC3?
+
+Before residualization (exp52 baseline):
+  cos(target_EQ_RUN, PC1) = +0.2901
+  cos(target_EQ_RUN, PC2) = +0.0115
+  cos(target_EQ_RUN, PC3) = +0.2047
+
+After projecting out PC1:
+  Magnitude retained: 95.7% (stripped 4.3%)
+  cos(target_EQ_RUN_res_unit, PC1) = +0.0000   (should be ~0)
+  cos(target_EQ_RUN_res_unit, PC2) = +0.0120
+  cos(target_EQ_RUN_res_unit, PC3) = +0.2139
+
+Alternative residualization: project out VALENCE then AROUSAL (input axes):
+  Magnitude retained: 94.2%
+  cos(EQ_RUN_resVA, PC1) = -0.0297
+  cos(EQ_RUN_resVA, PC2) = -0.0399
+  cos(EQ_RUN_resVA, PC3) = +0.1026
+
+Verdict:
+  PC3 alignment after PC1-residualization: +0.214
+  PC3 alignment after V+A-residualization: +0.103
+  → Regulability hypothesis PARTIAL: PC3 alignment present but not strong after residualization
+
+========================================================================
+TEST 2: target_GOAL_DIRECTED against PCs
+========================================================================
+
+Question: does PC2 operationalize goal-pursuit-vs-maintenance / policy
+(Niamh's reframe), rather than literal locomotion-vs-stasis?
+
+Cosines:
+  cos(target_GOAL_DIRECTED, PC1 (20.6% var)) = -0.0878
+  cos(target_GOAL_DIRECTED, PC2 (17.3% var)) = -0.3030
+  cos(target_GOAL_DIRECTED, PC3 (12.4% var)) = +0.0390
+  cos(target_GOAL_DIRECTED, PC4 (11.2% var)) = +0.1789
+  cos(target_GOAL_DIRECTED, PC5 ( 9.3% var)) = -0.0341
+  cos(target_GOAL_DIRECTED, PC6 ( 8.7% var)) = -0.0063
+
+Reminder (target_MOTION from exp52):
+  cos(target_MOTION, PC1 (20.6% var)) = -0.0937
+  cos(target_MOTION, PC2 (17.3% var)) = +0.0511
+  cos(target_MOTION, PC3 (12.4% var)) = +0.0223
+  cos(target_MOTION, PC4 (11.2% var)) = +0.0538
+  cos(target_MOTION, PC5 ( 9.3% var)) = +0.0165
+  cos(target_MOTION, PC6 ( 8.7% var)) = -0.0721
+
+target_GOAL_DIRECTED cosines with INPUT axes:
+         BAL: +0.5458
+   COHERENCE: +0.5277
+          FB: +0.4291
+          UD: +0.4050
+     AROUSAL: +0.3903
+       EXIST: +0.3681
+
+target_GOAL_DIRECTED positive pole words:
+  +0.5738  aim
+  +0.5319  aims
+  +0.5119  launched
+  +0.5077  committed
+  +0.5076  pursue
+  +0.5060  promote
+  +0.5004  strategy
+  +0.4961  development
+  +0.4949  against
+  +0.4946  responsible
+  +0.4886  aimed
+  +0.4886  establish
+
+target_GOAL_DIRECTED negative pole words:
+  +0.4690  mangxamba
+  +0.4609  cw96
+  +0.4543  disoriented
+  +0.4397  disorientated
+  +0.4368  inebriated
+  +0.4367  _____________
+  +0.4367  tipsy
+  +0.4351  b***@chron.com
+  +0.4346  awestruck
+  +0.4338  a.k.a
+  +0.4294  rw97
+  +0.4289  mo96
+
+========================================================================
+TEST 3: target_GOAL_DIRECTED residualized against PC1
+========================================================================
+
+Sanity check: goal-directedness might also load on PC1 because
+'driven, committed, motivated, deliberate' lean positive-valence
+while 'idling, dawdling, hesitant' lean negative-valence.
+
+Magnitude retained after PC1-residualization: 99.6%
+  cos(GOAL_DIRECTED_res, PC1) = +0.0000   (~0)
+  cos(GOAL_DIRECTED_res, PC2) = -0.3042
+  cos(GOAL_DIRECTED_res, PC3) = +0.0392
+
+========================================================================
+SYNTHESIS TABLE: target axes × PCs, RAW vs PC1-RESIDUALIZED
+========================================================================
+
+                              PC1      PC2      PC3      PC4      PC5      PC6
+  RAW cosines:          
+  target_SALIENCE         -0.174  -0.280  -0.056  +0.024  -0.058  -0.039
+  target_MOTION           -0.094  +0.051  +0.022  +0.054  +0.017  -0.072
+  target_GOAL_DIRECTED    -0.088  -0.303  +0.039  +0.179  -0.034  -0.006
+  target_EQ_RUN           +0.290  +0.011  +0.205  -0.073  -0.124  -0.042
+
+  PC1-RESIDUALIZED:     
+  target_SALIENCE         +0.000  -0.284  -0.057  +0.024  -0.059  -0.039
+  target_MOTION           +0.000  +0.051  +0.022  +0.054  +0.017  -0.072
+  target_GOAL_DIRECTED    +0.000  -0.304  +0.039  +0.180  -0.034  -0.006
+  target_EQ_RUN           +0.000  +0.012  +0.214  -0.076  -0.130  -0.044
+
+Saved: exp53_results.npz
+Loading glove-wiki-gigaword-300...
+  vocab size: 400000
+
+Building PCA input axes (11-axis cluster set)...
+
+Building PC1-candidate target axes...
+  [A_RUSSELL_DIAGONAL] missing words (1): ['backgrounded']
+  [B_VALUE_PURE] missing words (1): ['dispreferred']
+  A: Russell diagonal       11/12 pairs
+  B: Value pure             11/12 pairs
+  C: Reward composite       12/12 pairs
+  D: Surprisal              12/12 pairs
+
+PCA on cluster axes complete.
+Variance: PC1=20.6%, PC2=17.3%, PC3=12.4%, PC4=11.2%, PC5=9.3%, PC6=8.7%
+
+========================================================================
+HEADLINE COMPARATOR: candidates vs PC1 (and other PCs)
+========================================================================
+
+                          PC1      PC2      PC3      PC4      PC5      PC6
+  ------------------------------------------------------------------------
+  A_RUSSELL_DIAGONAL        -0.174   -0.280   -0.056   +0.024   -0.058   -0.039 
+  B_VALUE_PURE              +0.321   -0.150   -0.043   -0.002   -0.043   -0.108 
+  C_REWARD_COMPOSITE        +0.544   +0.078   +0.006   +0.090   -0.105   +0.067 
+  D_SURPRISAL               +0.204   -0.245   +0.223   +0.198   +0.119   +0.040 
+
+Ranked by |cos(target, PC1)|:
+  C_REWARD_COMPOSITE        |cos(PC1)| = 0.544  (signed: +0.544)
+  B_VALUE_PURE              |cos(PC1)| = 0.321  (signed: +0.321)
+  D_SURPRISAL               |cos(PC1)| = 0.204  (signed: +0.204)
+  A_RUSSELL_DIAGONAL        |cos(PC1)| = 0.174  (signed: -0.174)
+
+→ WINNER: C_REWARD_COMPOSITE
+  |cos(PC1)| = 0.544
+
+========================================================================
+Inter-candidate cosine matrix
+========================================================================
+
+If candidates are essentially the same axis in different vocab, |cos|
+between them will be high (>0.7). If genuinely distinct, lower.
+
+                        A_RUSSELL_DIAGONAL     B_VALUE_PURE           C_REWARD_COMPOSITE     D_SURPRISAL           
+  A_RUSSELL_DIAGONAL       1.000                 +0.387                +0.008                +0.023              
+  B_VALUE_PURE            +0.387                 1.000                 +0.326                +0.073              
+  C_REWARD_COMPOSITE      +0.008                +0.326                 1.000                 +0.183              
+  D_SURPRISAL             +0.023                +0.073                +0.183                 1.000               
+
+========================================================================
+Per-candidate deep dive: input-axis loadings, nearest-neighbor words
+========================================================================
+
+--- A_RUSSELL_DIAGONAL ---
+  Top PC alignments:
+    PC2 (17.3% var): cos = -0.2797
+    PC7 ( 6.3% var): cos = +0.1974
+    PC1 (20.6% var): cos = -0.1743
+    PC5 ( 9.3% var): cos = -0.0583
+  Top input-axis loadings (sanity check for circularity):
+       AROUSAL: +0.4861
+     COHERENCE: +0.4247
+           BAL: +0.3825
+            FB: +0.3625
+            UD: +0.3606
+  Positive pole:
+    +0.5101  prominent
+    +0.4796  including
+    +0.4558  first
+    +0.4456  addition
+    +0.4374  major
+    +0.4366  notable
+    +0.4286  noted
+    +0.4277  also
+  Negative pole:
+    +0.5190  valueless
+    +0.5184  unfocused
+    +0.4935  uninteresting
+    +0.4822  inoffensive
+    +0.4788  pathetically
+    +0.4783  inattentive
+    +0.4754  unimaginative
+    +0.4736  unimportant
+
+--- B_VALUE_PURE ---
+  Top PC alignments:
+    PC1 (20.6% var): cos = +0.3211
+    PC2 (17.3% var): cos = -0.1500
+    PC8 ( 5.3% var): cos = +0.1232
+    PC6 ( 8.7% var): cos = -0.1079
+  Top input-axis loadings (sanity check for circularity):
+       VALENCE: +0.5091
+            UD: +0.4957
+           BAL: +0.3817
+     COHERENCE: +0.3578
+            FB: +0.3432
+  Positive pole:
+    +0.4256  wish
+    +0.4239  wonderful
+    +0.4032  wanted
+    +0.3979  important
+    +0.3960  friend
+    +0.3950  celebrate
+    +0.3938  friendship
+    +0.3926  unique
+  Negative pole:
+    +0.4378  shuns
+    +0.4361  snubbing
+    +0.4205  sidestepping
+    +0.4021  rebuffing
+    +0.3998  abhorred
+    +0.3981  shunning
+    +0.3980  castigated
+    +0.3948  deep-frying
+
+--- C_REWARD_COMPOSITE ---
+  Top PC alignments:
+    PC1 (20.6% var): cos = +0.5438
+    PC5 ( 9.3% var): cos = -0.1055
+    PC8 ( 5.3% var): cos = +0.0928
+    PC4 (11.2% var): cos = +0.0895
+  Top input-axis loadings (sanity check for circularity):
+       VALENCE: +0.5296
+          LOSS: +0.4791
+            UD: +0.4778
+       SUCCESS: +0.4003
+         EXIST: +0.3696
+  Positive pole:
+    +0.4099  wholesome
+    +0.3947  vibrant
+    +0.3783  cosmopolitan
+    +0.3694  thriving
+    +0.3440  personable
+    +0.3323  boasts
+    +0.3300  flourishing
+    +0.3285  envisioned
+  Negative pole:
+    +0.4418  caused
+    +0.4380  suffered
+    +0.4156  plagued
+    +0.4153  suffering
+    +0.4043  injuries
+    +0.4015  causing
+    +0.3934  injury
+    +0.3779  blamed
+
+--- D_SURPRISAL ---
+  Top PC alignments:
+    PC2 (17.3% var): cos = -0.2447
+    PC3 (12.4% var): cos = +0.2232
+    PC1 (20.6% var): cos = +0.2044
+    PC4 (11.2% var): cos = +0.1980
+  Top input-axis loadings (sanity check for circularity):
+     COHERENCE: +0.4436
+           BAL: +0.2572
+          LOSS: +0.1975
+       VALENCE: +0.1749
+       AROUSAL: -0.1087
+  Positive pole:
+    +0.3762  regular
+    +0.3440  practiced
+    +0.3396  usual
+    +0.3298  routines
+    +0.3278  routine
+    +0.3258  preferred
+    +0.3222  chores
+    +0.3051  practice
+  Negative pole:
+    +0.5241  astonishing
+    +0.4850  startling
+    +0.4823  unforeseen
+    +0.4713  astounding
+    +0.4611  unexpected
+    +0.4387  unanticipated
+    +0.4158  shocking
+    +0.4126  stunning
+
+========================================================================
+Verdict and recommendation for exp55 inversion experiment
+========================================================================
+
+Best PC1-capturing candidate: C_REWARD_COMPOSITE at |cos(PC1)| = 0.544
+
+Interpretation guide:
+  |cos(PC1)| > 0.7    → strong capture; PC1 is well-described by this candidate
+  0.4 < |cos(PC1)| <= 0.7 → moderate capture; PC1 contains this content + more
+  |cos(PC1)| <= 0.4   → weak capture; PC1 is something else than this candidate
+
+→ Use C_REWARD_COMPOSITE as the value-axis basis in exp55 with caveat: PC1
+  has additional content this target doesn't capture. Report residual.
+
+Saved: exp54_results.npz
+Loading glove-wiki-gigaword-300...
+
+Building 5D AI-plus basis...
+
+========================================================================
+Inter-basis orthogonality (5x5)
+========================================================================
+
+                A_affect        C_reward        D_compress      G_policy_prec   R_percept_prec  
+A_affect          1.000           +0.008          +0.023          +0.561          +0.113        
+C_reward          +0.008          1.000           +0.183          +0.050          -0.050        
+D_compress        +0.023          +0.183          1.000           +0.088          +0.051        
+G_policy_prec     +0.561          +0.050          +0.088          1.000           +0.088        
+R_percept_prec    +0.113          -0.050          +0.051          +0.088          1.000         
+
+
+Building Lakoff schema axes...
+
+========================================================================
+LAKOFF SCHEMAS IN AI-PLUS SPACE
+========================================================================
+
+schema        A_aff    C_rew    D_cmp    G_pol    R_per |  residual  explained
+----------------------------------------------------------------------------------
+UD          +0.361   +0.478   +0.097   +0.405   -0.081  |  +0.765    +0.644
+FB          +0.363   +0.183   +0.084   +0.429   +0.091  |  +0.874    +0.486
+LD          +0.289   +0.208   +0.072   +0.299   +0.178  |  +0.910    +0.415
+IO_CLEAN    -0.015   +0.108   +0.086   +0.110   -0.114  |  +0.976    +0.218
+PATH        +0.160   +0.139   -0.017   +0.258   -0.027  |  +0.955    +0.298
+EXIST       +0.330   +0.370   +0.069   +0.368   -0.011  |  +0.845    +0.535
+FORCE       +0.085   +0.135   -0.103   +0.083   -0.049  |  +0.976    +0.217
+BAL         +0.382   +0.277   +0.257   +0.546   +0.014  |  +0.774    +0.633
+DIFF        +0.037   -0.284   +0.134   -0.044   +0.116  |  +0.932    +0.364
+COH         +0.425   +0.271   +0.444   +0.528   +0.022  |  +0.707    +0.707
+SUC         +0.152   +0.400   -0.026   +0.159   -0.025  |  +0.895    +0.446
+LOSS        +0.085   +0.479   +0.198   +0.224   +0.063  |  +0.846    +0.533
+VALENCE     +0.178   +0.530   +0.175   +0.220   -0.036  |  +0.819    +0.574
+AROUSAL     +0.486   -0.232   -0.109   +0.390   +0.000  |  +0.819    +0.573
+
+========================================================================
+INTERPRETATION SUMMARY
+========================================================================
+
+For each schema, the dominant coordinate (largest |cos|) and verdict:
+
+  UD         [cluster               ]  dominant: C_reward       (+0.478), basis-explained:  64.4%
+  FB         [cluster               ]  dominant: G_policy_prec  (+0.429), basis-explained:  48.6%
+  LD         [cluster               ]  dominant: G_policy_prec  (+0.299), basis-explained:  41.5%
+  IO_CLEAN   [independent (Tier-2)  ]  dominant: R_percept_prec (-0.114), basis-explained:  21.8%
+  PATH       [cluster               ]  dominant: G_policy_prec  (+0.258), basis-explained:  29.8%
+  EXIST      [cluster               ]  dominant: C_reward       (+0.370), basis-explained:  53.5%
+  FORCE      [independent (Tier-2)  ]  dominant: C_reward       (+0.135), basis-explained:  21.7%
+  BAL        [cluster               ]  dominant: G_policy_prec  (+0.546), basis-explained:  63.3%
+  DIFF       [independent (Tier-2)  ]  dominant: C_reward       (-0.284), basis-explained:  36.4%
+  COH        [cluster               ]  dominant: G_policy_prec  (+0.528), basis-explained:  70.7%
+  SUC        [cluster               ]  dominant: C_reward       (+0.400), basis-explained:  44.6%
+  LOSS       [cluster               ]  dominant: C_reward       (+0.479), basis-explained:  53.3%
+  VALENCE    [cluster               ]  dominant: C_reward       (+0.530), basis-explained:  57.4%
+  AROUSAL    [cluster               ]  dominant: A_affect       (+0.486), basis-explained:  57.3%
+
+========================================================================
+CONCEPT-WORD STRETCH GOAL
+========================================================================
+
+Project specific concept words (not anchor-built axes) onto AI-plus space.
+Each word vector is unit-normalized first.
+
+word              A_aff    C_rew    D_cmp    G_pol    R_per |  explained
+------------------------------------------------------------------------------
+  hope            +0.288   +0.070   -0.039   +0.379   +0.089  |    40.6%
+  freedom         +0.225   +0.024   +0.012   +0.315   +0.050  |    32.2%
+  betrayal        +0.013   -0.061   -0.159   +0.117   +0.044  |    22.5%
+  growth          +0.224   +0.057   -0.052   +0.327   -0.005  |    34.6%
+  psychosis       -0.099   -0.076   -0.083   -0.080   +0.004  |    14.4%
+  regulation      +0.145   -0.084   +0.081   +0.207   +0.139  |    26.8%
+  agency          +0.292   -0.048   +0.098   +0.337   +0.049  |    37.4%
+  flow            +0.102   -0.059   +0.061   +0.175   -0.088  |    22.7%
+  depression      +0.102   -0.175   +0.012   +0.054   -0.037  |    21.6%
+  trauma          +0.132   -0.233   -0.088   +0.023   +0.021  |    27.7%
+  creativity      +0.029   +0.125   -0.074   +0.154   -0.021  |    23.4%
+  play            +0.209   +0.004   +0.069   +0.286   +0.041  |    29.6%
+  ritual          +0.108   +0.042   +0.258   +0.134   +0.122  |    30.1%
+  meditation      +0.035   +0.062   +0.127   +0.051   -0.029  |    14.5%
+  grief           -0.004   -0.157   -0.111   -0.040   -0.070  |    19.4%
+  love            +0.212   +0.085   -0.020   +0.216   -0.051  |    26.9%
+
+Saved: exp55_results.npz

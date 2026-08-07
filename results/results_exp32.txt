@@ -1,0 +1,124 @@
+Loading glove-wiki-gigaword-300...
+
+=== Building axes ===
+  YANGYIN_DIRECT built from 33 pairs
+
+=== Sanity checks on YANGYIN_DIRECT ===
+  cos(YANGYIN_DIRECT, VALENCE)  = +0.3348  (should be small if yang/yin is not valence)
+  cos(YANGYIN_DIRECT, AROUSAL)  = +0.2040  (should be small)
+  cos(YANGYIN_DIRECT, YANGYIN_INFERRED) = +0.4021  (high cosine = methods agree)
+  cos(YANGYIN_DIRECT after V+A removed, YANGYIN_INFERRED) = +0.4214
+
+=== YANGYIN_DIRECT alignments with schemas ===
+  cos(YANGYIN_DIRECT, UD)    = +0.4989
+  cos(YANGYIN_DIRECT, FB)    = +0.5209
+  cos(YANGYIN_DIRECT, LD)    = +0.3386
+  cos(YANGYIN_DIRECT, IO_MIXED) = +0.3605
+  cos(YANGYIN_DIRECT, IO_CLEAN) = +0.0185
+
+=== After V+A residualization on YANGYIN_DIRECT ===
+  cos(YANGYIN_DIRECT_VA, UD_VA) = +0.3525
+  cos(YANGYIN_DIRECT_VA, FB_VA) = +0.4198
+  cos(YANGYIN_DIRECT_VA, LD_VA) = +0.1340
+  cos(YANGYIN_DIRECT_VA, IO_MIXED_VA) = +0.2923
+  cos(YANGYIN_DIRECT_VA, IO_CLEAN_VA) = -0.0173
+
+=== THE HEADLINE TEST: IN/OUT vs yang/yin ===
+  Traditional Taoism predicts: IN = YIN (cosine should be NEGATIVE)
+  Using A_io_mixed (with membership/difficulty valence):
+    cos(IO_MIXED, YANGYIN_DIRECT)       = +0.3605
+    cos(IO_MIXED, YANGYIN_DIRECT_VA)    = +0.2912
+    cos(IO_MIXED_VA, YANGYIN_DIRECT_VA) = +0.2923
+  Using A_io_clean (direction-only, no membership valence):
+    cos(IO_CLEAN, YANGYIN_DIRECT)       = +0.0185
+    cos(IO_CLEAN, YANGYIN_DIRECT_VA)    = -0.0160
+    cos(IO_CLEAN_VA, YANGYIN_DIRECT_VA) = -0.0173
+
+=== Nearest neighbors of YANGYIN_DIRECT (the directly-constructed axis) ===
+  Yang pole:
+    +0.4422  established
+    +0.4274  addition
+    +0.4256  innovative
+    +0.4137  created
+    +0.4118  promote
+    +0.4038  developed
+    +0.4012  create
+    +0.3997  various
+    +0.3979  particular
+    +0.3921  example
+    +0.3900  introduce
+    +0.3896  provides
+    +0.3860  variety
+    +0.3854  primarily
+    +0.3849  features
+    +0.3817  develop
+    +0.3808  artists
+    +0.3803  conjunction
+    +0.3798  designed
+    +0.3792  featuring
+
+  Yin pole:
+    +0.4796  obliterated
+    +0.4535  obliterating
+    +0.4262  incinerated
+    +0.4109  vanished
+    +0.4079  pillaged
+    +0.4069  eviscerated
+    +0.4047  razed
+    +0.4013  unusable
+    +0.3983  annihilated
+    +0.3966  359.58
+    +0.3965  unceremoniously
+    +0.3964  ejecting
+    +0.3927  exterminated
+    +0.3909  mysteriously
+    +0.3861  ransacked
+    +0.3831  uninhabitable
+    +0.3786  albertin
+    +0.3748  43.74
+    +0.3744  rotted
+    +0.3717  qaynuqa
+
+=== Nearest neighbors of YANGYIN_DIRECT after V+A removal ===
+  Yang pole (after V+A removal):
+    +0.3576  created
+    +0.3510  various
+    +0.3429  introduce
+    +0.3418  established
+    +0.3327  particular
+    +0.3299  artists
+    +0.3255  conjunction
+    +0.3253  primarily
+    +0.3214  specifically
+    +0.3195  different
+    +0.3168  known
+    +0.3167  introducing
+    +0.3163  designed
+    +0.3147  variety
+    +0.3142  specific
+
+  Yin pole (after V+A removal):
+    +0.4581  obliterated
+    +0.4405  razed
+    +0.4117  vanished
+    +0.4048  incinerated
+    +0.3918  destroyed
+    +0.3861  ransacked
+    +0.3857  pillaged
+    +0.3722  obliterating
+    +0.3695  disarmed
+    +0.3681  dismantled
+    +0.3577  eviscerated
+    +0.3573  scuttled
+    +0.3560  emptied
+    +0.3550  ejecting
+    +0.3527  gutted
+
+=== Reading guide ===
+  Cross-method agreement: high cos(YANGYIN_DIRECT_VA, YANGYIN_INFERRED) means yang/yin recovers from both methods
+  IN-as-YIN prediction:
+    cos(IO_CLEAN_VA, YANGYIN_DIRECT_VA) NEGATIVE → traditional Taoism holds, IN is yin
+    cos near 0 → IO has no yang/yin content
+    cos positive → IN is yang in modern English (or valence still contaminating)
+
+Saved: exp32_results.npz

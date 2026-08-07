@@ -1,0 +1,57 @@
+Loading saved axes from exp60, 61b, 64, 67...
+
+  TIME convention: positive direction = PAST; negative direction = FUTURE
+  COMPLEMENT convention: positive = A-side (attention); negative = G-side (intention)
+
+====================================================================
+Niamh's prediction: cos(COMPLEMENT, TIME) > 0 (intention/future-aligned)
+====================================================================
+  cos(COMPLEMENT, TIME) = +0.1151
+  → SUPPORTED: intention has substantial future-time signature
+
+====================================================================
+TIME cosines across all relevant axes
+====================================================================
+  (positive cos = past-aligned; negative cos = future-aligned)
+
+              axis   cos with TIME  interpretation
+  ----------------  --------------  ----------------------------------------
+     A (attention)  -0.0807        mildly future
+     G (intention)  -0.1886        FUTURE-leaning
+  GP (shared = attn?)  -0.1524        FUTURE-leaning
+  COMPLEMENT (intent?)  +0.1151        PAST-leaning
+        C (reward)  -0.0269        time-neutral
+          W (cost)  -0.0418        mildly future
+     R (precision)  -0.0192        time-neutral
+   D (compression)  +0.0384        mildly past
+  IO (containment)  +0.0775        mildly past
+   MB (self/other)  +0.0899        mildly past
+
+====================================================================
+Future/past concept words — checking time-direction sign convention
+====================================================================
+
+  Loading GloVe (for concept-word checks)...
+
+            word  cos(., TIME)  cos(., COMP)  prediction
+  --------------  ------------  ------------  ----------------------------------------
+            past  +0.2390       -0.0795       should be PAST-aligned
+          future  -0.4161       -0.1728       should be FUTURE-aligned
+       yesterday  +0.0189       -0.0467       should be PAST-aligned
+        tomorrow  -0.3461       -0.0458       should be FUTURE-aligned
+          memory  +0.0969       -0.0926       should be PAST-aligned
+            plan  -0.3309       -0.2361       should be FUTURE-aligned
+       intention  -0.1272       -0.1963       intention — predicted FUTURE if hypothesis holds
+          intend  -0.2104       -0.2235       intend — predicted FUTURE
+            plan  -0.3309       -0.2361       plan — predicted FUTURE
+            goal  -0.0070       -0.1613       goal — predicted FUTURE
+         purpose  -0.0361       -0.3111       purpose — predicted FUTURE
+        ambition  -0.0345       -0.2067       ambition — predicted FUTURE
+      anticipate  -0.2567       -0.0617       anticipate — predicted FUTURE
+       attention  -0.1146       -0.0530       attention — predicted NEUTRAL
+           focus  -0.1916       -0.1751       focus — predicted NEUTRAL
+          notice  -0.1163       +0.0455       notice — predicted NEUTRAL
+           aware  -0.1048       -0.0647       aware — predicted NEUTRAL
+         salient  +0.0432       +0.2355       salient — predicted NEUTRAL
+
+Saved exp68_results.npz

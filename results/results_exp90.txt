@@ -1,0 +1,216 @@
+Loading glove-wiki-gigaword-300...
+  vocab size: 400000
+
+Building PCA-input axes (cluster set, 11 axes from exp40)...
+
+Building target axes (independent from PCA-input set)...
+  [target_SALIENCE] missing words (1): ['backgrounded']
+  target_SALIENCE built from 11/12 pairs
+  target_MOTION    built from 12/12 pairs
+  target_EQ_RUN    built from 14/14 pairs
+
+========================================================================
+PCA on cluster axes (11 axes — matches exp40 cluster-only run)
+========================================================================
+
+Variance per PC:
+  PC1:  20.6%   (cumulative:  20.6%)
+  PC2:  17.3%   (cumulative:  37.9%)
+  PC3:  12.4%   (cumulative:  50.3%)
+  PC4:  11.2%   (cumulative:  61.5%)
+  PC5:   9.3%   (cumulative:  70.9%)
+  PC6:   8.7%   (cumulative:  79.6%)
+  PC7:   6.3%   (cumulative:  85.9%)
+  PC8:   5.3%   (cumulative:  91.2%)
+  PC9:   4.5%   (cumulative:  95.7%)
+  PC10:   4.3%   (cumulative: 100.0%)
+
+========================================================================
+CENTRAL TEST: target-axis cosines with PCs
+========================================================================
+
+Predictions:
+  target_SALIENCE  high on PC1 if PC1 is salience-as-primitive;
+                   LOW on PC1 if PC1 is just the V x A diagonal
+  target_MOTION    high on PC2 if MOTION is a real primitive
+  target_EQ_RUN    high on PC3 if EQ-vs-RUNAWAY is a real primitive
+
+                      PC1      PC2      PC3      PC4      PC5      PC6    
+  --------------------------------------------------------------------
+  target_SALIENCE     -0.174  -0.280  -0.056  +0.024  -0.058  -0.039  
+  target_MOTION       -0.094  +0.051  +0.022  +0.054  +0.017  -0.072  
+  target_EQ_RUN       +0.290  +0.011  +0.205  -0.073  -0.124  -0.042  
+
+========================================================================
+Per-target deep dive
+========================================================================
+
+--- target_SALIENCE ---
+  Best PC alignments (sorted by |cos|):
+    PC2 (17.3% var): cos = -0.2797
+    PC7 ( 6.3% var): cos = +0.1974
+    PC1 (20.6% var): cos = -0.1743
+    PC5 ( 9.3% var): cos = -0.0583
+    PC3 (12.4% var): cos = -0.0556
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: +0.4861
+     COHERENCE: +0.4247
+           BAL: +0.3825
+            FB: +0.3625
+            UD: +0.3606
+  Positive pole words:
+    +0.5101  prominent
+    +0.4796  including
+    +0.4558  first
+    +0.4456  addition
+    +0.4374  major
+    +0.4366  notable
+    +0.4286  noted
+    +0.4277  also
+    +0.4192  important
+    +0.4160  one
+  Negative pole words:
+    +0.5190  valueless
+    +0.5184  unfocused
+    +0.4935  uninteresting
+    +0.4822  inoffensive
+    +0.4788  pathetically
+    +0.4783  inattentive
+    +0.4754  unimaginative
+    +0.4736  unimportant
+    +0.4712  inconsequential
+    +0.4657  inarticulate
+
+--- target_MOTION ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = -0.0937
+    PC7 ( 6.3% var): cos = -0.0735
+    PC6 ( 8.7% var): cos = -0.0721
+    PC8 ( 5.3% var): cos = +0.0674
+    PC4 (11.2% var): cos = +0.0538
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+          PATH: +0.2911
+            FB: +0.1925
+            UD: +0.1918
+       AROUSAL: +0.1823
+           BAL: +0.1424
+  Positive pole words:
+    +0.3876  skiing
+    +0.3869  racing
+    +0.3763  sprint
+    +0.3722  diving
+    +0.3711  spectacular
+    +0.3668  championships
+    +0.3593  speed
+    +0.3516  run
+    +0.3503  track
+    +0.3484  jump
+  Negative pole words:
+    +0.4883  kneeling
+    +0.4422  slouched
+    +0.4287  reclining
+    +0.4103  glumly
+    +0.3947  reclined
+    +0.3935  knelt
+    +0.3800  hunched
+    +0.3740  seated
+    +0.3730  slouching
+    +0.3711  lounging
+
+--- target_EQ_RUN ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = +0.2901
+    PC3 (12.4% var): cos = +0.2047
+    PC8 ( 5.3% var): cos = -0.1543
+    PC7 ( 6.3% var): cos = -0.1408
+    PC5 ( 9.3% var): cos = -0.1243
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: -0.2861
+            LD: +0.2180
+       VALENCE: +0.2167
+          LOSS: +0.1638
+     COHERENCE: +0.0871
+  Positive pole words:
+    +0.3360  restoring
+    +0.3153  interpreting
+    +0.3121  modifying
+    +0.3081  tempering
+    +0.3038  adjusting
+    +0.3024  atoning
+    +0.2969  effecting
+    +0.2965  erred
+    +0.2888  accomplishing
+    +0.2820  nyts
+  Negative pole words:
+    +0.4604  mushrooming
+    +0.4443  spiralling
+    +0.4424  spiraling
+    +0.4295  escalating
+    +0.4231  raging
+    +0.4213  engulfed
+    +0.4143  erupted
+    +0.3860  raged
+    +0.3851  escalated
+    +0.3807  sparked
+
+Saved: exp52_results.npz
+Loading GloVe...
+
+Test sample: 86 cognitive words
+
+Building candidate axes...
+  Total candidates: 38
+
+========================================================================================
+Greedy selection — objective: coverage of 86 cognitive test words
+========================================================================================
+
+step  selected        cov added   cum cov  next-4-candidates
+----------------------------------------------------------------------------------------------------
+  1    HARDNESS     [rog]  + 21.22pp   21.22%   INT(cog, 17.8), BAL(lak, 17.8), UD(lak, 16.4), COH(lak, 16.1)
+  2    ABS          [cog]  +  3.73pp   24.95%   UD(lak, 24.8), SIZE(rog, 24.8), INT(cog, 24.5), VALENCE(clu, 24.4)
+  3    UD           [lak]  +  3.31pp   28.26%   SIZE(rog, 28.0), INT(cog, 27.7), LOSS(clu, 27.6), VALENCE(clu, 27.6)
+  4    LOSS         [clu]  +  3.84pp   32.10%   SIZE(rog, 30.7), VALENCE(clu, 30.5), LD(lak, 30.5), C(cog, 30.4)
+  5    INT          [cog]  +  2.00pp   34.10%   SIZE(rog, 34.0), REAL_IMAG(cog, 33.8), DIFF(lak, 33.7), W(cog, 33.6)
+  6    SIZE         [rog]  +  1.71pp   35.81%   REAL_IMAG(cog, 35.7), LD(lak, 35.6), DIFF(lak, 35.5), TASTE(rog, 35.4)
+  7    SOUND_VOLUME [rog]  +  1.50pp   37.31%   REAL_IMAG(cog, 37.3), DIFF(lak, 37.3), TASTE(rog, 37.1), MB(cog, 37.0)
+  8    REAL_IMAG    [cog]  +  1.40pp   38.71%   TASTE(rog, 38.6), DIFF(lak, 38.4), LD(lak, 38.4), VALENCE(clu, 38.4)
+  9    TASTE        [rog]  +  1.25pp   39.96%   DIFF(lak, 39.8), VALENCE(clu, 39.8), MB(cog, 39.7), CLEANLINESS(rog, 39.7)
+  10   DIFF         [lak]  +  1.06pp   41.02%   MB(cog, 40.9), ATT(cog, 40.9), VALENCE(clu, 40.9), MOISTURE(rog, 40.8)
+  11   W            [cog]  +  1.19pp   42.21%   ATT(cog, 41.9), MB(cog, 41.9), VALENCE(clu, 41.9), MOISTURE(rog, 41.9)
+  12   MB           [cog]  +  0.90pp   43.11%   VALENCE(clu, 43.1), ATT(cog, 43.1), FB(lak, 43.1), R(cog, 43.0)
+  13   ATT          [cog]  +  0.85pp   43.97%   VALENCE(clu, 43.9), R(cog, 43.9), CLEANLINESS(rog, 43.8), MOISTURE(rog, 43.8)
+  14   EXIST        [lak]  +  0.86pp   44.82%   FB(lak, 44.7), MOISTURE(rog, 44.7), R(cog, 44.7), CLEANLINESS(rog, 44.7)
+  15   FB           [lak]  +  0.77pp   45.59%   R(cog, 45.6), VALENCE(clu, 45.5), EV(cog, 45.5), CLEANLINESS(rog, 45.5)
+  16   R            [cog]  +  0.76pp   46.35%   CLEANLINESS(rog, 46.3), EV(cog, 46.3), MOISTURE(rog, 46.3), VALENCE(clu, 46.2)
+  17   CLEANLINESS  [rog]  +  0.69pp   47.03%   EV(cog, 47.0), MOISTURE(rog, 47.0), VALENCE(clu, 47.0), AGE(rog, 46.9)
+  18   MOISTURE     [rog]  +  0.75pp   47.78%   EV(cog, 47.7), VALENCE(clu, 47.7), AGE(rog, 47.6), FORCE(lak, 47.6)
+  19   EV           [cog]  +  0.65pp   48.43%   VALENCE(clu, 48.4), AGE(rog, 48.4), FORCE(lak, 48.3), COH(lak, 48.3)
+
+Final greedy basis (19 axes):
+  1. HARDNESS       (rog)
+  2. ABS            (cog)
+  3. UD             (lak)
+  4. LOSS           (clu)
+  5. INT            (cog)
+  6. SIZE           (rog)
+  7. SOUND_VOLUME   (rog)
+  8. REAL_IMAG      (cog)
+  9. TASTE          (rog)
+  10. DIFF           (lak)
+  11. W              (cog)
+  12. MB             (cog)
+  13. ATT            (cog)
+  14. EXIST          (lak)
+  15. FB             (lak)
+  16. R              (cog)
+  17. CLEANLINESS    (rog)
+  18. MOISTURE       (rog)
+  19. EV             (cog)
+
+Composition: {'rog': 6, 'cog': 8, 'lak': 4, 'clu': 1}
+Final coverage: 48.43%
+
+Reference Cog-13b coverage on same sample: 39.27%
+
+Saved exp90_results.npz

@@ -1,0 +1,104 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:42,  2.83it/s]Loading weights:  53%|█████▎    | 156/292 [00:00<00:00, 441.55it/s]Loading weights:  83%|████████▎ | 243/292 [00:00<00:00, 426.02it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 387.88it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+
+Collecting residuals for 578 words at all 24 layers...
+  100/578
+  200/578
+  300/578
+  400/578
+  500/578
+
+Building cluster directions per layer...
+
+==============================================================================
+PER-CLUSTER STATISTICS
+==============================================================================
+
+LOGICAL_OPERATORS (5 axes):
+  axes: ['conjunction_disjunction', 'affirmation_negation', 'conditional_assertion', 'necessity_possibility', 'cause_contrast']
+  layer   off mean   off std  off |mean|
+  L0        +0.036     0.073       0.075
+  L4        +0.018     0.105       0.089
+  L8        +0.029     0.152       0.130
+  L12       +0.025     0.150       0.127
+  L16       +0.016     0.160       0.134
+  L20       -0.009     0.183       0.151
+  L23       -0.003     0.211       0.163
+  Mean off-diag std across layers: 0.1483  (HIGH = differentiated, LOW = collapsed)
+  Cross-layer signature preservation: +0.7822  (HIGH = stable structure across layers)
+
+QUANTIFIERS (5 axes):
+  axes: ['universal_existential', 'universal_affirmative_negative', 'cardinal_many_few', 'distributive_collective', 'precise_vague']
+  layer   off mean   off std  off |mean|
+  L0        +0.080     0.111       0.095
+  L4        +0.081     0.113       0.098
+  L8        +0.110     0.127       0.118
+  L12       +0.111     0.121       0.118
+  L16       +0.107     0.119       0.115
+  L20       +0.111     0.125       0.119
+  L23       +0.124     0.163       0.150
+  Mean off-diag std across layers: 0.1257  (HIGH = differentiated, LOW = collapsed)
+  Cross-layer signature preservation: +0.9572  (HIGH = stable structure across layers)
+
+DETERMINERS (5 axes):
+  axes: ['definite_indefinite', 'proximal_distal', 'sing_plur_demonstrative', 'possessive_neutral', 'interrogative_assertive']
+  layer   off mean   off std  off |mean|
+  L0        -0.034     0.148       0.136
+  L4        -0.006     0.154       0.136
+  L8        +0.009     0.193       0.164
+  L12       +0.009     0.193       0.164
+  L16       +0.009     0.193       0.164
+  L20       +0.007     0.196       0.166
+  L23       -0.028     0.281       0.240
+  Mean off-diag std across layers: 0.1891  (HIGH = differentiated, LOW = collapsed)
+  Cross-layer signature preservation: +0.9489  (HIGH = stable structure across layers)
+
+MORPHOLOGY (7 axes):
+  axes: ['ER_comparative', 'EST_superlative', 'ING_progressive', 'ED_past', 'S_plural', 'UN_negation', 'RE_repetition']
+  layer   off mean   off std  off |mean|
+  L0        +0.143     0.125       0.150
+  L4        +0.773     0.066       0.773
+  L8        +0.827     0.035       0.827
+  L12       +0.799     0.043       0.799
+  L16       +0.876     0.029       0.876
+  L20       +0.957     0.011       0.957
+  L23       +0.454     0.126       0.454
+  Mean off-diag std across layers: 0.0463  (HIGH = differentiated, LOW = collapsed)
+  Cross-layer signature preservation: +0.9554  (HIGH = stable structure across layers)
+
+LAKOFF (8 axes):
+  axes: ['UP-DOWN', 'IN-OUT_CLEAN', 'FORWARD-BACK', 'PATH-MOTION', 'LIGHT-DARK', 'FORCE', 'BALANCE', 'DIFFICULTY-BURDEN']
+  layer   off mean   off std  off |mean|
+  L0        +0.048     0.093       0.084
+  L4        +0.057     0.213       0.182
+  L8        +0.056     0.211       0.183
+  L12       +0.055     0.198       0.176
+  L16       +0.046     0.196       0.175
+  L20       +0.043     0.196       0.170
+  L23       +0.008     0.202       0.168
+  Mean off-diag std across layers: 0.1896  (HIGH = differentiated, LOW = collapsed)
+  Cross-layer signature preservation: +0.9137  (HIGH = stable structure across layers)
+
+==============================================================================
+CLASSIFICATION — predicted vs observed
+==============================================================================
+
+  cluster                    mean off std    cross-layer pres             classification
+  LAKOFF                           0.1896              +0.914    DIFFERENTIATED + STABLE
+  MORPHOLOGY                       0.0463              +0.955         COLLAPSED + STABLE
+  LOGICAL_OPERATORS                0.1483              +0.782    DIFFERENTIATED + STABLE
+  QUANTIFIERS                      0.1257              +0.957    DIFFERENTIATED + STABLE
+  DETERMINERS                      0.1891              +0.949    DIFFERENTIATED + STABLE
+
+  Predictions for compositionality hypothesis:
+    LAKOFF              : DIFFERENTIATED + STABLE (composes with itself)
+    LOGICAL_OPERATORS   : DIFFERENTIATED + STABLE (composes)
+    QUANTIFIERS         : DIFFERENTIATED + STABLE (composes)
+    MORPHOLOGY          : COLLAPSED + STABLE (mutually exclusive)
+    DETERMINERS         : COLLAPSED + STABLE (mutually exclusive)
+
+Saved exp135_results.npz

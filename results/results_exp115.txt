@@ -1,0 +1,428 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading Pythia 1.4B...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:22,  3.55it/s]Loading weights:  25%|██▌       | 74/292 [00:00<00:00, 243.01it/s]Loading weights:  39%|███▉      | 115/292 [00:00<00:00, 288.78it/s]Loading weights:  53%|█████▎    | 155/292 [00:00<00:00, 312.02it/s]Loading weights:  66%|██████▋   | 194/292 [00:00<00:00, 301.59it/s]Loading weights:  78%|███████▊  | 229/292 [00:00<00:00, 299.32it/s]Loading weights:  90%|████████▉ | 262/292 [00:01<00:00, 252.70it/s]Loading weights: 100%|█████████▉| 291/292 [00:01<00:00, 93.74it/s] Loading weights: 100%|██████████| 292/292 [00:01<00:00, 155.15it/s]
+Loaded pretrained model pythia-1.4b into HookedTransformer
+
+##############################################################################
+PROMPT: 'His height in centimetres is'
+##############################################################################
+
+--- direction: u111_clean (freq-stripped exp111) ---
+  [s=-12]
+     · a little over 1 in 77.8. His weight is 1.9 kilograms. ⏎  ⏎ He has a strong preference for the mid-range of 3D with 1 in 10 for the leading edges
+     · normally between 6.5 and 7.5. He is approximately 30kg, which is a very good weight for a young man. He is of average build with a slight overgrowth of beard,
+     · about 27 cm, the weight about 20 kg, and the head a little over a metre. ⏎  ⏎ The back of the neck is relatively thick, which causes the tail to be relatively
+  [s=-8]
+     · a little over 1 in 77. He is also slightly taller than the average person and has a slightly thicker neck. He has the same dark hair as his father with a slight reddish tinge.
+     · normally between 6.5 and 7.5. He is approximately 30kg, which is a very good weight for a young man. He is of average build with a slight paunch and he has
+     · about 27 cm, the weight about 20 kg, and the head about 4.5 cm. ⏎  ⏎ The back of the neck is relatively thick, which causes the nape to be
+  [s=-4]
+     · a little over 1,75 metres. The length of the body is the same as that of a man of about 1.8 metres. ⏎  ⏎ The fur is long and thick and in a redd
+     · normally between 6.5 and 7.5. He is approximately 30kg, which is a very good weight for a young man. He is of average build with a slight paunch and he has
+     · about 27 inches. ⏎  ⏎ The Boydston family ⏎  ⏎ The Boydston family of Dublin, Ireland, descended from: ⏎  Thomas Boydston ⏎  Margaret Boydston ⏎  William Boydston ⏎  John
+  [s=+0]
+     · a little over 1,75 metres. He is 6 feet 1 inch tall. ⏎  ⏎ Khan took a shot in the direction of the opposition while throwing a cross. The delivery was in off the
+     · 1.65. As a musician, his height in inches is 30.60. ⏎  ⏎ His weight in kilograms is 87.04. As a musician, his weight in kilograms is 87.04
+     · about 27 inches. ⏎  ⏎ The Boydston family ⏎  ⏎ The Boydston family of Dublin, Ireland, descended from William Boydston, who immigrated to the United States in 1829.
+  [s=+4]
+     · a little over 1,75 metres. He is 6 feet 1 inch tall. ⏎  ⏎ Khan took a shot in the hip during the first half of Sunday's 1-0 win over Perth Gl
+     · 1.65. As a musician, his height in inches is 30.60. ⏎  ⏎ His weight in kilograms is 87.04. As a musician, his weight in kilograms is 87.04
+     · about 27 ft (8.6 m) and his weight in kilograms is about 200 kg. ⏎  ⏎ Career: ⏎  ⏎ He is a rare few among the rare few, as he
+  [s=+8]
+     · a little over 1,75 metres. He is 6 feet 1 inch tall. ⏎  ⏎ Khan took a shot in the hip during the first half of Sunday's 1-0 win over Perth Gl
+     · 1.65. As a musician, his height in metres is 30.60. ⏎  ⏎ His other notable accomplishments include the following: ⏎  ⏎  First blind British competitive golfer (1954) ⏎  First blind
+     · about 27 ft (8.6 m) and his weight in tonnes is about 200,000. ⏎  ⏎ Career ⏎  ⏎ Bosch first earned fame as an amateur boxer and he
+  [s=+12]
+     · 5.8, and he's got a 6-foot-7 wingspan. He's been signed by both the Cavaliers and Warriors, and now the Cavs' job is to make
+     · 1.65. As a musician, his height in metres is 30.60. ⏎  ⏎ His career includes stints with the Australian rock group, The Sensations, with a year as a
+     · about 27 ft (8.9 m) and his weight in tonnes is about 200,000. ⏎  ⏎ Career ⏎  ⏎ Bosch first earned fame as an amateur boxer and he
+  [s=+16]
+     · 5.8, and he's got a couple of tricks up his sleeve. One is the hidden locker in the ceiling, where he hides his gear; another is a folding ladder he uses to move
+     · 1.65. As a director, he is 6.2 feet tall, which is a very tall height for a director. ⏎  ⏎ The second highest is Canadian actor and director Peter Jackson, who
+     · about 27 ft (8.8 m) and his weight in tonnes is about 200,000. ⏎  ⏎ Career ⏎  ⏎ Bosch first earned fame as an amateur boxer and he
+
+--- direction: ulak_clean (freq-stripped Lakoff) ---
+  [s=-12]
+     · a little over 1,75 metres. The length of the body is the same as that of a long human shot in the direction of the left shoulder; it is 1,45 metres in length along
+     · approximately 3.5" (9.8 cm). ⏎  ⏎ References ⏎  ⏎ Category:12th-century births ⏎ Category:1291 deaths ⏎ Category:13th-century Scottish people ⏎ Category
+     · about 27 ft (8.6 m) and his weight in kilograms is about 112 kg. ⏎  ⏎ Career: ⏎  ⏎ Originally from York, England, he played for Sheffield Shield side
+  [s=-8]
+     · a little over 1,75 metres. The length of the body is the same as that of a long human shot in the traditional style. ⏎  ⏎ The kalb is a class in the Se
+     · normally between 6.5 and 7.5.  His weight is usually between 20 and 30 kg or 45 and 60 lb. ⏎  ⏎ He is a powerful and athletic athlete who is active
+     · about 27 cm, the weight about 20 kg, and the head about 4.8 m. ⏎  ⏎ References ⏎  ⏎ Bibliography ⏎  ⏎ External links ⏎  Barys del Yabr
+  [s=-4]
+     · a little over 1,75 metres. The length of the body is the same as that of a long human shot in the shoulder. ⏎  ⏎ The wingspan is 1.45 metres.
+     · normally between 6.5 and 7.5.  His weight is usually between 20 and 30 kg or 45 and 60 lb. ⏎  ⏎ He is a good athlete with a good variety of
+     · about 27 inches. ⏎  ⏎ The Boydston family ⏎  ⏎ The Boydston family of Dublin, Ireland, descended from: ⏎  Thomas Boydston ⏎  Margaret Boydston ⏎  William Boydston ⏎  John
+  [s=+0]
+     · a little over 1,75 metres. He is 6 feet 1 inch tall. ⏎  ⏎ Khan took a shot in the direction of the opposition while throwing a cross. The delivery was in off the
+     · 1.65. As a musician, his height in inches is 30.60. ⏎  ⏎ His weight in kilograms is 87.04. As a musician, his weight in kilograms is 87.04
+     · about 27 inches. ⏎  ⏎ The Boydston family ⏎  ⏎ The Boydston family of Dublin, Ireland, descended from William Boydston, who immigrated to the United States in 1829.
+  [s=+4]
+     · a little over 1,75 metres. He is 6 feet 1 inch tall. ⏎  ⏎ Khan took a shot in the direction of the opposition while throwing a cross. The delivery was in off the
+     · 1.65. As a musician, his height in inches is 30.60. ⏎  ⏎ His favorite color is red. His favorite food is corn. He has a favorite sport to watch is football
+     · about 27 inches. ⏎  ⏎ The Boydston family ⏎  ⏎ Boydston was the son of William Boydston and his wife Elizabeth.  He was born in St Andrew's Parish, Ang
+  [s=+8]
+     · a little over 1,75 metres. He is 6 feet 1 inch tall. ⏎  ⏎ Khan took a shot in the direction of the opposition while throwing a barbell in front of his head.
+     · 2.65. ⏎  ⏎ Being that his height is 2.65, his weight in kilograms is 1.65. ⏎  ⏎ His weight in kilograms is 1.65. ⏎  ⏎ His weight in
+     · about 27 ft (8.8 m) and his weight in kilograms is about 200 kg. ⏎  ⏎ Career: ⏎  ⏎ He is a rare athlete among the super-athletes.
+  [s=+12]
+     · a little over six feet, but he's still 6 feet tall. His hair is a mixture of brown and blond, with the latter part of it cut short with a sharp razor. He is a
+     · 2.65. As a musician, his height in inches is 30.60. ⏎  ⏎ His favorite sports are baseball and basketball. He is a member of the British Amateur Athletic Union (B
+     · about 27 ft (8.8 m) and his weight in kilograms is about 200 kg. ⏎  ⏎ Career: ⏎  ⏎ He is a rare athlete among the super-athletes.
+  [s=+16]
+     · a little over six feet, but he's still 6 feet tall. His hair is a mixture of brown and blond, with the latter part of it cut short with a sharp razor. He is a
+     · 2.65. She is 5'8", despite being 5'9". With a massive 44 kilos, she is one of the top weight lifters in the world. ⏎  ⏎ She has
+     · about 27 ft (8.8 m) and his weight in kilograms is about 200 kg. ⏎  ⏎ Career ⏎  ⏎ Bosnian ⏎  ⏎  Bosnian Navy ⏎  ⏎ Military career
+
+--- direction: freq_only (pure frequency) ---
+  [s=-12]
+     · a little over six feet, but he's also got a lot of girth. He's thick and powerful, and he's got a lot of hair on the back of his head."
+     · 1.65. As a musician, his height in inches is 5.60. ⏎  ⏎ His favorite color is red. His favorite food is pizza. He has a favorite sport to watch is football
+     · about 27 inches. ⏎  ⏎ The Boydston family ⏎  ⏎ The Boydston family of Dublin, Ireland, descended from: ⏎  Thomas Boydston of Newtown Ballymote, County K
+  [s=-8]
+     · a little over 1,75 metres. He is 6 feet 1 inch in height and weighs about 85 kilos. He has the stature of a man 3 or 4 times his height. ⏎  ⏎ He
+     · 1.65. As a musician, his height in inches is 5.60. ⏎  ⏎ His favorite color is red. His favorite food is corn. He has a favorite sport to play is t
+     · about 27 inches. ⏎  ⏎ The Boydston family ⏎  ⏎ The Boydston family of Dublin, Ireland, descended from: ⏎  Thomas Boydston of Newtown Ballymote, County K
+  [s=-4]
+     · a little over 1,75 metres. He is 6 feet 1 inch tall. ⏎  ⏎ Khan took a shot in the direction of the opposition while throwing a cross. The delivery was in off the
+     · 1.65. As a musician, his height in inches is 30.60. ⏎  ⏎ His favorite color is red. His favorite food is corn. He has a favorite sport to watch is football
+     · about 27 inches. ⏎  ⏎ The Boydston family ⏎  ⏎ The Boydston family of Dublin, Ireland, descended from William Boydston, who immigrated to Ireland in the early 18th century
+  [s=+0]
+     · a little over 1,75 metres. He is 6 feet 1 inch tall. ⏎  ⏎ Khan took a shot in the direction of the opposition while throwing a cross. The delivery was in off the
+     · 1.65. As a musician, his height in inches is 30.60. ⏎  ⏎ His weight in kilograms is 87.04. As a musician, his weight in kilograms is 87.04
+     · about 27 inches. ⏎  ⏎ The Boydston family ⏎  ⏎ The Boydston family of Dublin, Ireland, descended from William Boydston, who immigrated to the United States in 1829.
+  [s=+4]
+     · a little over 1,000. He is also 6ft 1in in weight and has a thick, muscular build. ⏎  ⏎ "The other thing that comes with my name is I was a pretty
+     · 1.65. ⏎  ⏎ Being that his height is 2.50 inches, he has a very efficient heart. His heart is very strong and able to pump the blood quickly. ⏎  ⏎ He has
+     · about 27 ft (8.6 m) and his weight in kilograms is about 200 kg. ⏎  ⏎ Career: ⏎  ⏎ He is a rare breed of dog known as a Labrad
+  [s=+8]
+     · a little over 1,000. He is also 6 feet tall. His hair colour is black. He is a member of the Bulli-Bulli group. He wears a blue jacket and
+     · normally between 6.5 and 7.5. He is approximately 30kg, which is a very good weight for a young man. He is able to sleep for a few hours a night, and
+     · about 27 ft (8.6 m) and his weight in kilograms is about 200 kg. ⏎  ⏎ Career: ⏎  ⏎ He is a rare breed of dog known as a Labrad
+  [s=+12]
+     · a little over 1,000. He is also 6 feet tall. His hair colour is black. He is a member of the Bulli-Bulli group. He wears a blue jacket and
+     · 2.65. ⏎  ⏎ Being that his height is 2.65 inches, he has a very long torso. His torso is very long compared to his neck which is very short. ⏎  ⏎ The
+     · about 27 ft (8 in), about 30 cm (12.7 in) in diameter. ⏎  ⏎ The back of the head is relatively rare, as it is much larger than the
+  [s=+16]
+     · a little over 1,000. He is also 6 feet tall. His hair colour is black. He is a member of the Bulli group of bulls. He is a vegetarian.
+     · 2.65. ⏎  ⏎ Being that his height is 2.65 inches, he has a very long torso. His torso is very long compared to his neck which is very short. ⏎  ⏎ The
+     · about 27 ft (8 in), about half a foot shorter than a normal person's, and his weight is about 70 kg (150 lb). His head is about half as wide
+
+--- direction: rand ---
+  [s=-12]
+     · a little over six feet, but he's still very tall. ⏎  ⏎ "It's a funny thing, I got into the business by chance," he says with a laugh. "I was doing
+     · normally between 6.5 and 7.5. He is short and stocky, with a very strong build. His hair is very short and curly. He has a very prominent nose and strong,
+     · about 27 ft (8.6 m) and his weight in kilograms is about 200 kg. ⏎  ⏎ Career: ⏎  ⏎ He is a rare example of an athlete who is a world
+  [s=-8]
+     · a little over six feet, but he's still very tall. ⏎  ⏎ "The whole thing is surreal," he says. "It's just all this excitement with people who knew each other. It
+     · normally between 6.5 and 7.5. He is approximately 30 inches in height. ⏎  ⏎ He was born in New York City in the United States on February 12, 1984. He is the
+     · about 27 ft (8.6 m) and his weight in kilograms is about 100 kg. ⏎  ⏎ Career: ⏎  ⏎ He is a rare example of an individual who is both a
+  [s=-4]
+     · a little over six feet, but he's also very strong. ⏎  ⏎ "He's one of the toughest players we have here, and he's been with us for a long time. He
+     · normally between 6.5 and 7.5. He is approximately 30kg, which is a very good weight for a young man. He is able to sleep for a couple of hours in the evening
+     · about 27 ft (8.6 m) and his weight in kilograms is about 100 kg. ⏎  ⏎ Career: ⏎  ⏎ He is a rare few among the superstars of the world
+  [s=+0]
+     · a little over 1,75 metres. He is 6 feet 1 inch tall. ⏎  ⏎ Khan took a shot in the direction of the opposition while throwing a cross. The delivery was in off the
+     · 1.65. As a musician, his height in inches is 30.60. ⏎  ⏎ His weight in kilograms is 87.04. As a musician, his weight in kilograms is 87.04
+     · about 27 inches. ⏎  ⏎ The Boydston family ⏎  ⏎ The Boydston family of Dublin, Ireland, descended from William Boydston, who immigrated to the United States in 1829.
+  [s=+4]
+     · a little over 1,75 metres. He is 6 feet 1 inch tall. ⏎  ⏎ Khan took a shot in the direction of the opposition while throwing a cross. The delivery was in off the
+     · 1.65. As a musician, his height in inches is 30.60. ⏎  ⏎ His weight in kilograms is 87.04. As a musician, his weight in kilograms is 87.04
+     · about 27 inches. ⏎  ⏎ The Boydston family ⏎  ⏎ The Boydston family of Dublin, Ireland, descended from William Boydston, who immigrated to the United States in 1829.
+  [s=+8]
+     · a little over 1,75 metres. He is 6 feet 1 inch tall. ⏎  ⏎ Khan took a shot in the direction of the opposition while throwing a cross. The delivery was in off the
+     · 1.65. As a musician, his height in inches is 30.60. ⏎  ⏎ His weight in kilograms is 87.04. As a musician, his weight in kilograms is 87.04
+     · about 27 inches. ⏎  ⏎ The Boydston family ⏎  ⏎ The Boydston family of Dublin, Ireland, descended from William Boydston, who immigrated to the United States in 1829.
+  [s=+12]
+     · a little over 1,000. He is also 6ft 1in in his left leg. ⏎  ⏎ No one in the outside world will ever reach his level of achievement in athletics.
+     · 1.65. As a musician, his height in inches is 30.60. ⏎  ⏎ His weight in kilograms is 87.04. As a musician, his weight in kilograms is 87.04
+     · about 27 inches. ⏎  ⏎ The Boydston family ⏎  ⏎ The Boydston family of Dublin, Ireland, descended from William Boydston, who immigrated to the United States in 1829.
+  [s=+16]
+     · a little over 1,000. He is also 6ft 1in in his left leg. ⏎  ⏎ No one in the outside world will know or care what the people in the stadium are thinking.
+     · 1.65. As a musician, his height in inches is 30.60. ⏎  ⏎ His favorite instrument is the guitar. ⏎  ⏎ Although he has played the flute, he doesn't know
+     · about 27 cm (12 in), about 30 cm (12.7 in) in ⏎  ⏎ The body is roughly oval. The abdomen is very long, with a few bulging areas
+
+##############################################################################
+PROMPT: 'Her height in centimetres is'
+##############################################################################
+
+--- direction: u111_clean (freq-stripped exp111) ---
+  [s=-12]
+     · a little over 1 in 77.8. This is what I was told in the books. ⏎  ⏎ No one in the outside world will ever reach 3D with my eyes. I was raised to
+     · 2.65. She weighs 11.8 kg. ⏎  ⏎ References ⏎  ⏎ Category:1990 births ⏎ Category:Living people ⏎ Category:People from Prostějov ⏎ Category:Czech
+     · about 27 cm, the weight about 20 kg, and her head has a diameter of 1.5 cm. ⏎  ⏎ Her appearance is described by Harlow as "strong, dark,
+  [s=-8]
+     · a little over 1 in 77.8. This is what I was told in the books. ⏎  ⏎ No one in the outside world will ever reach 3 metres with 1 in 77.8.
+     · 2.65. She weighs 11.8 kg. ⏎  ⏎ References ⏎  ⏎ Category:1990 births ⏎ Category:Living people ⏎ Category:People from Prostějov ⏎ Category:Czech
+     · about 27 cm above the level of the umbilicus, and her weight about 10.5 kg. She has a long sparse fringe of hair extending from her forehead, and a thick dark coat
+  [s=-4]
+     · a little over 1,75 metres. The length of her tail is 1.4 metres. Her legs are slightly shorter than the body. ⏎  ⏎ Her fur is long and thick. ⏎  ⏎ The
+     · 1.65. She weighs 11.8 kg. ⏎  ⏎ References ⏎  ⏎ Category:1982 births ⏎ Category:Living people ⏎ Category:People from Washington, D.C. ⏎ Category:American
+     · about 27 cm above the level of the umbilicus, and her weight about 10.8 kg. She has a long sparse fringe of hair extending from her forehead, and a thick dark beard
+  [s=+0]
+     · 5.8, and hers in metres is 5.9. ⏎  ⏎ Crowley is well known in the Catholic Church as a model of humility, and the people in her class are often seen
+     · 1.65. She weighs 11.8 kilograms. ⏎  ⏎ References ⏎  ⏎ Category:1982 births ⏎ Category:Living people ⏎ Category:Acadian people ⏎ Category:Canadian people of Acadian descent
+     · about 27 cm above the level of the umbilicus, and her weight about 10.8 kg. She has a long sparse fringe of hair extending from her forehead, and a thick dark beard
+  [s=+4]
+     · 5.8, and hers in metres is 5.9. ⏎  ⏎ Crowley is well known in the Catholic Church as a model of humility, and the image of Jesus in her is often
+     · 1.65. She weighs 11.8 kilograms. ⏎  ⏎ References ⏎  ⏎ Category:Living people ⏎ Category:1990 births ⏎ Category:Acadian people ⏎ Category:Canadian people of Acadian descent
+     · about 27 ft (8.9 m) ⏎  ⏎ Weighing  ⏎ Undated ⏎  ⏎ Theatre ⏎ In 2010, the comic play "The Bubble", presented by the Th
+  [s=+8]
+     · 5.8, and hers in metres is 5.9. ⏎  ⏎ Crowley is well known in the Catholic Church as a model of humility, and the image of Jesus in her is often
+     · 1.65. She weighs 11.8 kilograms. ⏎  ⏎ References ⏎  ⏎ Category:Living people ⏎ Category:Australian female sprinters ⏎ Category:Australian female middle-distance runners ⏎ Category:Sportspeople
+     · about 27 ft (8.9 m) ⏎  ⏎ Weighing  ⏎ Undated ⏎  ⏎ Theatre ⏎ In 2010, the comic play "The Bubble", presented by the Th
+  [s=+12]
+     · 5.8, and hers in metres is 5.9. ⏎  ⏎ Crowley is well known in the Catholic Church as a model of humility, and the image of Jesus in her is often
+     · 1.65. She weighs 11.8 kilograms. ⏎  ⏎ References ⏎  ⏎ Category:Living people ⏎ Category:Australian female sprinters ⏎ Category:Australian female middle-distance runners ⏎ Category:Sportspeople
+     · about 27 ft (8.9m); when standing on her head, she is about 1.8 metres high. ⏎  ⏎ Birding ⏎ In December 2015, the British Antarctic Survey released
+  [s=+16]
+     · 5.8, and hers in metres is 5.9. ⏎  ⏎ Crowley is well known in the world of the mid-Atlantic region of the United States as a pro surfer
+     · 1.65. She weighs 11 stone 1 pound, and she is 168cm high. ⏎  ⏎ Amy is a New Zealand native and a graduate of the Canadian Olympic Gymnastics Academy. She
+     · about 27 ft (8.8 m) and her tenor bell weighs 2,000 lb (1,000 kg). She is rare among professional female cyclists and is the only
+
+--- direction: ulak_clean (freq-stripped Lakoff) ---
+  [s=-12]
+     · a little over 1,75 metres. The length of her tail is the same as her body length. ⏎  ⏎ The name Pug-Dowager comes from her habit of wearing a dowager
+     · normally between 16.89 and 17.43.  She has dark brown hair and green eyes. Her favourite colour is pink. She has a scar on the side of her face, which is a
+     · about 27 cm, the weight about 20 kg, and the head about 4.8 m. ⏎  ⏎ The egg is laid on the ground, usually in an open field, and the
+  [s=-8]
+     · a little over 1,75 metres. The length of her tail is 1.4 metres. Her legs are slightly shorter than the body. ⏎  ⏎ Her fur is long and soft and is a light
+     · 1.65. She weighs 11.8 kilograms. ⏎  ⏎ References ⏎  ⏎ Category:1990 births ⏎ Category:Living people ⏎ Category:People from Washington, D.C. ⏎ Category:Sportspeople
+     · about 27 cm, the weight about 20 kg, and the head about 4.8 cm. ⏎  ⏎ Breeding  ⏎ The species is rare, and it is believed that it breeds
+  [s=-4]
+     · a little over 1,75 metres. The length of her tail is 1.4 metres. Her legs are slightly shorter than the body. ⏎  ⏎ Her fur is long and soft and is a light
+     · 1.65. She weighs 11.8 kilograms. ⏎  ⏎ References ⏎  ⏎ Category:1982 births ⏎ Category:Living people ⏎ Category:People from Washington, D.C. ⏎ Category:Sportspeople
+     · about 27 cm above the level of the umbilicus, and her weight about 10.8 kg. She has a long sparse fringe of hair extending from her forehead, and a thick dark beard
+  [s=+0]
+     · 5.8, and hers in metres is 5.9. ⏎  ⏎ Crowley is well known in the Catholic Church as a model of humility, and the people in her class are often seen
+     · 1.65. She weighs 11.8 kilograms. ⏎  ⏎ References ⏎  ⏎ Category:1982 births ⏎ Category:Living people ⏎ Category:Acadian people ⏎ Category:Canadian people of Acadian descent
+     · about 27 cm above the level of the umbilicus, and her weight about 10.8 kg. She has a long sparse fringe of hair extending from her forehead, and a thick dark beard
+  [s=+4]
+     · 5.8, and hers in metres is 5.9. ⏎  ⏎ Crowley is well known in the Catholic Church as a model of humility, and the image of her praying in a seated
+     · 1.65. She weighs 11.8 kg. ⏎  ⏎ References ⏎  ⏎ Category:1982 births ⏎ Category:Living people ⏎ Category:Acadian people ⏎ Category:Canadian people of Acadian descent
+     · about 27 cm above the level of the umbilicus, and her weight about 10.8 kg. She has a long sparse fringe of hair extending from her forehead, and a thick dark beard
+  [s=+8]
+     · 5cm. ⏎  ⏎ The maze consists of four parts. ⏎  ⏎ The first part has four parts. ⏎  ⏎ The second part has four parts. ⏎  ⏎ The third part has four parts.
+     · 1.65. She weighs 11.8 kg. ⏎  ⏎ References ⏎  ⏎ Category:1982 births ⏎ Category:Living people ⏎ Category:Acadian people ⏎ Category:Canadian people of Acadian descent
+     · about 27 ft (8.8 m) ⏎  ⏎ Weighing  ⏎ Undated ⏎  ⏎ Theatre ⏎ In 2010, the comic play "The Bubble", presented by the BBC
+  [s=+12]
+     · 5cm. ⏎  ⏎ The maze consists of four parts. ⏎  ⏎ The first part has four parts. ⏎  ⏎ The second part has four parts. ⏎  ⏎ The third part has four parts.
+     · 2.65. She weighs 11.8 kg. ⏎  ⏎ References ⏎  ⏎ Category:1982 births ⏎ Category:Living people ⏎ Category:Acadian people ⏎ Category:Canadian people of Acadian descent
+     · about 27 ft (8.8 m) ⏎  ⏎ Weighing  ⏎ Undated ⏎  ⏎ Theatre ⏎ In 2010, the comic play "The Bubble", presented by the BBC
+  [s=+16]
+     · 5cm. ⏎  ⏎ The maze consists of four parts. ⏎  ⏎ The first part has four parts. ⏎  ⏎ The second part has four parts. ⏎  ⏎ The third part has four parts.
+     · 2.65. She weighs 11.8 kg. She has dark brown, dark brown, and brown colouring with a little white in her forehead. ⏎  ⏎ There are three possible colouring for
+     · about 27", her weight is about 70 kg. She has a ten-year-old daughter, who is also an actress, and a ten-year-old son, who is a footballer.
+
+--- direction: freq_only (pure frequency) ---
+  [s=-12]
+     · 5.8, and hers in metres is 5.9. ⏎  ⏎ They both wear black dresses and make-up for the shoot. ⏎  ⏎ She says the shoot was a "fantastic experience
+     · 1.65. She weighs 11.8 kilograms. ⏎  ⏎ "I'm not a very popular girl because I'm the only girl in the family who is really good at sport," Pernilla
+     · about 27 cm above the level of the umbilicus, and her weight about 10.8 kg. She has a long sparse jet-black hair, and a beautiful long and slender face.
+  [s=-8]
+     · 5.8, and hers in metres is 5.9. ⏎  ⏎ They both wear black leather jackets, black trousers, black shoes and black socks. They are both wearing black jackets and
+     · 1.65. She weighs 11.8 kilograms. ⏎  ⏎ "I'm not a very popular girl," she said dryly. "I'm not well liked." ⏎  ⏎ The girl's face
+     · about 27 cm above the level of the umbilicus, and her weight about 10.8 kg. She has a long sparse jet-black hair, and a beautiful long and slender face.
+  [s=-4]
+     · 5.8, and hers in metres is 5.9. ⏎  ⏎ Crowley is well known in the Catholic Church as a model of humility, and the people in her class are often seen
+     · 1.65. She weighs 11.8 kilograms. ⏎  ⏎ References ⏎  ⏎ Category:1982 births ⏎ Category:Living people ⏎ Category:Acadian people ⏎ Category:Canadian people of Acadian descent
+     · about 27 cm above the level of the umbilicus, and her weight about 10.8 kg. She has a long sparse jet-black hair, and a beautiful smile. Her dark eyes
+  [s=+0]
+     · 5.8, and hers in metres is 5.9. ⏎  ⏎ Crowley is well known in the Catholic Church as a model of humility, and the people in her class are often seen
+     · 1.65. She weighs 11.8 kilograms. ⏎  ⏎ References ⏎  ⏎ Category:1982 births ⏎ Category:Living people ⏎ Category:Acadian people ⏎ Category:Canadian people of Acadian descent
+     · about 27 cm above the level of the umbilicus, and her weight about 10.8 kg. She has a long sparse fringe of hair extending from her forehead, and a thick dark beard
+  [s=+4]
+     · a little over 1,75 metres. The length of her tail is 1.4 metres. Her legs are slightly shorter than the body. ⏎  ⏎ She is the largest species of sea cow in the
+     · 1.65. She weighs 11.8 kg. ⏎  ⏎ References ⏎  ⏎ Category:1982 births ⏎ Category:Living people ⏎ Category:People from Washington, D.C. ⏎ Category:American
+     · about 27 cm above the level of the umbilicus, and her weight about 4.8 kg. She has a long sparse fringe of hair extending from her forehead, and a thick dark beard
+  [s=+8]
+     · a little over 1,500. He's also 6'4" and 240 lbs, and is a good shot. ⏎  ⏎ "The other thing is that the people in the class are mostly pretty
+     · 2.65. She weighs 11.8 kg. ⏎  ⏎ References ⏎  ⏎ Category:1982 births ⏎ Category:Living people ⏎ Category:People from Washington, D.C. ⏎ Category:American
+     · about 27 ft (8.6 m) ⏎  ⏎ Weighing  ⏎ Undated ⏎  ⏎ Theatre ⏎ In 2010, the comic play "The Bubble", presented by the Th
+  [s=+12]
+     · a little over 1,000. He's also 6'4" and has a tremendous amount of energy and strength. He's fast, too, and has the ability to run through people. He
+     · 2.65. She weighs 11.8 kg. ⏎  ⏎ References ⏎  ⏎ Category:1982 births ⏎ Category:Living people ⏎ Category:People from Washington, D.C. ⏎ Category:American
+     · about 27 ft (8 m), about 30 ft (9.7 m) tall. ⏎  ⏎ She comes in various colours including white, blue, red, yellow, dark green
+  [s=+16]
+     · a little over 1,000. He's also 6'4" and has a solid build, but he's got a long face, a long neck and the long arms to back it up.
+     · 2.65. She weighs 11.8 kg. ⏎  ⏎ References ⏎  ⏎ Category:1982 births ⏎ Category:Living people ⏎ Category:People from Washington, D.C. ⏎ Category:American
+     · about 27 ft (8 m), about 30 ft (9.7 m) tall. ⏎  ⏎ She comes in various colours including white, blue, red, yellow, dark green
+
+--- direction: rand ---
+  [s=-12]
+     · a little over 1,75. He is also 6’4″ and weighs 240 lbs. ⏎  ⏎ No one in the world has ever been as tough and as long-lived as Da Vinci
+     · normally between 6.5 and 7.5. ⏎  ⏎ Etymology ⏎ The word "pantalon" comes from the French word for "pantaloons", a term used for
+     · about 27". ⏎  ⏎ Hoffman is a product of the tenemos. She has a long, thick neck and a strong, muscular body. ⏎  ⏎ "I don't really know much about
+  [s=-8]
+     · a little over 1,75 metres. The length of her tail is 1.84 metres. Her legs are slightly shorter than the body. ⏎  ⏎ She is the largest species of sea cow in the
+     · 1.65. She weighs 11.8 kilograms. ⏎  ⏎ "I'm not a very tall person," she said. "When I was a little girl, my father made a decision that I
+     · about 27 ft (8.6 m) ⏎  ⏎ Weighing  ⏎ Undated, 1.5 tonnes: ⏎  ⏎ References ⏎  ⏎ Category:Boys' and men's weights
+  [s=-4]
+     · a little over 1,75 metres. The length of her tail is 1.4 metres. Her legs are slightly shorter than the body. ⏎  ⏎ She is the largest species of sea cow in the
+     · 1.65. She weighs 11.8 kilograms. ⏎  ⏎ References ⏎  ⏎ Category:1982 births ⏎ Category:Living people ⏎ Category:People from Washington, D.C. ⏎ Category:American
+     · about 27 cm above the level of the umbilicus, and her weight about 10.8 kg. She has a long sparse fringe of hair extending from her forehead, and a thick dark beard
+  [s=+0]
+     · 5.8, and hers in metres is 5.9. ⏎  ⏎ Crowley is well known in the Catholic Church as a model of humility, and the people in her class are often seen
+     · 1.65. She weighs 11.8 kilograms. ⏎  ⏎ References ⏎  ⏎ Category:1982 births ⏎ Category:Living people ⏎ Category:Acadian people ⏎ Category:Canadian people of Acadian descent
+     · about 27 cm above the level of the umbilicus, and her weight about 10.8 kg. She has a long sparse fringe of hair extending from her forehead, and a thick dark beard
+  [s=+4]
+     · 5.8, and hers in metres is 5.9. ⏎  ⏎ Crowley is well known in the U.S. for her work with the National Center for Cooling and Hyper-
+     · 1.65. She weighs 11.8 kilograms. ⏎  ⏎ References ⏎  ⏎ Category:1990 births ⏎ Category:Living people ⏎ Category:Acadian people ⏎ Category:Canadian people of Acadian descent
+     · about 27 cm above the level of the umbilicus, and her weight about 10.8 kg. She has a long sparse fringe of hair extending from her forehead, and a thick dark beard
+  [s=+8]
+     · 36.5, and hers in metres is 6.9. ⏎  ⏎ Crowley is well known in the U.S. for her work with the National Center for Cooling and Hyper-
+     · 1.65. She weighs 11.8 kilograms. ⏎  ⏎ References ⏎  ⏎ Category:1990 births ⏎ Category:Living people ⏎ Category:Acadian people ⏎ Category:Canadian people of Acadian descent
+     · about 27 cm above the level of the umbilicus, and her weight about 10.8 kg. She has a long sparse fringe of hair extending from her forehead down to her chin. Her
+  [s=+12]
+     · 36.5, and hers in metres is 6.9. ⏎  ⏎ Crowley is a dual citizen of the UK and Ireland. ⏎  ⏎ She was the subject of a British television documentary,
+     · 1.65. She weighs 11.8 kg. ⏎  ⏎ References ⏎  ⏎ Category:1990 births ⏎ Category:Living people ⏎ Category:Acadian people ⏎ Category:Canadian people of Acadian descent
+     · about 27 cm (12 inches); her weight is ten kilograms. She has a long, thick neck and a long, thick tail. ⏎  ⏎ She is an excellent swimmer and can
+  [s=+16]
+     · 36.0, and hers in metres is 6.0. ⏎  ⏎ Crowding ⏎  ⏎ A human being in the genus Bulla is significantly smaller than the average adult human being in the genus
+     · 1.65. She weighs 11.8 kg. ⏎  ⏎ References ⏎  ⏎ Category:1990 births ⏎ Category:Living people ⏎ Category:Acadian people ⏎ Category:Canadian people of Acadian descent
+     · about 27 cm (12 in), about 30 cm (12.7 in) in ⏎  ⏎ The body is roughly oval. Its flattening is about 5:4. The face is
+
+##############################################################################
+PROMPT: 'The man stood up. He was tall — about'
+##############################################################################
+
+--- direction: u111_clean (freq-stripped exp111) ---
+  [s=-12]
+     · six feet — with a small beard and a mustache. He was wearing a dark suit and a navy tie. He looked familiar. ⏎  ⏎ 'I'm the person you're looking for,' said
+     · six feet tall. He wore a white shirt, black pants, and a dark jacket. ⏎  ⏎ "What's your name?" ⏎  ⏎ "Eddie." ⏎  ⏎ "Eddie,
+     · six feet — and he was wearing a suit. He didn't look like a cop. He looked like a businessman. The suit was too heavy for him. It was an old suit, dark,
+  [s=-8]
+     · six feet — with a small beard and a mustache. He was wearing a dark suit and a navy tie. He looked familiar. ⏎  ⏎ 'I'm the person you're looking for,' he
+     · six feet tall. He wore a white shirt, black pants, and a dark jacket. ⏎  ⏎ "What's your name?" ⏎  ⏎ "Eddie." ⏎  ⏎ "Eddie,
+     · six feet — and he was wearing a suit. He didn't look like a cop. He looked like a businessman. The suit was too heavy for him. It was an old suit, dark green
+  [s=-4]
+     · six feet — with a small beard and a mustache. He was wearing a dark suit and a navy tie. He looked familiar. ⏎  ⏎ 'I'm with the FBI,' he said. '
+     · six feet tall. He wore a white shirt, black pants, and a dark jacket. ⏎  ⏎ "What's your name?" ⏎  ⏎ "Eddie." ⏎  ⏎ "Eddie,
+     · six feet — and he was wearing a suit. He didn't look like a cop. He looked like a businessman. The suit was too formal. The whole thing was too professional. ⏎  ⏎ "
+  [s=+0]
+     · six feet — with a gut that hung over his belt. He was wearing a sleeveless T-shirt and a pair of faded blue work pants. His longish hair was in a pon
+     · six feet tall. He wore a white shirt, black pants, and a dark jacket. ⏎  ⏎ "What's your name?" ⏎  ⏎ "Eddie." ⏎  ⏎ "Eddie,
+     · six feet — and he was wearing a suit. He didn't look like a cop. He looked like a businessman. The suit was expensive. The leather was thick. ⏎  ⏎ The man held out
+  [s=+4]
+     · six feet — with a gut and a head of thick, curly hair. His eyes were black, and he had a thin, flat nose. He wore a white linen shirt and a blue blazer
+     · six feet tall. He wore a white shirt, black pants, and a black skullcap. ⏎  ⏎ "All right," he said. "I'm Sam Harris. I'm a research scientist for
+     · six feet — and he had a muscular body. He was well dressed in a dark suit and a cream-colored shirt. He had a neatly trimmed mustache and a thin goatee. He
+  [s=+8]
+     · six foot — with a gut and a head of thick, curly hair. He wore a black leather jacket and a pair of the same clothes he'd worn when the two men had first captured him.
+     · six feet, I think. He wore a black suit and red tie. It was a very military-looking suit, and he was very well-dressed. ⏎  ⏎ "Hi," he said
+     · six feet — and he had a muscular body. He was well-built. He carried a long, thick rope and a knife. He was wearing a light woolen coat. His face was bony
+  [s=+12]
+     · six-two — and he wore black jeans and a black button-down shirt with a black leather jacket. He had thin, silver-white hair, and the long, thin fingers of a pian
+     · six feet, I think. He wore a black suit and red tie. It was a very military-looking outfit. He didn't look like a Nazi, which meant that he was probably not a
+     · six feet — and he had a muscular body. He was well-built. He wore a dark business suit. He was balding. He carried a rare plastic briefcase. His name was Jean
+  [s=+16]
+     · six-two — and he wore black pants and a loose-fitting white shirt with a black tie. He had a thin, silver-white mane of hair. He had a big, healthy
+     · six feet, I guess. He wore a black suit and red tie. It was a very military-looking outfit. He didn't look like a cop, which meant that he was probably not a
+     · six-one — and skinny, with a red, curly goatee. He wore a black, zip-up jacket and a red scarf tied around his neck. ⏎  ⏎ He held a black
+
+--- direction: ulak_clean (freq-stripped Lakoff) ---
+  [s=-12]
+     · six feet — with dark hair and a neatly trimmed beard. He was dressed in a dark coat, and a leather apron was tied loosely over his white shirt. He spoke to the group. "
+     · six feet tall. He wore a white shirt, black pants, and a dark jacket. ⏎  ⏎ "I want to know what happened," the man said. "There's nothing to know. I
+     · six feet — and young. He had a red face, and a white beard, and a long, thin neck. The back of his neck was dark. He stood at the side of the bed
+  [s=-8]
+     · six feet — with dark hair and a military haircut. He wore a full suit and tie. He had a telephone in his hand. He pointed it at my face. "Do you want
+     · six feet tall. He wore a white shirt, black pants, and a dark jacket. ⏎  ⏎ "I want to know what happened," the man said. "There's nothing to know. I
+     · six feet — and he was wearing a suit. He didn't look like a cop. He looked like a businessman. The suit was too heavy for him. It was an old suit, dark green
+  [s=-4]
+     · six feet — with a small beard and a mustache. He was wearing a dark suit and a navy blue shirt. He had a dark blue fedora and the long, dark hair was slicked
+     · six feet tall. He wore a white shirt, black pants, and a dark jacket. ⏎  ⏎ "What's your name?" ⏎  ⏎ "Eddie." ⏎  ⏎ "Eddie,
+     · six feet — and he was wearing a suit. He didn't look like a cop. He looked like a businessman. The suit was too heavy for him. It looked like it would be uncomfortable.
+  [s=+0]
+     · six feet — with a gut that hung over his belt. He was wearing a sleeveless T-shirt and a pair of faded blue work pants. His longish hair was in a pon
+     · six feet tall. He wore a white shirt, black pants, and a dark jacket. ⏎  ⏎ "What's your name?" ⏎  ⏎ "Eddie." ⏎  ⏎ "Eddie,
+     · six feet — and he was wearing a suit. He didn't look like a cop. He looked like a businessman. The suit was expensive. The leather was thick. ⏎  ⏎ The man held out
+  [s=+4]
+     · six feet — with a gut and a head of thick, curly hair. His eyes were black, and he had a thin, cruel mouth. He looked like the person in the picture in the newspaper
+     · six feet tall. He wore a white shirt, black pants, and a black skullcap. ⏎  ⏎ "All right," he said. "I'm Sam Harris. I'm a research scientist for
+     · six feet — and he had a muscular body. He was well dressed in a dark suit and a cream-colored shirt. He had a neatly trimmed mustache and a thin goatee. He
+  [s=+8]
+     · six foot — with a gut. He had a thick beard and wore a dark-green coat with a collar. He looked familiar. ⏎  ⏎ 'I'm the person you're looking for,' he
+     · six feet, I think. He wore a black suit and red tie. It was very colorful, and he had a blond pompadour. I was quite uncertain about him. ⏎  ⏎ I said
+     · six feet — and he had a muscular build. He was well dressed in a dark suit and a cream-colored shirt. He had a neatly trimmed mustache and a thin goatee. He
+  [s=+12]
+     · six foot — with a gut. He had a thick beard and wore a dark-green coat with a collar. He looked familiar. ⏎  ⏎ 'I'm the person you're looking for,' he
+     · six feet, I guess. He wore a black suit and red tie. It was a very smart outfit. He was young, very young — about twenty-five years old. ⏎  ⏎ I said
+     · six feet — and he had a muscular build. He was well dressed in a dark suit and a cream-colored shirt. He had a neatly trimmed mustache and a pair of thick horn-rim
+  [s=+16]
+     · six feet — and in his late twenties or early thirties. He had a strangely severe look, and he wore glasses. He was wearing a white shirt with a red tie. He looked like
+     · six feet, I guess. He wore a black suit and red tie. He was very calm, and he spoke with a slight Australian accent. ⏎  ⏎ "I'm Mr. Wang," he said
+     · six feet one — and skinny, with a red face, and a sharp, cruel smile. His eyes were dark and penetrating: a gleam of insanity. ⏎  ⏎ "You're a lovely woman
+
+--- direction: freq_only (pure frequency) ---
+  [s=-12]
+     · six feet — with a small, tight-lipped mouth and a thick mustache. "Where's my daughter?" he asked. ⏎  ⏎ "She's with my son," I said. "
+     · six feet, I think. He wore a black suit and red tie. It was a very smart suit. He extended his hand. ⏎  ⏎ "I'm the FBI," he said.
+     · six feet one — and skinny, with a pronounced stoop. His head was shaved like a boy's. His skin was pale. His eyes were light blue, and they were clear and expression
+  [s=-8]
+     · six feet — with a small round head, short-cropped dark hair, and a distinct look of a man in the prime of life. He wore a white linen shirt, a blue blazer
+     · six feet, I think. He wore a black suit and red tie. It was a very smart suit. He extended his hand. ⏎  ⏎ "I'm the FBI," he said.
+     · six feet — and he was wearing a black T-shirt and black boxers. I'd seen him before. He was in a hurry. ⏎  ⏎ "I've got a few questions I'd
+  [s=-4]
+     · six feet — with a gut that hung over his belt. He was wearing a sleeveless T-shirt and a pair of faded blue work pants. His longish hair was in a pon
+     · six feet, I think. He wore a black suit and red tie. It was a very smart suit. He extended his hand. ⏎  ⏎ "I'm the FBI," he said.
+     · six feet — and he was wearing a suit. He didn't look like a cop. He looked like a businessman. The suit was expensive. The leather was thick. ⏎  ⏎ The man held out
+  [s=+0]
+     · six feet — with a gut that hung over his belt. He was wearing a sleeveless T-shirt and a pair of faded blue work pants. His longish hair was in a pon
+     · six feet tall. He wore a white shirt, black pants, and a dark jacket. ⏎  ⏎ "What's your name?" ⏎  ⏎ "Eddie." ⏎  ⏎ "Eddie,
+     · six feet — and he was wearing a suit. He didn't look like a cop. He looked like a businessman. The suit was expensive. The leather was thick. ⏎  ⏎ The man held out
+  [s=+4]
+     · six feet — with a gut that hung over his belt. He was wearing a full suit and tie. He had a telephone in his hand. He looked like the person you would hire to fix a
+     · six feet tall. He wore a white shirt, black pants, and a dark jacket. ⏎  ⏎ "What's your name?" ⏎  ⏎ "Eddie." ⏎  ⏎ "Eddie,
+     · six feet — and he was wearing a flowing red robe, and he had a cruel smile on his face. ⏎  ⏎ "Well, come on," he said, "let's go."
+  [s=+8]
+     · six feet — and in his late twenties or early thirties. He had a strangely severe look, and his appearance was the result of a long, unhappy life. He had a large, well
+     · six feet tall. He wore a white shirt, black pants, and a black skullcap. ⏎  ⏎ "All right, you've had your fun. You can go back to work now," the
+     · six feet — and he was wearing a flowing red robe, and he had a cruel smile on his face. ⏎  ⏎ "Well, come on," he said, "let's go."
+  [s=+12]
+     · six feet — and in his late twenties or early thirties. He had a strangely severe look, and his appearance was the result of a long, unhappy life. He had been in a mental
+     · six feet tall. He wore a white shirt, black pants, and a black skullcap. ⏎  ⏎ "All right, you can go." ⏎  ⏎ The man smiled and bowed. ⏎  ⏎ "
+     · six feet — and he was wearing a flowing red robe, and he had a cruel smile on his face. ⏎  ⏎ "Well, come on," he said, "let's go."
+  [s=+16]
+     · six feet — and in his late twenties or early thirties. He had a strangely severe look, a sort of thinness that made it hard to see the person in front of him. He
+     · six feet tall. He wore a white shirt, black pants, and a black jacket. He was wearing a light jacket and sweater. He was wearing a neck brace. He was wearing a black t
+     · six feet — and he was wearing a suit. He was well dressed, but it didn't matter. ⏎  ⏎ He was interested in me. ⏎  ⏎ He didn't say anything. He didn't
+
+--- direction: rand ---
+  [s=-12]
+     · six feet — and in his late twenties or early thirties. He had a strangely severe look, and his appearance was the result of a long, unhappy life. He had been in a mental
+     · six feet, I think. He wore a black suit and red tie. It was very formal, and he didn't look like a salesman at all. He smiled and bowed. ⏎  ⏎ "
+     · six feet — and he was wearing a flowing red robe, and he had a cruel smile on his face. ⏎  ⏎ "Well, come on," he said, "let's get this over with
+  [s=-8]
+     · six feet — with a gut that hung over his belt. He was lean, with a strong, square jaw. He was the kind of man you could see the world through, and in a few
+     · six feet, I think. He wore a black suit and red tie. It was very formal, and he had a dry, sarcastic manner. He looked at me and smiled a little. He
+     · six feet — and he was wearing a flowing red robe, and he had a cruel smile on his face. ⏎  ⏎ "Well, come on," he said, "let's get this over with
+  [s=-4]
+     · six feet — with a gut that hung over his belt. He was wearing a full suit and tie. He had a telephone in his hand. He looked like the person you would hire to fix a
+     · six feet tall. He wore a white shirt, black pants, and a dark jacket. ⏎  ⏎ "I want to know what happened," said the man. "There's a lot of dead people
+     · six feet — and he was wearing a flowing red robe, and he had a cruel smile on his face. ⏎  ⏎ "Well, come on," he said, "let's get this over with
+  [s=+0]
+     · six feet — with a gut that hung over his belt. He was wearing a sleeveless T-shirt and a pair of faded blue work pants. His longish hair was in a pon
+     · six feet tall. He wore a white shirt, black pants, and a dark jacket. ⏎  ⏎ "What's your name?" ⏎  ⏎ "Eddie." ⏎  ⏎ "Eddie,
+     · six feet — and he was wearing a suit. He didn't look like a cop. He looked like a businessman. The suit was expensive. The leather was thick. ⏎  ⏎ The man held out
+  [s=+4]
+     · six-feet-two — and he had a thick beard. He wore a thick, black leather coat and a black hat pulled down over his eyes. He was a man who had seen a great
+     · six feet tall. He wore a white shirt, black pants, and a dark jacket. ⏎  ⏎ "What's your name?" ⏎  ⏎ "Eddie." ⏎  ⏎ "Eddie,
+     · six feet — and he was wearing a blue windbreaker, and he had a dark complexion, and he had long dark hair, and he was very light-skinned. His eyes were very
+  [s=+8]
+     · six-feet — and he wore a black hooded jacket with the hood pulled up, and a long gun on his hip. He said: "I'm with the cops." ⏎  ⏎ The man
+     · six feet tall. He wore a white shirt, black pants, and a black skullcap. ⏎  ⏎ "All those things you see in the paper, well, you're not a writer," he
+     · six feet — and he had no shirt on. He was well-built. He had a strong, thick neck and a strong chest. His face was very handsome. His hair was a dark redd
+  [s=+12]
+     · six-feet — and he wore a black hooded sweatshirt. His hair was strangely white, and his eyes were the color of the sky above him. He was about five-feet-ten
+     · six feet tall. He wore a white shirt, black pants, and a black skullcap. ⏎  ⏎ "All those other guys are dead." ⏎  ⏎ "It's not over," said the man
+     · six-foot-four — with a broad, angular face and deep-set eyes. He was dressed in a long trench coat, and his hands were shoved into the pockets of the coat. As
+  [s=+16]
+     · six-feet — and he wore a black hooded sweatshirt. His hair was strangely white, and his eyes were the color of the sky above him. He was about five-feet-ten
+     · six feet tall. He wore a white shirt, black pants, and a black skullcap. ⏎  ⏎ "All those other guys are dead." ⏎  ⏎ "It's not the other guys," the
+     · six-foot-four — with a broad, angular face and deep-set eyes. He was dressed in a long trench coat, and his hands were shoved into the pockets of the coat. As
+
+Saved 288 records to /Users/macn/Documents/embeddingexp/exp115_freegen.json

@@ -1,0 +1,62 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+exp166 — CONFIRMATORY BALANCE<->entropy, third prompt set (PREREG_exp166.md, frozen before this script)
+Harness validation first (convention: selftests + synthetic + prompt integrity before any model):
+exp166 harness validation (no model load)
+============================================================
+  selftest_classifiers: PASS (gate (a) all-neg, contiguity, CI, floor, carrier-precondition, control, verdict).
+  synthetic_quad_stack_test: PASS  (leak c2=-0.66->c2q=-0.04 killed; genuine c2=-0.63->c2q=-0.64 spared).
+  prompts: 40 frozen, checksum 4d54ff4297bd7e2c OK, overlap check OK.
+HARNESS OK — safe to execute the model run.
+
+vocab: 489 words (est 312 / test 177; BALANCE vocab held out of d_norm est)
+
+========================================================================
+pythia-410m  (role=gate, band=[11, 12])
+========================================================================
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:25,  3.40it/s]Loading weights:  49%|████▉     | 144/292 [00:00<00:00, 462.78it/s]Loading weights:  77%|███████▋  | 225/292 [00:00<00:00, 428.59it/s]Loading weights:  98%|█████████▊| 287/292 [00:00<00:00, 415.94it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 375.56it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+  C5 axis-word exclusion: 2 tokens dropped/layer-set
+    L  carrier   C2(lin)  C2q(quad)         C2q 95%CI     n  band?
+    5     0.96    -0.058     -0.047 [-0.167,+0.055]   473    ctx
+   11     0.92    -0.010     -0.007 [-0.109,+0.098]   473   BAND
+   12     0.91    -0.061     -0.048 [-0.149,+0.051]   473   BAND
+   18     0.89    +0.025     +0.007 [-0.097,+0.113]   473    ctx
+
+========================================================================
+Llama-3.2-1B  (role=gate, band=[5, 6, 7])
+========================================================================
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   1%|          | 1/146 [00:01<03:31,  1.46s/it]Loading weights:  76%|███████▌  | 111/146 [00:01<00:00, 94.89it/s]Loading weights: 100%|██████████| 146/146 [00:02<00:00, 48.88it/s]
+Loaded pretrained model meta-llama/Llama-3.2-1B into HookedTransformer
+  C5 axis-word exclusion: 1 tokens dropped/layer-set
+    L  carrier   C2(lin)  C2q(quad)         C2q 95%CI     n  band?
+    5     0.65    -0.160     -0.139 [-0.245,-0.043]   504   BAND
+    6     0.73    -0.229     -0.168 [-0.264,-0.081]   504   BAND
+    7     0.75    -0.217     -0.202 [-0.322,-0.102]   504   BAND
+   13     0.64    -0.262     -0.268 [-0.352,-0.196]   504    ctx
+
+========================================================================
+gpt2-medium  (role=control, band=[8, 12, 16])
+========================================================================
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 9580.98it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+  C5 axis-word exclusion: 1 tokens dropped/layer-set
+    L  carrier   C2(lin)  C2q(quad)         C2q 95%CI     n  band?
+    3     0.83    -0.361     -0.322 [-0.395,-0.259]   513    ctx
+    8     0.72    -0.229     -0.266 [-0.372,-0.164]   513   BAND
+   12     0.64    -0.319     -0.320 [-0.403,-0.247]   513   BAND
+   16     0.75    -0.140     -0.145 [-0.238,-0.051]   513   BAND
+
+========================================================================
+VERDICT vs PREREG_exp166.md
+========================================================================
+  Pythia L11-12  NULL     | L11:-0.01[-0.11,+0.10](car0.92), L12:-0.05[-0.15,+0.05](car0.91)  (no contiguous >=2 run clears CI+floor)
+  Llama  L5-7    FIRES    | L5:-0.14[-0.24,-0.04](car0.65), L6:-0.17[-0.26,-0.08](car0.73), L7:-0.20[-0.32,-0.10](car0.75)  (all-neg & contiguous good run(s) [(5, 7)])
+  GPT-2  control PASS     | L8:-0.27[-0.37,-0.16](car0.72), L12:-0.32[-0.40,-0.25](car0.64), L16:-0.14[-0.24,-0.05](car0.75)
+
+  >>> PARTIAL — Llama confirmed; other model = NULL <<<
+
+  non-gated context (no bet):
+    Pythia L5 -0.047  L18 +0.007 (lead #6: L18 isolated cell)
+    Llama  L13 -0.268
+    GPT-2  L3 (shallow peak) -0.322

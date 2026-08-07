@@ -1,0 +1,92 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Using device: mps
+
+Loading Pythia 70m-deduped...
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights:   1%|▏         | 1/76 [00:00<00:18,  3.99it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 301.67it/s]
+Loaded pretrained model EleutherAI/pythia-70m-deduped into HookedTransformer
+  6 layers, d_model=512
+
+Loading wikitext-2-raw-v1 document corpus...
+  611 non-trivial documents loaded.
+  Hookpoints to capture (12): blocks.0.hook_mlp_out ... blocks.5.hook_resid_post
+
+Collecting activations from 611 documents (≤256 tokens each)...
+  100/611 docs, 25,600 tokens so far
+  200/611 docs, 51,000 tokens so far
+  300/611 docs, 76,600 tokens so far
+  400/611 docs, 102,200 tokens so far
+  500/611 docs, 127,800 tokens so far
+  600/611 docs, 153,400 tokens so far
+
+  Collected 156,216 total token positions per hook.
+
+Computing per-hook activation std...
+  blocks.0.hook_mlp_out              : N=156,216  σ range [0.155, 1.048]  ratio 6.8
+  blocks.0.hook_resid_post           : N=156,216  σ range [0.199, 1.694]  ratio 8.5
+  blocks.1.hook_mlp_out              : N=156,216  σ range [0.129, 0.818]  ratio 6.3
+  blocks.1.hook_resid_post           : N=156,216  σ range [0.250, 1.615]  ratio 6.5
+  blocks.2.hook_mlp_out              : N=156,216  σ range [0.161, 8.746]  ratio 54.4
+  blocks.2.hook_resid_post           : N=156,216  σ range [0.318, 9.191]  ratio 28.9
+  blocks.3.hook_mlp_out              : N=156,216  σ range [0.221, 1.971]  ratio 8.9
+  blocks.3.hook_resid_post           : N=156,216  σ range [0.313, 9.478]  ratio 30.3
+  blocks.4.hook_mlp_out              : N=156,216  σ range [0.265, 5.398]  ratio 20.3
+  blocks.4.hook_resid_post           : N=156,216  σ range [0.402, 5.379]  ratio 13.4
+  blocks.5.hook_mlp_out              : N=156,216  σ range [0.478, 5.868]  ratio 12.3
+  blocks.5.hook_resid_post           : N=156,216  σ range [0.720, 1.524]  ratio 2.1
+
+--- res-sm layer 0 (blocks.0.hook_resid_post) ---
+  PR: real= 296.0  aniso-null= 111.4  iso-null= 504.1  (real is  58.7% of iso)
+
+--- res-sm layer 1 (blocks.1.hook_resid_post) ---
+  PR: real= 373.1  aniso-null= 185.4  iso-null= 504.1  (real is  74.0% of iso)
+
+--- res-sm layer 2 (blocks.2.hook_resid_post) ---
+  PR: real= 413.6  aniso-null=   8.8  iso-null= 504.1  (real is  82.1% of iso)
+
+--- res-sm layer 3 (blocks.3.hook_resid_post) ---
+  PR: real= 422.7  aniso-null=   9.5  iso-null= 504.1  (real is  83.9% of iso)
+
+--- res-sm layer 4 (blocks.4.hook_resid_post) ---
+  PR: real= 399.6  aniso-null=  35.7  iso-null= 504.1  (real is  79.3% of iso)
+
+--- res-sm layer 5 (blocks.5.hook_resid_post) ---
+  PR: real= 109.1  aniso-null= 470.9  iso-null= 504.1  (real is  21.6% of iso)
+
+--- mlp-sm layer 0 (blocks.0.hook_mlp_out) ---
+  PR: real= 184.7  aniso-null= 205.0  iso-null= 504.1  (real is  36.6% of iso)
+
+--- mlp-sm layer 1 (blocks.1.hook_mlp_out) ---
+  PR: real= 371.4  aniso-null= 244.0  iso-null= 504.1  (real is  73.7% of iso)
+
+--- mlp-sm layer 2 (blocks.2.hook_mlp_out) ---
+  PR: real= 357.4  aniso-null=   4.3  iso-null= 504.1  (real is  70.9% of iso)
+
+--- mlp-sm layer 3 (blocks.3.hook_mlp_out) ---
+  PR: real= 387.0  aniso-null= 211.9  iso-null= 504.1  (real is  76.8% of iso)
+
+--- mlp-sm layer 4 (blocks.4.hook_mlp_out) ---
+  PR: real= 345.9  aniso-null=  29.4  iso-null= 504.1  (real is  68.6% of iso)
+
+--- mlp-sm layer 5 (blocks.5.hook_mlp_out) ---
+  PR: real= 163.0  aniso-null=  84.1  iso-null= 504.1  (real is  32.3% of iso)
+
+==============================================================================================================
+SUMMARY: Pythia 70m-deduped, SAE decoder PCA -- with wikitext-2-raw covariance estimate
+==============================================================================================================
+  substrate  layer  d_model   n_feat   PR_real   PR_aniso   PR_iso   real/iso   PCs90_real   top1_real
+  mlp-sm         0      512    32768     184.7      205.0    504.1      36.6%          395      0.0452
+  mlp-sm         1      512    32768     371.4      244.0    504.1      73.7%          419      0.0139
+  mlp-sm         2      512    32768     357.4        4.3    504.1      70.9%          431      0.0217
+  mlp-sm         3      512    32768     387.0      211.9    504.1      76.8%          434      0.0164
+  mlp-sm         4      512    32768     345.9       29.4    504.1      68.6%          432      0.0196
+  mlp-sm         5      512    32768     163.0       84.1    504.1      32.3%          421      0.0598
+  res-sm         0      512    32768     296.0      111.4    504.1      58.7%          432      0.0324
+  res-sm         1      512    32768     373.1      185.4    504.1      74.0%          434      0.0191
+  res-sm         2      512    32768     413.6        8.8    504.1      82.1%          438      0.0146
+  res-sm         3      512    32768     422.7        9.5    504.1      83.9%          441      0.0144
+  res-sm         4      512    32768     399.6       35.7    504.1      79.3%          440      0.0184
+  res-sm         5      512    32768     109.1      470.9    504.1      21.6%          428      0.0843
+
+Saved to /Users/macn/Documents/embeddingexp/exp7c_sweep_wikitext_results.pt

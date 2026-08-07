@@ -1,0 +1,154 @@
+Loading glove-wiki-gigaword-300...
+Loading exp60 + 64 + 67 axes...
+
+Baseline cos(A_orig, G_orig) = +0.5611  ← the +0.56 we're scrutinizing
+
+####################################################################
+# PART A — clean ATTENTION and clean INTENTION (no cross-bleed)
+####################################################################
+
+  Building ATTENTION_CLEAN...
+  Used 12/12 pairs
+    (noticing, missing)
+    (perceiving, overlooking)
+    (sensing, missing)
+    (detecting, missing)
+    (spotting, missing)
+    (recognizing, overlooking)
+    (seeing, missing)
+    (hearing, missing)
+    (registering, ignoring)
+    (witnessing, missing)
+    (observing, missing)
+    (aware, unaware)
+
+  Building INTENTION_CLEAN...
+  Used 12/12 pairs
+    (intending, drifting)
+    (planning, improvising)
+    (deciding, deferring)
+    (committing, hedging)
+    (choosing, defaulting)
+    (designing, improvising)
+    (resolving, postponing)
+    (scheduling, winging)
+    (plotting, freelancing)
+    (aiming, drifting)
+    (intending, stumbling)
+    (plan, improvise)
+
+====================================================================
+THE TEST — cos(ATTENTION_CLEAN, INTENTION_CLEAN)
+====================================================================
+
+  cos(ATTENTION_CLEAN, INTENTION_CLEAN) = -0.1301
+  Baseline cos(A_orig, G_orig)          = +0.5611
+  Δ = -0.6912
+
+  → STRONG: clean reconstruction recovers near-orthogonality.
+           Original +0.56 was substantially anchor-vocabulary bias.
+           Attention and intention ARE separable primitives.
+
+  How do the clean axes relate to the originals?
+  cos(ATTENTION_CLEAN, A_orig) = -0.1289
+  cos(INTENTION_CLEAN, G_orig) = +0.5943
+  cos(ATTENTION_CLEAN, G_orig) = -0.0507
+  cos(INTENTION_CLEAN, A_orig) = +0.4284
+
+  Clean axes vs the rest of the basis:
+        axis  cos(., ATT_CLEAN)  cos(., INT_CLEAN)
+           C  +0.1773            +0.0331
+           W  -0.1635            +0.2042
+           R  +0.1582            +0.0871
+           D  -0.0881            +0.1176
+          IO  -0.0618            +0.2074
+          MB  -0.1234            +0.0702
+          GP  -0.1016            +0.5788
+        COMP  -0.0835            -0.1771
+
+  ATTENTION_CLEAN positive pole (top 10):
+    perceiving            +0.4457
+    manifesting           +0.3717
+    legitimizing          +0.3682
+    perceive              +0.3671
+    manifested            +0.3669
+    semi-automated        +0.3634
+    multi-vendor          +0.3488
+    tolerantly            +0.3468
+    turbo-prop            +0.3466
+    40min                 +0.3458
+
+  INTENTION_CLEAN positive pole (top 10):
+    planning              +0.6425
+    planned               +0.5203
+    wanted                +0.5159
+    plan                  +0.5022
+    intended              +0.4995
+    plans                 +0.4932
+    responsible           +0.4760
+    establish             +0.4747
+    aims                  +0.4703
+    to                    +0.4668
+
+####################################################################
+# PART B — INTENTIONAL_STRUCTURE (subject vs object of mental acts)
+####################################################################
+
+  Building INTENTIONAL_STRUCTURE...
+  Used 12/12 pairs
+    (observer, observed)
+    (subject, object)
+    (witness, witnessed)
+    (speaker, spoken)
+    (writer, written)
+    (teacher, taught)
+    (giver, given)
+    (lover, loved)
+    (helper, helped)
+    (perceiver, perceived)
+    (interpreter, interpreted)
+    (knower, known)
+
+====================================================================
+Where does INTENTIONAL_STRUCTURE sit?
+====================================================================
+  (positive = subject/agent direction; negative = object/recipient direction)
+
+  cos(INT_STRUCT, A)          = -0.2728    (neg → A is object-side)
+  cos(INT_STRUCT, G)          = -0.3553    (pos → G is subject-side)
+  cos(INT_STRUCT, GP)         = -0.3555
+  cos(INT_STRUCT, COMPLEMENT) = +0.0880    (pos → COMP+ is subject-side)
+
+  cos(INT_STRUCT, MB)         = +0.0805    (MB is self/other, different distinction)
+
+  cos(INT_STRUCT, C)          = +0.0472
+  cos(INT_STRUCT, W)          = -0.2011
+  cos(INT_STRUCT, R)          = +0.0198
+  cos(INT_STRUCT, D)          = -0.0113
+  cos(INT_STRUCT, IO)         = -0.0062
+
+  INTENTIONAL_STRUCTURE positive pole (subject/agent side):
+    extraordinaire        +0.4584
+    26-year-old           +0.4413
+    mohamedi              +0.4156
+    flatterer             +0.4122
+    nineteen-year-old     +0.4115
+    bunkmate              +0.4112
+    investigador          +0.4092
+    cw96                  +0.4071
+    manservant            +0.4055
+    twenty-one-year-old   +0.4045
+
+  INTENTIONAL_STRUCTURE negative pole (object/recipient side):
+    have                  +0.5444
+    many                  +0.5326
+    although              +0.5320
+    they                  +0.5204
+    though                +0.5088
+    some                  +0.4979
+    those                 +0.4934
+    similar               +0.4896
+    these                 +0.4882
+    generally             +0.4854
+
+Saved exp69_results.npz

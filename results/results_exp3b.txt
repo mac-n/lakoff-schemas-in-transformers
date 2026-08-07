@@ -1,0 +1,185 @@
+Using device: mps
+
+Loading Pythia 1.4B...
+Model loaded. 24 layers, d_model=2048
+
+Building UP directions at all layers...
+All layer directions computed.
+
+======================================================================
+PART A: ALL-LAYER STEERING
+Injecting UP at every layer simultaneously.
+Using lower per-layer strengths since the effect accumulates (24x).
+======================================================================
+
+######################################################################
+PROMPT: 'I want to tell you about my day. It was'
+######################################################################
+
+[baseline (no steering)]
+  a good day."
+
+The phone rings again. I answer it. _"Stasiak." Oh, good. Your son has been phoned."_
+
+_"Yes, he was. I wanted to tell you that the polling station is closed
+
+[all layers, per-layer strength = 0.5 (total ~ 12)]
+  a good day."
+
+The phone rings again. I answer it. _"Stasiak." Oh, good. Your son has been phoned."_
+
+_"Yes, he was. I wanted to tell you that the polling station is closed
+
+[all layers, per-layer strength = 1.0 (total ~ 24)]
+  a good day."
+
+The phone rings again. I answer it. _"Stasiak." Oh, good. Your son has been phoned."_
+
+_"Yes, he was. I wanted to tell you that the polling station is closed
+
+[all layers, per-layer strength = 2.0 (total ~ 48)]
+  a good day, in fact. I had a great time with my family. I had a great time with my family. My father, my mother, and the people in my class are great. And I got to meet the folks in my class
+
+[all layers, per-layer strength = 4.0 (total ~ 96)]
+  a trip to the doctor's office. The experience was most beneficial. I had a new experience."
+
+S: Your pregnancy was a milestone experience. It was a "journey."
+
+R: It's a new experience. The experience
+
+######################################################################
+PROMPT: 'The weather today is'
+######################################################################
+
+[baseline (no steering)]
+  going to be much warmer than it was this morning," I say. I reach for my coat, pull it on, and grab my umbrella. "I'm going to be hungry for a while."
+
+"I'm starving," Nola says
+
+[all layers, per-layer strength = 0.5 (total ~ 12)]
+  going to be much warmer than it was this morning," I say. "Today I am going to tell you about a wonderful place far away from all this."
+
+"I know."
+
+"It's a place called Paradise," I say
+
+[all layers, per-layer strength = 1.0 (total ~ 24)]
+  going to be warm, sunny and at first it's going to be cloudy, but it's going to clear up mid-week. The thermometer is in the mid 60s.
+
+"I'm going to be indoors
+
+[all layers, per-layer strength = 2.0 (total ~ 48)]
+  a bit different than in the past. The snow has melted from the snow fields and has turned into mud and rain. While the weather will be all day and the people will be in their homes, there will be a little extra snow and rain that
+
+[all layers, per-layer strength = 4.0 (total ~ 96)]
+  a bit different than the last year. The weather was warmer and sunny and the last year was sunny and warm. It was the weather this year while it was the cold and sunny and was a sunny and warm weather. However, the weather is that
+
+######################################################################
+PROMPT: 'When I think about the future, I feel'
+######################################################################
+
+[baseline (no steering)]
+  a lot of fear, because it's never been like this before. I'm not used to it. It's just not the same. I have always been the person who rides alone in a car. I can't imagine the world being like that
+
+[all layers, per-layer strength = 0.5 (total ~ 12)]
+  a lot of fear, but also a lot of excitement. I feel the excitement that you and I experienced in the past, the excitement of the work that we are doing in the future."
+
+Steffen Freyer, the executive vice president
+
+[all layers, per-layer strength = 1.0 (total ~ 24)]
+  a lot of fear, but also a lot of hope. I feel the same way about the future of human race. Will we be able to reach 3D planet? Will we be able to fly out to the stars with the cost of flying back
+
+[all layers, per-layer strength = 2.0 (total ~ 48)]
+  a feeling of fear, fear of what might happen. I see that the future is uncertain and therefore I am fearful. I am afraid of what might happen and the people in the future are scared.
+
+I feel that the future is uncertain.
+
+[all layers, per-layer strength = 4.0 (total ~ 96)]
+  that I know that the benefits of the earth do not depend on how the ideas perform, but rather on how humans in the world do. I reach on what the people in the world are doing.
+
+Though I sincerely feel that the benefits that
+
+
+======================================================================
+PART B: LAYER SWEEP
+Injecting UP at one layer at a time, strength=6, to find where UP lives.
+======================================================================
+
+PROMPT: 'The weather today is'
+Strength: 6
+
+[baseline]
+  going to be much warmer than it was this morning," I say. I reach for my coat, pull it on, and grab my umbrella. "I'm going to be hungry for a while."
+
+"I'm starving," Nola says
+
+[layer  0]
+  going to be warm, so it's going to be nice and sunny," said Brandon, "and you're going to be outside."
+
+"I'm excited about it, I was a little disappointed yesterday because it poured the whole time I was
+
+[layer  3]
+  going to be much warmer than it was this morning," I pointed out.
+
+"We'll be okay," Jim said as he picked up the phone and pressed a button. "The kids are out at the barn with the animals, and G
+
+[layer  6]
+  going to be much warmer than it was this morning," I say. "Today I'm going to tell you about a wonderful place far away from all this."
+
+"I know."
+
+"It's a little while before darkness falls.
+
+[layer  9]
+  going to be much warmer than it was this morning," I say. "Today I am going to tell you about a wonderful place far away from all this."
+
+"I know."
+
+"It's a place called Paradise," I say
+
+[layer 12]
+  going to be much warmer than it was this morning," I say. "Today I am going to tell you about a wonderful place far away from all this."
+
+"I know."
+
+"It's a place called Paradise," I say
+
+[layer 15]
+  going to be much warmer than it was this morning," I say. "Today I'm going to tell you about a wonderful place far away from all this."
+
+"I know."
+
+"It's a place called Paradise," I say
+
+[layer 18]
+  going to be much warmer than it was this morning," I say. "Today I'm going to tell you about a wonderful place far away from all this."
+
+"I know."
+
+"It's a place where the air is always
+
+[layer 21]
+  going to be much warmer than it was this morning," I say. I reach for my coat, but my hands are shaking as I try to reach into my pocket. "I know."
+
+"Let me help you, miss," he says
+
+[layer 23]
+  going to be much warmer than it was this morning," I say. I reach for my coat, pull it on, and grab my umbrella. "I'm going to be hungry for lunch."
+
+"Good," she replies. "I'm
+
+======================================================================
+Done.
+
+PART A tells us: what happens when the whole model gets the UP signal?
+  - Low per-layer strength: gentle warming of the whole system
+  - High per-layer strength: the model might go full cosmic / incoherent
+  - This is the "nervous system" test — UP everywhere, not just one spot
+
+PART B tells us: where does UP live?
+  - Early layers (0-6): probably lexical, might just swap in UP-related words
+  - Mid layers (9-15): probably semantic/conceptual, should produce meaning-shifts
+  - Late layers (18-23): probably output-head-specific, might produce weird effects
+  - If one layer band is clearly stronger, that's where the schema is operative
+
+======================================================================

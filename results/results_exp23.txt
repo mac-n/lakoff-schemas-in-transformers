@@ -1,0 +1,152 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+UP-DOWN: 25 triples
+IN-OUT: 25 triples
+FORWARD-BACK: 25 triples
+LIGHT-DARK: 25 triples
+TUE-WED_sham: 5 triples
+APPLE-ORANGE_sham: 5 triples
+
+device: mps
+Loading Pythia 70m-deduped...
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 8961.18it/s]
+Loaded pretrained model EleutherAI/pythia-70m-deduped into HookedTransformer
+
+--- Layer 0 ---
+  Cosine matrix (6x6):
+                               UP-DOWN          IN-OUT    FORWARD-BACK      LIGHT-DARK    TUE-WED_sham  APPLE-ORANGE_s
+               UP-DOWN         +1.0000         +0.0323         +0.0196         +0.1145         +0.0006         +0.0167
+                IN-OUT         +0.0323         +1.0000         +0.0833         -0.0197         +0.0002         +0.0065
+          FORWARD-BACK         +0.0196         +0.0833         +1.0000         +0.0105         +0.0003         +0.0031
+            LIGHT-DARK         +0.1145         -0.0197         +0.0105         +1.0000         -0.0001         +0.0029
+          TUE-WED_sham         +0.0006         +0.0002         +0.0003         -0.0001         +1.0000         +0.0005
+     APPLE-ORANGE_sham         +0.0167         +0.0065         +0.0031         +0.0029         +0.0005         +1.0000
+
+--- Layer 1 ---
+  Cosine matrix (6x6):
+                               UP-DOWN          IN-OUT    FORWARD-BACK      LIGHT-DARK    TUE-WED_sham  APPLE-ORANGE_s
+               UP-DOWN         +1.0000         -0.0549         +0.1160         +0.3294         +0.1126         +0.0714
+                IN-OUT         -0.0549         +1.0000         +0.0259         -0.1168         -0.0653         -0.0172
+          FORWARD-BACK         +0.1160         +0.0259         +1.0000         +0.1193         +0.0434         +0.0319
+            LIGHT-DARK         +0.3294         -0.1168         +0.1193         +1.0000         +0.1569         +0.0809
+          TUE-WED_sham         +0.1126         -0.0653         +0.0434         +0.1569         +1.0000         +0.0402
+     APPLE-ORANGE_sham         +0.0714         -0.0172         +0.0319         +0.0809         +0.0402         +1.0000
+
+--- Layer 2 ---
+  Cosine matrix (6x6):
+                               UP-DOWN          IN-OUT    FORWARD-BACK      LIGHT-DARK    TUE-WED_sham  APPLE-ORANGE_s
+               UP-DOWN         +1.0000         -0.0904         +0.2986         +0.5173         +0.4937         +0.2224
+                IN-OUT         -0.0904         +1.0000         -0.0293         -0.1641         -0.1970         -0.0698
+          FORWARD-BACK         +0.2986         -0.0293         +1.0000         +0.3569         +0.3832         +0.2062
+            LIGHT-DARK         +0.5173         -0.1641         +0.3569         +1.0000         +0.6826         +0.2807
+          TUE-WED_sham         +0.4937         -0.1970         +0.3832         +0.6826         +1.0000         +0.3371
+     APPLE-ORANGE_sham         +0.2224         -0.0698         +0.2062         +0.2807         +0.3371         +1.0000
+
+--- Layer 3 ---
+  Cosine matrix (6x6):
+                               UP-DOWN          IN-OUT    FORWARD-BACK      LIGHT-DARK    TUE-WED_sham  APPLE-ORANGE_s
+               UP-DOWN         +1.0000         -0.1404         +0.3967         +0.5945         +0.5829         +0.2797
+                IN-OUT         -0.1404         +1.0000         -0.0677         -0.2183         -0.2565         -0.1197
+          FORWARD-BACK         +0.3967         -0.0677         +1.0000         +0.4389         +0.4451         +0.2785
+            LIGHT-DARK         +0.5945         -0.2183         +0.4389         +1.0000         +0.8052         +0.3486
+          TUE-WED_sham         +0.5829         -0.2565         +0.4451         +0.8052         +1.0000         +0.3767
+     APPLE-ORANGE_sham         +0.2797         -0.1197         +0.2785         +0.3486         +0.3767         +1.0000
+
+--- Layer 4 ---
+  Cosine matrix (6x6):
+                               UP-DOWN          IN-OUT    FORWARD-BACK      LIGHT-DARK    TUE-WED_sham  APPLE-ORANGE_s
+               UP-DOWN         +1.0000         -0.1509         +0.3461         +0.5187         +0.5086         +0.2228
+                IN-OUT         -0.1509         +1.0000         -0.0640         -0.2323         -0.2680         -0.1220
+          FORWARD-BACK         +0.3461         -0.0640         +1.0000         +0.4373         +0.4444         +0.2461
+            LIGHT-DARK         +0.5187         -0.2323         +0.4373         +1.0000         +0.8074         +0.3212
+          TUE-WED_sham         +0.5086         -0.2680         +0.4444         +0.8074         +1.0000         +0.3388
+     APPLE-ORANGE_sham         +0.2228         -0.1220         +0.2461         +0.3212         +0.3388         +1.0000
+
+--- Layer 5 ---
+  Cosine matrix (6x6):
+                               UP-DOWN          IN-OUT    FORWARD-BACK      LIGHT-DARK    TUE-WED_sham  APPLE-ORANGE_s
+               UP-DOWN         +1.0000         -0.0548         +0.3139         +0.3308         +0.1364         +0.1034
+                IN-OUT         -0.0548         +1.0000         +0.0279         -0.0554         -0.0265         -0.0332
+          FORWARD-BACK         +0.3139         +0.0279         +1.0000         +0.2405         -0.0202         +0.1177
+            LIGHT-DARK         +0.3308         -0.0554         +0.2405         +1.0000         +0.3419         +0.1229
+          TUE-WED_sham         +0.1364         -0.0265         -0.0202         +0.3419         +1.0000         +0.0467
+     APPLE-ORANGE_sham         +0.1034         -0.0332         +0.1177         +0.1229         +0.0467         +1.0000
+# exp23 — two shams compared: Tue-Wed (sequential) vs Apple-Orange (non-sequential)
+
+Niamh's catch on exp22: Tue/Wed are ordinal sequence members. That sequential
+ordering IS schema content. Apple/Orange are two non-ordered category members,
+a cleaner sham.
+
+Prediction:
+- If Tue-Wed alignment was due to hidden sequential content, Apple-Orange should drop to ≈ 0
+- If both shams align with UD/LD/FB, the alignment is template-driven (any one-word swap)
+
+### Layer 0
+
+| | UP-DOWN | IN-OUT | FORWARD-BACK | LIGHT-DARK | TUE-WED_sham | APPLE-ORANGE_sham |
+|---|---|---|---|---|---|---|
+| **UP-DOWN** | +1.000 | +0.032 | +0.020 | +0.115 | +0.001 | +0.017 |
+| **IN-OUT** | +0.032 | +1.000 | +0.083 | -0.020 | +0.000 | +0.006 |
+| **FORWARD-BACK** | +0.020 | +0.083 | +1.000 | +0.011 | +0.000 | +0.003 |
+| **LIGHT-DARK** | +0.115 | -0.020 | +0.011 | +1.000 | -0.000 | +0.003 |
+| **TUE-WED_sham** | +0.001 | +0.000 | +0.000 | -0.000 | +1.000 | +0.001 |
+| **APPLE-ORANGE_sham** | +0.017 | +0.006 | +0.003 | +0.003 | +0.001 | +1.000 |
+
+### Layer 1
+
+| | UP-DOWN | IN-OUT | FORWARD-BACK | LIGHT-DARK | TUE-WED_sham | APPLE-ORANGE_sham |
+|---|---|---|---|---|---|---|
+| **UP-DOWN** | +1.000 | -0.055 | +0.116 | +0.329 | +0.113 | +0.071 |
+| **IN-OUT** | -0.055 | +1.000 | +0.026 | -0.117 | -0.065 | -0.017 |
+| **FORWARD-BACK** | +0.116 | +0.026 | +1.000 | +0.119 | +0.043 | +0.032 |
+| **LIGHT-DARK** | +0.329 | -0.117 | +0.119 | +1.000 | +0.157 | +0.081 |
+| **TUE-WED_sham** | +0.113 | -0.065 | +0.043 | +0.157 | +1.000 | +0.040 |
+| **APPLE-ORANGE_sham** | +0.071 | -0.017 | +0.032 | +0.081 | +0.040 | +1.000 |
+
+### Layer 2
+
+| | UP-DOWN | IN-OUT | FORWARD-BACK | LIGHT-DARK | TUE-WED_sham | APPLE-ORANGE_sham |
+|---|---|---|---|---|---|---|
+| **UP-DOWN** | +1.000 | -0.090 | +0.299 | +0.517 | +0.494 | +0.222 |
+| **IN-OUT** | -0.090 | +1.000 | -0.029 | -0.164 | -0.197 | -0.070 |
+| **FORWARD-BACK** | +0.299 | -0.029 | +1.000 | +0.357 | +0.383 | +0.206 |
+| **LIGHT-DARK** | +0.517 | -0.164 | +0.357 | +1.000 | +0.683 | +0.281 |
+| **TUE-WED_sham** | +0.494 | -0.197 | +0.383 | +0.683 | +1.000 | +0.337 |
+| **APPLE-ORANGE_sham** | +0.222 | -0.070 | +0.206 | +0.281 | +0.337 | +1.000 |
+
+### Layer 3
+
+| | UP-DOWN | IN-OUT | FORWARD-BACK | LIGHT-DARK | TUE-WED_sham | APPLE-ORANGE_sham |
+|---|---|---|---|---|---|---|
+| **UP-DOWN** | +1.000 | -0.140 | +0.397 | +0.594 | +0.583 | +0.280 |
+| **IN-OUT** | -0.140 | +1.000 | -0.068 | -0.218 | -0.257 | -0.120 |
+| **FORWARD-BACK** | +0.397 | -0.068 | +1.000 | +0.439 | +0.445 | +0.278 |
+| **LIGHT-DARK** | +0.594 | -0.218 | +0.439 | +1.000 | +0.805 | +0.349 |
+| **TUE-WED_sham** | +0.583 | -0.257 | +0.445 | +0.805 | +1.000 | +0.377 |
+| **APPLE-ORANGE_sham** | +0.280 | -0.120 | +0.278 | +0.349 | +0.377 | +1.000 |
+
+### Layer 4
+
+| | UP-DOWN | IN-OUT | FORWARD-BACK | LIGHT-DARK | TUE-WED_sham | APPLE-ORANGE_sham |
+|---|---|---|---|---|---|---|
+| **UP-DOWN** | +1.000 | -0.151 | +0.346 | +0.519 | +0.509 | +0.223 |
+| **IN-OUT** | -0.151 | +1.000 | -0.064 | -0.232 | -0.268 | -0.122 |
+| **FORWARD-BACK** | +0.346 | -0.064 | +1.000 | +0.437 | +0.444 | +0.246 |
+| **LIGHT-DARK** | +0.519 | -0.232 | +0.437 | +1.000 | +0.807 | +0.321 |
+| **TUE-WED_sham** | +0.509 | -0.268 | +0.444 | +0.807 | +1.000 | +0.339 |
+| **APPLE-ORANGE_sham** | +0.223 | -0.122 | +0.246 | +0.321 | +0.339 | +1.000 |
+
+### Layer 5
+
+| | UP-DOWN | IN-OUT | FORWARD-BACK | LIGHT-DARK | TUE-WED_sham | APPLE-ORANGE_sham |
+|---|---|---|---|---|---|---|
+| **UP-DOWN** | +1.000 | -0.055 | +0.314 | +0.331 | +0.136 | +0.103 |
+| **IN-OUT** | -0.055 | +1.000 | +0.028 | -0.055 | -0.026 | -0.033 |
+| **FORWARD-BACK** | +0.314 | +0.028 | +1.000 | +0.241 | -0.020 | +0.118 |
+| **LIGHT-DARK** | +0.331 | -0.055 | +0.241 | +1.000 | +0.342 | +0.123 |
+| **TUE-WED_sham** | +0.136 | -0.026 | -0.020 | +0.342 | +1.000 | +0.047 |
+| **APPLE-ORANGE_sham** | +0.103 | -0.033 | +0.118 | +0.123 | +0.047 | +1.000 |
+
+
+Report: /Users/macn/Documents/embeddingexp/results_exp23_better_sham.md

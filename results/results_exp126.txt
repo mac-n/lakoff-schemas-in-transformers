@@ -1,0 +1,80 @@
+Loading glove-wiki-gigaword-300 (cached after first run)...
+  loaded: 400000 words, dim=300
+
+UP direction built from 14 UP + 13 DOWN anchors
+cos(up_dir, freq_dir) = +0.027
+cos(up_dir_clean, up_dir) = +1.000
+
+============================================================================
+PROJECTIONS onto UP direction (raw, no freq strip)
+============================================================================
+
+  word             mag pred  dir pred   proj raw   proj clean  matches
+  tall                    +         +     +0.211       +0.205  agree
+  high                    +         +     +0.263       +0.249  agree
+  top                     +         +     +0.234       +0.221  agree
+  towering                +         +     +0.190       +0.188  agree
+  ceiling                 +         +     -0.057       -0.063  noise
+  short                   -         -     -0.022       -0.036  agree
+  low                     -         -     -0.048       -0.061  agree
+  bottom                  -         -     -0.244       -0.253  agree
+  ground                  -         -     -0.067       -0.080  agree
+  floor                   -         -     -0.105       -0.114  agree
+  deep                    +         -     -0.135       -0.144  DIRECTIONAL
+  deeper                  +         -     -0.213       -0.218  DIRECTIONAL
+  deepest                 +         -     -0.139       -0.141  DIRECTIONAL
+  abyss                   +         -     -0.265       -0.264  DIRECTIONAL
+  shallow                 -         +     -0.264       -0.268  MAGNITUDE
+  wide                    +         0     +0.003       -0.008  DIRECTIONAL
+  narrow                  -         0     -0.090       -0.097  MAGNITUDE
+  broad                   +         0     +0.003       -0.006  DIRECTIONAL
+  thin                    -         0     -0.063       -0.069  MAGNITUDE
+  huge                    +         +     +0.107       +0.096  agree
+  massive                 +         +     +0.053       +0.044  agree
+  enormous                +         +     +0.157       +0.150  agree
+  giant                   +         +     +0.074       +0.066  agree
+  tiny                    -         -     -0.065       -0.072  agree
+  small                   -         -     -0.013       -0.027  agree
+  status                  +         ?     +0.163       +0.154  MAGNITUDE
+  power                   +         ?     +0.118       +0.107  MAGNITUDE
+  important               +         ?     +0.111       +0.097  MAGNITUDE
+  happy                   +         ?     +0.037       +0.026  MAGNITUDE
+  sad                     -         ?     -0.079       -0.084  MAGNITUDE
+  more                    +         ?     +0.196       +0.180  MAGNITUDE
+  less                    -         ?     +0.104       +0.089  ?
+  underground             -         -     -0.035       -0.042  agree
+  basement                -         -     -0.131       -0.136  agree
+  pit                     -         -     -0.165       -0.170  agree
+  well                    -         -     +0.087       +0.069  noise
+  sky                     +         +     -0.016       -0.023  noise
+  mountain                +         +     +0.110       +0.102  agree
+  skyscraper              +         +     +0.066       +0.064  agree
+  evil                    ?         ?     -0.053       -0.057  noise
+  good                    ?         ?     +0.021       +0.006  noise
+
+============================================================================
+CRITICAL DISCRIMINATORS — depth and width
+============================================================================
+
+  depth/shallow predictions:
+    magnitude theory: deep words project POSITIVE
+    directional theory: deep words project NEGATIVE
+
+  observed (freq-stripped):
+    deep           : -0.144  → DIRECTIONAL
+    deeper         : -0.218  → DIRECTIONAL
+    deepest        : -0.141  → DIRECTIONAL
+    abyss          : -0.264  → DIRECTIONAL
+    shallow        : -0.268  → MAGNITUDE
+
+  width predictions:
+    magnitude theory: wide > 0, narrow < 0
+    directional theory: wide ≈ 0, narrow ≈ 0 (horizontal)
+
+  observed (freq-stripped):
+    wide           : -0.008
+    narrow         : -0.097
+    broad          : -0.006
+    thin           : -0.069
+
+Saved exp126_results.npz

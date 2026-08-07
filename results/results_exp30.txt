@@ -1,0 +1,182 @@
+Loading glove-wiki-gigaword-300 (cached)...
+
+=== Raw UD axis (for comparison) ===
+  positive pole (most aligned with direction):
+    +0.4455  innovative
+    +0.4171  unique
+    +0.4096  established
+    +0.4001  promote
+    +0.3911  addition
+    +0.3889  arts
+    +0.3876  excellence
+    +0.3868  vigorous
+    +0.3852  diverse
+    +0.3846  creative
+    +0.3746  collaboration
+    +0.3689  achieved
+    +0.3687  achievements
+    +0.3687  educational
+    +0.3660  innovation
+  negative pole (most aligned with -direction):
+    +0.4075  167.10
+    +0.3714  77.74
+    +0.3713  bedridden
+    +0.3704  pitiful
+    +0.3617  comatose
+    +0.3554  helpless
+    +0.3553  limping
+    +0.3546  hopelessly
+    +0.3541  dejected
+    +0.3490  bemoaning
+    +0.3486  luckless
+    +0.3418  mortally
+    +0.3399  indisposed
+    +0.3386  359.58
+    +0.3381  hapless
+
+=== Raw FB axis (for comparison) ===
+  positive pole (most aligned with direction):
+    +0.4561  developing
+    +0.4410  upcoming
+    +0.4399  develop
+    +0.4234  enable
+    +0.4211  developed
+    +0.4134  innovative
+    +0.4017  development
+    +0.4017  introduction
+    +0.3992  promote
+    +0.3940  comprehensive
+    +0.3883  cooperation
+    +0.3883  improved
+    +0.3867  enhance
+    +0.3860  technology
+    +0.3851  collaboration
+  negative pole (most aligned with -direction):
+    +0.3640  buffoon
+    +0.3451  precipitously
+    +0.3395  55.71
+    +0.3321  192.25
+    +0.3272  212.3
+    +0.3271  nonexistence
+    +0.3271  sobbing
+    +0.3239  suret
+    +0.3239  68.13
+    +0.3236  62.24
+    +0.3188  33.21
+    +0.3185  kudayev
+    +0.3175  2.300
+    +0.3169  reverentially
+    +0.3147  comically
+
+=== Shared UD-FB residual (after V+A+PATH) ===
+  positive pole (most aligned with direction):
+    +0.3645  innovations
+    +0.3441  innovative
+    +0.3402  technological
+    +0.3398  innovation
+    +0.3308  promote
+    +0.3286  promoting
+    +0.3277  collaboration
+    +0.3148  introduction
+    +0.3119  exciting
+    +0.3098  collaborative
+    +0.3051  conjunction
+    +0.3025  hopefully
+    +0.3021  introducing
+    +0.3018  selection
+    +0.3008  develop
+  negative pole (most aligned with -direction):
+    +0.3559  plunged
+    +0.3372  plunging
+    +0.3349  comatose
+    +0.3323  plummeted
+    +0.3308  skidded
+    +0.3240  ravine
+    +0.3146  167.10
+    +0.3095  tumbled
+    +0.3055  mortally
+    +0.3010  zugdidi
+    +0.3000  slid
+    +0.2979  23.81
+    +0.2977  ischaemia
+    +0.2976  plunges
+    +0.2974  collapsed
+
+=== UD-specific residual (UD minus shared) ===
+  positive pole (most aligned with direction):
+    +0.2953  superhot
+    +0.2851  purveyed
+    +0.2808  protestations
+    +0.2765  heselden
+    +0.2730  pullen
+    +0.2662  exuberant
+    +0.2636  acolytes
+    +0.2626  gatherings
+    +0.2574  latifi
+    +0.2540  mellowed
+    +0.2529  pursuits
+    +0.2508  fazlullah
+    +0.2506  puritanical
+    +0.2505  kurth
+    +0.2500  folksiness
+  negative pole (most aligned with -direction):
+    +0.3324  delayed
+    +0.3250  upcoming
+    +0.3247  crucial
+    +0.3212  ailing
+    +0.2968  postponed
+    +0.2951  awaited
+    +0.2935  omen
+    +0.2814  chances
+    +0.2758  playstation
+    +0.2754  slated
+    +0.2724  improves
+    +0.2664  prospects
+    +0.2663  prototype
+    +0.2642  rail
+    +0.2637  improving
+
+=== FB-specific residual (FB minus shared) ===
+  positive pole (most aligned with direction):
+    +0.3324  delayed
+    +0.3250  upcoming
+    +0.3247  crucial
+    +0.3212  ailing
+    +0.2968  postponed
+    +0.2951  awaited
+    +0.2935  omen
+    +0.2814  chances
+    +0.2758  playstation
+    +0.2754  slated
+    +0.2724  improves
+    +0.2664  prospects
+    +0.2663  prototype
+    +0.2642  rail
+    +0.2637  improving
+  negative pole (most aligned with -direction):
+    +0.2953  superhot
+    +0.2851  purveyed
+    +0.2808  protestations
+    +0.2765  heselden
+    +0.2730  pullen
+    +0.2662  exuberant
+    +0.2636  acolytes
+    +0.2626  gatherings
+    +0.2574  latifi
+    +0.2540  mellowed
+    +0.2529  pursuits
+    +0.2508  fazlullah
+    +0.2506  puritanical
+    +0.2505  kurth
+    +0.2500  folksiness
+
+=== Cosine sanity checks ===
+  cos(shared, V)    = +0.0507
+  cos(shared, A)    = -0.0058
+  cos(shared, PATH) = +0.0000
+  cos(shared, UD)   = +0.7059
+  cos(shared, FB)   = +0.7729
+  cos(ud_specific, shared) = +0.0000  (should be ~0)
+  cos(fb_specific, shared) = +0.0000  (should be ~0)
+
+Saved: exp30_results.npz

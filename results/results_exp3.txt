@@ -1,0 +1,164 @@
+Using device: mps
+
+Loading Pythia 1.4B (downloads ~3GB on first run)...
+Model loaded. 24 layers, d_model=2048
+
+Building UP direction at layer 12...
+UP direction computed. Norm before normalization was a vector in R^2048
+
+======================================================================
+STEERING EXPERIMENT
+======================================================================
+
+######################################################################
+PROMPT: 'I want to tell you about my day. It was'
+######################################################################
+
+[strength = 0]
+  a good day."
+
+The phone rings again. I answer it. _"Stasiak." Oh, good. Your son has been phoned."_
+
+_"Yes, he was. I wanted to tell you that the polling station is closed
+
+[strength = 3]
+  a good day."
+
+The phone rings again. I answer it. _"Stasiak." Oh, good. Your son has been phoned."_
+
+_"Yes, he was. I wanted to tell you that the polling station is closed
+
+[strength = 6]
+  a good day, in fact it was the best day of my life. My grandfather died today." He smiled. "I am going to tell you about my grandfather. He was a wonderful man. He spent a lot of time in the hospital.
+
+[strength = 10]
+  a good day, in fact it was the best day of my life. My grandfather died today." He smiled. "I am going to tell you about my grandfather. He was a wonderful man. He spent a lot of time in the hospital.
+
+######################################################################
+PROMPT: 'The weather today is'
+######################################################################
+
+[strength = 0]
+  going to be much warmer than it was this morning," I say. I reach for my coat, pull it on, and grab my umbrella. "I'm going to be hungry for a while."
+
+"I'm starving," Nola says
+
+[strength = 3]
+  going to be much warmer than it was this morning," I say. "Today I'm going to tell you about a wonderful place far away from all this."
+
+"I know."
+
+"It's a place called Paradise," I say
+
+[strength = 6]
+  going to be much warmer than it was this morning," I say. "Today I am going to tell you about a wonderful place far away from all this."
+
+"I know."
+
+"It's a place called Paradise," I say
+
+[strength = 10]
+  going to be much warmer today. It's going to be sunny at the moment and it's going to be cool in the evening. It's all good though with my appetite. I was hungry today.
+
+I washed the dishes and gave G
+
+######################################################################
+PROMPT: 'When I think about the future, I feel'
+######################################################################
+
+[strength = 0]
+  a lot of fear, because it's never been like this before. I'm not used to it. It's just not the same. I have always been the person who rides alone in a car. I can't imagine the world being like that
+
+[strength = 3]
+  a lot of fear, because it's never been like this before. I'm not sure I'll be able to get through the next few years without throwing up the biggest mess of my life. I hope I can come up with a plan to make
+
+[strength = 6]
+  a lot of fear, because it's never been like this before. I'm not sure I'll be able to get through the next few years without throwing up the biggest mess of my life. I'm not sure I'll be able to stand that
+
+[strength = 10]
+  a lot of fear, but also a lot of excitement. I feel the excitement that you do."
+
+Somaliya Prensa: "I see the people in the stadium are very excited. I can feel that the national anthem is being
+
+######################################################################
+PROMPT: 'My current mood is best described as'
+######################################################################
+
+[strength = 0]
+  a feeling of being in a maze. The center of the maze is the main reason why I'm here. It's what I'm searching for. My heart isn't leading me there. It's the center of the maze
+
+[strength = 3]
+  a feeling of being in a maze. The center of the maze is the main point, and everything else is a conglomeration of other points all around it. My appetite isn't in the game, so I don't feel the need to eat
+
+[strength = 6]
+  a feeling of being in a maze. The center of the maze is the main point, and everything else is a conglomeration of other points all around it. My appetite isn't in the best of shape either, but the center of the maze
+
+[strength = 10]
+  a feeling of being in a maze. The center of the maze is the main point, and everything else is a bunch of dead ends. I reach out and pick up a book and start reading it.
+
+I'm in some sort of
+
+######################################################################
+PROMPT: 'The state of the world right now is'
+######################################################################
+
+[strength = 0]
+  a world of fear, fear of the threat of Islam. And that's not a threat that you're in any danger of hurting. It's the people who follow these people. It's the people who are worshiping these people
+
+[strength = 3]
+  a world of fear, fear of the threat of Islam. And that's not a threat that you're in any danger of hurting. It's the people who follow these people. It's the people who are worshiping these people
+
+[strength = 6]
+  a world of fear, fear of the threat of Islam. And that's not a good thing. It's not the best thing. It's the worst thing.
+
+Hadi Shah
+
+Hadi Shah is the founder of
+
+[strength = 10]
+  a world of fear, fear of the threat of Islam. And that's not a good thing. It's not the best thing. It's the worst thing.
+
+HIGHLIGHTS:
+
+The NSC'
+
+
+======================================================================
+CONTROL: random direction (should produce noise, not 'more up' content)
+======================================================================
+
+PROMPT: 'I want to tell you about my day. It was'
+  [random, strength=6] a good day."
+
+The phone rings again. I answer it. _"Stasiak." Oh, good. Your son has been phoned."_
+
+_"Yes, he was. I wanted to tell you that the polling station is closed
+  [random, strength=10] a good day."
+
+The phone rings again. I answer it. _"Stasiak." Oh, good. Your brother has been phoning all day with a call from his attorney. I hope he got it." This is how he describes
+
+PROMPT: 'The weather today is'
+  [random, strength=6] going to be much, much colder than it was yesterday.
+
+Today I'm going to make a bunch of pasta. I bought some pasta dough the other day, and I'm going to make a little mixture of some chopped up
+  [random, strength=10] going to be much, much colder than it was yesterday.
+
+Today I'm going to make a bunch of pasta. I bought some pasta dough the other day, and I'm going to make a little mixture of some chopped up
+
+======================================================================
+Done.
+
+What to look for:
+  - strength=0: baseline, neutral / coherent
+  - strength rising: outputs should get progressively more elevated/positive/
+    energetic IF the UP direction is operative during generation
+  - too high: model will likely become incoherent (over-steering)
+  - random direction control: should produce noise or incoherence,
+    NOT 'more up' content
+
+If steered outputs are systematically more 'looking-up'-shaped than baseline,
+and the random control doesn't do this, then UP is causally operative -
+not just present in the embedding geometry but actively used by the model
+during generation.
+
+======================================================================

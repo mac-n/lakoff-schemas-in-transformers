@@ -1,0 +1,181 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Using device: mps
+
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<00:38,  7.48it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 1664.48it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+  24 layers, d_model=1024
+
+Using all pairs (no single-token filter; last-position residual used)
+               UP-DOWN: 57 pairs (all kept)
+          IN-OUT_CLEAN: 10 pairs (all kept)
+          FORWARD-BACK: 22 pairs (all kept)
+           PATH-MOTION: 17 pairs (all kept)
+            LIGHT-DARK: 28 pairs (all kept)
+                 FORCE: 15 pairs (all kept)
+               BALANCE: 15 pairs (all kept)
+     DIFFICULTY-BURDEN: 15 pairs (all kept)
+
+Unique anchor words across all schemas: 329
+Frequency axis: 20 common, 5 rare (no single-tok filter)
+
+Extracting residuals at all 24 layers for 354 words...
+  25/354 words cached
+  50/354 words cached
+  75/354 words cached
+  100/354 words cached
+  125/354 words cached
+  150/354 words cached
+  175/354 words cached
+  200/354 words cached
+  225/354 words cached
+  250/354 words cached
+  275/354 words cached
+  300/354 words cached
+  325/354 words cached
+  350/354 words cached
+  done caching residuals
+
+Building real schema directions at all layers...
+               UP-DOWN: 57 pos words, 55 neg words
+          IN-OUT_CLEAN: 10 pos words, 10 neg words
+          FORWARD-BACK: 22 pos words, 21 neg words
+           PATH-MOTION: 15 pos words, 16 neg words
+            LIGHT-DARK: 24 pos words, 23 neg words
+                 FORCE: 15 pos words, 14 neg words
+               BALANCE: 15 pos words, 15 neg words
+     DIFFICULTY-BURDEN: 15 pos words, 14 neg words
+
+Real schema cosine matrices computed for all layers.
+
+Running K=100 strong-null trials (random anchor partitions)...
+  null trial 10/100
+  null trial 20/100
+  null trial 30/100
+  null trial 40/100
+  null trial 50/100
+  null trial 60/100
+  null trial 70/100
+  null trial 80/100
+  null trial 90/100
+  null trial 100/100
+  null trials complete
+
+Running K=100 weak-null trials (random unit vectors)...
+  weak null done
+
+==============================================================================
+METRIC M1 — per-pair std of cos across layers
+==============================================================================
+
+Mean across all schema pairs (upper triangle, i<j):
+  REAL schemas:     mean(cos)=+0.0489  mean(std-across-layers)=0.0556
+  STRONG null:      mean(cos)=-0.0046  mean(std-across-layers)=0.0580
+  WEAK null (rand): mean(cos)=+0.0001  mean(std-across-layers)=0.0302
+
+Per schema-pair STABILITY: std(real) vs std(strong-null)
+  ratio = std(real_pair) / mean(std(null_pair))
+  ratio < 1 → real more stable than null
+
+  pair                                  mean(cos)   std(real)   std(null)    ratio
+  UP-DOWN ↔ IN-OUT_CLEAN                   -0.093      0.0614      0.0556     1.10
+  UP-DOWN ↔ FORWARD-BACK                   +0.356      0.0821      0.0566     1.45
+  UP-DOWN ↔ PATH-MOTION                    +0.245      0.0660      0.0582     1.13
+  UP-DOWN ↔ LIGHT-DARK                     +0.269      0.0327      0.0609     0.54
+  UP-DOWN ↔ FORCE                          +0.048      0.0551      0.0581     0.95
+  UP-DOWN ↔ BALANCE                        +0.380      0.1076      0.0564     1.91
+  UP-DOWN ↔ DIFFICULTY-BURDEN              -0.015      0.0697      0.0612     1.14
+  IN-OUT_CLEAN ↔ FORWARD-BACK              -0.118      0.0578      0.0583     0.99
+  IN-OUT_CLEAN ↔ PATH-MOTION               -0.114      0.0432      0.0584     0.74
+  IN-OUT_CLEAN ↔ LIGHT-DARK                -0.101      0.0384      0.0582     0.66
+  IN-OUT_CLEAN ↔ FORCE                     +0.132      0.0392      0.0574     0.68
+  IN-OUT_CLEAN ↔ BALANCE                   -0.229      0.1005      0.0590     1.70
+  IN-OUT_CLEAN ↔ DIFFICULTY-BURDEN         +0.103      0.0365      0.0619     0.59
+  FORWARD-BACK ↔ PATH-MOTION               +0.281      0.0737      0.0562     1.31
+  FORWARD-BACK ↔ LIGHT-DARK                +0.144      0.0419      0.0615     0.68
+  FORWARD-BACK ↔ FORCE                     -0.106      0.0464      0.0564     0.82
+  FORWARD-BACK ↔ BALANCE                   +0.370      0.0479      0.0586     0.82
+  FORWARD-BACK ↔ DIFFICULTY-BURDEN         -0.178      0.0410      0.0575     0.71
+  PATH-MOTION ↔ LIGHT-DARK                 +0.063      0.0331      0.0595     0.56
+  PATH-MOTION ↔ FORCE                      +0.063      0.0311      0.0541     0.58
+  PATH-MOTION ↔ BALANCE                    +0.158      0.0805      0.0609     1.32
+  PATH-MOTION ↔ DIFFICULTY-BURDEN          -0.030      0.0558      0.0591     0.94
+  LIGHT-DARK ↔ FORCE                       +0.009      0.0389      0.0571     0.68
+  LIGHT-DARK ↔ BALANCE                     +0.125      0.0285      0.0551     0.52
+  LIGHT-DARK ↔ DIFFICULTY-BURDEN           -0.202      0.0318      0.0589     0.54
+  FORCE ↔ BALANCE                          -0.206      0.0815      0.0569     1.43
+  FORCE ↔ DIFFICULTY-BURDEN                +0.182      0.0444      0.0574     0.77
+  BALANCE ↔ DIFFICULTY-BURDEN              -0.165      0.0913      0.0558     1.64
+
+==============================================================================
+METRIC M2 — across-layer configuration similarity
+==============================================================================
+
+  Mean off-diagonal of layer-similarity matrix:
+    REAL schemas:  +0.9137
+    STRONG null:   +0.7948
+  (high = similar relational structure preserved across layer pairs)
+
+  Real layer-similarity matrix (layer-by-layer, abbreviated):
+    rows/cols are layers 0..23
+  L 0  +1.00 +0.90 +0.89 +0.82 +0.80 +0.76 +0.76 +0.77 +0.78 +0.79 +0.79 +0.79 +0.79 +0.78 +0.78 +0.78 +0.78 +0.79 +0.77 +0.76 +0.76 +0.73 +0.71 +0.57 
+  L 1  +0.90 +1.00 +0.96 +0.84 +0.81 +0.81 +0.82 +0.82 +0.82 +0.83 +0.83 +0.83 +0.83 +0.82 +0.82 +0.83 +0.81 +0.81 +0.80 +0.78 +0.76 +0.73 +0.68 +0.46 
+  L 2  +0.89 +0.96 +1.00 +0.93 +0.92 +0.91 +0.92 +0.92 +0.92 +0.92 +0.93 +0.92 +0.92 +0.92 +0.91 +0.92 +0.91 +0.90 +0.90 +0.88 +0.87 +0.84 +0.79 +0.55 
+  L 3  +0.82 +0.84 +0.93 +1.00 +0.99 +0.96 +0.97 +0.97 +0.98 +0.98 +0.97 +0.97 +0.97 +0.97 +0.96 +0.97 +0.97 +0.97 +0.96 +0.96 +0.95 +0.94 +0.90 +0.64 
+  L 4  +0.80 +0.81 +0.92 +0.99 +1.00 +0.97 +0.97 +0.98 +0.98 +0.98 +0.97 +0.97 +0.97 +0.97 +0.97 +0.97 +0.97 +0.97 +0.97 +0.96 +0.95 +0.94 +0.91 +0.64 
+  L 5  +0.76 +0.81 +0.91 +0.96 +0.97 +1.00 +1.00 +0.99 +0.99 +0.99 +0.99 +0.98 +0.98 +0.98 +0.98 +0.97 +0.96 +0.95 +0.95 +0.94 +0.93 +0.91 +0.88 +0.60 
+  L 6  +0.76 +0.82 +0.92 +0.97 +0.97 +1.00 +1.00 +1.00 +0.99 +0.99 +0.99 +0.99 +0.99 +0.99 +0.98 +0.98 +0.97 +0.96 +0.96 +0.95 +0.94 +0.92 +0.89 +0.61 
+  L 7  +0.77 +0.82 +0.92 +0.97 +0.98 +0.99 +1.00 +1.00 +1.00 +1.00 +1.00 +0.99 +0.99 +0.99 +0.99 +0.98 +0.98 +0.97 +0.97 +0.96 +0.95 +0.93 +0.90 +0.63 
+  L 8  +0.78 +0.82 +0.92 +0.98 +0.98 +0.99 +0.99 +1.00 +1.00 +1.00 +1.00 +0.99 +0.99 +0.99 +0.99 +0.99 +0.99 +0.98 +0.97 +0.96 +0.95 +0.93 +0.90 +0.64 
+  L 9  +0.79 +0.83 +0.92 +0.98 +0.98 +0.99 +0.99 +1.00 +1.00 +1.00 +1.00 +0.99 +0.99 +0.99 +0.99 +0.99 +0.99 +0.98 +0.97 +0.97 +0.96 +0.94 +0.90 +0.65 
+  L10  +0.79 +0.83 +0.93 +0.97 +0.97 +0.99 +0.99 +1.00 +1.00 +1.00 +1.00 +1.00 +1.00 +1.00 +0.99 +0.99 +0.99 +0.98 +0.97 +0.97 +0.96 +0.94 +0.90 +0.64 
+  L11  +0.79 +0.83 +0.92 +0.97 +0.97 +0.98 +0.99 +0.99 +0.99 +0.99 +1.00 +1.00 +1.00 +1.00 +1.00 +1.00 +0.99 +0.98 +0.98 +0.97 +0.96 +0.95 +0.91 +0.67 
+  L12  +0.79 +0.83 +0.92 +0.97 +0.97 +0.98 +0.99 +0.99 +0.99 +0.99 +1.00 +1.00 +1.00 +1.00 +1.00 +1.00 +0.99 +0.99 +0.98 +0.97 +0.96 +0.94 +0.91 +0.66 
+  L13  +0.78 +0.82 +0.92 +0.97 +0.97 +0.98 +0.99 +0.99 +0.99 +0.99 +1.00 +1.00 +1.00 +1.00 +1.00 +1.00 +0.99 +0.99 +0.98 +0.97 +0.96 +0.94 +0.91 +0.66 
+  L14  +0.78 +0.82 +0.91 +0.96 +0.97 +0.98 +0.98 +0.99 +0.99 +0.99 +0.99 +1.00 +1.00 +1.00 +1.00 +1.00 +0.99 +0.99 +0.98 +0.97 +0.97 +0.95 +0.92 +0.68 
+  L15  +0.78 +0.83 +0.92 +0.97 +0.97 +0.97 +0.98 +0.98 +0.99 +0.99 +0.99 +1.00 +1.00 +1.00 +1.00 +1.00 +1.00 +0.99 +0.99 +0.98 +0.97 +0.95 +0.92 +0.69 
+  L16  +0.78 +0.81 +0.91 +0.97 +0.97 +0.96 +0.97 +0.98 +0.99 +0.99 +0.99 +0.99 +0.99 +0.99 +0.99 +1.00 +1.00 +1.00 +0.99 +0.98 +0.98 +0.97 +0.94 +0.72 
+  L17  +0.79 +0.81 +0.90 +0.97 +0.97 +0.95 +0.96 +0.97 +0.98 +0.98 +0.98 +0.98 +0.99 +0.99 +0.99 +0.99 +1.00 +1.00 +1.00 +0.99 +0.99 +0.98 +0.95 +0.73 
+  L18  +0.77 +0.80 +0.90 +0.96 +0.97 +0.95 +0.96 +0.97 +0.97 +0.97 +0.97 +0.98 +0.98 +0.98 +0.98 +0.99 +0.99 +1.00 +1.00 +0.99 +0.99 +0.98 +0.96 +0.74 
+  L19  +0.76 +0.78 +0.88 +0.96 +0.96 +0.94 +0.95 +0.96 +0.96 +0.97 +0.97 +0.97 +0.97 +0.97 +0.97 +0.98 +0.98 +0.99 +0.99 +1.00 +1.00 +0.99 +0.97 +0.77 
+  L20  +0.76 +0.76 +0.87 +0.95 +0.95 +0.93 +0.94 +0.95 +0.95 +0.96 +0.96 +0.96 +0.96 +0.96 +0.97 +0.97 +0.98 +0.99 +0.99 +1.00 +1.00 +0.99 +0.98 +0.80 
+  L21  +0.73 +0.73 +0.84 +0.94 +0.94 +0.91 +0.92 +0.93 +0.93 +0.94 +0.94 +0.95 +0.94 +0.94 +0.95 +0.95 +0.97 +0.98 +0.98 +0.99 +0.99 +1.00 +0.99 +0.80 
+  L22  +0.71 +0.68 +0.79 +0.90 +0.91 +0.88 +0.89 +0.90 +0.90 +0.90 +0.90 +0.91 +0.91 +0.91 +0.92 +0.92 +0.94 +0.95 +0.96 +0.97 +0.98 +0.99 +1.00 +0.86 
+  L23  +0.57 +0.46 +0.55 +0.64 +0.64 +0.60 +0.61 +0.63 +0.64 +0.65 +0.64 +0.67 +0.66 +0.66 +0.68 +0.69 +0.72 +0.73 +0.74 +0.77 +0.80 +0.80 +0.86 +1.00 
+
+==============================================================================
+METRIC M3 — Lakoff-predicted couplings vs unpredicted couplings
+==============================================================================
+
+  Predicted-positive couplings: their cos across layers
+  pair                                       mean(cos)  sign-consistent?
+  UP-DOWN ↔ LIGHT-DARK                          +0.269  24/24 layers > 0
+  UP-DOWN ↔ BALANCE                             +0.380  23/24 layers > 0
+  LIGHT-DARK ↔ BALANCE                          +0.125  24/24 layers > 0
+  FORCE ↔ DIFFICULTY-BURDEN                     +0.182  24/24 layers > 0
+  UP-DOWN ↔ FORCE                               +0.048  18/24 layers > 0
+  FORWARD-BACK ↔ PATH-MOTION                    +0.281  24/24 layers > 0
+
+  Summary:
+    Predicted-positive couplings:  mean=+0.2140, n=6
+    Unpredicted couplings:         mean=+0.0038, n=22
+
+==============================================================================
+METRIC M4 — antonymy sanity: cos(schema, flipped(schema)) should ≈ -1
+==============================================================================
+
+  schema                    cos(L=0)   cos(L=12)   cos(L=23)
+  UP-DOWN                     -1.000      -1.000      -1.000
+  IN-OUT_CLEAN                -1.000      -1.000      -1.000
+  FORWARD-BACK                -1.000      -1.000      -1.000
+  PATH-MOTION                 -1.000      -1.000      -1.000
+  LIGHT-DARK                  -1.000      -1.000      -1.000
+  FORCE                       -1.000      -1.000      -1.000
+  BALANCE                     -1.000      -1.000      -1.000
+  DIFFICULTY-BURDEN           -1.000      -1.000      -1.000
+
+==============================================================================
+Saved exp123_results.npz + exp123_config.json
+==============================================================================

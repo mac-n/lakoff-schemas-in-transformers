@@ -1,0 +1,73 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+==============================================================================
+SYNTHETIC SELF-TEST (three planted worlds; harness must discriminate)
+==============================================================================
+  world A: cos(planted BAL, d): orig +0.984  single -0.072  resid +0.029
+  world B: cos(planted BAL, d): orig +0.992  single +0.967  resid +0.991
+  world C: cos(planted BAL, d): orig +0.986  single +0.928  resid +0.980
+  discriminates A (killed): True  B (confirmed): True  C (partial): True
+  SELF-TEST PASS
+
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:21,  3.59it/s]Loading weights:  46%|████▌     | 134/292 [00:00<00:00, 437.58it/s]Loading weights:  71%|███████   | 206/292 [00:00<00:00, 475.68it/s]Loading weights:  92%|█████████▏| 270/292 [00:00<00:00, 515.84it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 444.81it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+Collecting residuals for 489 words at [4, 8, 12, 16, 20]...
+  100/489
+  200/489
+  300/489
+  400/489
+single-token words: 219/489
+
+==============================================================================
+exp170 — d_norm token-count purity
+==============================================================================
+
+--- Layer 4 ---
+  carriers: orig +0.940  single +0.875  resid +0.574  tokcount +0.814
+  cos(BALANCE, .): orig +0.784  SINGLE +0.172  RESID +0.716  tokcount -0.781
+  confound anatomy: cos(d_orig, d_tok) = -0.987
+  infl mean sink before -0.414 -> after strip: orig +0.064  single -0.084  resid -0.047
+  random-2D band: -0.414 ± 0.001
+  SINK_MATCHED (N=27 pooled pairs): pooled-dir +0.023  mean-per-pair +0.006
+
+--- Layer 8 ---
+  carriers: orig +0.891  single +0.807  resid +0.813  tokcount +0.736
+  cos(BALANCE, .): orig +0.729  SINGLE +0.047  RESID +0.541  tokcount -0.733
+  confound anatomy: cos(d_orig, d_tok) = -0.944
+  infl mean sink before -0.320 -> after strip: orig +0.018  single -0.002  resid +0.005
+  random-2D band: -0.320 ± 0.001
+  SINK_MATCHED (N=27 pooled pairs): pooled-dir -0.110  mean-per-pair +0.016
+
+--- Layer 12 ---
+  carriers: orig +0.873  single +0.823  resid +0.783  tokcount +0.727
+  cos(BALANCE, .): orig +0.701  SINGLE +0.194  RESID +0.476  tokcount -0.724
+  confound anatomy: cos(d_orig, d_tok) = -0.945
+  infl mean sink before -0.285 -> after strip: orig -0.009  single -0.018  resid -0.026
+  random-2D band: -0.285 ± 0.001
+  SINK_MATCHED (N=27 pooled pairs): pooled-dir -0.082  mean-per-pair +0.015
+
+--- Layer 16 ---
+  carriers: orig +0.849  single +0.709  resid +0.738  tokcount +0.698
+  cos(BALANCE, .): orig +0.718  SINGLE +0.206  RESID +0.519  tokcount -0.733
+  confound anatomy: cos(d_orig, d_tok) = -0.956
+  infl mean sink before -0.288 -> after strip: orig -0.016  single -0.021  resid -0.028
+  random-2D band: -0.288 ± 0.001
+  SINK_MATCHED (N=27 pooled pairs): pooled-dir -0.049  mean-per-pair +0.014
+
+--- Layer 20 ---
+  carriers: orig +0.831  single +0.801  resid +0.701  tokcount +0.675
+  cos(BALANCE, .): orig +0.729  SINGLE -0.006  RESID +0.532  tokcount -0.724
+  confound anatomy: cos(d_orig, d_tok) = -0.947
+  infl mean sink before -0.280 -> after strip: orig -0.007  single -0.008  resid -0.001
+  random-2D band: -0.280 ± 0.001
+  SINK_MATCHED (N=27 pooled pairs): pooled-dir +0.027  mean-per-pair +0.018
+
+==============================================================================
+VERDICT vs PREREG_exp170.md decision rule
+==============================================================================
+  replication gate (cos_orig in ~[0.70,0.78], tol ±0.05): PASS
+  cos>=HI: single 0/5, resid 4/5 | |cos|<LO: single 4/5, resid 0/5
+  clean-strip collapse >= 0.6x orig collapse: True
+  SINK_MATCHED pooled negative every layer (N=27): False
+  -> PURITY_PARTIAL — two-component; clean numbers become primary.

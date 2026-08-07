@@ -1,0 +1,241 @@
+Loading glove-wiki-gigaword-300...
+  vocab size: 400000
+
+Building PCA-input axes (cluster set, 11 axes from exp40)...
+
+Building target axes (independent from PCA-input set)...
+  [target_SALIENCE] missing words (1): ['backgrounded']
+  target_SALIENCE built from 11/12 pairs
+  target_MOTION    built from 12/12 pairs
+  target_EQ_RUN    built from 14/14 pairs
+
+========================================================================
+PCA on cluster axes (11 axes — matches exp40 cluster-only run)
+========================================================================
+
+Variance per PC:
+  PC1:  20.6%   (cumulative:  20.6%)
+  PC2:  17.3%   (cumulative:  37.9%)
+  PC3:  12.4%   (cumulative:  50.3%)
+  PC4:  11.2%   (cumulative:  61.5%)
+  PC5:   9.3%   (cumulative:  70.9%)
+  PC6:   8.7%   (cumulative:  79.6%)
+  PC7:   6.3%   (cumulative:  85.9%)
+  PC8:   5.3%   (cumulative:  91.2%)
+  PC9:   4.5%   (cumulative:  95.7%)
+  PC10:   4.3%   (cumulative: 100.0%)
+
+========================================================================
+CENTRAL TEST: target-axis cosines with PCs
+========================================================================
+
+Predictions:
+  target_SALIENCE  high on PC1 if PC1 is salience-as-primitive;
+                   LOW on PC1 if PC1 is just the V x A diagonal
+  target_MOTION    high on PC2 if MOTION is a real primitive
+  target_EQ_RUN    high on PC3 if EQ-vs-RUNAWAY is a real primitive
+
+                      PC1      PC2      PC3      PC4      PC5      PC6    
+  --------------------------------------------------------------------
+  target_SALIENCE     -0.174  -0.280  -0.056  +0.024  -0.058  -0.039  
+  target_MOTION       -0.094  +0.051  +0.022  +0.054  +0.017  -0.072  
+  target_EQ_RUN       +0.290  +0.011  +0.205  -0.073  -0.124  -0.042  
+
+========================================================================
+Per-target deep dive
+========================================================================
+
+--- target_SALIENCE ---
+  Best PC alignments (sorted by |cos|):
+    PC2 (17.3% var): cos = -0.2797
+    PC7 ( 6.3% var): cos = +0.1974
+    PC1 (20.6% var): cos = -0.1743
+    PC5 ( 9.3% var): cos = -0.0583
+    PC3 (12.4% var): cos = -0.0556
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: +0.4861
+     COHERENCE: +0.4247
+           BAL: +0.3825
+            FB: +0.3625
+            UD: +0.3606
+  Positive pole words:
+    +0.5101  prominent
+    +0.4796  including
+    +0.4558  first
+    +0.4456  addition
+    +0.4374  major
+    +0.4366  notable
+    +0.4286  noted
+    +0.4277  also
+    +0.4192  important
+    +0.4160  one
+  Negative pole words:
+    +0.5190  valueless
+    +0.5184  unfocused
+    +0.4935  uninteresting
+    +0.4822  inoffensive
+    +0.4788  pathetically
+    +0.4783  inattentive
+    +0.4754  unimaginative
+    +0.4736  unimportant
+    +0.4712  inconsequential
+    +0.4657  inarticulate
+
+--- target_MOTION ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = -0.0937
+    PC7 ( 6.3% var): cos = -0.0735
+    PC6 ( 8.7% var): cos = -0.0721
+    PC8 ( 5.3% var): cos = +0.0674
+    PC4 (11.2% var): cos = +0.0538
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+          PATH: +0.2911
+            FB: +0.1925
+            UD: +0.1918
+       AROUSAL: +0.1823
+           BAL: +0.1424
+  Positive pole words:
+    +0.3876  skiing
+    +0.3869  racing
+    +0.3763  sprint
+    +0.3722  diving
+    +0.3711  spectacular
+    +0.3668  championships
+    +0.3593  speed
+    +0.3516  run
+    +0.3503  track
+    +0.3484  jump
+  Negative pole words:
+    +0.4883  kneeling
+    +0.4422  slouched
+    +0.4287  reclining
+    +0.4103  glumly
+    +0.3947  reclined
+    +0.3935  knelt
+    +0.3800  hunched
+    +0.3740  seated
+    +0.3730  slouching
+    +0.3711  lounging
+
+--- target_EQ_RUN ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = +0.2901
+    PC3 (12.4% var): cos = +0.2047
+    PC8 ( 5.3% var): cos = -0.1543
+    PC7 ( 6.3% var): cos = -0.1408
+    PC5 ( 9.3% var): cos = -0.1243
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: -0.2861
+            LD: +0.2180
+       VALENCE: +0.2167
+          LOSS: +0.1638
+     COHERENCE: +0.0871
+  Positive pole words:
+    +0.3360  restoring
+    +0.3153  interpreting
+    +0.3121  modifying
+    +0.3081  tempering
+    +0.3038  adjusting
+    +0.3024  atoning
+    +0.2969  effecting
+    +0.2965  erred
+    +0.2888  accomplishing
+    +0.2820  nyts
+  Negative pole words:
+    +0.4604  mushrooming
+    +0.4443  spiralling
+    +0.4424  spiraling
+    +0.4295  escalating
+    +0.4231  raging
+    +0.4213  engulfed
+    +0.4143  erupted
+    +0.3860  raged
+    +0.3851  escalated
+    +0.3807  sparked
+
+Saved: exp52_results.npz
+Loading GloVe...
+
+Building 13 Roget-thesaurus antonym axes...
+  TEMPERATURE: 5/5 pairs all in vocab
+  MOISTURE: 5/5 pairs all in vocab
+  SPEED: 5/5 pairs all in vocab
+  SIZE: 5/5 pairs all in vocab
+  STRENGTH: 5/5 pairs all in vocab
+  TEXTURE: 4/4 pairs all in vocab
+  TASTE: 4/4 pairs all in vocab
+  AGE: 4/4 pairs all in vocab
+  SOUND_VOLUME: 5/5 pairs all in vocab
+  CLEANLINESS: 4/4 pairs all in vocab
+  HARDNESS: 4/4 pairs all in vocab
+  SHARPNESS: 4/4 pairs all in vocab
+  DENSITY: 4/4 pairs all in vocab
+
+Building 13-axis cognitive basis (Basis-13b)...
+
+==============================================================================
+Roget-13 inter-axis cosines
+==============================================================================
+
+               TEMPER MOISTU  SPEED   SIZE STRENG TEXTUR  TASTE    AGE SOUND_ CLEANL HARDNE SHARPN DENSIT
+TEMPERATURE    1.000 +0.039 +0.112 -0.063 +0.092 -0.031 -0.032 -0.025 +0.163 -0.123 -0.119 -0.012 +0.108 
+MOISTURE      +0.039  1.000 -0.001 -0.046 +0.058 +0.080 -0.054 +0.104 -0.007 +0.077 +0.032 +0.025 +0.134 
+SPEED         +0.112 -0.001  1.000 +0.068 +0.306 +0.117 -0.013 +0.128 +0.200 +0.005 +0.159 +0.085 +0.132 
+SIZE          -0.063 -0.046 +0.068  1.000 +0.201 +0.057 -0.072 +0.057 +0.200 +0.014 +0.286 +0.134 +0.081 
+STRENGTH      +0.092 +0.058 +0.306 +0.201  1.000 +0.149 -0.048 +0.058 +0.165 +0.135 +0.260 +0.064 +0.195 
+TEXTURE       -0.031 +0.080 +0.117 +0.057 +0.149  1.000 +0.150 +0.056 -0.115 +0.295 +0.029 -0.145 +0.209 
+TASTE         -0.032 -0.054 -0.013 -0.072 -0.048 +0.150  1.000 +0.012 -0.121 +0.103 -0.250 -0.088 +0.073 
+AGE           -0.025 +0.104 +0.128 +0.057 +0.058 +0.056 +0.012  1.000 -0.048 +0.120 -0.026 -0.074 -0.029 
+SOUND_VOLUME  +0.163 -0.007 +0.200 +0.200 +0.165 -0.115 -0.121 -0.048  1.000 -0.209 +0.027 -0.005 +0.235 
+CLEANLINESS   -0.123 +0.077 +0.005 +0.014 +0.135 +0.295 +0.103 +0.120 -0.209  1.000 +0.184 +0.051 +0.012 
+HARDNESS      -0.119 +0.032 +0.159 +0.286 +0.260 +0.029 -0.250 -0.026 +0.027 +0.184  1.000 +0.325 +0.045 
+SHARPNESS     -0.012 +0.025 +0.085 +0.134 +0.064 -0.145 -0.088 -0.074 -0.005 +0.051 +0.325  1.000 -0.038 
+DENSITY       +0.108 +0.134 +0.132 +0.081 +0.195 +0.209 +0.073 -0.029 +0.235 +0.012 +0.045 -0.038  1.000 
+
+Roget-13 off-diagonal: max = 0.325, mean = 0.103
+Pairs > 0.35: 0/78
+Largest: HARDNESS ↔ SHARPNESS = +0.3245
+
+==============================================================================
+COVERAGE COMPARISON
+==============================================================================
+
+category                        Cog-13   Roget-13   Random-13
+--------------------------------------------------------------
+  EMOTIONS_AFFECTIVE            34.8%     34.0%   19.2%±1.8
+  AGENTIVE_STATES               39.9%     37.0%   18.8%±1.8
+  EPISTEMIC_STATES              46.7%     47.0%   17.6%±1.9
+  CONCRETE_NOUNS                42.9%     37.8%   18.1%±1.1
+  ABSTRACT_FORMAL               40.5%     32.7%   19.5%±1.4
+  MODAL_HYPOTHETICAL            41.1%     33.0%   18.2%±1.5
+  PHYSICAL_PROPERTIES           44.9%     47.6%   17.3%±1.3
+--------------------------------------------------------------
+  OVERALL MEAN                 41.45%    39.07%
+
+==============================================================================
+Cross-cosines between Roget-13 and Cog-13
+==============================================================================
+
+                   UD    C_r      W    ATT  INT_r      R      D     IO   DV_r     MB     EV    ABS   RI_r
+TEMPERATURE    +0.102 -0.031 -0.010 +0.069 -0.064 -0.166 +0.055 +0.033 +0.089 +0.114 +0.004 -0.061 +0.067
+MOISTURE       +0.036 -0.049 +0.074 +0.053 -0.017 -0.003 +0.079 -0.007 +0.104 +0.013 -0.044 -0.069 +0.008
+SPEED          +0.187 -0.005 -0.004 -0.104 +0.141 -0.023 -0.042 -0.009 -0.037 +0.032 -0.040 -0.130 -0.089
+SIZE           +0.191 -0.156 +0.349 -0.063 +0.138 -0.068 -0.074 -0.069 -0.058 -0.150 +0.042 -0.057 -0.138
+STRENGTH       +0.437 +0.121 +0.065 -0.092 +0.028 -0.103 +0.069 +0.088 +0.007 +0.020 -0.016 -0.083 -0.022
+TEXTURE        +0.316 +0.199 -0.292 +0.035 +0.087 -0.053 +0.067 +0.022 -0.003 +0.007 +0.052 +0.026 -0.030
+TASTE          +0.017 +0.198 -0.189 +0.047 -0.123 +0.046 +0.085 -0.041 +0.006 +0.014 -0.059 +0.072 +0.118
+AGE            +0.083 +0.048 -0.191 +0.227 -0.037 -0.053 -0.155 -0.058 -0.015 -0.085 -0.023 +0.013 +0.060
+SOUND_VOLUME   -0.011 -0.052 +0.204 +0.021 -0.063 -0.164 +0.002 -0.020 -0.096 -0.112 +0.060 -0.063 -0.061
+CLEANLINESS    +0.403 +0.046 -0.198 +0.016 -0.024 +0.046 -0.027 +0.041 -0.019 +0.059 -0.010 +0.134 -0.049
+HARDNESS       +0.336 -0.210 +0.284 -0.088 +0.321 +0.115 +0.128 -0.007 +0.062 +0.057 -0.024 -0.156 -0.311
+SHARPNESS      +0.033 -0.123 +0.104 +0.059 +0.113 +0.068 -0.117 -0.123 +0.082 -0.032 +0.146 +0.039 -0.085
+DENSITY        +0.099 +0.109 +0.130 -0.072 +0.079 -0.095 +0.071 +0.100 +0.043 -0.004 -0.026 +0.021 +0.096
+
+Subspace overlap (sum of squared principal-angle cosines): 1.664 out of 13 max
+  → fraction overlap: 12.8%
+
+Principal-angle cosines: ['0.701', '0.620', '0.463', '0.430', '0.363', '0.288', '0.238', '0.229', '0.188', '0.140', '0.082', '0.057', '0.013']
+Number of principal angles with cos > 0.5: 2
+Number near-orthogonal (cos < 0.3): 8
+
+Saved exp86_results.npz

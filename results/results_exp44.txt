@@ -1,0 +1,147 @@
+Loading axes from exp43 (layer 3)...
+
+============================================================
+VALENCE axis (layer 3)
+============================================================
+
+Positive pole (top features that load + on this axis):
+  feat 22160 (+0.1416): instances of high numerical values or significant data points
+  feat 24727 (+0.1002): positive aspects or advantages in various contexts
+  feat 20247 (+0.0901): phrases describing advantages and benefits
+  feat  3892 (+0.0842): positive adjectives and expressions of enthusiasm
+  feat 22508 (+0.0774): end-of-sentence punctuation
+  feat 24328 (+0.0697): expressions related to perfection or excellence
+  feat 24665 (+0.0659): HTML or code formatting elements
+  feat   656 (+0.0657): evaluative terms indicating quality, particularly focusing on positive descriptors
+
+Negative pole (top features that load − on this axis):
+  feat  6824 (-0.3844): phrases associated with challenges and difficulties
+  feat 27267 (-0.2849): negative descriptors associated with experiences or evaluations
+  feat  3625 (-0.2806): adjectives and descriptors that evaluate quality or performance
+  feat  3573 (-0.2488): terms related to distinction and differentiation
+  feat 22622 (-0.2430): instances of line breaks or empty sections in the text
+  feat 21809 (-0.2105): expressions of gratitude and friendship
+  feat  5355 (-0.1910): legal terminology related to liability and warranties
+  feat 22943 (-0.1824): expressions of frustration or dissatisfaction
+
+============================================================
+AROUSAL axis (layer 3)
+============================================================
+
+Positive pole (top features that load + on this axis):
+  feat 29565 (+0.1408): references to emotional states and interpersonal relationships
+  feat 31279 (+0.1057): terms related to acute medical conditions or treatments
+  feat 13294 (+0.0987): occurrences of the word "Fr", which likely indicates references to a specific topic or person
+  feat 30126 (+0.0886): terms related to electricity and electrical systems
+  feat  2831 (+0.0651): references to legal principles or guidelines
+  feat  2175 (+0.0543): expressions of positive emotions and satisfaction
+  feat  8497 (+0.0528): terms related to emergency situations and medical responses
+  feat  6824 (+0.0503): phrases associated with challenges and difficulties
+
+Negative pole (top features that load − on this axis):
+  feat 21809 (-0.5534): expressions of gratitude and friendship
+  feat  5355 (-0.4950): legal terminology related to liability and warranties
+  feat  1812 (-0.3649): complex legal terms and organizational identifiers
+  feat  3637 (-0.2709): key terms related to legal proceedings and opinions
+  feat 22622 (-0.2019): instances of line breaks or empty sections in the text
+  feat 20449 (-0.1292): the letter 'd' in various contexts
+  feat 28802 (-0.0857): the word "still" and related expressions indicating continuity or persistence
+  feat 30994 (-0.0678): expressions of emotions and thoughts related to performance and critique
+
+============================================================
+EXISTENCE axis (layer 3)
+============================================================
+
+Positive pole (top features that load + on this axis):
+  feat 29565 (+0.1789): references to emotional states and interpersonal relationships
+  feat 28393 (+0.0803): phrases that indicate birth and early life events
+  feat  2831 (+0.0789): references to legal principles or guidelines
+  feat  6939 (+0.0594): occurrences of organizations or entities being founded or established
+  feat  2885 (+0.0588): instances of the word "appear" and its variations
+  feat 26792 (+0.0460): phrases related to data representation and analysis
+  feat  1328 (+0.0458): phrases related to commencement or initiation
+  feat  4475 (+0.0432): references to different types of materials
+
+Negative pole (top features that load − on this axis):
+  feat 21809 (-0.5616): expressions of gratitude and friendship
+  feat  5355 (-0.5185): legal terminology related to liability and warranties
+  feat  1812 (-0.3855): complex legal terms and organizational identifiers
+  feat  3637 (-0.2926): key terms related to legal proceedings and opinions
+  feat 22622 (-0.1795): instances of line breaks or empty sections in the text
+  feat  2179 (-0.0955): verbs related to quitting or stopping actions
+  feat  5640 (-0.0773): context related to death and dying
+  feat 12046 (-0.0676): occurrences of the prefix "dis-" indicating negative or reversal concepts
+
+============================================================
+COHERENCE axis (layer 3)
+============================================================
+
+Positive pole (top features that load + on this axis):
+  feat 29565 (+0.1676): references to emotional states and interpersonal relationships
+  feat 16128 (+0.1287): references to "normal" physiological conditions or states
+  feat  2831 (+0.0809): references to legal principles or guidelines
+  feat 26792 (+0.0527): phrases related to data representation and analysis
+  feat 18915 (+0.0434): actions involving biological processes and laboratory techniques
+  feat 15191 (+0.0376): references to continuity and consistency in processes or activities
+  feat 20209 (+0.0345): references to programming and technical specifications
+  feat 11794 (+0.0306): words related to legal actions and detention processes
+
+Negative pole (top features that load − on this axis):
+  feat 21809 (-0.5386): expressions of gratitude and friendship
+  feat  5355 (-0.4627): legal terminology related to liability and warranties
+  feat  1812 (-0.3444): complex legal terms and organizational identifiers
+  feat  3637 (-0.2592): key terms related to legal proceedings and opinions
+  feat 22622 (-0.2382): instances of line breaks or empty sections in the text
+  feat 13153 (-0.1607): instances of the prefix "mis" indicating incorrectness or mistakes
+  feat 12046 (-0.1343): occurrences of the prefix "dis-" indicating negative or reversal concepts
+  feat 22635 (-0.1242): instances of surprising or unexpected events
+
+============================================================
+SUCCESS axis (layer 3)
+============================================================
+
+Positive pole (top features that load + on this axis):
+  feat 21809 (+0.5675): expressions of gratitude and friendship
+  feat  5355 (+0.5160): legal terminology related to liability and warranties
+  feat  1812 (+0.3823): complex legal terms and organizational identifiers
+  feat  3637 (+0.2857): key terms related to legal proceedings and opinions
+  feat 22622 (+0.2221): instances of line breaks or empty sections in the text
+  feat 24757 (+0.0732): verbs related to victories and achievements in competitive contexts
+  feat 10896 (+0.0579): URLs and internet links
+  feat 14718 (+0.0546): terms related to objectives and aspirations
+
+Negative pole (top features that load − on this axis):
+  feat 29565 (-0.1465): references to emotional states and interpersonal relationships
+  feat 24510 (-0.1253): instances of failure or rejection in various contexts
+  feat  2831 (-0.0708): references to legal principles or guidelines
+  feat  2006 (-0.0607): occurrences of the word "fall" and its variations
+  feat 16672 (-0.0568): phrases related to loss or defeat
+  feat 23358 (-0.0511): variations and changes in data, particularly related to statistics and trends
+  feat   800 (-0.0507): phrases or terms related to absence or oversight
+  feat 23427 (-0.0427): references to short durations or brief time frames
+
+============================================================
+LOSS axis (layer 3)
+============================================================
+
+Positive pole (top features that load + on this axis):
+  feat  7147 (+0.3528): instances of the letter 'b'
+  feat 14449 (+0.2487): terms related to wealth and richness
+  feat 15468 (+0.2286): variations of the word "protect" and related terms about safety and safeguarding
+  feat  3576 (+0.1603): references to Africa
+  feat 20247 (+0.1464): phrases describing advantages and benefits
+  feat 17742 (+0.1389): terms related to acquisition or possession of items and information
+  feat  9809 (+0.1236): actions and processes related to legal or regulatory contexts
+  feat 29071 (+0.1189): terms related to security and its various aspects
+
+Negative pole (top features that load − on this axis):
+  feat 16672 (-0.2772): phrases related to loss or defeat
+  feat 24510 (-0.2322): instances of failure or rejection in various contexts
+  feat  1730 (-0.1531): terms related to health impairments and deficiencies
+  feat  9558 (-0.1527): references to the pronoun "it."
+  feat 32299 (-0.1364): [no data]
+  feat  5355 (-0.1127): legal terminology related to liability and warranties
+  feat 21809 (-0.1125): expressions of gratitude and friendship
+  feat  4917 (-0.1026): periods at the end of sentences or statements
+
+Done.

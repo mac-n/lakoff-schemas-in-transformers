@@ -1,0 +1,256 @@
+Loading exp45 results...
+
+=== ALL PCs from exp45 (diverse triples, L3) ===
+
+
+========================================================================
+PC1 (37.5% variance)
+========================================================================
+Axis loadings: COHERENCE-0.89, AROUSAL-0.86, LIGHT-DARK-0.77, SUCCESS+0.75, UP-DOWN-0.59, VALENCE+0.57
+
+Positive pole:
+  feat 21809 (+0.505): expressions of gratitude and friendship
+  feat  5355 (+0.433): legal terminology related to liability and warranties
+  feat 22622 (+0.348): instances of line breaks or empty sections in the text
+  feat  1812 (+0.315): complex legal terms and organizational identifiers
+  feat  3637 (+0.250): key terms related to legal proceedings and opinions
+  feat 32581 (+0.065): occurrences of the word "required"
+  feat 27540 (+0.056): periods and sentence endings in legal or formal documents
+  feat   647 (+0.053): references to food and culinary experiences
+
+Negative pole:
+  feat 22938 (-0.093): references to the word "from" in various contexts
+  feat 22160 (-0.086): instances of high numerical values or significant data points
+  feat 29565 (-0.083): references to emotional states and interpersonal relationships
+  feat 22943 (-0.078): expressions of frustration or dissatisfaction
+  feat 27267 (-0.075): negative descriptors associated with experiences or evaluations
+  feat 12046 (-0.067): occurrences of the prefix "dis-" indicating negative or reversal concepts
+  feat  5643 (-0.061): instances of the letter "v" and its various forms
+  feat  2179 (-0.049): verbs related to quitting or stopping actions
+
+========================================================================
+PC2 (11.8% variance)
+========================================================================
+Axis loadings: EXISTENCE+0.68, VALENCE-0.56, IN-OUT+0.32, LIGHT-DARK-0.26, UP-DOWN-0.18, LEFT-RIGHT-0.17
+
+Positive pole:
+  feat 22622 (+0.353): instances of line breaks or empty sections in the text
+  feat 19729 (+0.202): occurrences of the letter 'A' as a standalone character
+  feat 27267 (+0.167): negative descriptors associated with experiences or evaluations
+  feat 22943 (+0.155): expressions of frustration or dissatisfaction
+  feat 12046 (+0.153): occurrences of the prefix "dis-" indicating negative or reversal concepts
+  feat  5643 (+0.138): instances of the letter "v" and its various forms
+  feat 23822 (+0.129): instances of the word "right."
+  feat  6824 (+0.110): phrases associated with challenges and difficulties
+
+Negative pole:
+  feat 22160 (-0.217): instances of high numerical values or significant data points
+  feat 32409 (-0.188): the definite article "The" at the beginning of sentences
+  feat  5355 (-0.159): legal terminology related to liability and warranties
+  feat 21809 (-0.157): expressions of gratitude and friendship
+  feat  1812 (-0.154): complex legal terms and organizational identifiers
+  feat 22938 (-0.127): references to the word "from" in various contexts
+  feat  5640 (-0.107): context related to death and dying
+  feat   257 (-0.102): instances of the word "left" in various contexts
+
+========================================================================
+PC3 (10.0% variance)
+========================================================================
+Axis loadings: LEFT-RIGHT-0.62, LOSS+0.48, IN-OUT-0.36, UP-DOWN+0.27, SUCCESS+0.21, VALENCE+0.18
+
+Positive pole:
+  feat 23822 (+0.523): instances of the word "right."
+  feat 22938 (+0.207): references to the word "from" in various contexts
+  feat 22311 (+0.155): repetitive phrases emphasizing continuity and persistence
+  feat   792 (+0.087): terms related to safety and security
+  feat 17951 (+0.080): the term "Th" in various contexts
+  feat 10550 (+0.077): phrases indicating past experiences or conditions
+  feat  5534 (+0.075): instances of time-related events, specifically regarding a person's condition or actions over a timeline
+  feat 26101 (+0.074): adjectives and adverbs that describe qualities or characteristics, particularly in positive or favorable contexts
+
+Negative pole:
+  feat   257 (-0.373): instances of the word "left" in various contexts
+  feat 16672 (-0.187): phrases related to loss or defeat
+  feat 16648 (-0.145): spatial directions and positions
+  feat 16185 (-0.129): actions and verbs related to motion and physical interactions
+  feat  7674 (-0.099): prepositions indicating location or positioning
+  feat  2006 (-0.098): occurrences of the word "fall" and its variations
+  feat 30190 (-0.094): discussions of violence and tragedy
+  feat 22943 (-0.091): expressions of frustration or dissatisfaction
+
+========================================================================
+PC4 (9.6% variance)
+========================================================================
+Axis loadings: FORWARD-BACK+0.64, IN-OUT+0.45, LEFT-RIGHT-0.39, EXISTENCE-0.24, SUCCESS-0.14, LIGHT-DARK+0.12
+
+Positive pole:
+  feat 23822 (+0.353): instances of the word "right."
+  feat  9933 (+0.332): expressions of progress or forward movement
+  feat 30168 (+0.163): references to progress and advancement in various contexts
+  feat 31975 (+0.116): the article "the" in various contexts
+  feat 32409 (+0.103): the definite article "The" at the beginning of sentences
+  feat 12886 (+0.098): phrases indicating absorption or significant responsibility
+  feat  4917 (+0.098): periods at the end of sentences or statements
+  feat  7674 (+0.095): prepositions indicating location or positioning
+
+Negative pole:
+  feat 22938 (-0.280): references to the word "from" in various contexts
+  feat   257 (-0.249): instances of the word "left" in various contexts
+  feat   342 (-0.191): phrases referring to "back" and related concepts
+  feat 24435 (-0.181): references to time, specifically related to past events
+  feat  5511 (-0.125): phrases indicating possession or relationships involving "of."
+  feat 11832 (-0.120): references to age or vintage characteristics
+  feat 22622 (-0.115): instances of line breaks or empty sections in the text
+  feat  5080 (-0.111): phrases that indicate a return to a previous state or condition
+
+========================================================================
+PC5 (8.6% variance)
+========================================================================
+Axis loadings: FORWARD-BACK+0.56, IN-OUT-0.51, SUCCESS+0.29, LOSS-0.20, LIGHT-DARK-0.14, UP-DOWN-0.12
+
+Positive pole:
+  feat  9933 (+0.358): expressions of progress or forward movement
+  feat 22938 (+0.244): references to the word "from" in various contexts
+  feat 30168 (+0.173): references to progress and advancement in various contexts
+  feat 11794 (+0.140): words related to legal actions and detention processes
+  feat 12886 (+0.120): phrases indicating absorption or significant responsibility
+  feat 18142 (+0.105): references to the future and its implications
+  feat 24516 (+0.098): instances of the word "was" in various contexts
+  feat 20131 (+0.097): intensifiers that emphasize completeness or totality
+
+Negative pole:
+  feat   342 (-0.260): phrases referring to "back" and related concepts
+  feat 24435 (-0.189): references to time, specifically related to past events
+  feat 23822 (-0.128): instances of the word "right."
+  feat  7674 (-0.126): prepositions indicating location or positioning
+  feat 11832 (-0.104): references to age or vintage characteristics
+  feat 16847 (-0.104): phrases related to the duration of time or experience
+  feat  2959 (-0.103): terms related to legal or contractual disputes
+  feat 31975 (-0.092): the article "the" in various contexts
+
+========================================================================
+PC6 (7.9% variance)
+========================================================================
+Axis loadings: LOSS-0.60, EXISTENCE+0.36, LEFT-RIGHT-0.30, VALENCE+0.27, SUCCESS-0.16, LIGHT-DARK+0.09
+
+Positive pole:
+  feat 16672 (+0.283): phrases related to loss or defeat
+  feat 23822 (+0.279): instances of the word "right."
+  feat 19729 (+0.179): occurrences of the letter 'A' as a standalone character
+  feat 13754 (+0.106): the letter 'g'
+  feat 11794 (+0.104): words related to legal actions and detention processes
+  feat  2006 (+0.102): occurrences of the word "fall" and its variations
+  feat 22800 (+0.091): references to individuals and their actions or characteristics
+  feat 12349 (+0.091): phrases that indicate distancing or avoiding something
+
+Negative pole:
+  feat 22311 (-0.255): repetitive phrases emphasizing continuity and persistence
+  feat   257 (-0.194): instances of the word "left" in various contexts
+  feat 32409 (-0.166): the definite article "The" at the beginning of sentences
+  feat   792 (-0.144): terms related to safety and security
+  feat 17951 (-0.142): the term "Th" in various contexts
+  feat 27267 (-0.132): negative descriptors associated with experiences or evaluations
+  feat 12046 (-0.124): occurrences of the prefix "dis-" indicating negative or reversal concepts
+  feat  4619 (-0.107): phrases indicating novelty or the introduction of something new
+
+========================================================================
+PC7 (5.9% variance)
+========================================================================
+Axis loadings: UP-DOWN-0.46, VALENCE+0.31, SUCCESS-0.31, LOSS+0.27, EXISTENCE+0.17, FORWARD-BACK+0.15
+
+Positive pole:
+  feat 20449 (+0.221): the letter 'd' in various contexts
+  feat  3288 (+0.174): instances of the letter 'l' in various contexts
+  feat 22311 (+0.149): repetitive phrases emphasizing continuity and persistence
+  feat 16185 (+0.144): actions and verbs related to motion and physical interactions
+  feat  2006 (+0.131): occurrences of the word "fall" and its variations
+  feat  3010 (+0.129): words and phrases related to legal proceedings and criminal justice
+  feat  9933 (+0.117): expressions of progress or forward movement
+  feat  7017 (+0.110): terms and phrases related to demographic statistics or references
+
+Negative pole:
+  feat 27267 (-0.169): negative descriptors associated with experiences or evaluations
+  feat 12046 (-0.154): occurrences of the prefix "dis-" indicating negative or reversal concepts
+  feat  5643 (-0.141): instances of the letter "v" and its various forms
+  feat  6824 (-0.122): phrases associated with challenges and difficulties
+  feat 28794 (-0.096): references to "rec" or "record" related contexts, likely indicating recording or recipes
+  feat 11486 (-0.090): the word "so" used multiple times to emphasize a point
+  feat 30254 (-0.090): instances of the word "hit," particularly in contexts of violence or impact
+  feat 17024 (-0.090): variations of the verb "grow."
+
+========================================================================
+PC8 (4.6% variance)
+========================================================================
+Axis loadings: UP-DOWN-0.46, EXISTENCE-0.27, LEFT-RIGHT-0.22, FORWARD-BACK-0.20, LOSS-0.19, SUCCESS+0.17
+
+Positive pole:
+  feat 23822 (+0.224): instances of the word "right."
+  feat 20449 (+0.214): the letter 'd' in various contexts
+  feat  3288 (+0.162): instances of the letter 'l' in various contexts
+  feat 11794 (+0.158): words related to legal actions and detention processes
+  feat 29705 (+0.148): words related to positive emotional experiences or sensations
+  feat 32409 (+0.132): the definite article "The" at the beginning of sentences
+  feat  3010 (+0.112): words and phrases related to legal proceedings and criminal justice
+  feat  7017 (+0.107): terms and phrases related to demographic statistics or references
+
+Negative pole:
+  feat   257 (-0.150): instances of the word "left" in various contexts
+  feat 30156 (-0.144): references to dark themes, tones, and conditions, often associated with negativity or evil
+  feat 19729 (-0.134): occurrences of the letter 'A' as a standalone character
+  feat  2734 (-0.126): verbs and actions that depict movement or changes in state
+  feat  9933 (-0.121): expressions of progress or forward movement
+  feat  4551 (-0.111): the presence of the word "fl" or any variation with high frequency, indicating a focus on words related to 'flaunting' or 'flair.'
+  feat 28794 (-0.098): references to "rec" or "record" related contexts, likely indicating recording or recipes
+  feat  3625 (-0.095): adjectives and descriptors that evaluate quality or performance
+
+========================================================================
+PC9 (2.7% variance)
+========================================================================
+Axis loadings: LIGHT-DARK-0.40, AROUSAL+0.24, EXISTENCE-0.13, COHERENCE+0.11, VALENCE+0.05, LEFT-RIGHT-0.05
+
+Positive pole:
+  feat 30156 (+0.378): references to dark themes, tones, and conditions, often associated with negativity or evil
+  feat 15748 (+0.159): concepts related to things that are concealed or not immediately apparent
+  feat 32409 (+0.138): the definite article "The" at the beginning of sentences
+  feat  9975 (+0.128): past tense verbs and their variations
+  feat  9370 (+0.128): the letter "r" used repetitively in various contexts
+  feat 22622 (+0.126): instances of line breaks or empty sections in the text
+  feat 25547 (+0.122): phrases or words indicating depth or intensity of emotion or understanding
+  feat 18796 (+0.117): words and phrases related to protection and safety measures
+
+Negative pole:
+  feat  7632 (-0.204): references to light and its properties
+  feat 23649 (-0.160): mentions of the term "Rad" and related variations, likely indicating a focus on topics associated with radiation or radical themes
+  feat  1597 (-0.142): references to smoking and tobacco-related content
+  feat 19729 (-0.138): occurrences of the letter 'A' as a standalone character
+  feat 10067 (-0.129): phrases related to companionship or relationships
+  feat 27267 (-0.103): negative descriptors associated with experiences or evaluations
+  feat 21809 (-0.098): expressions of gratitude and friendship
+  feat 31085 (-0.096): references to sound or ambient qualities
+
+========================================================================
+PC10 (1.4% variance)
+========================================================================
+Axis loadings: COHERENCE+0.26, AROUSAL-0.23, LIGHT-DARK-0.05, EXISTENCE-0.05, LOSS-0.04, LEFT-RIGHT-0.03
+
+Positive pole:
+  feat  1597 (+0.221): references to smoking and tobacco-related content
+  feat  2959 (+0.178): terms related to legal or contractual disputes
+  feat 31085 (+0.144): references to sound or ambient qualities
+  feat  9834 (+0.140): terms related to "purging" or cleansing of various contexts
+  feat 25009 (+0.103): forms of the verb "do" in various contexts
+  feat 27641 (+0.099): phrases related to tips and tricks in various contexts
+  feat 17668 (+0.099): instances of the word "ol" or variations of it that suggest alcohol
+  feat 13529 (+0.089): verbs indicating successful and progressive actions or processes
+
+Negative pole:
+  feat  9370 (-0.194): the letter "r" used repetitively in various contexts
+  feat 10496 (-0.172): adjectives and adverbs that indicate a degree or manner of action
+  feat  7971 (-0.118): descriptions of intense emotions or dramatic events
+  feat 27540 (-0.111): periods and sentence endings in legal or formal documents
+  feat 24524 (-0.110): instances of the word "nothing" and its variations, indicating themes of absence or lack
+  feat 27267 (-0.109): negative descriptors associated with experiences or evaluations
+  feat  2734 (-0.099): verbs and actions that depict movement or changes in state
+  feat 22587 (-0.092): questions and phrases related to the concept of "how."
+
+Done.

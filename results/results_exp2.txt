@@ -1,0 +1,208 @@
+Loading model...
+
+Building schema directions...
+
+================================================================
+TEST 1: 'I am stuck' + OUT (CONTAINER escape)
+  base: 'I am stuck'
+================================================================
+
+alpha = 0.0:
+   1.000  I am stuck
+   0.607  I am trapped
+   0.511  I am making progress
+   0.412  I am proceeding
+   0.409  I am frozen
+
+alpha = 0.5:
+   0.887  I am stuck
+   0.458  I am trapped
+   0.446  I am making progress
+   0.430  I am released
+   0.364  I am moving forward
+
+alpha = 1.0:
+   0.675  I am stuck
+   0.391  I am released
+   0.361  I have broken free
+   0.346  I am free
+   0.334  I am making progress
+
+alpha = 1.5:
+   0.501  I am stuck
+   0.343  I am released
+   0.337  I have broken free
+   0.316  I am free
+   0.276  I am liberated
+
+================================================================
+TEST 2: 'I am stuck' + FORWARD (PATH escape)
+  base: 'I am stuck'
+================================================================
+
+alpha = 0.0:
+   1.000  I am stuck
+   0.607  I am trapped
+   0.511  I am making progress
+   0.412  I am proceeding
+   0.409  I am frozen
+
+alpha = 0.5:
+   0.904  I am stuck
+   0.574  I am making progress
+   0.551  I am moving forward
+   0.548  I am advancing
+   0.523  I am trapped
+
+alpha = 1.0:
+   0.743  I am stuck
+   0.604  I am advancing
+   0.589  I am moving forward
+   0.556  I am making progress
+   0.533  I am proceeding
+
+alpha = 1.5:
+   0.614  I am advancing
+   0.613  I am stuck
+   0.588  I am moving forward
+   0.521  I am making progress
+   0.520  I am proceeding
+
+================================================================
+TEST 3: 'I am lonely' + INCLUSION (CONTAINER-IN as cure for loneliness)
+  base: 'I am lonely'
+================================================================
+
+alpha = 0.0:
+   1.000  I am lonely
+   0.712  I am alone
+   0.560  I feel abandoned
+   0.549  I am isolated
+   0.544  I am surrounded by friends
+
+alpha = 0.5:
+   0.883  I am lonely
+   0.549  I am surrounded by friends
+   0.517  I am loved
+   0.510  I am connected to others
+   0.510  I am embraced
+
+alpha = 1.0:
+   0.659  I am lonely
+   0.515  I am embraced
+   0.494  I am held
+   0.469  I am surrounded by friends
+   0.437  I am loved
+
+alpha = 1.5:
+   0.485  I am held
+   0.485  I am embraced
+   0.475  I am lonely
+   0.388  I am surrounded by friends
+   0.362  I am connected to others
+
+================================================================
+TEST 4 (cross-schema control): 'I am lonely' + FORWARD
+  base: 'I am lonely'
+================================================================
+
+alpha = 0.0:
+   1.000  I am lonely
+   0.712  I am alone
+   0.560  I feel abandoned
+   0.549  I am isolated
+   0.544  I am surrounded by friends
+
+alpha = 0.5:
+   0.896  I am lonely
+   0.648  I am alone
+   0.543  I feel abandoned
+   0.520  I am surrounded by friends
+   0.516  I am moving forward
+
+alpha = 1.0:
+   0.714  I am lonely
+   0.571  I am moving forward
+   0.525  I am alone
+   0.514  I am developing
+   0.499  I am making progress
+
+alpha = 1.5:
+   0.577  I am moving forward
+   0.566  I am lonely
+   0.521  I am developing
+   0.479  I am making progress
+   0.422  I am alone
+
+================================================================
+TEST 5 (cross-schema control): 'I am stuck' + INCLUSION
+  base: 'I am stuck'
+================================================================
+
+alpha = 0.0:
+   1.000  I am stuck
+   0.607  I am trapped
+   0.511  I am making progress
+   0.412  I am proceeding
+   0.409  I am frozen
+
+alpha = 0.5:
+   0.893  I am stuck
+   0.527  I am trapped
+   0.489  I am making progress
+   0.450  I am proceeding
+   0.434  I am advancing
+
+alpha = 1.0:
+   0.700  I am stuck
+   0.419  I am proceeding
+   0.418  I am advancing
+   0.411  I am making progress
+   0.402  I am trapped
+
+alpha = 1.5:
+   0.544  I am stuck
+   0.387  I am advancing
+   0.378  I am proceeding
+   0.340  I am making progress
+   0.302  I am trapped
+
+================================================================
+TEST 6 (random control): 'I am stuck' + random direction
+  base: 'I am stuck'
+================================================================
+
+alpha = 0.0:
+   1.000  I am stuck
+   0.607  I am trapped
+   0.511  I am making progress
+   0.412  I am proceeding
+   0.409  I am frozen
+
+alpha = 1.0:
+   0.708  I am stuck
+   0.435  I am trapped
+   0.370  I am making progress
+   0.315  I am proceeding
+   0.301  I am moving forward
+
+================================================================
+INTERPRETATION GUIDE
+================================================================
+
+Strong result would look like:
+  - Test 1: free/released cluster rises with alpha
+  - Test 2: progressing/moving cluster rises with alpha
+            (DIFFERENT from Test 1 - same start, different schema, different end)
+  - Test 3: held/surrounded/included cluster rises with alpha
+  - Test 4: weaker shift, less coherent target
+  - Test 5: weaker shift, less coherent target
+  - Test 6: noise, no semantic shift
+
+If Tests 1 and 2 produce DIFFERENT top neighbors (free vs progressing),
+that rules out the boring interpretation that we just found a generic
+positive-valence axis. We'd have evidence for distinct schema-directions.
+
+If Tests 4 and 5 are noticeably worse than 1, 2, and 3, that further
+supports schema-specific encoding: the right schema goes to the right
+cure, the wrong schema doesn't.

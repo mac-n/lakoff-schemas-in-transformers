@@ -1,0 +1,36 @@
+Loading GloVe...
+  clean test pairs (gram8-plural): 37
+  train pairs (w -> w+'s'): 18400   (d=300, so n_train >> d: True)
+
+============================================================================
+SPACE: raw (mean-centered)
+============================================================================
+
+  predictor      mean cos  top1 incl  top1 excl  NN=source
+  -------------------------------------------------------
+  identity          0.729        0%        84%       100%
+  translation       0.726        0%        86%       100%
+  linear map        0.793       30%       100%        70%
+  procrustes        0.778        3%       100%        97%
+
+============================================================================
+SPACE: pc1_stripped (frequency removed)
+============================================================================
+
+  predictor      mean cos  top1 incl  top1 excl  NN=source
+  -------------------------------------------------------
+  identity          0.660        0%        84%       100%
+  translation       0.684        0%        84%       100%
+  linear map        0.737       30%       100%        70%
+  procrustes        0.731        0%       100%       100%
+
+READING
+  - identity is a strong baseline (singular ~ plural already). The operation is
+    'real and linear' only if translation / linear map beat identity on mean-cos
+    AND on EXCLUSIVE retrieval (the honest metric).
+  - 'NN=source' shows the Linzen artifact: when it's high, inclusive top1 is
+    flattered by the prediction just sitting on the input word.
+  - If the numbers collapse in pc1_stripped space, 'plural' was a frequency shift.
+  - If linear map ~ translation, plural is just an offset (TransE suffices);
+    if linear map > translation, the operation needs matrix structure.
+

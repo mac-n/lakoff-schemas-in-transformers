@@ -1,0 +1,104 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:03,  4.56it/s]Loading weights:  45%|████▌     | 132/292 [00:00<00:00, 512.56it/s]Loading weights:  71%|███████   | 207/292 [00:00<00:00, 458.79it/s]Loading weights:  91%|█████████▏| 267/292 [00:00<00:00, 482.17it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 447.01it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+
+Collecting single-word residuals for 167 words at all layers...
+  50/167
+  100/167
+  150/167
+
+Building all axes at all layers...
+
+Sanity check at L12 — steering axes vs readout axes (cos at injection layer):
+  steer\readout        VERTICAL   HORIZONTAL  CONTAINMENT    PROXIMITY     TEMPORAL
+  UP                     +0.371       +0.029       +0.100       +0.063       -0.033  
+  CONC_ABS               +0.046       -0.054       +0.046       -0.009       +0.040  
+  HARD_SOFT              -0.078       +0.012       +0.089       +0.096       +0.016  
+  RATIONAL_EMOT          +0.028       -0.019       +0.108       -0.007       +0.066  
+
+==============================================================================
+MAIN EXPERIMENT — steering × readout disambiguation
+==============================================================================
+
+Baselines for 10 prompts...
+
+--- Steering on UP ---
+  L16: VERTICAL=+0.792  HORIZONTAL=+0.036  CONTAINMENT=+0.225  PROXIMITY=+0.179  TEMPORAL=+0.005
+  L20: VERTICAL=+0.216  HORIZONTAL=+0.046  CONTAINMENT=+0.079  PROXIMITY=+0.065  TEMPORAL=+0.015
+
+--- Steering on CONC_ABS ---
+  L16: VERTICAL=+0.180  HORIZONTAL=-0.291  CONTAINMENT=+0.087  PROXIMITY=-0.049  TEMPORAL=+0.046
+  L20: VERTICAL=+0.919  HORIZONTAL=-0.378  CONTAINMENT=-0.055  PROXIMITY=-0.088  TEMPORAL=+0.199
+
+--- Steering on HARD_SOFT ---
+  L16: VERTICAL=-0.236  HORIZONTAL=+0.001  CONTAINMENT=+0.193  PROXIMITY=+0.206  TEMPORAL=+0.075
+  L20: VERTICAL=-0.318  HORIZONTAL=-0.094  CONTAINMENT=+0.060  PROXIMITY=+0.155  TEMPORAL=+0.067
+
+--- Steering on RATIONAL_EMOT ---
+  L16: VERTICAL=-0.010  HORIZONTAL=+0.059  CONTAINMENT=+0.209  PROXIMITY=-0.038  TEMPORAL=+0.055
+  L20: VERTICAL=-0.146  HORIZONTAL=+0.064  CONTAINMENT=+0.094  PROXIMITY=+0.065  TEMPORAL=+0.081
+
+--- Steering on RAND ---
+  L16: VERTICAL=+0.137  HORIZONTAL=+0.052  CONTAINMENT=+0.060  PROXIMITY=-0.106  TEMPORAL=+0.149
+  L20: VERTICAL=+0.530  HORIZONTAL=+0.035  CONTAINMENT=-0.089  PROXIMITY=-0.165  TEMPORAL=+0.138
+
+==============================================================================
+HEADLINE — Δ projection at L=20 (where exp145 effect was largest)
+==============================================================================
+
+  steer                VERTICAL   HORIZONTAL  CONTAINMENT    PROXIMITY     TEMPORAL
+  UP                     +0.216       +0.046       +0.079       +0.065       +0.015  
+  CONC_ABS               +0.919       -0.378       -0.055       -0.088       +0.199  
+  HARD_SOFT              -0.318       -0.094       +0.060       +0.155       +0.067  
+  RATIONAL_EMOT          -0.146       +0.064       +0.094       +0.065       +0.081  
+  RAND                   +0.530       +0.035       -0.089       -0.165       +0.138  
+
+==============================================================================
+Δ projection at L=16 (within-network mid-late processing)
+==============================================================================
+
+  steer                VERTICAL   HORIZONTAL  CONTAINMENT    PROXIMITY     TEMPORAL
+  UP                     +0.792       +0.036       +0.225       +0.179       +0.005  
+  CONC_ABS               +0.180       -0.291       +0.087       -0.049       +0.046  
+  HARD_SOFT              -0.236       +0.001       +0.193       +0.206       +0.075  
+  RATIONAL_EMOT          -0.010       +0.059       +0.209       -0.038       +0.055  
+  RAND                   +0.137       +0.052       +0.060       -0.106       +0.149  
+
+Saved exp146_disambiguation.png
+
+==============================================================================
+VERDICT
+==============================================================================
+
+  Δ at L=20:
+
+  CONC_ABS → VERTICAL:   +0.919
+  CONC_ABS → HORIZONTAL: -0.378
+  CONC_ABS → CONTAINMENT: -0.055
+  CONC_ABS → PROXIMITY:  -0.088
+  CONC_ABS → TEMPORAL:   +0.199  (non-spatial control)
+  HARD_SOFT → VERTICAL:  -0.318
+  RATIONAL_EMOT → VERT:  -0.146
+  UP → VERTICAL:         +0.216  (Lakoffian reference)
+  RAND → VERTICAL:       +0.530  (noise floor)
+
+  --- Hypothesis evaluation ---
+
+  H1 (spatial modelling): CONC_ABS routes to multiple spatial axes?
+    1/4 spatial axes with Δ > 0.2.
+    Temporal Δ = +0.199 (should be small for H1)
+    → CONTRA H1: only one spatial axis affected (narrow vertical-bias finding)
+
+  H2 (physicality): HARD_SOFT routes to VERTICAL similarly to CONC_ABS?
+    HARD_SOFT → VERT = -0.318 vs CONC_ABS → VERT = +0.919
+    ratio = -0.35
+    → CONTRA H2: hardness doesn't explain the effect
+
+  H4 (general categorial routing): RATIONAL_EMOT → VERT?
+    RATIONAL_EMOT → VERT = -0.146
+    → CONTRA H4: RATIONAL_EMOT doesn't route to vertical
+
+Done.

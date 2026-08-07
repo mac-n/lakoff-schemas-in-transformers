@@ -1,0 +1,283 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+UP-DOWN: 25 triples
+IN-OUT: 25 triples
+FORWARD-BACK: 25 triples
+LIGHT-DARK: 25 triples
+LEFT-RIGHT: 15 triples
+
+device: mps
+Loading Pythia 70m-deduped...
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 1587.90it/s]
+Loaded pretrained model EleutherAI/pythia-70m-deduped into HookedTransformer
+
+=== Layer 0 ===
+
+Within-pair cosines (cos(offset_a, offset_c) averaged across pairs):
+         UP-DOWN:  cos = +0.5674
+          IN-OUT:  cos = +0.6902
+    FORWARD-BACK:  cos = +0.6576
+      LIGHT-DARK:  cos = +0.4300
+      LEFT-RIGHT:  cos = +0.7040
+
+Projections onto A_up/down:
+         UP-DOWN:       UP =  +0.6727       DOWN =  -1.3000
+          IN-OUT:       IN =  -0.2796        OUT =  -0.3836
+    FORWARD-BACK:  FORWARD =  +0.1989       BACK =  +0.1352
+      LIGHT-DARK:    LIGHT =  +0.0818       DARK =  -0.3584
+      LEFT-RIGHT:     LEFT =  -0.0025      RIGHT =  -0.0028
+
+Projections onto A_light/dark:
+         UP-DOWN:       UP =  +0.0764       DOWN =  -0.1496
+          IN-OUT:       IN =  -0.3527        OUT =  -0.2891
+    FORWARD-BACK:  FORWARD =  +0.0734       BACK =  +0.0630
+      LIGHT-DARK:    LIGHT =  +1.6001       DARK =  -2.2445
+      LEFT-RIGHT:     LEFT =  +0.1041      RIGHT =  +0.1040
+
+=== Layer 1 ===
+
+Within-pair cosines (cos(offset_a, offset_c) averaged across pairs):
+         UP-DOWN:  cos = +0.5942
+          IN-OUT:  cos = +0.7104
+    FORWARD-BACK:  cos = +0.6835
+      LIGHT-DARK:  cos = +0.5247
+      LEFT-RIGHT:  cos = +0.7762
+
+Projections onto A_up/down:
+         UP-DOWN:       UP =  +0.4249       DOWN =  -1.6657
+          IN-OUT:       IN =  -0.9055        OUT =  -0.7559
+    FORWARD-BACK:  FORWARD =  -0.5338       BACK =  -0.8646
+      LIGHT-DARK:    LIGHT =  -0.6291       DARK =  -2.1193
+      LEFT-RIGHT:     LEFT =  -0.4134      RIGHT =  -0.7053
+
+Projections onto A_light/dark:
+         UP-DOWN:       UP =  +0.0657       DOWN =  -0.6230
+          IN-OUT:       IN =  -1.0859        OUT =  -0.7676
+    FORWARD-BACK:  FORWARD =  -0.8309       BACK =  -1.1933
+      LIGHT-DARK:    LIGHT =  +0.2381       DARK =  -4.2861
+      LEFT-RIGHT:     LEFT =  -0.5841      RIGHT =  -1.0308
+
+=== Layer 2 ===
+
+Within-pair cosines (cos(offset_a, offset_c) averaged across pairs):
+         UP-DOWN:  cos = +0.6009
+          IN-OUT:  cos = +0.6881
+    FORWARD-BACK:  cos = +0.6961
+      LIGHT-DARK:  cos = +0.6690
+      LEFT-RIGHT:  cos = +0.7840
+
+Projections onto A_up/down:
+         UP-DOWN:       UP =  +0.2697       DOWN =  -1.7671
+          IN-OUT:       IN =  -1.2957        OUT =  -1.0652
+    FORWARD-BACK:  FORWARD =  -2.4244       BACK =  -2.9377
+      LIGHT-DARK:    LIGHT =  -2.9347       DARK =  -5.2839
+      LEFT-RIGHT:     LEFT =  -1.4405      RIGHT =  -2.3682
+
+Projections onto A_light/dark:
+         UP-DOWN:       UP =  +0.0487       DOWN =  -1.0050
+          IN-OUT:       IN =  -1.6604        OUT =  -1.2422
+    FORWARD-BACK:  FORWARD =  -3.3067       BACK =  -3.8950
+      LIGHT-DARK:    LIGHT =  -3.2880       DARK =  -7.8291
+      LEFT-RIGHT:     LEFT =  -1.9550      RIGHT =  -3.1857
+
+=== Layer 3 ===
+
+Within-pair cosines (cos(offset_a, offset_c) averaged across pairs):
+         UP-DOWN:  cos = +0.5429
+          IN-OUT:  cos = +0.6808
+    FORWARD-BACK:  cos = +0.6975
+      LIGHT-DARK:  cos = +0.6833
+      LEFT-RIGHT:  cos = +0.8094
+
+Projections onto A_up/down:
+         UP-DOWN:       UP =  +0.1765       DOWN =  -2.0755
+          IN-OUT:       IN =  -1.8478        OUT =  -1.4852
+    FORWARD-BACK:  FORWARD =  -3.5932       BACK =  -4.3527
+      LIGHT-DARK:    LIGHT =  -4.2448       DARK =  -7.3927
+      LEFT-RIGHT:     LEFT =  -2.0189      RIGHT =  -3.3343
+
+Projections onto A_light/dark:
+         UP-DOWN:       UP =  -0.0631       DOWN =  -1.4019
+          IN-OUT:       IN =  -2.1576        OUT =  -1.5938
+    FORWARD-BACK:  FORWARD =  -4.6392       BACK =  -5.4823
+      LIGHT-DARK:    LIGHT =  -4.9540       DARK = -10.2493
+      LEFT-RIGHT:     LEFT =  -2.6064      RIGHT =  -4.4171
+
+=== Layer 4 ===
+
+Within-pair cosines (cos(offset_a, offset_c) averaged across pairs):
+         UP-DOWN:  cos = +0.4915
+          IN-OUT:  cos = +0.6752
+    FORWARD-BACK:  cos = +0.6988
+      LIGHT-DARK:  cos = +0.6800
+      LEFT-RIGHT:  cos = +0.8640
+
+Projections onto A_up/down:
+         UP-DOWN:       UP =  +0.3786       DOWN =  -2.1787
+          IN-OUT:       IN =  -1.5387        OUT =  -1.0991
+    FORWARD-BACK:  FORWARD =  -2.8470       BACK =  -3.4282
+      LIGHT-DARK:    LIGHT =  -3.3342       DARK =  -6.0207
+      LEFT-RIGHT:     LEFT =  -1.5597      RIGHT =  -2.6163
+
+Projections onto A_light/dark:
+         UP-DOWN:       UP =  -0.0271       DOWN =  -1.3536
+          IN-OUT:       IN =  -2.0777        OUT =  -1.4010
+    FORWARD-BACK:  FORWARD =  -4.2598       BACK =  -5.0553
+      LIGHT-DARK:    LIGHT =  -4.3649       DARK =  -9.5441
+      LEFT-RIGHT:     LEFT =  -2.3911      RIGHT =  -4.0563
+
+=== Layer 5 ===
+
+Within-pair cosines (cos(offset_a, offset_c) averaged across pairs):
+         UP-DOWN:  cos = +0.5308
+          IN-OUT:  cos = +0.6660
+    FORWARD-BACK:  cos = +0.7075
+      LIGHT-DARK:  cos = +0.6177
+      LEFT-RIGHT:  cos = +0.8747
+
+Projections onto A_up/down:
+         UP-DOWN:       UP =  +0.3235       DOWN =  -2.6010
+          IN-OUT:       IN =  -1.6178        OUT =  -1.4219
+    FORWARD-BACK:  FORWARD =  -0.9130       BACK =  -1.3760
+      LIGHT-DARK:    LIGHT =  -1.4685       DARK =  -2.8110
+      LEFT-RIGHT:     LEFT =  -0.4896      RIGHT =  -0.7282
+
+Projections onto A_light/dark:
+         UP-DOWN:       UP =  -0.0639       DOWN =  -1.0313
+          IN-OUT:       IN =  -1.3685        OUT =  -1.1705
+    FORWARD-BACK:  FORWARD =  -1.0775       BACK =  -1.4270
+      LIGHT-DARK:    LIGHT =  -0.2006       DARK =  -4.2590
+      LEFT-RIGHT:     LEFT =  -0.5729      RIGHT =  -0.9333
+
+
+================================================================================
+SUMMARY: within-pair cosines by layer
+================================================================================
+  layer         UP-DOWN          IN-OUT    FORWARD-BACK      LIGHT-DARK      LEFT-RIGHT
+      0         +0.5674         +0.6902         +0.6576         +0.4300         +0.7040
+      1         +0.5942         +0.7104         +0.6835         +0.5247         +0.7762
+      2         +0.6009         +0.6881         +0.6961         +0.6690         +0.7840
+      3         +0.5429         +0.6808         +0.6975         +0.6833         +0.8094
+      4         +0.4915         +0.6752         +0.6988         +0.6800         +0.8640
+      5         +0.5308         +0.6660         +0.7075         +0.6177         +0.8747
+
+
+================================================================================
+SUMMARY: projections onto A_updown by layer (each pole)
+================================================================================
+  layer       UP     DOWN       IN      OUT  FORWARD     BACK    LIGHT     DARK     LEFT    RIGHT
+      0   +0.673   -1.300   -0.280   -0.384   +0.199   +0.135   +0.082   -0.358   -0.003   -0.003
+      1   +0.425   -1.666   -0.906   -0.756   -0.534   -0.865   -0.629   -2.119   -0.413   -0.705
+      2   +0.270   -1.767   -1.296   -1.065   -2.424   -2.938   -2.935   -5.284   -1.440   -2.368
+      3   +0.177   -2.076   -1.848   -1.485   -3.593   -4.353   -4.245   -7.393   -2.019   -3.334
+      4   +0.379   -2.179   -1.539   -1.099   -2.847   -3.428   -3.334   -6.021   -1.560   -2.616
+      5   +0.323   -2.601   -1.618   -1.422   -0.913   -1.376   -1.469   -2.811   -0.490   -0.728
+
+
+================================================================================
+SUMMARY: projections onto A_lightdark by layer (each pole)
+================================================================================
+  layer       UP     DOWN       IN      OUT  FORWARD     BACK    LIGHT     DARK     LEFT    RIGHT
+      0   +0.076   -0.150   -0.353   -0.289   +0.073   +0.063   +1.600   -2.244   +0.104   +0.104
+      1   +0.066   -0.623   -1.086   -0.768   -0.831   -1.193   +0.238   -4.286   -0.584   -1.031
+      2   +0.049   -1.005   -1.660   -1.242   -3.307   -3.895   -3.288   -7.829   -1.955   -3.186
+      3   -0.063   -1.402   -2.158   -1.594   -4.639   -5.482   -4.954  -10.249   -2.606   -4.417
+      4   -0.027   -1.354   -2.078   -1.401   -4.260   -5.055   -4.365   -9.544   -2.391   -4.056
+      5   -0.064   -1.031   -1.368   -1.170   -1.077   -1.427   -0.201   -4.259   -0.573   -0.933
+
+Saved: exp26_results.pt
+Loading SAE at layer 3...
+
+=== Encoding FORMAL triples ===
+
+=== Encoding DIVERSE triples ===
+
+
+========================================================================
+SUBSTRATE COVERAGE COMPARISON
+========================================================================
+
+Total SAE features: 32768
+
+Distinct features activated (threshold > 0.01):
+  FORMAL triples:    3079  (9.40% of SAE features)
+  DIVERSE triples:   3949  (12.05% of SAE features)
+
+Set relationships:
+  Overlap (both):       2480  (54.5% of union)
+  FORMAL only:           599  (19.5% of FORMAL set)
+  DIVERSE only:         1469  (37.2% of DIVERSE set)
+
+Per-axis feature counts:
+          axis    FORMAL   DIVERSE   overlap   F-only   D-only
+       VALENCE      1393      1682      1001      392      681
+       AROUSAL      1493      1837       937      556      900
+     EXISTENCE      1285      2283       947      338     1336
+     COHERENCE      1519      2104       952      567     1152
+       SUCCESS      1351      2054       875      476     1179
+          LOSS      1496      1786       940      556      846
+
+
+========================================================================
+TOP FEATURES ONLY IN FORMAL (what we 'lost' by switching to diverse triples)
+========================================================================
+  feat 31712 (total act=36.17): references to physical or conceptual structure in various contexts
+  feat  8558 (total act=26.18): mention of systems within technical or scientific contexts
+  feat 12468 (total act=25.68): event-related terms and concepts within a programming or technical context
+  feat 22139 (total act=16.82): outcomes of operations or functions in programming contexts
+  feat 23575 (total act=16.14): references to decision-making processes and choices
+  feat 15002 (total act=15.61): terms related to resources and their management
+  feat 11160 (total act=14.87): instances of the word "text" and variations related to text formatting and processing
+  feat 17787 (total act=13.82): terms related to chemical reactions and processes
+  feat  8420 (total act=13.45): terms related to planning and proposals
+  feat 27592 (total act=12.72): references to images and related visual content
+  feat  8314 (total act=10.35): references to clinical trials and their outcomes
+  feat 11568 (total act=8.94): words related to correctness or accuracy
+  feat 17097 (total act=8.65): terms related to active smoking and military service personnel
+  feat 24326 (total act=7.95): terms related to states and their affiliations or designations
+  feat 21161 (total act=7.70): HTML form elements and their attributes
+  feat 20449 (total act=7.32): the letter 'd' in various contexts
+  feat  3573 (total act=7.23): terms related to distinction and differentiation
+  feat 18767 (total act=6.18): references to various associations and organizations
+  feat 23150 (total act=6.14): phrases and terminology related to output in programming or data processing contexts
+  feat 28355 (total act=6.08): references to methods or strategies related to problem-solving or treatment approaches
+
+
+========================================================================
+TOP FEATURES ONLY IN DIVERSE (what we 'gained' by switching)
+========================================================================
+  feat 23545 (total act=156.06): references to female figures and their roles
+  feat 31718 (total act=136.30): third-person pronouns and titles
+  feat 32022 (total act=52.36): questions or inquiries typically starting with "How" or "Who"
+  feat  2200 (total act=51.57): repeated references to the pronoun "he" in various contexts
+  feat  9913 (total act=45.88): references to anatomy and injuries related to the musculoskeletal system
+  feat 24806 (total act=45.75): references to individuals, particularly female ones
+  feat 31453 (total act=43.17): references to specific individuals or characters and their relationships
+  feat  1684 (total act=35.51): questions and expressions of inquiry
+  feat  3462 (total act=35.40): references to divine entities and themes of faith or spirituality
+  feat 13625 (total act=30.39): the concept of relationships or connections between entities
+  feat 30802 (total act=29.52): references to women and their roles in various contexts
+  feat 12049 (total act=28.65): mentions of felines
+  feat  6059 (total act=26.36): references to marriage and relationships
+  feat  3829 (total act=22.51): instances of the word "the" in various contexts
+  feat 10733 (total act=22.30): objects and their spatial relationships in a narrative context
+  feat 29017 (total act=21.52): sentences with forms of the verb "to be" indicating states or conditions
+  feat 26465 (total act=21.36): references to rivers and water-related geographical entities
+  feat 14782 (total act=20.59): references to cats
+  feat 17332 (total act=18.14): references to software licensing and usage terms
+  feat  1878 (total act=18.00): references to historical figures and locations, particularly within ancient contexts
+
+
+========================================================================
+DID THE LEGAL-CLUSTER FEATURES FIRE IN DIVERSE TRIPLES?
+========================================================================
+
+    feat                                                desc  in FORMAL?  in DIVERSE?     F act     D act
+   21809             expressions of gratitude and friendship        True         True   8587.19   9855.05
+    5355  legal terminology related to liability and warrant        True         True   7880.87   9012.21
+    1812  complex legal terms and organizational identifiers        True         True   5597.61   6420.88
+   22622  instances of line breaks or empty sections in the         True         True    832.28   1371.62
+    3637  key terms related to legal proceedings and opinion        True         True   4075.68   4692.40
+
+Done.

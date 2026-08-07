@@ -1,0 +1,273 @@
+Loading glove-wiki-gigaword-300...
+  vocab size: 400000
+
+Building PCA-input axes (cluster set, 11 axes from exp40)...
+
+Building target axes (independent from PCA-input set)...
+  [target_SALIENCE] missing words (1): ['backgrounded']
+  target_SALIENCE built from 11/12 pairs
+  target_MOTION    built from 12/12 pairs
+  target_EQ_RUN    built from 14/14 pairs
+
+========================================================================
+PCA on cluster axes (11 axes — matches exp40 cluster-only run)
+========================================================================
+
+Variance per PC:
+  PC1:  20.6%   (cumulative:  20.6%)
+  PC2:  17.3%   (cumulative:  37.9%)
+  PC3:  12.4%   (cumulative:  50.3%)
+  PC4:  11.2%   (cumulative:  61.5%)
+  PC5:   9.3%   (cumulative:  70.9%)
+  PC6:   8.7%   (cumulative:  79.6%)
+  PC7:   6.3%   (cumulative:  85.9%)
+  PC8:   5.3%   (cumulative:  91.2%)
+  PC9:   4.5%   (cumulative:  95.7%)
+  PC10:   4.3%   (cumulative: 100.0%)
+
+========================================================================
+CENTRAL TEST: target-axis cosines with PCs
+========================================================================
+
+Predictions:
+  target_SALIENCE  high on PC1 if PC1 is salience-as-primitive;
+                   LOW on PC1 if PC1 is just the V x A diagonal
+  target_MOTION    high on PC2 if MOTION is a real primitive
+  target_EQ_RUN    high on PC3 if EQ-vs-RUNAWAY is a real primitive
+
+                      PC1      PC2      PC3      PC4      PC5      PC6    
+  --------------------------------------------------------------------
+  target_SALIENCE     -0.174  -0.280  -0.056  +0.024  -0.058  -0.039  
+  target_MOTION       -0.094  +0.051  +0.022  +0.054  +0.017  -0.072  
+  target_EQ_RUN       +0.290  +0.011  +0.205  -0.073  -0.124  -0.042  
+
+========================================================================
+Per-target deep dive
+========================================================================
+
+--- target_SALIENCE ---
+  Best PC alignments (sorted by |cos|):
+    PC2 (17.3% var): cos = -0.2797
+    PC7 ( 6.3% var): cos = +0.1974
+    PC1 (20.6% var): cos = -0.1743
+    PC5 ( 9.3% var): cos = -0.0583
+    PC3 (12.4% var): cos = -0.0556
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: +0.4861
+     COHERENCE: +0.4247
+           BAL: +0.3825
+            FB: +0.3625
+            UD: +0.3606
+  Positive pole words:
+    +0.5101  prominent
+    +0.4796  including
+    +0.4558  first
+    +0.4456  addition
+    +0.4374  major
+    +0.4366  notable
+    +0.4286  noted
+    +0.4277  also
+    +0.4192  important
+    +0.4160  one
+  Negative pole words:
+    +0.5190  valueless
+    +0.5184  unfocused
+    +0.4935  uninteresting
+    +0.4822  inoffensive
+    +0.4788  pathetically
+    +0.4783  inattentive
+    +0.4754  unimaginative
+    +0.4736  unimportant
+    +0.4712  inconsequential
+    +0.4657  inarticulate
+
+--- target_MOTION ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = -0.0937
+    PC7 ( 6.3% var): cos = -0.0735
+    PC6 ( 8.7% var): cos = -0.0721
+    PC8 ( 5.3% var): cos = +0.0674
+    PC4 (11.2% var): cos = +0.0538
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+          PATH: +0.2911
+            FB: +0.1925
+            UD: +0.1918
+       AROUSAL: +0.1823
+           BAL: +0.1424
+  Positive pole words:
+    +0.3876  skiing
+    +0.3869  racing
+    +0.3763  sprint
+    +0.3722  diving
+    +0.3711  spectacular
+    +0.3668  championships
+    +0.3593  speed
+    +0.3516  run
+    +0.3503  track
+    +0.3484  jump
+  Negative pole words:
+    +0.4883  kneeling
+    +0.4422  slouched
+    +0.4287  reclining
+    +0.4103  glumly
+    +0.3947  reclined
+    +0.3935  knelt
+    +0.3800  hunched
+    +0.3740  seated
+    +0.3730  slouching
+    +0.3711  lounging
+
+--- target_EQ_RUN ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = +0.2901
+    PC3 (12.4% var): cos = +0.2047
+    PC8 ( 5.3% var): cos = -0.1543
+    PC7 ( 6.3% var): cos = -0.1408
+    PC5 ( 9.3% var): cos = -0.1243
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: -0.2861
+            LD: +0.2180
+       VALENCE: +0.2167
+          LOSS: +0.1638
+     COHERENCE: +0.0871
+  Positive pole words:
+    +0.3360  restoring
+    +0.3153  interpreting
+    +0.3121  modifying
+    +0.3081  tempering
+    +0.3038  adjusting
+    +0.3024  atoning
+    +0.2969  effecting
+    +0.2965  erred
+    +0.2888  accomplishing
+    +0.2820  nyts
+  Negative pole words:
+    +0.4604  mushrooming
+    +0.4443  spiralling
+    +0.4424  spiraling
+    +0.4295  escalating
+    +0.4231  raging
+    +0.4213  engulfed
+    +0.4143  erupted
+    +0.3860  raged
+    +0.3851  escalated
+    +0.3807  sparked
+
+Saved: exp52_results.npz
+Loading GloVe...
+Building full candidate pool...
+  MF built from 12/12 pairs
+
+Total candidates: 51
+
+==============================================================================
+TEST 1 — cos(MF, HARDNESS) and other relevant cosines
+==============================================================================
+
+cos(MF, HARDNESS)    = +0.0957
+cos(MF, STRENGTH)    = +0.1190
+cos(MF, SIZE)        = +0.1297
+cos(MF, SHARPNESS)   = +0.0526
+cos(MF, W)           = +0.1320
+cos(MF, INT)         = +0.0758
+cos(MF, ATT)         = -0.0040
+cos(MF, ABS)         = +0.0257
+cos(MF, REAL_IMAG)   = -0.0818
+cos(MF, BEAUTIFUL_UGLY) = -0.1477
+cos(MF, BOUND_FREE)  = +0.0935
+cos(MF, ACTIVE_PASSIVE) = +0.0590
+
+MF positive pole (male side, top 12):
+  brother                    +0.3693
+  himself                    +0.3508
+  his                        +0.3199
+  uncle                      +0.3059
+  he                         +0.3031
+  gen.                       +0.2922
+  succeeded                  +0.2919
+  nephew                     +0.2912
+  son                        +0.2900
+  him                        +0.2829
+  king                       +0.2782
+  antauro                    +0.2779
+
+MF negative pole (female side, top 12):
+  actress                    +0.4328
+  bare-breasted              +0.4261
+  schorpen                   +0.4259
+  millerwise                 +0.4107
+  businesswoman              +0.4075
+  lactating                  +0.4024
+  oly-2004-fhockey           +0.4008
+  actresses                  +0.3941
+  chromatid                  +0.3923
+  kuppinger                  +0.3909
+  tallchief                  +0.3878
+  heuze                      +0.3816
+
+Cognitive test sample: 86 words
+
+================================================================================================
+Greedy selection — 51 candidates, cognitive-test-words objective
+================================================================================================
+
+step  selected            cov added   cum cov  next-4 (name[orig], cov)
+-------------------------------------------------------------------------------------------------------------------
+  1    HARDNESS         [r1]  + 21.22pp   21.22%   INT[co](17.8), BAL[la](17.8), UD[la](16.4), COH[la](16.1)
+  2    NATURAL_ARTIFICIAL [r2]  +  4.31pp   25.53%   ABS[co](24.9), UD[la](24.8), SIZE[r1](24.8), BEAUTIFUL_UGLY[r2](24.6)
+  3    ABS              [cog]  +  3.34pp   28.87%   INT[co](28.4), REAL_IMAG[co](28.1), BEAUTIFUL_UGLY[r2](28.1), UD[la](28.1)
+  4    UD               [lak]  +  2.40pp   31.27%   INT[co](31.2), BEAUTIFUL_UGLY[r2](31.0), VALENCE[cl](31.0), REAL_IMAG[co](31.0)
+  5    LOSS             [clu]  +  2.71pp   33.98%   VALENCE[cl](33.2), INT[co](33.2), LD[la](33.1), C[co](33.1)
+  6    INT              [cog]  +  1.92pp   35.89%   REAL_IMAG[co](35.6), SIZE[r1](35.5), W[co](35.4), VISIBLE_INVISIBLE[r2](35.3)
+  7    REAL_IMAG        [cog]  +  1.51pp   37.41%   LD[la](37.3), SIZE[r1](37.2), BEAUTIFUL_UGLY[r2](37.2), VALENCE[cl](37.1)
+  8    LD               [lak]  +  1.29pp   38.70%   SIZE[r1](38.7), BEAUTIFUL_UGLY[r2](38.7), VALENCE[cl](38.6), W[co](38.5)
+  9    BEAUTIFUL_UGLY   [r2]  +  1.23pp   39.93%   VISIBLE_INVISIBLE[r2](39.9), DIFF[la](39.8), VALENCE[cl](39.7), SIZE[r1](39.7)
+  10   VISIBLE_INVISIBLE [r2]  +  1.15pp   41.08%   DIFF[la](40.9), SIZE[r1](40.9), TASTE[r1](40.9), W[co](40.9)
+  11   DIFF             [lak]  +  0.99pp   42.07%   SOUND_VOLUME[r1](42.0), TASTE[r1](42.0), SIZE[r1](42.0), W[co](42.0)
+  12   W                [cog]  +  1.26pp   43.33%   SIZE[r1](43.0), TASTE[r1](43.0), OPEN_CLOSED[r2](43.0), R[co](42.9)
+  13   R                [cog]  +  0.89pp   44.22%   SOUND_VOLUME[r1](44.2), TASTE[r1](44.2), FB[la](44.1), OPEN_CLOSED[r2](44.1)
+  14   FB               [lak]  +  0.84pp   45.05%   TASTE[r1](45.0), SIZE[r1](44.9), EXIST[la](44.9), OPEN_CLOSED[r2](44.9)
+  15   TASTE            [r1]  +  0.76pp   45.82%   EXIST[la](45.8), MOISTURE[r1](45.8), AGE[r1](45.7), SIZE[r1](45.7)
+  16   EXIST            [lak]  +  0.73pp   46.55%   MOISTURE[r1](46.5), SIZE[r1](46.5), AGE[r1](46.5), SOUND_VOLUME[r1](46.5)
+  17   AGE              [r1]  +  0.69pp   47.23%   SIZE[r1](47.2), ATT[co](47.2), SOUND_VOLUME[r1](47.2), C[co](47.2)
+  18   ATT              [cog]  +  0.64pp   47.87%   SOUND_VOLUME[r1](47.9), C[co](47.9), SIZE[r1](47.8), OPEN_CLOSED[r2](47.8)
+  19   SOUND_VOLUME     [r1]  +  0.63pp   48.51%   OPEN_CLOSED[r2](48.5), SIZE[r1](48.5), C[co](48.5), FORCE[la](48.4)
+  20   SIZE             [r1]  +  0.75pp   49.26%   CLEANLINESS[r1](49.1), C[co](49.1), FORCE[la](49.1), MOISTURE[r1](49.1)
+  21   CLEANLINESS      [r1]  +  0.60pp   49.85%   MOISTURE[r1](49.8), OPEN_CLOSED[r2](49.8), C[co](49.8), FORCE[la](49.8)
+  22   PURE_IMPURE      [r2]  +  0.69pp   50.54%   MOISTURE[r1](50.5), OPEN_CLOSED[r2](50.4), C[co](50.4), MB[co](50.4)
+  23   MOISTURE         [r1]  +  0.57pp   51.11%   MB[co](51.1), C[co](51.1), FORCE[la](51.0), OPEN_CLOSED[r2](51.0)
+  24   MB               [cog]  +  0.55pp   51.66%   C[co](51.6), FORCE[la](51.6), LIVING_DEAD[r2](51.6), VALENCE[cl](51.6)
+
+Final greedy basis (24 axes):
+   1. HARDNESS           (r1)
+   2. NATURAL_ARTIFICIAL (r2)
+   3. ABS                (cog)
+   4. UD                 (lak)
+   5. LOSS               (clu)
+   6. INT                (cog)
+   7. REAL_IMAG          (cog)
+   8. LD                 (lak)
+   9. BEAUTIFUL_UGLY     (r2)
+  10. VISIBLE_INVISIBLE  (r2)
+  11. DIFF               (lak)
+  12. W                  (cog)
+  13. R                  (cog)
+  14. FB                 (lak)
+  15. TASTE              (r1)
+  16. EXIST              (lak)
+  17. AGE                (r1)
+  18. ATT                (cog)
+  19. SOUND_VOLUME       (r1)
+  20. SIZE               (r1)
+  21. CLEANLINESS        (r1)
+  22. PURE_IMPURE        (r2)
+  23. MOISTURE           (r1)
+  24. MB                 (cog)
+
+Composition: {'r1': 7, 'r2': 4, 'cog': 7, 'lak': 5, 'clu': 1}
+Final coverage: 51.66%
+
+Reference: Cog-13b coverage on same sample = 39.27%
+Reference: exp90 greedy (38 candidates) reached 48.43%
+
+Saved exp92_results.npz

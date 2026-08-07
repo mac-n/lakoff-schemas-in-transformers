@@ -1,0 +1,68 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:32,  3.15it/s]Loading weights:  52%|█████▏    | 152/292 [00:00<00:00, 467.61it/s]Loading weights:  82%|████████▏ | 239/292 [00:00<00:00, 509.37it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 385.10it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+  24 layers, d_model=1024
+
+Loading Brysbaert/SUBTLEX...
+  39954 rows in Brysbaert
+  28903 words with SUBTLEX freq > 0
+
+Stratified-sampling ~2250 words across 30 log-freq bins...
+  collected 1193 single-token words
+  log_freq range: [0.00, 6.02]
+
+Extracting residuals at 7 layers...
+  250/1193 words
+  500/1193 words
+  750/1193 words
+  1000/1193 words
+  Layer 0: residual matrix (1193, 1024)
+  Layer 4: residual matrix (1193, 1024)
+  Layer 8: residual matrix (1193, 1024)
+  Layer 12: residual matrix (1193, 1024)
+  Layer 16: residual matrix (1193, 1024)
+  Layer 20: residual matrix (1193, 1024)
+  Layer 23: residual matrix (1193, 1024)
+
+Computing PC1 and projecting at each layer...
+  L0: ‖mean‖=8.85, PC1 explains 2.9% of variance
+  L4: ‖mean‖=30.55, PC1 explains 4.9% of variance
+  L8: ‖mean‖=990.39, PC1 explains 26.5% of variance
+  L12: ‖mean‖=992.18, PC1 explains 27.2% of variance
+  L16: ‖mean‖=988.59, PC1 explains 27.6% of variance
+  L20: ‖mean‖=943.47, PC1 explains 27.2% of variance
+  L23: ‖mean‖=26.66, PC1 explains 12.9% of variance
+
+Mass-weighted partition:
+  Bottom 3% of mass: 965 words (e.g. ['opacity', 'ambling', 'descriptor', 'inset', 'timestamp']...)
+  Top 3% of mass: 1 words (['a'])
+  Middle 94%: 227 words
+
+  saved exp125_pc1_vs_frequency.png
+
+======================================================================
+Quantitative comparison: which axis does PC1 align with?
+======================================================================
+
+   layer    cos(PC1, salience)   cos(PC1, freq_axis)    cos(PC1, mean_dir)
+       0                -0.087                -0.119                +0.669
+       4                +0.373                +0.359                -0.875
+       8                -0.199                +0.494                +0.983
+      12                -0.207                +0.501                +0.983
+      16                -0.218                +0.505                +0.981
+      20                -0.219                +0.497                +0.976
+      23                +0.058                -0.317                -0.326
+
+   layer       Pearson r(PC1_proj, log_freq)      Spearman r
+       0                              +0.017          +0.001
+       4                              +0.153          +0.108
+       8                              +0.011          +0.013
+      12                              +0.011          +0.013
+      16                              +0.009          +0.012
+      20                              +0.008          +0.011
+      23                              +0.025          +0.035
+
+Saved exp125_results.npz

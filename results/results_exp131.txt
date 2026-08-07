@@ -1,0 +1,165 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<00:34,  8.51it/s]Loading weights:  53%|█████▎    | 156/292 [00:00<00:00, 848.00it/s]Loading weights:  85%|████████▍ | 247/292 [00:00<00:00, 836.30it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 739.59it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+
+Collecting residuals for 489 words at layers [4, 8, 12, 16, 20]...
+  50/489
+  100/489
+  150/489
+  200/489
+  250/489
+  300/489
+  350/489
+  400/489
+  450/489
+
+==============================================================================
+TEST 1 — suffix × suffix cosines (do all suffixes cluster together?)
+==============================================================================
+
+Layer 4:
+                     ER_com   EST_su   ING_pr   ED_pas   S_plur   UN_neg   RE_rep
+  ER_comparative      +1.000  +0.811  +0.765  +0.817  +0.679  +0.836  +0.832
+  EST_superlative     +0.811  +1.000  +0.723  +0.778  +0.637  +0.781  +0.768
+  ING_progressive     +0.765  +0.723  +1.000  +0.843  +0.680  +0.782  +0.790
+  ED_past             +0.817  +0.778  +0.843  +1.000  +0.722  +0.840  +0.845
+  S_plural            +0.679  +0.637  +0.680  +0.722  +1.000  +0.704  +0.702
+  UN_negation         +0.836  +0.781  +0.782  +0.840  +0.704  +1.000  +0.889
+  RE_repetition       +0.832  +0.768  +0.790  +0.845  +0.702  +0.889  +1.000
+  Mean off-diagonal: +0.773  std: 0.066
+
+Layer 8:
+                     ER_com   EST_su   ING_pr   ED_pas   S_plur   UN_neg   RE_rep
+  ER_comparative      +1.000  +0.850  +0.833  +0.871  +0.822  +0.863  +0.845
+  EST_superlative     +0.850  +1.000  +0.763  +0.812  +0.762  +0.804  +0.771
+  ING_progressive     +0.833  +0.763  +1.000  +0.883  +0.833  +0.825  +0.810
+  ED_past             +0.871  +0.812  +0.883  +1.000  +0.841  +0.871  +0.863
+  S_plural            +0.822  +0.762  +0.833  +0.841  +1.000  +0.810  +0.789
+  UN_negation         +0.863  +0.804  +0.825  +0.871  +0.810  +1.000  +0.854
+  RE_repetition       +0.845  +0.771  +0.810  +0.863  +0.789  +0.854  +1.000
+  Mean off-diagonal: +0.827  std: 0.035
+
+Layer 12:
+                     ER_com   EST_su   ING_pr   ED_pas   S_plur   UN_neg   RE_rep
+  ER_comparative      +1.000  +0.834  +0.791  +0.848  +0.788  +0.863  +0.827
+  EST_superlative     +0.834  +1.000  +0.719  +0.778  +0.726  +0.800  +0.752
+  ING_progressive     +0.791  +0.719  +1.000  +0.848  +0.789  +0.785  +0.763
+  ED_past             +0.848  +0.778  +0.848  +1.000  +0.801  +0.863  +0.845
+  S_plural            +0.788  +0.726  +0.789  +0.801  +1.000  +0.782  +0.745
+  UN_negation         +0.863  +0.800  +0.785  +0.863  +0.782  +1.000  +0.841
+  RE_repetition       +0.827  +0.752  +0.763  +0.845  +0.745  +0.841  +1.000
+  Mean off-diagonal: +0.799  std: 0.043
+
+Layer 16:
+                     ER_com   EST_su   ING_pr   ED_pas   S_plur   UN_neg   RE_rep
+  ER_comparative      +1.000  +0.894  +0.861  +0.902  +0.866  +0.920  +0.899
+  EST_superlative     +0.894  +1.000  +0.822  +0.862  +0.825  +0.889  +0.855
+  ING_progressive     +0.861  +0.822  +1.000  +0.910  +0.847  +0.866  +0.855
+  ED_past             +0.902  +0.862  +0.910  +1.000  +0.872  +0.921  +0.906
+  S_plural            +0.866  +0.825  +0.847  +0.872  +1.000  +0.865  +0.850
+  UN_negation         +0.920  +0.889  +0.866  +0.921  +0.865  +1.000  +0.911
+  RE_repetition       +0.899  +0.855  +0.855  +0.906  +0.850  +0.911  +1.000
+  Mean off-diagonal: +0.876  std: 0.029
+
+Layer 20:
+                     ER_com   EST_su   ING_pr   ED_pas   S_plur   UN_neg   RE_rep
+  ER_comparative      +1.000  +0.966  +0.953  +0.971  +0.954  +0.976  +0.966
+  EST_superlative     +0.966  +1.000  +0.940  +0.957  +0.939  +0.963  +0.949
+  ING_progressive     +0.953  +0.940  +1.000  +0.971  +0.945  +0.952  +0.945
+  ED_past             +0.971  +0.957  +0.971  +1.000  +0.955  +0.973  +0.967
+  S_plural            +0.954  +0.939  +0.945  +0.955  +1.000  +0.953  +0.942
+  UN_negation         +0.976  +0.963  +0.952  +0.973  +0.953  +1.000  +0.965
+  RE_repetition       +0.966  +0.949  +0.945  +0.967  +0.942  +0.965  +1.000
+  Mean off-diagonal: +0.957  std: 0.011
+
+==============================================================================
+TEST 2 — cos(suffix, mean residual direction) — anisotropy alignment
+  HIGH (>0.6) = suffix is mostly anisotropy; LOW (~0) = suffix is orthogonal
+==============================================================================
+
+Layer 4:
+  ‖aniso‖=18.27  (mean residual magnitude)
+  ER_comparative      cos(suffix, aniso) = -0.243
+  EST_superlative     cos(suffix, aniso) = -0.237
+  ING_progressive     cos(suffix, aniso) = -0.179
+  ED_past             cos(suffix, aniso) = -0.211
+  S_plural            cos(suffix, aniso) = -0.215
+  UN_negation         cos(suffix, aniso) = -0.269
+  RE_repetition       cos(suffix, aniso) = -0.225
+
+Layer 8:
+  ‖aniso‖=454.34  (mean residual magnitude)
+  ER_comparative      cos(suffix, aniso) = -0.612
+  EST_superlative     cos(suffix, aniso) = -0.595
+  ING_progressive     cos(suffix, aniso) = -0.580
+  ED_past             cos(suffix, aniso) = -0.603
+  S_plural            cos(suffix, aniso) = -0.598
+  UN_negation         cos(suffix, aniso) = -0.630
+  RE_repetition       cos(suffix, aniso) = -0.589
+
+Layer 12:
+  ‖aniso‖=455.94  (mean residual magnitude)
+  ER_comparative      cos(suffix, aniso) = -0.583
+  EST_superlative     cos(suffix, aniso) = -0.571
+  ING_progressive     cos(suffix, aniso) = -0.542
+  ED_past             cos(suffix, aniso) = -0.588
+  S_plural            cos(suffix, aniso) = -0.543
+  UN_negation         cos(suffix, aniso) = -0.600
+  RE_repetition       cos(suffix, aniso) = -0.558
+
+Layer 16:
+  ‖aniso‖=455.90  (mean residual magnitude)
+  ER_comparative      cos(suffix, aniso) = -0.555
+  EST_superlative     cos(suffix, aniso) = -0.558
+  ING_progressive     cos(suffix, aniso) = -0.534
+  ED_past             cos(suffix, aniso) = -0.582
+  S_plural            cos(suffix, aniso) = -0.532
+  UN_negation         cos(suffix, aniso) = -0.574
+  RE_repetition       cos(suffix, aniso) = -0.539
+
+Layer 20:
+  ‖aniso‖=436.39  (mean residual magnitude)
+  ER_comparative      cos(suffix, aniso) = -0.576
+  EST_superlative     cos(suffix, aniso) = -0.583
+  ING_progressive     cos(suffix, aniso) = -0.567
+  ED_past             cos(suffix, aniso) = -0.585
+  S_plural            cos(suffix, aniso) = -0.568
+  UN_negation         cos(suffix, aniso) = -0.587
+  RE_repetition       cos(suffix, aniso) = -0.573
+
+==============================================================================
+TEST 3 — pure random-pair null (cos between TWO random word-pair directions)
+==============================================================================
+
+Layer 4:
+  null pair-cos:    mean=+0.001  95pct=+0.529  99pct=+0.685
+  real suffix-suffix off-diag: mean=+0.773  max=+0.889  min=+0.637
+  → suffixes cluster MORE random pairs
+  → effect size (real_mean - null_mean): +0.772
+
+Layer 8:
+  null pair-cos:    mean=-0.004  95pct=+0.615  99pct=+0.773
+  real suffix-suffix off-diag: mean=+0.827  max=+0.883  min=+0.762
+  → suffixes cluster MORE random pairs
+  → effect size (real_mean - null_mean): +0.831
+
+Layer 12:
+  null pair-cos:    mean=-0.001  95pct=+0.641  99pct=+0.763
+  real suffix-suffix off-diag: mean=+0.799  max=+0.863  min=+0.719
+  → suffixes cluster MORE random pairs
+  → effect size (real_mean - null_mean): +0.800
+
+Layer 16:
+  null pair-cos:    mean=-0.008  95pct=+0.730  99pct=+0.847
+  real suffix-suffix off-diag: mean=+0.876  max=+0.921  min=+0.822
+  → suffixes cluster MORE random pairs
+  → effect size (real_mean - null_mean): +0.883
+
+Layer 20:
+  null pair-cos:    mean=-0.002  95pct=+0.885  99pct=+0.946
+  real suffix-suffix off-diag: mean=+0.957  max=+0.976  min=+0.939
+  → suffixes cluster MORE random pairs
+  → effect size (real_mean - null_mean): +0.959

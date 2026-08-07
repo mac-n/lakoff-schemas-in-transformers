@@ -1,0 +1,17 @@
+POST-HOC CONTROL — which rows carry the GloVe<->Pythia correlation?
+
+  L 4: inflectional-only (5x8): r=+0.232 (null95 +0.209, p=0.0291) SIG   | UN+RE-only (2x8): r=+0.713 (null95 +0.548, p=0.0066) SIG
+  L 8: inflectional-only (5x8): r=+0.178 (null95 +0.210, p=0.0882) ns   | UN+RE-only (2x8): r=+0.718 (null95 +0.537, p=0.0074) SIG
+  L12: inflectional-only (5x8): r=+0.203 (null95 +0.207, p=0.0546) ns   | UN+RE-only (2x8): r=+0.704 (null95 +0.521, p=0.0066) SIG
+  L16: inflectional-only (5x8): r=+0.221 (null95 +0.204, p=0.0348) SIG   | UN+RE-only (2x8): r=+0.656 (null95 +0.510, p=0.0102) SIG
+  L20: inflectional-only (5x8): r=+0.245 (null95 +0.206, p=0.0206) SIG   | UN+RE-only (2x8): r=+0.630 (null95 +0.495, p=0.0148) SIG
+
+  Row L2 norms (how much schema-positioning each affix has):
+    affix                GloVe  PythiaL12
+    ER_comparative       0.232      0.492
+    EST_superlative      0.177      0.235
+    ING_progressive      0.258      0.407
+    ED_past              0.326      0.511
+    S_plural             0.170      0.319
+    UN_negation          0.891      0.615
+    RE_repetition        0.460      0.435

@@ -1,0 +1,36 @@
+Loading glove-wiki-gigaword-300...
+Loading exp60 basis...
+
+Building pole means...
+  UP: 10/10, DOWN: 10/10, LIGHT: 10/10, DARK: 10/10
+
+====================================================================
+THREAD 0 — pole-anchored cosines with R
+====================================================================
+  pole     cos(pole, R)  predicted  verdict  notes
+  ------ --------------  --------  ------  ----------------------------------------
+  UP     -0.1061              < 0  PASS    cascade — loops at p=4.0
+  DOWN   -0.0839             >= 0  FAIL    does not loop
+  LIGHT  -0.1103             >= 0  FAIL    does not loop
+  DARK   -0.1156              < 0  PASS    cascade — loops at p=4.0
+
+  Hits: 2/4
+
+====================================================================
+Difference-axis cosines (anisotropy-cancelled)
+====================================================================
+  cos(A_UP_DOWN,    R) = -0.0186   (predicted NEGATIVE: UP is cascade pole)  PASS
+  cos(A_LIGHT_DARK, R) = -0.0024   (predicted POSITIVE: LIGHT is anti-cascade, DARK is cascade)  FAIL
+
+====================================================================
+Sanity checks
+====================================================================
+  |UP_mean|    = 3.384
+  |DOWN_mean|  = 3.742
+  |LIGHT_mean| = 3.700
+  |DARK_mean|  = 3.465
+  |A_UP_DOWN|    = 2.416  (offset cancels shared anisotropy)
+  |A_LIGHT_DARK| = 3.085
+  |R| = 1.000000  (should be ~1.0)
+
+Saved exp61_results.npz

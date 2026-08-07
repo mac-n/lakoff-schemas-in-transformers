@@ -1,0 +1,108 @@
+Loading glove-wiki-gigaword-300...
+
+=== Building axes ===
+
+=== TEST 1: V/A loading ===
+                  axis    cos(V)    cos(A)     %V     %A   %resid
+             COHERENCE    +0.438    +0.111  19.2%   1.2%    78.2%
+       SUCCESS_FAILURE    +0.472    -0.024  22.3%   0.1%    77.9%
+
+=== TEST 2: COHERENCE vs SUCCESS_FAILURE ===
+  cos(COHERENCE, SUCCESS_FAILURE)         = +0.1780
+  cos(COHERENCE_VA, SUCCESS_FAILURE_VA)   = -0.0459
+
+=== TEST 3: Candidate alignments with cluster (raw) ===
+                              UD  IO_CLEAN        FB        LD     EXIST      DIFF      PATH
+             COHERENCE    +0.483    +0.093    +0.406    +0.309    +0.313    -0.131    +0.150
+       SUCCESS_FAILURE    +0.518    +0.082    +0.247    +0.174    +0.349    -0.205    +0.161
+
+=== TEST 3b: After V+A residualization ===
+                              UD  IO_CLEAN        FB        LD     EXIST      DIFF      PATH
+          COHERENCE_VA    +0.262    +0.024    +0.257    +0.127    +0.164    +0.005    +0.108
+    SUCCESS_FAILURE_VA    +0.337    +0.020    +0.093    -0.029    +0.221    -0.051    +0.131
+
+=== TEST 4: Candidates vs UD-FB shared residual (after V+A+EXIST) ===
+  cos(residual, COHERENCE)         = +0.1926
+  cos(residual, COHERENCE_VA)      = +0.2752
+  cos(residual, SUCCESS_FAILURE)   = +0.1270
+  cos(residual, SUCCESS_FAILURE_VA)= +0.1965
+
+=== TEST 5: UD-FB cosine through residualization stages ===
+  Raw:                              cos(UD, FB) = +0.5204
+  V removed:                        cos = +0.4180
+  V+A removed:                      cos = +0.3426
+  V+A+EXIST removed:                cos = +0.2579
+  V+A+SUCCESS removed:              cos = +0.3278
+  V+A+EXIST+SUCCESS removed:        cos = +0.2636
+
+=== TEST 6: SUCCESS_FAILURE nearest neighbors ===
+  Positive pole (success):
+    +0.3922  achieved
+    +0.3883  accomplished
+    +0.3635  accomplishment
+    +0.3565  achievement
+    +0.3473  achievements
+    +0.3463  achieving
+    +0.3426  achieves
+    +0.3389  feat
+    +0.3353  renown
+    +0.3293  impressive
+    +0.3255  excellence
+    +0.3242  enjoyed
+    +0.3211  remarkable
+    +0.3186  strides
+    +0.3167  winning
+
+  Negative pole (failure):
+    +0.4241  fail
+    +0.4086  failure
+    +0.3974  suffer
+    +0.3827  failing
+    +0.3787  forced
+    +0.3706  doomed
+    +0.3570  miserably
+    +0.3434  unwilling
+    +0.3425  caused
+    +0.3367  suffered
+    +0.3358  refuse
+    +0.3343  unable
+    +0.3338  inadequate
+    +0.3292  fails
+    +0.3196  warn
+
+=== SUCCESS_FAILURE after V+A residualization ===
+  Positive pole:
+    +0.3502  renown
+    +0.3454  feat
+    +0.3372  striding
+    +0.3254  accomplished
+    +0.3198  strides
+    +0.3129  bagging
+    +0.3122  accolade
+    +0.3110  elevating
+    +0.3025  notching
+    +0.3000  accomplishment
+    +0.2978  janson
+    +0.2956  unmatched
+    +0.2931  accomplishing
+    +0.2917  cinematography
+    +0.2905  meteoric
+
+  Negative pole:
+    +0.4565  fail
+    +0.4024  failure
+    +0.3822  failing
+    +0.3696  fails
+    +0.3670  failed
+    +0.3577  unable
+    +0.3444  lose
+    +0.3344  forced
+    +0.3308  doomed
+    +0.3304  refused
+    +0.3200  inadequate
+    +0.3189  refuse
+    +0.3182  miss
+    +0.3085  lost
+    +0.3068  unwilling
+
+Saved: exp38_results.npz

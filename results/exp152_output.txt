@@ -1,0 +1,136 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Running verdict-logic selftest first (synthetic-test convention)...
+selftest_verdict: all branches fire correctly.
+Loading Llama-3.2-1B (gated; needs hf auth + accepted license)...
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   1%|          | 1/146 [00:01<04:04,  1.69s/it]Loading weights:  82%|████████▏ | 120/146 [00:01<00:00, 89.79it/s]Loading weights: 100%|██████████| 146/146 [00:02<00:00, 62.03it/s]
+Loaded pretrained model meta-llama/Llama-3.2-1B into HookedTransformer
+normalization_type = RMSPre
+Word split: 489 total = 312 estimation + 177 held-out test
+Collecting residuals for 489 words at [3, 5, 8, 11, 13]...
+  100/489
+  200/489
+  300/489
+  400/489
+
+==============================================================================
+exp152 — Llama-3.2-1B (RMSNorm) — held-out d_norm protocol
+==============================================================================
+
+--- Layer 3 ---
+  cos(BALANCE, d_norm_heldout) = +0.028   cos(d_norm_ho, d_norm_full) = +0.896   out-of-sample carrier = +0.600
+  Δnorm (inflected - base), mean ± sd per suffix (mean word norm 4.0):
+    ER_comparative        -0.13 ±     0.17
+    EST_superlative       +0.02 ±     0.28
+    ING_progressive       +0.18 ±     0.14
+    ED_past               -0.01 ±     0.19
+    S_plural              +0.02 ±     0.15
+    UN_negation           -0.03 ±     0.16
+    RE_repetition         -0.08 ±     0.12
+  suffix x BALANCE — before / after FULL strip / after HELD-OUT strip:
+    ER_comparative    -0.173   -0.158   -0.173
+    EST_superlative   -0.142   -0.111   -0.142
+    ING_progressive   -0.221   -0.222   -0.232
+    ED_past           -0.101   -0.089   -0.101
+    S_plural          -0.088   -0.078   -0.089
+    UN_negation       -0.427   -0.421   -0.426
+    RE_repetition     -0.172   -0.160   -0.171
+  inflectional mean: -0.145 -> full -0.132 (91%) -> held-out -0.147 (102%)
+  random-2D band: -0.145 ± 0.000 [-0.146, -0.144]
+
+--- Layer 5 ---
+  cos(BALANCE, d_norm_heldout) = -0.143   cos(d_norm_ho, d_norm_full) = +0.921   out-of-sample carrier = +0.646
+  Δnorm (inflected - base), mean ± sd per suffix (mean word norm 4.8):
+    ER_comparative        -0.02 ±     0.15
+    EST_superlative       +0.20 ±     0.23
+    ING_progressive       +0.12 ±     0.12
+    ED_past               +0.02 ±     0.15
+    S_plural              +0.04 ±     0.16
+    UN_negation           +0.04 ±     0.19
+    RE_repetition         -0.06 ±     0.14
+  suffix x BALANCE — before / after FULL strip / after HELD-OUT strip:
+    ER_comparative    -0.159   -0.136   -0.127
+    EST_superlative   -0.135   -0.048   -0.108
+    ING_progressive   -0.256   -0.204   -0.208
+    ED_past           -0.099   -0.051   -0.040
+    S_plural          -0.090   -0.048   -0.082
+    UN_negation       -0.487   -0.438   -0.433
+    RE_repetition     -0.190   -0.151   -0.150
+  inflectional mean: -0.148 -> full -0.098 (66%) -> held-out -0.113 (77%)
+  random-2D band: -0.148 ± 0.000 [-0.148, -0.147]
+
+--- Layer 8 ---
+  cos(BALANCE, d_norm_heldout) = -0.238   cos(d_norm_ho, d_norm_full) = +0.946   out-of-sample carrier = +0.691
+  Δnorm (inflected - base), mean ± sd per suffix (mean word norm 6.0):
+    ER_comparative        +0.27 ±     0.20
+    EST_superlative       +0.40 ±     0.29
+    ING_progressive       +0.23 ±     0.23
+    ED_past               +0.23 ±     0.23
+    S_plural              +0.25 ±     0.14
+    UN_negation           +0.20 ±     0.31
+    RE_repetition         +0.33 ±     0.31
+  suffix x BALANCE — before / after FULL strip / after HELD-OUT strip:
+    ER_comparative    -0.143   -0.001   -0.061
+    EST_superlative   -0.123   +0.100   -0.024
+    ING_progressive   -0.239   -0.121   -0.167
+    ED_past           -0.084   +0.063   +0.011
+    S_plural          -0.079   +0.080   +0.028
+    UN_negation       -0.468   -0.371   -0.400
+    RE_repetition     -0.165   -0.012   -0.068
+  inflectional mean: -0.134 -> full +0.024 (-18%) -> held-out -0.042 (32%)
+  random-2D band: -0.134 ± 0.000 [-0.134, -0.133]
+
+--- Layer 11 ---
+  cos(BALANCE, d_norm_heldout) = +0.049   cos(d_norm_ho, d_norm_full) = +0.894   out-of-sample carrier = +0.546
+  Δnorm (inflected - base), mean ± sd per suffix (mean word norm 10.1):
+    ER_comparative        -0.24 ±     0.35
+    EST_superlative       -0.42 ±     0.31
+    ING_progressive       +0.08 ±     0.41
+    ED_past               +0.02 ±     0.52
+    S_plural              -0.32 ±     0.37
+    UN_negation           -0.14 ±     0.48
+    RE_repetition         +0.00 ±     0.80
+  suffix x BALANCE — before / after FULL strip / after HELD-OUT strip:
+    ER_comparative    -0.177   -0.152   -0.182
+    EST_superlative   -0.148   -0.116   -0.153
+    ING_progressive   -0.174   -0.182   -0.183
+    ED_past           -0.019   -0.024   -0.028
+    S_plural          -0.023   -0.009   -0.027
+    UN_negation       -0.382   -0.347   -0.362
+    RE_repetition     -0.170   -0.134   -0.154
+  inflectional mean: -0.108 -> full -0.097 (89%) -> held-out -0.115 (106%)
+  random-2D band: -0.108 ± 0.000 [-0.109, -0.107]
+
+--- Layer 13 ---
+  cos(BALANCE, d_norm_heldout) = +0.262   cos(d_norm_ho, d_norm_full) = +0.920   out-of-sample carrier = +0.642
+  Δnorm (inflected - base), mean ± sd per suffix (mean word norm 14.5):
+    ER_comparative        -1.06 ±     0.51
+    EST_superlative       -0.98 ±     0.40
+    ING_progressive       -0.24 ±     0.47
+    ED_past               -0.23 ±     0.82
+    S_plural              -0.70 ±     0.49
+    UN_negation           -0.32 ±     0.64
+    RE_repetition         -0.00 ±     1.07
+  suffix x BALANCE — before / after FULL strip / after HELD-OUT strip:
+    ER_comparative    -0.183   -0.008   -0.095
+    EST_superlative   -0.177   -0.045   -0.116
+    ING_progressive   -0.196   -0.123   -0.145
+    ED_past           -0.037   +0.087   +0.057
+    S_plural          -0.015   +0.074   +0.034
+    UN_negation       -0.356   -0.256   -0.281
+    RE_repetition     -0.172   -0.065   -0.099
+  inflectional mean: -0.122 -> full -0.003 (2%) -> held-out -0.053 (44%)
+  random-2D band: -0.122 ± 0.000 [-0.122, -0.121]
+
+==============================================================================
+VERDICT vs pre-registered decision rule
+==============================================================================
+  q1 sink exists: False
+  P2 inflectional Δnorm negative everywhere: False
+  coupling: cos_mid = -0.018 (per layer: L5:-0.14, L8:-0.24, L11:+0.05, L13:+0.26)
+  q3 partial residue: False (mean retained = nan%)
+  EST flips positive after held-out strip (majority): False
+  -> A2: coupling weak/absent on RMSNorm — architecture-specific.
+     Part 2 gets teeth. CHECK P2 above: if Δnorm also vanished,
+     the claim changes shape (no displacement at all) — run the
+     frequency control (exp155 protocol) before writing anything.

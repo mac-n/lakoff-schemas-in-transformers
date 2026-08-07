@@ -1,0 +1,308 @@
+Loading glove-wiki-gigaword-300...
+  vocab size: 400000
+
+Building PCA-input axes (cluster set, 11 axes from exp40)...
+
+Building target axes (independent from PCA-input set)...
+  [target_SALIENCE] missing words (1): ['backgrounded']
+  target_SALIENCE built from 11/12 pairs
+  target_MOTION    built from 12/12 pairs
+  target_EQ_RUN    built from 14/14 pairs
+
+========================================================================
+PCA on cluster axes (11 axes — matches exp40 cluster-only run)
+========================================================================
+
+Variance per PC:
+  PC1:  20.6%   (cumulative:  20.6%)
+  PC2:  17.3%   (cumulative:  37.9%)
+  PC3:  12.4%   (cumulative:  50.3%)
+  PC4:  11.2%   (cumulative:  61.5%)
+  PC5:   9.3%   (cumulative:  70.9%)
+  PC6:   8.7%   (cumulative:  79.6%)
+  PC7:   6.3%   (cumulative:  85.9%)
+  PC8:   5.3%   (cumulative:  91.2%)
+  PC9:   4.5%   (cumulative:  95.7%)
+  PC10:   4.3%   (cumulative: 100.0%)
+
+========================================================================
+CENTRAL TEST: target-axis cosines with PCs
+========================================================================
+
+Predictions:
+  target_SALIENCE  high on PC1 if PC1 is salience-as-primitive;
+                   LOW on PC1 if PC1 is just the V x A diagonal
+  target_MOTION    high on PC2 if MOTION is a real primitive
+  target_EQ_RUN    high on PC3 if EQ-vs-RUNAWAY is a real primitive
+
+                      PC1      PC2      PC3      PC4      PC5      PC6    
+  --------------------------------------------------------------------
+  target_SALIENCE     -0.174  -0.280  -0.056  +0.024  -0.058  -0.039  
+  target_MOTION       -0.094  +0.051  +0.022  +0.054  +0.017  -0.072  
+  target_EQ_RUN       +0.290  +0.011  +0.205  -0.073  -0.124  -0.042  
+
+========================================================================
+Per-target deep dive
+========================================================================
+
+--- target_SALIENCE ---
+  Best PC alignments (sorted by |cos|):
+    PC2 (17.3% var): cos = -0.2797
+    PC7 ( 6.3% var): cos = +0.1974
+    PC1 (20.6% var): cos = -0.1743
+    PC5 ( 9.3% var): cos = -0.0583
+    PC3 (12.4% var): cos = -0.0556
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: +0.4861
+     COHERENCE: +0.4247
+           BAL: +0.3825
+            FB: +0.3625
+            UD: +0.3606
+  Positive pole words:
+    +0.5101  prominent
+    +0.4796  including
+    +0.4558  first
+    +0.4456  addition
+    +0.4374  major
+    +0.4366  notable
+    +0.4286  noted
+    +0.4277  also
+    +0.4192  important
+    +0.4160  one
+  Negative pole words:
+    +0.5190  valueless
+    +0.5184  unfocused
+    +0.4935  uninteresting
+    +0.4822  inoffensive
+    +0.4788  pathetically
+    +0.4783  inattentive
+    +0.4754  unimaginative
+    +0.4736  unimportant
+    +0.4712  inconsequential
+    +0.4657  inarticulate
+
+--- target_MOTION ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = -0.0937
+    PC7 ( 6.3% var): cos = -0.0735
+    PC6 ( 8.7% var): cos = -0.0721
+    PC8 ( 5.3% var): cos = +0.0674
+    PC4 (11.2% var): cos = +0.0538
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+          PATH: +0.2911
+            FB: +0.1925
+            UD: +0.1918
+       AROUSAL: +0.1823
+           BAL: +0.1424
+  Positive pole words:
+    +0.3876  skiing
+    +0.3869  racing
+    +0.3763  sprint
+    +0.3722  diving
+    +0.3711  spectacular
+    +0.3668  championships
+    +0.3593  speed
+    +0.3516  run
+    +0.3503  track
+    +0.3484  jump
+  Negative pole words:
+    +0.4883  kneeling
+    +0.4422  slouched
+    +0.4287  reclining
+    +0.4103  glumly
+    +0.3947  reclined
+    +0.3935  knelt
+    +0.3800  hunched
+    +0.3740  seated
+    +0.3730  slouching
+    +0.3711  lounging
+
+--- target_EQ_RUN ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = +0.2901
+    PC3 (12.4% var): cos = +0.2047
+    PC8 ( 5.3% var): cos = -0.1543
+    PC7 ( 6.3% var): cos = -0.1408
+    PC5 ( 9.3% var): cos = -0.1243
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: -0.2861
+            LD: +0.2180
+       VALENCE: +0.2167
+          LOSS: +0.1638
+     COHERENCE: +0.0871
+  Positive pole words:
+    +0.3360  restoring
+    +0.3153  interpreting
+    +0.3121  modifying
+    +0.3081  tempering
+    +0.3038  adjusting
+    +0.3024  atoning
+    +0.2969  effecting
+    +0.2965  erred
+    +0.2888  accomplishing
+    +0.2820  nyts
+  Negative pole words:
+    +0.4604  mushrooming
+    +0.4443  spiralling
+    +0.4424  spiraling
+    +0.4295  escalating
+    +0.4231  raging
+    +0.4213  engulfed
+    +0.4143  erupted
+    +0.3860  raged
+    +0.3851  escalated
+    +0.3807  sparked
+
+Saved: exp52_results.npz
+Loading glove-wiki-gigaword-300...
+Loading exp60 + exp64 + exp69 saved arrays...
+
+========================================================================
+TEST 1 — Build target_EPISTEMIC_VALUE (state-based anchors)
+========================================================================
+
+Used 10/10 pairs:
+  (curious, indifferent)
+  (intrigued, dismissive)
+  (fascinated, bored)
+  (inquisitive, incurious)
+  (puzzled, settled)
+  (wondering, knowing)
+  (marveling, dismissing)
+  (awestruck, jaded)
+  (mystified, certain)
+  (engaged, blase)
+
+EPISTEMIC_VALUE positive pole (curious-state side, top 15):
+  intrigued                  +0.5477
+  fascinated                 +0.5354
+  puzzled                    +0.4894
+  mystified                  +0.4818
+  amazed                     +0.4718
+  perplexed                  +0.4529
+  marveling                  +0.4502
+  astounded                  +0.4462
+  curious                    +0.4448
+  startled                   +0.4301
+  horrified                  +0.4291
+  astonished                 +0.4201
+  marveled                   +0.4183
+  entranced                  +0.4055
+  captivated                 +0.4052
+
+EPISTEMIC_VALUE negative pole (incurious side, top 15):
+  outright                   +0.3187
+  prior                      +0.3066
+  authorization              +0.3012
+  rejection                  +0.2988
+  previous                   +0.2949
+  pre                        +0.2886
+  approval                   +0.2885
+  failing                    +0.2879
+  customary                  +0.2740
+  failure                    +0.2699
+  fails                      +0.2621
+  failed                     +0.2615
+  payment                    +0.2595
+  rejecting                  +0.2569
+  dismissal                  +0.2567
+
+========================================================================
+TEST 2 — cos(EV, 9-axis basis): predictions check
+========================================================================
+
+axis      cos(EV, .)         predicted  result
+------------------------------------------------------------
+C            +0.0226    [+0.10, +0.25]  MISS
+W            -0.1076   (no prediction)
+ATT          +0.0325    [+0.10, +0.30]  MISS
+INT          -0.1369    [-0.10, +0.10]  MISS
+R            -0.0430   (no prediction)
+D            -0.1463    [+0.15, +0.30]  MISS
+IO           +0.0369   (no prediction)
+DV           +0.1536   (no prediction)
+MB           +0.0612   (no prediction)
+
+max |cos| with basis = 0.154 (with DV)
+  Predicted: [0.25, 0.35], most likely D or C
+
+→ PRIMITIVE CANDIDATE: max |cos| = 0.154 in the clean range.
+  EV would be a 10th-axis primitive on the 0.35 threshold.
+
+✓ INT screening clean: cos(EV, INT) = -0.137
+
+========================================================================
+TEST 3 — cos(EV, Lakoff schemas)
+========================================================================
+
+schema        cos(EV, .)
+VALENCE          +0.0241
+AROUSAL          +0.0673
+COH              -0.1433
+SUC              +0.1260
+LOSS             +0.0385
+UD               +0.0800
+FB               -0.0427
+LD               +0.0709
+PATH             -0.0778
+EXIST            +0.0270
+FORCE            +0.0423
+BAL              -0.0921
+DIFF             +0.0769
+
+========================================================================
+TEST 4 — Concept words onto basis + EV
+========================================================================
+
+word                    EV     ATT     INT       C       D
+------------------------------------------------------------
+  curious           +0.445  -0.005  +0.012  +0.154  -0.105
+  intrigued         +0.548  +0.158  -0.074  +0.163  -0.060
+  fascinated        +0.535  +0.125  -0.108  +0.150  +0.008
+  inquisitive       +0.345  +0.128  -0.187  +0.155  -0.043
+  puzzled           +0.489  +0.001  -0.128  -0.068  -0.075
+  wondering         +0.394  -0.044  -0.049  -0.096  +0.013
+  wonder            +0.285  -0.066  +0.112  +0.065  -0.036
+  awe               +0.201  +0.108  -0.042  +0.134  -0.097
+  awestruck         +0.341  +0.171  -0.334  +0.096  -0.072
+  marveling         +0.450  +0.127  -0.313  +0.005  -0.108
+  mystified         +0.482  +0.018  -0.241  -0.047  -0.154
+  engaged           +0.124  -0.012  +0.314  +0.036  +0.240
+  interested        +0.247  +0.078  +0.279  +0.144  +0.191
+  investigating     +0.158  -0.117  +0.319  -0.190  -0.029
+  exploring         +0.267  +0.103  +0.079  +0.104  -0.034
+  probing           +0.207  -0.003  +0.088  -0.160  -0.058
+  inquiring         +0.256  +0.118  -0.097  -0.009  -0.026
+  searching         +0.256  -0.289  +0.100  -0.093  +0.100
+  seeking           -0.104  -0.101  +0.412  -0.089  +0.009
+  studying          +0.223  +0.041  +0.197  +0.038  +0.119
+  examining         +0.237  +0.011  +0.160  -0.110  -0.010
+  daydreaming       +0.140  +0.162  -0.333  +0.047  +0.108
+  drifting          +0.053  -0.041  -0.398  -0.157  +0.002
+  lethargic         -0.007  +0.086  -0.275  -0.035  +0.047
+  absent-minded     +0.064  +0.148  -0.208  -0.028  -0.088
+  unfocused         +0.072  +0.068  -0.256  -0.061  -0.077
+  boredom           -0.066  +0.109  -0.128  -0.124  +0.054
+  curiosity         +0.240  +0.040  -0.026  +0.095  -0.042
+  interest          +0.042  -0.042  +0.195  -0.004  +0.029
+  fascination       +0.252  +0.077  -0.044  +0.092  -0.032
+  wonderment        +0.236  +0.177  -0.285  +0.060  -0.118
+  indifference      -0.180  +0.064  -0.027  -0.133  -0.062
+  disinterest       -0.080  +0.204  -0.207  +0.019  -0.057
+
+========================================================================
+TEST 5 — Where does EV sit relative to exp70's EXPLORATION direction?
+========================================================================
+
+EXPLORATION = unit(ATT − INT)  (exp70's derived-state direction)
+  cos(EV, EXPLORATION) = +0.1127
+  cos(EV, ATT)         = +0.0325
+  cos(EV, INT)         = -0.1369
+
+  If cos(EV, EXPL) is high (>+0.5), EV mostly captures the (+ATT, −INT)
+    quadrant — supporting Niamh's original derived-state hypothesis.
+  If cos(EV, EXPL) is moderate-low (<+0.3), EV captures something the
+    (ATT − INT) direction misses — the 'what drives exploration' content
+    that distinguishes active novelty-seeking from passive drift.
+
+Saved exp73_results.npz

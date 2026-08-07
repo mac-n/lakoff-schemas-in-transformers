@@ -1,0 +1,175 @@
+Loading glove-wiki-gigaword-300...
+Loading exp60 basis + exp63 SELECTION + exp64 MB...
+
+====================================================================
+Building the collapsed axes
+====================================================================
+  cos(A, G) = +0.5611  (the entanglement)
+  |A + G|              = 1.7669
+  |A - G|              = 0.9370
+  GATING_PROCESS = unit(A + G)
+  COMPLEMENT     = unit(A - G), GS-orthogonalized against GATING_PROCESS
+  Verify orthogonality: cos(GP, COMPLEMENT) = +0.000000
+  cos(GP, A)  = +0.8835  (should be sqrt((1+r)/2) = 0.8835)
+  cos(GP, G)  = +0.8835
+  cos(COMPLEMENT, A)  = +0.4685
+  cos(COMPLEMENT, G)  = -0.4685
+
+  Variance partition (A, G) subspace:
+    GATING_PROCESS: 0.7805  (78.1%)
+    COMPLEMENT:     0.2195  (21.9%)
+  Dropping COMPLEMENT loses 21.9% of A-G subspace.
+
+====================================================================
+Collapsed-basis inter-axis cosines
+====================================================================
+New basis: C, W, GP (GATING_PROCESS), R, D, IO, DV, MB  (+ optional COMPLEMENT)
+
+                C        W       GP        R        D       IO       DV       MB
+       C  +1.0000  -0.3436  +0.0330  -0.0498  +0.1831  +0.1082  +0.2898  -0.0490
+       W  -0.3436  +1.0000  +0.2723  +0.0093  +0.1351  +0.0243  -0.1940  -0.0903
+      GP  +0.0330  +0.2723  +1.0000  +0.1139  +0.0628  +0.0535  +0.2142  +0.0212
+       R  -0.0498  +0.0093  +0.1139  +1.0000  +0.0508  -0.1144  -0.0769  +0.0431
+       D  +0.1831  +0.1351  +0.0628  +0.0508  +1.0000  +0.0858  +0.0891  +0.0133
+      IO  +0.1082  +0.0243  +0.0535  -0.1144  +0.0858  +1.0000  +0.0167  +0.1372
+      DV  +0.2898  -0.1940  +0.2142  -0.0769  +0.0891  +0.0167  +1.0000  +0.1185
+      MB  -0.0490  -0.0903  +0.0212  +0.0431  +0.0133  +0.1372  +0.1185  +1.0000
+
+  Off-diagonal magnitude statistics:
+    max |off-diag| = 0.3436
+    mean |off-diag| = 0.1069
+  For comparison (original 7-axis): max was A-G at +0.561, second was C-W at -0.344.
+
+  GATING_PROCESS cosines:
+             C  +0.0330
+             W  +0.2723
+             R  +0.1139
+             D  +0.0628
+            IO  +0.0535
+            DV  +0.2142
+            MB  +0.0212
+    COMPLEMENT  +0.0000
+
+  COMPLEMENT cosines (the 'what's-different-between-A-and-G' axis):
+             C  -0.0453
+             W  -0.0167
+            GP  +0.0000
+             R  +0.0263
+             D  -0.0695
+            IO  -0.1332
+            DV  +0.0562
+            MB  -0.0344
+
+====================================================================
+Pole vocabulary — GATING_PROCESS
+====================================================================
+
+  POSITIVE pole (committed-aimed-aroused side):
+    including                  +0.5132
+    addition                   +0.5104
+    first                      +0.5024
+    also                       +0.4979
+    established                +0.4943
+    both                       +0.4879
+    successful                 +0.4862
+    major                      +0.4824
+    and                        +0.4800
+    aim                        +0.4747
+    launched                   +0.4736
+    well                       +0.4707
+    action                     +0.4671
+    involved                   +0.4661
+    followed                   +0.4661
+
+  NEGATIVE pole (uncommitted-unfocused-calm side):
+    mangxamba                  +0.5067
+    rw97                       +0.4839
+    unfocused                  +0.4796
+    awestruck                  +0.4790
+    ___________________________________________________________  +0.4758
+    cw96                       +0.4748
+    inarticulate               +0.4730
+    valueless                  +0.4725
+    rosnazura                  +0.4685
+    zety                       +0.4669
+    blissfully                 +0.4660
+    k586-1                     +0.4654
+    23aou94                    +0.4640
+    rungfapaisarn              +0.4606
+    uninteresting              +0.4596
+
+====================================================================
+Pole vocabulary — COMPLEMENT (what differentiates A from G)
+====================================================================
+
+  POSITIVE pole (A side > G side):
+    first-category             +0.2862
+    jianjiang                  +0.2776
+    pronounced                 +0.2646
+    ortsgemeinden              +0.2598
+    600-point                  +0.2577
+    uks                        +0.2559
+    pollster                   +0.2521
+    pediatrics                 +0.2476
+    53-05-76-50                +0.2455
+    gedolot                    +0.2455
+    fontenoy                   +0.2453
+    tassajara                  +0.2448
+    ntags                      +0.2446
+    tryscorers                 +0.2436
+    alighting                  +0.2434
+
+  NEGATIVE pole (G side > A side):
+    pursue                     +0.3841
+    pursuing                   +0.3810
+    motivated                  +0.3657
+    aiming                     +0.3652
+    purely                     +0.3645
+    intended                   +0.3581
+    ostensibly                 +0.3539
+    thwart                     +0.3534
+    pursuit                    +0.3498
+    solely                     +0.3423
+    justify                    +0.3417
+    deliberately               +0.3398
+    aims                       +0.3388
+    pursued                    +0.3366
+    ruthlessly                 +0.3363
+
+====================================================================
+Concept-word battery — does GP predict gating-process content?
+====================================================================
+            word  cos(., GP)   cos(., A)   cos(., G)  cos(., COMP)
+  --------------  ----------  ----------  ----------  ------------
+       attention  +0.3140    +0.2526    +0.3022    -0.0530
+           focus  +0.4390    +0.3058    +0.4698    -0.1751
+        decision  +0.3805    +0.2990    +0.3734    -0.0795
+        judgment  +0.1636    +0.1083    +0.1807    -0.0773
+       judgement  +0.0856    +0.0686    +0.0826    -0.0149
+       vigilance  +0.0896    +0.1009    +0.0573    +0.0465
+       alertness  -0.1353    -0.1129    -0.1262    +0.0142
+        salience  -0.2038    -0.1645    -0.1956    +0.0332
+         anxiety  +0.0425    +0.0501    +0.0251    +0.0267
+            fear  +0.2056    +0.1363    +0.2269    -0.0967
+           panic  +0.0655    +0.0713    +0.0444    +0.0287
+            rage  +0.0145    -0.0245    +0.0500    -0.0795
+          trauma  +0.0875    +0.1320    +0.0225    +0.1169
+      depression  +0.0884    +0.1022    +0.0541    +0.0514
+           shame  +0.0287    -0.0116    +0.0622    -0.0787
+           guilt  +0.0085    -0.0268    +0.0417    -0.0730
+             joy  +0.0733    +0.0643    +0.0652    -0.0010
+            love  +0.2423    +0.2123    +0.2158    -0.0037
+       curiosity  -0.0715    -0.1216    -0.0048    -0.1246
+         boredom  -0.2138    -0.2071    -0.1706    -0.0389
+             awe  -0.0612    -0.0838    -0.0243    -0.0636
+        ambition  +0.1410    +0.0277    +0.2214    -0.2067
+           drive  +0.3162    +0.1940    +0.3648    -0.1823
+         purpose  +0.3289    +0.1448    +0.4363    -0.3111
+            goal  +0.3177    +0.2052    +0.3563    -0.1613
+      motivation  +0.1972    +0.0746    +0.2737    -0.2125
+         sausage  -0.0670    -0.0331    -0.0853    +0.0557
+        marigold  -0.2856    -0.2469    -0.2578    +0.0116
+         stapler  -0.2103    -0.1796    -0.1921    +0.0133
+          pebble  -0.0324    -0.0648    +0.0075    -0.0773
+
+Saved exp67_results.npz

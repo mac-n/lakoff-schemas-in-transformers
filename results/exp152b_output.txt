@@ -1,0 +1,23 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+==============================================================================
+Q2 — tokenization comparison (words tokenized bare, no leading space,
+     matching the protocol's to_tokens usage; BOS excluded from counts)
+==============================================================================
+  Pythia  all 489 words: multi-token 55%, mean 1.66 tokens | inflected forms: multi-token 67%, mean 1.71 tokens
+  Llama   all 489 words: multi-token 50%, mean 1.59 tokens | inflected forms: multi-token 55%, mean 1.58 tokens
+
+==============================================================================
+Q1 — corr(zipf, residual norm) in Llama-3.2-1B (Pythia ref: +0.71 at L8+)
+==============================================================================
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   1%|          | 1/146 [00:01<03:27,  1.43s/it]Loading weights:  82%|████████▏ | 120/146 [00:01<00:00, 104.96it/s]Loading weights: 100%|██████████| 146/146 [00:01<00:00, 81.69it/s] 
+Loaded pretrained model meta-llama/Llama-3.2-1B into HookedTransformer
+  100/489
+  200/489
+  300/489
+  400/489
+  L 3: corr(zipf, norm) = +0.007   (Spearman +0.073)   mean norm 4.04
+  L 5: corr(zipf, norm) = -0.175   (Spearman -0.162)   mean norm 4.81
+  L 8: corr(zipf, norm) = -0.397   (Spearman -0.358)   mean norm 6.00
+  L11: corr(zipf, norm) = +0.018   (Spearman +0.165)   mean norm 10.11
+  L13: corr(zipf, norm) = +0.156   (Spearman +0.323)   mean norm 14.47

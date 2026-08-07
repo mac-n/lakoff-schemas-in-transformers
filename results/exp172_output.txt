@@ -1,0 +1,54 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+==============================================================================
+SYNTHETIC SELF-TEST (a: coupling in outlier dims; b: distributed)
+==============================================================================
+  world a: n_outlier=3  cos +0.456 -> +0.090 (20% retained; clipped 88.1% of energy)  want ARTIFACT
+  world b: n_outlier=3  cos +0.116 -> +0.566 (488% retained; clipped 86.2% of energy)  want ROBUST
+  discriminates a (artifact): True  b (robust): True
+  SELF-TEST PASS
+
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<00:31,  9.18it/s]Loading weights:  66%|██████▌   | 192/292 [00:00<00:00, 1073.51it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 965.14it/s] 
+Loaded pretrained model pythia-410m into HookedTransformer
+Collecting residuals for 489 words at [4, 8, 12, 16, 20]...
+  100/489
+  200/489
+  300/489
+  400/489
+
+==============================================================================
+exp172 — outlier-dimension robustness
+==============================================================================
+
+--- Layer 4 ---
+  outlier dims: 10 [np.int64(130), np.int64(217), np.int64(278), np.int64(335), np.int64(357), np.int64(429), np.int64(752), np.int64(914), np.int64(966), np.int64(1006)]  (42.2% of residual energy)
+  cos(BALANCE, d_norm): +0.784 -> clipped +0.755 (96% retained)  random-clip band +0.785 ± 0.001
+  infl mean sink:       -0.414 -> clipped -0.389 (94% retained)  random band -0.414 ± 0.002
+
+--- Layer 8 ---
+  outlier dims: 13 [np.int64(125), np.int64(130), np.int64(247), np.int64(278), np.int64(357), np.int64(550), np.int64(647), np.int64(728), np.int64(752), np.int64(800), np.int64(945), np.int64(966)]  (99.3% of residual energy)
+  cos(BALANCE, d_norm): +0.729 -> clipped +0.721 (99% retained)  random-clip band +0.729 ± 0.003
+  infl mean sink:       -0.320 -> clipped -0.356 (111% retained)  random band -0.321 ± 0.002
+
+--- Layer 12 ---
+  outlier dims: 12 [np.int64(125), np.int64(130), np.int64(247), np.int64(278), np.int64(357), np.int64(550), np.int64(647), np.int64(728), np.int64(752), np.int64(800), np.int64(945), np.int64(966)]  (99.4% of residual energy)
+  cos(BALANCE, d_norm): +0.701 -> clipped +0.673 (96% retained)  random-clip band +0.701 ± 0.002
+  infl mean sink:       -0.285 -> clipped -0.300 (105% retained)  random band -0.285 ± 0.001
+
+--- Layer 16 ---
+  outlier dims: 9 [np.int64(125), np.int64(130), np.int64(278), np.int64(357), np.int64(550), np.int64(647), np.int64(728), np.int64(752), np.int64(966)]  (99.5% of residual energy)
+  cos(BALANCE, d_norm): +0.718 -> clipped +0.659 (92% retained)  random-clip band +0.718 ± 0.001
+  infl mean sink:       -0.288 -> clipped -0.286 (99% retained)  random band -0.288 ± 0.001
+
+--- Layer 20 ---
+  outlier dims: 8 [np.int64(125), np.int64(130), np.int64(357), np.int64(647), np.int64(728), np.int64(752), np.int64(966), np.int64(1023)]  (99.2% of residual energy)
+  cos(BALANCE, d_norm): +0.729 -> clipped +0.657 (90% retained)  random-clip band +0.727 ± 0.014
+  infl mean sink:       -0.280 -> clipped -0.264 (94% retained)  random band -0.278 ± 0.013
+
+==============================================================================
+VERDICT vs PREREG_exp172.md
+==============================================================================
+  coupling retained >= 0.6: 5/5 layers; sink retained >= 0.6: 5/5; coupling < 0.30: 0/5
+  random-clip preserved coupling per layer: [True, True, True, True, True]
+  -> ROBUST: coupling and sink are distributed, not outlier-dim artifacts.

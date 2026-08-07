@@ -1,0 +1,44 @@
+SAE (exp43, formal sentences, L3):
+  axes: ['UP-DOWN', 'IN-OUT', 'FORWARD-BACK', 'LIGHT-DARK', 'LEFT-RIGHT', 'VALENCE', 'AROUSAL', 'EXISTENCE', 'COHERENCE', 'SUCCESS', 'LOSS']
+  variance: PC1=40.6%, PC2=11.6%, PC3=10.3%, PC4=9.9%, PC5=9.2%, PC6=7.3%, PC7=4.3%, PC8=4.1%, PC9=1.6%, PC10=1.0%
+
+Loading GloVe-300...
+
+w2v (word pairs, matched axis order):
+  variance: PC1=19.7%, PC2=14.8%, PC3=13.2%, PC4=11.0%, PC5=9.6%, PC6=8.5%, PC7=7.2%, PC8=6.4%, PC9=5.6%, PC10=4.0%
+
+=== w2v PC loadings (word pairs) ===
+  PC    UP-DOWN     IN-OUT  FORWARD-B  LIGHT-DAR  LEFT-RIGH    VALENCE    AROUSAL  EXISTENCE  COHERENCE    SUCCESS       LOSS
+  PC1     -0.443     +0.011     -0.081     -0.407     +0.465     -0.670     +0.474     -0.319     -0.286     -0.530     -0.565
+  PC2     -0.249     -0.020     -0.444     -0.268     +0.627     +0.203     -0.537     -0.400     -0.082     -0.011     +0.172
+  PC3     -0.129     +0.753     -0.277     -0.235     -0.266     -0.084     -0.114     +0.108     -0.489     +0.112     -0.071
+  PC4     +0.077     -0.259     +0.279     -0.469     +0.196     -0.175     -0.240     +0.516     -0.217     +0.218     -0.023
+  PC5     -0.025     +0.290     +0.428     +0.250     +0.131     +0.170     -0.399     +0.139     +0.159     -0.304     -0.324
+  PC6     -0.023     -0.104     +0.089     +0.225     +0.081     +0.096     +0.012     -0.228     -0.242     +0.525     -0.441
+
+=== SAE PC loadings (FORMAL sentences, exp43 L3) ===
+  PC    UP-DOWN     IN-OUT  FORWARD-B  LIGHT-DAR  LEFT-RIGH    VALENCE    AROUSAL  EXISTENCE  COHERENCE    SUCCESS       LOSS
+  PC1     -0.613     +0.427     -0.302     -0.737     -0.369     -0.436     -0.917     -0.910     -0.888     +0.947     -0.116
+  PC2     -0.198     -0.346     -0.380     -0.105     -0.027     +0.009     -0.005     +0.036     +0.040     +0.032     +0.822
+  PC3     -0.100     +0.575     +0.129     -0.136     -0.545     -0.103     +0.190     +0.256     +0.206     -0.188     +0.224
+  PC4     +0.242     -0.273     +0.146     +0.173     -0.609     +0.493     -0.117     -0.133     -0.053     +0.150     +0.009
+  PC5     -0.019     -0.269     +0.725     -0.021     -0.003     -0.373     -0.010     -0.016     -0.085     +0.012     +0.220
+  PC6     +0.489     -0.041     -0.288     +0.120     -0.190     -0.502     +0.031     -0.069     -0.149     +0.059     -0.003
+
+=== Cross-substrate cosine matrix ===
+  (w2v word-pair PCs vs SAE FORMAL-sentence PCs)
+              SAE-PC 1  SAE-PC 2  SAE-PC 3  SAE-PC 4  SAE-PC 5  SAE-PC 6
+  w2v-PC1 (19.7%)    +0.125    -0.259    -0.122    -0.672    +0.076    +0.048
+  w2v-PC2 (14.8%)    +0.426    +0.327    -0.516    -0.317    -0.328    -0.247
+  w2v-PC3 (13.2%)    +0.587    -0.164    +0.468    -0.162    -0.365    +0.141
+  w2v-PC4 (11.0%)    +0.127    +0.011    -0.169    -0.179    +0.430    -0.046
+  w2v-PC5 ( 9.6%)    -0.230    -0.624    +0.094    -0.005    +0.098    -0.406
+  w2v-PC6 ( 8.5%)    +0.369    -0.468    -0.557    +0.251    -0.020    +0.023
+
+Best match per w2v PC:
+  w2v-PC1 → SAE-PC4 (cos=-0.672, SAE-PC4 captures 9.9%)
+  w2v-PC2 → SAE-PC3 (cos=-0.516, SAE-PC3 captures 10.3%)
+  w2v-PC3 → SAE-PC1 (cos=+0.587, SAE-PC1 captures 40.6%)
+  w2v-PC4 → SAE-PC5 (cos=+0.430, SAE-PC5 captures 9.2%)
+  w2v-PC5 → SAE-PC2 (cos=-0.624, SAE-PC2 captures 11.6%)
+  w2v-PC6 → SAE-PC3 (cos=-0.557, SAE-PC3 captures 10.3%)

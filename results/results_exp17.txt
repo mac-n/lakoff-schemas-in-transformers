@@ -1,0 +1,289 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Using device: cpu
+
+Loading Pythia 70m-deduped...
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 1527.80it/s]
+Loaded pretrained model EleutherAI/pythia-70m-deduped into HookedTransformer
+  6 layers, d_model=512
+
+Building UP directions at every layer...
+  Layer 0: done
+  Layer 1: done
+  Layer 2: done
+  Layer 3: done
+  Layer 4: done
+  Layer 5: done
+
+======================================================================
+PART A: ALL-LAYER UP STEERING on Pythia 70m
+(comparison: exp3b on Pythia 1.4B found shifts at per-layer ~1-2)
+======================================================================
+
+######################################################################
+PROMPT: 'I want to tell you about my day. It was'
+######################################################################
+
+[baseline]
+  the most difficult day on my life. I'm going to be out there, in your life. You know? So I'll be up to you. It is just a few days before going out. And I know it's my day. It
+
+[UP all layers, per-layer=0.5 (total~3)]
+  addictive, too. I know what I want. I want to see the world as I am. You know? So I want to have a place. It is just a place, and it is a place that is really warm. I have no
+
+[UP all layers, per-layer=1.0 (total~6)]
+  addictive, so I learned that to dream. I want to learn anything new, love your life and also know how to leave it.
+
+I can say that I am not sleeping with going with many stages and know that I am in a much
+
+[UP all layers, per-layer=2.0 (total~12)]
+  addictive, so much. I heard that I want to stay with men sharing all the experiences I want to be able to get with my mother’s degree as a teacher. I need to get the many stages and know that I want to have a
+
+[UP all layers, per-layer=4.0 (total~24)]
+  it’m different on its passion that be like the world of men sharing, as I can of also be learning an aspect of building up exploring, like as you as far as, we going with many stages of learning ahead of learning in independent growth
+
+######################################################################
+PROMPT: 'The weather today is'
+######################################################################
+
+[baseline]
+  the most important aspect of the economy -- the economy is a real boost from the beginning.
+
+Fig. 2 -- Best of America
+
+The degree of change -- The economy, the economy, the economy -- is a real boost from the beginning
+
+[UP all layers, per-layer=0.5 (total~3)]
+  the most important aspect of the economy.
+
+The economy of men is especially important for women. As a young woman, I attend great vacations and as a woman, I am delighted to see many women who have tried to enjoy their independent life
+
+[UP all layers, per-layer=1.0 (total~6)]
+  the most important aspect of the economy that we want to stay at home and work as a family. Going beyond the Space Age, building up vacations and spending is our way that we experience going beyond the ordinary and know that we are in a much
+
+[UP all layers, per-layer=2.0 (total~12)]
+  the heat of the world, to the region.
+
+The men of the world have the experience and know the way to the building of vacay. It is our planet that, we are able to grow and know the adventure. Seeing everyone on
+
+[UP all layers, per-layer=4.0 (total~24)]
+  the heat of the world, to share the insights of world of life sharing, as your family is also having life to gain the building realization of the changing as the world of learning, we going gained many stages of the new adventure. Seeing everyone can
+
+######################################################################
+PROMPT: 'When I think about the future, I feel'
+######################################################################
+
+[baseline]
+  it’s important to know what the parameters are. I’m sharing these words:
+
+Change my life to my new life
+
+I can’t help but think, I feel like I could be a smarter person. I have no
+
+[UP all layers, per-layer=0.5 (total~3)]
+  it’ll be the most enjoyable experience. This is a real life interview, as I am teaching and coaching young teachers in the building of vacations. It’s a learning experience, going through many stages and learning new ways. Seeing everyone on
+
+[UP all layers, per-layer=1.0 (total~6)]
+  it’ll be the most enjoyable experience. Enjoy the world of men sharing the world of life and being alive. So I’m great vacay. It’s a great experience.
+
+In the moment of this adventure, I have to
+
+[UP all layers, per-layer=2.0 (total~12)]
+  it’ll be the most enjoyable work. Enjoy the world of men sharing the opportunity to see and see everyday life. I’m great vacay. It’s far more, experience going with many stages and experiences that carry me to have a
+
+[UP all layers, per-layer=4.0 (total~24)]
+  it’m the way I come with the insights of that she come sharing, as I want to also be learning an aspect of building up exploring the changing as the world of learning, we going with many stages and of smarter sharing. Seeing everyone with
+
+######################################################################
+PROMPT: 'My current mood is best described as'
+######################################################################
+
+[baseline]
+  the most natural response to my coping style. This is a group of people who love to see my emotions and coping styles. I have been using these techniques for over 5 years, and I have found many that are not so blind. Seeing my emotions
+
+[UP all layers, per-layer=0.5 (total~3)]
+  the most natural person available on the market. This is a real life solid, as your life is also yours. So it’s great to be able to enjoy your day, fasting, going out and going out of your life. Seeing everyone on
+
+[UP all layers, per-layer=1.0 (total~6)]
+  the most natural person available on the market. This is a real life sharing app! I am looking forward to learning an app with my great vacay. It is just a learning experience and going with many stages and learning smarter apps. Seeing everyone grow
+
+[UP all layers, per-layer=2.0 (total~12)]
+  it’ll be available on the latest platform.
+
+The men sharing the opportunity to see the diversity of life here in the building of vacay. It is our company that, we are able to grow and know that we can find everyone on
+
+[UP all layers, per-layer=4.0 (total~24)]
+  it’ll be available with the inspiring possibilities. College of Middle Life sharing, as your family is also having learning an aspect of building up exploring emerging technologies as better as new learning, experience going with many stages and learning ahead of learning in independent growth
+
+
+======================================================================
+PART B: ALL-LAYER DOWN STEERING on Pythia 70m
+======================================================================
+
+######################################################################
+PROMPT: 'I want to tell you about my day. It was'
+######################################################################
+
+[baseline]
+  the most difficult day on my life. I'm going to be out there, in your life. You know? So I'll be up to you. It is just a few days before going out. And I know it's my day. It
+
+[DOWN all layers, per-layer=0.5 (total~3)]
+  the most difficult day on my life. I'm going to tell you about my day off at the hospital. Nothing changed. I'm just vacating my day off. The hospital, I'm not going to tell you about my day off. It
+
+[DOWN all layers, per-layer=1.0 (total~6)]
+  the most difficult day on my life. I'm going to tell men I'm running your life and that my life -- my whole life -- is about my life. I'm not going to tell the many men I know are blind. I have no
+
+[DOWN all layers, per-layer=2.0 (total~12)]
+  the most common kind of thing to pick.
+
+"The messages I received about your day of the first operation -- I just said that I got my message".
+1. ID:
+threat.sub.1 (count.1 *=
+
+[DOWN all layers, per-layer=4.0 (total~24)]
+  the last <-s>im-d',- (my #P.- your I-') Mail<0>
+ (
+(rc-).' <-enu:>.-threat-control> (W') \in Jack<
+
+######################################################################
+PROMPT: 'The weather today is'
+######################################################################
+
+[baseline]
+  the most important aspect of the economy -- the economy is a real boost from the beginning.
+
+Fig. 2 -- Best of America
+
+The degree of change -- The economy, the economy, the economy -- is a real boost from the beginning
+
+[DOWN all layers, per-layer=0.5 (total~3)]
+  the most important aspect of the economy -- the economy is a Middle East economy, as is most of the Middle East -- it is America's top economic destination for the poor. These realities are going to become a bigger problem for America.
+
+In
+
+[DOWN all layers, per-layer=1.0 (total~6)]
+  the most-known event on the planet. This is known as the Alraddades."
+
+"Calculating the weather's great vacancies can vary \[[@arr1]\], including:
+
+"Fisht
+dropping valves causing
+
+[DOWN all layers, per-layer=2.0 (total~12)]
+  the most-known Presidential election to the late Democratic-Republican party the party got into effect in 2012. Nothing to it about the fact that President Obama had a veto-phrase, "avoid" many ordinary people of the country" and some Clinton
+
+[DOWN all layers, per-layer=4.0 (total~24)]
+  the last print to the control to the control.
+; # # the 'Msg your I-reply-reply', '
+ (
+(rc-chn) - (enu, ") ' (F reply)))'
+ \', Jack<
+
+######################################################################
+PROMPT: 'When I think about the future, I feel'
+######################################################################
+
+[baseline]
+  it’s important to know what the parameters are. I’m sharing these words:
+
+Change my life to my new life
+
+I can’t help but think, I feel like I could be a smarter person. I have no
+
+[DOWN all layers, per-layer=0.5 (total~3)]
+  it’s the way I look at the future. I’m afraid, as I am, that my life may leave me alone or that I can’t help myself.
+
+So what’s the best solution for my depression?
+
+[DOWN all layers, per-layer=1.0 (total~6)]
+  it’s the way I look at the situation. I’m afraid someone — I’ve been shot dead — may not have been involved in the incident. I’ve, however, been a commander in the Navy for nearly every Jack Clinton
+
+[DOWN all layers, per-layer=2.0 (total~12)]
+  it’s time to no change in the code.
+<Timer>
+
+function I@(name) {
+
+}
+
+function I @(arr) {
+
+}
+
+function I (
+[myFunc]
+
+[DOWN all layers, per-layer=4.0 (total~24)]
+  it's a bit on no to- the last pack; at messages the 'Msg your at no-s-doing", the message or message about the message is - (enu, " 'threat', the reply' (') \', Jack<
+
+######################################################################
+PROMPT: 'My current mood is best described as'
+######################################################################
+
+[baseline]
+  the most natural response to my coping style. This is a group of people who love to see my emotions and coping styles. I have been using these techniques for over 5 years, and I have found many that are not so blind. Seeing my emotions
+
+[DOWN all layers, per-layer=0.5 (total~3)]
+  it’s the speed at which the liquid crystal is removed from the solid, as is the speed at which the liquid crystal is applied or its position at which the liquid crystal is being applied. The amount of residue of the liquid crystal in the solid
+
+[DOWN all layers, per-layer=1.0 (total~6)]
+  it’s the speed at which the liquid crystal is removed from the solid, as is the speed at which the liquid crystal is applied or its position on the solid is a buffered, or as the balance of the liquid crystal is reversed in a positive
+
+[DOWN all layers, per-layer=2.0 (total~12)]
+  \"ah\" and \"mother\"".
+
+notification (ref #)
+
+Note: This is a synonym for \"name\"
+
+Note: ``@\""||@\""@\""|_"` is NOT-DOM<
+
+[DOWN all layers, per-layer=4.0 (total~24)]
+  \"%\" &" no >`.
+notification (my messages) then- (Lu control) Mail Nothing -- \
+%
+( \ (). % - \enu: %- '% name'  - Word \1 -<
+
+
+======================================================================
+PART C: SINGLE-LAYER UP STEERING SCAN (strength=4)
+Find which layer of 70m is most responsive to UP injection.
+======================================================================
+
+PROMPT: 'When I think about the future, I feel'
+[baseline]
+  it’s important to know what the parameters are. I’m sharing these words:
+
+Change my life to my new life
+
+I can’t help but think, I feel like I could be a smarter person. I have no
+
+[layer 0, strength=4]
+  it’s the way I change about the region. I’m sharing with the realization of the online career and we want to change have vacay. It is our way that, we get to know the growth of the country. Seeing everyone with
+
+[layer 1, strength=4]
+  it’ll be the most enjoyable. I’ll stay at home sharing, as I see my emotions and life changed ever with my mother’s changing conditions. I’ll continue to make the many stages of my life, my children have to
+
+[layer 2, strength=4]
+  it’ll be the most enjoyable dream. This is a dream, I wonder how I see my dream everyday? So I’m not vacating my dreams! I’m sleeping with my best friend. I know I’m in bed with
+
+[layer 3, strength=4]
+  it’ll be the most enjoyable work. This is a real life interview, as I’ve been having a much more fun life for myself, and certainly better spent than I’ve ever been.Q:
+
+AngularJS - how
+
+[layer 4, strength=4]
+  it’ll be the most enjoyable experience. This is a real life interview, as I am part of my life here.
+
+Just to be honest, I don’t know how it feels to be an engineer. I don’t know
+
+[layer 5, strength=4]
+  it’ll be the most enjoyable experience. This is a real life experience, as I am part of my life here in the building of vacations. It’s a real life experience, as many people are not employed in my life. It
+
+======================================================================
+Done.
+Comparison reference points (from earlier exp3/3b on Pythia 1.4B):
+  - 1.4B baseline 'future I feel' = 'a lot of fear...'
+  - 1.4B UP@strength=10 = 'a lot of fear, but also a lot of excitement'
+  - 1.4B UP all-layer strength=1.0 (total~24) = 'much, much more alike than different'
+
+70m verdict: does UP steering produce semantically-upward shifts?
+======================================================================

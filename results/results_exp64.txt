@@ -1,0 +1,229 @@
+Loading glove-wiki-gigaword-300...
+Loading exp60 basis + exp63 SELECTION axis...
+
+####################################################################
+# PART A — GATING extended tests
+####################################################################
+
+====================================================================
+A1 — cos(GATING, each Lakoff schema)
+====================================================================
+    schema  cos(GATING, .)   cos(C, .)  GATING − C
+  --------  --------------  ----------  ----------
+        UD  +0.3558         +0.4778     -0.1220
+  IO_CLEAN  +0.0167         +0.1082     -0.0915
+        FB  +0.2678         +0.1827     +0.0851
+      PATH  +0.1487         +0.1388     +0.0099
+        LD  +0.1549         +0.2076     -0.0527
+     EXIST  +0.4216         +0.3696     +0.0520
+     FORCE  +0.1363         +0.1353     +0.0010
+       BAL  +0.2308         +0.2772     -0.0464
+      DIFF  -0.2226         -0.2842     +0.0617
+
+====================================================================
+A2 — GATING residual after C projected out
+====================================================================
+  |GATING - <GATING,C>·C| = 0.9571  (91.6% of GATING's variance is NOT C)
+
+  Residual decomposition onto remaining basis axes:
+       W_wgt  cos = -0.0986
+       A_aff  cos = +0.2229
+       G_pol  cos = +0.1550
+       R_per  cos = -0.0652
+       D_cmp  cos = +0.0376
+      IO_blk  cos = -0.0153
+
+  Top-15 nearest-neighbor words to GATING-minus-C direction:
+  POSITIVE pole (what GATING has that C doesn't):
+    chosen                     +0.4000
+    selected                   +0.3661
+    select                     +0.3632
+    choosing                   +0.3604
+    selecting                  +0.3568
+    chose                      +0.3439
+    pick                       +0.3336
+    preferred                  +0.3100
+    choose                     +0.3090
+    designated                 +0.2952
+    favorite                   +0.2920
+    selection                  +0.2874
+    nationally                 +0.2836
+    picked                     +0.2817
+    best                       +0.2816
+  NEGATIVE pole:
+    flatly                     +0.4741
+    categorically              +0.4489
+    refuted                    +0.4193
+    substantiate               +0.3866
+    untrue                     +0.3863
+    assertions                 +0.3856
+    disproved                  +0.3794
+    rebutted                   +0.3790
+    adamantly                  +0.3776
+    substantiated              +0.3619
+    superfluous                +0.3608
+    overblown                  +0.3603
+    strenuously                +0.3595
+    contentions                +0.3574
+    abrogated                  +0.3551
+
+====================================================================
+A3 — Gating-distinctive concept words
+====================================================================
+              word  cos(., GATING)   cos(., C)   cos(., A)   cos(., G)
+  ----------------  --------------  ----------  ----------  ----------
+         attention  +0.0064         -0.0881     +0.2526     +0.3022
+             focus  +0.1437         -0.0030     +0.3058     +0.4698
+          salience  -0.0986         -0.0234     -0.1645     -0.1956
+         vigilance  +0.0947         +0.0235     +0.1009     +0.0573
+         alertness  +0.0146         -0.0711     -0.1129     -0.1262
+          decision  +0.0062         -0.1253     +0.2990     +0.3734
+          judgment  -0.0149         -0.0588     +0.1083     +0.1807
+         judgement  -0.0503         -0.0471     +0.0686     +0.0826
+         criterion  +0.0309         +0.0690     +0.0776     +0.0516
+         threshold  -0.0040         -0.0216     +0.0723     +0.0412
+            filter  -0.0542         -0.0374     -0.1364     +0.0002
+         screening  +0.0365         +0.0308     +0.0776     +0.1192
+         selection  +0.2955         +0.0704     +0.1439     +0.2094
+         admission  -0.0113         +0.0430     +0.0838     +0.1216
+           refusal  -0.1614         -0.1922     +0.1777     +0.2247
+          approval  +0.0632         +0.0358     +0.1963     +0.2104
+          sanction  -0.1221         -0.0083     +0.0131     +0.1629
+              veto  -0.1034         +0.0094     +0.1099     +0.1031
+        permission  -0.0992         -0.0044     +0.1420     +0.1752
+           license  -0.0386         +0.0122     +0.0628     +0.1459
+               ban  -0.0722         -0.0450     +0.2309     +0.2292
+             taboo  -0.0876         -0.0488     -0.0154     +0.0019
+           embargo  -0.1427         -0.0880     +0.0760     +0.1371
+              gate  -0.0402         -0.0404     +0.1283     +0.1035
+        gatekeeper  +0.0026         +0.1094     -0.0845     -0.0970
+           gateway  +0.0705         +0.1134     +0.0260     +0.1374
+           barrier  -0.0220         -0.0565     +0.1373     +0.2111
+        checkpoint  -0.0435         -0.0780     +0.0592     +0.0254
+       recognition  +0.0254         +0.0431     +0.2511     +0.2821
+        acceptance  +0.1066         +0.0545     +0.1077     +0.1281
+         rejection  -0.1299         -0.1320     +0.1593     +0.1264
+       endorsement  +0.0501         +0.1583     +0.1256     +0.1283
+            denial  -0.2048         -0.0862     +0.1039     +0.1829
+          noticing  -0.0831         -0.0675     -0.0923     -0.1920
+          ignoring  -0.2629         -0.2100     -0.0164     +0.1225
+           heeding  -0.1605         +0.0143     -0.1528     -0.1478
+        dismissing  -0.2601         -0.1164     -0.0418     +0.1049
+
+####################################################################
+# PART B — MARKOV_BLANKET construction
+####################################################################
+
+====================================================================
+B1 — Building MARKOV_BLANKET
+====================================================================
+  Used 13/13 pairs:
+    (self, other)
+    (agent, environment)
+    (internal, external)
+    (mine, theirs)
+    (own, foreign)
+    (private, public)
+    (subjective, objective)
+    (introspection, perception)
+    (autonomous, dependent)
+    (individual, collective)
+    (personal, impersonal)
+    (intrinsic, extrinsic)
+    (endogenous, exogenous)
+
+====================================================================
+B2 — cos(MARKOV_BLANKET, all 7 basis axes + GATING)
+====================================================================
+        axis  cos(MB, .)  bar
+  ----------  ----------  ------------------------------
+       C_rew  -0.0490    ##
+       W_wgt  -0.0903    ####
+       A_aff  +0.0026    
+       G_pol  +0.0349    #
+       R_per  +0.0431    ##
+       D_cmp  +0.0133    
+      IO_blk  +0.1372    ######
+      GATING  +0.1185    #####
+
+  Sub-thread C2 verdict — cos(MARKOV_BLANKET, IO_CLEAN) = +0.1372
+  → DISTINCT — MB and IO_CLEAN are independent primitives (both candidate substrate primitives, different content)
+
+====================================================================
+B3 — Concept-word coverage on MARKOV_BLANKET vs IO_CLEAN
+====================================================================
+              word  cos(., MB)  cos(., IO)  cos(., GATING)
+  ----------------  ----------  ----------  --------------
+              self  +0.3245    +0.0285    +0.0855  ← MB
+          selfhood  +0.1608    +0.0451    -0.0799  ← MB
+          identity  +0.1244    +0.0711    -0.0276  ← MB
+          boundary  +0.0649    +0.0648    -0.0054  ← MB
+          intimacy  +0.0448    +0.0380    +0.0055  ← MB
+         belonging  +0.1312    +0.2910    -0.0010  ← IO
+        alienation  +0.0226    -0.0310    -0.1004  ← IO
+         isolation  +0.0044    +0.0745    -0.0135  ← IO
+         communion  +0.0939    +0.0499    -0.0440  ← MB
+             exile  +0.1538    +0.0645    +0.0366  ← MB
+        membership  -0.0359    +0.0171    +0.0181  ← MB
+           kinship  -0.0090    +0.0130    +0.0084  ← IO
+        loneliness  +0.0925    -0.0089    -0.0258  ← MB
+      togetherness  +0.0155    +0.0070    +0.0141  ← MB
+               ego  +0.1779    -0.0203    -0.0214  ← MB
+              soul  +0.1864    -0.0277    +0.0658  ← MB
+     individuality  +0.1606    +0.0020    -0.0340  ← MB
+          autonomy  +0.1950    +0.1484    -0.0142  ← MB
+       sovereignty  +0.0311    +0.0835    -0.0624  ← IO
+       interiority  +0.0810    +0.0400    -0.0248  ← MB
+      subjectivity  +0.0297    -0.0973    -0.1140  ← IO
+
+  MB has larger |cos| on 15 words; IO_CLEAN on 6
+
+====================================================================
+B4 — MARKOV_BLANKET pole vocabulary (top-20 each pole)
+====================================================================
+
+  POSITIVE pole (self / agent / internal / mine / private / autonomous side):
+    self                       +0.3245
+    mine                       +0.3083
+    autobiography              +0.2852
+    agent                      +0.2812
+    personal                   +0.2798
+    aggrandizement             +0.2661
+    own                        +0.2585
+    kwalik                     +0.2581
+    parker                     +0.2574
+    k-9                        +0.2567
+    seligson                   +0.2561
+    psychiatrist               +0.2542
+    ginobili                   +0.2535
+    tidwell                    +0.2510
+    reminiscence               +0.2508
+    maverick                   +0.2499
+    qr                         +0.2466
+    memoir                     +0.2460
+    sarosi                     +0.2458
+    novitzky                   +0.2452
+
+  NEGATIVE pole (other / environment / external / theirs / public side):
+    external                   +0.3380
+    foreign                    +0.3178
+    exclusivas                 +0.3105
+    globalization              +0.3032
+    unfavorable                +0.2888
+    receptive                  +0.2871
+    perceive                   +0.2863
+    minsiter                   +0.2859
+    farez                      +0.2841
+    gerretsen                  +0.2830
+    0.029                      +0.2807
+    environment                +0.2787
+    macroeconomic              +0.2751
+    a-vis                      +0.2714
+    unfavourable               +0.2710
+    valluvanad                 +0.2686
+    policy-makers              +0.2680
+    globalised                 +0.2660
+    mudenge                    +0.2652
+    over-fishing               +0.2649
+
+Saved exp64_results.npz

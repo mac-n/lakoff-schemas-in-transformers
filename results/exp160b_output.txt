@@ -1,0 +1,42 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+exp160b — is attention entropy independent of residual norm?
+
+========================================================================
+pythia-410m
+========================================================================
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<00:38,  7.62it/s]Loading weights:  74%|███████▍  | 216/292 [00:00<00:00, 1089.69it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 1010.50it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+    L  corr(ent,norm)  cos(d_ent,d_norm)  partial(BAL,ent|norm)  cos(BAL,d_norm)
+    3          +0.248             +0.489                 -0.280           -0.063
+    8          -0.116             -0.425                 +0.060           +0.024
+   12          +0.062             -0.250                 -0.185           +0.090
+   16          +0.427             +0.380                 -0.186           +0.097
+   20          +0.376             +0.661                 -0.156           +0.023
+
+========================================================================
+gpt2-medium
+========================================================================
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 6027.93it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+    L  corr(ent,norm)  cos(d_ent,d_norm)  partial(BAL,ent|norm)  cos(BAL,d_norm)
+    3          -0.110             -0.317                 -0.547           +0.274
+    8          -0.328             -0.529                 -0.205           +0.119
+   12          -0.413             -0.626                 -0.261           +0.119
+   16          -0.128             -0.513                 -0.299           +0.079
+   20          +0.107             -0.091                 +0.007           -0.027
+
+========================================================================
+Llama-3.2-1B
+========================================================================
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   1%|          | 1/146 [00:01<04:42,  1.95s/it]Loading weights:  82%|████████▏ | 120/146 [00:02<00:00, 69.56it/s]Loading weights:  96%|█████████▌| 140/146 [00:03<00:00, 51.20it/s]Loading weights: 100%|██████████| 146/146 [00:03<00:00, 46.59it/s]
+Loaded pretrained model meta-llama/Llama-3.2-1B into HookedTransformer
+    L  corr(ent,norm)  cos(d_ent,d_norm)  partial(BAL,ent|norm)  cos(BAL,d_norm)
+    2          -0.523             -0.757                 -0.149           +0.014
+    5          -0.151             -0.274                 -0.200           +0.008
+    8          -0.211             -0.496                 -0.085           -0.009
+   11          +0.122             -0.028                 -0.003           -0.015
+   13          +0.272             +0.580                 -0.023           -0.084
+
+Read: |cos(d_ent,d_norm)|→1 ⇒ entropy IS norm (kill avenue, K1).
+     GPT-2 low cos + BALANCE-entropy partial surviving ⇒ K2 (lead live).

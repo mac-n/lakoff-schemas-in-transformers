@@ -1,0 +1,200 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<00:39,  7.44it/s]Loading weights:  77%|███████▋  | 224/292 [00:00<00:00, 1142.97it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 1026.80it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+
+Rebuilding 530-word balanced sample...
+  B1_spike: 10 words
+  B2_top_function: 40 words
+  B3_top_content: 80 words
+  B4_high: 80 words
+  B5_mid: 80 words
+  B6_mid_low: 80 words
+  B7_low: 80 words
+  B8_rare: 80 words
+  Total: 530
+
+Extracting residuals at L12...
+  100/530
+  200/530
+  300/530
+  400/530
+  500/530
+
+PC1 explains 25.7% of variance at L12
+PC2 explains 4.7%
+PC3 explains 4.1%
+PC4 explains 3.1%
+PC5 explains 2.3%
+
+======================================================================
+TOP 30 highest PC1 projection at L12:
+======================================================================
+   +37.256  certain                    (B4_high)
+   +27.311  mine                       (B4_high)
+   +21.101  wait                       (B3_top_content)
+   +21.049  sphere                     (B7_low)
+   +20.664  pause                      (B6_mid_low)
+   +19.042  partition                  (B8_rare)
+   +18.474  efficiency                 (B6_mid_low)
+   +17.825  unreadable                 (B8_rare)
+   +17.815  cyclic                     (B8_rare)
+   +17.601  definition                 (B6_mid_low)
+   +17.518  sty                        (B8_rare)
+   +16.919  natal                      (B8_rare)
+   +16.645  flush                      (B6_mid_low)
+   +15.968  consider                   (B5_mid)
+   +14.606  convex                     (B8_rare)
+   +14.222  watch                      (B3_top_content)
+   +14.111  net                        (B5_mid)
+   +14.097  main                       (B5_mid)
+   +14.077  written                    (B5_mid)
+   +14.044  lymph                      (B8_rare)
+   +13.841  kerchief                   (B8_rare)
+   +13.676  emphasis                   (B7_low)
+   +13.615  corn                       (B5_mid)
+   +13.533  vex                        (B8_rare)
+   +13.460  idea                       (B3_top_content)
+   +12.861  teen                       (B6_mid_low)
+   +12.513  adapter                    (B8_rare)
+   +12.468  require                    (B6_mid_low)
+   +11.967  frontal                    (B7_low)
+   +11.937  raw                        (B6_mid_low)
+
+======================================================================
+BOTTOM 30 lowest PC1 projection at L12:
+======================================================================
+   -20.894  weed                       (B6_mid_low)
+   -15.682  anus                       (B7_low)
+   -15.336  defined                    (B7_low)
+   -14.705  logo                       (B7_low)
+   -14.132  oxford                     (B7_low)
+   -13.810  hold                       (B3_top_content)
+   -13.114  gel                        (B7_low)
+   -12.827  overview                   (B8_rare)
+   -12.656  speaking                   (B4_high)
+   -12.550  achy                       (B8_rare)
+   -12.533  ethanol                    (B8_rare)
+   -12.505  tic                        (B7_low)
+   -12.417  invasive                   (B7_low)
+   -12.367  ailing                     (B8_rare)
+   -12.059  aching                     (B7_low)
+   -11.943  coming                     (B3_top_content)
+   -11.832  lied                       (B5_mid)
+   -11.649  upon                       (B4_high)
+   -11.471  perturb                    (B8_rare)
+   -11.429  emission                   (B8_rare)
+   -11.343  comes                      (B4_high)
+   -11.215  nest                       (B6_mid_low)
+   -11.099  him                        (B2_top_function)
+   -11.091  it                         (B1_spike)
+   -10.949  bibliography               (B8_rare)
+   -10.930  detection                  (B7_low)
+   -10.739  ringer                     (B7_low)
+   -10.665  love                       (B3_top_content)
+   -10.610  omit                       (B8_rare)
+   -10.244  membrane                   (B7_low)
+
+======================================================================
+MIDDLE 30 (around median PC1):
+======================================================================
+    -0.688  optional                   (B7_low)
+    -0.650  average                    (B5_mid)
+    -0.620  be                         (B2_top_function)
+    -0.616  not                        (B2_top_function)
+    -0.580  link                       (B6_mid_low)
+    -0.575  ionic                      (B8_rare)
+    -0.551  gravity                    (B6_mid_low)
+    -0.551  canvas                     (B6_mid_low)
+    -0.545  driving                    (B4_high)
+    -0.499  domain                     (B7_low)
+    -0.492  map                        (B5_mid)
+    -0.436  inks                       (B8_rare)
+    -0.411  sole                       (B6_mid_low)
+    -0.305  violent                    (B5_mid)
+    -0.290  descriptor                 (B8_rare)
+    -0.224  they                       (B2_top_function)
+    -0.178  real                       (B3_top_content)
+    -0.160  interest                   (B5_mid)
+    -0.126  read                       (B4_high)
+    -0.108  pop                        (B4_high)
+    -0.058  embed                      (B8_rare)
+    -0.046  respect                    (B4_high)
+    -0.045  arming                     (B7_low)
+    +0.063  lap                        (B5_mid)
+    +0.130  might                      (B3_top_content)
+    +0.130  haired                     (B8_rare)
+    +0.152  is                         (B2_top_function)
+    +0.171  plaintiff                  (B6_mid_low)
+    +0.176  name                       (B3_top_content)
+    +0.195  measured                   (B6_mid_low)
+
+======================================================================
+TOP 30 PC2 projection at L12:
+======================================================================
+    +6.924  written                    (B5_mid)
+    +6.683  consuming                  (B7_low)
+    +6.624  traditional                (B6_mid_low)
+    +6.384  efficiency                 (B6_mid_low)
+    +6.354  driving                    (B4_high)
+    +6.109  innings                    (B7_low)
+    +6.082  experienced                (B6_mid_low)
+    +6.040  haired                     (B8_rare)
+    +6.018  relevant                   (B6_mid_low)
+    +6.006  living                     (B4_high)
+    +5.883  certain                    (B4_high)
+    +5.686  armed                      (B5_mid)
+    +5.565  serious                    (B4_high)
+    +5.391  morning                    (B3_top_content)
+    +5.363  like                       (B2_top_function)
+    +5.182  awning                     (B8_rare)
+    +5.163  paced                      (B8_rare)
+    +5.151  enough                     (B3_top_content)
+    +5.089  measured                   (B6_mid_low)
+    +5.041  keeper                     (B6_mid_low)
+    +5.030  another                    (B3_top_content)
+    +4.980  together                   (B3_top_content)
+    +4.926  optimal                    (B8_rare)
+    +4.916  speaking                   (B4_high)
+    +4.823  parable                    (B8_rare)
+    +4.762  dependence                 (B8_rare)
+    +4.755  average                    (B5_mid)
+    +4.726  mighty                     (B5_mid)
+    +4.651  highest                    (B5_mid)
+    +4.648  resident                   (B6_mid_low)
+
+======================================================================
+BOTTOM 30 PC2 projection at L12:
+======================================================================
+    -8.915  prod                       (B7_low)
+    -7.892  fib                        (B7_low)
+    -7.647  embed                      (B8_rare)
+    -7.155  document                   (B6_mid_low)
+    -7.096  commons                    (B8_rare)
+    -7.069  mat                        (B6_mid_low)
+    -6.972  underline                  (B8_rare)
+    -6.890  dot                        (B6_mid_low)
+    -6.791  prim                       (B8_rare)
+    -6.772  lymph                      (B8_rare)
+    -6.551  bib                        (B8_rare)
+    -6.524  cop                        (B4_high)
+    -6.438  ref                        (B7_low)
+    -6.337  prom                       (B5_mid)
+    -6.324  hex                        (B7_low)
+    -6.226  infer                      (B7_low)
+    -5.927  split                      (B5_mid)
+    -5.846  hydro                      (B8_rare)
+    -5.759  unreadable                 (B8_rare)
+    -5.307  amino                      (B7_low)
+    -5.255  span                       (B7_low)
+    -5.242  caption                    (B8_rare)
+    -5.181  opt                        (B8_rare)
+    -5.146  registry                   (B7_low)
+    -5.031  spec                       (B7_low)
+    -4.971  cot                        (B7_low)
+    -4.923  java                       (B7_low)
+    -4.900  bibliography               (B8_rare)
+    -4.870  pick                       (B4_high)
+    -4.843  decoder                    (B8_rare)

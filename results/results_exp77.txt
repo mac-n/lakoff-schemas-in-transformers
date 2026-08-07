@@ -1,0 +1,466 @@
+Loading glove-wiki-gigaword-300...
+  vocab size: 400000
+
+Building PCA-input axes (cluster set, 11 axes from exp40)...
+
+Building target axes (independent from PCA-input set)...
+  [target_SALIENCE] missing words (1): ['backgrounded']
+  target_SALIENCE built from 11/12 pairs
+  target_MOTION    built from 12/12 pairs
+  target_EQ_RUN    built from 14/14 pairs
+
+========================================================================
+PCA on cluster axes (11 axes — matches exp40 cluster-only run)
+========================================================================
+
+Variance per PC:
+  PC1:  20.6%   (cumulative:  20.6%)
+  PC2:  17.3%   (cumulative:  37.9%)
+  PC3:  12.4%   (cumulative:  50.3%)
+  PC4:  11.2%   (cumulative:  61.5%)
+  PC5:   9.3%   (cumulative:  70.9%)
+  PC6:   8.7%   (cumulative:  79.6%)
+  PC7:   6.3%   (cumulative:  85.9%)
+  PC8:   5.3%   (cumulative:  91.2%)
+  PC9:   4.5%   (cumulative:  95.7%)
+  PC10:   4.3%   (cumulative: 100.0%)
+
+========================================================================
+CENTRAL TEST: target-axis cosines with PCs
+========================================================================
+
+Predictions:
+  target_SALIENCE  high on PC1 if PC1 is salience-as-primitive;
+                   LOW on PC1 if PC1 is just the V x A diagonal
+  target_MOTION    high on PC2 if MOTION is a real primitive
+  target_EQ_RUN    high on PC3 if EQ-vs-RUNAWAY is a real primitive
+
+                      PC1      PC2      PC3      PC4      PC5      PC6    
+  --------------------------------------------------------------------
+  target_SALIENCE     -0.174  -0.280  -0.056  +0.024  -0.058  -0.039  
+  target_MOTION       -0.094  +0.051  +0.022  +0.054  +0.017  -0.072  
+  target_EQ_RUN       +0.290  +0.011  +0.205  -0.073  -0.124  -0.042  
+
+========================================================================
+Per-target deep dive
+========================================================================
+
+--- target_SALIENCE ---
+  Best PC alignments (sorted by |cos|):
+    PC2 (17.3% var): cos = -0.2797
+    PC7 ( 6.3% var): cos = +0.1974
+    PC1 (20.6% var): cos = -0.1743
+    PC5 ( 9.3% var): cos = -0.0583
+    PC3 (12.4% var): cos = -0.0556
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: +0.4861
+     COHERENCE: +0.4247
+           BAL: +0.3825
+            FB: +0.3625
+            UD: +0.3606
+  Positive pole words:
+    +0.5101  prominent
+    +0.4796  including
+    +0.4558  first
+    +0.4456  addition
+    +0.4374  major
+    +0.4366  notable
+    +0.4286  noted
+    +0.4277  also
+    +0.4192  important
+    +0.4160  one
+  Negative pole words:
+    +0.5190  valueless
+    +0.5184  unfocused
+    +0.4935  uninteresting
+    +0.4822  inoffensive
+    +0.4788  pathetically
+    +0.4783  inattentive
+    +0.4754  unimaginative
+    +0.4736  unimportant
+    +0.4712  inconsequential
+    +0.4657  inarticulate
+
+--- target_MOTION ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = -0.0937
+    PC7 ( 6.3% var): cos = -0.0735
+    PC6 ( 8.7% var): cos = -0.0721
+    PC8 ( 5.3% var): cos = +0.0674
+    PC4 (11.2% var): cos = +0.0538
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+          PATH: +0.2911
+            FB: +0.1925
+            UD: +0.1918
+       AROUSAL: +0.1823
+           BAL: +0.1424
+  Positive pole words:
+    +0.3876  skiing
+    +0.3869  racing
+    +0.3763  sprint
+    +0.3722  diving
+    +0.3711  spectacular
+    +0.3668  championships
+    +0.3593  speed
+    +0.3516  run
+    +0.3503  track
+    +0.3484  jump
+  Negative pole words:
+    +0.4883  kneeling
+    +0.4422  slouched
+    +0.4287  reclining
+    +0.4103  glumly
+    +0.3947  reclined
+    +0.3935  knelt
+    +0.3800  hunched
+    +0.3740  seated
+    +0.3730  slouching
+    +0.3711  lounging
+
+--- target_EQ_RUN ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = +0.2901
+    PC3 (12.4% var): cos = +0.2047
+    PC8 ( 5.3% var): cos = -0.1543
+    PC7 ( 6.3% var): cos = -0.1408
+    PC5 ( 9.3% var): cos = -0.1243
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: -0.2861
+            LD: +0.2180
+       VALENCE: +0.2167
+          LOSS: +0.1638
+     COHERENCE: +0.0871
+  Positive pole words:
+    +0.3360  restoring
+    +0.3153  interpreting
+    +0.3121  modifying
+    +0.3081  tempering
+    +0.3038  adjusting
+    +0.3024  atoning
+    +0.2969  effecting
+    +0.2965  erred
+    +0.2888  accomplishing
+    +0.2820  nyts
+  Negative pole words:
+    +0.4604  mushrooming
+    +0.4443  spiralling
+    +0.4424  spiraling
+    +0.4295  escalating
+    +0.4231  raging
+    +0.4213  engulfed
+    +0.4143  erupted
+    +0.3860  raged
+    +0.3851  escalated
+    +0.3807  sparked
+
+Saved: exp52_results.npz
+Loading GloVe...
+Building current 10-axis basis...
+Building ABSTRACT_CONCRETE and MODAL_STATUS candidates...
+
+========================================================================
+PART A — cross-bleed: cos(ABS, basis) and cos(MOD, basis)
+========================================================================
+
+axis       cos(ABS, .)     cos(MOD, .)
+  --------------------------------------
+C              +0.1480         -0.0041
+W              -0.2732         -0.1808
+ATT            +0.1340         +0.0777
+INT            -0.1685         -0.1944
+R              -0.0197         -0.0880
+D              -0.0190         -0.0746
+IO             -0.0654         +0.1169
+DV             +0.0236         +0.0014
+MB             -0.0288         -0.0689
+EV             -0.0097         +0.0497
+
+Max |cos| with current basis:
+  ABS: 0.2732 (with W)
+  MOD: 0.1944 (with INT)
+
+Project threshold: 0.35 — ABS PASSES; MOD PASSES.
+
+cos(ABS, MOD) = +0.2348
+  (the two new axes' coupling — also should be < 0.35 if both pass)
+
+========================================================================
+PART A.2 — pole vocabulary for ABS and MOD
+========================================================================
+
+ABSTRACT_CONCRETE positive pole (abstract side, top 12):
+  kantian                    +0.4166
+  propounded                 +0.4027
+  toyed                      +0.3948
+  conceptions                +0.3946
+  posits                     +0.3900
+  idealist                   +0.3795
+  vice-secretary             +0.3771
+  materialist                +0.3638
+  epistemology               +0.3613
+  posited                    +0.3606
+  hegelian                   +0.3575
+  metaphysics                +0.3562
+
+ABSTRACT_CONCRETE negative pole (concrete side, top 12):
+  material                   +0.3960
+  contain                    +0.3921
+  few                        +0.3875
+  damage                     +0.3861
+  specific                   +0.3784
+  enough                     +0.3781
+  identify                   +0.3768
+  inside                     +0.3758
+  additional                 +0.3753
+  amount                     +0.3680
+  actually                   +0.3652
+  find                       +0.3648
+
+MODAL_STATUS positive pole (hypothetical side, top 12):
+  fashionmall                +0.4276
+  two-front                  +0.3882
+  counterfactual             +0.3879
+  counterbid                 +0.3862
+  nanorobots                 +0.3829
+  hypothetical               +0.3822
+  veeps                      +0.3807
+  ladany                     +0.3800
+  end-products               +0.3737
+  subaih                     +0.3729
+  2.9-million                +0.3718
+  51-yarder                  +0.3673
+
+MODAL_STATUS negative pole (actual side, top 12):
+  is                         +0.3720
+  respect                    +0.3641
+  lack                       +0.3592
+  established                +0.3590
+  and                        +0.3564
+  real                       +0.3511
+  dedication                 +0.3382
+  quality                    +0.3344
+  proper                     +0.3329
+  which                      +0.3254
+  ,                          +0.3224
+  pays                       +0.3205
+
+========================================================================
+PART B — pole vocabulary for first 10 PCs (deanisotropized GloVe)
+========================================================================
+
+These are the 'oracle' axes we compared against — what do they actually
+represent semantically? Worth knowing to interpret the 16pp gap.
+
+Computing PCA on 50K deanisotropized samples...
+
+--- PC1 (variance: 2.63%) ---
+  Positive pole (top 8):
+    mongkolporn                +0.8922
+    _____________              +0.8745
+    rungfapaisarn              +0.8734
+    jiwamol                    +0.8636
+    thongrung                  +0.8631
+    p***@chron.com      +0.8619
+    t***@chron.com       +0.8610
+    kanoksilp                  +0.8582
+  Negative pole (top 8):
+    this                       +0.7333
+    but                        +0.7329
+    .                          +0.7278
+    all                        +0.7240
+    which                      +0.7224
+    as                         +0.7151
+    time                       +0.7065
+    well                       +0.7024
+  Strongest alignment with our basis: MOD (+0.266)
+
+--- PC2 (variance: 1.45%) ---
+  Positive pole (top 8):
+    said                       +0.6261
+    bruhth                     +0.5265
+    told                       +0.5230
+    explained                  +0.5129
+    says                       +0.4973
+    prihn                      +0.4837
+    bohg                       +0.4803
+    sihp                       +0.4796
+  Negative pole (top 8):
+    8.67                       +0.4783
+    9.01                       +0.4686
+    12.85                      +0.4648
+    4.09                       +0.4597
+    3.94                       +0.4591
+    18.18                      +0.4587
+    4.44                       +0.4558
+    3.87                       +0.4547
+  Strongest alignment with our basis: INT (+0.120)
+
+--- PC3 (variance: 1.10%) ---
+  Positive pole (top 8):
+    4.28                       +0.4923
+    5.38                       +0.4860
+    4.36                       +0.4839
+    rickc                      +0.4827
+    4.88                       +0.4814
+    4.19                       +0.4748
+    2.27                       +0.4731
+    3.79                       +0.4719
+  Negative pole (top 8):
+    so-called                  +0.4053
+    ancylosis                  +0.4014
+    tomoxia                    +0.4012
+    hypsotropa                 +0.3941
+    emmalocera                 +0.3810
+    chloropaschia              +0.3714
+    hypotia                    +0.3656
+    asansol-durgapur           +0.3649
+  Strongest alignment with our basis: ABS (+0.096)
+
+--- PC4 (variance: 0.97%) ---
+  Positive pole (top 8):
+    vwahr                      +0.5534
+    located                    +0.5456
+    town                       +0.5126
+    tahsh                      +0.4910
+    situated                   +0.4855
+    present-day                +0.4813
+    near                       +0.4685
+    village                    +0.4628
+  Negative pole (top 8):
+    122,285                    +0.4938
+    higher-categorized         +0.4356
+    coordinatesin              +0.4309
+    catdgory                   +0.3987
+    wxx                        +0.3704
+    sciencetimes               +0.3668
+    3e3e3                      +0.3532
+    apnewsalerts               +0.3507
+  Strongest alignment with our basis: MOD (-0.170)
+
+--- PC5 (variance: 0.84%) ---
+  Positive pole (top 8):
+    weightlegit                +0.4478
+    wo                         +0.4164
+    noting                     +0.4139
+    202-547-4512               +0.4091
+    monday                     +0.4082
+    thursday                   +0.4040
+    us                         +0.4032
+    tuesday                    +0.4020
+  Negative pole (top 8):
+    1468                       +0.4612
+    1576                       +0.4566
+    great-uncle                +0.4521
+    1578                       +0.4455
+    great-nephew               +0.4424
+    1577                       +0.4389
+    1419                       +0.4380
+    1514                       +0.4366
+  Strongest alignment with our basis: INT (+0.401)
+
+--- PC6 (variance: 0.79%) ---
+  Positive pole (top 8):
+    3.7506                     +0.4819
+    parzęczew                  +0.4339
+    salas-e                    +0.4301
+    neht                       +0.4178
+    iłów                       +0.4078
+    wyszki                     +0.4069
+    kodrąb                     +0.4001
+    promna                     +0.4000
+  Negative pole (top 8):
+    (                          +0.5197
+    )                          +0.4621
+    et                         +0.4472
+    aka                        +0.4116
+    à                          +0.4106
+    o                          +0.3988
+    vida                       +0.3970
+    swahr                      +0.3962
+  Strongest alignment with our basis: MOD (+0.111)
+
+--- PC7 (variance: 0.70%) ---
+  Positive pole (top 8):
+    subsequently               +0.3639
+    emperor                    +0.3537
+    latter                     +0.3482
+    was                        +0.3466
+    initially                  +0.3424
+    his                        +0.3419
+    amongst                    +0.3318
+    ottoman                    +0.3316
+  Negative pole (top 8):
+    hc62                       +0.4117
+    brayglobe.com              +0.3698
+    k***@globe.com          +0.3684
+    hehmeyer                   +0.3583
+    b***@globe.com           +0.3573
+    ntagweek.htm               +0.3544
+    amstephenson               +0.3526
+    b***@globe.com          +0.3519
+  Strongest alignment with our basis: INT (+0.191)
+
+--- PC8 (variance: 0.69%) ---
+  Positive pole (top 8):
+    zosterops                  +0.3330
+    quoted                     +0.3174
+    aurantiaca                 +0.3157
+    bicornis                   +0.3095
+    termed                     +0.3080
+    senegalensis               +0.3042
+    pre-ceramic                +0.2964
+    deroceras                  +0.2947
+  Negative pole (top 8):
+    3:04                       +0.3775
+    vålerengen                 +0.3697
+    1:02                       +0.3532
+    8:47                       +0.3523
+    2:01                       +0.3479
+    6:23                       +0.3433
+    1:01                       +0.3404
+    5:18                       +0.3398
+  Strongest alignment with our basis: MB (-0.127)
+
+--- PC9 (variance: 0.68%) ---
+  Positive pole (top 8):
+    ahbd                       +0.4593
+    yusgiantoto                +0.4562
+    nyahn                      +0.4545
+    hayl                       +0.4502
+    ahb                        +0.4433
+    nuhv                       +0.4350
+    eyet                       +0.4331
+    chood                      +0.4328
+  Negative pole (top 8):
+    flashaafp.com              +0.4228
+    893-8333                   +0.3419
+    hodulik                    +0.3320
+    trechinae                  +0.3306
+    www.nejm.org               +0.3274
+    d***@globe.com;          +0.3205
+    bb97                       +0.3177
+    206-448-8135               +0.3163
+  Strongest alignment with our basis: ATT (-0.109)
+
+--- PC10 (variance: 0.66%) ---
+  Positive pole (top 8):
+    csa                        +0.3617
+    aprodeh                    +0.3256
+    cnp                        +0.3059
+    ssa                        +0.3051
+    ssb                        +0.3040
+    wsg                        +0.2999
+    cca                        +0.2973
+    lohko                      +0.2951
+  Negative pole (top 8):
+    121.30                     +0.4009
+    100.38                     +0.3991
+    118.85                     +0.3967
+    107.76                     +0.3934
+    107.46                     +0.3926
+    117.47                     +0.3914
+    108.93                     +0.3907
+    117.84                     +0.3886
+  Strongest alignment with our basis: IO (+0.172)
+
+Saved exp77_results.npz

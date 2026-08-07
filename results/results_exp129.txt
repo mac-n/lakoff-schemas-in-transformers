@@ -1,0 +1,114 @@
+Loading glove-wiki-gigaword-300...
+  loaded: 400000 words
+
+cos(up_dir, freq_dir) = +0.0171  (low → freq strip is small)
+
+==============================================================================
+Per-pair (comp − base) projection on UP_clean
+==============================================================================
+
+  --- DIRECTIONAL ---
+          high=+0.249       higher=+0.173  Δ(comp-base)=-0.075  cos(diff,UP)=-0.086
+           low=-0.063        lower=-0.107  Δ(comp-base)=-0.045  cos(diff,UP)=-0.048
+          tall=+0.205       taller=+0.137  Δ(comp-base)=-0.067  cos(diff,UP)=-0.074
+          deep=-0.144       deeper=-0.219  Δ(comp-base)=-0.075  cos(diff,UP)=-0.096
+       shallow=-0.269    shallower=-0.224  Δ(comp-base)=+0.045  cos(diff,UP)=+0.047
+         short=-0.034      shorter=-0.004  Δ(comp-base)=+0.030  cos(diff,UP)=+0.033
+          wide=-0.007        wider=+0.009  Δ(comp-base)=+0.017  cos(diff,UP)=+0.018
+        narrow=-0.097     narrower=-0.048  Δ(comp-base)=+0.050  cos(diff,UP)=+0.052
+    mean Δ(comp-base) on UP: -0.0151  (std 0.0520)
+
+  --- MAGNITUDE ---
+           big=+0.045       bigger=+0.076  Δ(comp-base)=+0.032  cos(diff,UP)=+0.041
+         small=-0.025      smaller=-0.047  Δ(comp-base)=-0.022  cos(diff,UP)=-0.029
+         large=+0.033       larger=+0.007  Δ(comp-base)=-0.025  cos(diff,UP)=-0.034
+         thick=-0.051      thicker=-0.049  Δ(comp-base)=+0.002  cos(diff,UP)=+0.002
+          thin=-0.070      thinner=-0.010  Δ(comp-base)=+0.060  cos(diff,UP)=+0.064
+    mean Δ(comp-base) on UP: +0.0092  (std 0.0327)
+
+  --- VALENCE ---
+         happy=+0.028      happier=+0.005  Δ(comp-base)=-0.023  cos(diff,UP)=-0.025
+           sad=-0.083       sadder=-0.044  Δ(comp-base)=+0.039  cos(diff,UP)=+0.035
+          kind=+0.011       kinder=-0.106  Δ(comp-base)=-0.117  cos(diff,UP)=-0.085
+          mean=-0.096       meaner=+0.021  Δ(comp-base)=+0.117  cos(diff,UP)=+0.089
+    mean Δ(comp-base) on UP: +0.0039  (std 0.0856)
+
+  --- NEUTRAL_COLOR ---
+           red=+0.039       redder=-0.017  Δ(comp-base)=-0.056  cos(diff,UP)=-0.044
+          blue=-0.043        bluer=-0.062  Δ(comp-base)=-0.019  cos(diff,UP)=-0.015
+         green=-0.003      greener=+0.023  Δ(comp-base)=+0.026  cos(diff,UP)=+0.021
+        yellow=-0.023     yellower=-0.131  Δ(comp-base)=-0.109  cos(diff,UP)=-0.076
+    mean Δ(comp-base) on UP: -0.0394  (std 0.0493)
+
+  --- NEUTRAL_SHAPE ---
+         round=-0.041      rounder=-0.059  Δ(comp-base)=-0.018  cos(diff,UP)=-0.014
+    mean Δ(comp-base) on UP: -0.0183  (std 0.0000)
+
+  --- NEUTRAL_TEXTURE ---
+        smooth=+0.069     smoother=+0.036  Δ(comp-base)=-0.033  cos(diff,UP)=-0.034
+         rough=-0.174      rougher=-0.058  Δ(comp-base)=+0.116  cos(diff,UP)=+0.118
+          soft=-0.027       softer=-0.055  Δ(comp-base)=-0.028  cos(diff,UP)=-0.027
+          hard=-0.037       harder=-0.011  Δ(comp-base)=+0.026  cos(diff,UP)=+0.031
+    mean Δ(comp-base) on UP: +0.0202  (std 0.0599)
+
+  --- NEUTRAL_TIME ---
+           old=+0.031        older=+0.022  Δ(comp-base)=-0.009  cos(diff,UP)=-0.009
+           new=+0.099        newer=+0.012  Δ(comp-base)=-0.087  cos(diff,UP)=-0.077
+         young=+0.151      younger=+0.079  Δ(comp-base)=-0.072  cos(diff,UP)=-0.086
+    mean Δ(comp-base) on UP: -0.0560  (std 0.0335)
+
+  --- NEUTRAL_SOUND ---
+          loud=-0.029       louder=+0.063  Δ(comp-base)=+0.092  cos(diff,UP)=+0.098
+         quiet=+0.015      quieter=-0.019  Δ(comp-base)=-0.035  cos(diff,UP)=-0.032
+    mean Δ(comp-base) on UP: +0.0286  (std 0.0633)
+
+  --- TEMPERATURE ---
+           hot=+0.048       hotter=+0.003  Δ(comp-base)=-0.045  cos(diff,UP)=-0.043
+          cold=-0.169       colder=-0.080  Δ(comp-base)=+0.089  cos(diff,UP)=+0.087
+          warm=-0.060       warmer=-0.067  Δ(comp-base)=-0.008  cos(diff,UP)=-0.009
+          cool=+0.024       cooler=-0.089  Δ(comp-base)=-0.113  cos(diff,UP)=-0.116
+    mean Δ(comp-base) on UP: -0.0192  (std 0.0728)
+
+  --- SPEED ---
+          fast=+0.041       faster=+0.044  Δ(comp-base)=+0.003  cos(diff,UP)=+0.003
+          slow=-0.055       slower=-0.019  Δ(comp-base)=+0.036  cos(diff,UP)=+0.045
+         quick=-0.005      quicker=+0.006  Δ(comp-base)=+0.011  cos(diff,UP)=+0.011
+    mean Δ(comp-base) on UP: +0.0166  (std 0.0142)
+
+  --- LIGHTNESS ---
+         light=-0.075      lighter=-0.079  Δ(comp-base)=-0.004  cos(diff,UP)=-0.004
+          dark=-0.086       darker=-0.061  Δ(comp-base)=+0.025  cos(diff,UP)=+0.030
+        bright=-0.007     brighter=+0.039  Δ(comp-base)=+0.046  cos(diff,UP)=+0.050
+           dim=-0.052       dimmer=+0.037  Δ(comp-base)=+0.089  cos(diff,UP)=+0.091
+    mean Δ(comp-base) on UP: +0.0392  (std 0.0340)
+
+==============================================================================
+AGGREGATE -ER DIRECTION  (mean of all comp - base difference vectors)
+==============================================================================
+
+  cos(-ER direction, UP_clean)   = -0.0053
+  cos(-ER direction, UP_raw)     = -0.0131
+  cos(-ER direction, freq axis)  = -0.4617
+
+  Mean of pair Δ(comp-base) on UP_clean: -0.0032
+  Std: 0.0593
+  Sign-consistent across pairs: 20/42 positive, 22/42 negative
+
+==============================================================================
+Comparison to exp128 Pythia 410M L4 (comp − base on UP)
+==============================================================================
+
+  category              GloVe mean Δ      Pythia L4 mean Δ
+  DIRECTIONAL                -0.0151               -0.0400
+  MAGNITUDE                  +0.0092               -0.1100
+  VALENCE                    +0.0039               -0.0400
+  NEUTRAL_COLOR              -0.0394               -0.0800
+  NEUTRAL_SHAPE              -0.0183               -0.1100
+  NEUTRAL_TEXTURE            +0.0202               -0.0900
+  NEUTRAL_TIME               -0.0560               -0.0500
+  NEUTRAL_SOUND              +0.0286               -0.0700
+  TEMPERATURE                -0.0192               -0.1700
+  SPEED                      +0.0166                   n/a
+  LIGHTNESS                  +0.0392               -0.1300
+
+Saved exp129_results.npz

@@ -1,0 +1,43 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<00:50,  5.78it/s]Loading weights:  53%|█████▎    | 156/292 [00:00<00:00, 685.71it/s]Loading weights:  83%|████████▎ | 243/292 [00:00<00:00, 658.27it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 606.93it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+
+Collecting residuals for 489 words at all 24 layers...
+  100/489
+  200/489
+  300/489
+  400/489
+
+Building real morphology × Lakoff matrices at all layers...
+
+Running K=50 null trials...
+  null trial 10/50
+  null trial 20/50
+  null trial 30/50
+  null trial 40/50
+  null trial 50/50
+
+==============================================================================
+CROSS-LAYER PRESERVATION of morphology × Lakoff matrix
+==============================================================================
+
+  REAL mean off-diag layer similarity: +0.8841
+  NULL mean off-diag (K=50):       +0.8654
+  NULL std:                              0.0425
+  NULL 95th percentile:                  +0.9229
+  Effect size (real - null mean):        +0.0186
+  Z-score:                               +0.44
+
+  Real layer-similarity at every 4 layers:
+          L 0    L 4    L 8    L12    L16    L20  
+  L 0   +1.00  +0.80  +0.71  +0.72  +0.70  +0.70 
+  L 4   +0.80  +1.00  +0.95  +0.93  +0.91  +0.87 
+  L 8   +0.71  +0.95  +1.00  +0.98  +0.96  +0.93 
+  L12   +0.72  +0.93  +0.98  +1.00  +0.98  +0.95 
+  L16   +0.70  +0.91  +0.96  +0.98  +1.00  +0.98 
+  L20   +0.70  +0.87  +0.93  +0.95  +0.98  +1.00 
+
+Saved exp139_results.npz

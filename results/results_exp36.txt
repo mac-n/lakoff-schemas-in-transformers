@@ -1,0 +1,118 @@
+Loading glove-wiki-gigaword-300...
+
+=== Running 5 forced-start orderings ===
+
+--- Forced start: UD ---
+  step  axis        power
+   1.           UD   1.567
+   2.           IO   0.309
+   3.      VALENCE   0.277
+   4.           FB   0.182
+   5.         PATH   0.108
+   6.          BAL   0.093
+   7.      AROUSAL   0.061
+   8.           LD   0.015
+   9.         DIFF   0.012
+  10.        EXIST   0.003
+  11.     IO_CLEAN   0.000
+  12.        FORCE   0.000
+
+--- Forced start: EXIST ---
+  step  axis        power
+   1.        EXIST   1.017
+   2.           UD   0.713
+   3.           IO   0.306
+   4.      VALENCE   0.272
+   5.          BAL   0.147
+   6.      AROUSAL   0.093
+   7.        FORCE   0.050
+   8.         PATH   0.026
+   9.     IO_CLEAN   0.015
+  10.         DIFF   0.007
+  11.           FB   0.000
+  12.           LD   0.000
+
+--- Forced start: VALENCE ---
+  step  axis        power
+   1.      VALENCE   1.157
+   2.           UD   0.686
+   3.           IO   0.310
+   4.           FB   0.182
+   5.         PATH   0.108
+   6.          BAL   0.093
+   7.      AROUSAL   0.061
+   8.           LD   0.015
+   9.         DIFF   0.012
+  10.        EXIST   0.003
+  11.     IO_CLEAN   0.000
+  12.        FORCE   0.000
+
+--- Forced start: IO_CLEAN ---
+  step  axis        power
+   1.     IO_CLEAN   0.383
+   2.           UD   1.457
+   3.      VALENCE   0.277
+   4.           FB   0.179
+   5.           IO   0.101
+   6.         PATH   0.098
+   7.      AROUSAL   0.062
+   8.          BAL   0.044
+   9.         DIFF   0.013
+  10.        EXIST   0.004
+  11.           LD   0.000
+  12.        FORCE   0.000
+
+--- Forced start: FORCE ---
+  step  axis        power
+   1.        FORCE   0.140
+   2.           UD   1.556
+   3.           IO   0.306
+   4.      VALENCE   0.243
+   5.           FB   0.150
+   6.        EXIST   0.086
+   7.      AROUSAL   0.073
+   8.          BAL   0.048
+   9.           LD   0.017
+  10.         DIFF   0.009
+  11.     IO_CLEAN   0.002
+  12.         PATH   0.000
+
+
+=== Tail stability check ===
+If the cluster structure is real, the tail (last 4 axes picked) should
+be stable across forced-start choices. Independent primitives should
+appear in the tail regardless of which axis went first.
+
+  Forced start         UD → tail: ['DIFF', 'EXIST', 'FORCE', 'IO_CLEAN']
+  Forced start      EXIST → tail: ['DIFF', 'FB', 'IO_CLEAN', 'LD']
+  Forced start    VALENCE → tail: ['DIFF', 'EXIST', 'FORCE', 'IO_CLEAN']
+  Forced start   IO_CLEAN → tail: ['DIFF', 'EXIST', 'FORCE', 'LD']
+  Forced start      FORCE → tail: ['DIFF', 'IO_CLEAN', 'LD', 'PATH']
+
+Frequency of appearance in bottom-4 across 5 runs:
+        DIFF: 5/5 runs
+    IO_CLEAN: 4/5 runs
+       FORCE: 3/5 runs
+       EXIST: 3/5 runs
+          LD: 3/5 runs
+          FB: 1/5 runs
+        PATH: 1/5 runs
+
+=== Ordering shuffle check ===
+If two orderings put axes in similar positions, the structure is robust.
+Compute Spearman rank correlation between pairs of orderings.
+
+                  UD     EXIST   VALENCE  IO_CLEAN     FORCE
+          UD    +1.000    +0.336    +0.979    +0.566    +0.315
+       EXIST    +0.336    +1.000    +0.315    +0.161    +0.524
+     VALENCE    +0.979    +0.315    +1.000    +0.573    +0.294
+    IO_CLEAN    +0.566    +0.161    +0.573    +1.000    +0.007
+       FORCE    +0.315    +0.524    +0.294    +0.007    +1.000
+
+=== Reading guide ===
+  High Spearman (>0.7): orderings agree → cluster structure robust to start choice
+  Low Spearman (<0.3):  orderings disagree → greedy procedure unreliable
+  Tail stability: axes appearing 4-5/5 times in bottom-4 are robustly independent primitives
+  Axes appearing 0-1/5 times in bottom-4 are robustly central (high-connectedness)
+
+Saved: exp36_results.npz

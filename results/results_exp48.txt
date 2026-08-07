@@ -1,0 +1,58 @@
+exp40 npz keys: ['full_axes']
+w2v axes: ['VALENCE', 'AROUSAL', 'UD', 'FB', 'LD'] ...
+
+SAE PCA (exp45, L3):
+  axis names: ['UP-DOWN', 'IN-OUT', 'FORWARD-BACK', 'LIGHT-DARK', 'LEFT-RIGHT', 'VALENCE', 'AROUSAL', 'EXISTENCE', 'COHERENCE', 'SUCCESS', 'LOSS']
+  components shape: (10, 32768)
+
+SAE PC loadings on input axes (rows=PCs, cols=['UP-DOWN', 'IN-OUT', 'FORWARD-BACK', 'LIGHT-DARK', 'LEFT-RIGHT', 'VALENCE', 'AROUSAL', 'EXISTENCE', 'COHERENCE', 'SUCCESS', 'LOSS']):
+    PC     UP-DOWN      IN-OUT  FORWARD-BACK  LIGHT-DARK  LEFT-RIGHT     VALENCE     AROUSAL   EXISTENCE   COHERENCE     SUCCESS        LOSS
+  PC 1      -0.587      +0.433      -0.301      -0.774      -0.410      +0.568      -0.865      -0.305      -0.891      +0.754      -0.357
+  PC 2      -0.176      +0.324      -0.030      -0.258      -0.165      -0.562      +0.047      +0.680      +0.089      +0.155      +0.154
+  PC 3      +0.268      -0.355      -0.058      +0.068      -0.619      +0.179      +0.022      +0.109      +0.033      +0.211      +0.478
+  PC 4      +0.089      +0.450      +0.643      +0.116      -0.394      -0.083      +0.044      -0.242      +0.026      -0.145      +0.016
+  PC 5      -0.115      -0.508      +0.562      -0.140      +0.111      -0.103      -0.057      +0.110      -0.038      +0.290      -0.197
+  PC 6      +0.059      -0.027      -0.065      +0.086      -0.303      +0.274      +0.078      +0.364      +0.042      -0.162      -0.603
+  PC 7      -0.459      -0.034      +0.146      -0.012      +0.025      +0.315      +0.023      +0.174      +0.038      -0.305      +0.269
+  PC 8      -0.457      -0.100      -0.201      +0.145      -0.224      -0.164      +0.142      -0.267      +0.065      +0.170      -0.186
+
+Loading GloVe...
+
+Word2vec PCA (recomputed for 10-axis match):
+  Variance: PC1=21.2%, PC2=15.7%, PC3=13.3%, PC4=11.5%, PC5=10.2%, PC6=8.5%, PC7=8.0%, PC8=6.7%, PC9=4.8%, PC10=0.0%
+
+Word2vec PC loadings on input axes:
+    PC     VALENCE     AROUSAL     UP-DOWN      IN-OUT  FORWARD-BACK  LIGHT-DARK   EXISTENCE   COHERENCE     SUCCESS        LOSS
+  PC 1      +0.672      -0.694      +0.269      -0.108      -0.114      +0.217      +0.092      +0.223      +0.444      +0.556
+  PC 2      +0.057      +0.216      +0.230      -0.725      +0.415      +0.313      +0.062      +0.493      -0.060      +0.044
+  PC 3      -0.145      -0.172      +0.180      -0.117      +0.377      -0.313      +0.658      -0.231      +0.275      -0.060
+  PC 4      +0.202      -0.334      +0.016      +0.343      +0.421      +0.366      +0.135      +0.162      -0.270      -0.332
+  PC 5      -0.111      -0.097      -0.041      +0.075      -0.052      -0.312      +0.189      +0.246      -0.548      +0.393
+  PC 6      -0.058      -0.038      -0.006      -0.022      +0.399      +0.057      -0.308      -0.419      -0.110      +0.343
+  PC 7      -0.099      -0.141      -0.233      +0.047      +0.224      -0.427      -0.351      +0.282      +0.194      -0.102
+  PC 8      +0.024      -0.049      -0.712      -0.207      -0.073      -0.022      +0.071      -0.153      -0.073      -0.027
+
+SAE axis order:  ['UP-DOWN', 'IN-OUT', 'FORWARD-BACK', 'LIGHT-DARK', 'LEFT-RIGHT', 'VALENCE', 'AROUSAL', 'EXISTENCE', 'COHERENCE', 'SUCCESS', 'LOSS']
+w2v axis order:  ['VALENCE', 'AROUSAL', 'UP-DOWN', 'IN-OUT', 'FORWARD-BACK', 'LIGHT-DARK', 'EXISTENCE', 'COHERENCE', 'SUCCESS', 'LOSS']
+
+Shared axes: ['UP-DOWN', 'IN-OUT', 'FORWARD-BACK', 'LIGHT-DARK', 'VALENCE', 'AROUSAL', 'EXISTENCE', 'COHERENCE', 'SUCCESS', 'LOSS']
+
+=== Cross-substrate PC similarity matrix (cosines of loading vectors) ===
+  (rows = w2v PCs, cols = SAE PCs; high |cos| = same structural axis)
+         SAE-PC 1  SAE-PC 2  SAE-PC 3  SAE-PC 4  SAE-PC 5  SAE-PC 6
+  w2v-PC1 (21.2%)    +0.219    -0.236    +0.661    -0.212    -0.071    -0.187
+  w2v-PC2 (15.7%)    -0.705    -0.281    +0.467    +0.011    +0.509    +0.109
+  w2v-PC3 (13.3%)    +0.146    +0.551    +0.161    -0.040    +0.595    +0.175
+  w2v-PC4 (11.5%)    -0.078    -0.125    -0.435    +0.577    +0.003    +0.459
+  w2v-PC5 (10.2%)    -0.305    +0.353    +0.039    +0.016    -0.315    -0.208
+  w2v-PC6 (8.5%)    +0.061    -0.277    +0.126    +0.531    +0.182    -0.603
+
+  Best match per w2v PC (across SAE PCs):
+  w2v-PC1 → SAE-PC3 (cos=+0.661)
+  w2v-PC2 → SAE-PC1 (cos=-0.705)
+  w2v-PC3 → SAE-PC5 (cos=+0.595)
+  w2v-PC4 → SAE-PC4 (cos=+0.577)
+  w2v-PC5 → SAE-PC7 (cos=+0.484)
+  w2v-PC6 → SAE-PC6 (cos=-0.603)
+
+Saved: nothing yet

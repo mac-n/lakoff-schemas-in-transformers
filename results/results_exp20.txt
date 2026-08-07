@@ -1,0 +1,47 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Schema triples: 25
+device: mps
+
+Loading Pythia 1B-deduped...
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights:   1%|          | 1/196 [00:00<00:53,  3.62it/s]Loading weights:  41%|████      | 80/196 [00:00<00:00, 269.93it/s]Loading weights:  64%|██████▍   | 126/196 [00:00<00:00, 306.71it/s]Loading weights:  86%|████████▌ | 168/196 [00:00<00:00, 314.60it/s]Loading weights: 100%|██████████| 196/196 [00:00<00:00, 278.70it/s]
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/sae_lens/saes/sae.py:251: UserWarning: 
+This SAE has non-empty model_from_pretrained_kwargs. 
+For optimal performance, load the model like so:
+model = HookedSAETransformer.from_pretrained_no_processing(..., **cfg.model_from_pretrained_kwargs)
+  warnings.warn(
+Loaded pretrained model EleutherAI/pythia-1b-deduped into HookedTransformer
+  16 layers, d_model=2048
+
+Loading SAE: timhua/pythia1b_deduped_saes, hook=blocks.11.hook_resid_post
+  d_in=2048, d_sae=16384
+
+Computing within-pair cos(UP, DOWN) at layer 11...
+  0/25
+  5/25
+  10/25
+  15/25
+  20/25
+
+======================================================================
+PYTHIA 1B (1 layer covered: layer 11 of 16, residual-stream JumpReLU SAE)
+======================================================================
+  within-pair cos(UP, DOWN) at layer 11:
+    mean   = +0.5320
+    median = +0.5183
+    range  = [+0.2649, +0.8959]
+
+======================================================================
+SCALE COMPARISON (within-pair cos(UP, DOWN), comparable depths)
+======================================================================
+  70m  L4 (67% through): +0.4915  (from exp19)
+  410m L17-18 (71-75%):  +0.5358 to +0.5554  (from exp19)
+  1B   L11 (69% through): +0.5320  (this experiment)
+
+All-layer means from exp19:
+  70m  (6 layers):  +0.5546
+  410m (24 layers): +0.5409
+  1B   (1 layer):   +0.5320
+
+Report: /Users/macn/Documents/embeddingexp/results_exp20_within_pair_1b.md

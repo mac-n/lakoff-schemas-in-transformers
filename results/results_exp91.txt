@@ -1,0 +1,226 @@
+Loading glove-wiki-gigaword-300...
+  vocab size: 400000
+
+Building PCA-input axes (cluster set, 11 axes from exp40)...
+
+Building target axes (independent from PCA-input set)...
+  [target_SALIENCE] missing words (1): ['backgrounded']
+  target_SALIENCE built from 11/12 pairs
+  target_MOTION    built from 12/12 pairs
+  target_EQ_RUN    built from 14/14 pairs
+
+========================================================================
+PCA on cluster axes (11 axes — matches exp40 cluster-only run)
+========================================================================
+
+Variance per PC:
+  PC1:  20.6%   (cumulative:  20.6%)
+  PC2:  17.3%   (cumulative:  37.9%)
+  PC3:  12.4%   (cumulative:  50.3%)
+  PC4:  11.2%   (cumulative:  61.5%)
+  PC5:   9.3%   (cumulative:  70.9%)
+  PC6:   8.7%   (cumulative:  79.6%)
+  PC7:   6.3%   (cumulative:  85.9%)
+  PC8:   5.3%   (cumulative:  91.2%)
+  PC9:   4.5%   (cumulative:  95.7%)
+  PC10:   4.3%   (cumulative: 100.0%)
+
+========================================================================
+CENTRAL TEST: target-axis cosines with PCs
+========================================================================
+
+Predictions:
+  target_SALIENCE  high on PC1 if PC1 is salience-as-primitive;
+                   LOW on PC1 if PC1 is just the V x A diagonal
+  target_MOTION    high on PC2 if MOTION is a real primitive
+  target_EQ_RUN    high on PC3 if EQ-vs-RUNAWAY is a real primitive
+
+                      PC1      PC2      PC3      PC4      PC5      PC6    
+  --------------------------------------------------------------------
+  target_SALIENCE     -0.174  -0.280  -0.056  +0.024  -0.058  -0.039  
+  target_MOTION       -0.094  +0.051  +0.022  +0.054  +0.017  -0.072  
+  target_EQ_RUN       +0.290  +0.011  +0.205  -0.073  -0.124  -0.042  
+
+========================================================================
+Per-target deep dive
+========================================================================
+
+--- target_SALIENCE ---
+  Best PC alignments (sorted by |cos|):
+    PC2 (17.3% var): cos = -0.2797
+    PC7 ( 6.3% var): cos = +0.1974
+    PC1 (20.6% var): cos = -0.1743
+    PC5 ( 9.3% var): cos = -0.0583
+    PC3 (12.4% var): cos = -0.0556
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: +0.4861
+     COHERENCE: +0.4247
+           BAL: +0.3825
+            FB: +0.3625
+            UD: +0.3606
+  Positive pole words:
+    +0.5101  prominent
+    +0.4796  including
+    +0.4558  first
+    +0.4456  addition
+    +0.4374  major
+    +0.4366  notable
+    +0.4286  noted
+    +0.4277  also
+    +0.4192  important
+    +0.4160  one
+  Negative pole words:
+    +0.5190  valueless
+    +0.5184  unfocused
+    +0.4935  uninteresting
+    +0.4822  inoffensive
+    +0.4788  pathetically
+    +0.4783  inattentive
+    +0.4754  unimaginative
+    +0.4736  unimportant
+    +0.4712  inconsequential
+    +0.4657  inarticulate
+
+--- target_MOTION ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = -0.0937
+    PC7 ( 6.3% var): cos = -0.0735
+    PC6 ( 8.7% var): cos = -0.0721
+    PC8 ( 5.3% var): cos = +0.0674
+    PC4 (11.2% var): cos = +0.0538
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+          PATH: +0.2911
+            FB: +0.1925
+            UD: +0.1918
+       AROUSAL: +0.1823
+           BAL: +0.1424
+  Positive pole words:
+    +0.3876  skiing
+    +0.3869  racing
+    +0.3763  sprint
+    +0.3722  diving
+    +0.3711  spectacular
+    +0.3668  championships
+    +0.3593  speed
+    +0.3516  run
+    +0.3503  track
+    +0.3484  jump
+  Negative pole words:
+    +0.4883  kneeling
+    +0.4422  slouched
+    +0.4287  reclining
+    +0.4103  glumly
+    +0.3947  reclined
+    +0.3935  knelt
+    +0.3800  hunched
+    +0.3740  seated
+    +0.3730  slouching
+    +0.3711  lounging
+
+--- target_EQ_RUN ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = +0.2901
+    PC3 (12.4% var): cos = +0.2047
+    PC8 ( 5.3% var): cos = -0.1543
+    PC7 ( 6.3% var): cos = -0.1408
+    PC5 ( 9.3% var): cos = -0.1243
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: -0.2861
+            LD: +0.2180
+       VALENCE: +0.2167
+          LOSS: +0.1638
+     COHERENCE: +0.0871
+  Positive pole words:
+    +0.3360  restoring
+    +0.3153  interpreting
+    +0.3121  modifying
+    +0.3081  tempering
+    +0.3038  adjusting
+    +0.3024  atoning
+    +0.2969  effecting
+    +0.2965  erred
+    +0.2888  accomplishing
+    +0.2820  nyts
+  Negative pole words:
+    +0.4604  mushrooming
+    +0.4443  spiralling
+    +0.4424  spiraling
+    +0.4295  escalating
+    +0.4231  raging
+    +0.4213  engulfed
+    +0.4143  erupted
+    +0.3860  raged
+    +0.3851  escalated
+    +0.3807  sparked
+
+Saved: exp52_results.npz
+Loading GloVe...
+Building 38 candidate axes...
+Total candidates: 38
+Building 30K random vocab sample...
+
+================================================================================================
+Greedy selection on 30K random vocab — objective: word2vec coverage
+================================================================================================
+
+step  selected        cov added   cum cov  next-4 (name [orig], cov)
+--------------------------------------------------------------------------------------------------------------
+  1    HARDNESS     [rog]  +  6.03pp    6.03%   REAL_IMAG[cog](5.9), BAL[lak](5.8), COH[lak](5.7), UD[lak](5.6)
+  2    REAL_IMAG    [cog]  +  3.03pp    9.05%   ATT[cog](8.9), IO[cog](8.9), ABS[cog](8.9), SIZE[rog](8.9)
+  3    ABS          [cog]  +  2.21pp   11.26%   ATT[cog](11.2), IO[cog](11.2), DENSITY[rog](11.2), MOISTURE[rog](11.2)
+  4    IO           [cog]  +  1.83pp   13.10%   ATT[cog](13.1), DENSITY[rog](13.1), SIZE[rog](13.1), MOISTURE[rog](13.1)
+  5    ATT          [cog]  +  1.60pp   14.70%   BAL[lak](14.7), SIZE[rog](14.7), UD[lak](14.7), DENSITY[rog](14.7)
+  6    EXIST        [lak]  +  1.49pp   16.19%   UD[lak](16.1), SIZE[rog](16.1), MOISTURE[rog](16.1), BAL[lak](16.1)
+  7    SIZE         [rog]  +  1.30pp   17.50%   SHARPNESS[rog](17.5), TEXTURE[rog](17.5), DENSITY[rog](17.5), EV[cog](17.5)
+  8    SHARPNESS    [rog]  +  1.19pp   18.69%   TEXTURE[rog](18.7), W[cog](18.7), MOISTURE[rog](18.7), EV[cog](18.7)
+  9    TEXTURE      [rog]  +  1.11pp   19.80%   W[cog](19.8), MOISTURE[rog](19.8), MB[cog](19.8), DIFF[lak](19.8)
+  10   DIFF         [lak]  +  1.06pp   20.87%   MOISTURE[rog](20.8), MB[cog](20.8), DENSITY[rog](20.8), W[cog](20.8)
+  11   W            [cog]  +  1.10pp   21.97%   MOISTURE[rog](21.9), DENSITY[rog](21.9), MB[cog](21.9), LOSS[clu](21.9)
+  12   MB           [cog]  +  0.95pp   22.91%   MOISTURE[rog](22.9), LOSS[clu](22.9), UD[lak](22.9), SUC[clu](22.9)
+  13   LOSS         [clu]  +  0.91pp   23.82%   MOISTURE[rog](23.8), UD[lak](23.8), SUC[clu](23.8), AGE[rog](23.8)
+  14   UD           [lak]  +  0.89pp   24.71%   SUC[clu](24.7), BAL[lak](24.7), MOISTURE[rog](24.7), STRENGTH[rog](24.7)
+  15   SUC          [clu]  +  0.85pp   25.57%   MOISTURE[rog](25.6), STRENGTH[rog](25.6), BAL[lak](25.6), FB[lak](25.5)
+  16   STRENGTH     [rog]  +  0.82pp   26.39%   MOISTURE[rog](26.4), BAL[lak](26.4), FB[lak](26.4), AGE[rog](26.4)
+  17   MOISTURE     [rog]  +  0.79pp   27.18%   FB[lak](27.2), BAL[lak](27.2), DENSITY[rog](27.2), AGE[rog](27.2)
+  18   FB           [lak]  +  0.76pp   27.94%   BAL[lak](27.9), AGE[rog](27.9), DENSITY[rog](27.9), DV[cog](27.9)
+  19   BAL          [lak]  +  0.74pp   28.68%   AGE[rog](28.7), DENSITY[rog](28.7), DV[cog](28.7), COH[lak](28.7)
+  20   COH          [lak]  +  0.72pp   29.40%   AGE[rog](29.4), DENSITY[rog](29.4), D[cog](29.4), DV[cog](29.4)
+  21   AGE          [rog]  +  0.70pp   30.10%   DV[cog](30.1), DENSITY[rog](30.1), D[cog](30.1), FORCE[lak](30.1)
+  22   DV           [cog]  +  0.68pp   30.78%   DENSITY[rog](30.8), SPEED[rog](30.8), D[cog](30.8), FORCE[lak](30.8)
+  23   DENSITY      [rog]  +  0.67pp   31.45%   SPEED[rog](31.4), D[cog](31.4), FORCE[lak](31.4), CLEANLINESS[rog](31.4)
+  24   SPEED        [rog]  +  0.65pp   32.10%   D[cog](32.1), FORCE[lak](32.1), CLEANLINESS[rog](32.1), INT[cog](32.1)
+
+Final greedy basis (24 axes):
+   1. HARDNESS       (rog)
+   2. REAL_IMAG      (cog)
+   3. ABS            (cog)
+   4. IO             (cog)
+   5. ATT            (cog)
+   6. EXIST          (lak)
+   7. SIZE           (rog)
+   8. SHARPNESS      (rog)
+   9. TEXTURE        (rog)
+  10. DIFF           (lak)
+  11. W              (cog)
+  12. MB             (cog)
+  13. LOSS           (clu)
+  14. UD             (lak)
+  15. SUC            (clu)
+  16. STRENGTH       (rog)
+  17. MOISTURE       (rog)
+  18. FB             (lak)
+  19. BAL            (lak)
+  20. COH            (lak)
+  21. AGE            (rog)
+  22. DV             (cog)
+  23. DENSITY        (rog)
+  24. SPEED          (rog)
+
+Composition: {'rog': 9, 'cog': 7, 'lak': 6, 'clu': 2}
+Final coverage: 32.10%
+
+Reference Cog-13b coverage on same sample: 23.39%
+
+For comparison: exp89 greedy on 25-candidate pool (no Roget) reached 22.90%
+
+Saved exp91_results.npz

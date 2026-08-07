@@ -1,0 +1,32 @@
+Loading GloVe...
+  junk tokens: 28,813   real words: 43,015
+  WordNet register pairs (common->rare, gap>500): 20,157
+
+======================================================================
+PAIRWISE COSINES of candidate factors
+======================================================================
+              nonsensif  formalise  frequenti        PC1  hand-form
+  nonsensifier       1.00       0.74       0.06       0.78       0.63
+  formaliser        0.74       1.00       0.23       0.83       0.67
+  frequentiser       0.06       0.23       1.00       0.02       0.12
+  PC1               0.78       0.83       0.02       1.00       0.64
+  hand-formal       0.63       0.67       0.12       0.64       1.00
+
+======================================================================
+HARDNESS contrast vs the confound factors
+======================================================================
+  cos(hardness, nonsensifier ) = -0.354
+  cos(hardness, formaliser   ) = -0.552
+  cos(hardness, frequentiser ) = -0.150
+  cos(hardness, PC1          ) = -0.401
+
+  fraction of ||hardness|| in span(nonsens, formal, frequent): 0.559
+  (so 31% of hardness's variance is confound-space)
+
+READING
+  - cos(formaliser, frequentiser) high (>~0.7) => they collapse into ONE factor;
+    low (<~0.5) => distinct, keep both (Niamh's formaliser is warranted).
+  - cos(nonsensifier, PC1) high => confirms PC1 is the nonsense axis.
+  - hardness's loadings say which confound it was riding (nonsense? register?
+    rarity?) and how much of it is confound vs genuine semantics.
+

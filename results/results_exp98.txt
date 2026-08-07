@@ -1,0 +1,64 @@
+
+##############################################################################
+# All-But-The-Top experiment: cognitive vocab in GloVe and fastText
+##############################################################################
+
+Loading GloVe...
+GloVe: 199 cognitive vectors
+
+Loading fastText...
+fastText: 199 cognitive vectors
+
+==============================================================================
+RESULTS — variance of PC1 after K-level cleanup, and cross-substrate cos(PC1, PC1)
+==============================================================================
+
+=== After K = 0 cleanup ===
+  GloVe new PC1 variance: 30.58%
+  fastText new PC1 variance: 32.76%
+  Cross-substrate alignment of top PCs:
+
+  GloVe PC1 after K=0 cleanup:
+    + pole: sense, what, fact, that, this, kind
+    − pole: k586-1, cw96, b***@chron.com, _____________, j***@chron.com, t***@chron.com
+  fastText PC1 after K=0 cleanup:
+    + pole: بدر, Koweït, كرد, Puz, Kog, Pta
+    − pole: considerateness, deliberateness, hopefulness, flabbiness, purposefulness, indifference
+
+=== After K = 1 cleanup ===
+  GloVe new PC1 variance: 8.52%
+  fastText new PC1 variance: 7.72%
+  Cross-substrate alignment of top PCs:
+
+  GloVe PC1 after K=1 cleanup:
+    + pole: bewilderment, anguish, sadness, exasperation, despair, loneliness
+    − pole: proposed, established, addition, establish, agreed, establishing
+  fastText PC1 after K=1 cleanup:
+    + pole: framework, formulation, methodology, methodology., DSRP, methodolgy
+    − pole: sorrow, sadness, anger, resentment, angst, heartache
+
+=== After K = 2 cleanup ===
+  GloVe new PC1 variance: 6.10%
+  fastText new PC1 variance: 5.60%
+  Cross-substrate alignment of top PCs:
+
+  GloVe PC1 after K=2 cleanup:
+    + pole: worried, anger, angry, sparked, fears, weeks
+    − pole: honesty, selflessness, foresight, resourcefulness, rationality, intuition
+  fastText PC1 after K=2 cleanup:
+    + pole: confusion, rumblings, confusing, misinterpretation, exacerbated, inevitable
+    − pole: self-discipline, uprightness, generosity, patience, valor, kindness
+
+=== After K = 3 cleanup ===
+  GloVe new PC1 variance: 5.39%
+  fastText new PC1 variance: 4.57%
+  Cross-substrate alignment of top PCs:
+
+  GloVe PC1 after K=3 cleanup:
+    + pole: dedication, thanked, courage, honor, honour, thank
+    − pole: confusion, speculations, posited, distortion, generalized, generalization
+  fastText PC1 after K=3 cleanup:
+    + pole: commend, applaud, expect, appreciate, hesitating, keen
+    − pole: pseudo-religion, barbarianism, religionism, moralism, myth, nihilism
+
+Saved exp98_results.npz

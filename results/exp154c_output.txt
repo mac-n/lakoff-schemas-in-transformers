@@ -1,0 +1,108 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:16,  3.81it/s]Loading weights:  53%|█████▎    | 156/292 [00:00<00:00, 530.54it/s]Loading weights:  82%|████████▏ | 240/292 [00:00<00:00, 518.64it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 466.23it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+Word split: 489 total = 312 estimation + 177 held-out test (suffix pairs + BALANCE vocab)
+Collecting residuals for 489 words at [4, 8, 12, 16, 20]...
+  100/489
+  200/489
+  300/489
+  400/489
+exp154 reference (parsed): {4: -0.414, 8: -0.32, 12: -0.285, 16: -0.288, 20: -0.28}
+
+==============================================================================
+exp154c — held-out d_norm control (circularity check on exp154)
+==============================================================================
+
+--- Layer 4 ---
+  parity vs exp154 (inflectional mean before): -0.414 vs -0.414 (|Δ| = 0.0004) ok
+  cos(d_norm_heldout, d_norm_full) = +0.989   cos(d_disp_heldout, d_disp_full) = +0.940
+  carrier: in-sample = +0.934   OUT-OF-SAMPLE (test words) = +0.940   (disp out-of-sample = +0.523)
+  cos(BALANCE, d_norm_heldout) = +0.765
+  suffix x BALANCE — before -> after HELD-OUT norm+disp strip:
+    ER_comparative    -0.474 ->  -0.057   (12% retained)
+    EST_superlative   -0.371 ->  -0.031   (8% retained)
+    ING_progressive   -0.362 ->  +0.024   (-7% retained)
+    ED_past           -0.495 ->  +0.149   (-30% retained)
+    S_plural          -0.365 ->  -0.073   (20% retained)
+    UN_negation       -0.660 ->  -0.286   (43% retained)
+    RE_repetition     -0.569 ->  -0.129   (23% retained)
+  inflectional mean sink: -0.414 -> +0.002 (-1% retained)
+  random-2D-strip band (inflectional mean): -0.414 ± 0.001 [-0.415, -0.412]
+
+--- Layer 8 ---
+  parity vs exp154 (inflectional mean before): -0.320 vs -0.320 (|Δ| = 0.0003) ok
+  cos(d_norm_heldout, d_norm_full) = +0.974   cos(d_disp_heldout, d_disp_full) = +0.975
+  carrier: in-sample = +0.854   OUT-OF-SAMPLE (test words) = +0.944   (disp out-of-sample = +0.943)
+  cos(BALANCE, d_norm_heldout) = +0.678
+  suffix x BALANCE — before -> after HELD-OUT norm+disp strip:
+    ER_comparative    -0.381 ->  -0.167   (44% retained)
+    EST_superlative   -0.180 ->  -0.014   (8% retained)
+    ING_progressive   -0.367 ->  -0.128   (35% retained)
+    ED_past           -0.392 ->  +0.011   (-3% retained)
+    S_plural          -0.282 ->  -0.154   (55% retained)
+    UN_negation       -0.470 ->  -0.284   (60% retained)
+    RE_repetition     -0.290 ->  -0.099   (34% retained)
+  inflectional mean sink: -0.320 -> -0.090 (28% retained)
+  random-2D-strip band (inflectional mean): -0.320 ± 0.001 [-0.322, -0.318]
+
+--- Layer 12 ---
+  parity vs exp154 (inflectional mean before): -0.285 vs -0.285 (|Δ| = 0.0004) ok
+  cos(d_norm_heldout, d_norm_full) = +0.970   cos(d_disp_heldout, d_disp_full) = +0.970
+  carrier: in-sample = +0.835   OUT-OF-SAMPLE (test words) = +0.912   (disp out-of-sample = +0.910)
+  cos(BALANCE, d_norm_heldout) = +0.638
+  suffix x BALANCE — before -> after HELD-OUT norm+disp strip:
+    ER_comparative    -0.377 ->  -0.213   (57% retained)
+    EST_superlative   -0.150 ->  -0.020   (14% retained)
+    ING_progressive   -0.334 ->  -0.150   (45% retained)
+    ED_past           -0.346 ->  -0.003   (1% retained)
+    S_plural          -0.216 ->  -0.152   (70% retained)
+    UN_negation       -0.420 ->  -0.230   (55% retained)
+    RE_repetition     -0.213 ->  -0.070   (33% retained)
+  inflectional mean sink: -0.285 -> -0.108 (38% retained)
+  random-2D-strip band (inflectional mean): -0.285 ± 0.001 [-0.286, -0.284]
+
+--- Layer 16 ---
+  parity vs exp154 (inflectional mean before): -0.288 vs -0.288 (|Δ| = 0.0002) ok
+  cos(d_norm_heldout, d_norm_full) = +0.970   cos(d_disp_heldout, d_disp_full) = +0.969
+  carrier: in-sample = +0.806   OUT-OF-SAMPLE (test words) = +0.895   (disp out-of-sample = +0.893)
+  cos(BALANCE, d_norm_heldout) = +0.652
+  suffix x BALANCE — before -> after HELD-OUT norm+disp strip:
+    ER_comparative    -0.389 ->  -0.238   (61% retained)
+    EST_superlative   -0.184 ->  -0.017   (9% retained)
+    ING_progressive   -0.332 ->  -0.172   (52% retained)
+    ED_past           -0.332 ->  -0.038   (12% retained)
+    S_plural          -0.203 ->  -0.142   (70% retained)
+    UN_negation       -0.397 ->  -0.145   (37% retained)
+    RE_repetition     -0.183 ->  -0.070   (38% retained)
+  inflectional mean sink: -0.288 -> -0.121 (42% retained)
+  random-2D-strip band (inflectional mean): -0.288 ± 0.001 [-0.290, -0.287]
+
+--- Layer 20 ---
+  parity vs exp154 (inflectional mean before): -0.280 vs -0.280 (|Δ| = 0.0002) ok
+  cos(d_norm_heldout, d_norm_full) = +0.968   cos(d_disp_heldout, d_disp_full) = +0.969
+  carrier: in-sample = +0.786   OUT-OF-SAMPLE (test words) = +0.868   (disp out-of-sample = +0.861)
+  cos(BALANCE, d_norm_heldout) = +0.663
+  suffix x BALANCE — before -> after HELD-OUT norm+disp strip:
+    ER_comparative    -0.378 ->  -0.230   (61% retained)
+    EST_superlative   -0.168 ->  +0.005   (-3% retained)
+    ING_progressive   -0.305 ->  -0.156   (51% retained)
+    ED_past           -0.301 ->  -0.010   (3% retained)
+    S_plural          -0.249 ->  -0.187   (75% retained)
+    UN_negation       -0.414 ->  -0.149   (36% retained)
+    RE_repetition     -0.087 ->  -0.016   (19% retained)
+  inflectional mean sink: -0.280 -> -0.116 (41% retained)
+  random-2D-strip band (inflectional mean): -0.280 ± 0.001 [-0.281, -0.279]
+
+==============================================================================
+VERDICT vs pre-registered decision rule
+==============================================================================
+  inflectional sink retained per layer: L4:-1%, L8:28%, L12:38%, L16:42%, L20:41%
+  mean retained = 30% (mean |retained| = 30%)
+  stripped sink within random band (= survival) per layer: L4:n, L8:n, L12:n, L16:n, L20:n
+  cos(d_norm_heldout, d_norm_full) per layer: L4:+0.99, L8:+0.97, L12:+0.97, L16:+0.97, L20:+0.97
+  out-of-sample carrier per layer: L4:+0.94, L8:+0.94, L12:+0.91, L16:+0.90, L20:+0.87
+  -> H3: partial overfit. Report both; prefer held-out numbers
+     in the paper.

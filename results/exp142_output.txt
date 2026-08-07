@@ -1,0 +1,136 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:36,  3.02it/s]Loading weights:  46%|████▌     | 134/292 [00:00<00:00, 402.58it/s]Loading weights:  73%|███████▎  | 213/292 [00:00<00:00, 269.05it/s]Loading weights:  91%|█████████ | 265/292 [00:01<00:00, 210.17it/s]Loading weights: 100%|██████████| 292/292 [00:01<00:00, 222.07it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+Using 10 natural prompts for position + attention extraction.
+
+Collecting single-word residuals for 354 words at all 24 layers...
+  50/354
+  100/354
+  150/354
+  200/354
+  250/354
+  300/354
+  350/354
+
+Collecting per-position residuals + attention patterns from 10 prompts...
+  prompt 1/10: T=28
+  prompt 2/10: T=30
+  prompt 3/10: T=26
+  prompt 4/10: T=26
+  prompt 5/10: T=29
+  prompt 6/10: T=25
+  prompt 7/10: T=26
+  prompt 8/10: T=27
+  prompt 9/10: T=25
+  prompt 10/10: T=25
+
+==============================================================================
+TEST 1 — POSITION axis (later-position - earlier-position residuals)
+==============================================================================
+
+1a. Diagnostic — does raw position axis correlate with anisotropy?
+
+  layer    raw cos(POS, aniso)
+  L  0        -0.210
+  L  4        -0.002
+  L  8        -0.135
+  L 12        -0.136
+  L 16        -0.098
+  L 20        -0.077
+  L 23        -0.516
+
+1b. Cross-layer stability of POSITION axis (L4-L22)
+  Mean off-diag cos = +0.6228
+  (exp141 baselines: MAG=+0.77, DIR=+0.74, VAL=+0.75, LAK=+0.86)
+
+1c. cos(Lakoff schema, POSITION) per layer — FORWARD-BACK should win
+
+  layer     UP-DOWN  IN-OUT_C  FORWARD-  PATH-MOT  LIGHT-DA     FORCE   BALANCE  DIFFICUL
+  L  0      +0.054    +0.060    -0.056    -0.052    +0.064    +0.082    -0.100    +0.024  
+  L  4      +0.198    -0.026    +0.154    +0.096    +0.023    -0.076    +0.211    -0.057  
+  L  8      +0.080    +0.020    +0.104    -0.011    +0.040    -0.029    +0.063    -0.030  
+  L 12      +0.083    -0.003    +0.077    -0.017    -0.011    -0.037    +0.083    -0.013  
+  L 16      +0.082    -0.021    +0.081    -0.057    -0.016    -0.068    +0.109    -0.047  
+  L 20      +0.075    -0.068    -0.010    -0.118    +0.014    -0.149    +0.118    -0.130  
+  L 23      +0.003    -0.026    +0.005    -0.026    -0.045    -0.050    +0.115    -0.076  
+
+==============================================================================
+TEST 2 — ATTENTION axis (high-attention-received vs low)
+==============================================================================
+
+2a. Diagnostic — does raw attention axis correlate with anisotropy?
+
+  layer    raw cos(ATTN, aniso)
+  L  0        +0.612
+  L  4        +0.071
+  L  8        +0.133
+  L 12        +0.294
+  L 16        +0.352
+  L 20        +0.147
+  L 23        +0.210
+
+2b. Cross-layer stability of ATTENTION axis (L4-L22)
+  Mean off-diag cos = +0.4210
+
+2c. cos(Lakoff schema, ATTENTION) per layer — LIGHT-DARK should win
+
+  layer     UP-DOWN  IN-OUT_C  FORWARD-  PATH-MOT  LIGHT-DA     FORCE   BALANCE  DIFFICUL
+  L  0      -0.041    -0.032    -0.067    +0.096    -0.120    +0.081    -0.109    +0.116  
+  L  4      -0.123    +0.041    -0.136    -0.060    +0.060    +0.158    -0.246    +0.029  
+  L  8      -0.048    -0.016    -0.085    +0.055    +0.015    +0.011    -0.046    +0.025  
+  L 12      -0.023    +0.010    -0.054    +0.081    -0.014    -0.024    -0.008    +0.011  
+  L 16      -0.050    +0.025    -0.024    +0.091    +0.024    +0.022    -0.032    +0.039  
+  L 20      -0.006    +0.128    +0.081    +0.202    -0.016    +0.055    -0.044    +0.152  
+  L 23      +0.415    +0.155    -0.152    +0.122    +0.180    -0.097    -0.038    +0.283  
+
+==============================================================================
+TEST 3 — which schema has max |cos| with each substrate axis per layer
+==============================================================================
+
+3a. POSITION axis — winning schema per layer (by |cos|)
+
+  layer    winner               |cos|     runner-up           |cos|
+  L  0    BALANCE             +0.100    FORCE               +0.082
+  L  4    BALANCE             +0.211    UP-DOWN             +0.198
+  L  8    FORWARD-BACK        +0.104    UP-DOWN             +0.080
+  L 12    UP-DOWN             +0.083    BALANCE             +0.083
+  L 16    BALANCE             +0.109    UP-DOWN             +0.082
+  L 20    FORCE               +0.149    DIFFICULTY-BURDEN   +0.130
+  L 23    BALANCE             +0.115    DIFFICULTY-BURDEN   +0.076
+
+3b. ATTENTION axis — winning schema per layer (by |cos|)
+
+  layer    winner               |cos|     runner-up           |cos|
+  L  0    LIGHT-DARK          +0.120    DIFFICULTY-BURDEN   +0.116
+  L  4    BALANCE             +0.246    FORCE               +0.158
+  L  8    FORWARD-BACK        +0.085    PATH-MOTION         +0.055
+  L 12    PATH-MOTION         +0.081    FORWARD-BACK        +0.054
+  L 16    PATH-MOTION         +0.091    UP-DOWN             +0.050
+  L 20    PATH-MOTION         +0.202    DIFFICULTY-BURDEN   +0.152
+  L 23    UP-DOWN             +0.415    DIFFICULTY-BURDEN   +0.283
+
+Saved exp142_position_attention.png
+
+==============================================================================
+SUMMARY
+==============================================================================
+
+  Mean |cos| across L8-L20:
+
+  schema                  POSITION     ATTENTION
+  UP-DOWN                   +0.068      +0.045
+  IN-OUT_CLEAN              +0.019      +0.030
+  FORWARD-BACK              +0.071      +0.058
+  PATH-MOTION               +0.047      +0.076
+  LIGHT-DARK                +0.021      +0.026
+  FORCE                     +0.074      +0.043
+  BALANCE                   +0.086      +0.036
+  DIFFICULTY-BURDEN         +0.043      +0.037
+
+  POSITION axis cross-layer stability:  +0.6228
+  ATTENTION axis cross-layer stability: +0.4210
+
+Done.

@@ -1,0 +1,291 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+UP-DOWN: 25 triples
+IN-OUT: 25 triples
+FORWARD-BACK: 25 triples
+LIGHT-DARK: 25 triples
+LEFT-RIGHT: 15 triples
+
+device: mps
+Loading Pythia 70m-deduped...
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 1400.56it/s]
+Loaded pretrained model EleutherAI/pythia-70m-deduped into HookedTransformer
+
+=== Layer 0 ===
+
+Within-pair cosines (cos(offset_a, offset_c) averaged across pairs):
+         UP-DOWN:  cos = +0.5674
+          IN-OUT:  cos = +0.6902
+    FORWARD-BACK:  cos = +0.6576
+      LIGHT-DARK:  cos = +0.4300
+      LEFT-RIGHT:  cos = +0.7040
+
+Projections onto A_up/down:
+         UP-DOWN:       UP =  +0.6727       DOWN =  -1.3000
+          IN-OUT:       IN =  -0.2796        OUT =  -0.3836
+    FORWARD-BACK:  FORWARD =  +0.1989       BACK =  +0.1352
+      LIGHT-DARK:    LIGHT =  +0.0818       DARK =  -0.3584
+      LEFT-RIGHT:     LEFT =  -0.0025      RIGHT =  -0.0028
+
+Projections onto A_light/dark:
+         UP-DOWN:       UP =  +0.0764       DOWN =  -0.1496
+          IN-OUT:       IN =  -0.3527        OUT =  -0.2891
+    FORWARD-BACK:  FORWARD =  +0.0734       BACK =  +0.0630
+      LIGHT-DARK:    LIGHT =  +1.6001       DARK =  -2.2445
+      LEFT-RIGHT:     LEFT =  +0.1041      RIGHT =  +0.1040
+
+=== Layer 1 ===
+
+Within-pair cosines (cos(offset_a, offset_c) averaged across pairs):
+         UP-DOWN:  cos = +0.5942
+          IN-OUT:  cos = +0.7104
+    FORWARD-BACK:  cos = +0.6835
+      LIGHT-DARK:  cos = +0.5247
+      LEFT-RIGHT:  cos = +0.7762
+
+Projections onto A_up/down:
+         UP-DOWN:       UP =  +0.4249       DOWN =  -1.6657
+          IN-OUT:       IN =  -0.9055        OUT =  -0.7559
+    FORWARD-BACK:  FORWARD =  -0.5338       BACK =  -0.8646
+      LIGHT-DARK:    LIGHT =  -0.6291       DARK =  -2.1193
+      LEFT-RIGHT:     LEFT =  -0.4134      RIGHT =  -0.7053
+
+Projections onto A_light/dark:
+         UP-DOWN:       UP =  +0.0657       DOWN =  -0.6230
+          IN-OUT:       IN =  -1.0859        OUT =  -0.7676
+    FORWARD-BACK:  FORWARD =  -0.8309       BACK =  -1.1933
+      LIGHT-DARK:    LIGHT =  +0.2381       DARK =  -4.2861
+      LEFT-RIGHT:     LEFT =  -0.5841      RIGHT =  -1.0308
+
+=== Layer 2 ===
+
+Within-pair cosines (cos(offset_a, offset_c) averaged across pairs):
+         UP-DOWN:  cos = +0.6009
+          IN-OUT:  cos = +0.6881
+    FORWARD-BACK:  cos = +0.6961
+      LIGHT-DARK:  cos = +0.6690
+      LEFT-RIGHT:  cos = +0.7840
+
+Projections onto A_up/down:
+         UP-DOWN:       UP =  +0.2697       DOWN =  -1.7671
+          IN-OUT:       IN =  -1.2957        OUT =  -1.0652
+    FORWARD-BACK:  FORWARD =  -2.4244       BACK =  -2.9377
+      LIGHT-DARK:    LIGHT =  -2.9347       DARK =  -5.2839
+      LEFT-RIGHT:     LEFT =  -1.4405      RIGHT =  -2.3682
+
+Projections onto A_light/dark:
+         UP-DOWN:       UP =  +0.0487       DOWN =  -1.0050
+          IN-OUT:       IN =  -1.6604        OUT =  -1.2422
+    FORWARD-BACK:  FORWARD =  -3.3067       BACK =  -3.8950
+      LIGHT-DARK:    LIGHT =  -3.2880       DARK =  -7.8291
+      LEFT-RIGHT:     LEFT =  -1.9550      RIGHT =  -3.1857
+
+=== Layer 3 ===
+
+Within-pair cosines (cos(offset_a, offset_c) averaged across pairs):
+         UP-DOWN:  cos = +0.5429
+          IN-OUT:  cos = +0.6808
+    FORWARD-BACK:  cos = +0.6975
+      LIGHT-DARK:  cos = +0.6833
+      LEFT-RIGHT:  cos = +0.8094
+
+Projections onto A_up/down:
+         UP-DOWN:       UP =  +0.1765       DOWN =  -2.0755
+          IN-OUT:       IN =  -1.8478        OUT =  -1.4852
+    FORWARD-BACK:  FORWARD =  -3.5932       BACK =  -4.3527
+      LIGHT-DARK:    LIGHT =  -4.2448       DARK =  -7.3927
+      LEFT-RIGHT:     LEFT =  -2.0189      RIGHT =  -3.3343
+
+Projections onto A_light/dark:
+         UP-DOWN:       UP =  -0.0631       DOWN =  -1.4019
+          IN-OUT:       IN =  -2.1576        OUT =  -1.5938
+    FORWARD-BACK:  FORWARD =  -4.6392       BACK =  -5.4823
+      LIGHT-DARK:    LIGHT =  -4.9540       DARK = -10.2493
+      LEFT-RIGHT:     LEFT =  -2.6064      RIGHT =  -4.4171
+
+=== Layer 4 ===
+
+Within-pair cosines (cos(offset_a, offset_c) averaged across pairs):
+         UP-DOWN:  cos = +0.4915
+          IN-OUT:  cos = +0.6752
+    FORWARD-BACK:  cos = +0.6988
+      LIGHT-DARK:  cos = +0.6800
+      LEFT-RIGHT:  cos = +0.8640
+
+Projections onto A_up/down:
+         UP-DOWN:       UP =  +0.3786       DOWN =  -2.1787
+          IN-OUT:       IN =  -1.5387        OUT =  -1.0991
+    FORWARD-BACK:  FORWARD =  -2.8470       BACK =  -3.4282
+      LIGHT-DARK:    LIGHT =  -3.3342       DARK =  -6.0207
+      LEFT-RIGHT:     LEFT =  -1.5597      RIGHT =  -2.6163
+
+Projections onto A_light/dark:
+         UP-DOWN:       UP =  -0.0271       DOWN =  -1.3536
+          IN-OUT:       IN =  -2.0777        OUT =  -1.4010
+    FORWARD-BACK:  FORWARD =  -4.2598       BACK =  -5.0553
+      LIGHT-DARK:    LIGHT =  -4.3649       DARK =  -9.5441
+      LEFT-RIGHT:     LEFT =  -2.3911      RIGHT =  -4.0563
+
+=== Layer 5 ===
+
+Within-pair cosines (cos(offset_a, offset_c) averaged across pairs):
+         UP-DOWN:  cos = +0.5308
+          IN-OUT:  cos = +0.6660
+    FORWARD-BACK:  cos = +0.7075
+      LIGHT-DARK:  cos = +0.6177
+      LEFT-RIGHT:  cos = +0.8747
+
+Projections onto A_up/down:
+         UP-DOWN:       UP =  +0.3235       DOWN =  -2.6010
+          IN-OUT:       IN =  -1.6178        OUT =  -1.4219
+    FORWARD-BACK:  FORWARD =  -0.9130       BACK =  -1.3760
+      LIGHT-DARK:    LIGHT =  -1.4685       DARK =  -2.8110
+      LEFT-RIGHT:     LEFT =  -0.4896      RIGHT =  -0.7282
+
+Projections onto A_light/dark:
+         UP-DOWN:       UP =  -0.0639       DOWN =  -1.0313
+          IN-OUT:       IN =  -1.3685        OUT =  -1.1705
+    FORWARD-BACK:  FORWARD =  -1.0775       BACK =  -1.4270
+      LIGHT-DARK:    LIGHT =  -0.2006       DARK =  -4.2590
+      LEFT-RIGHT:     LEFT =  -0.5729      RIGHT =  -0.9333
+
+
+================================================================================
+SUMMARY: within-pair cosines by layer
+================================================================================
+  layer         UP-DOWN          IN-OUT    FORWARD-BACK      LIGHT-DARK      LEFT-RIGHT
+      0         +0.5674         +0.6902         +0.6576         +0.4300         +0.7040
+      1         +0.5942         +0.7104         +0.6835         +0.5247         +0.7762
+      2         +0.6009         +0.6881         +0.6961         +0.6690         +0.7840
+      3         +0.5429         +0.6808         +0.6975         +0.6833         +0.8094
+      4         +0.4915         +0.6752         +0.6988         +0.6800         +0.8640
+      5         +0.5308         +0.6660         +0.7075         +0.6177         +0.8747
+
+
+================================================================================
+SUMMARY: projections onto A_updown by layer (each pole)
+================================================================================
+  layer       UP     DOWN       IN      OUT  FORWARD     BACK    LIGHT     DARK     LEFT    RIGHT
+      0   +0.673   -1.300   -0.280   -0.384   +0.199   +0.135   +0.082   -0.358   -0.003   -0.003
+      1   +0.425   -1.666   -0.906   -0.756   -0.534   -0.865   -0.629   -2.119   -0.413   -0.705
+      2   +0.270   -1.767   -1.296   -1.065   -2.424   -2.938   -2.935   -5.284   -1.440   -2.368
+      3   +0.177   -2.076   -1.848   -1.485   -3.593   -4.353   -4.245   -7.393   -2.019   -3.334
+      4   +0.379   -2.179   -1.539   -1.099   -2.847   -3.428   -3.334   -6.021   -1.560   -2.616
+      5   +0.323   -2.601   -1.618   -1.422   -0.913   -1.376   -1.469   -2.811   -0.490   -0.728
+
+
+================================================================================
+SUMMARY: projections onto A_lightdark by layer (each pole)
+================================================================================
+  layer       UP     DOWN       IN      OUT  FORWARD     BACK    LIGHT     DARK     LEFT    RIGHT
+      0   +0.076   -0.150   -0.353   -0.289   +0.073   +0.063   +1.600   -2.244   +0.104   +0.104
+      1   +0.066   -0.623   -1.086   -0.768   -0.831   -1.193   +0.238   -4.286   -0.584   -1.031
+      2   +0.049   -1.005   -1.660   -1.242   -3.307   -3.895   -3.288   -7.829   -1.955   -3.186
+      3   -0.063   -1.402   -2.158   -1.594   -4.639   -5.482   -4.954  -10.249   -2.606   -4.417
+      4   -0.027   -1.354   -2.078   -1.401   -4.260   -5.055   -4.365   -9.544   -2.391   -4.056
+      5   -0.064   -1.031   -1.368   -1.170   -1.077   -1.427   -0.201   -4.259   -0.573   -0.933
+
+Saved: exp26_results.pt
+Loading SAE for layer 3...
+
+=== Building schema axes ===
+  built schema: UP-DOWN
+  built schema: IN-OUT
+  built schema: FORWARD-BACK
+  built schema: LIGHT-DARK
+  built schema: LEFT-RIGHT
+
+=== Building candidate axes from DIVERSE triples ===
+  built anchor: VALENCE (12 triples)
+  built anchor: AROUSAL (11 triples)
+  built anchor: EXISTENCE (12 triples)
+  built anchor: COHERENCE (11 triples)
+  built anchor: SUCCESS (11 triples)
+  built anchor: LOSS (11 triples)
+
+=== Variance per PC ===
+PC1=37.5%, PC2=11.8%, PC3=10.0%, PC4=9.6%, PC5=8.6%, PC6=7.9%, PC7=5.9%, PC8=4.6%, PC9=2.7%, PC10=1.4%
+
+=== Top PC loadings ===
+PC1 (37.5%): COHERENCE-0.89, AROUSAL-0.86, LIGHT-DARK-0.77, SUCCESS+0.75, UP-DOWN-0.59, VALENCE+0.57
+PC2 (11.8%): EXISTENCE+0.68, VALENCE-0.56, IN-OUT+0.32, LIGHT-DARK-0.26, UP-DOWN-0.18, LEFT-RIGHT-0.17
+PC3 (10.0%): LEFT-RIGHT-0.62, LOSS+0.48, IN-OUT-0.36, UP-DOWN+0.27, SUCCESS+0.21, VALENCE+0.18
+PC4 (9.6%): FORWARD-BACK+0.64, IN-OUT+0.45, LEFT-RIGHT-0.39, EXISTENCE-0.24, SUCCESS-0.14, LIGHT-DARK+0.12
+PC5 (8.6%): FORWARD-BACK+0.56, IN-OUT-0.51, SUCCESS+0.29, LOSS-0.20, LIGHT-DARK-0.14, UP-DOWN-0.12
+
+=== Neuronpedia lookup on PC1-3 ===
+
+--- PC1 (37.5% variance) ---
+Positive pole:
+  feat 21809 (+0.505): expressions of gratitude and friendship
+  feat  5355 (+0.433): legal terminology related to liability and warranties
+  feat 22622 (+0.348): instances of line breaks or empty sections in the text
+  feat  1812 (+0.315): complex legal terms and organizational identifiers
+  feat  3637 (+0.250): key terms related to legal proceedings and opinions
+  feat 32581 (+0.065): occurrences of the word "required"
+  feat 27540 (+0.056): periods and sentence endings in legal or formal documents
+  feat   647 (+0.053): references to food and culinary experiences
+  feat  7674 (+0.052): prepositions indicating location or positioning
+  feat 25224 (+0.051): header files in C or C++ programs
+Negative pole:
+  feat 22938 (-0.093): references to the word "from" in various contexts
+  feat 22160 (-0.086): instances of high numerical values or significant data points
+  feat 29565 (-0.083): references to emotional states and interpersonal relationships
+  feat 22943 (-0.078): expressions of frustration or dissatisfaction
+  feat 27267 (-0.075): negative descriptors associated with experiences or evaluations
+  feat 12046 (-0.067): occurrences of the prefix "dis-" indicating negative or reversal concepts
+  feat  5643 (-0.061): instances of the letter "v" and its various forms
+  feat  2179 (-0.049): verbs related to quitting or stopping actions
+  feat  4551 (-0.048): the presence of the word "fl" or any variation with high frequency, indicating a focus on words related to 'flaunting' or 'flair.'
+  feat  2006 (-0.046): occurrences of the word "fall" and its variations
+
+--- PC2 (11.8% variance) ---
+Positive pole:
+  feat 22622 (+0.353): instances of line breaks or empty sections in the text
+  feat 19729 (+0.202): occurrences of the letter 'A' as a standalone character
+  feat 27267 (+0.167): negative descriptors associated with experiences or evaluations
+  feat 22943 (+0.155): expressions of frustration or dissatisfaction
+  feat 12046 (+0.153): occurrences of the prefix "dis-" indicating negative or reversal concepts
+  feat  5643 (+0.138): instances of the letter "v" and its various forms
+  feat 23822 (+0.129): instances of the word "right."
+  feat  6824 (+0.110): phrases associated with challenges and difficulties
+  feat 30156 (+0.098): references to dark themes, tones, and conditions, often associated with negativity or evil
+  feat 22832 (+0.093): negative or critical sentiments towards societal issues and personal experiences
+Negative pole:
+  feat 22160 (-0.217): instances of high numerical values or significant data points
+  feat 32409 (-0.188): the definite article "The" at the beginning of sentences
+  feat  5355 (-0.159): legal terminology related to liability and warranties
+  feat 21809 (-0.157): expressions of gratitude and friendship
+  feat  1812 (-0.154): complex legal terms and organizational identifiers
+  feat 22938 (-0.127): references to the word "from" in various contexts
+  feat  5640 (-0.107): context related to death and dying
+  feat   257 (-0.102): instances of the word "left" in various contexts
+  feat 22635 (-0.102): instances of surprising or unexpected events
+  feat 13025 (-0.092): mentions of extensions and extreme conditions
+
+--- PC3 (10.0% variance) ---
+Positive pole:
+  feat 23822 (+0.523): instances of the word "right."
+  feat 22938 (+0.207): references to the word "from" in various contexts
+  feat 22311 (+0.155): repetitive phrases emphasizing continuity and persistence
+  feat   792 (+0.087): terms related to safety and security
+  feat 17951 (+0.080): the term "Th" in various contexts
+  feat 10550 (+0.077): phrases indicating past experiences or conditions
+  feat  5534 (+0.075): instances of time-related events, specifically regarding a person's condition or actions over a timeline
+  feat 26101 (+0.074): adjectives and adverbs that describe qualities or characteristics, particularly in positive or favorable contexts
+  feat  5883 (+0.071): phrases indicating a delay or a period of time following an event
+  feat 13000 (+0.063): adverbs and descriptors highlighting intensity and frequency
+Negative pole:
+  feat   257 (-0.373): instances of the word "left" in various contexts
+  feat 16672 (-0.187): phrases related to loss or defeat
+  feat 16648 (-0.145): spatial directions and positions
+  feat 16185 (-0.129): actions and verbs related to motion and physical interactions
+  feat  7674 (-0.099): prepositions indicating location or positioning
+  feat  2006 (-0.098): occurrences of the word "fall" and its variations
+  feat 30190 (-0.094): discussions of violence and tragedy
+  feat 22943 (-0.091): expressions of frustration or dissatisfaction
+  feat 11794 (-0.091): words related to legal actions and detention processes
+  feat 31975 (-0.087): the article "the" in various contexts
+
+Saved: exp45_results.pt

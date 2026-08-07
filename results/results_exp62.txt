@@ -1,0 +1,54 @@
+Loading exp60 basis...
+
+====================================================================
+Starting cosines (sanity check against BASIS_REFERENCE)
+====================================================================
+  cos(A, W) = +0.2328   (BASIS_REFERENCE: +0.233)
+  cos(A, R) = +0.1129   (BASIS_REFERENCE: +0.113)
+  cos(W, R) = +0.0093   (BASIS_REFERENCE: +0.009)
+
+====================================================================
+Regression: A ≈ αW + βR + residual
+====================================================================
+  α (W coefficient) = +0.2318   (predicted: > 0)  PASS
+  β (R coefficient) = +0.1107   (predicted: > 0)  PASS
+
+  |A|              = 1.0000  (should be 1.000, A is unit-normalized)
+  |αW + βR|        = 0.2578
+  |A - αW - βR|    = 0.9662
+  relative residual = 0.9662
+
+====================================================================
+Variance decomposition
+====================================================================
+  A^2 = (αW + βR)^2 + residual^2
+  variance explained by (W, R) = 0.0665 (6.6%)
+  variance in residual         = 0.9335 (93.4%)
+  (sum: 1.0000)
+
+====================================================================
+Verdict
+====================================================================
+  relative residual = 0.966
+  WEAK: A is largely its own thing. (W, R) don't capture much of A.
+  Thread 2.7 reading needs reframing or fails.
+
+====================================================================
+What's in the residual? (cos with each remaining basis axis)
+====================================================================
+  residual is unit-normalized; cosines below show what content is left
+      axis   cos(residual, axis)
+     C_rew  +0.0964
+     G_pol  +0.5110
+     D_cmp  -0.0145
+    IO_blk  -0.0084
+
+  For reference — cos(A_aff, each basis axis):
+     C_rew  +0.0080
+     W_wgt  +0.2328
+     G_pol  +0.5611
+     R_per  +0.1129
+     D_cmp  +0.0229
+    IO_blk  -0.0151
+
+Saved exp62_results.npz

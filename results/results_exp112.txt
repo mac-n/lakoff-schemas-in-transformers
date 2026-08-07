@@ -1,0 +1,93 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Using device: mps
+
+Loading Pythia 1.4B...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:21,  3.55it/s]Loading weights:  29%|██▉       | 84/292 [00:00<00:00, 272.86it/s]Loading weights:  44%|████▍     | 129/292 [00:00<00:00, 302.29it/s]Loading weights:  58%|█████▊    | 170/292 [00:00<00:00, 244.06it/s]Loading weights:  69%|██████▉   | 202/292 [00:01<00:00, 147.56it/s]Loading weights:  77%|███████▋  | 225/292 [00:01<00:00, 113.24it/s]Loading weights:  83%|████████▎ | 243/292 [00:01<00:00, 110.92it/s]Loading weights:  90%|█████████ | 264/292 [00:01<00:00, 114.42it/s]Loading weights:  96%|█████████▌| 279/292 [00:02<00:00, 115.09it/s]Loading weights: 100%|██████████| 292/292 [00:02<00:00, 133.08it/s]
+Loaded pretrained model pythia-1.4b into HookedTransformer
+  24 layers, d_model=2048
+
+UP anchors (14): ['above', 'ascend', 'climb', 'high', 'higher', 'lift', 'over', 'raise', 'rise', 'rising', 'rose', 'top', 'up', 'upward']
+DOWN anchors (13): ['below', 'bottom', 'descend', 'down', 'downward', 'drop', 'fall', 'falling', 'fell', 'low', 'lower', 'sink', 'under']
+
+Building UP direction at L12 from Lakoff anchors...
+  ‖up_raw_lakoff‖ = 196.74
+  (exp111 was 130.28)
+  cos(Lakoff direction, exp111 hand-picked) = -0.990
+
+========================================================================
+PART A — DOSE-RESPONSE (Lakoff anchors), L=12
+========================================================================
+
+--- direction = up ---
+  s= -12  fd=-1.208  E[h]=174.94  af=-0.203  E[q]=18.96
+  s=  -8  fd=-1.120  E[h]=174.67  af=-0.213  E[q]=18.73
+  s=  -4  fd=-1.043  E[h]=174.35  af=-0.202  E[q]=18.61
+  s=  -2  fd=-1.012  E[h]=174.21  af=-0.192  E[q]=18.55
+  s=  +0  fd=-0.983  E[h]=174.10  af=-0.181  E[q]=18.48
+  s=  +2  fd=-0.955  E[h]=174.01  af=-0.170  E[q]=18.41
+  s=  +4  fd=-0.928  E[h]=173.95  af=-0.158  E[q]=18.34
+  s=  +8  fd=-0.880  E[h]=173.90  af=-0.141  E[q]=18.16
+  s= +12  fd=-0.840  E[h]=173.94  af=-0.130  E[q]=17.96
+  s= +16  fd=-0.808  E[h]=174.09  af=-0.123  E[q]=17.75
+
+--- direction = rand ---
+  s= -12  fd=-0.887  E[h]=174.31  af=-0.181  E[q]=18.18
+  s=  -8  fd=-0.935  E[h]=174.20  af=-0.185  E[q]=18.33
+  s=  -4  fd=-0.967  E[h]=174.13  af=-0.184  E[q]=18.43
+  s=  -2  fd=-0.977  E[h]=174.11  af=-0.182  E[q]=18.46
+  s=  +0  fd=-0.983  E[h]=174.10  af=-0.181  E[q]=18.48
+  s=  +2  fd=-0.984  E[h]=174.09  af=-0.180  E[q]=18.48
+  s=  +4  fd=-0.981  E[h]=174.09  af=-0.179  E[q]=18.47
+  s=  +8  fd=-0.963  E[h]=174.10  af=-0.177  E[q]=18.41
+  s= +12  fd=-0.932  E[h]=174.14  af=-0.176  E[q]=18.31
+  s= +16  fd=-0.892  E[h]=174.24  af=-0.176  E[q]=18.18
+
+========================================================================
+EXP111 vs EXP112 — same DVs, anchor-set ablation
+========================================================================
+
+E[height] cm — Δ from baseline at each strength
+     s   exp111 (hand)   exp112 (Lakoff)
+   -12          -0.254            +0.843
+    -8          -0.270            +0.569
+    -4          -0.187            +0.246
+    -2          -0.106            +0.113
+    +0          +0.000            +0.000
+    +2          +0.128            -0.090
+    +4          +0.277            -0.154
+    +8          +0.629            -0.204
+   +12          +0.940            -0.156
+   +16          +1.212            -0.007
+
+affect (pos-neg) — Δ from baseline
+     s   exp111 (hand)   exp112 (Lakoff)
+   -12          -0.029            -0.022
+    -8          -0.016            -0.032
+    -4          -0.007            -0.021
+    -2          -0.004            -0.011
+    +0          +0.000            +0.000
+    +2          +0.005            +0.012
+    +4          +0.012            +0.023
+    +8          +0.037            +0.040
+   +12          +0.083            +0.051
+   +16          +0.150            +0.058
+
+E[quantity] — Δ from baseline
+     s   exp111 (hand)   exp112 (Lakoff)
+   -12          -0.538            +0.480
+    -8          -0.328            +0.250
+    -4          -0.147            +0.125
+    -2          -0.070            +0.065
+    +0          +0.000            +0.000
+    +2          +0.065            -0.069
+    +4          +0.125            -0.145
+    +8          +0.248            -0.321
+   +12          +0.476            -0.524
+   +16          +0.639            -0.736
+
+========================================================================
+Direction cosine vs exp111: -0.990
+Saved exp112_results.npz
+========================================================================

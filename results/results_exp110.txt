@@ -1,0 +1,21 @@
+Loading GloVe...
+  meaningful words: 43015
+  cos(f_clean, PC1) = +0.017
+  spearman(f_clean projection, rank) over meaningful = +0.889
+
+  f_clean  COMMON-leaning pole (low rank):
+    ['israel', 'government', 'iran', 'minister', 'china', 'palestinian', 'friday']
+    ['iraq', 'security', 'monday', 'wednesday', 'israeli', 'tuesday', 'countries']
+    ['saturday', 'percent', 'billion', 'korea', 'sunday', 'higher', 'russian']
+    ['thursday', 'european', 'prime', 'japan', 'commission', 'washington', 'foreign']
+    ['states', 'peace', 'authorities', 'party', 'moscow', 'chinese', 'bush']
+
+  f_clean  RARE-leaning pole (high rank):
+    ['garmin', 'interdependent', 'fritzl', 'berhad', 'caudal', 'khanate', 'chah']
+    ['testud', 'sheh', 'hashimi', 'fedotov', 'reunify', 'jusen', 'extracellular']
+    ['euler', 'mikey', 'superhighway', 'scurry', 'rubs', 'inkling', 'rinsed']
+    ['dray', 'wknd', 'persecuting', 'mistaking', 'extraditing', 'condescending', 'khalq']
+    ['honky', 'deregulate', 'winded', 'sheared', 'vacco', 'riemann', 'unremitting']
+
+  (contrast) PC1 pole A: ['kloh', 'hahb', 'yahp', 'eupithecia', 'dehr', 'hahk', 'gahl', 'druh', 'yahd', 'zhoo', 'zahr', 'kich', 'yahr', 'raht', 'zhuh', 'veed', 'shahm', 'suhn']
+  (contrast) PC1 pole B: ['have', 'more', 'they', 'this', 'their', 'that', 'will', 'about', 'some', 'would', 'been', 'people', 'year', 'time', 'there', 'than', 'world', 'what']

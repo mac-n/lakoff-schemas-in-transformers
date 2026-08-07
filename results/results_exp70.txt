@@ -1,0 +1,134 @@
+Loading glove-wiki-gigaword-300...
+Loading ATT_CLEAN and INT_CLEAN from exp69...
+
+  cos(ATT_CLEAN, INT_CLEAN) = -0.1301  (near-zero — they're orthogonal primitives)
+  EXPLORATION = unit(ATT - INT)  (the predicted gathering-information direction)
+
+====================================================================
+  CURIOSITY / EXPLORATION (predicted: +ATT, ≤0 INT, +EXPL)
+====================================================================
+                word  cos(., ATT)  cos(., INT)  cos(., EXPL)  quadrant
+  ------------------  -----------  -----------  ------------  ---------------
+           curiosity  +0.0396     -0.0264     +0.0439      +ATT -INT (EXPL)
+             curious  -0.0051     +0.0125     -0.0117      -ATT +INT (auto)
+         inquisitive  +0.1282     -0.1867     +0.2094      +ATT -INT (EXPL)
+           wondering  -0.0436     -0.0487     +0.0034      -ATT -INT (drift)
+              wonder  -0.0657     +0.1118     -0.1181      -ATT +INT (auto)
+       investigating  -0.1174     +0.3186     -0.2900      -ATT +INT (auto)
+       investigation  -0.1951     +0.3713     -0.3767      -ATT +INT (auto)
+         investigate  -0.0698     +0.3729     -0.2945      -ATT +INT (auto)
+           exploring  +0.1031     +0.0787     +0.0162      +ATT +INT (exec)
+         exploration  +0.0042     +0.1115     -0.0714      +ATT +INT (exec)
+             explore  +0.0592     +0.2077     -0.0988      +ATT +INT (exec)
+           intrigued  +0.1580     -0.0742     +0.1545      +ATT -INT (EXPL)
+          interested  +0.0783     +0.2787     -0.1333      +ATT +INT (exec)
+          fascinated  +0.1251     -0.1078     +0.1549      +ATT -INT (EXPL)
+             puzzled  +0.0012     -0.1284     +0.0863      +ATT -INT (EXPL)
+         questioning  -0.0615     +0.1927     -0.1691      -ATT +INT (auto)
+          questioned  -0.1408     +0.2699     -0.2732      -ATT +INT (auto)
+             probing  -0.0028     +0.0876     -0.0601      -ATT +INT (auto)
+               probe  -0.0738     +0.2852     -0.2388      -ATT +INT (auto)
+             seeking  -0.1011     +0.4119     -0.3413      -ATT +INT (auto)
+           searching  -0.2886     +0.0999     -0.2584      -ATT +INT (auto)
+              search  -0.2606     +0.2079     -0.3117      -ATT +INT (auto)
+             inquiry  -0.1032     +0.3189     -0.2808      -ATT +INT (auto)
+           inquiring  +0.1178     -0.0969     +0.1428      +ATT -INT (EXPL)
+       experimenting  +0.2676     -0.0602     +0.2181      +ATT -INT (EXPL)
+          experiment  +0.1132     +0.1656     -0.0348      +ATT +INT (exec)
+            browsing  +0.1038     -0.1080     +0.1409      +ATT -INT (EXPL)
+            scanning  +0.1255     -0.0180     +0.0955      +ATT -INT (EXPL)
+           surveying  +0.0151     +0.0174     -0.0015      +ATT +INT (exec)
+            studying  +0.0407     +0.1972     -0.1041      +ATT +INT (exec)
+           examining  +0.0114     +0.1598     -0.0987      +ATT +INT (exec)
+
+====================================================================
+  PURSUIT / EXECUTION (predicted: +ATT, +INT, ≤0 EXPL)
+====================================================================
+                word  cos(., ATT)  cos(., INT)  cos(., EXPL)  quadrant
+  ------------------  -----------  -----------  ------------  ---------------
+            pursuing  +0.0168     +0.2371     -0.1465      +ATT +INT (exec)
+             pursuit  -0.1167     +0.1912     -0.2048      -ATT +INT (auto)
+              pursue  +0.0296     +0.3564     -0.2174      +ATT +INT (exec)
+          committing  +0.0969     +0.2838     -0.1243      +ATT +INT (exec)
+          commitment  +0.0679     +0.3017     -0.1555      +ATT +INT (exec)
+              commit  +0.0835     +0.4209     -0.2244      +ATT +INT (exec)
+           executing  +0.0440     +0.1128     -0.0458      +ATT +INT (exec)
+           execution  -0.0484     +0.2717     -0.2129      -ATT +INT (auto)
+             execute  +0.0079     +0.2369     -0.1523      +ATT +INT (exec)
+       accomplishing  +0.1777     -0.0703     +0.1650      +ATT -INT (EXPL)
+      accomplishment  +0.1430     +0.0203     +0.0817      +ATT +INT (exec)
+          accomplish  +0.1088     +0.1960     -0.0580      +ATT +INT (exec)
+           achieving  +0.1564     +0.2094     -0.0352      +ATT +INT (exec)
+         achievement  +0.0891     +0.1653     -0.0507      +ATT +INT (exec)
+             achieve  +0.1133     +0.3532     -0.1596      +ATT +INT (exec)
+           finishing  -0.1840     +0.1722     -0.2369      -ATT +INT (auto)
+          completing  -0.0640     +0.2242     -0.1917      -ATT +INT (auto)
+          completion  -0.0637     +0.2868     -0.2332      -ATT +INT (auto)
+          succeeding  +0.1037     +0.1207     -0.0113      +ATT +INT (exec)
+             success  +0.0459     +0.2684     -0.1480      +ATT +INT (exec)
+          delivering  +0.0852     +0.1616     -0.0508      +ATT +INT (exec)
+            delivery  -0.0298     +0.1296     -0.1060      -ATT +INT (auto)
+        implementing  +0.1936     +0.2729     -0.0528      +ATT +INT (exec)
+      implementation  +0.0593     +0.3366     -0.1844      +ATT +INT (exec)
+          fulfilling  +0.1334     +0.0668     +0.0443      +ATT +INT (exec)
+         fulfillment  +0.1289     +0.0609     +0.0452      +ATT +INT (exec)
+
+====================================================================
+  DRIFT / DISENGAGEMENT (predicted: -ATT, -INT)
+====================================================================
+                word  cos(., ATT)  cos(., INT)  cos(., EXPL)  quadrant
+  ------------------  -----------  -----------  ------------  ---------------
+            drifting  -0.0406     -0.3983     +0.2379      -ATT -INT (drift)
+               drift  +0.0513     -0.1522     +0.1353      +ATT -INT (EXPL)
+         daydreaming  +0.1619     -0.3328     +0.3290      +ATT -INT (EXPL)
+           wandering  -0.0218     -0.2243     +0.1347      -ATT -INT (drift)
+              wander  -0.0188     -0.1599     +0.0939      -ATT -INT (drift)
+         spacing-out  OOV
+              spaced  +0.0582     -0.0862     +0.0961      +ATT -INT (EXPL)
+          distracted  +0.0134     -0.0503     +0.0424      +ATT -INT (EXPL)
+         distraction  +0.0428     +0.0390     +0.0025      +ATT +INT (exec)
+           unfocused  +0.0685     -0.2563     +0.2160      +ATT -INT (EXPL)
+       absent-minded  +0.1480     -0.2079     +0.2367      +ATT -INT (EXPL)
+                idle  -0.0913     -0.0227     -0.0456      -ATT -INT (drift)
+              idling  +0.0919     -0.2631     +0.2362      +ATT -INT (EXPL)
+                lazy  -0.0829     -0.0979     +0.0099      -ATT -INT (drift)
+           lethargic  +0.0859     -0.2747     +0.2399      +ATT -INT (EXPL)
+            listless  -0.0122     -0.1987     +0.1240      -ATT -INT (drift)
+               bored  -0.0132     -0.0681     +0.0366      -ATT -INT (drift)
+             boredom  +0.1092     -0.1275     +0.1574      +ATT -INT (EXPL)
+
+====================================================================
+SUMMARY
+====================================================================
+
+  CURIOSITY  (n=31)
+    mean cos(., ATT)  = -0.0012   (17/31 positive)
+    mean cos(., INT)  = +0.1104   (21/31 positive)
+    mean cos(., EXPL) = -0.0742   (11/31 positive)
+
+  PURSUIT  (n=26)
+    mean cos(., ATT)  = +0.0530   (20/26 positive)
+    mean cos(., INT)  = +0.2072   (25/26 positive)
+    mean cos(., EXPL) = -0.1026   (4/26 positive)
+
+  DRIFT  (n=17)
+    mean cos(., ATT)  = +0.0324   (10/17 positive)
+    mean cos(., INT)  = -0.1695   (1/17 positive)
+    mean cos(., EXPL) = +0.1343   (16/17 positive)
+
+====================================================================
+VERDICT on hypothesis: EPISTEMIC_VALUE as derived state in (ATT × INT)
+====================================================================
+
+  Curiosity vocab in (+ATT, -INT) quadrant: 9/31
+  Pursuit vocab in (+ATT, +INT) quadrant:   19/26
+
+  Mean cos(curiosity, EXPLORATION) = -0.0742
+  Mean cos(pursuit,   EXPLORATION) = -0.1026
+  Gap (curiosity - pursuit on EXPL) = +0.0283
+
+  WEAK / NULL: curiosity and pursuit load similarly on EXPLORATION.
+  → EXPLORATION axis isn't differentiating exploration from execution.
+  → Build target_EPISTEMIC_VALUE — separate primitive likely needed.
+
+Saved exp70_results.npz

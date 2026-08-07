@@ -1,0 +1,151 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+UP-DOWN: 25 triples
+IN-OUT: 25 triples
+FORWARD-BACK: 25 triples
+LIGHT-DARK: 25 triples
+TUE-WED_sham: 5 triples
+
+device: mps
+Loading Pythia 70m-deduped...
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 8006.61it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loaded pretrained model EleutherAI/pythia-70m-deduped into HookedTransformer
+
+--- Layer 0 ---
+  Pairwise cosines between mean polar axes:
+                      UP-DOWN       IN-OUT  FORWARD-BAC   LIGHT-DARK  TUE-WED_sha
+         UP-DOWN      +1.0000      +0.0323      +0.0196      +0.1145      +0.0006
+          IN-OUT      +0.0323      +1.0000      +0.0833      -0.0197      +0.0002
+    FORWARD-BACK      +0.0196      +0.0833      +1.0000      +0.0105      +0.0003
+      LIGHT-DARK      +0.1145      -0.0197      +0.0105      +1.0000      -0.0001
+    TUE-WED_sham      +0.0006      +0.0002      +0.0003      -0.0001      +1.0000
+
+--- Layer 1 ---
+  Pairwise cosines between mean polar axes:
+                      UP-DOWN       IN-OUT  FORWARD-BAC   LIGHT-DARK  TUE-WED_sha
+         UP-DOWN      +1.0000      -0.0549      +0.1160      +0.3294      +0.1126
+          IN-OUT      -0.0549      +1.0000      +0.0259      -0.1168      -0.0653
+    FORWARD-BACK      +0.1160      +0.0259      +1.0000      +0.1193      +0.0434
+      LIGHT-DARK      +0.3294      -0.1168      +0.1193      +1.0000      +0.1569
+    TUE-WED_sham      +0.1126      -0.0653      +0.0434      +0.1569      +1.0000
+
+--- Layer 2 ---
+  Pairwise cosines between mean polar axes:
+                      UP-DOWN       IN-OUT  FORWARD-BAC   LIGHT-DARK  TUE-WED_sha
+         UP-DOWN      +1.0000      -0.0904      +0.2986      +0.5173      +0.4937
+          IN-OUT      -0.0904      +1.0000      -0.0293      -0.1641      -0.1970
+    FORWARD-BACK      +0.2986      -0.0293      +1.0000      +0.3569      +0.3832
+      LIGHT-DARK      +0.5173      -0.1641      +0.3569      +1.0000      +0.6826
+    TUE-WED_sham      +0.4937      -0.1970      +0.3832      +0.6826      +1.0000
+
+--- Layer 3 ---
+  Pairwise cosines between mean polar axes:
+                      UP-DOWN       IN-OUT  FORWARD-BAC   LIGHT-DARK  TUE-WED_sha
+         UP-DOWN      +1.0000      -0.1404      +0.3967      +0.5945      +0.5829
+          IN-OUT      -0.1404      +1.0000      -0.0677      -0.2183      -0.2565
+    FORWARD-BACK      +0.3967      -0.0677      +1.0000      +0.4389      +0.4451
+      LIGHT-DARK      +0.5945      -0.2183      +0.4389      +1.0000      +0.8052
+    TUE-WED_sham      +0.5829      -0.2565      +0.4451      +0.8052      +1.0000
+
+--- Layer 4 ---
+  Pairwise cosines between mean polar axes:
+                      UP-DOWN       IN-OUT  FORWARD-BAC   LIGHT-DARK  TUE-WED_sha
+         UP-DOWN      +1.0000      -0.1509      +0.3461      +0.5187      +0.5086
+          IN-OUT      -0.1509      +1.0000      -0.0640      -0.2323      -0.2680
+    FORWARD-BACK      +0.3461      -0.0640      +1.0000      +0.4373      +0.4444
+      LIGHT-DARK      +0.5187      -0.2323      +0.4373      +1.0000      +0.8074
+    TUE-WED_sham      +0.5086      -0.2680      +0.4444      +0.8074      +1.0000
+
+--- Layer 5 ---
+  Pairwise cosines between mean polar axes:
+                      UP-DOWN       IN-OUT  FORWARD-BAC   LIGHT-DARK  TUE-WED_sha
+         UP-DOWN      +1.0000      -0.0548      +0.3139      +0.3308      +0.1364
+          IN-OUT      -0.0548      +1.0000      +0.0279      -0.0554      -0.0265
+    FORWARD-BACK      +0.3139      +0.0279      +1.0000      +0.2405      -0.0202
+      LIGHT-DARK      +0.3308      -0.0554      +0.2405      +1.0000      +0.3419
+    TUE-WED_sham      +0.1364      -0.0265      -0.0202      +0.3419      +1.0000
+# exp22 — multiple schema polar axes: orthogonality matrix
+
+Building on exp21 (cos(UD, IO) ≈ −0.1). Now testing whether 4 Lakoff schemas
+have mutually orthogonal constructed polar axes — strong evidence for
+multiple separable embodied dimensions.
+
+Triples per schema: UP-DOWN=25, IN-OUT=25, 
+FORWARD-BACK=25, LIGHT-DARK=25, 
+TUE-WED sham=5.
+
+## Pairwise cosine matrices per layer (Pythia 70m)
+
+### Layer 0
+
+| | UP-DOWN | IN-OUT | FORWARD-BACK | LIGHT-DARK | TUE-WED_sham |
+|---|---|---|---|---|---|
+| **UP-DOWN** | +1.000 | +0.032 | +0.020 | +0.115 | +0.001 |
+| **IN-OUT** | +0.032 | +1.000 | +0.083 | -0.020 | +0.000 |
+| **FORWARD-BACK** | +0.020 | +0.083 | +1.000 | +0.011 | +0.000 |
+| **LIGHT-DARK** | +0.115 | -0.020 | +0.011 | +1.000 | -0.000 |
+| **TUE-WED_sham** | +0.001 | +0.000 | +0.000 | -0.000 | +1.000 |
+
+### Layer 1
+
+| | UP-DOWN | IN-OUT | FORWARD-BACK | LIGHT-DARK | TUE-WED_sham |
+|---|---|---|---|---|---|
+| **UP-DOWN** | +1.000 | -0.055 | +0.116 | +0.329 | +0.113 |
+| **IN-OUT** | -0.055 | +1.000 | +0.026 | -0.117 | -0.065 |
+| **FORWARD-BACK** | +0.116 | +0.026 | +1.000 | +0.119 | +0.043 |
+| **LIGHT-DARK** | +0.329 | -0.117 | +0.119 | +1.000 | +0.157 |
+| **TUE-WED_sham** | +0.113 | -0.065 | +0.043 | +0.157 | +1.000 |
+
+### Layer 2
+
+| | UP-DOWN | IN-OUT | FORWARD-BACK | LIGHT-DARK | TUE-WED_sham |
+|---|---|---|---|---|---|
+| **UP-DOWN** | +1.000 | -0.090 | +0.299 | +0.517 | +0.494 |
+| **IN-OUT** | -0.090 | +1.000 | -0.029 | -0.164 | -0.197 |
+| **FORWARD-BACK** | +0.299 | -0.029 | +1.000 | +0.357 | +0.383 |
+| **LIGHT-DARK** | +0.517 | -0.164 | +0.357 | +1.000 | +0.683 |
+| **TUE-WED_sham** | +0.494 | -0.197 | +0.383 | +0.683 | +1.000 |
+
+### Layer 3
+
+| | UP-DOWN | IN-OUT | FORWARD-BACK | LIGHT-DARK | TUE-WED_sham |
+|---|---|---|---|---|---|
+| **UP-DOWN** | +1.000 | -0.140 | +0.397 | +0.594 | +0.583 |
+| **IN-OUT** | -0.140 | +1.000 | -0.068 | -0.218 | -0.257 |
+| **FORWARD-BACK** | +0.397 | -0.068 | +1.000 | +0.439 | +0.445 |
+| **LIGHT-DARK** | +0.594 | -0.218 | +0.439 | +1.000 | +0.805 |
+| **TUE-WED_sham** | +0.583 | -0.257 | +0.445 | +0.805 | +1.000 |
+
+### Layer 4
+
+| | UP-DOWN | IN-OUT | FORWARD-BACK | LIGHT-DARK | TUE-WED_sham |
+|---|---|---|---|---|---|
+| **UP-DOWN** | +1.000 | -0.151 | +0.346 | +0.519 | +0.509 |
+| **IN-OUT** | -0.151 | +1.000 | -0.064 | -0.232 | -0.268 |
+| **FORWARD-BACK** | +0.346 | -0.064 | +1.000 | +0.437 | +0.444 |
+| **LIGHT-DARK** | +0.519 | -0.232 | +0.437 | +1.000 | +0.807 |
+| **TUE-WED_sham** | +0.509 | -0.268 | +0.444 | +0.807 | +1.000 |
+
+### Layer 5
+
+| | UP-DOWN | IN-OUT | FORWARD-BACK | LIGHT-DARK | TUE-WED_sham |
+|---|---|---|---|---|---|
+| **UP-DOWN** | +1.000 | -0.055 | +0.314 | +0.331 | +0.136 |
+| **IN-OUT** | -0.055 | +1.000 | +0.028 | -0.055 | -0.026 |
+| **FORWARD-BACK** | +0.314 | +0.028 | +1.000 | +0.241 | -0.020 |
+| **LIGHT-DARK** | +0.331 | -0.055 | +0.241 | +1.000 | +0.342 |
+| **TUE-WED_sham** | +0.136 | -0.026 | -0.020 | +0.342 | +1.000 |
+
+## Interpretation
+
+Look at the off-diagonal entries of the 4-schema sub-matrix (UD, IO, FB, LD).
+
+- All |cos| < 0.2: 4 mutually orthogonal embodied dimensions ✓ (Lakoff-supported)
+- Some pairs at |cos| > 0.4: those schemas partially collapse into shared axis
+- All cos > 0.5: schemas collapse to one generic polarity ruler
+
+Tue-Wed sham row/column: should all be ≈ 0 if methodology working.
+If sham aligns with any schema, sham still has hidden content.
+
+Report: /Users/macn/Documents/embeddingexp/results_exp22_multi_schema_orthogonality.md

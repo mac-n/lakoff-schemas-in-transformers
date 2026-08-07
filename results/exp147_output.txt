@@ -1,0 +1,96 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:49,  2.65it/s]Loading weights:  45%|████▌     | 132/292 [00:00<00:00, 360.96it/s]Loading weights:  72%|███████▏  | 209/292 [00:00<00:00, 433.47it/s]Loading weights:  95%|█████████▍| 277/292 [00:00<00:00, 458.31it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 367.95it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+
+Collecting single-word residuals for 124 words at all layers...
+
+Building readout axes at all layers...
+
+Computing baselines for 5 prompts...
+
+Running 20 random-direction steerings...
+  5/20 seeds done
+  10/20 seeds done
+  15/20 seeds done
+  20/20 seeds done
+
+==============================================================================
+Distribution across 20 random seeds, at L=20
+==============================================================================
+
+  axis                mean       std       min       max    attractor?
+  VERTICAL          +0.103     0.354    -0.617    +0.562            no
+  MAGNITUDE         +0.030     0.115    -0.181    +0.270            no
+  VALENCE           -0.027     0.194    -0.387    +0.286            no
+  HORIZONTAL        -0.044     0.092    -0.241    +0.108            no
+  CONTAINMENT       -0.006     0.131    -0.210    +0.279            no
+  PROXIMITY         -0.023     0.117    -0.226    +0.225            no
+  TEMPORAL          +0.040     0.125    -0.173    +0.290            no
+
+  --- At L=16 ---
+  axis                mean       std       min       max
+  VERTICAL          +0.003     0.127    -0.262    +0.249
+  MAGNITUDE         -0.005     0.107    -0.172    +0.271
+  VALENCE           +0.025     0.105    -0.178    +0.279
+  HORIZONTAL        -0.038     0.126    -0.283    +0.179
+  CONTAINMENT       +0.021     0.103    -0.113    +0.209
+  PROXIMITY         -0.031     0.098    -0.264    +0.133
+  TEMPORAL          -0.003     0.113    -0.198    +0.214
+
+  --- At L=23 ---
+  axis                mean       std       min       max
+  VERTICAL          +0.229     0.454    -0.655    +1.267
+  MAGNITUDE         -0.034     0.130    -0.276    +0.210
+  VALENCE           -0.095     0.165    -0.483    +0.280
+  HORIZONTAL        -0.138     0.171    -0.589    +0.197
+  CONTAINMENT       +0.031     0.212    -0.321    +0.515
+  PROXIMITY         -0.145     0.197    -0.560    +0.259
+  TEMPORAL          +0.155     0.255    -0.285    +0.658
+
+==============================================================================
+Per-layer mean Δ across seeds — which axes attract late?
+==============================================================================
+
+  layer    VERTICAL  MAGNITUDE    VALENCE  HORIZONTA  CONTAINME  PROXIMITY   TEMPORAL
+  L4         +0.000     +0.000     +0.000     +0.000     +0.000     +0.000     +0.000  
+  L8         +0.000     +0.000     +0.000     +0.000     +0.000     +0.000     +0.000  
+  L12        +0.018     +0.041     +0.015     -0.036     -0.006     +0.031     -0.019  
+  L14        +0.021     +0.008     +0.025     -0.053     +0.006     -0.003     -0.026  
+  L16        +0.003     -0.005     +0.025     -0.038     +0.021     -0.031     -0.003  
+  L18        +0.018     +0.005     -0.017     -0.034     +0.002     -0.038     +0.027  
+  L20        +0.103     +0.030     -0.027     -0.044     -0.006     -0.023     +0.040  
+  L22        +0.143     +0.020     -0.069     -0.057     -0.024     -0.017     +0.023  
+  L23        +0.229     -0.034     -0.095     -0.138     +0.031     -0.145     +0.155  
+
+Saved exp147_attractor_scan.png
+
+==============================================================================
+VERDICT
+==============================================================================
+
+At L=20, mean ± std across 20 seeds:
+  VERTICAL         +0.103 ± 0.354  sign-consistent 12/20
+  MAGNITUDE        +0.030 ± 0.115  sign-consistent 12/20
+  VALENCE          -0.027 ± 0.194  sign-consistent 12/20
+  HORIZONTAL       -0.044 ± 0.092  sign-consistent 12/20
+  CONTAINMENT      -0.006 ± 0.131  sign-consistent 11/20
+  PROXIMITY        -0.023 ± 0.117  sign-consistent 10/20
+  TEMPORAL         +0.040 ± 0.125  sign-consistent 14/20
+
+INTERPRETATION:
+- An axis is a robust late-layer attractor if mean > 0.3 with low std
+  (mean/std > 1.5) AND sign-consistent across most seeds.
+- VERTICAL was the exp146 surprise (+0.530 with seed 42).
+  If mean across seeds at L20 is in the +0.3 to +0.6 range with low
+  variance, the late-VERTICAL-attractor is confirmed robust.
+- VALENCE was the exp145 finding (NOUN_VERB/CONC_ABS routed there
+  above noise). Whether VAL is also an attractor here clarifies if
+  the late-VAL-routing claim is substrate or specific.
+- Other axes (HORIZONTAL, CONTAINMENT, PROXIMITY, TEMPORAL) provide
+  contrast — if no/few of these are attractors, the finding is
+  specific to certain axes.
+
+Done.

@@ -1,0 +1,202 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Schema triples: 25
+
+======================================================================
+PYTHIA 70m (residual-stream SAEs from SAELens)
+======================================================================
+device: mps
+
+Loading Pythia 70m-deduped...
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights:   1%|▏         | 1/76 [00:00<00:08,  8.69it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 654.98it/s]
+Loaded pretrained model EleutherAI/pythia-70m-deduped into HookedTransformer
+
+--- 70m Layer 0 ---
+  within-pair cos(UP, DOWN): mean=+0.5674, median=+0.6006, range=[+0.1549, +0.9311]
+
+--- 70m Layer 1 ---
+  within-pair cos(UP, DOWN): mean=+0.5942, median=+0.6004, range=[+0.0929, +0.9394]
+
+--- 70m Layer 2 ---
+  within-pair cos(UP, DOWN): mean=+0.6009, median=+0.6041, range=[+0.1273, +0.9427]
+
+--- 70m Layer 3 ---
+  within-pair cos(UP, DOWN): mean=+0.5429, median=+0.5765, range=[+0.1109, +0.9179]
+
+--- 70m Layer 4 ---
+  within-pair cos(UP, DOWN): mean=+0.4915, median=+0.4723, range=[+0.0601, +0.9177]
+
+--- 70m Layer 5 ---
+  within-pair cos(UP, DOWN): mean=+0.5308, median=+0.5282, range=[+0.2152, +0.9492]
+
+======================================================================
+PYTHIA 410m (MLP-output SAEs from eai-sparsify)
+======================================================================
+Triton not installed, using eager implementation of sparse decoder.
+
+Loading Pythia 410m via TransformerLens...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<00:46,  6.29it/s]Loading weights:  64%|██████▍   | 188/292 [00:00<00:00, 872.93it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 725.25it/s]
+Loaded pretrained model EleutherAI/pythia-410m into HookedTransformer
+Loading EleutherAI/sae-pythia-410m-65k...
+Fetching 49 files:   0%|          | 0/49 [00:00<?, ?it/s]Fetching 49 files: 100%|██████████| 49/49 [00:00<00:00, 28324.27it/s]
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+Dropping extra args {'signed': False}
+
+--- 410m Layer 0 ---
+  within-pair cos(UP, DOWN): mean=+0.4774, median=+0.5049, range=[+0.2475, +0.9318]
+
+--- 410m Layer 1 ---
+  within-pair cos(UP, DOWN): mean=+0.5644, median=+0.5440, range=[+0.2853, +0.8881]
+
+--- 410m Layer 2 ---
+  within-pair cos(UP, DOWN): mean=+0.4673, median=+0.4412, range=[+0.0851, +0.9306]
+
+--- 410m Layer 3 ---
+  within-pair cos(UP, DOWN): mean=+0.4832, median=+0.4743, range=[+0.1508, +0.9362]
+
+--- 410m Layer 4 ---
+  within-pair cos(UP, DOWN): mean=+0.5204, median=+0.5023, range=[+0.2081, +0.8615]
+
+--- 410m Layer 5 ---
+  within-pair cos(UP, DOWN): mean=+0.5381, median=+0.5214, range=[+0.2867, +0.8453]
+
+--- 410m Layer 6 ---
+  within-pair cos(UP, DOWN): mean=+0.5831, median=+0.6253, range=[+0.3233, +0.8935]
+
+--- 410m Layer 7 ---
+  within-pair cos(UP, DOWN): mean=+0.5838, median=+0.6199, range=[+0.3447, +0.8553]
+
+--- 410m Layer 8 ---
+  within-pair cos(UP, DOWN): mean=+0.5808, median=+0.6093, range=[+0.3656, +0.8626]
+
+--- 410m Layer 9 ---
+  within-pair cos(UP, DOWN): mean=+0.5902, median=+0.6096, range=[+0.3955, +0.8593]
+
+--- 410m Layer 10 ---
+  within-pair cos(UP, DOWN): mean=+0.5843, median=+0.5817, range=[+0.3708, +0.7995]
+
+--- 410m Layer 11 ---
+  within-pair cos(UP, DOWN): mean=+0.5661, median=+0.5400, range=[+0.3455, +0.8313]
+
+--- 410m Layer 12 ---
+  within-pair cos(UP, DOWN): mean=+0.5541, median=+0.5357, range=[+0.3044, +0.8228]
+
+--- 410m Layer 13 ---
+  within-pair cos(UP, DOWN): mean=+0.5331, median=+0.5354, range=[+0.3040, +0.8248]
+
+--- 410m Layer 14 ---
+  within-pair cos(UP, DOWN): mean=+0.5572, median=+0.5797, range=[+0.2581, +0.8532]
+
+--- 410m Layer 15 ---
+  within-pair cos(UP, DOWN): mean=+0.5546, median=+0.5316, range=[+0.2746, +0.8806]
+
+--- 410m Layer 16 ---
+  within-pair cos(UP, DOWN): mean=+0.5603, median=+0.5800, range=[+0.2419, +0.8602]
+
+--- 410m Layer 17 ---
+  within-pair cos(UP, DOWN): mean=+0.5358, median=+0.5434, range=[+0.2292, +0.9103]
+
+--- 410m Layer 18 ---
+  within-pair cos(UP, DOWN): mean=+0.5554, median=+0.5272, range=[+0.1852, +0.8817]
+
+--- 410m Layer 19 ---
+  within-pair cos(UP, DOWN): mean=+0.5263, median=+0.5460, range=[+0.2167, +0.9140]
+
+--- 410m Layer 20 ---
+  within-pair cos(UP, DOWN): mean=+0.5272, median=+0.5441, range=[+0.1945, +0.8810]
+
+--- 410m Layer 21 ---
+  within-pair cos(UP, DOWN): mean=+0.5305, median=+0.5047, range=[+0.2513, +0.8664]
+
+--- 410m Layer 22 ---
+  within-pair cos(UP, DOWN): mean=+0.4884, median=+0.4607, range=[+0.2116, +0.8523]
+
+--- 410m Layer 23 ---
+  within-pair cos(UP, DOWN): mean=+0.5188, median=+0.4766, range=[+0.2356, +0.8860]
+# exp19 — within-pair polarity of UP and DOWN, across scale
+
+Per-pair cosine similarity between UP_offset and DOWN_offset, taken from
+the SAME baseline within the same (domain, pair_idx). Measures whether the
+model represents UP and DOWN as polar opposites within a single domain.
+
+- cos ≈ -1: perfect antipolarity (the 'ruler' finding)
+- cos ≈  0: orthogonal (unrelated transformations)
+- cos ≈ +1: same direction (shared 'change' component dominates)
+
+## Pythia 70m (6 layers, residual-stream SAE, 32k features)
+
+  layer      mean    median       min       max  n=25
+      0   +0.5674   +0.6006   +0.1549   +0.9311
+      1   +0.5942   +0.6004   +0.0929   +0.9394
+      2   +0.6009   +0.6041   +0.1273   +0.9427
+      3   +0.5429   +0.5765   +0.1109   +0.9179
+      4   +0.4915   +0.4723   +0.0601   +0.9177
+      5   +0.5308   +0.5282   +0.2152   +0.9492
+
+Mean across all layers (70m): **+0.5546**
+
+## Pythia 410m (24 layers, MLP-output SAE, 65k features)
+
+  layer      mean    median       min       max  n=25
+      0   +0.4774   +0.5049   +0.2475   +0.9318
+      1   +0.5644   +0.5440   +0.2853   +0.8881
+      2   +0.4673   +0.4412   +0.0851   +0.9306
+      3   +0.4832   +0.4743   +0.1508   +0.9362
+      4   +0.5204   +0.5023   +0.2081   +0.8615
+      5   +0.5381   +0.5214   +0.2867   +0.8453
+      6   +0.5831   +0.6253   +0.3233   +0.8935
+      7   +0.5838   +0.6199   +0.3447   +0.8553
+      8   +0.5808   +0.6093   +0.3656   +0.8626
+      9   +0.5902   +0.6096   +0.3955   +0.8593
+     10   +0.5843   +0.5817   +0.3708   +0.7995
+     11   +0.5661   +0.5400   +0.3455   +0.8313
+     12   +0.5541   +0.5357   +0.3044   +0.8228
+     13   +0.5331   +0.5354   +0.3040   +0.8248
+     14   +0.5572   +0.5797   +0.2581   +0.8532
+     15   +0.5546   +0.5316   +0.2746   +0.8806
+     16   +0.5603   +0.5800   +0.2419   +0.8602
+     17   +0.5358   +0.5434   +0.2292   +0.9103
+     18   +0.5554   +0.5272   +0.1852   +0.8817
+     19   +0.5263   +0.5460   +0.2167   +0.9140
+     20   +0.5272   +0.5441   +0.1945   +0.8810
+     21   +0.5305   +0.5047   +0.2513   +0.8664
+     22   +0.4884   +0.4607   +0.2116   +0.8523
+     23   +0.5188   +0.4766   +0.2356   +0.8860
+
+Mean across all layers (410m): **+0.5409**
+
+## Scale comparison
+
+  Pythia 70m:  mean within-pair cos(UP, DOWN) across all layers = +0.5546
+  Pythia 410m: mean within-pair cos(UP, DOWN) across all layers = +0.5409
+  Δ (410m − 70m) = -0.0138
+
+**Interpretation:**
+- If 410m mean is MORE NEGATIVE than 70m: ruler is emerging with scale.
+- If 410m mean is MORE POSITIVE: polar opposite structure regresses (or noise).
+- If similar: no scale effect at this range; would need bigger models.
+
+Report: /Users/macn/Documents/embeddingexp/results_exp19_within_pair_polarity.md

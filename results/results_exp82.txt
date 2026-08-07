@@ -1,0 +1,467 @@
+Loading glove-wiki-gigaword-300...
+  vocab size: 400000
+
+Building PCA-input axes (cluster set, 11 axes from exp40)...
+
+Building target axes (independent from PCA-input set)...
+  [target_SALIENCE] missing words (1): ['backgrounded']
+  target_SALIENCE built from 11/12 pairs
+  target_MOTION    built from 12/12 pairs
+  target_EQ_RUN    built from 14/14 pairs
+
+========================================================================
+PCA on cluster axes (11 axes — matches exp40 cluster-only run)
+========================================================================
+
+Variance per PC:
+  PC1:  20.6%   (cumulative:  20.6%)
+  PC2:  17.3%   (cumulative:  37.9%)
+  PC3:  12.4%   (cumulative:  50.3%)
+  PC4:  11.2%   (cumulative:  61.5%)
+  PC5:   9.3%   (cumulative:  70.9%)
+  PC6:   8.7%   (cumulative:  79.6%)
+  PC7:   6.3%   (cumulative:  85.9%)
+  PC8:   5.3%   (cumulative:  91.2%)
+  PC9:   4.5%   (cumulative:  95.7%)
+  PC10:   4.3%   (cumulative: 100.0%)
+
+========================================================================
+CENTRAL TEST: target-axis cosines with PCs
+========================================================================
+
+Predictions:
+  target_SALIENCE  high on PC1 if PC1 is salience-as-primitive;
+                   LOW on PC1 if PC1 is just the V x A diagonal
+  target_MOTION    high on PC2 if MOTION is a real primitive
+  target_EQ_RUN    high on PC3 if EQ-vs-RUNAWAY is a real primitive
+
+                      PC1      PC2      PC3      PC4      PC5      PC6    
+  --------------------------------------------------------------------
+  target_SALIENCE     -0.174  -0.280  -0.056  +0.024  -0.058  -0.039  
+  target_MOTION       -0.094  +0.051  +0.022  +0.054  +0.017  -0.072  
+  target_EQ_RUN       +0.290  +0.011  +0.205  -0.073  -0.124  -0.042  
+
+========================================================================
+Per-target deep dive
+========================================================================
+
+--- target_SALIENCE ---
+  Best PC alignments (sorted by |cos|):
+    PC2 (17.3% var): cos = -0.2797
+    PC7 ( 6.3% var): cos = +0.1974
+    PC1 (20.6% var): cos = -0.1743
+    PC5 ( 9.3% var): cos = -0.0583
+    PC3 (12.4% var): cos = -0.0556
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: +0.4861
+     COHERENCE: +0.4247
+           BAL: +0.3825
+            FB: +0.3625
+            UD: +0.3606
+  Positive pole words:
+    +0.5101  prominent
+    +0.4796  including
+    +0.4558  first
+    +0.4456  addition
+    +0.4374  major
+    +0.4366  notable
+    +0.4286  noted
+    +0.4277  also
+    +0.4192  important
+    +0.4160  one
+  Negative pole words:
+    +0.5190  valueless
+    +0.5184  unfocused
+    +0.4935  uninteresting
+    +0.4822  inoffensive
+    +0.4788  pathetically
+    +0.4783  inattentive
+    +0.4754  unimaginative
+    +0.4736  unimportant
+    +0.4712  inconsequential
+    +0.4657  inarticulate
+
+--- target_MOTION ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = -0.0937
+    PC7 ( 6.3% var): cos = -0.0735
+    PC6 ( 8.7% var): cos = -0.0721
+    PC8 ( 5.3% var): cos = +0.0674
+    PC4 (11.2% var): cos = +0.0538
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+          PATH: +0.2911
+            FB: +0.1925
+            UD: +0.1918
+       AROUSAL: +0.1823
+           BAL: +0.1424
+  Positive pole words:
+    +0.3876  skiing
+    +0.3869  racing
+    +0.3763  sprint
+    +0.3722  diving
+    +0.3711  spectacular
+    +0.3668  championships
+    +0.3593  speed
+    +0.3516  run
+    +0.3503  track
+    +0.3484  jump
+  Negative pole words:
+    +0.4883  kneeling
+    +0.4422  slouched
+    +0.4287  reclining
+    +0.4103  glumly
+    +0.3947  reclined
+    +0.3935  knelt
+    +0.3800  hunched
+    +0.3740  seated
+    +0.3730  slouching
+    +0.3711  lounging
+
+--- target_EQ_RUN ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = +0.2901
+    PC3 (12.4% var): cos = +0.2047
+    PC8 ( 5.3% var): cos = -0.1543
+    PC7 ( 6.3% var): cos = -0.1408
+    PC5 ( 9.3% var): cos = -0.1243
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: -0.2861
+            LD: +0.2180
+       VALENCE: +0.2167
+          LOSS: +0.1638
+     COHERENCE: +0.0871
+  Positive pole words:
+    +0.3360  restoring
+    +0.3153  interpreting
+    +0.3121  modifying
+    +0.3081  tempering
+    +0.3038  adjusting
+    +0.3024  atoning
+    +0.2969  effecting
+    +0.2965  erred
+    +0.2888  accomplishing
+    +0.2820  nyts
+  Negative pole words:
+    +0.4604  mushrooming
+    +0.4443  spiralling
+    +0.4424  spiraling
+    +0.4295  escalating
+    +0.4231  raging
+    +0.4213  engulfed
+    +0.4143  erupted
+    +0.3860  raged
+    +0.3851  escalated
+    +0.3807  sparked
+
+Saved: exp52_results.npz
+Loading GloVe...
+Building 12-axis basis...
+  GS basis: 12 axes
+
+Projecting vocabulary onto 12-axis basis...
+  Projections shape: (50000, 12)
+  Mean projection magnitude per axis:
+    C             0.0490  (std: 0.0621)
+    W             0.0560  (std: 0.0719)
+    ATT           0.0541  (std: 0.0692)
+    INT           0.0536  (std: 0.0731)
+    R             0.0501  (std: 0.0632)
+    D             0.0504  (std: 0.0634)
+    IO            0.0533  (std: 0.0667)
+    DV            0.0512  (std: 0.0645)
+    MB            0.0511  (std: 0.0641)
+    EV            0.0516  (std: 0.0648)
+    ABS           0.0529  (std: 0.0671)
+    REAL_IMAG     0.0562  (std: 0.0711)
+
+================================================================================
+PCA on (50000 words × 12 basis axes) projection matrix
+================================================================================
+
+PC        variance  cumulative
+  PC1      15.78%      15.78%
+  PC2       9.25%      25.03%
+  PC3       8.28%      33.31%
+  PC4       8.15%      41.46%
+  PC5       7.87%      49.33%
+  PC6       7.61%      56.94%
+  PC7       7.50%      64.44%
+  PC8       7.33%      71.77%
+  PC9       7.20%      78.97%
+  PC10      7.11%      86.08%
+  PC11      7.07%      93.15%
+  PC12      6.85%     100.00%
+
+================================================================================
+PC loadings on basis axes (top contributors per PC)
+================================================================================
+  PC1   (var 15.78%):  +0.55·INT  +0.51·W  −0.42·REAL_IMAG  −0.41·ATT  +0.18·DV
+  PC2   (var  9.25%):  +0.54·ABS  +0.52·EV  −0.50·REAL_IMAG  +0.33·R  −0.22·W
+  PC3   (var  8.28%):  +0.65·IO  +0.42·ATT  −0.30·DV  −0.28·REAL_IMAG  +0.24·INT
+  PC4   (var  8.15%):  −0.57·IO  −0.50·MB  +0.34·D  −0.25·ABS  −0.22·C
+  PC5   (var  7.87%):  +0.59·ABS  −0.37·D  +0.37·ATT  −0.30·IO  −0.29·EV
+  PC6   (var  7.61%):  −0.66·MB  +0.47·DV  −0.33·R  +0.31·ABS  +0.29·IO
+  PC7   (var  7.50%):  +0.57·INT  +0.55·REAL_IMAG  +0.37·R  +0.34·DV  +0.22·D
+  PC8   (var  7.33%):  −0.58·D  −0.49·C  −0.42·W  +0.35·DV  −0.18·ABS
+  PC9   (var  7.20%):  −0.45·C  +0.43·R  −0.40·INT  −0.38·EV  +0.37·D
+  PC10  (var  7.11%):  −0.57·EV  −0.48·W  +0.32·D  +0.30·MB  +0.26·INT
+  PC11  (var  7.07%):  +0.64·ATT  +0.53·DV  +0.25·W  −0.25·REAL_IMAG  +0.22·D
+  PC12  (var  6.85%):  −0.61·C  −0.58·R  +0.32·MB  +0.29·EV  +0.24·D
+
+================================================================================
+PC semantic content — top words on each PC (back in word-vector space)
+================================================================================
+
+--- PC1 (var 15.78%) ---
+  Axis loadings: +0.55·INT, +0.51·W, −0.42·REAL_IMAG, −0.41·ATT
+  Positive pole (top 8):
+    ,                          +0.5253
+    also                       +0.5209
+    least                      +0.5198
+    according                  +0.5141
+    officials                  +0.5123
+    and                        +0.5119
+    last                       +0.5102
+    16                         +0.5100
+  Negative pole (top 8):
+    el1l                       +0.5356
+    t***@chron.com       +0.5258
+    zety                       +0.5243
+    ___________________________________________________________  +0.5240
+    mangxamba                  +0.5208
+    3.6730                     +0.5141
+    rungfapaisarn              +0.5129
+    b***@chron.com    +0.5123
+
+--- PC2 (var 9.25%) ---
+  Axis loadings: +0.54·ABS, +0.52·EV, −0.50·REAL_IMAG, +0.33·R
+  Positive pole (top 8):
+    intrigued                  +0.3738
+    astounded                  +0.3498
+    mystified                  +0.3459
+    heatedly                   +0.3404
+    experimentally             +0.3384
+    concurred                  +0.3320
+    fascinated                 +0.3285
+    einstein                   +0.3278
+  Negative pole (top 8):
+    threatening                +0.2982
+    squeeze                    +0.2861
+    fallout                    +0.2774
+    hachenburg                 +0.2728
+    defaulting                 +0.2699
+    originating                +0.2671
+    crashing                   +0.2669
+    threats                    +0.2663
+
+--- PC3 (var 8.28%) ---
+  Axis loadings: +0.65·IO, +0.42·ATT, −0.30·DV, −0.28·REAL_IMAG
+  Positive pole (top 8):
+    furthermore                +0.3732
+    sufficient                 +0.3669
+    necessary                  +0.3537
+    moreover                   +0.3530
+    adequately                 +0.3483
+    specified                  +0.3481
+    cannot                     +0.3456
+    respond                    +0.3446
+  Negative pole (top 8):
+    montauk                    +0.2905
+    crooked                    +0.2874
+    holly                      +0.2828
+    plucked                    +0.2777
+    wandered                   +0.2776
+    blond                      +0.2775
+    mermaid                    +0.2766
+    buddies                    +0.2759
+
+--- PC4 (var 8.15%) ---
+  Axis loadings: −0.57·IO, −0.50·MB, +0.34·D, −0.25·ABS
+  Positive pole (top 8):
+    react                      +0.2924
+    gerretsen                  +0.2754
+    improving                  +0.2727
+    anticipate                 +0.2698
+    blaming                    +0.2682
+    improve                    +0.2603
+    hurting                    +0.2598
+    pointing                   +0.2595
+  Negative pole (top 8):
+    trove                      +0.3447
+    containing                 +0.2961
+    unpublished                +0.2862
+    biography                  +0.2852
+    reliquary                  +0.2828
+    admirer                    +0.2817
+    altai                      +0.2757
+    non-fiction                +0.2734
+
+--- PC5 (var 7.87%) ---
+  Axis loadings: +0.59·ABS, −0.37·D, +0.37·ATT, −0.30·IO
+  Positive pole (top 8):
+    rejecting                  +0.3410
+    unjust                     +0.3307
+    implication                +0.3164
+    categorical                +0.3091
+    globalism                  +0.3008
+    tantamount                 +0.2984
+    rejected                   +0.2956
+    ideology                   +0.2940
+  Negative pole (top 8):
+    missing                    +0.3690
+    retrieved                  +0.3292
+    inside                     +0.3244
+    fragments                  +0.3241
+    searched                   +0.3202
+    searchers                  +0.3092
+    retrieve                   +0.3056
+    spotted                    +0.2997
+
+--- PC6 (var 7.61%) ---
+  Axis loadings: −0.66·MB, +0.47·DV, −0.33·R, +0.31·ABS
+  Positive pole (top 8):
+    defencemen                 +0.2793
+    prevailing                 +0.2750
+    mima                       +0.2673
+    foreign                    +0.2663
+    pounded                    +0.2646
+    invalids                   +0.2606
+    kosciusko                  +0.2581
+    hisanori                   +0.2486
+  Negative pole (top 8):
+    minkow                     +0.3177
+    revealing                  +0.3094
+    deathbed                   +0.2912
+    disclosing                 +0.2891
+    reaped                     +0.2853
+    erred                      +0.2845
+    checkouts                  +0.2798
+    aggrandizement             +0.2794
+
+--- PC7 (var 7.50%) ---
+  Axis loadings: +0.57·INT, +0.55·REAL_IMAG, +0.37·R, +0.34·DV
+  Positive pole (top 8):
+    choosing                   +0.3838
+    selecting                  +0.3562
+    planning                   +0.3348
+    chose                      +0.3336
+    tasked                     +0.3215
+    plotting                   +0.3168
+    commit                     +0.3162
+    intent                     +0.3117
+  Negative pole (top 8):
+    evaporating                +0.3449
+    eradicated                 +0.3387
+    mushroomed                 +0.3352
+    obliterated                +0.3341
+    receded                    +0.3332
+    boomed                     +0.3326
+    verified                   +0.3243
+    dwindled                   +0.3233
+
+--- PC8 (var 7.33%) ---
+  Axis loadings: −0.58·D, −0.49·C, −0.42·W, +0.35·DV
+  Positive pole (top 8):
+    unexpected                 +0.3986
+    astonishing                +0.3779
+    uncharacteristic           +0.3744
+    uncanny                    +0.3413
+    remarkable                 +0.3400
+    sudden                     +0.3295
+    astounding                 +0.3283
+    heartbreaking              +0.3273
+  Negative pole (top 8):
+    encompass                  +0.3062
+    frequented                 +0.2949
+    thriving                   +0.2867
+    eschewed                   +0.2774
+    workhorses                 +0.2687
+    pastimes                   +0.2684
+    charadriidae               +0.2680
+    diapsids                   +0.2670
+
+--- PC9 (var 7.20%) ---
+  Axis loadings: −0.45·C, +0.43·R, −0.40·INT, −0.38·EV
+  Positive pole (top 8):
+    benched                    +0.2957
+    dislodged                  +0.2826
+    sank                       +0.2763
+    sprained                   +0.2723
+    knee                       +0.2715
+    replacing                  +0.2662
+    overloaded                 +0.2654
+    crewman                    +0.2653
+  Negative pole (top 8):
+    exciting                   +0.3690
+    amazing                    +0.3541
+    startling                  +0.3290
+    wonderful                  +0.3248
+    gorgeous                   +0.3183
+    astonishing                +0.3143
+    curious                    +0.3118
+    delights                   +0.3112
+
+--- PC10 (var 7.11%) ---
+  Axis loadings: −0.57·EV, −0.48·W, +0.32·D, +0.30·MB
+  Positive pole (top 8):
+    daugaard                   +0.2785
+    effortless                 +0.2698
+    easygoing                  +0.2637
+    cruised                    +0.2581
+    classy                     +0.2530
+    effacing                   +0.2523
+    kursumlija                 +0.2506
+    comfortably                +0.2499
+  Negative pole (top 8):
+    mangled                    +0.3205
+    dismayed                   +0.3195
+    wondering                  +0.3176
+    galled                     +0.3173
+    puzzled                    +0.3134
+    perplexed                  +0.3101
+    galling                    +0.3099
+    horrified                  +0.3051
+
+--- PC11 (var 7.07%) ---
+  Axis loadings: +0.64·ATT, +0.53·DV, +0.25·W, −0.25·REAL_IMAG
+  Positive pole (top 8):
+    accustomed                 +0.3253
+    observing                  +0.3178
+    nationally                 +0.3145
+    instituting                +0.2909
+    gigging                    +0.2903
+    practiced                  +0.2762
+    regionally                 +0.2753
+    observed                   +0.2726
+  Negative pole (top 8):
+    missing                    +0.4025
+    flatly                     +0.3278
+    untrue                     +0.3031
+    unaccounted                +0.3003
+    allegation                 +0.2989
+    encloses                   +0.2834
+    categorically              +0.2827
+    deletes                    +0.2809
+
+--- PC12 (var 6.85%) ---
+  Axis loadings: −0.61·C, −0.58·R, +0.32·MB, +0.29·EV
+  Positive pole (top 8):
+    plagued                    +0.4559
+    escalating                 +0.3791
+    beset                      +0.3602
+    wracked                    +0.3528
+    erupted                    +0.3506
+    unrest                     +0.3498
+    flared                     +0.3481
+    escalated                  +0.3403
+  Negative pole (top 8):
+    crucially                  +0.3046
+    desirable                  +0.3010
+    prerequisites              +0.2964
+    supportive                 +0.2955
+    securing                   +0.2854
+    steadying                  +0.2797
+    favourable                 +0.2769
+    non-singing                +0.2764
+
+Saved exp82_results.npz

@@ -1,0 +1,253 @@
+Loading GloVe...
+  Full vocab: 400000
+
+Filtering vocab to clean English content words...
+  First 30K clean words found from top 32566 of vocab
+  Filtering ratio: 92.1% of GloVe tokens are 'clean'
+
+  First 30 clean words: ['the', 'and', 'for', 'that', 'was', 'said', 'with', 'from', 'his', 'has', 'are', 'have', 'but', 'were', 'not', 'this', 'who', 'they', 'had', 'which', 'will', 'their', 'its', 'one', 'after', 'new', 'been', 'also', 'would', 'two']
+  Last 10 (least common in 30K): ['bobsled', 'klang', 'vedrine', 'conditioner', 'bathed', 'surcharges', 'suva', 'divac', 'painewebber', 'rosneft']
+
+  Final clean vocab sample: 30000 unit-normalized vectors
+
+Computing PCA on clean content-word vocab...
+
+Variance distribution:
+  PC1: 14.89%  (cum: 14.89%)
+  PC2:  2.48%  (cum: 17.37%)
+  PC3:  1.85%  (cum: 19.22%)
+  PC4:  1.58%  (cum: 20.80%)
+  PC5:  1.47%  (cum: 22.27%)
+  PC6:  1.28%  (cum: 23.55%)
+  PC7:  1.05%  (cum: 24.61%)
+  PC8:  1.01%  (cum: 25.62%)
+  PC9:  0.94%  (cum: 26.55%)
+  PC10:  0.92%  (cum: 27.47%)
+  PC11:  0.85%  (cum: 28.32%)
+  PC12:  0.82%  (cum: 29.14%)
+  PC13:  0.77%  (cum: 29.91%)
+  PC14:  0.74%  (cum: 30.65%)
+  PC15:  0.74%  (cum: 31.39%)
+  To capture 50%: 53 PCs
+  To capture 80%: 143 PCs
+  To capture 90%: 181 PCs
+  To capture 95%: 203 PCs
+
+PC1-PC5 of CLEAN content-word vocab:
+
+=== CLEAN-PC1 (var: 14.89%) ===
+  Positive pole (top 15):
+    cw96                       +0.8856
+    t***@chron.com       +0.8775
+    _____________              +0.8748
+    ___________________________________________________________  +0.8683
+    zety                       +0.8661
+    mongkolporn                +0.8633
+    rungfapaisarn              +0.8633
+    b***@chron.com    +0.8622
+    thongrung                  +0.8568
+    j***@chron.com   +0.8553
+    k586-1                     +0.8509
+    p***@chron.com      +0.8499
+    rw96                       +0.8464
+    rw97                       +0.8460
+    mangxamba                  +0.8454
+  Negative pole (top 15):
+    but                        +0.8276
+    .                          +0.8046
+    that                       +0.7920
+    well                       +0.7883
+    so                         +0.7873
+    this                       +0.7840
+    even                       +0.7774
+    only                       +0.7685
+    which                      +0.7678
+    because                    +0.7671
+    same                       +0.7668
+    one                        +0.7660
+    ,                          +0.7640
+    they                       +0.7638
+    time                       +0.7631
+
+=== CLEAN-PC2 (var: 2.48%) ===
+  Positive pole (top 15):
+    sr.                        +0.4972
+    née                        +0.4819
+    chahs                      +0.4751
+    murphy                     +0.4705
+    anderson                   +0.4673
+    gardner                    +0.4618
+    dawson                     +0.4611
+    terry                      +0.4592
+    noonz                      +0.4576
+    james                      +0.4569
+    ryan                       +0.4567
+    willis                     +0.4564
+    jason                      +0.4563
+    anthony                    +0.4534
+    glover                     +0.4529
+  Negative pole (top 15):
+    involve                    +0.4793
+    mechanisms                 +0.4787
+    moreover                   +0.4720
+    increasing                 +0.4658
+    reducing                   +0.4631
+    require                    +0.4595
+    increases                  +0.4554
+    kinds                      +0.4511
+    amounts                    +0.4440
+    processes                  +0.4425
+    reduce                     +0.4404
+    requires                   +0.4393
+    types                      +0.4380
+    and/or                     +0.4355
+    decrease                   +0.4347
+
+=== CLEAN-PC3 (var: 1.85%) ===
+  Positive pole (top 15):
+    shiny                      +0.4843
+    miniature                  +0.4602
+    lovely                     +0.4572
+    gorgeous                   +0.4396
+    features                   +0.4394
+    funky                      +0.4309
+    beautiful                  +0.4252
+    underneath                 +0.4228
+    metallic                   +0.4223
+    shimmering                 +0.4154
+    shapes                     +0.4137
+    oversize                   +0.4111
+    colored                    +0.4106
+    sleek                      +0.4098
+    oversized                  +0.4096
+  Negative pole (top 15):
+    urged                      +0.5175
+    reiterated                 +0.5132
+    denounced                  +0.4950
+    vowed                      +0.4905
+    insisting                  +0.4848
+    insisted                   +0.4843
+    reaffirmed                 +0.4812
+    nyev                       +0.4798
+    asserted                   +0.4781
+    appealed                   +0.4743
+    demanded                   +0.4722
+    pledged                    +0.4667
+    jihch                      +0.4663
+    prahnk                     +0.4641
+    warned                     +0.4584
+
+=== CLEAN-PC4 (var: 1.58%) ===
+  Positive pole (top 15):
+    northeast                  +0.4824
+    located                    +0.4816
+    adjacent                   +0.4579
+    outskirts                  +0.4513
+    kilometers                 +0.4468
+    inland                     +0.4451
+    southwest                  +0.4419
+    nearby                     +0.4363
+    coastal                    +0.4329
+    northwest                  +0.4329
+    kilometres                 +0.4314
+    southeast                  +0.4269
+    southeastern               +0.4251
+    operated                   +0.4239
+    northeastern               +0.4209
+  Negative pole (top 15):
+    amusing                    +0.5078
+    cynical                    +0.4925
+    ironic                     +0.4925
+    hilarious                  +0.4848
+    frankly                    +0.4847
+    reminds                    +0.4766
+    believable                 +0.4762
+    portrayal                  +0.4674
+    naive                      +0.4668
+    comical                    +0.4656
+    empathy                    +0.4647
+    feelings                   +0.4640
+    thoughtful                 +0.4634
+    humorous                   +0.4623
+    sarcastic                  +0.4616
+
+=== CLEAN-PC5 (var: 1.47%) ===
+  Positive pole (top 15):
+    educational                +0.4529
+    research                   +0.4395
+    conjunction                +0.4158
+    additionally               +0.4071
+    provides                   +0.4032
+    consultant                 +0.4015
+    science                    +0.3995
+    corporation                +0.3946
+    marketing                  +0.3938
+    collaborative              +0.3916
+    design                     +0.3898
+    sciences                   +0.3885
+    focuses                    +0.3839
+    institute                  +0.3825
+    management                 +0.3815
+  Negative pole (top 15):
+    chased                     +0.4952
+    terrified                  +0.4882
+    bloodied                   +0.4631
+    fleeing                    +0.4491
+    screamed                   +0.4439
+    frightened                 +0.4434
+    flee                       +0.4397
+    pounded                    +0.4395
+    hurled                     +0.4368
+    demonstrators              +0.4335
+    swarmed                    +0.4312
+    attackers                  +0.4269
+    bystanders                 +0.4244
+    shouting                   +0.4240
+    waving                     +0.4225
+
+
+==============================================================================
+Comparison: PC1 of clean vs PC1 of unfiltered GloVe
+==============================================================================
+
+cos(PC1_clean, PC1_unfiltered) = +0.8679
+  (low if filtering changed PC1 direction substantively)
+
+PC1_unfiltered positive pole (top 10):
+    mongkolporn                +0.8750
+    _____________              +0.8558
+    rungfapaisarn              +0.8536
+    jiwamol                    +0.8429
+    thongrung                  +0.8400
+    p***@chron.com      +0.8398
+    kanoksilp                  +0.8389
+    t***@chron.com       +0.8369
+    j***@chron.com   +0.8352
+    zety                       +0.8338
+PC1_unfiltered negative pole (top 10):
+    this                       +0.7096
+    all                        +0.7053
+    but                        +0.7014
+    .                          +0.6979
+    which                      +0.6942
+    as                         +0.6867
+    time                       +0.6824
+    so                         +0.6762
+    well                       +0.6729
+    it                         +0.6708
+
+
+==============================================================================
+Comparison: clean PCs vs cognitive vocab PCs
+==============================================================================
+
+cos(PC1_clean, PC1_cog) = -0.8113
+cos(PC1_clean, PC2_cog) = -0.3587
+cos(PC1_clean, PC3_cog) = +0.2302
+cos(PC2_clean, PC1_cog) = -0.1718
+cos(PC2_clean, PC2_cog) = -0.0579
+cos(PC3_clean, PC1_cog) = -0.0426
+cos(PC3_clean, PC2_cog) = -0.1370
+cos(PC3_clean, PC3_cog) = +0.0289
+
+Saved exp97_results.npz

@@ -1,0 +1,124 @@
+WARNING:root:Pythia models on HF were updated on 4/3/23! add '-v0' to model name to access the old models.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Running trajectory-verdict selftest first (synthetic-test convention)...
+selftest_trajectory_verdict: all branches fire correctly.
+Word split: 489 total = 312 estimation + 177 held-out test
+
+##############################################################################
+# checkpoint step 0
+##############################################################################
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 18308.62it/s]
+WARNING:root:Pythia models on HF were updated on 4/3/23! add '-v0' to model name to access the old models.
+Loaded pretrained model pythia-410m into HookedTransformer
+Collecting residuals (489 words, layers [4, 8, 12, 16, 20])...
+  200/489
+  400/489
+    L    sink  ho_ret%  cos(BAL,dn)  zipf-norm  UN_sink
+    4  +0.001     nan%       +0.074     +0.598   -0.165
+    8  +0.000     nan%       +0.144     +0.578   -0.180
+   12  -0.014     nan%       +0.104     +0.532   -0.234
+   16  -0.023      86%       +0.094     +0.535   -0.221
+   20  -0.018     nan%       +0.107     +0.527   -0.263
+  decision-layer means: sink -0.014, cos +0.112, corr(zipf,norm) +0.543
+
+##############################################################################
+# checkpoint step 512
+##############################################################################
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 6494.90it/s]
+WARNING:root:Pythia models on HF were updated on 4/3/23! add '-v0' to model name to access the old models.
+Loaded pretrained model pythia-410m into HookedTransformer
+Collecting residuals (489 words, layers [4, 8, 12, 16, 20])...
+  200/489
+  400/489
+    L    sink  ho_ret%  cos(BAL,dn)  zipf-norm  UN_sink
+    4  -0.128      50%       -0.394     +0.283   -0.346
+    8  -0.139      21%       -0.659     +0.006   -0.380
+   12  -0.156      13%       -0.663     -0.138   -0.412
+   16  -0.155     -10%       -0.659     -0.235   -0.384
+   20  -0.163      32%       -0.445     -0.260   -0.375
+  decision-layer means: sink -0.153, cos -0.607, corr(zipf,norm) -0.157
+
+##############################################################################
+# checkpoint step 4000
+##############################################################################
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 11997.70it/s]
+WARNING:root:Pythia models on HF were updated on 4/3/23! add '-v0' to model name to access the old models.
+Loaded pretrained model pythia-410m into HookedTransformer
+Collecting residuals (489 words, layers [4, 8, 12, 16, 20])...
+  200/489
+  400/489
+    L    sink  ho_ret%  cos(BAL,dn)  zipf-norm  UN_sink
+    4  -0.172     -25%       +0.597     +0.340   -0.401
+    8  -0.346      36%       +0.663     +0.707   -0.414
+   12  -0.325      39%       +0.637     +0.707   -0.407
+   16  -0.315      42%       +0.626     +0.707   -0.433
+   20  -0.307      42%       +0.633     +0.706   -0.435
+  decision-layer means: sink -0.323, cos +0.640, corr(zipf,norm) +0.707
+
+##############################################################################
+# checkpoint step 16000
+##############################################################################
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 7840.82it/s]
+WARNING:root:Pythia models on HF were updated on 4/3/23! add '-v0' to model name to access the old models.
+Loaded pretrained model pythia-410m into HookedTransformer
+Collecting residuals (489 words, layers [4, 8, 12, 16, 20])...
+  200/489
+  400/489
+    L    sink  ho_ret%  cos(BAL,dn)  zipf-norm  UN_sink
+    4  -0.376      -1%       +0.762     +0.513   -0.642
+    8  -0.349      31%       +0.725     +0.708   -0.474
+   12  -0.324      33%       +0.700     +0.707   -0.432
+   16  -0.321      34%       +0.709     +0.707   -0.420
+   20  -0.331      34%       +0.714     +0.707   -0.413
+  decision-layer means: sink -0.331, cos +0.712, corr(zipf,norm) +0.707
+
+##############################################################################
+# checkpoint step 64000
+##############################################################################
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 7945.77it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+Collecting residuals (489 words, layers [4, 8, 12, 16, 20])...
+  200/489
+  400/489
+    L    sink  ho_ret%  cos(BAL,dn)  zipf-norm  UN_sink
+    4  -0.386      -4%       +0.762     +0.584   -0.631
+    8  -0.345      25%       +0.713     +0.710   -0.477
+   12  -0.307      33%       +0.683     +0.710   -0.437
+   16  -0.291      36%       +0.705     +0.710   -0.435
+   20  -0.312      33%       +0.736     +0.710   -0.456
+  decision-layer means: sink -0.314, cos +0.709, corr(zipf,norm) +0.710
+
+##############################################################################
+# checkpoint step 143000
+##############################################################################
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<00:43,  6.74it/s]Loading weights:  74%|███████▍  | 216/292 [00:00<00:00, 1054.18it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 973.23it/s] 
+Loaded pretrained model pythia-410m into HookedTransformer
+Collecting residuals (489 words, layers [4, 8, 12, 16, 20])...
+  200/489
+  400/489
+    L    sink  ho_ret%  cos(BAL,dn)  zipf-norm  UN_sink
+    4  -0.414      -1%       +0.765     +0.594   -0.660
+    8  -0.320      28%       +0.678     +0.711   -0.470
+   12  -0.285      38%       +0.638     +0.711   -0.420
+   16  -0.288      42%       +0.652     +0.711   -0.397
+   20  -0.280      41%       +0.663     +0.710   -0.414
+  decision-layer means: sink -0.293, cos +0.658, corr(zipf,norm) +0.711
+
+==============================================================================
+TRAJECTORY (decision-layer means)
+==============================================================================
+      step     sink  cos(BAL,d_norm)  corr(zipf,norm)
+         0   -0.014           +0.112           +0.543
+       512   -0.153           -0.607           -0.157
+      4000   -0.323           +0.640           +0.707
+     16000   -0.331           +0.712           +0.707
+     64000   -0.314           +0.709           +0.710
+    143000   -0.293           +0.658           +0.711
+
+==============================================================================
+VERDICT vs pre-registered decision rule
+==============================================================================
+  T1: sink at step 512 (sink -0.153, cos -0.61); coupling at step 4000; deepened +0.170
+  P3 physiology-precedes-alignment: corr(zipf,norm) >= +0.5 first at step 0; coupling >= +0.5 first at step 4000
+  parity check (step 143000 should match exp154/exp151-era values: sink ~ -0.29, cos ~ +0.72): sink -0.293, cos +0.658

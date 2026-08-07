@@ -1,0 +1,35 @@
+Loading GloVe...
+
+========================================================================
+PART 1 — operation algebra in top-100 semantic subspace (frequency removed)
+========================================================================
+  +s    n=18440  held-out cos: identity 0.426 -> map 0.466   |  inverse err ||W_f@W_b - I||: 0.809
+  +ed   n= 2798  held-out cos: identity 0.381 -> map 0.422   |  inverse err ||W_f@W_b - I||: 0.861
+  +ing  n= 3081  held-out cos: identity 0.360 -> map 0.380   |  inverse err ||W_f@W_b - I||: 0.864
+
+  COMMUTATIVITY of deviations  ||EiEj-EjEi|| / (||Ei||*||Ej||)   (0=commute, ~1=not):
+              +s     +ed    +ing
+  +s       0.000   0.019   0.016
+  +ed      0.019   0.000   0.015
+  +ing     0.016   0.015   0.000
+  null (two random matrices, matched norm): 0.141
+
+========================================================================
+PART 2 — composition vs ground truth (gender x number, leave-one-out)
+========================================================================
+  usable quadruples (all 4 in vocab): 26
+
+  single op  number (masc_sg -> masc_pl)  top1: 77%
+  single op  gender (masc_sg -> fem_sg)   top1: 69%
+  COMPOSITION (masc_sg + gender + number -> fem_pl):
+    mean cosine to true composed word: 0.481
+    top1 retrieval of the real composed word: 35%
+
+READING
+  PART 1: inverse err near 0 => operation is genuinely invertible (a group element).
+          commutator near the random null => operations do NOT commute (non-abelian);
+          commutator << null => they share structure (toward free disentanglement).
+  PART 2: composition retrieval near the single-op rates => the operation algebra
+          CORRESPONDS to semantics (A∘B lands where the composed concept is) — the
+          thing PCA cannot give. Degradation => errors compound under stacking.
+

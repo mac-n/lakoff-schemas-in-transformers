@@ -1,0 +1,270 @@
+Loading exp41 PCA results...
+
+========================================================================
+LAYER 2 (2-res-sm)
+========================================================================
+
+Variance ratios: PC1=37.9%, PC2=26.3%, PC3=22.5%, PC4=13.3%, PC5=0.0%
+
+Input-axis loadings (for reference):
+  PC1: IN-OUT+0.79, LIGHT-DARK-0.66, UP-DOWN-0.58, LEFT-RIGHT-0.23, FORWARD-BACK-0.03
+  PC2: LEFT-RIGHT-0.77, FORWARD-BACK+0.52, UP-DOWN+0.23, LIGHT-DARK+0.16, IN-OUT+0.06
+  PC3: FORWARD-BACK+0.68, UP-DOWN-0.36, IN-OUT-0.32, LEFT-RIGHT+0.29, LIGHT-DARK-0.18
+
+--- PC1 (37.9% variance) ---
+
+  Positive pole (top 10 features):
+    feat  3717 (load +0.4275): instances of significant numbers or ratings
+    feat 10757 (load +0.2842): formal declarations of liability or legal terms
+    feat  4770 (load +0.2200): instances of legal terminology or phrases within a text
+    feat 17660 (load +0.1961): instances of high emotional or sentimental expression
+    feat 19019 (load +0.1697): references to the word "the."
+    feat 20074 (load +0.1550): past participles or forms of verbs that suggest completion or state
+    feat  2184 (load +0.1342): words related to darkness or dark themes
+    feat  5493 (load +0.1011): terms related to depth and intensity in various contexts
+    feat  8203 (load +0.0892): the word "for" in various contexts and frequencies
+    feat 31422 (load +0.0835): terms related to positions, locations, or rankings
+
+  Negative pole (top 10 features):
+    feat 17523 (load -0.3259): instances of the word "from" indicating sources or origins
+    feat 18908 (load -0.1707): specific mentions of locations and organizational structure
+    feat 21225 (load -0.1337): references to sources or origins
+    feat  4554 (load -0.1210): repeated phrases indicating a time frame or chronological sequence
+    feat  7099 (load -0.0897): words related to the release of music or films
+    feat 10824 (load -0.0847): references to specific values or metrics that signify changes or results in a context-related discussion
+    feat   721 (load -0.0769): emphatic affirmations of totality or completeness
+    feat 14301 (load -0.0738): terms related to radiology and imaging
+    feat 24167 (load -0.0680): sentences ending with a period
+    feat 19082 (load -0.0672): references to the word "pur."
+
+--- PC2 (26.3% variance) ---
+
+  Positive pole (top 10 features):
+    feat 23415 (load +0.6235): affirmative or validating statements and expressions
+    feat  1637 (load +0.2796): phrases indicating progress or advancements
+    feat 22626 (load +0.1440): words that indicate correctness or suitability
+    feat 27496 (load +0.1246): references to advanced technologies or procedures
+    feat 30259 (load +0.0787): prepositions indicating motion or direction
+    feat  5149 (load +0.0760): references to future events or concepts
+    feat  4993 (load +0.0712): phrases emphasizing urgency or immediacy
+    feat  1234 (load +0.0686): the concept of planning for the future or forward-looking statements
+    feat 29595 (load +0.0466): the presence of periods or sentence endings in the text
+    feat 24167 (load +0.0432): sentences ending with a period
+
+  Negative pole (top 10 features):
+    feat 19201 (load -0.4965): references to directional terms, particularly related to left and right
+    feat 26379 (load -0.1441): words related to the concept of returning or going back
+    feat  2992 (load -0.1294): references to time, particularly events or actions related to the past
+    feat  8056 (load -0.1014): the word "leave" in various contexts
+    feat  3717 (load -0.0812): instances of significant numbers or ratings
+    feat 13906 (load -0.0761): the word "behind" and its context or related themes
+    feat 16398 (load -0.0761): references to age or outdated concepts
+    feat 20074 (load -0.0751): past participles or forms of verbs that suggest completion or state
+    feat 17523 (load -0.0745): instances of the word "from" indicating sources or origins
+    feat  6315 (load -0.0732): references to returning to past experiences or locations
+
+--- PC3 (22.5% variance) ---
+
+  Positive pole (top 10 features):
+    feat  1637 (load +0.4451): phrases indicating progress or advancements
+    feat 27496 (load +0.2025): references to advanced technologies or procedures
+    feat 19201 (load +0.1908): references to directional terms, particularly related to left and right
+    feat 30259 (load +0.1397): prepositions indicating motion or direction
+    feat 17523 (load +0.1256): instances of the word "from" indicating sources or origins
+    feat  5149 (load +0.1206): references to future events or concepts
+    feat 11463 (load +0.1068): words or abbreviations that indicate organization names
+    feat  1234 (load +0.1065): the concept of planning for the future or forward-looking statements
+    feat   721 (load +0.0870): emphatic affirmations of totality or completeness
+    feat  1906 (load +0.0870): expressions and terms related to death
+
+  Negative pole (top 10 features):
+    feat 23415 (load -0.2402): affirmative or validating statements and expressions
+    feat 26379 (load -0.2312): words related to the concept of returning or going back
+    feat  2992 (load -0.2084): references to time, particularly events or actions related to the past
+    feat 13906 (load -0.1226): the word "behind" and its context or related themes
+    feat 18706 (load -0.1155): terms related to reversing conditions or processes
+    feat 21948 (load -0.1096): discussions around personal experiences and testimonies related to life events
+    feat  6315 (load -0.1092): references to returning to past experiences or locations
+    feat 16398 (load -0.1080): references to age or outdated concepts
+    feat 19019 (load -0.0939): references to the word "the."
+    feat 14435 (load -0.0882): phrases related to returning values in functions or methods
+
+========================================================================
+LAYER 3 (3-res-sm)
+========================================================================
+
+Variance ratios: PC1=42.6%, PC2=25.0%, PC3=21.0%, PC4=11.4%, PC5=0.0%
+
+Input-axis loadings (for reference):
+  PC1: IN-OUT+0.82, LIGHT-DARK-0.68, UP-DOWN-0.59, LEFT-RIGHT-0.35, FORWARD-BACK-0.19
+  PC2: LEFT-RIGHT-0.71, FORWARD-BACK+0.53, UP-DOWN+0.24, LIGHT-DARK+0.13, IN-OUT+0.04
+  PC3: FORWARD-BACK+0.64, UP-DOWN-0.39, LEFT-RIGHT+0.29, IN-OUT-0.20, LIGHT-DARK-0.19
+
+--- PC1 (42.6% variance) ---
+
+  Positive pole (top 10 features):
+    feat 22622 (load +0.3635): instances of line breaks or empty sections in the text
+    feat 21809 (load +0.3116): expressions of gratitude and friendship
+    feat  5355 (load +0.2689): legal terminology related to liability and warranties
+    feat  1812 (load +0.1823): complex legal terms and organizational identifiers
+    feat  7674 (load +0.1635): prepositions indicating location or positioning
+    feat  3637 (load +0.1569): key terms related to legal proceedings and opinions
+    feat 31975 (load +0.1346): the article "the" in various contexts
+    feat 30156 (load +0.1027): references to dark themes, tones, and conditions, often associated with negativity or evil
+    feat 16847 (load +0.0941): phrases related to the duration of time or experience
+    feat 22358 (load +0.0927): references to clothing and fashion styles
+
+  Negative pole (top 10 features):
+    feat 22938 (load -0.3279): references to the word "from" in various contexts
+    feat 22160 (load -0.1489): instances of high numerical values or significant data points
+    feat  5883 (load -0.1140): phrases indicating a delay or a period of time following an event
+    feat  2179 (load -0.0883): verbs related to quitting or stopping actions
+    feat  5511 (load -0.0854): phrases indicating possession or relationships involving "of."
+    feat 26642 (load -0.0849): occurrences of the word "release" and its variations, indicating a focus on announcements related to new products or updates
+    feat 16102 (load -0.0806): phrases related to distinguishing or separating entities or concepts
+    feat 20131 (load -0.0708): intensifiers that emphasize completeness or totality
+    feat 32434 (load -0.0690): phrases and terms associated with production or industry
+    feat  9834 (load -0.0686): terms related to "purging" or cleansing of various contexts
+
+--- PC2 (25.0% variance) ---
+
+  Positive pole (top 10 features):
+    feat 23822 (load +0.6224): instances of the word "right."
+    feat  9933 (load +0.2720): expressions of progress or forward movement
+    feat 30168 (load +0.1348): references to progress and advancement in various contexts
+    feat 12886 (load +0.0822): phrases indicating absorption or significant responsibility
+    feat 18142 (load +0.0782): references to the future and its implications
+    feat 22529 (load +0.0730): the word "same" in various contexts, indicating a focus on similarity or equivalence
+    feat  4917 (load +0.0621): periods at the end of sentences or statements
+    feat  2734 (load +0.0516): verbs and actions that depict movement or changes in state
+    feat 17024 (load +0.0501): variations of the verb "grow."
+    feat   609 (load +0.0433): events or experiences described in a narrative form
+
+  Negative pole (top 10 features):
+    feat   257 (load -0.4445): instances of the word "left" in various contexts
+    feat 16648 (load -0.1774): spatial directions and positions
+    feat   342 (load -0.1708): phrases referring to "back" and related concepts
+    feat 24435 (load -0.1466): references to time, specifically related to past events
+    feat 11832 (load -0.0906): references to age or vintage characteristics
+    feat  5080 (load -0.0770): phrases that indicate a return to a previous state or condition
+    feat  2179 (load -0.0734): verbs related to quitting or stopping actions
+    feat 30964 (load -0.0696): contexts involving the concept of repeating or revisiting actions or ideas
+    feat 22622 (load -0.0656): instances of line breaks or empty sections in the text
+    feat 22481 (load -0.0600): phrases that indicate something is concealed or hidden
+
+--- PC3 (21.0% variance) ---
+
+  Positive pole (top 10 features):
+    feat  9933 (load +0.4101): expressions of progress or forward movement
+    feat 30168 (load +0.1962): references to progress and advancement in various contexts
+    feat   257 (load +0.1792): instances of the word "left" in various contexts
+    feat 20449 (load +0.1435): the letter 'd' in various contexts
+    feat 12886 (load +0.1376): phrases indicating absorption or significant responsibility
+    feat  3288 (load +0.1326): instances of the letter 'l' in various contexts
+    feat 18142 (load +0.1191): references to the future and its implications
+    feat 11794 (load +0.1128): words related to legal actions and detention processes
+    feat 22622 (load +0.0932): instances of line breaks or empty sections in the text
+    feat  3010 (load +0.0859): words and phrases related to legal proceedings and criminal justice
+
+  Negative pole (top 10 features):
+    feat 23822 (load -0.2779): instances of the word "right."
+    feat   342 (load -0.2634): phrases referring to "back" and related concepts
+    feat 24435 (load -0.2176): references to time, specifically related to past events
+    feat 11832 (load -0.1298): references to age or vintage characteristics
+    feat  5080 (load -0.1120): phrases that indicate a return to a previous state or condition
+    feat 30964 (load -0.1008): contexts involving the concept of repeating or revisiting actions or ideas
+    feat 22481 (load -0.0960): phrases that indicate something is concealed or hidden
+    feat 10460 (load -0.0938): phrases related to the concept of returning or refunding items and associated processes
+    feat  9012 (load -0.0853): concepts related to reverse processes or actions
+    feat 11105 (load -0.0853): terms related to changes in states or actions involving turning
+
+========================================================================
+LAYER 4 (4-res-sm)
+========================================================================
+
+Variance ratios: PC1=42.7%, PC2=23.7%, PC3=21.0%, PC4=12.7%, PC5=0.0%
+
+Input-axis loadings (for reference):
+  PC1: IN-OUT+0.83, LIGHT-DARK-0.67, UP-DOWN-0.55, LEFT-RIGHT-0.42, FORWARD-BACK-0.15
+  PC2: LEFT-RIGHT-0.68, FORWARD-BACK+0.52, UP-DOWN+0.29, LIGHT-DARK+0.13, IN-OUT-0.01
+  PC3: FORWARD-BACK-0.65, UP-DOWN+0.47, LEFT-RIGHT-0.27, IN-OUT+0.15, LIGHT-DARK+0.04
+
+--- PC1 (42.7% variance) ---
+
+  Positive pole (top 10 features):
+    feat 28444 (load +0.4374): statements about disappointment or dissatisfaction
+    feat  9666 (load +0.2951): text related to legal or formal notices, particularly copyright and licensing information
+    feat 32255 (load +0.2631): references to legal proceedings or court cases
+    feat  8286 (load +0.1612): instances of numerical or programming-related values such as parameters or settings
+    feat 30301 (load +0.1263): terms related to locations and structures in biological contexts
+    feat 18609 (load +0.1227): occurrences of the word "the"
+    feat 24390 (load +0.1147): phrases indicating duration or frequency of actions
+    feat 12601 (load +0.1140): instances of the term "deep," often in the context of depth or significance
+    feat 10305 (load +0.1105): affirmations or confirmations expressed as "right"
+    feat  1821 (load +0.0992): instances of the phrase "in" as a preposition indicating location or context
+
+  Negative pole (top 10 features):
+    feat 18112 (load -0.2568): phrases indicating origin or source
+    feat 26547 (load -0.1944): distinctive phrases or structures within text
+    feat 32655 (load -0.1539): concepts related to separation and isolation
+    feat   639 (load -0.1314): phrases indicating legal actions and consequences
+    feat  9546 (load -0.1109): specific essay topics or related content in written works
+    feat  3005 (load -0.0951): instances of the word "after" in various contexts
+    feat 25087 (load -0.0863): references to purification or cleansing
+    feat 23756 (load -0.0769): occurrences of the word "of"
+    feat 11770 (load -0.0713): phrases that indicate changes or outcomes related to health conditions or treatments
+    feat 10066 (load -0.0702): phrases that refer to historical events or noteworthy timelines
+
+--- PC2 (23.7% variance) ---
+
+  Positive pole (top 10 features):
+    feat 10305 (load +0.6405): affirmations or confirmations expressed as "right"
+    feat 28196 (load +0.2243): references to correctness and appropriateness in various contexts
+    feat  3721 (load +0.1107): references to transitions or movements into states, situations, or locations
+    feat 27922 (load +0.0800): mentions of progress or advancements in various contexts
+    feat 12275 (load +0.0769): references to the concept of "future" across various contexts
+    feat  6626 (load +0.0631): references to diagrams or figures within a technical or patent context
+    feat  6882 (load +0.0623): verbs and phrases related to movement and walking
+    feat 32521 (load +0.0593): phrases related to political and social issues
+    feat 20627 (load +0.0575): phrases related to processes or actions that are conditional or dependent on specific outcomes
+    feat 14533 (load +0.0554): assertions of influence or impact
+
+  Negative pole (top 10 features):
+    feat 25326 (load -0.3074): mentions of the left side, particularly in medical contexts
+    feat 19879 (load -0.1846): instances of the word "past" indicating time references
+    feat 32476 (load -0.1758): phrases related to departure or absence
+    feat 14475 (load -0.1332): references to age, particularly describing things as "old" or using related terms
+    feat 25367 (load -0.1110): instances of the word "back" in various contexts, particularly related to actions or situations involving return or reversal
+    feat 11756 (load -0.1099): instances of the prefix "re-" related to different forms of redoing or returning
+    feat   639 (load -0.1037): phrases indicating legal actions and consequences
+    feat 26500 (load -0.0994): terms related to critique or undermining established concepts or norms
+    feat  5158 (load -0.0799): end-of-sentence punctuation
+    feat 31015 (load -0.0795): instances of the word "turn" and its variations in various contexts
+
+--- PC3 (21.0% variance) ---
+
+  Positive pole (top 10 features):
+    feat 19879 (load +0.2654): instances of the word "past" indicating time references
+    feat 10305 (load +0.2268): affirmations or confirmations expressed as "right"
+    feat 14475 (load +0.1902): references to age, particularly describing things as "old" or using related terms
+    feat 25367 (load +0.1608): instances of the word "back" in various contexts, particularly related to actions or situations involving return or reversal
+    feat 11756 (load +0.1577): instances of the prefix "re-" related to different forms of redoing or returning
+    feat  5519 (load +0.1244): words related to recipes or cooking
+    feat 14195 (load +0.1104): themes related to returning or coming back home
+    feat  4943 (load +0.1097): terms related to development and improvement
+    feat 31015 (load +0.1060): instances of the word "turn" and its variations in various contexts
+    feat 27320 (load +0.0990): verbs related to action, particularly those indicating the concept of "taking" or "took."
+
+  Negative pole (top 10 features):
+    feat   194 (load -0.1906): the letter 'd' in various contexts
+    feat  3721 (load -0.1697): references to transitions or movements into states, situations, or locations
+    feat 26730 (load -0.1538): instances of the letter "l" in various contexts
+    feat 17443 (load -0.1268): the presence of negative or concerning sentiments and experiences
+    feat 27922 (load -0.1158): mentions of progress or advancements in various contexts
+    feat 12275 (load -0.1096): references to the concept of "future" across various contexts
+    feat 32521 (load -0.1048): phrases related to political and social issues
+    feat 25326 (load -0.1032): mentions of the left side, particularly in medical contexts
+    feat 24354 (load -0.1024): actions associated with crime or violence
+    feat 16059 (load -0.1019): terms related to legal and economic discussions or implications
+
+Done.

@@ -1,0 +1,161 @@
+Loading glove-wiki-gigaword-300 (cached)...
+
+=== Building axes ===
+
+  Pair counts (after vocab filter):
+                      VALENCE: 12
+                      AROUSAL: 12
+                  UP_DOWN_MML: 57
+                   IN_OUT_MML: 50
+             IN_OUT_MML_CLEAN: 10
+             FORWARD_BACK_MML: 22
+              PATH_MOTION_MML: 17
+               LIGHT_DARK_MML: 28
+                EXISTENCE_MML: 40
+                    FORCE_MML: 15
+                  BALANCE_MML: 15
+        DIFFICULTY_BURDEN_MML: 15
+
+=== TEST 1: Cross-method validation (hand-curated vs MML) ===
+  High cosine = both methods recover the same axis.
+  cos(UD_HAND, UD_MML) = +0.8254
+  cos(IO_HAND, IO_MML) = +0.7410
+  cos(FB_HAND, FB_MML) = +0.8463
+  cos(LD_HAND, LD_MML) = +0.6929
+
+=== TEST 2: Pairwise cosines between MML schema axes ===
+                  UD        IO  IO_clean        FB      PATH        LD     EXIST     FORCE       BAL      DIFF
+          UD  +1.000    +0.185    +0.158    +0.520    +0.105    +0.355    +0.523    +0.248    +0.569    -0.215
+          IO  +0.185    +1.000    +0.488    +0.141    -0.104    +0.013    +0.246    +0.125    +0.123    +0.133
+    IO_clean  +0.158    +0.488    +1.000    +0.083    -0.113    -0.023    +0.110    +0.028    +0.253    +0.008
+          FB  +0.520    +0.141    +0.083    +1.000    +0.163    +0.276    +0.427    -0.010    +0.463    -0.176
+        PATH  +0.105    -0.104    -0.113    +0.163    +1.000    +0.159    +0.271    +0.185    +0.031    -0.114
+          LD  +0.355    +0.013    -0.023    +0.276    +0.159    +1.000    +0.285    +0.015    +0.310    -0.188
+       EXIST  +0.523    +0.246    +0.110    +0.427    +0.271    +0.285    +1.000    +0.130    +0.412    -0.117
+       FORCE  +0.248    +0.125    +0.028    -0.010    +0.185    +0.015    +0.130    +1.000    -0.026    +0.095
+         BAL  +0.569    +0.123    +0.253    +0.463    +0.031    +0.310    +0.412    -0.026    +1.000    -0.232
+        DIFF  -0.215    +0.133    +0.008    -0.176    -0.114    -0.188    -0.117    +0.095    -0.232    +1.000
+
+=== TEST 3: V+A decomposition of each MML axis ===
+      schema    cos(V)    cos(A)     %V     %A   %resid
+          UD    +0.601    +0.182  36.1%   3.3%    57.6%
+          IO    +0.125    -0.063   1.6%   0.4%    98.2%
+    IO_clean    +0.129    +0.073   1.7%   0.5%    97.6%
+          FB    +0.344    +0.283  11.8%   8.0%    77.6%
+        PATH    +0.090    +0.079   0.8%   0.6%    98.4%
+          LD    +0.400    +0.141  16.0%   2.0%    80.5%
+       EXIST    +0.343    +0.124  11.7%   1.5%    85.6%
+       FORCE    +0.036    -0.003   0.1%   0.0%    99.9%
+         BAL    +0.462    +0.193  21.3%   3.7%    72.6%
+        DIFF    -0.357    +0.171  12.7%   2.9%    86.0%
+
+=== TEST 4: V+A-residualized pairwise cosines (does cluster survive?) ===
+                  UD        IO  IO_clean        FB      PATH        LD     EXIST     FORCE       BAL      DIFF
+          UD  +1.000    +0.163    +0.077    +0.343    +0.035    +0.094    +0.391    +0.300    +0.350    -0.047
+          IO  +0.163    +1.000    +0.487    +0.130    -0.112    -0.032    +0.231    +0.122    +0.091    +0.199
+    IO_clean  +0.077    +0.487    +1.000    +0.011    -0.136    -0.104    +0.055    +0.023    +0.204    +0.046
+          FB  +0.343    +0.130    +0.011    +1.000    +0.117    +0.094    +0.312    -0.026    +0.295    -0.115
+        PATH  +0.035    -0.112    -0.136    +0.117    +1.000    +0.118    +0.245    +0.183    -0.040    -0.101
+          LD  +0.094    -0.032    -0.104    +0.094    +0.118    +1.000    +0.138    +0.000    +0.100    -0.084
+       EXIST  +0.391    +0.231    +0.055    +0.312    +0.245    +0.138    +1.000    +0.127    +0.268    -0.018
+       FORCE  +0.300    +0.122    +0.023    -0.026    +0.183    +0.000    +0.127    +1.000    -0.051    +0.117
+         BAL  +0.350    +0.091    +0.204    +0.295    -0.040    +0.100    +0.268    -0.051    +1.000    -0.126
+        DIFF  -0.047    +0.199    +0.046    -0.115    -0.101    -0.084    -0.018    +0.117    -0.126    +1.000
+
+=== TEST 5 (CRITICAL): EXISTENCE_MML vs inferred yang/yin axis ===
+  Inferred yang/yin was mean(UD_VA, FB_VA, LD_VA) — see exp31.
+  cos(EXISTENCE_MML, inferred_yangyin)         = +0.4070
+  cos(EXISTENCE_MML_VA, inferred_yangyin)      = +0.4174
+  ^^^ HIGH cosine = canonical Lakoff EXISTENCE recovers the same axis we
+      inferred from UD/FB/LD residuals. Direct support for yang/yin as a
+      shared underlying primitive across Lakoff schemas.
+
+=== TEST 6: IO_CLEAN_MML vs EXISTENCE_MML (IN=yin?) ===
+  Traditional Taoism predicts IN=yin → cos should be NEGATIVE.
+  cos(IO_CLEAN, EXIST)             = +0.1099
+  cos(IO_CLEAN_VA, EXIST_VA)       = +0.0554
+  cos(IO_CLEAN, inferred_yangyin)  = -0.0000
+  ^^^ If near zero: containment orthogonal to becoming (self/other holds).
+      If negative: IN=yin (traditional Taoism).
+      If positive: IN=yang (modern English reorganization OR valence residue).
+
+=== TEST 7: After subtracting V + A + EXISTENCE_MML from UD/FB ===
+  Does the UD-FB cluster finally collapse, or is there still residual?
+  Pre (raw):                       cos(UD, FB) = +0.5204
+  After V removal:                  cos(UD_V, FB_V) = +0.4180
+  After V+A removal:                cos(UD_VA, FB_VA) = +0.3426
+  After V+A+EXISTENCE removal:      cos(UD_full, FB_full) = +0.2579
+  After V+A+EXISTENCE on UD-LD:     cos(UD_full, LD_full) = +0.0459
+  After V+A+EXISTENCE on FB-LD:     cos(FB_full, LD_full) = +0.0554
+
+=== TEST 8: Nearest neighbors of EXISTENCE_MML ===
+  EXISTENCE_MML positive pole (emergence):
+    +0.4019  presented
+    +0.4001  developed
+    +0.3950  established
+    +0.3893  promote
+    +0.3848  conjunction
+    +0.3819  originally
+    +0.3771  variety
+    +0.3763  created
+    +0.3758  known
+    +0.3738  designed
+    +0.3714  collaboration
+    +0.3674  produced
+    +0.3648  featuring
+    +0.3640  founded
+    +0.3638  example
+
+  EXISTENCE_MML negative pole (dissolution):
+    +0.4795  obliterated
+    +0.4739  wrecked
+    +0.4171  blinded
+    +0.4143  immobilized
+    +0.4140  eviscerated
+    +0.4127  incinerated
+    +0.4116  crewman
+    +0.4076  annihilated
+    +0.4038  maimed
+    +0.4028  pillaged
+    +0.4010  rotted
+    +0.3959  mortally
+    +0.3944  perished
+    +0.3939  dismembered
+    +0.3918  gutted
+
+=== EXISTENCE_MML after V+A residualization ===
+  Yang pole (after V+A removal):
+    +0.3461  presented
+    +0.3367  known
+    +0.3330  conjunction
+    +0.3305  specifically
+    +0.3280  created
+    +0.3209  originally
+    +0.3208  referred
+    +0.3163  introduce
+    +0.3124  designed
+    +0.3116  developed
+    +0.3115  produced
+    +0.3105  well-known
+    +0.3098  marketed
+    +0.3042  variety
+    +0.3013  prominently
+
+  Yin pole (after V+A removal):
+    +0.4607  wrecked
+    +0.4552  obliterated
+    +0.4032  crewmen
+    +0.3958  gutted
+    +0.3889  destroyed
+    +0.3875  rescued
+    +0.3850  missing
+    +0.3840  crewman
+    +0.3834  incinerated
+    +0.3830  undamaged
+    +0.3818  damaged
+    +0.3804  collapsed
+    +0.3804  shattered
+    +0.3743  pillaged
+    +0.3718  ransacked
+
+Saved: exp34_results.npz

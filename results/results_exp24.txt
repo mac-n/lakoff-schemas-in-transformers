@@ -1,0 +1,85 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+device: mps
+Loading Pythia 70m-deduped...
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 8202.12it/s]
+Loaded pretrained model EleutherAI/pythia-70m-deduped into HookedTransformer
+
+--- Layer 0 ---
+  Reference (sanity check that A_updown points UP):
+    mean(UP_offset · A_updown):   +0.6727  (should be POSITIVE = UP-aligned)
+    mean(DOWN_offset · A_updown): -1.3000  (should be NEGATIVE = DOWN-aligned)
+  Test:
+    mean(IN_offset · A_updown):   -0.2796
+    mean(OUT_offset · A_updown):  -0.3836
+  → IN and OUT both project toward DOWN. NOT polar opposites in UD-space.
+
+--- Layer 1 ---
+  Reference (sanity check that A_updown points UP):
+    mean(UP_offset · A_updown):   +0.4249  (should be POSITIVE = UP-aligned)
+    mean(DOWN_offset · A_updown): -1.6657  (should be NEGATIVE = DOWN-aligned)
+  Test:
+    mean(IN_offset · A_updown):   -0.9055
+    mean(OUT_offset · A_updown):  -0.7559
+  → IN and OUT both project toward DOWN. NOT polar opposites in UD-space.
+
+--- Layer 2 ---
+  Reference (sanity check that A_updown points UP):
+    mean(UP_offset · A_updown):   +0.2697  (should be POSITIVE = UP-aligned)
+    mean(DOWN_offset · A_updown): -1.7671  (should be NEGATIVE = DOWN-aligned)
+  Test:
+    mean(IN_offset · A_updown):   -1.2957
+    mean(OUT_offset · A_updown):  -1.0652
+  → IN and OUT both project toward DOWN. NOT polar opposites in UD-space.
+
+--- Layer 3 ---
+  Reference (sanity check that A_updown points UP):
+    mean(UP_offset · A_updown):   +0.1765  (should be POSITIVE = UP-aligned)
+    mean(DOWN_offset · A_updown): -2.0755  (should be NEGATIVE = DOWN-aligned)
+  Test:
+    mean(IN_offset · A_updown):   -1.8478
+    mean(OUT_offset · A_updown):  -1.4852
+  → IN and OUT both project toward DOWN. NOT polar opposites in UD-space.
+
+--- Layer 4 ---
+  Reference (sanity check that A_updown points UP):
+    mean(UP_offset · A_updown):   +0.3786  (should be POSITIVE = UP-aligned)
+    mean(DOWN_offset · A_updown): -2.1787  (should be NEGATIVE = DOWN-aligned)
+  Test:
+    mean(IN_offset · A_updown):   -1.5387
+    mean(OUT_offset · A_updown):  -1.0991
+  → IN and OUT both project toward DOWN. NOT polar opposites in UD-space.
+
+--- Layer 5 ---
+  Reference (sanity check that A_updown points UP):
+    mean(UP_offset · A_updown):   +0.3235  (should be POSITIVE = UP-aligned)
+    mean(DOWN_offset · A_updown): -2.6010  (should be NEGATIVE = DOWN-aligned)
+  Test:
+    mean(IN_offset · A_updown):   -1.6178
+    mean(OUT_offset · A_updown):  -1.4219
+  → IN and OUT both project toward DOWN. NOT polar opposites in UD-space.
+# exp24 — are IN and OUT opposite directions WITHIN UD-space?
+
+Test: project each IN_offset and OUT_offset (from matched IO triples) onto
+the constructed A_updown axis. Compare mean projections.
+
+## Per-layer projections (Pythia 70m residual-stream SAE)
+
+  layer    UP_proj   DOWN_proj    IN_proj    OUT_proj                                   verdict
+      0    +0.6727     -1.3000    -0.2796     -0.3836                     both→DOWN (NOT polar)
+      1    +0.4249     -1.6657    -0.9055     -0.7559                     both→DOWN (NOT polar)
+      2    +0.2697     -1.7671    -1.2957     -1.0652                     both→DOWN (NOT polar)
+      3    +0.1765     -2.0755    -1.8478     -1.4852                     both→DOWN (NOT polar)
+      4    +0.3786     -2.1787    -1.5387     -1.0991                     both→DOWN (NOT polar)
+      5    +0.3235     -2.6010    -1.6178     -1.4219                     both→DOWN (NOT polar)
+
+## Interpretation
+
+- If IN > 0 and OUT < 0 across layers: IN ↔ UP, OUT ↔ DOWN. The model has a
+  shared polarity convention between containment and verticality.
+- If both > 0 or both < 0: IN and OUT both lean the same way on UD-axis.
+  No individual polarity, the IO axis is rotated but not polar in UD-space.
+- If both ≈ 0: IO and UD are genuinely orthogonal at all levels.
+
+Report: /Users/macn/Documents/embeddingexp/results_exp24_in_out_in_ud_space.md

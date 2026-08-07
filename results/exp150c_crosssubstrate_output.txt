@@ -1,0 +1,23 @@
+
+GloVe vs Pythia 410M — row-split permutation tests:
+  L 4: inflectional-only r=+0.232 (p=0.0291) SIG   | UN+RE-only r=+0.713 (p=0.0066) SIG
+  L12: inflectional-only r=+0.203 (p=0.0546) ns    | UN+RE-only r=+0.704 (p=0.0066) SIG
+  L20: inflectional-only r=+0.245 (p=0.0206) SIG   | UN+RE-only r=+0.630 (p=0.0148) SIG
+  ER x BALANCE = -0.012   (Pythia L12: -0.377)
+
+word2vec vs Pythia 410M — row-split permutation tests:
+  L 4: inflectional-only r=+0.364 (p=0.0397) SIG   | UN+RE-only r=+0.605 (p=0.0230) SIG
+  L12: inflectional-only r=+0.295 (p=0.0686) ns    | UN+RE-only r=+0.601 (p=0.0204) SIG
+  L20: inflectional-only r=+0.323 (p=0.0517) ns    | UN+RE-only r=+0.562 (p=0.0272) SIG
+  ER x BALANCE = -0.005   (Pythia L12: -0.377)
+
+fastText vs Pythia 410M — row-split permutation tests:
+  L 4: inflectional-only r=+0.348 (p=0.0055) SIG   | UN+RE-only r=+0.497 (p=0.0479) SIG
+  L12: inflectional-only r=+0.284 (p=0.0254) SIG   | UN+RE-only r=+0.517 (p=0.0375) SIG
+  L20: inflectional-only r=+0.300 (p=0.0159) SIG   | UN+RE-only r=+0.503 (p=0.0406) SIG
+  ER x BALANCE = +0.012   (Pythia L12: -0.377)
+
+Static-static matrix correlations (stripped, full 7x8):
+      GloVe vs word2vec : full r=+0.922   inflectional-only r=+0.769
+      GloVe vs fastText : full r=+0.908   inflectional-only r=+0.757
+   word2vec vs fastText : full r=+0.912   inflectional-only r=+0.710

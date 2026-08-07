@@ -1,0 +1,271 @@
+Loading glove-wiki-gigaword-300...
+  vocab size: 400000
+
+Building PCA-input axes (cluster set, 11 axes from exp40)...
+
+Building target axes (independent from PCA-input set)...
+  [target_SALIENCE] missing words (1): ['backgrounded']
+  target_SALIENCE built from 11/12 pairs
+  target_MOTION    built from 12/12 pairs
+  target_EQ_RUN    built from 14/14 pairs
+
+========================================================================
+PCA on cluster axes (11 axes — matches exp40 cluster-only run)
+========================================================================
+
+Variance per PC:
+  PC1:  20.6%   (cumulative:  20.6%)
+  PC2:  17.3%   (cumulative:  37.9%)
+  PC3:  12.4%   (cumulative:  50.3%)
+  PC4:  11.2%   (cumulative:  61.5%)
+  PC5:   9.3%   (cumulative:  70.9%)
+  PC6:   8.7%   (cumulative:  79.6%)
+  PC7:   6.3%   (cumulative:  85.9%)
+  PC8:   5.3%   (cumulative:  91.2%)
+  PC9:   4.5%   (cumulative:  95.7%)
+  PC10:   4.3%   (cumulative: 100.0%)
+
+========================================================================
+CENTRAL TEST: target-axis cosines with PCs
+========================================================================
+
+Predictions:
+  target_SALIENCE  high on PC1 if PC1 is salience-as-primitive;
+                   LOW on PC1 if PC1 is just the V x A diagonal
+  target_MOTION    high on PC2 if MOTION is a real primitive
+  target_EQ_RUN    high on PC3 if EQ-vs-RUNAWAY is a real primitive
+
+                      PC1      PC2      PC3      PC4      PC5      PC6    
+  --------------------------------------------------------------------
+  target_SALIENCE     -0.174  -0.280  -0.056  +0.024  -0.058  -0.039  
+  target_MOTION       -0.094  +0.051  +0.022  +0.054  +0.017  -0.072  
+  target_EQ_RUN       +0.290  +0.011  +0.205  -0.073  -0.124  -0.042  
+
+========================================================================
+Per-target deep dive
+========================================================================
+
+--- target_SALIENCE ---
+  Best PC alignments (sorted by |cos|):
+    PC2 (17.3% var): cos = -0.2797
+    PC7 ( 6.3% var): cos = +0.1974
+    PC1 (20.6% var): cos = -0.1743
+    PC5 ( 9.3% var): cos = -0.0583
+    PC3 (12.4% var): cos = -0.0556
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: +0.4861
+     COHERENCE: +0.4247
+           BAL: +0.3825
+            FB: +0.3625
+            UD: +0.3606
+  Positive pole words:
+    +0.5101  prominent
+    +0.4796  including
+    +0.4558  first
+    +0.4456  addition
+    +0.4374  major
+    +0.4366  notable
+    +0.4286  noted
+    +0.4277  also
+    +0.4192  important
+    +0.4160  one
+  Negative pole words:
+    +0.5190  valueless
+    +0.5184  unfocused
+    +0.4935  uninteresting
+    +0.4822  inoffensive
+    +0.4788  pathetically
+    +0.4783  inattentive
+    +0.4754  unimaginative
+    +0.4736  unimportant
+    +0.4712  inconsequential
+    +0.4657  inarticulate
+
+--- target_MOTION ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = -0.0937
+    PC7 ( 6.3% var): cos = -0.0735
+    PC6 ( 8.7% var): cos = -0.0721
+    PC8 ( 5.3% var): cos = +0.0674
+    PC4 (11.2% var): cos = +0.0538
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+          PATH: +0.2911
+            FB: +0.1925
+            UD: +0.1918
+       AROUSAL: +0.1823
+           BAL: +0.1424
+  Positive pole words:
+    +0.3876  skiing
+    +0.3869  racing
+    +0.3763  sprint
+    +0.3722  diving
+    +0.3711  spectacular
+    +0.3668  championships
+    +0.3593  speed
+    +0.3516  run
+    +0.3503  track
+    +0.3484  jump
+  Negative pole words:
+    +0.4883  kneeling
+    +0.4422  slouched
+    +0.4287  reclining
+    +0.4103  glumly
+    +0.3947  reclined
+    +0.3935  knelt
+    +0.3800  hunched
+    +0.3740  seated
+    +0.3730  slouching
+    +0.3711  lounging
+
+--- target_EQ_RUN ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = +0.2901
+    PC3 (12.4% var): cos = +0.2047
+    PC8 ( 5.3% var): cos = -0.1543
+    PC7 ( 6.3% var): cos = -0.1408
+    PC5 ( 9.3% var): cos = -0.1243
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: -0.2861
+            LD: +0.2180
+       VALENCE: +0.2167
+          LOSS: +0.1638
+     COHERENCE: +0.0871
+  Positive pole words:
+    +0.3360  restoring
+    +0.3153  interpreting
+    +0.3121  modifying
+    +0.3081  tempering
+    +0.3038  adjusting
+    +0.3024  atoning
+    +0.2969  effecting
+    +0.2965  erred
+    +0.2888  accomplishing
+    +0.2820  nyts
+  Negative pole words:
+    +0.4604  mushrooming
+    +0.4443  spiralling
+    +0.4424  spiraling
+    +0.4295  escalating
+    +0.4231  raging
+    +0.4213  engulfed
+    +0.4143  erupted
+    +0.3860  raged
+    +0.3851  escalated
+    +0.3807  sparked
+
+Saved: exp52_results.npz
+Loading GloVe...
+Building Our-12...
+Building Lakoff-12 (9 image schemas + COH + SUC + LOSS)...
+Our-12 GS: 12 axes
+Lakoff-12 GS: 12 axes
+
+====================================================================================
+TEST 1 — coverage by category
+====================================================================================
+
+category                        Our-12   Lakoff-12       Δ
+--------------------------------------------------------------
+EMOTIONS_AFFECTIVE               32.6%      36.4% -3.80pp
+AGENTIVE_STATES                  34.8%      35.6% -0.75pp
+SOCIAL_RELATIONAL                37.9%      39.8% -1.91pp
+EPISTEMIC_STATES                 37.9%      39.5% -1.62pp
+CONCRETE_NOUNS_ANIMATE           32.6%      25.3% +7.24pp
+CONCRETE_NOUNS_INANIMATE         40.5%      33.4% +7.11pp
+ABSTRACT_FORMAL                  34.1%      31.8% +2.30pp
+ABSTRACT_FORMAL_EXTENDED         39.4%      38.4% +0.93pp
+MODAL_HYPOTHETICAL               40.0%      38.5% +1.46pp
+MODAL_ACTUAL                     44.1%      39.1% +4.97pp
+
+OVERALL MEAN                    37.06%     36.00% +1.06pp
+
+====================================================================================
+TEST 2 — Principal angles between Our-12 and Lakoff-12 subspaces
+====================================================================================
+
+Cross-cosine matrix (Our-12 rows × Lakoff-12 cols):
+           UD     IO     FB     LD   PATH  EXIST  FORCE    BAL   DIFF    COH    SUC   LOSS
+C      +0.478 +0.033 -0.077 +0.053 +0.100 +0.135 -0.012 -0.000 -0.190 +0.070 +0.151 +0.184
+W      +0.019 +0.063 +0.101 -0.110 +0.074 +0.001 +0.009 +0.066 +0.463 +0.184 -0.078 +0.074
+ATT    -0.067 -0.066 +0.062 +0.074 +0.159 +0.365 +0.031 -0.202 +0.039 -0.078 +0.034 -0.030
+INT    +0.283 +0.144 +0.254 +0.180 +0.087 +0.137 -0.107 +0.232 -0.111 +0.205 -0.173 -0.052
+R      -0.080 -0.108 +0.116 +0.169 -0.108 -0.069 +0.030 +0.042 +0.142 -0.013 +0.078 +0.148
+D      -0.011 +0.048 +0.017 +0.043 -0.045 +0.024 -0.118 +0.170 +0.153 +0.321 -0.000 +0.059
+IO     +0.040 +0.969 -0.029 -0.009 -0.032 -0.023 +0.033 -0.068 +0.025 -0.083 +0.034 -0.002
+DV     +0.179 -0.029 +0.086 -0.046 +0.027 +0.135 +0.095 -0.026 -0.031 +0.054 +0.183 -0.043
+MB     +0.045 -0.007 -0.100 -0.107 +0.135 -0.009 -0.154 +0.083 -0.012 -0.142 +0.031 +0.124
+EV     +0.067 -0.011 -0.065 +0.093 -0.086 -0.000 -0.014 -0.110 +0.142 -0.054 +0.028 +0.028
+ABS    +0.018 -0.003 -0.159 -0.183 -0.084 -0.011 +0.157 -0.088 -0.010 +0.028 +0.024 -0.026
+MOD    -0.178 +0.029 +0.043 -0.063 +0.073 +0.015 -0.000 -0.052 +0.050 -0.050 -0.041 +0.065
+
+Max |cos| per Our axis (the Lakoff axis it most aligns with):
+  C      → UD      (+0.4778)
+  W      → DIFF    (+0.4626)
+  ATT    → EXIST   (+0.3650)
+  INT    → UD      (+0.2830)
+  R      → LD      (+0.1691)
+  D      → COH     (+0.3211)
+  IO     → IO      (+0.9688)
+  DV     → SUC     (+0.1832)
+  MB     → FORCE   (-0.1541)
+  EV     → DIFF    (+0.1420)
+  ABS    → LD      (-0.1827)
+  MOD    → UD      (-0.1783)
+
+rank       cos     angle  interpretation
+  --------------------------------------------------
+     1   +1.0000    0.00°  near-aligned
+     2   +0.7747   39.23°  near-aligned
+     3   +0.6930   46.13°  partially aligned
+     4   +0.5082   59.46°  partially aligned
+     5   +0.4802   61.30°  partially aligned
+     6   +0.3738   68.05°  weakly aligned
+     7   +0.3648   68.61°  weakly aligned
+     8   +0.2325   76.55°  weakly aligned
+     9   +0.2147   77.60°  weakly aligned
+    10   +0.1448   81.67°  near-orthogonal
+    11   +0.0689   86.05°  near-orthogonal
+    12   +0.0339   88.06°  near-orthogonal
+
+Summary:
+  Subspaces have 2 principal directions with cos > 0.7 (near-aligned)
+  Subspaces have 4 principal directions with cos > 0.5
+  Subspaces have 5 principal directions with cos < 0.3 (near-orthogonal)
+  Mean principal-angle cos: 0.4074
+  Total subspace overlap: 2.969 out of 12 max
+  (overlap fraction: 24.7%)
+
+Our axis  % in Lakoff-12 subspace
+  C                    36.42%
+  W                    29.60%
+  ATT                  22.82%
+  INT                  37.61%
+  R                    12.74%
+  D                    18.01%
+  IO                   95.70%
+  DV                   11.05%
+  MB                   10.93%
+  EV                    6.20%
+  ABS                  10.07%
+  MOD                   5.76%
+
+Mean: 24.74%
+(Random baseline for 12-D / 290-D: ~4.1%)
+
+Lakoff axis    % in Our-12 subspace
+  UD                     39.19%
+  IO                     98.43%
+  FB                     14.82%
+  LD                     14.32%
+  PATH                   10.17%
+  EXIST                  19.48%
+  FORCE                   8.62%
+  BAL                    16.47%
+  DIFF                   33.17%
+  COH                    22.64%
+  SUC                    10.45%
+  LOSS                    9.12%
+
+Mean: 24.74%
+
+Saved exp79_results.npz

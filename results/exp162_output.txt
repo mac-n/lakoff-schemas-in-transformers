@@ -1,0 +1,78 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Running verdict-logic selftest first (synthetic-test convention)...
+selftest_verdict162: all branches fire correctly.
+
+========================================================================
+pythia-410m
+========================================================================
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<00:50,  5.82it/s]Loading weights:  54%|█████▍    | 158/292 [00:00<00:00, 714.21it/s]Loading weights:  86%|████████▋ | 252/292 [00:00<00:00, 794.96it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 691.46it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+
+--- Layer 4 ---
+  PR(real) = 6.22   top-2 var = 43%   | null PR mean 7.17, 5th pctile 6.48
+  valence/arousal capture of top-2 subspace = 17%  (val 33%, aro 2%); cos(val,aro_raw)=+0.09
+  cos(BALANCE, arousal⊥val) = +0.11   top schema~arousal: UP   top schema~valence: BALANCE
+  -> V_LOWD
+
+--- Layer 12 ---
+  PR(real) = 6.21   top-2 var = 44%   | null PR mean 7.12, 5th pctile 6.62
+  valence/arousal capture of top-2 subspace = 17%  (val 31%, aro 4%); cos(val,aro_raw)=+0.05
+  cos(BALANCE, arousal⊥val) = +0.04   top schema~arousal: PATH   top schema~valence: BALANCE
+  -> V_LOWD
+
+--- Layer 20 ---
+  PR(real) = 6.23   top-2 var = 44%   | null PR mean 6.96, 5th pctile 6.36
+  valence/arousal capture of top-2 subspace = 12%  (val 19%, aro 4%); cos(val,aro_raw)=-0.01
+  cos(BALANCE, arousal⊥val) = +0.08   top schema~arousal: UP   top schema~valence: BALANCE
+  -> V_LOWD
+
+========================================================================
+gpt2-medium
+========================================================================
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 9284.29it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+
+--- Layer 4 ---
+  PR(real) = 7.00   top-2 var = 39%   | null PR mean 7.51, 5th pctile 7.29
+  valence/arousal capture of top-2 subspace = 7%  (val 11%, aro 3%); cos(val,aro_raw)=+0.01
+  cos(BALANCE, arousal⊥val) = +0.15   top schema~arousal: BALANCE   top schema~valence: UP
+  -> V_LOWD
+
+--- Layer 12 ---
+  PR(real) = 6.27   top-2 var = 44%   | null PR mean 7.41, 5th pctile 7.12
+  valence/arousal capture of top-2 subspace = 21%  (val 32%, aro 9%); cos(val,aro_raw)=-0.08
+  cos(BALANCE, arousal⊥val) = +0.05   top schema~arousal: FORCE   top schema~valence: UP
+  -> V_LOWD
+
+--- Layer 20 ---
+  PR(real) = 6.69   top-2 var = 41%   | null PR mean 7.40, 5th pctile 7.11
+  valence/arousal capture of top-2 subspace = 15%  (val 27%, aro 3%); cos(val,aro_raw)=-0.01
+  cos(BALANCE, arousal⊥val) = +0.02   top schema~arousal: LIGHT   top schema~valence: UP
+  -> V_LOWD
+
+========================================================================
+Llama-3.2-1B
+========================================================================
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   1%|          | 1/146 [00:02<06:10,  2.55s/it]Loading weights:  76%|███████▌  | 111/146 [00:02<00:00, 57.52it/s]Loading weights: 100%|██████████| 146/146 [00:03<00:00, 37.03it/s]
+Loaded pretrained model meta-llama/Llama-3.2-1B into HookedTransformer
+
+--- Layer 3 ---
+  PR(real) = 6.93   top-2 var = 40%   | null PR mean 7.58, 5th pctile 7.37
+  valence/arousal capture of top-2 subspace = 12%  (val 19%, aro 6%); cos(val,aro_raw)=-0.05
+  cos(BALANCE, arousal⊥val) = +0.01   top schema~arousal: FORCE   top schema~valence: UP
+  -> V_LOWD
+
+--- Layer 8 ---
+  PR(real) = 6.26   top-2 var = 44%   | null PR mean 7.33, 5th pctile 7.01
+  valence/arousal capture of top-2 subspace = 18%  (val 30%, aro 7%); cos(val,aro_raw)=-0.09
+  cos(BALANCE, arousal⊥val) = -0.02   top schema~arousal: FORCE   top schema~valence: UP
+  -> V_LOWD
+
+--- Layer 13 ---
+  PR(real) = 6.81   top-2 var = 40%   | null PR mean 7.45, 5th pctile 7.18
+  valence/arousal capture of top-2 subspace = 15%  (val 24%, aro 5%); cos(val,aro_raw)=-0.08
+  cos(BALANCE, arousal⊥val) = +0.01   top schema~arousal: FORCE   top schema~valence: UP
+  -> V_LOWD
+
+V_TWO=two-primitive supported  V_LOWD=low-dim but >2  V_NULL=no structure

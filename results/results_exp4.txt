@@ -1,0 +1,193 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Using device: mps
+
+Loading Pythia 1.4B...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<04:26,  1.09it/s]Loading weights:  19%|█▉        | 56/292 [00:01<00:03, 73.51it/s]Loading weights:  29%|██▉       | 84/292 [00:01<00:03, 55.30it/s]Loading weights:  35%|███▍      | 102/292 [00:02<00:03, 52.39it/s]Loading weights:  39%|███▉      | 115/292 [00:02<00:03, 49.13it/s]Loading weights:  43%|████▎     | 125/292 [00:02<00:03, 43.33it/s]Loading weights:  46%|████▌     | 133/292 [00:03<00:03, 40.72it/s]Loading weights:  48%|████▊     | 140/292 [00:03<00:03, 38.75it/s]Loading weights:  50%|████▉     | 145/292 [00:03<00:04, 36.71it/s]Loading weights:  51%|█████▏    | 150/292 [00:03<00:03, 36.36it/s]Loading weights:  53%|█████▎    | 156/292 [00:03<00:03, 35.73it/s]Loading weights:  55%|█████▍    | 160/292 [00:03<00:03, 36.23it/s]Loading weights:  56%|█████▌    | 164/292 [00:03<00:03, 35.52it/s]Loading weights:  58%|█████▊    | 168/292 [00:04<00:03, 32.50it/s]Loading weights:  60%|██████    | 176/292 [00:04<00:03, 37.93it/s]Loading weights:  62%|██████▏   | 182/292 [00:04<00:03, 32.56it/s]Loading weights:  66%|██████▌   | 192/292 [00:04<00:02, 44.28it/s]Loading weights:  68%|██████▊   | 198/292 [00:04<00:02, 46.54it/s]Loading weights:  70%|██████▉   | 204/292 [00:05<00:02, 36.26it/s]Loading weights:  73%|███████▎  | 212/292 [00:05<00:01, 41.28it/s]Loading weights:  74%|███████▍  | 217/292 [00:05<00:01, 42.78it/s]Loading weights:  76%|███████▌  | 222/292 [00:05<00:01, 40.33it/s]Loading weights:  78%|███████▊  | 228/292 [00:05<00:01, 44.37it/s]Loading weights:  81%|████████  | 236/292 [00:05<00:01, 41.27it/s]Loading weights:  83%|████████▎ | 241/292 [00:05<00:01, 36.38it/s]Loading weights:  85%|████████▍ | 248/292 [00:06<00:01, 42.07it/s]Loading weights:  87%|████████▋ | 253/292 [00:06<00:00, 41.21it/s]Loading weights:  88%|████████▊ | 258/292 [00:06<00:00, 36.01it/s]Loading weights:  90%|█████████ | 264/292 [00:06<00:00, 37.70it/s]Loading weights:  92%|█████████▏| 268/292 [00:06<00:00, 36.51it/s]Loading weights:  95%|█████████▍| 276/292 [00:06<00:00, 34.63it/s]Loading weights:  99%|█████████▊| 288/292 [00:06<00:00, 46.63it/s]Loading weights: 100%|██████████| 292/292 [00:07<00:00, 41.30it/s]
+Loaded pretrained model pythia-1.4b into HookedTransformer
+Model loaded. 24 layers, d_model=2048
+
+Building LIGHT direction at layer 12...
+LIGHT/DARK direction computed.
+
+
+======================================================================
+EPISTEMIC PROMPTS
+Prediction: LIGHT -> clarity/understanding; DARK -> confusion/obscurity
+======================================================================
+
+--- PROMPT: 'I'm trying to understand this problem. It seems' ---
+  [baseline    ] that when the user types in the textbox it changes the button color to the color of the textbox. I need to change it back to the original color with my click event. I know it's easy to change the color of the button with
+  [LIGHT (s=3) ] that when the user types in the textbox it changes the button color to the color of the textbox text. How can the textbox change the button color with my click event?
+
+A:
+
+Use the OnClientClick event.
+  [LIGHT (s=6) ] that when the user types in the textbox it changes the button color to the color of the textbox text. How can the user select the color of the button? And if he wants to change the color of the button while the user is typing
+  [DARK  (s=3) ] that when the user types in the textbox it changes the button color to the color of the textbox. I need to change it back to the original color with my click event. I know it's easy to change the color of the button with
+  [DARK  (s=6) ] that when the user types in the text field it changes the button color to the color of the text field. I need to change it back to the original color with my click event. I know it's easy to change the color of the button with
+
+--- PROMPT: 'The truth of the matter is' ---
+  [baseline    ] that when the phone rings it's because the police are on the way to the house, and therefore you need to get inside the house. If you don't the person you're calling will know it's your house and will call the police on your
+  [LIGHT (s=3) ] that when the phone rings it's because the police are on the way to the house, and therefore you need to get inside the house. If you don't the person you're calling will know it's your house and will call the police on your
+  [LIGHT (s=6) ] that when the phone rings in the middle of the night, I pick it up and leave the lights on in my condo as I try to reach you." "It's been two weeks." "Two weeks?" "That's the longest I've
+  [DARK  (s=3) ] that when the phone rings it's because the police are on the way to the house, and therefore you need to get inside the house. If you don't the person you're calling will know it's your house and will call the police on your
+  [DARK  (s=6) ] that when the phone rings it's the first time you'd see it. It's not the last time you'd see it.
+
+When you open your email settings you can see in a few seconds if there's a new message or if there
+
+--- PROMPT: 'When I look at the situation, I see' ---
+  [baseline    ] a problem that has been lying dormant for a couple of decades.
+
+Today I’m going to make a prediction for the next 20 years or so. I don’t know if it’s going to come true, but I’m
+  [LIGHT (s=3) ] a problem that has been lying dormant for a couple of decades.
+
+Today I’m going to make a prediction for the next 20 years or so. I don’t know if it’s going to come true, but I’m
+  [LIGHT (s=6) ] a problem that has been lying dormant for a couple of decades.
+
+Today I’m going to make a prediction for the next 20 years or so. I don’t know if it’s going to come true, but I’m
+  [DARK  (s=3) ] a problem that has been lying dormant for a couple of decades.
+
+Today I’m going to make a prediction for the next 20 years or so. I don’t know if it’s going to come true, but I’m
+  [DARK  (s=6) ] a problem that has been lying dormant for a couple of decades.
+
+Today I’m going to make a prediction for the next 20 years or so. I don’t know if it’s going to come true, but I’m
+
+
+======================================================================
+VALENCE PROMPTS
+Prediction: LIGHT -> good/positive; DARK -> evil/negative
+======================================================================
+
+--- PROMPT: 'The world is fundamentally' ---
+  [baseline    ] a problem of psychology, of the unconscious mind. It is the ultimate manifestation of that which is hidden behind human action. Whatever the mechanisms of human action, whatever the settings in which they are performed, there is a psychology that is the source of that
+  [LIGHT (s=3) ] a problem of psychology, of empathy, of experience. I see that the dominant discourse has for decades been a description of the world as a sum of experiences and the people in it. Psychiatrists have spent a decade describing the world as a collection
+  [LIGHT (s=6) ] a problem of psychology, of empathy, of experience. I see that the dominant discourse has for decades been a description of the world as a sum of experiences and the people in it. Psychiatrists have spent a decade describing the world as a collection
+  [DARK  (s=3) ] a problem of psychology, of the unconscious mind. It is the ultimate manifestation of the id. When you go to a marriage counseling agency, it is always a shock to discover that you are not the only one who has that problem. It is a
+  [DARK  (s=6) ] a problem of psychology, of the unconscious mind. It is the ultimate manifestation of the id. When you go to a marriage counseling agency, it is always a case where you discover that they know nothing about the unconscious mind. This is not because they
+
+--- PROMPT: 'When I think about humanity, I believe' ---
+  [baseline    ] that we are much, much more than this. I believe that we are much more than the parts of human beings that we are. I believe that we are the people we choose to be. I believe that we are the people we choose to be
+  [LIGHT (s=3) ] that we are much, much more than this. I believe that we are the reason that the human race survives. We are the reason that we reach this point with this civilization. I was raised to believe that the world belongs to the few. I
+  [LIGHT (s=6) ] that we are much, much more alike than different. I see that the older I get, the more human I become.
+
+The world is always changing with people and environments. I know that there are a lot of people out there who are
+  [DARK  (s=3) ] that we are much, much more than what we’ve been taught to be. We are much more human than we were taught to be. We are much more people than we are taught to be.
+
+I sincerely hope that some day that
+  [DARK  (s=6) ] that we are much, much more than what we’ve been taught to be. We are much more human than we were taught to be. We are much more people than we are taught to be.
+
+I sincerely hope that some day that
+
+--- PROMPT: 'The nature of this situation is' ---
+  [baseline    ] that when the client wishes to grant the first party an election, but the first party has not yet signed a contract, the first party will refuse to sign a contract. This creates problems in a number of areas. For example, the first party that
+  [LIGHT (s=3) ] that when the client wishes to grant the first party an election, but the first party has not yet signed a contract, the first party will refuse to sign a contract. This creates problems in a number of areas. For example, the first party that
+  [LIGHT (s=6) ] that when the client wishes to grant the first party an election right on the basis that the other party has a right to veto the election, it is impossible for the person who issued the pro tanto veto right to issue a conditional election right. Theoret
+  [DARK  (s=3) ] that when the client wishes to grant the first request, it signals that the client has received the first request and is in the middle of the negotiation process; and the client does not know in advance whether there will be a second request. This is why
+  [DARK  (s=6) ] that when the client wishes to grant the first request, it signals that the client has received the first request and is in the middle of the negotiation process; and the client does not know in advance whether there will be a second request. This is why
+
+
+======================================================================
+ARITHMETIC PROMPTS
+Prediction: LIGHT/DARK should NOT live in arithmetic computation
+If steering breaks 2+2=4, that's interesting
+If steering doesn't, that supports modularity of schema-representations
+======================================================================
+
+--- PROMPT: '2+2=' ---
+  [baseline    ] n$, and $b_i=0$, for $i$ odd. Since $K^
+  [LIGHT (s=3) ] n$, and $b_i=0$, for $i$ odd. Since $K^
+  [LIGHT (s=6) ] n$, and $b_i=0$, for $i$ odd. Since $K^
+  [DARK  (s=3) ] n$, and $b_i=0$, for $i$ odd. Since $K^
+  [DARK  (s=6) ] n$, and $b_i=0$, for $i$ odd. Since $K^
+
+--- PROMPT: '5+3=' ---
+  [baseline    ] n$, and $b_i=0$, for $i \neq 4$. So for any
+  [LIGHT (s=3) ] n$, and $b_i=0$, for $i \neq 4$. So for any
+  [LIGHT (s=6) ] n$, and $b_i=0$, for $i \neq 4$. So for any
+  [DARK  (s=3) ] n$, and $b_0=0$, so that the $B$-field is diagonal,
+  [DARK  (s=6) ] 4$, and $b_4=0$, so that the $B$-field is diagonal,
+
+--- PROMPT: '10*4=' ---
+  [baseline    ] 288*8*2*4*2=576*8*2*4 = 576^
+  [LIGHT (s=3) ] 288*8*2*4=576=4*8*2*4 =288*
+  [LIGHT (s=6) ] 288*8*2*4=576=4*8*2*4 =576=
+  [DARK  (s=3) ] 288*8*2*4*2=288*8*2*4 =288*
+  [DARK  (s=6) ] 288*8*2*4*2=288*8*2*4 =288*
+
+--- PROMPT: 'What is 7+8? The answer is' ---
+  [baseline    ] a little different than in the maze. The center of the maze is the only point that is hidden
+  [LIGHT (s=3) ] a little different than in the maze. The center of the maze is the only point that is hidden
+  [LIGHT (s=6) ] a little different than in the maze. The center of the maze is the only point that is hidden
+  [DARK  (s=3) ] a nonincreasing function of the initial value of $\pi_j$ and the values of the initial
+  [DARK  (s=6) ] a non-trivial, but straightforward calculation. The multiplicity of the $B$-row is one,
+
+--- PROMPT: 'Q: What is 12 minus 5?
+A:' ---
+  [baseline    ] It's 12 over 5.
+Q: What is 7 plus 5?
+A: It's
+  [LIGHT (s=3) ] It's 12 over 5.
+Q: What is 7 plus 5?
+A: It's
+  [LIGHT (s=6) ] It's the difference in the fractions. The first one is 12, the second one is 5,
+  [DARK  (s=3) ] It's 12 over 5.
+Q: What is 7 plus 5?
+A: It's
+  [DARK  (s=6) ] It's 12 over 5.
+Q: What is 7 plus 5?
+A: It's
+
+
+======================================================================
+RANDOM CONTROL
+======================================================================
+
+--- PROMPT: 'The world is fundamentally' (random direction) ---
+  [random s=3] a problem of psychology, of empathy, of experience. I see that the dominant discourse has to do with human action in the world. To sum it up, the world is a problem of human psychology.
+
+Hume, in some sense,
+  [random s=6] a problem of psychology, of empathy, of experience. I think that the main reason why the human race survives is that we have created a system of morality and ethics. And if you are a man, your ethics come from the worship of power.
+
+--- PROMPT: '2+2=' (random direction) ---
+  [random s=3] n$, and $b_i=0$, for $i$ odd. Since $K^1=K^2=0$, it follows
+  [random s=6] n$, and $b_i=0$, for $i$ odd. Since $K^1=K^2=0$, it follows
+
+
+======================================================================
+INTERPRETATION GUIDE
+======================================================================
+
+What to look for:
+
+Epistemic prompts:
+  LIGHT should produce: clarity, understanding, seeing, knowing
+  DARK should produce: confusion, obscurity, hidden, unknown
+  If both work cleanly, LIGHT/DARK encodes EPISTEMIC primitive
+
+Valence prompts:
+  LIGHT should produce: good, beautiful, full of love, hopeful
+  DARK should produce: evil, troubled, cruel, fallen
+  If both work cleanly, LIGHT/DARK ALSO encodes MORAL/VALENCE primitive
+
+  THE KEY OBSERVATION: if LIGHT works on BOTH epistemic AND valence prompts
+  with the same single direction, then we've found evidence that the model
+  has unified them into one schema - which is what Lakoff predicts and what
+  human cognitive structure actually does (consider: "I see what you mean",
+  "dark thoughts" - the same word does double duty).
+
+Arithmetic prompts:
+  If 2+2 still equals 4 under LIGHT/DARK steering: arithmetic lives in
+  a different representational subspace, and schema-directions don't
+  interfere with structural computation. Good news for the modularity
+  hypothesis.
+
+  If arithmetic breaks: schema directions are entangled with arithmetic
+  representations, which would be a much stranger finding.
+
+  If arithmetic produces weird answers that have valence ("2+2 = a bright
+  future") that's the most interesting outcome - it'd show steering pushes
+  the model toward outputs of the right valence even at the cost of
+  arithmetic correctness.
+

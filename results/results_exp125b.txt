@@ -1,0 +1,63 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<00:30,  9.48it/s]Loading weights:  66%|██████▌   | 192/292 [00:00<00:00, 1083.06it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 1268.63it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loaded pretrained model pythia-410m into HookedTransformer
+  24 layers
+  28902 Brysbaert words sorted by SUBTLEX rank
+  rank 1 = 'you'  freq=2134713
+  rank 100 = 'make'  freq=70775
+  rank 1000 = 'arms'  freq=3050
+  rank 10000 = 'excruciating'  freq=67
+
+Sampling from balanced rank bands...
+  B1_spike: 10/80 single-token words (top-10 function words)  e.g. ['to', 'what', 'it', 'the', 'a']
+  B2_top_function: 40/80 single-token words (rank 11-50)  e.g. ['is', 'your', 'my', 'like', 'for']
+  B3_top_content: 80/80 single-token words (rank 51-300)  e.g. ['always', 'come', 'wait', 'dad', 'made']
+  B4_high: 80/80 single-token words (rank 301-1000)  e.g. ['earth', 'cat', 'upon', 'arms', 'read']
+  B5_mid: 80/80 single-token words (rank 1001-3000)  e.g. ['built', 'prevent', 'aware', 'claim', 'wind']
+  B6_mid_low: 80/80 single-token words (rank 3001-7000)  e.g. ['efficiency', 'neutral', 'instant', 'chapter', 'platform']
+  B7_low: 80/80 single-token words (rank 7001-15000)  e.g. ['conditioned', 'macro', 'elect', 'outing', 'timely']
+  B8_rare: 80/80 single-token words (rank 15001-30000)  e.g. ['usage', 'logger', 'glob', 'inf', 'prefix']
+  B9_tail: 0/80 single-token words (rank 30001+)  e.g. []
+
+Total unique words sampled: 530
+
+Extracting residuals at 7 layers for 530 words...
+  100/530 words
+  200/530 words
+  300/530 words
+  400/530 words
+  500/530 words
+
+Plotting...
+  saved exp125b_pc1_by_band.png
+
+======================================================================
+Mean PC1 projection per band per layer
+======================================================================
+
+  band                    L 0  L 4  L 8  L12  L16  L20  L23
+  B1_spike                 +3.91  +5.61  -0.15  -0.18  -0.24  -0.25  -0.45 
+  B2_top_function          +3.58  +4.60  +0.78  +0.74  +0.68  +0.63  +0.31 
+  B3_top_content           +1.26  +2.52  +0.85  +0.83  +0.78  +0.74  +0.27 
+  B4_high                  +0.10  +0.74  -0.63  -0.64  -0.64  -0.66  -0.58 
+  B5_mid                   -0.62  -0.68  +0.79  +0.80  +0.81  +0.81  +0.48 
+  B6_mid_low               -0.79  -1.14  -0.54  -0.53  -0.52  -0.50  -0.13 
+  B7_low                   -0.98  -2.03  +0.17  +0.19  +0.22  +0.24  +0.41 
+  B8_rare                  -1.25  -2.42  -1.01  -0.99  -0.96  -0.92  -0.54 
+  B9_tail                    --     --     --     --     --     --     --  
+
+======================================================================
+Quadratic vs linear fit of PC1 projection ~ log_rank
+======================================================================
+  Linear R² → frequency-axis-like; Quadratic ≫ Linear → bell-curve-like
+   layer     linear R²       quad R²   quad/linear
+       0        0.2898        0.3073          1.06
+       4        0.3749        0.3763          1.00
+       8        0.0023        0.0034          1.51
+      12        0.0021        0.0032          1.57
+      16        0.0017        0.0029          1.68
+      20        0.0015        0.0027          1.75
+      23        0.0002        0.0010          4.99

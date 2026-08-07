@@ -1,0 +1,100 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:31,  3.18it/s]Loading weights:  46%|████▌     | 134/292 [00:00<00:00, 411.57it/s]Loading weights:  72%|███████▏  | 209/292 [00:00<00:00, 415.29it/s]Loading weights:  92%|█████████▏| 269/292 [00:00<00:00, 409.23it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 369.73it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+
+Collecting residuals for 489 words at layers [4, 8, 12, 16, 20]...
+  50/489
+  100/489
+  150/489
+  200/489
+  250/489
+  300/489
+  350/489
+  400/489
+  450/489
+
+==============================================================================
+Layer 4 — suffix × schema cosines
+==============================================================================
+
+  suffix                UP-DOWN  IN-OUT_CL  FORWARD-B  PATH-MOTI  LIGHT-DAR      FORCE    BALANCE  DIFFICULT
+  ER_comparative         -0.116     +0.079     -0.139     -0.061     +0.057     +0.089     -0.209     +0.057  
+  EST_superlative        -0.069     +0.029     -0.122     -0.052     +0.049     +0.103     -0.186     +0.043  
+  ING_progressive        -0.043     +0.070     -0.085     +0.017     +0.041     +0.080     -0.151     +0.060  
+  ED_past                -0.113     +0.069     -0.166     -0.041     +0.033     +0.159     -0.217     +0.142  
+  S_plural               -0.131     +0.063     -0.086     -0.056     -0.011     +0.120     -0.230     +0.061  
+  UN_negation            -0.199     +0.072     -0.137     -0.104     -0.003     +0.110     -0.271     -0.034  
+  RE_repetition          -0.134     +0.075     -0.128     -0.090     +0.031     +0.089     -0.220     -0.002  
+
+  null abs(mean)/95pct per schema:
+  null                   +0.185     +0.112     +0.177     +0.148     +0.130     +0.136     +0.239     +0.126  
+
+==============================================================================
+Layer 8 — suffix × schema cosines
+==============================================================================
+
+  suffix                UP-DOWN  IN-OUT_CL  FORWARD-B  PATH-MOTI  LIGHT-DAR      FORCE    BALANCE  DIFFICULT
+  ER_comparative         -0.056     +0.028     -0.036     -0.046     -0.036     +0.055     -0.081     +0.057  
+  EST_superlative        -0.005     -0.016     -0.021     -0.051     -0.026     +0.058     -0.028     +0.058  
+  ING_progressive        -0.022     +0.033     -0.035     +0.017     +0.010     +0.010     -0.090     +0.036  
+  ED_past                -0.037     -0.001     -0.048     +0.002     +0.001     +0.070     -0.073     +0.079  
+  S_plural               -0.054     -0.003     -0.056     +0.016     -0.072     +0.036     -0.068     +0.069  
+  UN_negation            -0.117     +0.027     -0.030     -0.097     -0.069     +0.052     -0.115     +0.000  
+  RE_repetition          -0.067     +0.013     -0.047     -0.097     +0.021     +0.023     -0.052     -0.021  
+
+  null abs(mean)/95pct per schema:
+  null                   +0.073     +0.043     +0.037     +0.141     +0.068     +0.078     +0.130     +0.071  
+
+==============================================================================
+Layer 12 — suffix × schema cosines
+==============================================================================
+
+  suffix                UP-DOWN  IN-OUT_CL  FORWARD-B  PATH-MOTI  LIGHT-DAR      FORCE    BALANCE  DIFFICULT
+  ER_comparative         -0.011     -0.011     +0.043     -0.002     +0.006     +0.085     -0.029     +0.018  
+  EST_superlative        +0.042     -0.061     +0.044     -0.016     +0.023     +0.088     +0.033     +0.008  
+  ING_progressive        +0.016     -0.015     +0.016     +0.083     +0.042     +0.027     -0.046     +0.014  
+  ED_past                +0.001     -0.036     +0.008     +0.069     +0.031     +0.109     -0.012     +0.054  
+  S_plural               -0.021     -0.037     +0.036     +0.039     -0.050     +0.039     +0.007     +0.018  
+  UN_negation            -0.047     -0.019     +0.037     -0.036     -0.028     +0.089     -0.034     -0.020  
+  RE_repetition          -0.019     -0.059     +0.015     -0.051     +0.068     +0.059     +0.032     -0.044  
+
+  null abs(mean)/95pct per schema:
+  null                   +0.091     +0.072     +0.053     +0.149     +0.068     +0.097     +0.144     +0.081  
+
+==============================================================================
+Layer 16 — suffix × schema cosines
+==============================================================================
+
+  suffix                UP-DOWN  IN-OUT_CL  FORWARD-B  PATH-MOTI  LIGHT-DAR      FORCE    BALANCE  DIFFICULT
+  ER_comparative         +0.012     -0.028     +0.125     -0.003     +0.054     +0.123     -0.030     +0.012  
+  EST_superlative        +0.037     -0.054     +0.112     -0.017     +0.063     +0.141     +0.014     -0.007  
+  ING_progressive        +0.030     -0.033     +0.086     +0.071     +0.061     +0.085     -0.042     +0.043  
+  ED_past                +0.019     -0.037     +0.101     +0.063     +0.066     +0.135     -0.006     +0.047  
+  S_plural               -0.002     -0.064     +0.116     +0.028     +0.014     +0.103     +0.009     +0.030  
+  UN_negation            +0.001     -0.041     +0.120     -0.016     +0.034     +0.139     -0.014     -0.015  
+  RE_repetition          +0.003     -0.087     +0.112     -0.026     +0.097     +0.108     +0.041     -0.047  
+
+  null abs(mean)/95pct per schema:
+  null                   +0.087     +0.070     +0.120     +0.131     +0.066     +0.137     +0.148     +0.095  
+
+==============================================================================
+Layer 20 — suffix × schema cosines
+==============================================================================
+
+  suffix                UP-DOWN  IN-OUT_CL  FORWARD-B  PATH-MOTI  LIGHT-DAR      FORCE    BALANCE  DIFFICULT
+  ER_comparative         +0.120     -0.008     +0.227     +0.064     +0.110     +0.097     -0.093     +0.107  
+  EST_superlative        +0.126     -0.025     +0.217     +0.054     +0.103     +0.109     -0.066     +0.092  
+  ING_progressive        +0.120     -0.013     +0.205     +0.107     +0.105     +0.081     -0.103     +0.135  
+  ED_past                +0.123     -0.022     +0.210     +0.101     +0.117     +0.095     -0.078     +0.121  
+  S_plural               +0.103     -0.025     +0.218     +0.077     +0.079     +0.098     -0.091     +0.122  
+  UN_negation            +0.098     -0.016     +0.210     +0.044     +0.094     +0.110     -0.095     +0.087  
+  RE_repetition          +0.112     -0.036     +0.219     +0.046     +0.142     +0.085     -0.043     +0.058  
+
+  null abs(mean)/95pct per schema:
+  null                   +0.155     +0.086     +0.216     +0.104     +0.113     +0.104     +0.161     +0.144  
+
+Saved exp130_suffix_schema_heatmap.png
+Saved exp130_results.npz

@@ -1,0 +1,62 @@
+Parsing Pythia 410M exp138 matrices from results_exp138.txt...
+  ok (anchor L12 ER x BALANCE = -0.377)
+
+Loading GloVe (glove-wiki-gigaword-300)...
+  loaded: 400000 words
+
+==============================================================================
+GloVe wiki-gigaword 300d
+==============================================================================
+
+  [raw] mean off-diag suffix-suffix cos = +0.143
+  [raw] suffix x schema cosines:
+    suffix                UP-DOWN  IN-OUT_CL  FORWARD-B  PATH-MOTI  LIGHT-DAR      FORCE    BALANCE  DIFFICULT
+    ER_comparative         -0.124     -0.001     -0.049     +0.110     +0.054     +0.012     -0.156     +0.161  
+    EST_superlative        -0.174     +0.037     -0.025     -0.028     +0.026     -0.004     -0.154     -0.027  
+    ING_progressive        -0.034     -0.117     -0.090     -0.045     -0.105     -0.025     -0.087     +0.110  
+    ED_past                -0.098     -0.041     -0.165     +0.013     -0.162     -0.009     -0.070     +0.098  
+    S_plural               +0.041     +0.092     -0.093     -0.022     -0.078     +0.003     -0.031     -0.030  
+    UN_negation            -0.560     -0.054     -0.376     -0.165     -0.411     +0.003     -0.593     +0.244  
+    RE_repetition          -0.380     -0.071     -0.360     -0.123     -0.182     +0.011     -0.460     +0.112  
+
+  [stripped] mean off-diag suffix-suffix cos = +0.084
+  [stripped] suffix x schema cosines:
+    suffix                UP-DOWN  IN-OUT_CL  FORWARD-B  PATH-MOTI  LIGHT-DAR      FORCE    BALANCE  DIFFICULT
+    ER_comparative         -0.004     +0.038     +0.055     +0.128     +0.128     +0.001     -0.012     +0.129  
+    EST_superlative        -0.055     +0.047     +0.105     -0.034     +0.093     -0.039     -0.009     -0.060  
+    ING_progressive        -0.041     -0.126     -0.096     -0.048     -0.111     -0.029     -0.104     +0.116  
+    ED_past                -0.107     -0.088     -0.163     -0.003     -0.188     -0.039     -0.086     +0.127  
+    S_plural               +0.071     +0.107     -0.079     -0.018     -0.064     +0.005     +0.001     -0.042  
+    UN_negation            -0.478     -0.041     -0.263     -0.196     -0.392     -0.045     -0.494     +0.238  
+    RE_repetition          -0.209     -0.057     -0.216     -0.166     -0.094     -0.051     -0.273     +0.070  
+
+  Signature checks [GloVe stripped]:
+    S1 BALANCE universal sink (all 7 negative): False  (column: [-0.01 -0.01 -0.1  -0.09  0.   -0.49 -0.27])
+    S2 UN_negation largest row norm: True  (row norms: ER=0.23, EST=0.18, ING=0.26, ED=0.33, S=0.17, UN=0.89, RE=0.46)
+    S3 LIGHT-DARK null (mean |cos| < 0.10): False  (mean |cos| = 0.153)
+
+  --- GloVe (stripped) vs Pythia 410M (exp138) ---
+    vs L 4: r = +0.493 (null95 +0.285, p=0.0004) SIG   | BALANCE excluded: r = +0.436 (null95 +0.303, p=0.0047) SIG
+    vs L 8: r = +0.465 (null95 +0.278, p=0.0013) SIG   | BALANCE excluded: r = +0.417 (null95 +0.296, p=0.0070) SIG
+    vs L12: r = +0.461 (null95 +0.268, p=0.0010) SIG   | BALANCE excluded: r = +0.422 (null95 +0.285, p=0.0050) SIG
+    vs L16: r = +0.430 (null95 +0.260, p=0.0013) SIG   | BALANCE excluded: r = +0.395 (null95 +0.278, p=0.0063) SIG
+    vs L20: r = +0.443 (null95 +0.262, p=0.0024) SIG   | BALANCE excluded: r = +0.429 (null95 +0.279, p=0.0054) SIG
+
+  (raw, for reference:)
+
+  --- GloVe (raw) vs Pythia 410M (exp138) ---
+    vs L 4: r = +0.636 (null95 +0.369, p=0.0008) SIG   | BALANCE excluded: r = +0.583 (null95 +0.400, p=0.0044) SIG
+    vs L 8: r = +0.561 (null95 +0.354, p=0.0024) SIG   | BALANCE excluded: r = +0.520 (null95 +0.377, p=0.0082) SIG
+    vs L12: r = +0.547 (null95 +0.340, p=0.0020) SIG   | BALANCE excluded: r = +0.511 (null95 +0.353, p=0.0061) SIG
+    vs L16: r = +0.528 (null95 +0.336, p=0.0019) SIG   | BALANCE excluded: r = +0.497 (null95 +0.351, p=0.0057) SIG
+    vs L20: r = +0.521 (null95 +0.326, p=0.0027) SIG   | BALANCE excluded: r = +0.511 (null95 +0.341, p=0.0047) SIG
+
+==============================================================================
+VERDICT vs pre-registered decision rule (see docstring)
+==============================================================================
+  Primary (vs Pythia L12): r = +0.461 (p=0.0010), BALANCE-excluded r = +0.422 (p=0.0050)
+  Signatures: S1 sink=False, S2 UN-largest=True, S3 LD-null=False
+  -> Mixed outcome not covered by pre-registration — interpret
+     cautiously, do NOT retrofit a story before a follow-up control.
+
+Saved exp150_glove_vs_pythia.png

@@ -1,0 +1,166 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Total pairs: 75
+  UP: 25
+  DOWN: 25
+  BEVERAGE: 15
+  NULL: 10
+Using device: mps
+
+Loading Pythia 70m-deduped...
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights:   1%|▏         | 1/76 [00:00<00:13,  5.50it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 414.04it/s]
+Loaded pretrained model EleutherAI/pythia-70m-deduped into HookedTransformer
+
+--- Layer 0 ---
+  Within-schema mean cosine alignment:
+    UP: mean=0.0407, median=0.0018, n=300
+    DOWN: mean=0.0409, median=0.0047, n=300
+    BEVERAGE_sham: mean=0.1570, median=0.0327, n=105
+    NULL: mean=-0.0261, median=-0.0001, n=45
+  Within-domain UP mean cos: 0.0282
+  Cross-domain UP mean cos:  0.0432
+  Cross-schema:
+    UP_vs_DOWN: mean=+0.0602
+    UP_vs_NULL: mean=+0.0003
+    DOWN_vs_NULL: mean=-0.0005
+    UP_vs_BEVERAGE_sham: mean=-0.0003
+    DOWN_vs_BEVERAGE_sham: mean=+0.0036
+    BEVERAGE_sham_vs_NULL: mean=-0.0013
+  PC1 var of UP offsets:   0.1334
+  PC1 var of NULL offsets: 0.1947
+  PC1 var of BEV offsets:  0.2273
+  → If UP-PC1 >> NULL-PC1 and >> BEV-PC1, UP-as-direction exists
+
+--- Layer 1 ---
+  Within-schema mean cosine alignment:
+    UP: mean=0.0450, median=0.0115, n=300
+    DOWN: mean=0.0549, median=0.0206, n=300
+    BEVERAGE_sham: mean=0.1830, median=0.1226, n=105
+    NULL: mean=-0.0315, median=-0.0058, n=45
+  Within-domain UP mean cos: 0.0506
+  Cross-domain UP mean cos:  0.0438
+  Cross-schema:
+    UP_vs_DOWN: mean=+0.0655
+    UP_vs_NULL: mean=+0.0003
+    DOWN_vs_NULL: mean=-0.0023
+    UP_vs_BEVERAGE_sham: mean=-0.0017
+    DOWN_vs_BEVERAGE_sham: mean=+0.0133
+    BEVERAGE_sham_vs_NULL: mean=-0.0013
+  PC1 var of UP offsets:   0.1491
+  PC1 var of NULL offsets: 0.3052
+  PC1 var of BEV offsets:  0.1946
+  → If UP-PC1 >> NULL-PC1 and >> BEV-PC1, UP-as-direction exists
+
+--- Layer 2 ---
+  Within-schema mean cosine alignment:
+    UP: mean=0.0446, median=0.0330, n=300
+    DOWN: mean=0.0721, median=0.0428, n=300
+    BEVERAGE_sham: mean=0.1621, median=0.1794, n=105
+    NULL: mean=-0.0191, median=-0.0006, n=45
+  Within-domain UP mean cos: 0.0788
+  Cross-domain UP mean cos:  0.0378
+  Cross-schema:
+    UP_vs_DOWN: mean=+0.0698
+    UP_vs_NULL: mean=-0.0043
+    DOWN_vs_NULL: mean=-0.0155
+    UP_vs_BEVERAGE_sham: mean=+0.0050
+    DOWN_vs_BEVERAGE_sham: mean=+0.0358
+    BEVERAGE_sham_vs_NULL: mean=-0.0253
+  PC1 var of UP offsets:   0.2490
+  PC1 var of NULL offsets: 0.4920
+  PC1 var of BEV offsets:  0.7553
+  → If UP-PC1 >> NULL-PC1 and >> BEV-PC1, UP-as-direction exists
+
+--- Layer 3 ---
+  Within-schema mean cosine alignment:
+    UP: mean=0.0352, median=0.0499, n=300
+    DOWN: mean=0.0768, median=0.0471, n=300
+    BEVERAGE_sham: mean=0.1340, median=0.1397, n=105
+    NULL: mean=-0.0287, median=-0.0124, n=45
+  Within-domain UP mean cos: 0.0878
+  Cross-domain UP mean cos:  0.0246
+  Cross-schema:
+    UP_vs_DOWN: mean=+0.0618
+    UP_vs_NULL: mean=-0.0055
+    DOWN_vs_NULL: mean=-0.0182
+    UP_vs_BEVERAGE_sham: mean=+0.0060
+    DOWN_vs_BEVERAGE_sham: mean=+0.0443
+    BEVERAGE_sham_vs_NULL: mean=-0.0249
+  PC1 var of UP offsets:   0.3220
+  PC1 var of NULL offsets: 0.5525
+  PC1 var of BEV offsets:  0.8457
+  → If UP-PC1 >> NULL-PC1 and >> BEV-PC1, UP-as-direction exists
+
+--- Layer 4 ---
+  Within-schema mean cosine alignment:
+    UP: mean=0.0361, median=0.0428, n=300
+    DOWN: mean=0.0678, median=0.0367, n=300
+    BEVERAGE_sham: mean=0.1028, median=0.0953, n=105
+    NULL: mean=-0.0307, median=-0.0087, n=45
+  Within-domain UP mean cos: 0.0865
+  Cross-domain UP mean cos:  0.0260
+  Cross-schema:
+    UP_vs_DOWN: mean=+0.0559
+    UP_vs_NULL: mean=-0.0043
+    DOWN_vs_NULL: mean=-0.0148
+    UP_vs_BEVERAGE_sham: mean=+0.0003
+    DOWN_vs_BEVERAGE_sham: mean=+0.0370
+    BEVERAGE_sham_vs_NULL: mean=-0.0203
+  PC1 var of UP offsets:   0.2489
+  PC1 var of NULL offsets: 0.5189
+  PC1 var of BEV offsets:  0.6923
+  → If UP-PC1 >> NULL-PC1 and >> BEV-PC1, UP-as-direction exists
+
+--- Layer 5 ---
+  Within-schema mean cosine alignment:
+    UP: mean=0.0416, median=0.0147, n=300
+    DOWN: mean=0.0647, median=0.0374, n=300
+    BEVERAGE_sham: mean=0.1012, median=0.0808, n=105
+    NULL: mean=-0.0076, median=-0.0020, n=45
+  Within-domain UP mean cos: 0.0621
+  Cross-domain UP mean cos:  0.0375
+  Cross-schema:
+    UP_vs_DOWN: mean=+0.0647
+    UP_vs_NULL: mean=-0.0084
+    DOWN_vs_NULL: mean=-0.0244
+    UP_vs_BEVERAGE_sham: mean=+0.0063
+    DOWN_vs_BEVERAGE_sham: mean=+0.0280
+    BEVERAGE_sham_vs_NULL: mean=-0.0233
+  PC1 var of UP offsets:   0.1322
+  PC1 var of NULL offsets: 0.2438
+  PC1 var of BEV offsets:  0.3657
+  → If UP-PC1 >> NULL-PC1 and >> BEV-PC1, UP-as-direction exists
+# exp14 — Schemas as directions: offset-vector alignment in SAE feature space
+
+**The Lakoffian claim restated:** image schemas are invariant relational
+transformations across domains. UP isn't a feature; UP is the offset that
+takes a baseline state to its upward-shifted counterpart, and that offset
+is approximately the same vector across temperature, mood, prices, status,
+health. (Like king−man+woman=queen: 'royal' is a direction, not a feature.)
+
+Pairs: 25 UP (5 domains × 5 pairs), 25 DOWN (5 domains × 5 pairs),
+15 BEVERAGE sham (3 categories × 5 pairs, taxonomic), 10 NULL.
+Aggregation: MAX SAE activation per feature across token positions.
+Offset Δ = activation(transformed) − activation(baseline) per pair.
+
+## Summary across layers
+
+  layer  UP_within DOWN_within BEV_within NULL_within UP_cross_domain  UP_PC1  NULL_PC1  BEV_PC1  UP_vs_DOWN
+      0     0.0407      0.0409     0.1570     -0.0261          0.0432   0.133     0.195    0.227     +0.0602
+      1     0.0450      0.0549     0.1830     -0.0315          0.0438   0.149     0.305    0.195     +0.0655
+      2     0.0446      0.0721     0.1621     -0.0191          0.0378   0.249     0.492    0.755     +0.0698
+      3     0.0352      0.0768     0.1340     -0.0287          0.0246   0.322     0.553    0.846     +0.0618
+      4     0.0361      0.0678     0.1028     -0.0307          0.0260   0.249     0.519    0.692     +0.0559
+      5     0.0416      0.0647     0.1012     -0.0076          0.0375   0.132     0.244    0.366     +0.0647
+
+## Interpretation guide
+
+- **UP_within > NULL_within**: UP pairs align more than random pairs → schema-as-direction exists.
+- **UP_within > BEV_within**: UP (embodied schema) aligns more than BEVERAGE (taxonomy) → schemas ≠ taxonomic categories.
+- **UP_cross_domain ≈ UP_within**: alignment is *cross-domain* (the Lakoffian invariance), not just within-domain.
+- **UP_PC1 >> NULL_PC1**: UP offsets have a dominant principal component (a 'UP direction') that random offsets lack.
+- **UP_vs_DOWN < 0**: UP and DOWN are antialigned (DOWN ≈ −UP in feature space).
+- **Layer pattern**: where do schemas-as-directions live?
+
+Report: /Users/macn/Documents/embeddingexp/results_exp14_offset_alignment.md

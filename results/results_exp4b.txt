@@ -1,0 +1,319 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Using device: mps
+
+Loading Pythia 1.4B...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<03:49,  1.27it/s]Loading weights:  21%|██        | 60/292 [00:00<00:02, 86.29it/s]Loading weights:  29%|██▉       | 85/292 [00:01<00:02, 97.89it/s]Loading weights:  36%|███▌      | 105/292 [00:01<00:01, 102.36it/s]Loading weights:  42%|████▏     | 122/292 [00:01<00:01, 96.25it/s] Loading weights:  48%|████▊     | 140/292 [00:01<00:01, 110.97it/s]Loading weights:  53%|█████▎    | 155/292 [00:01<00:01, 83.48it/s] Loading weights:  57%|█████▋    | 167/292 [00:02<00:02, 61.56it/s]Loading weights:  60%|██████    | 176/292 [00:02<00:02, 49.10it/s]Loading weights:  63%|██████▎   | 183/292 [00:03<00:02, 36.95it/s]Loading weights:  66%|██████▌   | 192/292 [00:03<00:02, 39.06it/s]Loading weights:  68%|██████▊   | 200/292 [00:03<00:02, 44.08it/s]Loading weights:  71%|███████   | 206/292 [00:03<00:01, 43.40it/s]Loading weights:  74%|███████▍  | 216/292 [00:03<00:01, 47.08it/s]Loading weights:  77%|███████▋  | 224/292 [00:03<00:01, 51.59it/s]Loading weights:  79%|███████▉  | 230/292 [00:03<00:01, 42.65it/s]Loading weights:  82%|████████▏ | 240/292 [00:04<00:01, 49.50it/s]Loading weights:  85%|████████▍ | 248/292 [00:04<00:00, 51.85it/s]Loading weights:  87%|████████▋ | 254/292 [00:04<00:00, 48.59it/s]Loading weights:  90%|█████████ | 264/292 [00:04<00:00, 56.70it/s]Loading weights:  93%|█████████▎| 271/292 [00:04<00:00, 52.60it/s]Loading weights:  95%|█████████▍| 277/292 [00:04<00:00, 49.88it/s]Loading weights:  97%|█████████▋| 284/292 [00:05<00:00, 45.61it/s]Loading weights:  99%|█████████▉| 289/292 [00:05<00:00, 45.37it/s]Loading weights: 100%|██████████| 292/292 [00:05<00:00, 55.83it/s]
+Loaded pretrained model pythia-1.4b into HookedTransformer
+Model loaded. 24 layers, d_model=2048
+
+Building LIGHT directions at all layers...
+  Layer  0: done
+  Layer  1: done
+  Layer  2: done
+  Layer  3: done
+  Layer  4: done
+  Layer  5: done
+  Layer  6: done
+  Layer  7: done
+  Layer  8: done
+  Layer  9: done
+  Layer 10: done
+  Layer 11: done
+  Layer 12: done
+  Layer 13: done
+  Layer 14: done
+  Layer 15: done
+  Layer 16: done
+  Layer 17: done
+  Layer 18: done
+  Layer 19: done
+  Layer 20: done
+  Layer 21: done
+  Layer 22: done
+  Layer 23: done
+All layer directions computed.
+
+======================================================================
+PART A: ALL-LAYER LIGHT STEERING
+======================================================================
+
+######################################################################
+PROMPT: 'The world is fundamentally'
+######################################################################
+
+[baseline]
+  a problem of psychology, of the unconscious mind. It is the ultimate manifestation of that which is hidden behind human action. Whatever the mechanisms of human action, whatever the settings in which they are performed, there is a psychology that is the source of that
+
+[LIGHT all layers, per-layer=0.5 (total~12)]
+  a problem of psychology, which is the science of behavior production and regulation. Books that favor one extreme or the other of this controversial topic will be missed.
+
+SAM: It's a little bit different than the book that you wrote for The New
+
+[LIGHT all layers, per-layer=1.0 (total~24)]
+  a problem–it’s going to continue to be that way. The only way out is through.
+
+The only way through is through work. And the people who create problems are not the ones who can help us solve them. The only
+
+[LIGHT all layers, per-layer=2.0 (total~48)]
+  a problem–perspective-ally speaking–a multiplicity of discrete but interacting ideas and objects. To abstract away from any such objectivity is to reach for what the person does not know in their own mind, a perfectly symmetrical form of privilege. G
+
+[LIGHT all layers, per-layer=4.0 (total~96)]
+  a collection of discrete, interactive entities. The capacity of each discrete entity to interact with other discrete, mutually information-bearing entities within the same system or system compartment with a single, generally reliable, and an) durable) optical, electronic, and/
+
+######################################################################
+PROMPT: 'When I think about humanity, I believe'
+######################################################################
+
+[baseline]
+  that we are much, much more than this. I believe that we are much more than the parts of human beings that we are. I believe that we are the people we choose to be. I believe that we are the people we choose to be
+
+[LIGHT all layers, per-layer=0.5 (total~12)]
+  that we are much, much more than this. I believe that we are the most beautiful and amazing creatures that humans have ever come up with. I believe that the people in this class are leading the way to heal the earth, to heal ourselves,
+
+[LIGHT all layers, per-layer=1.0 (total~24)]
+  that we are much, much more alike than different. I see that the older I get, the more human I become.
+
+The world is always changing with people and environments. I know that there are a lot of people out there who are
+
+[LIGHT all layers, per-layer=2.0 (total~48)]
+  that we are much, much more alike than different. I see that the older I get, the more human I am—and the more I reach out and help people in their time of need."
+
+Though she sincerely enjoys helping others, G
+
+[LIGHT all layers, per-layer=4.0 (total~96)]
+  that we are much, much more frequenting do-sanding at the same point, and therefore you’d probably have the same weather system reach 3 or even 1 or 2 or even 0. Freedom to the world, the world was never that
+
+######################################################################
+PROMPT: 'The truth of the matter is'
+######################################################################
+
+[baseline]
+  that when the phone rings it's because the police are on the way to the house, and therefore you need to get inside the house. If you don't the person you're calling will know it's your house and will call the police on your
+
+[LIGHT all layers, per-layer=0.5 (total~12)]
+  that when the phone rings it's because the police are on the way to the house, and therefore you need to get inside the house. If you don't the person you're calling will know it's your house and will call the police on you
+
+[LIGHT all layers, per-layer=1.0 (total~24)]
+  that when the phone rings in the hospital, it’s the nurses and the doctors, and those are human beings. Your son has a chance to be revived with a defibrillator. It’s a perfectly reasonable thing to ask for.
+
+[LIGHT all layers, per-layer=2.0 (total~48)]
+  that when the phone rings in the hospital emergency room, most people assume the person on the other end of the line is coming to the hospital to have a heart attack. This isn’t a pretty sight. If you’ve ever had to be
+
+[LIGHT all layers, per-layer=4.0 (total~96)]
+  that after the conference in New York, the defendants insisted that the contract in this case, and therefore the arbitration award in this case, was only an attempt by the defendants to create a new case which entitled them to a conditional nonspatent license.
+
+######################################################################
+PROMPT: 'When I look at the situation, I see'
+######################################################################
+
+[baseline]
+  a problem that has been lying dormant for a couple of decades.
+
+Today I’m going to make a prediction for the next 20 years or so. I don’t know if it’s going to come true, but I’m
+
+[LIGHT all layers, per-layer=0.5 (total~12)]
+  a problem that has been lying dormant for a couple of decades.
+
+Today I’m going to make a prediction for the next 20 years or so. I don’t know if it’s going to come true, but I’m
+
+[LIGHT all layers, per-layer=1.0 (total~24)]
+  a problem that has to do with the use of the pattern.
+For the last two classes, you need to pass the pattern into the constructor or you can use a factory method.
+Create a pattern
+class Program
+    {
+        static
+
+[LIGHT all layers, per-layer=2.0 (total~48)]
+  a problem that has to do with the use of the pattern from the appDatabaseTrigger(...) to determine which action to execute the next time it fires.
+I don't want to introduce a new pattern to the system, because the system is already
+
+[LIGHT all layers, per-layer=4.0 (total~96)]
+  that He's giving us benefits to do what do you call it? I mean perform service for Him. He's got the whole Bullseye work station and the people in it.
+Employers have to give their assistants the advantage and say that
+
+
+======================================================================
+PART B: ALL-LAYER DARK STEERING
+======================================================================
+
+######################################################################
+PROMPT: 'The world is fundamentally'
+######################################################################
+
+[baseline]
+  a problem of psychology, of the unconscious mind. It is the ultimate manifestation of that which is hidden behind human action. Whatever the mechanisms of human action, whatever the settings in which they are performed, there is a psychology that is the source of that
+
+[DARK all layers, per-layer=0.5 (total~12)]
+  a problem of psychology, of the unconscious mind. It is the ultimate manifestation of the id. The id is the central principle of human behavior. It is what makes people act as they do. It is the basic cause of the development of character.
+
+[DARK all layers, per-layer=1.0 (total~24)]
+  a world of men, of men and women, of men and women and children and young and old, of men and women and children and young and old and the people in between.
+
+People have always been a little bit mad, even while
+
+[DARK all layers, per-layer=2.0 (total~48)]
+  different now than it was in the late 1960s. I see that the older generation has had to deal with both wars and the mid-term realities of what the world is like now in a way that the younger generation hasn't. It is that
+
+[DARK all layers, per-layer=4.0 (total~96)]
+  different. In the world of the earth, it’s the world of the earth, and it’s the world of the earth, it’s the world of the earth.
+
+The world of the world of the world of the world
+
+######################################################################
+PROMPT: 'When I think about humanity, I believe'
+######################################################################
+
+[baseline]
+  that we are much, much more than this. I believe that we are much more than the parts of human beings that we are. I believe that we are the people we choose to be. I believe that we are the people we choose to be
+
+[DARK all layers, per-layer=0.5 (total~12)]
+  that we are much, much more than what we’ve been taught to be. We are much more human than we were taught to be. We are much more people than we are taught to be.
+
+I sincerely hope that some day that
+
+[DARK all layers, per-layer=1.0 (total~24)]
+  that we are much, much more than what we are capable of. I believe that we are much more human than we are defined.”
+
+These are indeed the people we want to be. These are the people we want to worship. These are
+
+[DARK all layers, per-layer=2.0 (total~48)]
+  that we are much more alike than we are different. I see that the older I get, the more human I become.
+
+The world is always changing with people and environments. I know that there are a few who are going to be disappointed
+
+[DARK all layers, per-layer=4.0 (total~96)]
+  that I know that in the maze of the world of the world of the world of the world of the world of the world of the world of the world of the world of the world of the world of the world of the world of the world of
+
+######################################################################
+PROMPT: 'The truth of the matter is'
+######################################################################
+
+[baseline]
+  that when the phone rings it's because the police are on the way to the house, and therefore you need to get inside the house. If you don't the person you're calling will know it's your house and will call the police on your
+
+[DARK all layers, per-layer=0.5 (total~12)]
+  that when the phone rings it's the first time you'd see it. It's not the last time you'd see it.
+
+When you open your email settings you can see in a few seconds if there's a new message or if there
+
+[DARK all layers, per-layer=1.0 (total~24)]
+  that when the phone rings it's the first time you'd see it. It's not the last time you'd see it.
+
+When you open your mouth people say, "Oh, yeah, I got that." Or "Yeah, that
+
+[DARK all layers, per-layer=2.0 (total~48)]
+  that when the phone rings, it's never the same thing.
+
+They perform a series of rituals to make sure we're ready to hear all the news with a sharp delivery.
+
+The ritual
+
+Before every call, some ritual is
+
+[DARK all layers, per-layer=4.0 (total~96)]
+  that when the men in the maze do not do the thing that they say they perform, and therefore they are not in the place where they are doing it; the people in the maze are not doing the thing they say they do. It is that
+
+######################################################################
+PROMPT: 'When I look at the situation, I see'
+######################################################################
+
+[baseline]
+  a problem that has been lying dormant for a couple of decades.
+
+Today I’m going to make a prediction for the next 20 years or so. I don’t know if it’s going to come true, but I’m
+
+[DARK all layers, per-layer=0.5 (total~12)]
+  a problem that has been lying dormant for a couple of decades.
+
+Today I’m going to make a prediction for the next 20 years or so. I don’t know if it’s going to come true, but I’m
+
+[DARK all layers, per-layer=1.0 (total~24)]
+  a problem that has been lying dormant for a couple of decades.
+
+Today I’m going to make a prediction for the next couple of years. It makes my heart happy to see a few more significant political issues that could come up on the
+
+[DARK all layers, per-layer=2.0 (total~48)]
+  a problem that has been lying dormant for a couple of decades.
+
+Today I see the problem as a problem in the direction of the world market.
+
+It seems to me that a few investors have got it wrong, and some even seem
+
+[DARK all layers, per-layer=4.0 (total~96)]
+  a problem that I think I need to fix it. I see that I must perform a fix that I need to fix it. I try to reach for a fix. I try to reach for a fix. I try to reach for a fix.
+
+
+======================================================================
+PART C: ALL-LAYER DARK on ARITHMETIC (Niamh's prediction)
+Does full-system DARK actually degrade computation?
+======================================================================
+
+--- PROMPT: 'Q: What is 12 minus 5?
+A:' ---
+[baseline]
+  It's 12 over 5.
+Q: What is 7 plus 5?
+A: It's
+[DARK all layers, per-layer=1.0 (total~24)]
+  It's 12 minus 5 because it's the third number of 12.
+Q: What is 12
+[DARK all layers, per-layer=2.0 (total~48)]
+  12 minus 5 is 6
+Q: What is 6 minus 12?
+A: 6 minus 12
+[DARK all layers, per-layer=4.0 (total~96)]
+  12 minus 5
+B: 42 minus 5
+A: 12 minus 5
+B: 42 minus
+
+--- PROMPT: '2+2=' ---
+[baseline]
+  n$, and $b_i=0$, for $i$ odd. Since $K^
+[DARK all layers, per-layer=1.0 (total~24)]
+  n$, and $b_i=0$, for $i \neq 2$. So, we
+[DARK all layers, per-layer=2.0 (total~48)]
+  n$, and $b_2=n$, so that $b_1+b_2
+[DARK all layers, per-layer=4.0 (total~96)]
+  n$, where $r$ is the smallest integer such that $r+1<n$ and
+
+--- PROMPT: 'What is 7+8? The answer is' ---
+[baseline]
+  a little different than in the maze. The center of the maze is the only point that is hidden
+[DARK all layers, per-layer=1.0 (total~24)]
+  a non-trivial, but straightforward calculation. The multiplicity of the $B$-row is one,
+[DARK all layers, per-layer=2.0 (total~48)]
+  a non-trivial, non-commutative theory.
+
+A formal physicist must perform a series of
+[DARK all layers, per-layer=4.0 (total~96)]
+  a 9.
+
+The maze is the third part of the puzzle.
+
+The maze is
+
+======================================================================
+Done.
+
+What to look for:
+
+PART A (LIGHT everywhere):
+  - Do valence prompts go warm/positive/hopeful?
+  - Do epistemic prompts go clear/knowing/seeing?
+  - Does the SAME direction do BOTH? (Lakoff unification test)
+
+PART B (DARK everywhere):
+  - Do valence prompts go cold/negative/troubled?
+  - Do epistemic prompts go confused/hidden/obscure?
+  - At high strength, does the model lose coherence? (darkness as disorientation)
+
+PART C (DARK on arithmetic):
+  - Does full-system DARK degrade arithmetic more than single-layer did?
+  - Niamh's prediction: confusion/darkness should actually make
+    the model worse at computation, not just change the vibes
+
+======================================================================

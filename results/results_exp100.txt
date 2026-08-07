@@ -1,0 +1,40 @@
+Loading GloVe...
+  cognitive test sample: 86 words, mean-centered + unit-normalized
+
+==========================================================================
+PC1 STRUCTURE
+==========================================================================
+  global PC1 explains   5.8% of variance (top-100k GloVe)
+  local  PC1 explains   9.7% of variance (cognitive sample)
+  coverage of PC1_global on cognitive sample: mean|cos|=0.401  mean(cos^2)=0.177
+  coverage of PC1_local  on cognitive sample: mean|cos|=0.260  mean(cos^2)=0.094
+
+==========================================================================
+HARDNESS vs PC1  (alignment)
+==========================================================================
+  HARDNESS_exp90    cos(.,PC1_global)=-0.401   cos(.,PC1_local)=-0.054
+  HARDNESS_clean    cos(.,PC1_global)=-0.304   cos(.,PC1_local)=-0.038
+
+==========================================================================
+VARIANCE / COVERAGE EXPLAINED BY HARDNESS  (PC1 present vs removed)
+  metric: mean|cos| (exp90's coverage)  |  mean(cos^2) (variance fraction)
+==========================================================================
+
+  HARDNESS_exp90
+    PC1 PRESENT (= exp90 setup):       mean|cos|=0.212   var=0.058
+    minus global PC1 (ABTT k=1):       mean|cos|=0.099   var=0.015   (Δ|cos|=-0.114)
+    minus local PC1 (coherence/sense): mean|cos|=0.232   var=0.066   (Δ|cos|=+0.019)
+
+  HARDNESS_clean
+    PC1 PRESENT (= exp90 setup):       mean|cos|=0.178   var=0.039
+    minus global PC1 (ABTT k=1):       mean|cos|=0.086   var=0.012   (Δ|cos|=-0.091)
+    minus local PC1 (coherence/sense): mean|cos|=0.193   var=0.045   (Δ|cos|=+0.015)
+
+==========================================================================
+READING
+==========================================================================
+  - 'PC1 PRESENT mean|cos|' should reproduce exp90's ~0.21 for HARDNESS_exp90.
+  - If cos(hardness, PC1) is small AND coverage barely changes when PC1 is
+    removed, the hardness finding is NOT PC1 leakage -- it survives.
+  - If coverage collapses when PC1 is removed, the '21%' was largely hardness
+    riding on the coherence/sense gradient, and the headline needs softening.

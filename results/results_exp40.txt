@@ -1,0 +1,459 @@
+Loading glove-wiki-gigaword-300...
+
+========================================================================
+PCA on FULL set (Tier 1 cluster + Tier 2 independent) (14 axes)
+========================================================================
+
+Explained variance ratio per PC:
+  PC1:  21.2%   (cumulative:  21.2%)
+  PC2:  13.5%   (cumulative:  34.7%)
+  PC3:  11.4%   (cumulative:  46.1%)
+  PC4:   8.0%   (cumulative:  54.1%)
+  PC5:   7.8%   (cumulative:  61.9%)
+  PC6:   7.4%   (cumulative:  69.3%)
+  PC7:   6.9%   (cumulative:  76.2%)
+  PC8:   5.9%   (cumulative:  82.0%)
+  PC9:   5.4%   (cumulative:  87.4%)
+  PC10:   4.0%   (cumulative:  91.3%)
+
+For each PC, report which input axes load on it most + nearest words:
+
+  --- PC1 (21.2% variance) ---
+  Input-axis loadings (most-aligned first):
+       VALENCE: -0.7649
+          DIFF: +0.7186
+            UD: -0.6056
+           BAL: -0.5995
+          LOSS: -0.5582
+     COHERENCE: -0.5242
+  Positive pole (top 12 words):
+    +0.4151  needlessly
+    +0.3913  destabilized
+    +0.3758  unnecessarily
+    +0.3723  debilitated
+    +0.3600  demoralizing
+    +0.3595  grievously
+    +0.3568  exacerbated
+    +0.3557  risked
+    +0.3504  embittered
+    +0.3494  hounded
+    +0.3462  grotesquely
+    +0.3452  misinformed
+  Negative pole (top 12 words):
+    +0.4415  perfect
+    +0.4263  excellent
+    +0.4257  easy
+    +0.4154  good
+    +0.4097  smooth
+    +0.3950  comfortable
+    +0.3930  reasonably
+    +0.3898  enjoy
+    +0.3883  offers
+    +0.3876  nice
+    +0.3860  provides
+    +0.3857  perfectly
+
+  --- PC2 (13.5% variance) ---
+  Input-axis loadings (most-aligned first):
+         FORCE: +0.5477
+       SUCCESS: +0.4952
+       AROUSAL: -0.4933
+           BAL: -0.4301
+          PATH: +0.3748
+     COHERENCE: -0.3313
+  Positive pole (top 12 words):
+    +0.4543  striding
+    +0.4103  loping
+    +0.3979  strolls
+    +0.3814  scooting
+    +0.3808  zipping
+    +0.3799  ramble
+    +0.3680  coasting
+    +0.3642  glided
+    +0.3618  loped
+    +0.3593  meanders
+    +0.3589  winging
+    +0.3570  ambled
+  Negative pole (top 12 words):
+    +0.4679  failure
+    +0.4452  required
+    +0.4422  ordered
+    +0.4399  must
+    +0.4382  comply
+    +0.4367  remain
+    +0.4302  failing
+    +0.4252  refusal
+    +0.4179  fail
+    +0.4153  authorities
+    +0.4150  requirement
+    +0.4142  failed
+
+  --- PC3 (11.4% variance) ---
+  Input-axis loadings (most-aligned first):
+      IO_CLEAN: -0.6794
+          PATH: +0.5864
+            LD: +0.3420
+       AROUSAL: +0.3316
+            FB: +0.2784
+         EXIST: +0.1700
+  Positive pole (top 12 words):
+    +0.3292  exit
+    +0.3148  coming
+    +0.3003  started
+    +0.2970  direction
+    +0.2945  step
+    +0.2922  approaches
+    +0.2880  begin
+    +0.2822  start
+    +0.2811  begins
+    +0.2793  accelerated
+    +0.2770  reacting
+    +0.2763  anticipate
+  Negative pole (top 12 words):
+    +0.4339  undisturbed
+    +0.3908  entombed
+    +0.3672  secluded
+    +0.3615  ensconced
+    +0.3565  nestled
+    +0.3542  hitherto
+    +0.3521  unoccupied
+    +0.3483  sepulchral
+    +0.3413  tucked
+    +0.3409  encased
+    +0.3355  holed
+    +0.3339  enclosed
+
+  --- PC4 (8.0% variance) ---
+  Input-axis loadings (most-aligned first):
+            FB: +0.4646
+       AROUSAL: +0.4069
+            LD: -0.3968
+            UD: +0.3314
+         EXIST: +0.3304
+       SUCCESS: +0.3292
+  Positive pole (top 12 words):
+    +0.3686  emergence
+    +0.3426  culminated
+    +0.3231  fueled
+    +0.3225  apocalyptic
+    +0.3170  uncertainty
+    +0.3005  ominous
+    +0.2955  unprecedented
+    +0.2938  heightened
+    +0.2936  doom
+    +0.2903  arose
+    +0.2902  highlighted
+    +0.2868  culminating
+  Negative pole (top 12 words):
+    +0.3444  slink
+    +0.3146  prevot
+    +0.3116  neeru
+    +0.3004  heatsink
+    +0.3000  wetted
+    +0.2906  pruned
+    +0.2899  cppib
+    +0.2889  73.20
+    +0.2888  rehire
+    +0.2881  recanvassing
+    +0.2878  3.225
+    +0.2817  nokelainen
+
+  --- PC5 (7.8% variance) ---
+  Input-axis loadings (most-aligned first):
+          PATH: -0.5126
+      IO_CLEAN: -0.4312
+         FORCE: +0.3491
+            UD: +0.2826
+          DIFF: +0.2320
+            LD: +0.1937
+  Positive pole (top 12 words):
+    +0.4341  unwavering
+    +0.3994  steadfast
+    +0.3732  unyielding
+    +0.3537  stalwart
+    +0.3402  strong
+    +0.3388  supporter
+    +0.3223  unswerving
+    +0.3213  adamant
+    +0.3120  unbending
+    +0.3064  principled
+    +0.3044  wavering
+    +0.3006  remained
+  Negative pole (top 12 words):
+    +0.3147  northwestwards
+    +0.2998  smuggled
+    +0.2966  smuggle
+    +0.2873  dobrzyca
+    +0.2807  transposes
+    +0.2776  andvord
+    +0.2754  knowingly
+    +0.2732  subdivide
+    +0.2723  enter
+    +0.2712  bogus
+    +0.2682  tishkovskaya
+    +0.2675  entering
+
+  --- PC6 (7.4% variance) ---
+  Input-axis loadings (most-aligned first):
+     COHERENCE: +0.4729
+            LD: -0.3861
+         FORCE: +0.3689
+           BAL: +0.3031
+       SUCCESS: -0.2459
+       AROUSAL: -0.2438
+  Positive pole (top 12 words):
+    +0.3419  join
+    +0.3251  speak
+    +0.3204  rest
+    +0.3187  attend
+    +0.3172  organized
+    +0.3086  community
+    +0.3023  evil
+    +0.2994  where
+    +0.2977  follow
+    +0.2951  black
+    +0.2934  continues
+    +0.2931  going
+  Negative pole (top 12 words):
+    +0.3619  dimissal
+    +0.3441  8.43
+    +0.3403  http://www.amtrak.com
+    +0.3396  zaripov
+    +0.3351  steinunn
+    +0.3249  lucrecia
+    +0.3210  hewerdine
+    +0.3204  2353
+    +0.3191  petralli
+    +0.3185  8,560
+    +0.3173  mahmudov
+    +0.3157  beccari
+
+========================================================================
+PCA on CLUSTER only (excluding IO_CLEAN, FORCE, DIFF) (11 axes)
+========================================================================
+
+Explained variance ratio per PC:
+  PC1:  20.6%   (cumulative:  20.6%)
+  PC2:  17.3%   (cumulative:  37.9%)
+  PC3:  12.4%   (cumulative:  50.3%)
+  PC4:  11.2%   (cumulative:  61.5%)
+  PC5:   9.3%   (cumulative:  70.9%)
+  PC6:   8.7%   (cumulative:  79.6%)
+  PC7:   6.3%   (cumulative:  85.9%)
+  PC8:   5.3%   (cumulative:  91.2%)
+  PC9:   4.5%   (cumulative:  95.7%)
+  PC10:   4.3%   (cumulative: 100.0%)
+
+For each PC, report which input axes load on it most + nearest words:
+
+  --- PC1 (20.6% variance) ---
+  Input-axis loadings (most-aligned first):
+       VALENCE: +0.6919
+       AROUSAL: -0.6535
+       SUCCESS: +0.5048
+          LOSS: +0.4961
+            UD: +0.4277
+           BAL: +0.2810
+  Positive pole (top 12 words):
+    +0.4127  mellow
+    +0.4076  unpretentious
+    +0.3882  spacious
+    +0.3875  elegant
+    +0.3857  comfortable
+    +0.3827  easygoing
+    +0.3808  pleasant
+    +0.3794  leisurely
+    +0.3755  enjoying
+    +0.3699  relaxed
+    +0.3691  tranquil
+    +0.3641  enjoyed
+  Negative pole (top 12 words):
+    +0.3911  catastrophic
+    +0.3892  caused
+    +0.3889  triggered
+    +0.3835  consequences
+    +0.3788  exacerbated
+    +0.3788  escalating
+    +0.3738  provoked
+    +0.3639  severe
+    +0.3620  prompted
+    +0.3614  risked
+    +0.3534  threatens
+    +0.3534  worsening
+
+  --- PC2 (17.3% variance) ---
+  Input-axis loadings (most-aligned first):
+           BAL: -0.6063
+          PATH: +0.5554
+     COHERENCE: -0.5099
+       SUCCESS: +0.3576
+            FB: -0.3478
+       AROUSAL: -0.2879
+  Positive pole (top 12 words):
+    +0.4304  careening
+    +0.4231  detoured
+    +0.4187  striding
+    +0.4056  zipping
+    +0.4049  meanders
+    +0.3975  loped
+    +0.3922  scooting
+    +0.3909  northeastwards
+    +0.3774  hurtles
+    +0.3766  plopping
+    +0.3752  crazily
+    +0.3722  amble
+  Negative pole (top 12 words):
+    +0.5693  remain
+    +0.5115  remained
+    +0.4517  maintain
+    +0.4335  remains
+    +0.4308  stay
+    +0.4236  hold
+    +0.4227  remaining
+    +0.4219  must
+    +0.4217  ensure
+    +0.4181  unable
+    +0.4134  failure
+    +0.4101  although
+
+  --- PC3 (12.4% variance) ---
+  Input-axis loadings (most-aligned first):
+            LD: +0.4590
+       SUCCESS: -0.4213
+          PATH: +0.3507
+       AROUSAL: -0.3349
+     COHERENCE: +0.3003
+            UD: -0.2601
+  Positive pole (top 12 words):
+    +0.3310  deviate
+    +0.3019  intend
+    +0.3015  slink
+    +0.2857  purport
+    +0.2835  apologize
+    +0.2787  genuflect
+    +0.2780  offend
+    +0.2774  fail
+    +0.2735  compensate
+    +0.2675  gladly
+    +0.2668  deviated
+    +0.2668  deign
+  Negative pole (top 12 words):
+    +0.3082  gripped
+    +0.3054  unsettled
+    +0.3018  fueled
+    +0.2937  crosscurrents
+    +0.2932  stoked
+    +0.2892  best-selling
+    +0.2886  preeminent
+    +0.2861  apocalyptic
+    +0.2838  unsurpassed
+    +0.2782  shrouded
+    +0.2768  geopolitical
+    +0.2755  fuelled
+
+  --- PC4 (11.2% variance) ---
+  Input-axis loadings (most-aligned first):
+            LD: -0.5431
+          PATH: +0.3917
+     COHERENCE: +0.3411
+         EXIST: +0.3158
+           BAL: +0.2536
+            FB: +0.2077
+  Positive pole (top 12 words):
+    +0.3417  organized
+    +0.3315  criminal
+    +0.3257  originally
+    +0.3237  enter
+    +0.2990  monsters
+    +0.2944  into
+    +0.2939  dark
+    +0.2925  through
+    +0.2916  fictional
+    +0.2903  proceeded
+    +0.2862  doom
+    +0.2848  evil
+  Negative pole (top 12 words):
+    +0.3595  dimissal
+    +0.3528  http://www.amtrak.com
+    +0.3472  8,560
+    +0.3377  jabbarov
+    +0.3306  4,191
+    +0.3248  260.7
+    +0.3184  2353
+    +0.3154  3,794
+    +0.3153  lemacon
+    +0.3131  centerpoint
+    +0.3125  candela
+    +0.3106  adaro
+
+  --- PC5 (9.3% variance) ---
+  Input-axis loadings (most-aligned first):
+         EXIST: -0.5872
+            FB: -0.4601
+            LD: -0.3498
+            UD: -0.1792
+     COHERENCE: +0.1578
+       AROUSAL: +0.1421
+  Positive pole (top 12 words):
+    +0.3830  killed
+    +0.3763  chased
+    +0.3617  fled
+    +0.3569  emptied
+    +0.3555  surrendered
+    +0.3543  gunmen
+    +0.3541  stormed
+    +0.3522  murdered
+    +0.3499  torched
+    +0.3460  deserted
+    +0.3412  pillaged
+    +0.3372  razed
+  Negative pole (top 12 words):
+    +0.3452  highlight
+    +0.3335  illustrate
+    +0.3293  biennial
+    +0.3217  abnormalities
+    +0.3199  helpful
+    +0.3176  interesting
+    +0.3120  stuttering
+    +0.3053  underline
+    +0.3022  forthcoming
+    +0.3019  subtle
+    +0.2994  detect
+    +0.2976  worrisome
+
+  --- PC6 (8.7% variance) ---
+  Input-axis loadings (most-aligned first):
+          LOSS: +0.4706
+         EXIST: +0.4000
+            FB: -0.3543
+       SUCCESS: -0.1962
+       VALENCE: -0.1506
+       AROUSAL: +0.1320
+  Positive pole (top 12 words):
+    +0.2864  tampons
+    +0.2803  pejoratively
+    +0.2663  rimbunan
+    +0.2660  illicitly
+    +0.2623  al-azm
+    +0.2594  statements
+    +0.2589  betonsports
+    +0.2528  kallestad
+    +0.2519  smedes
+    +0.2512  kinde
+    +0.2509  tishkovskaya
+    +0.2498  colluded
+  Negative pole (top 12 words):
+    +0.3594  semifinals
+    +0.3429  progressing
+    +0.3427  score
+    +0.3388  finals
+    +0.3370  quarterfinals
+    +0.3369  semifinal
+    +0.3256  limping
+    +0.3227  3-0
+    +0.3223  winning
+    +0.3197  alive
+    +0.3178  chances
+    +0.3171  dying
+
+Saved: exp40_results.npz

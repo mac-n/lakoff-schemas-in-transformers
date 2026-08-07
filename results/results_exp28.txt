@@ -1,0 +1,66 @@
+Loading glove-wiki-gigaword-300 (cached from exp27)...
+Loaded: 400000 words, 300-dim
+
+=== Building anchor axes ===
+  VALENCE: built from 12 pairs
+  AROUSAL: built from 12 pairs
+
+=== Building schema axes ===
+  UP-DOWN: ok
+  IN-OUT: ok
+  FORWARD-BACK: ok
+  LIGHT-DARK: ok
+  LEFT-RIGHT: ok
+
+=== Independence of VALENCE and AROUSAL ===
+  cos(VALENCE, AROUSAL) = -0.1335
+  (~independent)
+
+=== Schema axis decomposition ===
+          schema   cos(VAL)   cos(ARO)   ||resid||     %V     %A     %R
+         UP-DOWN    +0.5142    +0.1930      0.8197  26.4%   3.7%  67.2%
+          IN-OUT    +0.2480    +0.0516      0.9656   6.1%   0.3%  93.2%
+    FORWARD-BACK    +0.3140    +0.2380      0.9082   9.9%   5.7%  82.5%
+      LIGHT-DARK    +0.5455    +0.1600      0.8084  29.8%   2.6%  65.3%
+      LEFT-RIGHT    +0.0488    +0.0373      0.9979   0.2%   0.1%  99.6%
+
+=== Pre-residualization pairwise schema cosines (from exp27, for reference) ===
+                        UP-DOWN         IN-OUT   FORWARD-BACK     LIGHT-DARK     LEFT-RIGHT
+         UP-DOWN        +1.0000        +0.3209        +0.5316        +0.5005        -0.0220
+          IN-OUT        +0.3209        +1.0000        +0.2884        +0.1848        +0.0038
+    FORWARD-BACK        +0.5316        +0.2884        +1.0000        +0.3609        +0.0447
+      LIGHT-DARK        +0.5005        +0.1848        +0.3609        +1.0000        -0.0900
+      LEFT-RIGHT        -0.0220        +0.0038        +0.0447        -0.0900        +1.0000
+
+=== Residualized pairwise schema cosines (after subtracting VALENCE + AROUSAL) ===
+                        UP-DOWN         IN-OUT   FORWARD-BACK     LIGHT-DARK     LEFT-RIGHT
+         UP-DOWN        +1.0000        +0.2192        +0.4027        +0.2476        -0.0710
+          IN-OUT        +0.2192        +1.0000        +0.2146        +0.0413        -0.0123
+    FORWARD-BACK        +0.4027        +0.2146        +1.0000        +0.1737        +0.0191
+      LIGHT-DARK        +0.2476        +0.0413        +0.1737        +1.0000        -0.1566
+      LEFT-RIGHT        -0.0710        -0.0123        +0.0191        -0.1566        +1.0000
+
+=== Change in pairwise cosines (post - pre) ===
+  Positive = pair became MORE aligned after removing V/A (was masked)
+  Negative = pair became LESS aligned after removing V/A (V/A was the alignment)
+                        UP-DOWN         IN-OUT   FORWARD-BACK     LIGHT-DARK     LEFT-RIGHT
+         UP-DOWN        -0.0000        -0.1017        -0.1289        -0.2529        -0.0490
+          IN-OUT        -0.1017        -0.0000        -0.0738        -0.1436        -0.0160
+    FORWARD-BACK        -0.1289        -0.0738        +0.0000        -0.1872        -0.0255
+      LIGHT-DARK        -0.2529        -0.1436        -0.1872        +0.0000        -0.0666
+      LEFT-RIGHT        -0.0490        -0.0160        -0.0255        -0.0666        -0.0000
+
+=== Reading guide ===
+  Schemas with HIGH cos(VAL) → mostly a goodbad axis dressed up
+    expected: UD ~0.5-0.7, LD ~0.6-0.8 (both heavily valence-loaded)
+    surprising would be: IO or LR with high cos(VAL)
+
+  Schemas with HIGH cos(ARO) → mostly an arousal/salience axis dressed up
+    expected: maybe FB or UD (action-content, energy)
+
+  After residualization (V/A removed):
+    If UD-LD-FB cluster collapses (cos drops near 0) → cluster WAS V/A
+    If cluster survives → schema-specific shared structure beyond V/A
+    If IO becomes aligned → IO had hidden V/A loading masking shared shape
+
+Saved: exp28_results.npz

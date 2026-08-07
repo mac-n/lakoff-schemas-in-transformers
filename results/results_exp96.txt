@@ -1,0 +1,123 @@
+Loading GloVe...
+
+==============================================================================
+PART A — Effective dimensionality of cognitive vocabulary
+==============================================================================
+
+Cognitive vocab in GloVe: 203 of 204 attempted
+
+Computing PCA on cognitive vocabulary...
+Computing PCA on equal-size random vocab sample...
+
+K        cog cumvar   rand cumvar  ratio
+--------------------------------------------------
+  1         30.50%        3.08%   9.91
+  5         45.79%       10.48%   4.37
+  10        54.30%       18.17%   2.99
+  15        60.21%       25.12%   2.40
+  20        64.85%       31.52%   2.06
+  24        68.16%       36.27%   1.88
+  30        72.50%       42.88%   1.69
+  40        78.36%       52.62%   1.49
+  50        82.91%       60.96%   1.36
+  75        90.86%       76.73%   1.18
+  100       95.47%       87.16%   1.10
+  150       99.30%       97.45%   1.02
+  200      100.00%       99.98%   1.00
+
+  To capture 80% variance:
+    cognitive vocab: 44 PCs
+    random vocab:    82 PCs
+
+  To capture 90% variance:
+    cognitive vocab: 72 PCs
+    random vocab:    110 PCs
+
+  To capture 95% variance:
+    cognitive vocab: 97 PCs
+    random vocab:    133 PCs
+
+  To capture 99% variance:
+    cognitive vocab: 143 PCs
+    random vocab:    169 PCs
+
+==============================================================================
+PART B — Expanded Roget antonym pool
+==============================================================================
+
+Building 50 single-pair Roget axes...
+  Built 50 axes
+
+==============================================================================
+Greedy selection on cognitive vocabulary (200+ words)
+==============================================================================
+
+step  selected                cov added   cum cov  next-3
+------------------------------------------------------------------------------------------
+  1    PURE_IMPURE             + 20.86pp   20.86%   DEEP_SHALLOW(17.5), HONEST_DISHONEST(16.5), QUIET_NOISY(15.4)
+  2    DEEP_SHALLOW            +  4.97pp   25.83%   PUBLIC_PRIVATE(25.1), HARDNESS(25.1), MANY_FEW(24.9)
+  3    GENEROUS_STINGY         +  3.06pp   28.89%   HARDNESS(28.8), MANY_FEW(28.6), PUBLIC_PRIVATE(28.6)
+  4    HARDNESS                +  2.82pp   31.71%   PUBLIC_PRIVATE(31.5), WISE_FOOLISH(31.4), BRIGHT_DARK(31.4)
+  5    BRIGHT_DARK             +  2.24pp   33.96%   WISE_FOOLISH(34.0), QUIET_NOISY(33.7), PUBLIC_PRIVATE(33.7)
+  6    WISE_FOOLISH            +  2.02pp   35.97%   PUBLIC_PRIVATE(35.8), QUIET_NOISY(35.7), SIMPLE_COMPLEX(35.5)
+  7    QUIET_NOISY             +  1.86pp   37.84%   PUBLIC_PRIVATE(37.7), KIND_CRUEL(37.5), COMMON_RARE(37.5)
+  8    PUBLIC_PRIVATE          +  1.87pp   39.70%   MANY_FEW(39.4), COMMON_RARE(39.3), EARLY_LATE(39.3)
+  9    EARLY_LATE              +  1.28pp   40.98%   MANY_FEW(41.0), KIND_CRUEL(41.0), COMMON_RARE(40.9)
+  10   PATIENT_IMPATIENT       +  1.08pp   42.06%   ROUND_ANGULAR(42.1), MANY_FEW(42.0), KIND_CRUEL(42.0)
+  11   ROUND_ANGULAR           +  1.04pp   43.11%   KIND_CRUEL(43.0), MANY_FEW(43.0), FULL_EMPTY(42.9)
+  12   MANY_FEW                +  0.95pp   44.06%   KIND_CRUEL(44.1), COMMON_RARE(44.0), FULL_EMPTY(44.0)
+  13   KIND_CRUEL              +  0.98pp   45.04%   SIMPLE_COMPLEX(44.9), FULL_EMPTY(44.9), SAFE_DANGEROUS(44.9)
+  14   SAFE_DANGEROUS          +  0.86pp   45.89%   SIMPLE_COMPLEX(45.9), FULL_EMPTY(45.9), FAMILIAR_STRANGE(45.9)
+  15   SIMPLE_COMPLEX          +  0.93pp   46.83%   FULL_EMPTY(46.7), BRAVE_AFRAID(46.6), STRAIGHT_CURVED(46.6)
+  16   FULL_EMPTY              +  0.77pp   47.60%   BRAVE_AFRAID(47.5), STRAIGHT_CURVED(47.5), FAMILIAR_STRANGE(47.5)
+  17   BRAVE_AFRAID            +  0.71pp   48.31%   STRAIGHT_CURVED(48.3), FAMILIAR_STRANGE(48.3), BEAUTIFUL_UGLY(48.2)
+  18   STRAIGHT_CURVED         +  0.69pp   49.00%   FAMILIAR_STRANGE(49.0), COMMON_RARE(48.9), TASTE(48.9)
+  19   FAMILIAR_STRANGE        +  0.63pp   49.63%   COMMON_RARE(49.6), BEAUTIFUL_UGLY(49.6), VISIBLE_INVISIBLE(49.6)
+  20   COMMON_RARE             +  0.66pp   50.28%   SHARPNESS(50.2), VISIBLE_INVISIBLE(50.2), ACTIVE_PASSIVE(50.2)
+  21   VISIBLE_INVISIBLE       +  0.57pp   50.86%   SHARPNESS(50.9), ACTIVE_PASSIVE(50.8), BEAUTIFUL_UGLY(50.8)
+  22   ACTIVE_PASSIVE          +  0.58pp   51.43%   SHARPNESS(51.4), BEAUTIFUL_UGLY(51.4), TASTE(51.3)
+  23   SHARPNESS               +  0.56pp   52.00%   BEAUTIFUL_UGLY(51.9), TASTE(51.9), STRENGTH(51.9)
+  24   STRENGTH                +  0.49pp   52.49%   BEAUTIFUL_UGLY(52.5), TASTE(52.4), PROUD_HUMBLE(52.4)
+  25   BEAUTIFUL_UGLY          +  0.46pp   52.95%   TASTE(52.9), PROUD_HUMBLE(52.9), TEMPERATURE(52.9)
+  26   PROUD_HUMBLE            +  0.43pp   53.38%   CLEANLINESS(53.4), TEMPERATURE(53.4), CHEAP_EXPENSIVE(53.4)
+  27   CLEANLINESS             +  0.41pp   53.79%   TEMPERATURE(53.8), CHEAP_EXPENSIVE(53.8), STABLE_UNSTABLE(53.8)
+  28   TEMPERATURE             +  0.42pp   54.21%   NATURAL_ARTIFICIAL(54.2), STABLE_UNSTABLE(54.2), CHEAP_EXPENSIVE(54.2)
+  29   NATURAL_ARTIFICIAL      +  0.42pp   54.62%   LIVING_DEAD(54.6), CHEAP_EXPENSIVE(54.6), HONEST_DISHONEST(54.6)
+
+Final Roget-only greedy basis (29 axes):
+   1. PURE_IMPURE
+   2. DEEP_SHALLOW
+   3. GENEROUS_STINGY
+   4. HARDNESS
+   5. BRIGHT_DARK
+   6. WISE_FOOLISH
+   7. QUIET_NOISY
+   8. PUBLIC_PRIVATE
+   9. EARLY_LATE
+  10. PATIENT_IMPATIENT
+  11. ROUND_ANGULAR
+  12. MANY_FEW
+  13. KIND_CRUEL
+  14. SAFE_DANGEROUS
+  15. SIMPLE_COMPLEX
+  16. FULL_EMPTY
+  17. BRAVE_AFRAID
+  18. STRAIGHT_CURVED
+  19. FAMILIAR_STRANGE
+  20. COMMON_RARE
+  21. VISIBLE_INVISIBLE
+  22. ACTIVE_PASSIVE
+  23. SHARPNESS
+  24. STRENGTH
+  25. BEAUTIFUL_UGLY
+  26. PROUD_HUMBLE
+  27. CLEANLINESS
+  28. TEMPERATURE
+  29. NATURAL_ARTIFICIAL
+Final coverage on cognitive vocab: 54.62%
+
+For reference, % of cognitive variance captured by:
+  Top 24 PCs of cognitive vocab itself: 68.16%
+  Top 50 PCs of cognitive vocab itself: 82.91%
+
+Saved exp96_results.npz

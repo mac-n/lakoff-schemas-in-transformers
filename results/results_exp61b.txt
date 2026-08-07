@@ -1,0 +1,61 @@
+Loading glove-wiki-gigaword-300...
+Loading exp60 basis...
+
+====================================================================
+PART 1 — MML-extended axes vs R
+====================================================================
+  UP_DOWN_MML:    57/57 pairs in vocab
+  LIGHT_DARK_MML: 28/28 pairs in vocab
+
+  cos(UP_DOWN_MML,    R) = -0.0813   (prediction: negative if UP-pole is cascade)  PASS
+  cos(LIGHT_DARK_MML, R) = +0.1780   (prediction: positive if DARK-pole is cascade)  PASS
+
+  Comparison vs narrow steering vocab (exp61):
+    UD: narrow -0.0186  vs MML -0.0813
+    LD: narrow -0.0024  vs MML +0.1780
+  (BASIS_REFERENCE §4 reported UD R-coord -0.091, LD R-coord +0.144 — those are post-GS-orthogonalized coordinates, this is raw cos.)
+
+====================================================================
+PART 2 — Shared anisotropy diagnostic
+====================================================================
+  |shared pole-mean direction| = 2.635
+  cos(shared, R) = -0.1406   (this is what dragged all four poles into the -0.1 zone)
+
+  Decomposition onto 7-axis basis (unit-normalized shared direction):
+      axis       cos  meaning
+  --------  --------  ----------------------------------------
+     C_rew  -0.0750   integrated reward / wellbeing
+     W_wgt  +0.1319   weight / cost / effort burden
+     A_aff  +0.0989   affect (Russell V×A diagonal)
+     G_pol  +0.1762   policy precision / goal-directedness
+     R_per  -0.1406   perceptual precision / regulability
+     D_cmp  -0.0322   compression / surprisal / predictability
+    IO_blk  -0.0736   container-topology
+
+  ||sum of axis-projections||^2 = 0.1189  (rough basis-coverage indicator, not GS-corrected)
+
+--------------------------------------------------------------------
+  TIME hypothesis check (quick proto-TIME from Thread 2.5 anchors):
+--------------------------------------------------------------------
+  TIME axis built from 11/11 in-vocab pairs.
+  cos(shared, TIME) = +0.0148
+  cos(TIME, R)      = -0.0192
+  |TIME projection onto shared direction| / |shared| = 0.0148
+
+  cos(pole, TIME) for each steering pole:
+    UP      cos(pole, TIME) = -0.0168
+    DOWN    cos(pole, TIME) = +0.0162
+    LIGHT   cos(pole, TIME) = +0.0451
+    DARK    cos(pole, TIME) = -0.0043
+
+  Ranked: shared-direction cosines, |cos| descending
+       G_pol  +0.1762  ########
+       R_per  -0.1406  #######
+       W_wgt  +0.1319  ######
+       A_aff  +0.0989  ####
+       C_rew  -0.0750  ###
+      IO_blk  -0.0736  ###
+       D_cmp  -0.0322  #
+       TIME?  +0.0148  
+
+Saved exp61b_results.npz

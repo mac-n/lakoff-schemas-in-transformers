@@ -1,0 +1,186 @@
+Loading glove-wiki-gigaword-300...
+
+=== Building axes ===
+  [BEAUTIFUL_UGLY] missing: [('aesthetic', 'unaesthetic')]
+
+=== TEST 1: Affect-loading of candidate primitives ===
+             axis    cos(V)    cos(A)     %V     %A   %resid
+        COHERENCE    +0.438    +0.111  19.2%   1.2%    78.2%
+   BEAUTIFUL_UGLY    +0.677    -0.082  45.8%   0.7%    55.0%
+
+=== TEST 2: COHERENCE vs BEAUTIFUL_UGLY ===
+  cos(COH, BEAUTY)         = +0.2950
+  cos(COH_VA, BEAUTY_VA)   = -0.0047
+  High both ways → same underlying axis. Higher VA-residualized = robust shared content.
+
+=== TEST 3: Candidate alignments with cluster axes ===
+                         UD  IO_CLEAN        FB        LD     EXIST      DIFF      PATH
+        COHERENCE    +0.483    +0.093    +0.406    +0.309    +0.313    -0.131    +0.150
+   BEAUTIFUL_UGLY    +0.474    +0.094    +0.239    +0.312    +0.217    -0.305    +0.096
+
+=== TEST 3b: After V+A residualization of everything ===
+                         UD  IO_CLEAN        FB        LD     EXIST      DIFF      PATH
+     COHERENCE_VA    +0.262    +0.024    +0.257    +0.127    +0.164    +0.005    +0.108
+  BEAUTIFUL_UGLY_VA    +0.117    +0.008    +0.005    +0.060    -0.024    -0.095    +0.048
+
+=== TEST 4: Candidates vs UD-FB shared residual (after V+A+EXIST) ===
+  cos(shared_residual, COHERENCE)      = +0.1926
+  cos(shared_residual, COHERENCE_VA)   = +0.2752
+  cos(shared_residual, BEAUTIFUL_UGLY) = +0.0054
+  cos(shared_residual, BEAUTY_VA)      = +0.0932
+
+=== TEST 5: UD-FB cosine through residualization stages ===
+  Raw:                              cos(UD, FB) = +0.5204
+  V removed:                        cos(UD_V, FB_V) = +0.4180
+  V+A removed:                      cos(UD_VA, FB_VA) = +0.3426
+  V+A+EXIST removed:                cos = +0.2579
+  V+A+COHERENCE removed:            cos = +0.2987
+  V+A+EXIST+COHERENCE removed:      cos = +0.2402
+  ^^^ If COHERENCE explains residual: V+A+COH gets cos(UD,FB) to near zero.
+
+=== TEST 6: UD-LD and FB-LD through V+A+COHERENCE ===
+  Raw:           cos(UD, LD) = +0.3551    cos(FB, LD) = +0.2758
+  V+A removed:   cos = +0.0941    cos = +0.0944
+  V+A+COH:       cos = +0.0653    cos = +0.0660
+
+=== TEST 7: Nearest neighbors of COHERENCE ===
+  Positive pole (coherence):
+    +0.5204  ensure
+    +0.4715  should
+    +0.4707  established
+    +0.4654  must
+    +0.4548  establish
+    +0.4484  wanted
+    +0.4316  will
+    +0.4261  working
+    +0.4260  follow
+    +0.4257  agreed
+    +0.4222  fully
+    +0.4192  instead
+    +0.4163  full
+    +0.4155  next
+    +0.4144  need
+
+  Negative pole (incoherence / disruption):
+    +0.5180  mystifying
+    +0.4894  anomalous
+    +0.4707  aberrant
+    +0.4630  uncouth
+    +0.4460  intemperate
+    +0.4320  out-of-context
+    +0.4257  unexplainable
+    +0.4232  baffling
+    +0.4211  inexplicable
+    +0.4200  keyrates
+    +0.4098  impetuous
+    +0.4095  fistulae
+    +0.4060  disconcerting
+    +0.4043  ill-considered
+    +0.4035  unfocused
+
+=== After V+A residualization (COHERENCE_VA) ===
+  Positive pole:
+    +0.4505  ensure
+    +0.4439  should
+    +0.4405  must
+    +0.4106  follow
+    +0.4057  instead
+    +0.4035  uniform
+    +0.4000  accordance
+    +0.3859  carry
+    +0.3856  will
+    +0.3855  rest
+    +0.3830  wanted
+    +0.3804  longer
+    +0.3786  would
+    +0.3734  continue
+    +0.3684  carried
+
+  Negative pole:
+    +0.4799  anomalous
+    +0.4190  mystifying
+    +0.4031  aberrant
+    +0.3893  undefinable
+    +0.3877  jauntiness
+    +0.3826  intriguingly
+    +0.3810  underappreciated
+    +0.3799  out-of-context
+    +0.3796  ex-serviceman
+    +0.3787  epiphanic
+    +0.3786  unsteadiness
+    +0.3746  impetuous
+    +0.3693  uncouth
+    +0.3690  aphasic
+    +0.3681  ill-considered
+
+=== TEST 8: Nearest neighbors of BEAUTIFUL_UGLY ===
+  Positive pole (beautiful):
+    +0.6307  elegant
+    +0.5435  lovely
+    +0.5321  beautiful
+    +0.4995  beautifully
+    +0.4720  handsome
+    +0.4516  graceful
+    +0.4426  gorgeous
+    +0.4396  exquisite
+    +0.4391  magnificent
+    +0.4336  sumptuous
+    +0.4300  stylish
+    +0.4201  charming
+    +0.4179  lush
+    +0.4137  elegance
+    +0.4044  polished
+
+  Negative pole (ugly):
+    +0.3871  repugnant
+    +0.3612  inexcusable
+    +0.3592  senseless
+    +0.3581  intolerable
+    +0.3573  horrendous
+    +0.3474  abhorrent
+    +0.3470  perpetrated
+    +0.3450  calamitous
+    +0.3436  unspeakable
+    +0.3415  distasteful
+    +0.3403  anti-semitism
+    +0.3384  antisemitism
+    +0.3383  unavoidable
+    +0.3369  unjust
+    +0.3365  unjustifiable
+
+=== After V+A residualization (BEAUTY_VA) ===
+  Positive pole:
+    +0.5176  elegant
+    +0.4843  exquisite
+    +0.4764  beautiful
+    +0.4489  lovely
+    +0.4420  beautifully
+    +0.4205  ornate
+    +0.4205  graceful
+    +0.4197  gorgeous
+    +0.4195  exquisitely
+    +0.3926  chandeliers
+    +0.3915  gilded
+    +0.3876  magnificent
+    +0.3796  decorated
+    +0.3724  handsome
+    +0.3667  adorned
+
+  Negative pole:
+    +0.3010  hreoc
+    +0.2927  kiloliters
+    +0.2829  antisemitism
+    +0.2813  gfap
+    +0.2733  trilateral
+    +0.2724  ocu
+    +0.2707  equals
+    +0.2696  ncf
+    +0.2695  electional
+    +0.2692  fts
+    +0.2675  employments
+    +0.2673  wjxt
+    +0.2664  homology
+    +0.2661  cci
+    +0.2654  3,772
+
+Saved: exp37_results.npz

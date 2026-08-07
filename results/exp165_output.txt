@@ -1,0 +1,46 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+exp165 — CAUSAL BALANCE-steer -> attention entropy (PREREG_exp165.md, frozen before this script)
+exp165 harness validation (no model load)
+============================================================
+  selftest_classifier: PASS (CONFIRMED / GENERIC / NULL / wrong-sign / beats-random-not-schema).
+  synthetic_steering_test: PASS  (directional sB=-3.968 beats maxRandom=+0.611 -> CONFIRMED; pure-magnitude -> NULL).
+  prompts: exp166 set, checksum 4d54ff4297bd7e2c OK; dose grid [-2.0, -1.0, -0.5, -0.25, 0.0, 0.25, 0.5, 1.0, 2.0]
+HARNESS OK — safe to execute the model run.
+
+vocab: 489 (est 312/test 177)
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 23928.59it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+
+========================================================================
+PRIMARY: steer resid_post[2] -> attn entropy L3 (+ L[8, 12, 16])
+========================================================================
+  median resid_post[2] norm m = 131.23; dose in units of m: [-2.0, -1.0, -0.5, -0.25, 0.0, 0.25, 0.5, 1.0, 2.0]
+
+  dose-response at L3 (mean entropy per c):
+   c:    -2.00  -1.00  -0.50  -0.25  +0.00  +0.25  +0.50  +1.00  +2.00
+   BAL:  0.848  0.757  0.686  0.663  0.666  0.653  0.594  0.550  0.600
+
+  slope_BAL          = -0.0706  CI[-0.0722,-0.0690]  Spearman=-0.93
+  random slopes      : mean +0.0168, min -0.0900, max +0.0770 (n=12)
+  slope_BAL - random : CI[-0.0888,-0.0859]
+  schema slopes      : UP -0.048, IN +0.002, FORW -0.039, PATH +0.011, LIGH +0.006, FORC -0.006, DIFF -0.030
+  BALANCE steeper than 7/7 schemas
+
+  propagation (BALANCE slope at deeper layers, report only):
+    L8: slope -0.1311 CI[-0.1326,-0.1294]
+    L12: slope -0.1468 CI[-0.1491,-0.1444]
+    L16: slope -0.1461 CI[-0.1478,-0.1442]
+
+========================================================================
+ROBUSTNESS: BALANCE + 4 random at other shallow steer points
+========================================================================
+  steer L1->meas L2: slope_BAL -0.0314 CI[-0.0330,-0.0298] | random min -0.0394 -> ≈ random
+  steer L3->meas L4: slope_BAL +0.0226 CI[+0.0209,+0.0242] | random min -0.0388 -> ≈ random
+
+========================================================================
+VERDICT vs PREREG_exp165.md:  >>> GENERIC_MAGNITUDE <<<
+========================================================================
+  CAUSAL_DIRECTION_CONFIRMED = BALANCE causally & specifically steers entropy
+  GENERIC_MAGNITUDE = real but = any matched-norm push (correlation stays correlational)
+  NULL = no causal effect at this layer (-> Arrow B: entropy->BALANCE)

@@ -1,0 +1,143 @@
+Loading GloVe...
+
+##############################################################################
+# GLOVE (glove-wiki-gigaword-300)   (vocab 400,000)
+##############################################################################
+
+  top-PC frequency-rank correlation (|rho| high => that PC ~ frequency):
+    PC1: var= 5.8%   spearman(PC,freq-rank)=+0.933
+    PC2: var= 1.6%   spearman(PC,freq-rank)=+0.191
+    PC3: var= 1.4%   spearman(PC,freq-rank)=+0.689
+    PC4: var= 1.2%   spearman(PC,freq-rank)=+0.425
+    PC5: var= 1.1%   spearman(PC,freq-rank)=+0.019
+    PC6: var= 1.0%   spearman(PC,freq-rank)=-0.201
+  -> stripping top 3 PCs (All-But-The-Top)
+
+  each axis's frequency loading BEFORE stripping  cos(raw, PC1):
+    soft->hard       -0.188
+    warm->cold       -0.069
+    up->down         +0.083
+    forward->back    -0.197
+    past->future     +0.038
+    chaos->order     -0.199
+    darkness->light  -0.208
+
+  pairwise cosines AFTER stripping (independence of the 7 axes):
+           hard    cold    down    back  future   order   light
+  hard     1.00    0.21    0.03    0.00   -0.01   -0.02   -0.13
+  cold     0.21    1.00    0.18    0.04   -0.06   -0.12   -0.10
+  down     0.03    0.18    1.00    0.09   -0.18   -0.07    0.03
+  back     0.00    0.04    0.09    1.00   -0.14   -0.08   -0.14
+  futur   -0.01   -0.06   -0.18   -0.14    1.00    0.03    0.13
+  order   -0.02   -0.12   -0.07   -0.08    0.03    1.00    0.35
+  light   -0.13   -0.10    0.03   -0.14    0.13    0.35    1.00
+
+  pole words AFTER stripping (top 12 each end):
+    soft->hard
+      +hard     : ['hard', 'perseverance', 'figuring', 'hardest', 'prove', 'proving', 'harder', 'difficult', 'learn', 'understand', 'struggling', 'struggle']
+      +soft     : ['soft', 'carbonated', 'silky', 'fluffy', 'creamy', 'schweppes', 'translucent', 'unregulated', 'sugary', 'drinks', 'plump', 'buttery']
+    warm->cold
+      +cold     : ['cold', 'war', 'soviet', 'warfare', 'kgb', 'colossus', 'mentality', 'starvation', 'stalinist', 'weapon', 'communist', 'rusting']
+      +warm     : ['warm', 'congratulations', 'welcoming', 'effusive', 'respectful', 'warmly', 'gracious', 'welcome', 'greeting', 'applause', 'compliments', 'thanked']
+    up->down
+      +down     : ['down', 'fell', 'falling', 'skidded', 'slid', 'sharply', 'tumbled', 'plunged', 'slipped', 'tumbling', 'dropped', 'declining']
+      +up       : ['establish', 'create', 'queued', 'endowed', 'contingency', 'queuing', 'rapport', 'synergy', 'establishing', 'teaming', 'timers', 'up']
+    forward->back
+      +back     : ['back', 'motel', 'returned', 'eventually', 'invaded', 'escaped', 'hell', 'marge', 'leave', 'gunpoint', 'stockbridge', 'haunt']
+      +forward  : ['forward', 'forwards', 'striker', 'goals', 'shareef', 'scorer', 'mutually', 'constructive', 'assist', 'scored', 'progress', 'implementing']
+    past->future
+      +future   : ['future', 'foreseeable', 'father-in-law', 'prospects', 'son-in-law', 'jeopardise', 'brother-in-law', 'forthcoming', 'ponders', 'possibility', 'someday', 'viable']
+      +past     : ['past', 'dribbled', 'bounced', 'breezed', 'crept', 'poked', 'pulled', 'ago', 'stopped', 'gone', 'swept', 'trudged']
+    chaos->order
+      +order    : ['order', 'orders', 'restraining', 'request', 'required', 'obtain', 'obtained', 'specific', 'recommendation', 'upheld', 'permission', 'requiring']
+      +chaos    : ['chaos', 'anarchy', 'mayhem', 'despair', 'pandemonium', 'tumult', 'gripped', 'chaotic', 'turmoil', 'carnage', 'upheaval', 'instability']
+    darkness->light
+      +light    : ['light', 'lighter', 'middleweight', 'boxer', 'addition', 'ibf', 'flyweight', 'welterweight', 'lightweight', 'heavyweight', 'wbo', 'fiber']
+      +darkness : ['darkness', 'chaos', 'despair', 'madness', 'anarchy', 'utter', 'fear', 'abyss', 'desperation', 'treachery', 'nightfall', 'cursing']
+
+  cognitive-sample coverage AFTER stripping (mean|cos|, n=85):
+    soft->hard       0.089
+    warm->cold       0.073
+    up->down         0.059
+    forward->back    0.058
+    past->future     0.061
+    chaos->order     0.113
+    darkness->light  0.094
+
+Loading fastText...
+
+##############################################################################
+# FASTTEXT (fasttext-wiki-news-subwords-300)   (vocab 999,999)
+##############################################################################
+
+  top-PC frequency-rank correlation (|rho| high => that PC ~ frequency):
+    PC1: var= 6.6%   spearman(PC,freq-rank)=-0.250
+    PC2: var= 5.4%   spearman(PC,freq-rank)=-0.041
+    PC3: var= 3.0%   spearman(PC,freq-rank)=-0.098
+    PC4: var= 2.6%   spearman(PC,freq-rank)=-0.041
+    PC5: var= 2.2%   spearman(PC,freq-rank)=-0.143
+    PC6: var= 1.6%   spearman(PC,freq-rank)=-0.118
+  -> stripping top 3 PCs (All-But-The-Top)
+
+  each axis's frequency loading BEFORE stripping  cos(raw, PC1):
+    soft->hard       +0.025
+    warm->cold       +0.001
+    up->down         -0.145
+    forward->back    +0.109
+    past->future     -0.076
+    chaos->order     -0.025
+    darkness->light  +0.158
+
+  pairwise cosines AFTER stripping (independence of the 7 axes):
+           hard    cold    down    back  future   order   light
+  hard     1.00    0.23    0.04    0.11    0.07    0.10    0.04
+  cold     0.23    1.00    0.22    0.05    0.01   -0.07   -0.13
+  down     0.04    0.22    1.00   -0.04    0.14    0.06   -0.00
+  back     0.11    0.05   -0.04    1.00   -0.15   -0.01    0.04
+  futur    0.07    0.01    0.14   -0.15    1.00    0.03    0.11
+  order    0.10   -0.07    0.06   -0.01    0.03    1.00    0.36
+  light    0.04   -0.13   -0.00    0.04    0.11    0.36    1.00
+
+  pole words AFTER stripping (top 12 each end):
+    soft->hard
+      +hard     : ['trying', 'hard', 'frustrating', 'difficult', 'impossible', 'struggle', 'Trying', 'attempting', 'unfortunately', 'remember', 'nonetheless', 'harder']
+      +soft     : ['soft', 'Soft', 'silky', 'pink', 'softness', 'flavored', 'softer', 'liquid', 'airy', 'metallic', 'reddish', 'creamy']
+    warm->cold
+      +cold     : ['starvation', 'senseless', 'desperation', 'debilitating', 'colds', 'cold', 'superstition', 'self-inflicted', 'dreadful', 'shoplifting', 'interminable', 'confronted']
+      +warm     : ['warm', 'vibrant', 'friendly', 'lively', 'gentle', 'hospitable', 'lush', 'cordial', 'gracious', 'warms', 'warmly', 'hearty']
+    up->down
+      +down     : ['treacherous', 'self-defeating', 'anti-democratic', 'mean-spirited', 'counterproductive', 'cost-cutting', '.................', '..............', '................', 'counter-productive', 'machinations', 'subterfuge']
+      +up       : ['up', 'out', 'him', 'some', 'me', 'them', 'with', 'to', 'for', 'upto', 'it', 'own']
+    forward->back
+      +back     : ['back', 'off', 'down', 'Back', 'somewhere', 'wiped', 'awhile', 'scratch', 'backed', 'scratched', 'halfway', 'backside']
+      +forward  : ['skilful', 'forward', 'forwards', 'innovative', 'artful', 'inventive', 'Forward', 'clever', 'dynamic', 'capable', 'iterative', 'potent']
+    past->future
+      +future   : ['indispensable', 'assuring', 'possibility', 'Believing', 'Tomorrow', 'guaranteeing', 'anticipating', 'next-generation', 'future', 'Definitely', 'someday', 'cost-effective']
+      +past     : ['past', 'previous', 'over', 'times', 'years', 'thru', 'long', 'racked', 'crept', 'last', 'old', 'back']
+    chaos->order
+      +order    : ['order', 'requested', 'ordered', 'recommendation', 'requesting', 'request', 'recommended', 'orders', 'stipulated', 'provisionally', 'recommend', 'ordering']
+      +chaos    : ['chaos', 'mayhem', 'turmoil', 'anarchy', 'strife', 'chaotic', 'havoc', 'unrest', 'upheaval', 'carnage', 'rife', 'Chaos']
+    darkness->light
+      +light    : ['light', 'illuminating', 'recommendations', 'energy-efficient', 'recommendation', 'well-received', 'consideration', 'complementary', 'complimentary', 'lights', 'significant', 'bright']
+      +darkness : ['darkness', 'madness', 'tyranny', 'despair', 'nihilism', 'abyss', 'cowardice', 'anarchy', 'jungles', 'chaos', 'agony', 'misery']
+
+  cognitive-sample coverage AFTER stripping (mean|cos|, n=85):
+    soft->hard       0.082
+    warm->cold       0.077
+    up->down         0.046
+    forward->back    0.047
+    past->future     0.072
+    chaos->order     0.103
+    darkness->light  0.082
+
+==============================================================================
+CROSS-SUBSTRATE AGREEMENT  (spearman of word-projections, n=42389)
+  high => the axis ranks words the same way in GloVe and fastText (substrate-general)
+==============================================================================
+    soft->hard       rho = +0.409
+    warm->cold       rho = +0.462
+    up->down         rho = +0.113
+    forward->back    rho = +0.436
+    past->future     rho = +0.369
+    chaos->order     rho = +0.544
+    darkness->light  rho = +0.462

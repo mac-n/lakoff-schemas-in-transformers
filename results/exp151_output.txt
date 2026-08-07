@@ -1,0 +1,132 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Running verdict-logic selftest first (synthetic-test convention)...
+selftest_verdict: all branches fire correctly.
+Loading Pythia 1.4B...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<03:45,  1.29it/s]Loading weights:  19%|█▉        | 56/292 [00:00<00:02, 81.47it/s]Loading weights:  27%|██▋       | 79/292 [00:01<00:02, 85.11it/s]Loading weights:  33%|███▎      | 96/292 [00:01<00:03, 58.77it/s]Loading weights:  37%|███▋      | 108/292 [00:02<00:03, 50.47it/s]Loading weights:  40%|████      | 117/292 [00:02<00:03, 53.41it/s]Loading weights:  43%|████▎     | 126/292 [00:02<00:04, 41.10it/s]Loading weights:  46%|████▌     | 133/292 [00:02<00:03, 41.87it/s]Loading weights:  49%|████▉     | 144/292 [00:02<00:03, 42.43it/s]Loading weights:  53%|█████▎    | 156/292 [00:03<00:02, 46.76it/s]Loading weights:  55%|█████▌    | 162/292 [00:03<00:03, 41.33it/s]Loading weights:  58%|█████▊    | 168/292 [00:03<00:03, 41.11it/s]Loading weights:  60%|██████    | 176/292 [00:03<00:02, 44.14it/s]Loading weights:  62%|██████▏   | 181/292 [00:03<00:02, 39.80it/s]Loading weights:  66%|██████▌   | 192/292 [00:04<00:02, 42.92it/s]Loading weights:  67%|██████▋   | 197/292 [00:04<00:02, 33.89it/s]Loading weights:  70%|██████▉   | 204/292 [00:04<00:02, 35.61it/s]Loading weights:  73%|███████▎  | 212/292 [00:04<00:01, 42.61it/s]Loading weights:  74%|███████▍  | 217/292 [00:04<00:01, 38.31it/s]Loading weights:  77%|███████▋  | 224/292 [00:04<00:01, 43.19it/s]Loading weights:  78%|███████▊  | 229/292 [00:05<00:01, 44.02it/s]Loading weights:  82%|████████▏ | 240/292 [00:05<00:01, 46.66it/s]Loading weights:  85%|████████▍ | 248/292 [00:05<00:00, 46.40it/s]Loading weights:  87%|████████▋ | 253/292 [00:05<00:00, 42.08it/s]Loading weights:  88%|████████▊ | 258/292 [00:05<00:00, 42.57it/s]Loading weights:  90%|█████████ | 264/292 [00:05<00:00, 35.73it/s]Loading weights:  92%|█████████▏| 268/292 [00:06<00:00, 35.45it/s]Loading weights:  95%|█████████▍| 276/292 [00:06<00:00, 35.70it/s]Loading weights:  97%|█████████▋| 284/292 [00:06<00:00, 40.39it/s]Loading weights:  99%|█████████▉| 290/292 [00:06<00:00, 41.99it/s]Loading weights: 100%|██████████| 292/292 [00:06<00:00, 44.54it/s]
+Loaded pretrained model pythia-1.4b into HookedTransformer
+Word split: 489 total = 312 estimation + 177 held-out test
+Collecting residuals for 489 words at [4, 8, 12, 16, 20]...
+  100/489
+  200/489
+  300/489
+  400/489
+
+==============================================================================
+exp151 — Pythia 1.4B replication (held-out d_norm protocol)
+==============================================================================
+
+--- Layer 4 ---
+  cos(BALANCE, d_norm_heldout) = +0.693   cos(d_norm_ho, d_norm_full) = +0.977   out-of-sample carrier = +0.956
+  Δnorm (inflected - base), mean ± sd per suffix (mean word norm 536.6):
+    ER_comparative      -692.61 ±   488.33
+    EST_superlative     -833.38 ±   408.21
+    ING_progressive     -430.97 ±   547.43
+    ED_past             -720.09 ±   520.09
+    S_plural            -244.38 ±   468.04
+    UN_negation         -857.19 ±   393.18
+    RE_repetition       -902.71 ±   347.14
+  suffix x BALANCE — before / after FULL strip / after HELD-OUT strip:
+    ER_comparative    -0.351   -0.000   -0.126
+    EST_superlative   -0.223   +0.057   -0.073
+    ING_progressive   -0.376   -0.053   -0.119
+    ED_past           -0.415   +0.052   -0.056
+    S_plural          -0.331   +0.013   -0.066
+    UN_negation       -0.440   -0.199   -0.261
+    RE_repetition     -0.291   +0.038   -0.040
+  inflectional mean: -0.339 -> full +0.014 (-4%) -> held-out -0.088 (26%)
+  random-2D band: -0.339 ± 0.000 [-0.340, -0.338]
+
+--- Layer 8 ---
+  cos(BALANCE, d_norm_heldout) = +0.670   cos(d_norm_ho, d_norm_full) = +0.972   out-of-sample carrier = +0.942
+  Δnorm (inflected - base), mean ± sd per suffix (mean word norm 609.0):
+    ER_comparative      -779.59 ±   547.99
+    EST_superlative     -939.96 ±   456.41
+    ING_progressive     -483.75 ±   611.25
+    ED_past             -806.20 ±   580.21
+    S_plural            -277.55 ±   525.57
+    UN_negation         -958.47 ±   443.31
+    RE_repetition      -1014.95 ±   388.40
+  suffix x BALANCE — before / after FULL strip / after HELD-OUT strip:
+    ER_comparative    -0.339   +0.036   -0.107
+    EST_superlative   -0.218   +0.070   -0.068
+    ING_progressive   -0.355   -0.037   -0.120
+    ED_past           -0.348   +0.095   -0.027
+    S_plural          -0.262   +0.009   -0.068
+    UN_negation       -0.449   -0.191   -0.250
+    RE_repetition     -0.256   +0.012   -0.071
+  inflectional mean: -0.305 -> full +0.035 (-11%) -> held-out -0.078 (26%)
+  random-2D band: -0.305 ± 0.000 [-0.305, -0.304]
+
+--- Layer 12 ---
+  cos(BALANCE, d_norm_heldout) = +0.644   cos(d_norm_ho, d_norm_full) = +0.967   out-of-sample carrier = +0.942
+  Δnorm (inflected - base), mean ± sd per suffix (mean word norm 631.5):
+    ER_comparative      -789.12 ±   554.75
+    EST_superlative     -951.33 ±   461.84
+    ING_progressive     -487.79 ±   616.16
+    ED_past             -814.87 ±   586.25
+    S_plural            -280.19 ±   530.19
+    UN_negation         -969.99 ±   448.49
+    RE_repetition      -1025.01 ±   391.41
+  suffix x BALANCE — before / after FULL strip / after HELD-OUT strip:
+    ER_comparative    -0.315   +0.031   -0.122
+    EST_superlative   -0.200   +0.082   -0.059
+    ING_progressive   -0.344   -0.074   -0.164
+    ED_past           -0.314   +0.063   -0.057
+    S_plural          -0.211   -0.025   -0.091
+    UN_negation       -0.423   -0.131   -0.203
+    RE_repetition     -0.227   -0.000   -0.081
+  inflectional mean: -0.277 -> full +0.015 (-6%) -> held-out -0.098 (36%)
+  random-2D band: -0.277 ± 0.000 [-0.277, -0.276]
+
+--- Layer 16 ---
+  cos(BALANCE, d_norm_heldout) = +0.642   cos(d_norm_ho, d_norm_full) = +0.967   out-of-sample carrier = +0.926
+  Δnorm (inflected - base), mean ± sd per suffix (mean word norm 655.4):
+    ER_comparative      -757.73 ±   533.98
+    EST_superlative     -912.81 ±   445.15
+    ING_progressive     -469.68 ±   593.80
+    ED_past             -785.03 ±   564.74
+    S_plural            -269.87 ±   510.94
+    UN_negation         -938.17 ±   432.73
+    RE_repetition       -987.14 ±   376.80
+  suffix x BALANCE — before / after FULL strip / after HELD-OUT strip:
+    ER_comparative    -0.307   +0.003   -0.143
+    EST_superlative   -0.199   +0.106   -0.046
+    ING_progressive   -0.336   -0.088   -0.181
+    ED_past           -0.327   +0.043   -0.080
+    S_plural          -0.170   -0.036   -0.101
+    UN_negation       -0.393   -0.069   -0.142
+    RE_repetition     -0.190   -0.013   -0.085
+  inflectional mean: -0.268 -> full +0.006 (-2%) -> held-out -0.110 (41%)
+  random-2D band: -0.268 ± 0.000 [-0.268, -0.267]
+
+--- Layer 20 ---
+  cos(BALANCE, d_norm_heldout) = +0.670   cos(d_norm_ho, d_norm_full) = +0.970   out-of-sample carrier = +0.927
+  Δnorm (inflected - base), mean ± sd per suffix (mean word norm 650.7):
+    ER_comparative      -668.46 ±   472.16
+    EST_superlative     -799.67 ±   393.22
+    ING_progressive     -413.47 ±   524.88
+    ED_past             -690.92 ±   497.34
+    S_plural            -237.12 ±   450.30
+    UN_negation         -831.78 ±   382.11
+    RE_repetition       -871.81 ±   334.47
+  suffix x BALANCE — before / after FULL strip / after HELD-OUT strip:
+    ER_comparative    -0.348   -0.017   -0.155
+    EST_superlative   -0.234   +0.086   -0.062
+    ING_progressive   -0.318   -0.051   -0.163
+    ED_past           -0.253   +0.117   -0.012
+    S_plural          -0.125   -0.009   -0.077
+    UN_negation       -0.441   -0.089   -0.163
+    RE_repetition     -0.205   -0.013   -0.078
+  inflectional mean: -0.256 -> full +0.025 (-10%) -> held-out -0.094 (37%)
+  random-2D band: -0.256 ± 0.000 [-0.257, -0.255]
+
+==============================================================================
+VERDICT vs pre-registered decision rule
+==============================================================================
+  q1 sink exists (<= -0.15 all decision layers): True
+  q2 coupling exists (cos >= +0.5 all decision layers): True
+  q3 partial residue (mean retained in [15%, 60%]): True (mean retained = 35%)
+  P4 EST flips positive after held-out strip (majority): False
+  -> R1: full replication. 410M findings generalise within the
+     Pythia family; paper claims stand on both sizes.

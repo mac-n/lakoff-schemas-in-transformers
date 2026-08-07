@@ -1,0 +1,352 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Using device: mps
+
+Loading Pythia 1.4B...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<04:25,  1.09it/s]Loading weights:  19%|█▉        | 56/292 [00:01<00:03, 70.78it/s]Loading weights:  27%|██▋       | 78/292 [00:01<00:03, 58.38it/s]Loading weights:  32%|███▏      | 92/292 [00:01<00:03, 53.06it/s]Loading weights:  35%|███▌      | 103/292 [00:02<00:03, 50.50it/s]Loading weights:  38%|███▊      | 112/292 [00:02<00:04, 41.42it/s]Loading weights:  41%|████      | 120/292 [00:02<00:04, 42.32it/s]Loading weights:  43%|████▎     | 126/292 [00:02<00:03, 41.99it/s]Loading weights:  45%|████▌     | 132/292 [00:03<00:04, 36.61it/s]Loading weights:  48%|████▊     | 140/292 [00:03<00:03, 40.82it/s]Loading weights:  50%|████▉     | 145/292 [00:03<00:04, 33.98it/s]Loading weights:  51%|█████     | 149/292 [00:03<00:04, 29.98it/s]Loading weights:  53%|█████▎    | 156/292 [00:03<00:04, 30.72it/s]Loading weights:  55%|█████▍    | 160/292 [00:04<00:04, 29.65it/s]Loading weights:  58%|█████▊    | 168/292 [00:04<00:03, 32.35it/s]Loading weights:  62%|██████▏   | 180/292 [00:04<00:02, 39.84it/s]Loading weights:  63%|██████▎   | 185/292 [00:04<00:02, 38.03it/s]Loading weights:  66%|██████▌   | 192/292 [00:04<00:03, 32.06it/s]Loading weights:  67%|██████▋   | 196/292 [00:05<00:02, 32.96it/s]Loading weights:  70%|██████▉   | 204/292 [00:05<00:02, 36.19it/s]Loading weights:  74%|███████▍  | 216/292 [00:05<00:01, 47.13it/s]Loading weights:  76%|███████▌  | 221/292 [00:05<00:01, 45.64it/s]Loading weights:  78%|███████▊  | 228/292 [00:05<00:01, 45.78it/s]Loading weights:  80%|███████▉  | 233/292 [00:05<00:01, 45.06it/s]Loading weights:  82%|████████▏ | 240/292 [00:06<00:01, 37.45it/s]Loading weights:  85%|████████▍ | 248/292 [00:06<00:01, 43.72it/s]Loading weights:  87%|████████▋ | 253/292 [00:06<00:00, 41.76it/s]Loading weights:  88%|████████▊ | 258/292 [00:06<00:00, 42.05it/s]Loading weights:  90%|█████████ | 264/292 [00:06<00:00, 43.29it/s]Loading weights:  92%|█████████▏| 269/292 [00:06<00:00, 40.39it/s]Loading weights:  94%|█████████▍| 274/292 [00:06<00:00, 42.44it/s]Loading weights:  96%|█████████▌| 279/292 [00:07<00:00, 32.36it/s]Loading weights:  97%|█████████▋| 284/292 [00:07<00:00, 34.90it/s]Loading weights:  99%|█████████▉| 290/292 [00:07<00:00, 37.91it/s]Loading weights: 100%|██████████| 292/292 [00:07<00:00, 40.23it/s]
+Loaded pretrained model pythia-1.4b into HookedTransformer
+Model loaded. 24 layers, d_model=2048
+
+Building UP directions at all layers...
+  Layer  0: done
+  Layer  1: done
+  Layer  2: done
+  Layer  3: done
+  Layer  4: done
+  Layer  5: done
+  Layer  6: done
+  Layer  7: done
+  Layer  8: done
+  Layer  9: done
+  Layer 10: done
+  Layer 11: done
+  Layer 12: done
+  Layer 13: done
+  Layer 14: done
+  Layer 15: done
+  Layer 16: done
+  Layer 17: done
+  Layer 18: done
+  Layer 19: done
+  Layer 20: done
+  Layer 21: done
+  Layer 22: done
+  Layer 23: done
+All layer directions computed.
+
+======================================================================
+PART A: ALL-LAYER DOWN on the original exp3b prompts
+(direct comparison to existing UP results in results_exp3b.txt)
+======================================================================
+
+######################################################################
+PROMPT: 'I want to tell you about my day. It was'
+######################################################################
+
+[baseline (no steering)]
+  a good day."
+
+The phone rings again. I answer it. _"Stasiak." Oh, good. Your son has been phoned."_
+
+_"Yes, he was. I wanted to tell you that the polling station is closed
+
+[DOWN all layers, per-layer=0.5 (total~12)]
+  a good day."
+
+The two men do not speak.
+
+"It started off well enough. I got into the office early. I found a couple of things to work on. Things I'd been putting off while waiting for something else
+
+[DOWN all layers, per-layer=1.0 (total~24)]
+  a good day."
+
+The two men do not speak.
+
+"It started off well enough. I got into the office, I work on a steady basis, and I was off to work. I was just waiting for some classmates that
+
+[DOWN all layers, per-layer=2.0 (total~48)]
+  a little boring, in the daytime. The police didn't come at the school and they didn't tell us to get inside the building. I don't see the point in showing them a little love.
+
+I just wanted to ask if he
+
+[DOWN all layers, per-layer=4.0 (total~96)]
+  a
+fine, fat, sheep-laughing day of it. I had not yet had my
+excess in the morning, but I lost 3 or 4 1st rides and was off
+Steal Away's run before the time set.
+
+######################################################################
+PROMPT: 'The weather today is'
+######################################################################
+
+[baseline (no steering)]
+  going to be much warmer than it was this morning," I say. I reach for my coat, pull it on, and grab my umbrella. "I'm going to be hungry for a while."
+
+"I'm starving," Nola says
+
+[DOWN all layers, per-layer=0.5 (total~12)]
+  going to be much, much colder than it was yesterday.
+And it's going to be very, very cold for the next couple of days.
+I don't want you to worry about that.
+I just want you to know that
+
+[DOWN all layers, per-layer=1.0 (total~24)]
+  going to be much, much colder than it was in the past," said Brandon, "and you're going to have to be careful. It's going to be very cold for a while."
+
+"I hear the snow's going to
+
+[DOWN all layers, per-layer=2.0 (total~48)]
+  going to be much, much colder," said Nancy.
+
+"How so?"
+
+"No rain in the forecast," said Nancy. "And the coldest part of the day is going to be tonight."
+
+"Do you
+
+[DOWN all layers, per-layer=4.0 (total~96)]
+  a little bit worse, but it's still do-able.
+And the reason why is that you need to get into the rhythm of it all.
+I don't wanna hear people is stress out.
+I sincerely apologize.
+I do
+
+######################################################################
+PROMPT: 'When I think about the future, I feel'
+######################################################################
+
+[baseline (no steering)]
+  a lot of fear, because it's never been like this before. I'm not used to it. It's just not the same. I have always been the person who rides alone in a car. I can't imagine the world being like that
+
+[DOWN all layers, per-layer=0.5 (total~12)]
+  a lot of fear, because it's never been like this before. I mean, we had war, bombs, wars, the weather hurting us all the time – people say, "Oh, it's just the weather", while the real truth is
+
+[DOWN all layers, per-layer=1.0 (total~24)]
+  a lot of fear, because it's never been like this before. I mean, we had war, bombs, and we had people hurting other people, and the people in power are in a pretty good position, but I don't know if that
+
+[DOWN all layers, per-layer=2.0 (total~48)]
+  a lot of fear, because it's never been mapped out.
+And it's always going to be scary.
+
+So what will it be like now with people using ridesharing?
+
+I can't say the answer is going to
+
+[DOWN all layers, per-layer=4.0 (total~96)]
+  a little bit overwhelmed, because it's never been any other way. I mean, you know, you go to school, you do your homework all day and the person you're with is a pretty great source of help, while sometimes some classmates won
+
+
+======================================================================
+PART B: ALL-LAYER DOWN on motion-themed prompts
+(prompts where DOWN has something natural to attach to)
+======================================================================
+
+######################################################################
+PROMPT: 'The temperature is'
+######################################################################
+
+[baseline (no steering)]
+  rising. The phone rings." "Good morning, Muffin." "Morning, Muffin." "The telephone rings." "No work today." "It's a class." "I have to go to class now." "I'm
+
+[DOWN all layers, per-layer=0.5 (total~12)]
+  rising. The phone rings." "Good morning, Muffin." "Morning, Muffin." "The telephone rings." "No answer." "I don't like to be disturbed." "I got a little while ago some classmates that
+
+[DOWN all layers, per-layer=1.0 (total~24)]
+  rising. The phone rings." "Good morning, Muffin." "Morning, Muffin." "The telephone rings." "No answer." "I don't like to be disturbed." "I got a little while ago some classmates that
+
+[DOWN all layers, per-layer=2.0 (total~48)]
+  rising. The phone in my pocket is burning. I'd say that the only reason this is funny is that I got into the same situation as all those other poor people in Mumbai. I know it's not a perfect analogy, but it is a
+
+[DOWN all layers, per-layer=4.0 (total~96)]
+  a non–negative, properly defined function of [*[both]{}*]{} the number of vertices and the number of edges in the [VHSG]{}. For any two settings , the class of $D$ which can be obtained using $A$ that
+
+######################################################################
+PROMPT: 'The leaves on the tree are'
+######################################################################
+
+[baseline (no steering)]
+  grafted onto cuttings taken from the center of the tree. The main difference is the amount of tree saved in each cut. To determine the amount of the grafted tree you are seeking, you will need to take the center of the tree
+
+[DOWN all layers, per-layer=0.5 (total~12)]
+  grafted onto cuttings taken from the center of the tree. The main reason for using cuttings is to produce the best possible growth of the entire plant. This is because they are the easiest to heal and take the shortest time to recover
+
+[DOWN all layers, per-layer=1.0 (total~24)]
+  grafted onto cuttings taken from the parent tree. This is done without damaging the original parent tree. Sometimes, the plants are grafted while still alive with intact leaves showing through the bark.
+
+**HORTICULTURE** G
+
+[DOWN all layers, per-layer=2.0 (total~48)]
+  grafted onto cuttings taken from the parent tree. This is the main way that trees are propagated in the U.S.
+
+These 3D virtual model leaves showing the leaf veins and the leaf epidermal cells with the stomata on.
+
+[DOWN all layers, per-layer=4.0 (total~96)]
+  grafted onto the leaves of the first tree do [ło]{}rgecrowov.
+Someone removes the central [ma]{}e from all 3 [min]{}yer[s]{} and 2 [hoc]{}hor[s]{} and is then
+
+######################################################################
+PROMPT: 'Her energy was'
+######################################################################
+
+[baseline (no steering)]
+  a tiny reflection of the millions of people who do the most important work in the world, and it was a shock to realize how far I had strayed from the people who had given me a great deal.
+
+With the national anthem playing,
+
+[DOWN all layers, per-layer=0.5 (total~12)]
+  a tiny reflection of the millions of people who do the most important work in the world, and it was a shock to realize how far I had strayed from the people who knew me best.
+
+"You're just playing the game, G
+
+[DOWN all layers, per-layer=1.0 (total~24)]
+  a tiny reflection of the millions of people who do the most important work in the world, and it was a shock to realize how far I had strayed from the people in my class."
+
+"I can see that now," Nalini
+
+[DOWN all layers, per-layer=2.0 (total~48)]
+  intense as she reached in front of the camera. ''Well, whatever your feelings are, I'm glad to see that we're all hurting as much as possible with this decision.''
+
+Haley's face got tight with the intensity of her emotional
+
+[DOWN all layers, per-layer=4.0 (total~96)]
+  a tiny, barely perceptible trickle of do-
+hereinafter. I had asked her to come
+home for a telephone
+
+I had missed her; the phone call had
+left a pretty
+
+Though she sincerely hated going back to
+
+
+======================================================================
+PART C: UP vs DOWN at per-layer=4.0 (the critical-collapse strength)
+Direct head-to-head on motion-themed prompts.
+If DOWN collapses (loops, recursion) like DARK did → yang/yin loses force.
+If DOWN stays coherent → yang/yin holds as structural signature for LIGHT/DARK.
+======================================================================
+
+######################################################################
+PROMPT: 'The temperature is'
+######################################################################
+
+[baseline]
+  rising. The phone rings." "Good morning, Muffin." "Morning, Muffin." "The telephone rings." "No work today." "It's a class." "I have to go to class now." "I'm
+
+[UP all layers, per-layer=4.0 (total~96)]
+  a variable parameter which is set to the first or second value according to the number of knots. The temperature is a parameter for the number of knots or knots and the settings for the number of knots.
+
+The temperature is the variable parameter for the
+
+[DOWN all layers, per-layer=4.0 (total~96)]
+  a non–negative, properly defined function of [*[both]{}*]{} the number of vertices and the number of edges in the [VHSG]{}. For any two settings , the class of $D$ which can be obtained using $A$ that
+
+######################################################################
+PROMPT: 'The leaves on the tree are'
+######################################################################
+
+[baseline]
+  grafted onto cuttings taken from the center of the tree. The main difference is the amount of tree saved in each cut. To determine the amount of the grafted tree you are seeking, you will need to take the center of the tree
+
+[UP all layers, per-layer=4.0 (total~96)]
+  grafted with cut branches from the earth. This was the practice used by the pre-historic tribes of human race in the Himalayas. It is now the people in the Himalayan region.
+
+The practice of the worship was done by
+
+[DOWN all layers, per-layer=4.0 (total~96)]
+  grafted onto the leaves of the first tree do [ło]{}rgecrowov.
+Someone removes the central [ma]{}e from all 3 [min]{}yer[s]{} and 2 [hoc]{}hor[s]{} and is then
+
+######################################################################
+PROMPT: 'Her energy was'
+######################################################################
+
+[baseline]
+  a tiny reflection of the millions of people who do the most important work in the world, and it was a shock to realize how far I had strayed from the people who had given me a great deal.
+
+With the national anthem playing,
+
+[UP all layers, per-layer=4.0 (total~96)]
+  a feeling of feeling, of feeling energy. This was what I was feeling. I was feeling energy. It was in my energy. I was feeling energy. I was feeling energy. I was feeling energy. I was feeling energy. I was feeling
+
+[DOWN all layers, per-layer=4.0 (total~96)]
+  a tiny, barely perceptible trickle of do-
+hereinafter. I had asked her to come
+home for a telephone
+
+I had missed her; the phone call had
+left a pretty
+
+Though she sincerely hated going back to
+
+
+======================================================================
+PART D: UP vs DOWN at per-layer=4.0 on the original exp3b prompts
+======================================================================
+
+######################################################################
+PROMPT: 'I want to tell you about my day. It was'
+######################################################################
+
+[baseline]
+  a good day."
+
+The phone rings again. I answer it. _"Stasiak." Oh, good. Your son has been phoned."_
+
+_"Yes, he was. I wanted to tell you that the polling station is closed
+
+[UP all layers, per-layer=4.0 (total~96)]
+  a trip to the doctor's office. The experience was most beneficial. I had a new experience."
+
+S: Your pregnancy was a milestone experience. It was a "journey."
+
+R: It's a new experience. The experience
+
+[DOWN all layers, per-layer=4.0 (total~96)]
+  a
+fine, fat, sheep-laughing day of it. I had not yet had my
+excess in the morning, but I lost 3 or 4 1st rides and was off
+Steal Away's run before the time set.
+
+######################################################################
+PROMPT: 'The weather today is'
+######################################################################
+
+[baseline]
+  going to be much warmer than it was this morning," I say. I reach for my coat, pull it on, and grab my umbrella. "I'm going to be hungry for a while."
+
+"I'm starving," Nola says
+
+[UP all layers, per-layer=4.0 (total~96)]
+  a bit different than the last year. The weather was warmer and sunny and the last year was sunny and warm. It was the weather this year while it was the cold and sunny and was a sunny and warm weather. However, the weather is that
+
+[DOWN all layers, per-layer=4.0 (total~96)]
+  a little bit worse, but it's still do-able.
+And the reason why is that you need to get into the rhythm of it all.
+I don't wanna hear people is stress out.
+I sincerely apologize.
+I do
+
+######################################################################
+PROMPT: 'When I think about the future, I feel'
+######################################################################
+
+[baseline]
+  a lot of fear, because it's never been like this before. I'm not used to it. It's just not the same. I have always been the person who rides alone in a car. I can't imagine the world being like that
+
+[UP all layers, per-layer=4.0 (total~96)]
+  that I know that the benefits of the earth do not depend on how the ideas perform, but rather on how humans in the world do. I reach on what the people in the world are doing.
+
+Though I sincerely feel that the benefits that
+
+[DOWN all layers, per-layer=4.0 (total~96)]
+  a little bit overwhelmed, because it's never been any other way. I mean, you know, you go to school, you do your homework all day and the person you're with is a pretty great source of help, while sometimes some classmates won
+
+======================================================================
+Done. Inspect outputs for:
+  - Does DOWN at per-layer=4.0 collapse into loops/recursion like DARK did?
+  - Or does it produce coherent downward-themed text?
+  - Is UP@4.0 also coherent on motion prompts (suggesting collapse is
+    domain-specific, not direction-specific)?
+======================================================================

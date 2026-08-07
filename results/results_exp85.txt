@@ -1,0 +1,366 @@
+Loading glove-wiki-gigaword-300...
+  vocab size: 400000
+
+Building PCA-input axes (cluster set, 11 axes from exp40)...
+
+Building target axes (independent from PCA-input set)...
+  [target_SALIENCE] missing words (1): ['backgrounded']
+  target_SALIENCE built from 11/12 pairs
+  target_MOTION    built from 12/12 pairs
+  target_EQ_RUN    built from 14/14 pairs
+
+========================================================================
+PCA on cluster axes (11 axes — matches exp40 cluster-only run)
+========================================================================
+
+Variance per PC:
+  PC1:  20.6%   (cumulative:  20.6%)
+  PC2:  17.3%   (cumulative:  37.9%)
+  PC3:  12.4%   (cumulative:  50.3%)
+  PC4:  11.2%   (cumulative:  61.5%)
+  PC5:   9.3%   (cumulative:  70.9%)
+  PC6:   8.7%   (cumulative:  79.6%)
+  PC7:   6.3%   (cumulative:  85.9%)
+  PC8:   5.3%   (cumulative:  91.2%)
+  PC9:   4.5%   (cumulative:  95.7%)
+  PC10:   4.3%   (cumulative: 100.0%)
+
+========================================================================
+CENTRAL TEST: target-axis cosines with PCs
+========================================================================
+
+Predictions:
+  target_SALIENCE  high on PC1 if PC1 is salience-as-primitive;
+                   LOW on PC1 if PC1 is just the V x A diagonal
+  target_MOTION    high on PC2 if MOTION is a real primitive
+  target_EQ_RUN    high on PC3 if EQ-vs-RUNAWAY is a real primitive
+
+                      PC1      PC2      PC3      PC4      PC5      PC6    
+  --------------------------------------------------------------------
+  target_SALIENCE     -0.174  -0.280  -0.056  +0.024  -0.058  -0.039  
+  target_MOTION       -0.094  +0.051  +0.022  +0.054  +0.017  -0.072  
+  target_EQ_RUN       +0.290  +0.011  +0.205  -0.073  -0.124  -0.042  
+
+========================================================================
+Per-target deep dive
+========================================================================
+
+--- target_SALIENCE ---
+  Best PC alignments (sorted by |cos|):
+    PC2 (17.3% var): cos = -0.2797
+    PC7 ( 6.3% var): cos = +0.1974
+    PC1 (20.6% var): cos = -0.1743
+    PC5 ( 9.3% var): cos = -0.0583
+    PC3 (12.4% var): cos = -0.0556
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: +0.4861
+     COHERENCE: +0.4247
+           BAL: +0.3825
+            FB: +0.3625
+            UD: +0.3606
+  Positive pole words:
+    +0.5101  prominent
+    +0.4796  including
+    +0.4558  first
+    +0.4456  addition
+    +0.4374  major
+    +0.4366  notable
+    +0.4286  noted
+    +0.4277  also
+    +0.4192  important
+    +0.4160  one
+  Negative pole words:
+    +0.5190  valueless
+    +0.5184  unfocused
+    +0.4935  uninteresting
+    +0.4822  inoffensive
+    +0.4788  pathetically
+    +0.4783  inattentive
+    +0.4754  unimaginative
+    +0.4736  unimportant
+    +0.4712  inconsequential
+    +0.4657  inarticulate
+
+--- target_MOTION ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = -0.0937
+    PC7 ( 6.3% var): cos = -0.0735
+    PC6 ( 8.7% var): cos = -0.0721
+    PC8 ( 5.3% var): cos = +0.0674
+    PC4 (11.2% var): cos = +0.0538
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+          PATH: +0.2911
+            FB: +0.1925
+            UD: +0.1918
+       AROUSAL: +0.1823
+           BAL: +0.1424
+  Positive pole words:
+    +0.3876  skiing
+    +0.3869  racing
+    +0.3763  sprint
+    +0.3722  diving
+    +0.3711  spectacular
+    +0.3668  championships
+    +0.3593  speed
+    +0.3516  run
+    +0.3503  track
+    +0.3484  jump
+  Negative pole words:
+    +0.4883  kneeling
+    +0.4422  slouched
+    +0.4287  reclining
+    +0.4103  glumly
+    +0.3947  reclined
+    +0.3935  knelt
+    +0.3800  hunched
+    +0.3740  seated
+    +0.3730  slouching
+    +0.3711  lounging
+
+--- target_EQ_RUN ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = +0.2901
+    PC3 (12.4% var): cos = +0.2047
+    PC8 ( 5.3% var): cos = -0.1543
+    PC7 ( 6.3% var): cos = -0.1408
+    PC5 ( 9.3% var): cos = -0.1243
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: -0.2861
+            LD: +0.2180
+       VALENCE: +0.2167
+          LOSS: +0.1638
+     COHERENCE: +0.0871
+  Positive pole words:
+    +0.3360  restoring
+    +0.3153  interpreting
+    +0.3121  modifying
+    +0.3081  tempering
+    +0.3038  adjusting
+    +0.3024  atoning
+    +0.2969  effecting
+    +0.2965  erred
+    +0.2888  accomplishing
+    +0.2820  nyts
+  Negative pole words:
+    +0.4604  mushrooming
+    +0.4443  spiralling
+    +0.4424  spiraling
+    +0.4295  escalating
+    +0.4231  raging
+    +0.4213  engulfed
+    +0.4143  erupted
+    +0.3860  raged
+    +0.3851  escalated
+    +0.3807  sparked
+
+Saved: exp52_results.npz
+Loading GloVe...
+Building UD + 4 trouble axes (original + residualized versions)...
+
+==============================================================================
+C_resid reconstruction attempts
+==============================================================================
+
+Original C-UD overlap: +0.4778
+Target: C_resid (orthogonal to UD by construction)
+
+C_resid positive pole (top 10):
+  prospering                 +0.3647
+  wholesome                  +0.3633
+  luscious                   +0.3499
+  charmed                    +0.3492
+  cosmopolitan               +0.3410
+  demimonde                  +0.3368
+  rhea                       +0.3316
+  thriving                   +0.3293
+  kover                      +0.3250
+  personable                 +0.3215
+
+C_resid negative pole (top 10):
+  caused                     +0.4596
+  problems                   +0.4180
+  suffering                  +0.4098
+  suffered                   +0.4063
+  injuries                   +0.4039
+  plagued                    +0.4035
+  injury                     +0.3986
+  causing                    +0.3940
+  cause                      +0.3859
+  broken                     +0.3802
+
+--- C attempt 1: drop (prospering, declining) ---
+  Pairs used: 11/11
+  cos(reconstructed, residualized_target):  +0.8434
+  cos(reconstructed, original_axis):        +0.9769
+  cos(reconstructed, UD):                   +0.4939
+  Verdict: GOOD reconstruction
+
+--- C attempt 2: drop (prospering, declining), (fulfilled, ruined) ---
+  Pairs used: 10/10
+  cos(reconstructed, residualized_target):  +0.8342
+  cos(reconstructed, original_axis):        +0.9565
+  cos(reconstructed, UD):                   +0.4682
+  Verdict: GOOD reconstruction
+
+--- C attempt 3: non-vertical wellbeing terms (with 2 new pairs) ---
+  Pairs used: 11/11
+  cos(reconstructed, residualized_target):  +0.7637
+  cos(reconstructed, original_axis):        +0.9093
+  cos(reconstructed, UD):                   +0.4991
+  Verdict: PARTIAL — captures most but not all
+
+==============================================================================
+INT_resid reconstruction attempts
+==============================================================================
+
+Original INT-UD overlap: +0.3010
+
+INT_resid positive pole (top 10):
+  planning                   +0.6025
+  planned                    +0.4829
+  intended                   +0.4651
+  commit                     +0.4642
+  plan                       +0.4620
+  responsible                +0.4562
+  alleged                    +0.4554
+  plans                      +0.4510
+  accused                    +0.4460
+  specifically               +0.4426
+
+INT_resid negative pole (top 10):
+  improvising                +0.4332
+  wobbling                   +0.4243
+  wafts                      +0.4235
+  skittering                 +0.4179
+  bellowing                  +0.4045
+  vocalizing                 +0.4022
+  winging                    +0.3976
+  mangxamba                  +0.3967
+  musicality                 +0.3962
+  lilting                    +0.3955
+
+--- INT attempt 1: drop (aiming, drifting) ---
+  Pairs used: 11/11
+  cos(reconstructed, residualized_target):  +0.9479
+  cos(reconstructed, original_axis):        +0.9886
+  cos(reconstructed, UD):                   +0.2815
+  Verdict: CLEAN reconstruction
+
+--- INT attempt 2: minus (aiming, drifting) ---
+  Pairs used: 11/11
+  cos(reconstructed, residualized_target):  +0.9479
+  cos(reconstructed, original_axis):        +0.9886
+  cos(reconstructed, UD):                   +0.2815
+  Verdict: CLEAN reconstruction
+
+--- INT attempt 3: also drop (committing, hedging) ---
+  Pairs used: 10/10
+  cos(reconstructed, residualized_target):  +0.9139
+  cos(reconstructed, original_axis):        +0.9707
+  cos(reconstructed, UD):                   +0.3294
+  Verdict: CLEAN reconstruction
+
+==============================================================================
+DV_resid reconstruction attempts
+==============================================================================
+
+Original DV-UD overlap: +0.3558
+
+DV_resid positive pole (top 10):
+  selecting                  +0.3506
+  chosen                     +0.3430
+  choosing                   +0.3412
+  select                     +0.3083
+  selected                   +0.3082
+  chose                      +0.2943
+  preferred                  +0.2830
+  designated                 +0.2783
+  four-year                  +0.2751
+  pick                       +0.2745
+
+DV_resid negative pole (top 10):
+  flatly                     +0.4382
+  refuted                    +0.4267
+  categorically              +0.4197
+  assertions                 +0.4102
+  substantiate               +0.3965
+  quashed                    +0.3791
+  assertion                  +0.3626
+  adamantly                  +0.3607
+  excluded                   +0.3574
+  contentions                +0.3551
+
+  Note: cos(DV_orig, DV_resid) = +0.9346
+  (This is the maximum achievable from original anchors)
+
+--- DV attempt 2: drop (favored, excluded), (preferred, overlooked) ---
+  Pairs used: 9/9
+  cos(reconstructed, residualized_target):  +0.8825
+  cos(reconstructed, original_axis):        +0.9449
+  cos(reconstructed, UD):                   +0.3376
+  Verdict: GOOD reconstruction
+
+--- DV attempt 3: minimal verdict-only set ---
+  Pairs used: 9/9
+  cos(reconstructed, residualized_target):  +0.8825
+  cos(reconstructed, original_axis):        +0.9449
+  cos(reconstructed, UD):                   +0.3376
+  Verdict: GOOD reconstruction
+
+==============================================================================
+REAL_IMAGINARY_resid reconstruction attempts
+==============================================================================
+
+Original REAL_IMAG-UD overlap: -0.2891
+
+REAL_IMAG_resid positive pole (top 10):
+  steampunk                  +0.3895
+  imaginary                  +0.3779
+  post-modern                +0.3667
+  dystopian                  +0.3667
+  sword-and-sorcery          +0.3656
+  wastebin                   +0.3620
+  shiksa                     +0.3608
+  fresh-faced                +0.3530
+  guianese                   +0.3516
+  low-life                   +0.3509
+
+REAL_IMAG_resid negative pole (top 10):
+  confirmed                  +0.4654
+  showed                     +0.4509
+  verified                   +0.4501
+  reported                   +0.4269
+  demonstrated               +0.4109
+  documented                 +0.4096
+  lack                       +0.4066
+  confirm                    +0.4020
+  concluded                  +0.3976
+  report                     +0.3896
+
+  Note: cos(RI_orig, RI_resid) = +0.9573
+
+--- RI attempt 2: replace stand-up-to-scrutiny terms ---
+  Pairs used: 10/10
+  cos(reconstructed, residualized_target):  +0.8102
+  cos(reconstructed, original_axis):        +0.8495
+  cos(reconstructed, UD):                   -0.2558
+  Verdict: GOOD reconstruction
+
+==============================================================================
+SUMMARY — anchor reconstruction feasibility
+==============================================================================
+
+The residualization removes the UD-projection from each axis. Anchor changes
+work to the extent they shift the axis-direction away from UD via lexical
+substitution. If the UD-content of an axis comes mostly from distributional
+clustering (words "pulling" UD-content even if not vertical themselves),
+anchor changes alone cannot fully replicate residualization.
+
+The honest methodology framing:
+- Either reconstructions cleanly approximate the residualized targets (cos > 0.9)
+  and we can use anchor-reconstructions as the canonical axes
+- Or reconstructions partially work (cos 0.8-0.9) and we accept "anchor pairs
+  plus residualization against UD" as a two-step methodology
+- The two-step methodology is still reproducible — both steps are deterministic
+
+Saved exp85_results.npz

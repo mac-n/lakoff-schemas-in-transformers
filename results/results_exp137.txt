@@ -1,0 +1,98 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:45,  2.76it/s]Loading weights:  46%|████▌     | 134/292 [00:00<00:00, 375.09it/s]Loading weights:  72%|███████▏  | 211/292 [00:00<00:00, 444.19it/s]Loading weights:  96%|█████████▌| 279/292 [00:00<00:00, 473.63it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 396.22it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+
+Collecting residuals for 578 words at all 24 layers...
+  100/578
+  200/578
+  300/578
+  400/578
+  500/578
+
+==============================================================================
+cos(axis_direction, anisotropy_direction) — should be near 0 if axis is clean
+==============================================================================
+
+  --- LOGICAL_OPERATORS ---
+  axis                                   L4      L12      L20    |mean|   max |.|
+  conjunction_disjunction            +0.060   +0.006   -0.003     0.008     0.060
+  affirmation_negation               +0.053   +0.000   +0.018     0.009     0.053
+  conditional_assertion              -0.050   -0.007   -0.007     0.009     0.050
+  necessity_possibility              -0.144   -0.008   -0.005     0.015     0.144
+  cause_contrast                     +0.018   +0.006   -0.008     0.007     0.018
+
+  --- QUANTIFIERS ---
+  axis                                   L4      L12      L20    |mean|   max |.|
+  universal_existential              -0.175   -0.007   -0.006     0.017     0.175
+  universal_affirmative_negative     +0.022   -0.004   +0.014     0.008     0.024
+  cardinal_many_few                  -0.073   -0.003   -0.033     0.015     0.073
+  distributive_collective            +0.129   +0.002   +0.007     0.011     0.129
+  precise_vague                      -0.080   -0.004   +0.004     0.009     0.080
+
+  --- DETERMINERS ---
+  axis                                   L4      L12      L20    |mean|   max |.|
+  definite_indefinite                -0.101   -0.001   -0.001     0.008     0.101
+  proximal_distal                    +0.081   -0.003   -0.020     0.013     0.081
+  sing_plur_demonstrative            -0.269   -0.003   -0.011     0.020     0.269
+  possessive_neutral                 +0.088   +0.002   +0.003     0.006     0.088
+  interrogative_assertive            +0.018   -0.000   -0.006     0.004     0.018
+
+  --- MORPHOLOGY ---
+  axis                                   L4      L12      L20    |mean|   max |.|
+  ER_comparative                     -0.289   -0.585   -0.583     0.575     0.666
+  EST_superlative                    -0.280   -0.573   -0.591     0.571     0.645
+  ING_progressive                    -0.227   -0.544   -0.574     0.548     0.636
+  ED_past                            -0.259   -0.591   -0.593     0.580     0.652
+  S_plural                           -0.249   -0.545   -0.576     0.552     0.640
+  UN_negation                        -0.319   -0.602   -0.595     0.593     0.673
+  RE_repetition                      -0.276   -0.560   -0.580     0.560     0.648
+
+  --- LAKOFF ---
+  axis                                   L4      L12      L20    |mean|   max |.|
+  UP-DOWN                            +0.136   +0.003   +0.020     0.016     0.136
+  IN-OUT_CLEAN                       -0.033   -0.003   -0.006     0.006     0.033
+  FORWARD-BACK                       +0.254   +0.005   +0.033     0.028     0.254
+  PATH-MOTION                        +0.180   +0.002   +0.010     0.014     0.180
+  LIGHT-DARK                         +0.176   +0.001   +0.015     0.015     0.176
+  FORCE                              -0.087   +0.002   +0.011     0.009     0.087
+  BALANCE                            +0.251   +0.007   -0.003     0.019     0.251
+  DIFFICULTY-BURDEN                  -0.118   -0.000   +0.012     0.011     0.118
+
+==============================================================================
+RANKING — axes by mean |cos with anisotropy| (most contaminated first)
+==============================================================================
+
+  rank   cluster               axis                              mean |cos|
+  1      MORPHOLOGY            UN_negation                            0.593
+  2      MORPHOLOGY            ED_past                                0.580
+  3      MORPHOLOGY            ER_comparative                         0.575
+  4      MORPHOLOGY            EST_superlative                        0.571
+  5      MORPHOLOGY            RE_repetition                          0.560
+  6      MORPHOLOGY            S_plural                               0.552
+  7      MORPHOLOGY            ING_progressive                        0.548
+  8      LAKOFF                FORWARD-BACK                           0.028
+  9      DETERMINERS           sing_plur_demonstrative                0.020
+  10     LAKOFF                BALANCE                                0.019
+  11     QUANTIFIERS           universal_existential                  0.017
+  12     LAKOFF                UP-DOWN                                0.016
+  13     QUANTIFIERS           cardinal_many_few                      0.015
+  14     LOGICAL_OPERATORS     necessity_possibility                  0.015
+  15     LAKOFF                LIGHT-DARK                             0.015
+  16     LAKOFF                PATH-MOTION                            0.014
+  17     DETERMINERS           proximal_distal                        0.013
+  18     QUANTIFIERS           distributive_collective                0.011
+  19     LAKOFF                DIFFICULTY-BURDEN                      0.011
+  20     LAKOFF                FORCE                                  0.009
+  21     LOGICAL_OPERATORS     affirmation_negation                   0.009
+  22     LOGICAL_OPERATORS     conditional_assertion                  0.009
+  23     QUANTIFIERS           precise_vague                          0.009
+  24     QUANTIFIERS           universal_affirmative_negative         0.008
+  25     DETERMINERS           definite_indefinite                    0.008
+  26     LOGICAL_OPERATORS     conjunction_disjunction                0.008
+  27     LOGICAL_OPERATORS     cause_contrast                         0.007
+  28     DETERMINERS           possessive_neutral                     0.006
+  29     LAKOFF                IN-OUT_CLEAN                           0.006
+  30     DETERMINERS           interrogative_assertive                0.004

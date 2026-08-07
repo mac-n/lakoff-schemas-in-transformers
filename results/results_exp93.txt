@@ -1,0 +1,18 @@
+Loading GloVe...
+Test sample: 86 cognitive words
+
+Computing PCA on 50K deanisotropized random vocab...
+
+PCA size     coverage      cumulative variance ratio
+-------------------------------------------------------
+  PCA-10        46.17%                   10.51%
+  PCA-12        47.37%                   11.80%
+  PCA-13        47.55%                   12.42%
+  PCA-19        49.44%                   15.90%
+  PCA-24        50.94%                   18.64%
+  PCA-30        52.83%                   21.79%
+  PCA-40        55.44%                   26.77%
+  PCA-50        58.06%                   31.54%
+
+Reference: greedy-24 hybrid on same sample = 51.66%
+Reference: Cog-13b on same sample = 39.27%

@@ -1,0 +1,115 @@
+Loading glove-wiki-gigaword-300 ...
+  vocab: 400,000
+
+==============================================================================
+AXIS CONSTRUCTION
+==============================================================================
+
+HARDNESS_exp90 (soft->hard)
+  pairs used (4): [('soft', 'hard'), ('mushy', 'firm'), ('pliable', 'rigid'), ('flimsy', 'solid')]
+
+HARDNESS_clean (no firm/solid)
+  pairs used (4): [('soft', 'hard'), ('mushy', 'stiff'), ('pliable', 'rigid'), ('squishy', 'rigid')]
+
+HARDNESS_broad (soft->hard)
+  pairs used (9): [('soft', 'hard'), ('squishy', 'rigid'), ('pliable', 'stiff'), ('flexible', 'inflexible'), ('supple', 'rigid'), ('mushy', 'firm'), ('tender', 'tough'), ('limp', 'stiff'), ('springy', 'hard')]
+
+STRENGTH (weak->strong)
+  pairs used (8): [('weak', 'strong'), ('feeble', 'powerful'), ('frail', 'mighty'), ('flimsy', 'sturdy'), ('puny', 'formidable'), ('delicate', 'robust'), ('fragile', 'durable'), ('weakling', 'powerhouse')]
+
+WEIGHT (light->heavy)
+  pairs used (7): [('lightweight', 'heavyweight'), ('weightless', 'weighty'), ('airy', 'dense'), ('buoyant', 'ponderous'), ('nimble', 'cumbersome'), ('light', 'heavy'), ('feathery', 'leaden')]
+
+DOMINANCE (submissive->dominant)
+  pairs used (8): [('submissive', 'dominant'), ('subordinate', 'superior'), ('meek', 'assertive'), ('timid', 'authoritative'), ('docile', 'domineering'), ('deferential', 'commanding'), ('obedient', 'bossy'), ('passive', 'controlling')]
+
+==============================================================================
+LOADING NORMS
+==============================================================================
+  Warriner VAD: 13,905 words (valence/arousal/dominance)
+  Brysbaert concreteness (single words): 37,058
+
+==============================================================================
+CORRELATIONS  (Pearson r / Spearman rho; anchor words excluded)
+==============================================================================
+
+axis                              norm                        n   pearson  spearman
+-----------------------------------------------------------------------------------
+HARDNESS_exp90 (soft->hard)       Warriner DOMINANCE      13771     0.214     0.218  ***
+HARDNESS_exp90 (soft->hard)       Warriner Valence        13771     0.180     0.180  ***
+HARDNESS_exp90 (soft->hard)       Warriner Arousal        13771    -0.028    -0.031  ***
+HARDNESS_exp90 (soft->hard)       Brysbaert Concrete      31611     0.032     0.067  ***
+
+HARDNESS_clean (no firm/solid)    Warriner DOMINANCE      13772     0.125     0.140  ***
+HARDNESS_clean (no firm/solid)    Warriner Valence        13772     0.069     0.080  ***
+HARDNESS_clean (no firm/solid)    Warriner Arousal        13772    -0.007    -0.012  
+HARDNESS_clean (no firm/solid)    Brysbaert Concrete      31612     0.003     0.030  
+
+HARDNESS_broad (soft->hard)       Warriner DOMINANCE      13766     0.097     0.110  ***
+HARDNESS_broad (soft->hard)       Warriner Valence        13766     0.037     0.049  ***
+HARDNESS_broad (soft->hard)       Warriner Arousal        13766     0.027     0.022  *
+HARDNESS_broad (soft->hard)       Brysbaert Concrete      31604    -0.008     0.022  
+
+STRENGTH (weak->strong)           Warriner DOMINANCE      13763     0.348     0.346  ***
+STRENGTH (weak->strong)           Warriner Valence        13763     0.350     0.345  ***
+STRENGTH (weak->strong)           Warriner Arousal        13763    -0.032    -0.047  ***
+STRENGTH (weak->strong)           Brysbaert Concrete      31603     0.141     0.164  ***
+
+WEIGHT (light->heavy)             Warriner DOMINANCE      13772    -0.227    -0.220  ***
+WEIGHT (light->heavy)             Warriner Valence        13772    -0.327    -0.320  ***
+WEIGHT (light->heavy)             Warriner Arousal        13772     0.049     0.055  ***
+WEIGHT (light->heavy)             Brysbaert Concrete      31606    -0.123    -0.120  ***
+
+DOMINANCE (submissive->dominant)  Warriner DOMINANCE      13765     0.190     0.197  ***
+DOMINANCE (submissive->dominant)  Warriner Valence        13765     0.206     0.207  ***
+DOMINANCE (submissive->dominant)  Warriner Arousal        13765    -0.017    -0.027  *
+DOMINANCE (submissive->dominant)  Brysbaert Concrete      31604     0.151     0.170  ***
+
+==============================================================================
+FOUR-AXIS BAKE-OFF: pairwise cosines
+  (high |cos| => near-rotations of one subspace => Osgood POTENCY)
+==============================================================================
+
+                                    HARDNESS  HARDNESS  HARDNESS  STRENGTH    WEIGHT  DOMINANC
+HARDNESS_exp90 (soft->hard)            1.000     0.746     0.742     0.444     0.124     0.333
+HARDNESS_clean (no firm/solid)         0.746     1.000     0.866     0.216     0.178     0.215
+HARDNESS_broad (soft->hard)            0.742     0.866     1.000     0.249     0.252     0.258
+STRENGTH (weak->strong)                0.444     0.216     0.249     1.000    -0.061     0.341
+WEIGHT (light->heavy)                  0.124     0.178     0.252    -0.061     1.000     0.069
+DOMINANCE (submissive->dominant)       0.333     0.215     0.258     0.341     0.069     1.000
+
+==============================================================================
+RESIDUAL TEST: regress STRENGTH + WEIGHT out of HARDNESS
+  (does soft-hard retain independent variance beyond Potency-proper?
+   and is the management/company residual a 'firm' polysemy artifact?)
+==============================================================================
+
+--- HARDNESS_exp90 (soft->hard) ---
+  in span(STRENGTH,WEIGHT): 0.469   ||residual||: 0.883   => 78.0% OUTSIDE potency-proper
+    Warriner DOMINANCE     n= 13771  pearson= 0.151  spearman= 0.159
+    Brysbaert Concrete     n= 31611  pearson=-0.007  spearman= 0.020
+    Warriner Valence       n= 13771  pearson= 0.116  spearman= 0.120
+  Most HARD-residual: ['management', 'determined', 'working', 'firm', 'worked', 'company', 'government', 'same', 'since', 'initial', 'previous', 'showed', 'month', 'managed', 'plans', 'following', 'ago', 'saw', 'respect', 'particular', 'plan', 'has', 'years', 'improve', 'example']
+  Most SOFT-residual: ['savory', 'seductive', 'spicy', 'pretentious', 'zucchini', 'eggplant', 'fruity', 'silky', 'fluffy', 'creamy', 'fragrant', 'melodramatic', 'salty', 'mashed', 'paprika', 'thickened', 'bubbly', 'pungent', 'reeds', 'broth', 'cheesy', 'soups', 'whimsical', 'puree', 'nutty']
+
+--- HARDNESS_clean (no firm/solid) ---
+  in span(STRENGTH,WEIGHT): 0.289   ||residual||: 0.957   => 91.6% OUTSIDE potency-proper
+    Warriner DOMINANCE     n= 13772  pearson= 0.091  spearman= 0.108
+    Brysbaert Concrete     n= 31612  pearson=-0.015  spearman= 0.006
+    Warriner Valence       n= 13772  pearson= 0.039  spearman= 0.051
+  Most HARD-residual: ['rigid', 'strict', 'imposed', 'rules', 'stiff', 'impose', 'requirements', 'regulations', 'restrictions', 'laws', 'set', 'discipline', 'determined', 'breaking', 'faced', 'face', 'policies', 'escape', 'stringent', 'constraints', 'imposing', 'maintain', 'break', 'ease', 'same']
+  Most SOFT-residual: ['savory', 'juicy', 'nutty', 'paprika', 'browned', 'spicy', 'fragrant', 'cranberries', 'eggplant', 'tofu', 'fruity', 'berries', 'creamy', 'sabato', 'earthy', 'zucchini', 'salty', 'salted', 'spinach', 'saadi', 'forgettable', 'hamburgers', 'soups', 'melon', 'sprouts']
+
+==============================================================================
+READING GUIDE
+==============================================================================
+
+  - If HARDNESS correlates with DOMINANCE about as strongly as STRENGTH/WEIGHT/
+    DOMINANCE-axis do, AND the four axes have high pairwise cosines, the honest
+    framing is 'Osgood Potency, measured', not 'I found hardness'.
+  - If HARDNESS's concreteness correlation is much higher than its dominance
+    correlation, it may be a concrete/abstract axis wearing a hardness mask.
+  - If the residual (hardness minus strength+weight) is large AND its top words
+    are epistemic (hard facts / hard data / hard science / rigorous), THAT residual
+    is the real, defensible discovery.
+

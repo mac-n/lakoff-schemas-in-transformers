@@ -1,0 +1,250 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<04:33,  1.07it/s]Loading weights:  37%|███▋      | 108/292 [00:01<00:01, 137.23it/s]Loading weights:  54%|█████▍    | 158/292 [00:01<00:00, 141.69it/s]Loading weights:  66%|██████▌   | 192/292 [00:01<00:00, 142.18it/s]Loading weights:  75%|███████▍  | 218/292 [00:01<00:00, 143.69it/s]Loading weights:  82%|████████▏ | 240/292 [00:01<00:00, 153.34it/s]Loading weights:  90%|████████▉ | 262/292 [00:02<00:00, 157.98it/s]Loading weights:  97%|█████████▋| 283/292 [00:02<00:00, 163.90it/s]Loading weights: 100%|██████████| 292/292 [00:02<00:00, 129.84it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+
+Collecting residuals for 479 words at all 24 layers...
+  50/479
+  100/479
+  150/479
+  200/479
+  250/479
+  300/479
+  350/479
+  400/479
+  450/479
+
+==============================================================================
+TEST 0 — |cos with anisotropy| per layer (raw axes, NO STRIPPING)
+==============================================================================
+
+  layer    MAG_raw    DIR_raw    VAL_raw    LAKOFF_raw   BALANCE_raw
+  L  0     -0.071     -0.044     +0.199     +0.067        -0.019
+  L  4     -0.286     -0.035     +0.537     +0.191        +0.484
+  L  8     -0.998     +0.209     +0.999     +0.999        +0.999
+  L 12     -0.999     +0.209     +0.999     +0.999        +0.999
+  L 16     -0.998     +0.231     +0.999     +0.998        +0.998
+  L 20     -0.991     +0.110     +0.994     +0.993        +0.993
+  L 23     +0.540     -0.416     -0.249     -0.317        -0.786
+
+  Interpretation:
+  - exp123 baseline: Lakoff schemas have |cos with aniso| < 0.03 (clean)
+  - exp137 baseline: morphology pair-diffs have ~0.55-0.59 (contaminated)
+  - if VAL_raw is in the morphology range or higher, valence rides anisotropy
+  - if VAL_raw is in the Lakoff range (<0.1), valence is orthogonal to anisotropy
+
+==============================================================================
+TEST 1 — cos(LAKOFF_clean[L], MAG/DIR/VAL_clean[L]) across all layers
+==============================================================================
+
+  layer    LAK·MAG    LAK·DIR    LAK·VAL    winner
+  L  0     +0.040     +0.307     +0.140    DIR
+  L  2     +0.094     +0.372     +0.208    DIR
+  L  4     +0.031     +0.411     +0.275    DIR
+  L  6     -0.011     +0.379     +0.312    DIR
+  L  8     +0.004     +0.375     +0.316    DIR
+  L 10     +0.020     +0.363     +0.294    DIR
+  L 12     +0.028     +0.370     +0.257    DIR
+  L 14     +0.018     +0.345     +0.233    DIR
+  L 16     +0.010     +0.281     +0.251    DIR
+  L 18     +0.010     +0.233     +0.240    VAL
+  L 20     -0.013     +0.117     +0.215    VAL
+  L 22     -0.008     +0.006     +0.185    VAL
+  L 23     +0.107     -0.038     +0.052    MAG
+
+==============================================================================
+TEST 2 — BALANCE as norm-deviation primitive
+==============================================================================
+
+2a. Norm difference per suffix family (||inflected|| - ||base||)
+
+  layer    suffix              mean Δ||r||     SE
+
+  L4:
+         ER_comparative          -7.974    +2.091
+         EST_superlative        -10.119    +2.004
+         ING_progressive         -5.364    +1.989
+         ED_past                 -8.764    +1.740
+         UN_negation             -7.200    +1.808
+         RE_repetition           -9.865    +1.237
+
+  L8:
+         ER_comparative        -593.849    +135.545
+         EST_superlative       -752.258    +142.049
+         ING_progressive       -402.309    +144.241
+         ED_past               -614.650    +147.615
+         UN_negation           -768.850    +128.047
+         RE_repetition         -847.670    +121.070
+
+  L12:
+         ER_comparative        -594.946    +135.850
+         EST_superlative       -752.819    +142.309
+         ING_progressive       -403.080    +144.479
+         ED_past               -616.206    +147.996
+         UN_negation           -770.499    +128.321
+         RE_repetition         -848.721    +121.324
+
+  L16:
+         ER_comparative        -587.480    +134.168
+         EST_superlative       -743.636    +140.547
+         ING_progressive       -398.413    +142.774
+         ED_past               -608.953    +146.266
+         UN_negation           -761.680    +126.843
+         RE_repetition         -838.619    +119.513
+
+  L20:
+         ER_comparative        -546.990    +124.901
+         EST_superlative       -690.435    +130.677
+         ING_progressive       -370.946    +133.176
+         ED_past               -566.067    +135.997
+         UN_negation           -710.417    +118.321
+         RE_repetition         -782.330    +111.119
+
+2b. Correlation: per-pair norm-delta vs per-pair projection on BALANCE
+
+  layer    suffix family            r(Δ||r||, BALANCE proj)
+  L  4    ER_comparative              +0.926
+  L  4    EST_superlative             +0.970
+  L  4    ING_progressive             +0.864
+  L  4    ED_past                     +0.907
+  L  4    UN_negation                 +0.938
+  L  4    RE_repetition               +0.859
+  L  8    ER_comparative              +0.962
+  L  8    EST_superlative             +0.936
+  L  8    ING_progressive             +0.926
+  L  8    ED_past                     +0.969
+  L  8    UN_negation                 +0.938
+  L  8    RE_repetition               +0.806
+  L 12    ER_comparative              +0.946
+  L 12    EST_superlative             +0.899
+  L 12    ING_progressive             +0.947
+  L 12    ED_past                     +0.935
+  L 12    UN_negation                 +0.905
+  L 12    RE_repetition               +0.541
+  L 16    ER_comparative              +0.934
+  L 16    EST_superlative             +0.939
+  L 16    ING_progressive             +0.962
+  L 16    ED_past                     +0.881
+  L 16    UN_negation                 +0.861
+  L 16    RE_repetition               +0.476
+  L 20    ER_comparative              +0.861
+  L 20    EST_superlative             +0.890
+  L 20    ING_progressive             +0.948
+  L 20    ED_past                     +0.858
+  L 20    UN_negation                 +0.886
+  L 20    RE_repetition               +0.143
+
+  Interpretation:
+  - If Δ||r|| is systematically nonzero AND correlates with BALANCE
+    projection per pair, BALANCE encodes 'how far from typical norm' —
+    consistent with the LayerNorm-variance-normalisation hypothesis.
+
+==============================================================================
+TEST 3 — cross-layer stability (mean off-diag cos, L4-L22)
+==============================================================================
+
+  MAGNITUDE    +0.7742
+  DIRECTIONAL  +0.7384
+  VALENCE      +0.7547
+  LAKOFF UP    +0.8602
+  BALANCE      +0.7393
+
+  Interpretation:
+  - exp140 baseline: MAG=+0.79, DIR=+0.74
+  - if VAL >= MAG: substrate-primitive case
+  - if VAL ~ LAKOFF: learned-content case
+  - if BAL very high: supports BALANCE as substrate-rooted (LayerNorm?)
+
+==============================================================================
+TEST 4 — Gram-Schmidt decomposition of LAKOFF_UP onto {MAG, DIR, VAL}
+==============================================================================
+
+4a. Axis-axis cosines (after stripping) — how non-orthogonal are MAG/DIR/VAL?
+
+  layer    cos(MAG,DIR)    cos(MAG,VAL)    cos(DIR,VAL)
+  L  0        +0.027          -0.090          -0.021
+  L  4        +0.048          -0.264          +0.073
+  L  8        +0.093          -0.274          +0.040
+  L 12        +0.077          -0.269          +0.041
+  L 16        +0.041          -0.224          -0.003
+  L 20        +0.044          -0.153          -0.167
+  L 23        -0.006          -0.071          -0.043
+
+  → If these are near 0, ordering doesn't matter (basis effectively orthogonal).
+  → If non-trivial, the first-stripped axis 'claims' the shared variance.
+
+4b. Decomposition under ordering ['MAG', 'DIR', 'VAL'] — Gram-Schmidt strips left-to-right
+
+  layer    coef_MAG    coef_DIR    coef_VAL    resid
+  L  0     +0.040     +0.306     +0.150   +0.939
+  L  4     +0.031     +0.410     +0.258   +0.874
+  L  8     +0.004     +0.376     +0.304   +0.875
+  L 12     +0.028     +0.369     +0.251   +0.894
+  L 16     +0.010     +0.281     +0.258   +0.924
+  L 20     -0.013     +0.118     +0.238   +0.964
+  L 23     +0.107     -0.038     +0.058   +0.992
+
+4b. Decomposition under ordering ['DIR', 'MAG', 'VAL'] — Gram-Schmidt strips left-to-right
+
+  layer    coef_MAG    coef_DIR    coef_VAL    resid
+  L  0     +0.031     +0.307     +0.150   +0.939
+  L  4     +0.012     +0.411     +0.258   +0.874
+  L  8     -0.031     +0.375     +0.304   +0.875
+  L 12     -0.000     +0.370     +0.251   +0.894
+  L 16     -0.001     +0.281     +0.258   +0.924
+  L 20     -0.018     +0.117     +0.238   +0.964
+  L 23     +0.107     -0.038     +0.058   +0.992
+
+4b. Decomposition under ordering ['VAL', 'MAG', 'DIR'] — Gram-Schmidt strips left-to-right
+
+  layer    coef_MAG    coef_DIR    coef_VAL    resid
+  L  0     +0.053     +0.309     +0.140   +0.939
+  L  4     +0.108     +0.385     +0.275   +0.874
+  L  8     +0.094     +0.354     +0.316   +0.875
+  L 12     +0.101     +0.352     +0.257   +0.894
+  L 16     +0.068     +0.279     +0.251   +0.924
+  L 20     +0.020     +0.155     +0.215   +0.964
+  L 23     +0.111     -0.035     +0.052   +0.992
+
+==============================================================================
+TEST 4b — random-axis control
+==============================================================================
+  Pick 3 random unit directions in residual space, orthonormalise,
+  decompose LAKOFF_UP. Repeat 50 times. If real coefficients sit
+  inside the null band, the structure isn't specific to {MAG,DIR,VAL}.
+
+  layer    real |MAG|  null mean  real |DIR|  null mean  real |VAL|  null mean
+  L  0     +0.040     +0.025      +0.306     +0.027      +0.150     +0.028
+  L  4     +0.031     +0.024      +0.410     +0.023      +0.258     +0.029
+  L  8     +0.004     +0.022      +0.376     +0.022      +0.304     +0.026
+  L 12     +0.028     +0.023      +0.369     +0.025      +0.251     +0.025
+  L 16     +0.010     +0.022      +0.281     +0.025      +0.258     +0.023
+  L 20     +0.013     +0.024      +0.118     +0.027      +0.238     +0.026
+  L 23     +0.107     +0.024      +0.038     +0.028      +0.058     +0.018
+
+Saved exp141_substrate_primitives.png
+
+==============================================================================
+SUMMARY — substrate-primitive hypotheses
+==============================================================================
+
+  TEST 0  (valence-as-anisotropy):
+    VAL_raw·aniso @ L12 = +0.999
+    MAG_raw·aniso @ L12 = -0.999
+    → valence rides anisotropy IF |VAL_raw·aniso| > 0.3 at any layer
+
+  TEST 1  (LAKOFF shift across layers):
+    L0  : LAK·DIR = +0.307, LAK·MAG = +0.040
+    L12 : LAK·DIR = +0.370, LAK·MAG = +0.028
+    L23 : LAK·DIR = -0.038, LAK·MAG = +0.107
+
+  TEST 3  (cross-layer stability):
+    MAG=+0.774  DIR=+0.738  VAL=+0.755  LAK=+0.860  BAL=+0.739
+
+  TEST 4  (decomposition L12):
+    MAG coef = +0.028, DIR coef = +0.369, VAL coef = +0.251, residual = +0.894
+    null mean abs coef @ L12 = +0.024
+
+Done.

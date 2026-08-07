@@ -1,0 +1,108 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<00:56,  5.17it/s]Loading weights:  95%|█████████▍| 276/292 [00:00<00:00, 1157.76it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 947.66it/s] 
+Loaded pretrained model pythia-410m into HookedTransformer
+  24 layers, d_model=1024
+
+Building freq axis at each layer...
+  L4: freq axis built
+  L12: freq axis built
+  L20: freq axis built
+
+Processing 12 prompts...
+  3/12 prompts processed
+  6/12 prompts processed
+  9/12 prompts processed
+  12/12 prompts processed
+
+============================================================================
+RESULTS
+============================================================================
+
+----- Layer 4 -----  (N = 286 tokens)
+  ‖mean_dir‖=14.93  PC1-vs-mean cos=+0.049  freq-vs-mean cos=-0.097  PC1-vs-freq cos=-0.224
+
+  Pearson correlations with attention received PER QUERY:
+  predictor                      pearson r     p-value
+  projection onto mean_dir          +0.192    1.11e-03
+  projection onto PC1               -0.744    1.23e-51
+  projection onto freq axis         +0.514    1.02e-20
+  residual norm                     -0.357    4.97e-10
+  absolute position                 -0.146    1.32e-02
+  relative position                 -0.113    5.72e-02
+  log token frequency               +0.360    3.49e-10
+
+  Spearman correlations (rank-based):
+  predictor                     spearman r     p-value
+  projection onto mean_dir          +0.112    5.96e-02
+  projection onto PC1               -0.725    5.36e-48
+  projection onto freq axis         +0.566    1.28e-25
+  residual norm                     -0.492    8.22e-19
+  absolute position                 +0.017    7.76e-01
+  relative position                 +0.052    3.80e-01
+  log token frequency               +0.501    1.43e-19
+
+  After controlling for [position, rel_pos, norm, log_freq]:
+    partial r(projection onto mean_dir, attn_per_q) = +0.394  p=4.76e-12
+    partial r(projection onto PC1, attn_per_q) = -0.460  p=2.26e-16
+    partial r(projection onto freq axis, attn_per_q) = +0.327  p=1.44e-08
+
+----- Layer 12 -----  (N = 286 tokens)
+  ‖mean_dir‖=14.30  PC1-vs-mean cos=+0.413  freq-vs-mean cos=+0.521  PC1-vs-freq cos=+0.391
+
+  Pearson correlations with attention received PER QUERY:
+  predictor                      pearson r     p-value
+  projection onto mean_dir          +0.309    9.28e-08
+  projection onto PC1               +0.342    3.02e-09
+  projection onto freq axis         +0.321    2.81e-08
+  residual norm                     +0.356    5.47e-10
+  absolute position                 +0.317    4.35e-08
+  relative position                 +0.347    1.54e-09
+  log token frequency               -0.191    1.15e-03
+
+  Spearman correlations (rank-based):
+  predictor                     spearman r     p-value
+  projection onto mean_dir          +0.335    6.21e-09
+  projection onto PC1               +0.297    3.10e-07
+  projection onto freq axis         +0.319    3.35e-08
+  residual norm                     +0.332    8.58e-09
+  absolute position                 +0.301    2.08e-07
+  relative position                 +0.327    1.55e-08
+  log token frequency               -0.228    1.03e-04
+
+  After controlling for [position, rel_pos, norm, log_freq]:
+    partial r(projection onto mean_dir, attn_per_q) = +0.132  p=2.54e-02
+    partial r(projection onto PC1, attn_per_q) = +0.028  p=6.43e-01
+    partial r(projection onto freq axis, attn_per_q) = +0.144  p=1.46e-02
+
+----- Layer 20 -----  (N = 286 tokens)
+  ‖mean_dir‖=39.81  PC1-vs-mean cos=+0.553  freq-vs-mean cos=+0.213  PC1-vs-freq cos=+0.076
+
+  Pearson correlations with attention received PER QUERY:
+  predictor                      pearson r     p-value
+  projection onto mean_dir          -0.014    8.15e-01
+  projection onto PC1               +0.053    3.75e-01
+  projection onto freq axis         +0.154    9.29e-03
+  residual norm                     -0.146    1.38e-02
+  absolute position                 +0.120    4.31e-02
+  relative position                 +0.152    9.95e-03
+  log token frequency               -0.086    1.47e-01
+
+  Spearman correlations (rank-based):
+  predictor                     spearman r     p-value
+  projection onto mean_dir          +0.203    5.45e-04
+  projection onto PC1               +0.236    5.77e-05
+  projection onto freq axis         +0.267    4.70e-06
+  residual norm                     +0.090    1.30e-01
+  absolute position                 -0.017    7.75e-01
+  relative position                 +0.023    7.03e-01
+  log token frequency               -0.076    1.98e-01
+
+  After controlling for [position, rel_pos, norm, log_freq]:
+    partial r(projection onto mean_dir, attn_per_q) = +0.116  p=4.95e-02
+    partial r(projection onto PC1, attn_per_q) = +0.135  p=2.24e-02
+    partial r(projection onto freq axis, attn_per_q) = +0.214  p=2.63e-04
+
+Saved exp124_results.npz

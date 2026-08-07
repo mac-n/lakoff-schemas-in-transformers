@@ -1,0 +1,228 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Using device: mps
+
+Loading Pythia 1.4B...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<02:53,  1.68it/s]Loading weights:  19%|█▉        | 56/292 [00:00<00:02, 100.33it/s]Loading weights:  27%|██▋       | 80/292 [00:00<00:02, 103.75it/s]Loading weights:  34%|███▎      | 98/292 [00:01<00:01, 113.01it/s]Loading weights:  39%|███▉      | 115/292 [00:01<00:01, 117.77it/s]Loading weights:  45%|████▍     | 131/292 [00:01<00:01, 113.67it/s]Loading weights:  50%|████▉     | 145/292 [00:01<00:01, 103.32it/s]Loading weights:  54%|█████▍    | 157/292 [00:01<00:01, 76.45it/s] Loading weights:  57%|█████▋    | 167/292 [00:01<00:01, 71.97it/s]Loading weights:  60%|██████    | 176/292 [00:02<00:02, 51.20it/s]Loading weights:  63%|██████▎   | 183/292 [00:02<00:02, 40.20it/s]Loading weights:  65%|██████▍   | 189/292 [00:02<00:02, 41.41it/s]Loading weights:  67%|██████▋   | 195/292 [00:03<00:02, 36.29it/s]Loading weights:  70%|██████▉   | 204/292 [00:03<00:02, 38.56it/s]Loading weights:  73%|███████▎  | 212/292 [00:03<00:02, 39.75it/s]Loading weights:  75%|███████▍  | 218/292 [00:03<00:02, 36.37it/s]Loading weights:  78%|███████▊  | 228/292 [00:03<00:01, 43.49it/s]Loading weights:  80%|███████▉  | 233/292 [00:03<00:01, 42.67it/s]Loading weights:  82%|████████▏ | 240/292 [00:04<00:01, 45.10it/s]Loading weights:  85%|████████▍ | 248/292 [00:04<00:00, 46.79it/s]Loading weights:  87%|████████▋ | 253/292 [00:04<00:00, 43.29it/s]Loading weights:  89%|████████▉ | 260/292 [00:04<00:00, 42.69it/s]Loading weights:  91%|█████████ | 266/292 [00:04<00:00, 38.18it/s]Loading weights:  95%|█████████▍| 276/292 [00:04<00:00, 41.79it/s]Loading weights:  97%|█████████▋| 284/292 [00:05<00:00, 47.02it/s]Loading weights:  99%|█████████▉| 290/292 [00:05<00:00, 48.76it/s]Loading weights: 100%|██████████| 292/292 [00:05<00:00, 56.68it/s]
+Loaded pretrained model pythia-1.4b into HookedTransformer
+  24 layers, d_model=2048
+
+Building UP direction at L12...
+  ‖up_raw‖ = 130.28  (raw diff-of-means)
+  using unit vector for steering; coefficient = steering magnitude
+
+========================================================================
+PART A — DOSE-RESPONSE on HEIGHT, AFFECT, QUANTITY
+  layer=12, single-layer steering, strengths=[-12, -8, -4, -2, 0, 2, 4, 8, 12, 16]
+========================================================================
+
+--- direction = up ---
+  s= -12  first-digit(P2-P1)=-0.831  E[h]cm=173.85  affect(pos-neg)=-0.210  E[qty]=17.94
+  s=  -8  first-digit(P2-P1)=-0.874  E[h]cm=173.83  affect(pos-neg)=-0.197  E[qty]=18.15
+  s=  -4  first-digit(P2-P1)=-0.925  E[h]cm=173.91  affect(pos-neg)=-0.188  E[qty]=18.33
+  s=  -2  first-digit(P2-P1)=-0.953  E[h]cm=173.99  affect(pos-neg)=-0.185  E[qty]=18.41
+  s=  +0  first-digit(P2-P1)=-0.983  E[h]cm=174.10  affect(pos-neg)=-0.181  E[qty]=18.48
+  s=  +2  first-digit(P2-P1)=-1.014  E[h]cm=174.23  affect(pos-neg)=-0.176  E[qty]=18.55
+  s=  +4  first-digit(P2-P1)=-1.047  E[h]cm=174.38  affect(pos-neg)=-0.169  E[qty]=18.61
+  s=  +8  first-digit(P2-P1)=-1.128  E[h]cm=174.73  affect(pos-neg)=-0.144  E[qty]=18.73
+  s= +12  first-digit(P2-P1)=-1.219  E[h]cm=175.04  affect(pos-neg)=-0.098  E[qty]=18.96
+  s= +16  first-digit(P2-P1)=-1.312  E[h]cm=175.31  affect(pos-neg)=-0.031  E[qty]=19.12
+
+--- direction = rand ---
+  s= -12  first-digit(P2-P1)=-0.887  E[h]cm=174.31  affect(pos-neg)=-0.181  E[qty]=18.18
+  s=  -8  first-digit(P2-P1)=-0.935  E[h]cm=174.20  affect(pos-neg)=-0.185  E[qty]=18.33
+  s=  -4  first-digit(P2-P1)=-0.967  E[h]cm=174.13  affect(pos-neg)=-0.184  E[qty]=18.43
+  s=  -2  first-digit(P2-P1)=-0.977  E[h]cm=174.11  affect(pos-neg)=-0.182  E[qty]=18.46
+  s=  +0  first-digit(P2-P1)=-0.983  E[h]cm=174.10  affect(pos-neg)=-0.181  E[qty]=18.48
+  s=  +2  first-digit(P2-P1)=-0.984  E[h]cm=174.09  affect(pos-neg)=-0.180  E[qty]=18.48
+  s=  +4  first-digit(P2-P1)=-0.981  E[h]cm=174.09  affect(pos-neg)=-0.179  E[qty]=18.47
+  s=  +8  first-digit(P2-P1)=-0.963  E[h]cm=174.10  affect(pos-neg)=-0.177  E[qty]=18.41
+  s= +12  first-digit(P2-P1)=-0.932  E[h]cm=174.14  affect(pos-neg)=-0.176  E[qty]=18.31
+  s= +16  first-digit(P2-P1)=-0.892  E[h]cm=174.24  affect(pos-neg)=-0.176  E[qty]=18.18
+
+========================================================================
+PART B — FREE-GEN samples (T=0.7) at key strengths
+========================================================================
+
+PROMPT: 'When I think about the future, I feel'
+  [s=-8]
+     · a lot of fear, but also a lot of hope. I feel the same way about the future of human race. I feel that we are all on a planet where we can live in peace and
+     · like I will never be a musician or an artist, and I'm not sure why. I think I might have a future in science. I'm not sure which area I will work in, but
+     · like I’m going to get some of these things, and I’m excited. I’m excited to see what comes next.
+
+Q. Do you think you’ll get a
+  [s=-4]
+     · a lot of fear, but also a lot of hope. I feel the same way about the future of human race. I feel that we are all on a planet where we can live in peace and
+     · like I will never be the same. I feel like I will always be in high school, I will always be a sophomore. I will always be a freshman.
+
+I will always be a
+     · like I’m going to get some of these things, and I’m excited. I’m thankful for my parents, who have taught me to put God first, and who have encouraged me
+  [s=+0]
+     · a lot of fear, but also a lot of hope. I feel the same way about the future of human race. I feel it will be better than what we have been living for thousands of years
+     · like I will never be the same. I feel like I will always be alone. I never get to see my son play soccer. I never get to sleep with my husband. I never get to
+     · so sad." "I'm so sorry." "I wish I could live a normal life like you." "And I wish I could come back as a rare flower." "I really want to come
+  [s=+4]
+     · a lot of fear, but also a lot of excitement. I feel like it’s going to be a good time for the people who are working on it. My heart is in the right place
+     · like I will never be the same. I want to make sure I get all the pieces that I need to be a successful person. That’s not to say that I don’t want to
+     · so sad." "I'm so sorry." "I wish I could live a normal life like you." "And I wish I could come back as a rare flower." "I really want to come
+  [s=+8]
+     · a lot of fear, but also a lot of excitement. I feel like it's a really exciting time to be in the business.”
+
+The 3D display tech is showing up in a few
+     · like I will never be the same. I want to make sure I get all the pieces that I need to be a successful person. That’s not to say that I don’t want to
+     · so sad." "I'm so sorry." "I wish I could live a normal life like you." "And I wish I could come back as a rare flower." "I really want to come
+  [s=+12]
+     · a lot of fear, but also a lot of excitement. I feel like it's a really exciting time to be in the business.”
+
+The 3D display tech is showing up in a few
+     · like I will make it. But I am not so sure, and I am not so sure I want to make it."
+
+"Then I will not ask you to make it," he said
+     · so sad." "I'm so sorry." "I wish I could live a normal life like everyone else." "I wish I could have a daughter." "I wish I could help her grow up
+
+PROMPT: 'My current mood is'
+  [s=-8]
+     · a bit gloomy, but it's actually quite sunny. I was feeling a bit down today, but I think it was the weather. I have always been the person who wears a lot of hats
+     · pretty good, but I have a few things that need to be addressed. It's a very long article, so I'll leave a few things for you to ponder:
+
+1) Will there
+     · a pick-me-up so I decided to try a little pick-me-up my own.
+
+I was interested in talking to someone about my experiences as an overweight and older person.
+  [s=-4]
+     · a bit gloomy, but it's actually quite sunny. I was feeling a bit down today, but I think it was the weather. I have always been the person who isn't in a great
+     · pretty good, but I have a few things that need to be addressed. It's a very long article, so I'll leave a few things for you to ponder:
+
+1) Will there
+     · a pick-me-up so I decided to try my hand at a raw food diet. I've always loved raw food, but I was told that I have a sensitivity to raw foods and I
+  [s=+0]
+     · a bit gloomy, but it's actually quite sunny. I was feeling a bit down today, but I think it was the weather. I have always been the person who isn't in a great
+     · pretty good, but I have a few things that need to be addressed.
+
+1. I need to hit the gym more. I know I need to do more than just work out, but
+     · a bit morose, what with the lack of sunshine, and I am a bit short of things to do. I've been a bit distracted lately, so I've decided I'm going to make
+  [s=+4]
+     · a bit gloomy, but it's actually quite sunny. I was feeling a bit down today, but I think it was the weather. I have always been the person who isn't in a great
+     · pretty good, but I have a few things that need to be addressed.
+
+1. I need to hit the gym more. I know I need to do more than just work out, but
+     · a bit more stoic than it was earlier in the year. I’m not sure I’m ready for this to end. I’ve been working hard for months on this record and I
+  [s=+8]
+     · a bit gloomy, but it's actually quite sunny. I was feeling a bit down today, but I think it's the weather. I have 3 kittens in a cardboard box under the
+     · pretty good, but I have a few things that need to be addressed."
+
+"So I'm told. What's on your mind?"
+
+"I don't think a year's worth
+     · a bit like what I heard on the news about the Russian military intervention in Ukraine, I just can't stop thinking about it:
+
+I saw a rare few minutes of coverage on this event,
+  [s=+12]
+     · a bit gloomy, but it's actually quite hilarious. I was looking at the books and I was thinking about all the times I've been all over the world. And I was thinking about the
+     · pretty good, but I have a few things that need to be addressed."
+
+"So I'm told. What's on your mind?"
+
+"I don't think a year's worth
+     · a bit like what I'm thinking of doing.
+
+I'm just going to go back to basics. I understand the argument that it is not
+at all true that I'm a minority right
+
+PROMPT: 'His height in centimetres is'
+  [s=-8]
+     · a little over 1,000. He is also 6 feet tall. His hair colour is black. He is a member of the Bulli tribe. He is the 1st son of Guran Se
+     · normally between 6.5 and 7.5. He is approximately 30kg, which is a very good weight for a young man. He is able to sleep for a few hours a night, and
+     · about 27 ft (8.6 m) and his weight in kilograms is about 200 kg.
+
+Career:
+
+He is a rare breed of dog known as a Labrad
+  [s=-4]
+     · a little over 1,75 metres. He is 6 feet 1 inch tall.
+
+Kyle signed a professional contract with the Bullfrogs' team in the summer of 2011.
+
+He
+     · 1.65.
+
+Being that his height is 2.50 inches, he has a very long torso. His torso is very long compared to his neck which is very short.
+
+His
+     · about 27 ft (8.6 m) and his weight in kilograms is about 200 kg.
+
+Career:
+
+He is a rare breed of dog known as a Labrad
+  [s=+0]
+     · a little over 1,75 metres. He is 6 feet 1 inch tall.
+
+Khan took a shot in the direction of the opposition while throwing a cross. The delivery was in off the
+     · 1.65. As a musician, his height in inches is 30.60.
+
+His weight in kilograms is 87.04. As a musician, his weight in kilograms is 87.04
+     · about 27 inches.
+
+The Boydston family
+
+The Boydston family of Dublin, Ireland, descended from William Boydston, who immigrated to the United States in 1829.
+  [s=+4]
+     · a little over 1,75 metres. He is 6 feet 1 inch tall.
+
+Khan took a shot in the direction of the opposition while throwing a cross. The delivery was in off the
+     · 1.65. As a musician, his height in inches is 30.60.
+
+His favorite color is red. His favorite food is corn. He has a favorite sport to watch is football
+     · about 27 inches.
+
+The Boydston family
+
+The Boydston family of Dublin, Ireland, descended from William Boydston, who immigrated to Ireland in the early 18th century
+  [s=+8]
+     · a little over 1,75 metres. He is 6 feet 1 inch in height and weighs 185 pounds. He has black hair and eyes.
+
+Battle with Mabus
+
+Hend
+     · 1.65. As a musician, his height in inches is 5.60.
+
+His favorite color is red. His favorite food is pizza. He has a twin brother named Peyton
+     · about 27 inches.
+
+The Boydston family
+
+The Boydston family of Dublin, Ireland, descended from:
+ Thomas Boydston of Newtown Ballymote, County K
+  [s=+12]
+     · a little over six feet, but he's also got a lot of room in his shoulders and hips. He's got a long face, with a pointed chin and a sharp, even nose. He
+     · 1.65. As a musician, his height in inches is 5.60.
+
+His favorite color is red. His favorite food is pizza. He has a twin brother named Peyton
+     · about 27 inches.
+
+The Boydston family
+
+The Boydston family of Dublin, Ireland, descended from:
+ Thomas Boydston of Newtown Ballymote, County K
+
+========================================================================
+PART C — MANIA KICKER
+Does ONE intervention simultaneously shift verticality + valence + quantity?
+========================================================================
+
+strength    E[h]cm     ΔE[h]    affect   Δaffect    E[qty]   ΔE[qty]
+     -12    173.85     -0.25    -0.210    -0.029     17.94     -0.54
+      -8    173.83     -0.27    -0.197    -0.016     18.15     -0.33
+      -4    173.91     -0.19    -0.188    -0.007     18.33     -0.15
+      -2    173.99     -0.11    -0.185    -0.004     18.41     -0.07
+      +0    174.10     +0.00    -0.181    +0.000     18.48     +0.00
+      +2    174.23     +0.13    -0.176    +0.005     18.55     +0.06
+      +4    174.38     +0.28    -0.169    +0.012     18.61     +0.12
+      +8    174.73     +0.63    -0.144    +0.037     18.73     +0.25
+     +12    175.04     +0.94    -0.098    +0.083     18.96     +0.48
+     +16    175.31     +1.21    -0.031    +0.150     19.12     +0.64
+
+========================================================================
+Saved exp111_results.npz + exp111_freegen.json
+========================================================================

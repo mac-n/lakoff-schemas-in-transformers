@@ -1,0 +1,65 @@
+Loading GloVe...
+  plural pairs: 18440 (train 15674)
+
+  identity held-out cos (baseline): 0.385
+  raw lstsq:  held-out cos 0.432   ||W||_F 498636.9
+
+  ridge sweep on the ACTION E (lambda as fraction of largest eigenvalue of A^T A):
+    frac=0.0001  held-out cos 0.432   ||E||_F 14.12
+    frac=0.001   held-out cos 0.433   ||E||_F 12.92
+    frac=0.01    held-out cos 0.435   ||E||_F 10.33
+    frac=0.1     held-out cos 0.427   ||E||_F 6.43
+    frac=1.0     held-out cos 0.399   ||E||_F 1.66
+
+  -> decomposing the ridge map at frac=0.01 (||W||_F=9.28)
+
+======================================================================
+EIGENVALUES of W  (W = I means identity; deviation = the operation)
+======================================================================
+  300 eigenvalues. |lambda-1| summary: min 0.000  median 0.568  max 1.565
+  near-identity (|lambda-1|<0.05): 1 / 300
+  complex (|Im|>1e-6): 254 eigenvalues (127 rotation pairs)
+  real part range: [-0.565, 1.000]
+
+======================================================================
+SVD of the ACTION  E = W - I   (is the operation LOW-RANK?)
+======================================================================
+  ||E||_F = 10.328
+  top singular values: [2.004 1.388 1.148 1.005 0.946 0.932 0.894 0.885 0.872 0.859 0.856 0.854]
+    #components for 50% of action energy: 79 / 300
+    #components for 90% of action energy: 198 / 300
+    #components for 95% of action energy: 226 / 300
+
+  TOP ACTION DIRECTIONS (E = sum sigma_k * u_k v_k^T):
+
+  dir 1  (sigma=2.004)
+    READS  (input v_1, +): ['a', 'is', 'another', 'was', 'an', 'named', 'enters', "'s"]
+    READS  (input v_1, -): ['these', 'are', 'those', 'many', 'innumerable', 'were', 'other', 'kinds']
+    WRITES (output u_1, +): ['were', 'those', 'are', 'these', 'many', 'they', 'have', 'kinds']
+
+  dir 2  (sigma=1.388)
+    READS  (input v_2, +): ['to', 'hoped', 'decided', 'tried', 'would', 'try', 'able', 'intend']
+    READS  (input v_2, -): ['eats', 'cleans', 'sustains', 'installs', 'ignores', 'consults', 'absorbs', 'destroys']
+    WRITES (output u_2, +): ['eats', 'consults', 'identifies', 'excels', 'presides', 'inherits', 'installs', 'complains']
+
+  dir 3  (sigma=1.148)
+    READS  (input v_3, +): ['various', 'numerous', '53-year', 'educator', 'flamboyant', '52-year', 'schoolteacher', '62-year']
+    READS  (input v_3, -): ['attracts', 'alike', 'locals', 'compels', 'discourages', 'lingers', 'motivates', 'policymakers']
+    WRITES (output u_3, +): ['this', 'underscores', 'entails', 'culminates', 'it', 'involves', 'two-day', 'three-day']
+
+  dir 4  (sigma=1.005)
+    READS  (input v_4, +): ['secretaries', 'association', 'publishers', 'authors', 'other', 'directors', 'principals', 'chairmen']
+    READS  (input v_4, -): ['chechens', 'basques', 'intending', 'russians', 'living', 'mexicans', 'someone', 'egyptians']
+    WRITES (output u_4, +): ['professionally', 'someone', 'intending', 'ostensibly', 'self-taught', 'permanently', 'becoming', 'organist']
+
+======================================================================
+SYMMETRIC vs ANTISYMMETRIC part of E  (stretch vs rotation-generator)
+======================================================================
+  symmetric energy  (stretch / scaling):        94.6%
+  antisymmetric energy (rotation generator):    5.4%
+
+  - If E is low-rank, the operation acts in a few interpretable directions.
+  - Antisymmetric-heavy => the operation is mostly a rotation (a Lie generator);
+    symmetric-heavy => mostly stretching/projection along directions.
+Files written: results_exp106_W_plural_raw.{npy,txt}, results_exp106_W_plural_ridge.npy
+

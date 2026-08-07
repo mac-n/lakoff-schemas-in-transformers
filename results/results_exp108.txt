@@ -1,0 +1,39 @@
+Loading GloVe...
+
+======================================================================
+PART A — does the nonsense tail distort the frequency axis?
+======================================================================
+  meaningful words: 43015 of top-50k
+  cos(f_all, f_clean) = +0.482
+  cos(f_all,  PC1)    = +0.618
+  cos(f_clean, PC1)   = +0.017
+
+  f_all: rare extreme -> ['--', 'we', 'i', "'", 'us', 'u.s.', 'percent', 'you', 'up', 'our', 'more', '-']
+
+  f_clean: rare extreme -> ['non-families', 'telerate', 'oxidant', 'baronetcies', 'reappoint', 'amazes', 'cofactors', 'stigmatizing', 'swimmingly', 'fussing', '14-party', 'neccessary']
+
+======================================================================
+PART B — a clean FREQUENTISER from register synonyms
+======================================================================
+  usable pairs: 36
+  mean(rank_casual - rank_formal) = -7,960   (negative => casual really is more frequent)
+
+  frequentiser direction t_freq (formal->casual):
+    cos(t_freq, f_clean) = -0.112   (aligns with clean frequency axis?)
+    cos(t_freq, f_all)   = -0.500
+    cos(t_freq, PC1)     = -0.599
+
+  leave-one-out:
+    retrieves the casual synonym (top1): 69%
+    prediction lands on a MORE-frequent word: 100%
+    mean cosine to target casual word: 0.783
+    mean cosine to original (meaning preserved): 0.818
+
+READING
+  PART A: cos(f_all,f_clean) << 1 => the nonsense tail was steering the frequency
+          axis; f_clean (meaningful-only) is the register/frequency axis we want.
+  PART B: t_freq aligning with f_clean (not PC1/nonsense) + meaning preserved +
+          lands more-frequent => a clean frequentiser that stays in real-word space.
+          This is the direction; the curved/matrix version follows from fitting the
+          action on many meaningful pairs (next), now safe from junk.
+

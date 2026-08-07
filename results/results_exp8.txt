@@ -1,0 +1,273 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading SAE pythia-70m-deduped-res-sm / blocks.5.hook_resid_post...
+  decoder shape: (32768, 512)
+
+PCA on centred decoder...
+  Top 10 PC variance ratios: ['0.0843', '0.0156', '0.0099', '0.0067', '0.0053', '0.0048', '0.0043', '0.0042', '0.0039', '0.0037']
+
+Identifying top 10 features per top 10 PCs...
+  98 unique features to look up.
+
+Querying Neuronpedia API for 98 features (~29s minimum)...
+  0/98
+  10/98
+  20/98
+  30/98
+  40/98
+  50/98
+  60/98
+  70/98
+  80/98
+  90/98
+====================================================================================================
+exp8: Neuronpedia lookup of top-loading features per top PC
+SAE: pythia-70m-deduped-res-sm / blocks.5.hook_resid_post  (Pythia 70m-deduped, residual stream, final layer)
+PCA on (centred, unit-normalised) decoder, n_features=32768, d_model=512
+====================================================================================================
+
+Top 10 PC variance ratios: ['0.0843', '0.0156', '0.0099', '0.0067', '0.0053', '0.0048', '0.0043', '0.0042', '0.0039', '0.0037']
+Cumulative variance of top 10: 0.1427
+
+----------------------------------------------------------------------------------------------------
+PC 0  (variance ratio = 0.0843, cumulative through this PC = 0.0843)
+----------------------------------------------------------------------------------------------------
+feat  7556  loading +0.9758  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/7556]
+  desc: references to legal proceedings and government actions  | maxAct≈11.4, n_top_acts=60  | pos_logits: " '" ' R' " ':" ' He' '\n'
+feat   899  loading -0.9752  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/899]
+  desc: special characters and symbols  | maxAct≈105.4, n_top_acts=69  | pos_logits: '\nĉ     ' '\n\n\n   ' 'č\n                       ' '\n          ' '<|outofrange|>'
+feat 16160  loading +0.9716  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/16160]
+  desc: references to limitations and constraints in the context of governance or regulations  | maxAct≈13.1, n_top_acts=64  | pos_logits: " '" '\n' " ':" 's' 'l'
+feat  7541  loading +0.9711  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/7541]
+  desc: references to legal and government proceedings  | maxAct≈11.8, n_top_acts=62  | pos_logits: '\n' ' ' '                        ' '\n\n' 'he'
+feat  1620  loading +0.9707  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/1620]
+  desc: instances of legal terminology and references to legal processes  | maxAct≈4.1, n_top_acts=59  | pos_logits: '\n' '?' ':' '\n\n' ' I'
+feat 23666  loading +0.9690  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/23666]
+  desc: legal terms and phrases related to governmental or administrative processes  | maxAct≈17.7, n_top_acts=60  | pos_logits: '\n' ' ' 'S' "'" '\n\n'
+feat 12173  loading +0.9679  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/12173]
+  desc: references to specific data or factual information  | maxAct≈16.0, n_top_acts=61  | pos_logits: '\n' '\n\n' 'S' '                        ' ' '
+feat 25057  loading -0.9657  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/25057]
+  desc: special characters and symbols  | maxAct≈14.0, n_top_acts=69  | pos_logits: '\nĉ     ' 'č\n                       ' '\n\n\n   ' '\n          ' '<|outofrange|>'
+feat  9629  loading -0.9326  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/9629]
+  desc: tags and attributes used in HTML or XML-like markup  | maxAct≈2.5, n_top_acts=66  | pos_logits: 'č\n                       ' '\nĉ     ' '\n\n\n   ' '<|outofrange|>' '\n          '
+feat 23434  loading +0.9137  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/23434]
+  desc: references to camera settings and features  | maxAct≈1.6, n_top_acts=44  | pos_logits: ' BGC' ' headphones' ' msgid' 'inux' ' Nano'
+
+----------------------------------------------------------------------------------------------------
+PC 1  (variance ratio = 0.0156, cumulative through this PC = 0.0999)
+----------------------------------------------------------------------------------------------------
+feat 15443  loading +0.5418  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/15443]
+  desc: structural elements and syntactic patterns in code or markup  | maxAct≈1.2, n_top_acts=38  | pos_logits: '                                                                                                                                                                                                                                                                ' '                                              ' '                                                                         ' '        \n ' '\nĉ     '
+feat 29035  loading +0.5351  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/29035]
+  desc: specific references or elements related to gameplay mechanics  | maxAct≈3.1, n_top_acts=57  | pos_logits: '\n                                     ' '\n                                        ' 'č\n                       ' '\nĉ     ' '<|outofrange|>'
+feat 22211  loading +0.5251  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/22211]
+  desc: actions or sentiments expressed in relation to various subjects or activities  | maxAct≈2.4, n_top_acts=58  | pos_logits: '\n                                ' '                       ' '<|padding|>' '\n\n                 ' '\n                               '
+feat 14346  loading +0.5232  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/14346]
+  desc: references to legal documents or proceedings  | maxAct≈2.8, n_top_acts=57  | pos_logits: '                                        ' '\n\n               ' '\n                                     ' ' \n     ' '<|outofrange|>'
+feat 22220  loading +0.5088  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/22220]
+  desc: references to harmful substances or effects  | maxAct≈2.8, n_top_acts=59  | pos_logits: 'č\n                       ' '         ' '\nĉ     ' '            \n ' '<|padding|>'
+feat 26453  loading +0.4828  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/26453]
+  desc: keywords related to actions or evaluations concerning physical attributes or characteristics  | maxAct≈3.5, n_top_acts=50  | pos_logits: '\n\n               ' 'č\n                       ' '\n                               ' '\nĉ     ' '                                        '
+feat  7880  loading +0.4751  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/7880]
+  desc: mathematical symbols and signs used in expressions and formulas  | maxAct≈3.3, n_top_acts=52  | pos_logits: '\n                               ' '                             ' '                                        ' '\n                                              ' '                                                                                                '
+feat 25802  loading +0.4673  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/25802]
+  desc: (no auto-interp description)  | maxAct≈0.0, n_top_acts=0  | pos_logits: 
+feat 10639  loading +0.4617  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/10639]
+  desc: elements related to code syntax or programming constructs  | maxAct≈1.5, n_top_acts=49  | pos_logits: '                                           ' '\n  âĢĥ' 'č\n           ' '                             ' '\n                                           '
+feat 15249  loading +0.4573  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/15249]
+  desc: elements related to programming code and technical instructions  | maxAct≈3.3, n_top_acts=57  | pos_logits: '                             ' 'č\n           ' '\n                                                   ' '\n  âĢĥ' '<|outofrange|>'
+
+----------------------------------------------------------------------------------------------------
+PC 2  (variance ratio = 0.0099, cumulative through this PC = 0.1098)
+----------------------------------------------------------------------------------------------------
+feat  3764  loading -0.6046  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/3764]
+  desc: punctuation marks, particularly quotation marks and apostrophes  | maxAct≈5.5, n_top_acts=61  | pos_logits: 'dAtA' 'ETHERTYPE' 'à¤¸' 'mathchoice' 'Ð½Ðµ'
+feat  7743  loading -0.6036  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/7743]
+  desc: information related to arrests and criminal activities  | maxAct≈4.5, n_top_acts=50  | pos_logits: '¤' '²' '¸' '¹' '¦'
+feat 23951  loading -0.5922  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/23951]
+  desc: quotation marks and expressions indicating strong opinions or statements  | maxAct≈9.8, n_top_acts=68  | pos_logits: 'normal' 'dirty' 'natural' 'traditional' 'moderate'
+feat 11374  loading -0.5916  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/11374]
+  desc: references to experimental procedures and methodologies  | maxAct≈9.1, n_top_acts=55  | pos_logits: 'hereinafter' 'Invitrogen' 'Qiagen' 'pH' 'approximately'
+feat 16744  loading -0.5737  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/16744]
+  desc: programming constructs related to item properties or attributes  | maxAct≈3.2, n_top_acts=61  | pos_logits: 'horizontal' 'vertical' 'dashed' 'triangle' 'circle'
+feat 28039  loading -0.5667  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/28039]
+  desc: technical and programming-related terminology  | maxAct≈3.1, n_top_acts=64  | pos_logits: 'dAtA' 'iNdEx' 'd' 'c' 'm'
+feat 24719  loading -0.5625  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/24719]
+  desc: timestamps and URLs  | maxAct≈2.9, n_top_acts=63  | pos_logits: 'àª' 'article' 'comments' 'áĥ' 'à¤¸'
+feat 30461  loading -0.5567  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/30461]
+  desc: parentheses and their contents  | maxAct≈9.0, n_top_acts=59  | pos_logits: 'such' 'including' 'particularly' 'especially' 'e'
+feat 10358  loading -0.5562  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/10358]
+  desc: references to online platforms or digital content  | maxAct≈6.8, n_top_acts=62  | pos_logits: 'index' 'wp' 'article' 'articles' 'docs'
+feat 21037  loading -0.5527  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/21037]
+  desc: technical terms and code-related syntax in programming contexts  | maxAct≈3.4, n_top_acts=65  | pos_logits: 'iNdEx' 'scalar' 'dAtA' 'tuple' 'indices'
+
+----------------------------------------------------------------------------------------------------
+PC 3  (variance ratio = 0.0067, cumulative through this PC = 0.1165)
+----------------------------------------------------------------------------------------------------
+feat  8430  loading -0.6133  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/8430]
+  desc: food-related terminologies and preferences  | maxAct≈2.8, n_top_acts=60  | pos_logits: 'elike' 'ids' 'lement' 'ience' 'ith'
+feat 15926  loading -0.4988  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/15926]
+  desc: phrases or terms related to establishing context or limits  | maxAct≈4.4, n_top_acts=60  | pos_logits: '\n                               ' 'č\n                   ' '<|outofrange|>' 'č\n       ' ' \n       '
+feat    36  loading +0.4729  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/36]
+  desc: terms related to regulatory frameworks and guidelines  | maxAct≈5.6, n_top_acts=60  | pos_logits: ' SERVICES' ' OF' ' FOR' ' WITH' ' SOFTWARE'
+feat  9650  loading +0.4607  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/9650]
+  desc: phrases indicating possible actions or statements regarding an event or condition, particularly in relation to expectations and outcomes  | maxAct≈1.6, n_top_acts=58  | pos_logits: ' BGCOLOR' ' Debtor' ' Beach' ' *)' '\n'
+feat  1975  loading +0.4457  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/1975]
+  desc: sequences of alphanumeric identifiers or codes  | maxAct≈7.9, n_top_acts=63  | pos_logits: 'Ĩ' '14514500' 'ĵ' 'Ĭ' 'EB'
+feat 14240  loading +0.4394  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/14240]
+  desc: programming and coding structures  | maxAct≈3.7, n_top_acts=63  | pos_logits: ' Header' ' Output' ' Name' ' Description' ' Text'
+feat   989  loading +0.4336  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/989]
+  desc: references to social interactions and community dynamics  | maxAct≈1.8, n_top_acts=55  | pos_logits: ':**]{}' 'msgstr' '"];' '**]{},' '"}\\].'
+feat 31751  loading +0.4303  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/31751]
+  desc: phrases related to political commentary or leadership positions  | maxAct≈8.4, n_top_acts=62  | pos_logits: '¬' '¢' 'ĸ' 'ª' '½'
+feat 22275  loading +0.4297  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/22275]
+  desc: numerical values associated with pricing and product details  | maxAct≈1.8, n_top_acts=56  | pos_logits: '\n                               ' '                                                 ' '                 ' '                                        ' '\n  ÂłÂłÂł'
+feat 23288  loading -0.4179  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/23288]
+  desc: terms related to anatomical and physiological features  | maxAct≈2.4, n_top_acts=48  | pos_logits: '                                           ' '\nĉ  ' '\n                               ' 'č\n                       ' '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                '
+
+----------------------------------------------------------------------------------------------------
+PC 4  (variance ratio = 0.0053, cumulative through this PC = 0.1218)
+----------------------------------------------------------------------------------------------------
+feat 14226  loading +0.5424  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/14226]
+  desc: references to specific locations, events, and notable individuals  | maxAct≈3.0, n_top_acts=55  | pos_logits: 'ĸ' 'ĸ´' '¹' '®' '²'
+feat 12804  loading +0.4495  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/12804]
+  desc: questions and statements related to the Sustainable Development Goals (SDGs)  | maxAct≈3.6, n_top_acts=64  | pos_logits: ' Anything' ' Nothing' ' Very' ' What' ' Excellent'
+feat 24230  loading +0.4256  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/24230]
+  desc: legal case references and citations  | maxAct≈2.8, n_top_acts=62  | pos_logits: ' Mc' ' Aqu' ' Trinity' ' Cor' ' Omega'
+feat 27943  loading +0.4188  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/27943]
+  desc: structured question-and-answer formats in legal or formal documents  | maxAct≈2.1, n_top_acts=56  | pos_logits: '\n          ' '\n        ' '\n         ' 'č\n           ' '\n       '
+feat 23228  loading -0.4174  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/23228]
+  desc: specific technical terms and abbreviations related to data management and software systems  | maxAct≈2.3, n_top_acts=60  | pos_logits: ')|$(' 'INVAL' 'ARGET' 'PATH' 'SERVER'
+feat  1330  loading -0.4084  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/1330]
+  desc: code-related terms and constructs, particularly those associated with programming functions and data manipulation  | maxAct≈2.3, n_top_acts=61  | pos_logits: '().' '(),' '()).' '"}](#' '()"'
+feat  5205  loading +0.4035  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/5205]
+  desc: instances of authorship or attribution in text  | maxAct≈3.5, n_top_acts=40  | pos_logits: '©' '¼' '¸' '                                ' '\n       '
+feat 29201  loading +0.3990  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/29201]
+  desc: titles and phrases related to academic and philosophical works  | maxAct≈3.9, n_top_acts=60  | pos_logits: ' Their' ' Contemporary' ' Economic' ' Development' ' Selected'
+feat  8531  loading +0.3985  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/8531]
+  desc: phrases related to personal ownership and identity  | maxAct≈5.7, n_top_acts=64  | pos_logits: ' Way' ' Story' ' Thing' ' Relationship' ' Future'
+feat 20973  loading -0.3969  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/20973]
+  desc: elements related to law and legal proceedings  | maxAct≈1.3, n_top_acts=56  | pos_logits: '\n' ' ]{}' ']{})' '\nČ' '\\)'
+
+----------------------------------------------------------------------------------------------------
+PC 5  (variance ratio = 0.0048, cumulative through this PC = 0.1266)
+----------------------------------------------------------------------------------------------------
+feat  7055  loading +0.4377  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/7055]
+  desc: questions related to conditions or specifications in various contexts  | maxAct≈3.1, n_top_acts=50  | pos_logits: ' checkbox' ' UIT' 'fony' ' widget' ' jQuery'
+feat 31575  loading -0.4191  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/31575]
+  desc: references to product specifications or safety information  | maxAct≈1.4, n_top_acts=59  | pos_logits: '}]' ')]' ')\\]' ')?' '])'
+feat 30353  loading +0.3533  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/30353]
+  desc: configurations and implementation details related to software and programming  | maxAct≈3.5, n_top_acts=63  | pos_logits: ' version' ' instance' ' identifier' ' URL' ' HTML'
+feat 22282  loading +0.3473  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/22282]
+  desc: programming-related data types and variable declarations  | maxAct≈4.3, n_top_acts=64  | pos_logits: ' description' ' num' ' filename' ' url' ' name'
+feat 17532  loading -0.3463  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/17532]
+  desc: references to significant literary works and characters, particularly those related to personal and societal issues  | maxAct≈1.4, n_top_acts=57  | pos_logits: '.' '.[' '_.' '.).' '.]('
+feat  4771  loading -0.3453  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/4771]
+  desc: quantitative measurements and comparisons related to health and treatment outcomes  | maxAct≈3.5, n_top_acts=58  | pos_logits: ' ([' ' compared' ' whereas' '.](' ' except'
+feat 25118  loading +0.3451  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/25118]
+  desc: possessive pronouns, specifically focusing on "my" and "your."  | maxAct≈5.6, n_top_acts=61  | pos_logits: ' own' ' favorite' ' favourite' ' code' ' liking'
+feat 16849  loading +0.3447  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/16849]
+  desc: syntax related to programming classes and packages  | maxAct≈6.1, n_top_acts=62  | pos_logits: 'fasterxml' 'maven' 'jdbc' 'golang' 'gradle'
+feat  3629  loading -0.3447  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/3629]
+  desc: historical references and significant events related to governance and colonialism  | maxAct≈2.7, n_top_acts=60  | pos_logits: ' until' ' during' ' who' ' ().' '.['
+feat  5026  loading +0.3415  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/5026]
+  desc: phrases related to commands or instructions  | maxAct≈5.3, n_top_acts=63  | pos_logits: ' following' ' same' ' simplest' ' latest' ' default'
+
+----------------------------------------------------------------------------------------------------
+PC 6  (variance ratio = 0.0043, cumulative through this PC = 0.1309)
+----------------------------------------------------------------------------------------------------
+feat  8422  loading -0.4349  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/8422]
+  desc: terms related to biological and medical concepts, particularly those involving dynamics of the heart and related physiological processes  | maxAct≈1.9, n_top_acts=60  | pos_logits: '\n                               ' '\n                             ' '\n  ÂłÂłÂł' '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ' ' \n               '
+feat 19898  loading -0.3947  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/19898]
+  desc: biological terms and strain identifiers in scientific research contexts  | maxAct≈4.2, n_top_acts=50  | pos_logits: '0031' '294' '549' '0070' '803'
+feat 27208  loading -0.3731  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/27208]
+  desc: terms related to medical imaging and anatomical structures  | maxAct≈3.1, n_top_acts=62  | pos_logits: '\n                               ' '<|outofrange|>' '                                      ' '                                                                                                ' '<|outofrange|>'
+feat 25406  loading -0.3708  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/25406]
+  desc: molecular and genetic terms related to cancer and disease pathways  | maxAct≈4.1, n_top_acts=55  | pos_logits: ' proteins' ' isoforms' ' genes' '1' 'RNAs'
+feat  4546  loading -0.3598  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/4546]
+  desc: quantitative data related to sample sizes and patient counts in medical studies  | maxAct≈6.6, n_top_acts=57  | pos_logits: ' consecutive' ' patients' ' healthy' '74' '84'
+feat  3768  loading -0.3524  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/3768]
+  desc: references to software versions or specifications  | maxAct≈2.8, n_top_acts=58  | pos_logits: 'APDH' 'ISPR' ')\\]' '^âĪĴ/âĪĴ' '^âĪĴ/âĪĴ^'
+feat 23479  loading -0.3509  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/23479]
+  desc: terms related to scientific or medical concepts, particularly focusing on measurements, conditions, and classifications  | maxAct≈3.6, n_top_acts=50  | pos_logits: ' \n               ' '                                                  ' 'č\n               ' '\n\n\n     ' '\n                                          '
+feat  5969  loading -0.3484  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/5969]
+  desc: negative words or phrases related to legal outcomes or judgments  | maxAct≈14.1, n_top_acts=49  | pos_logits: '         ' '\n                               ' '<|outofrange|>' '\n                                             ' '                                          '
+feat  6971  loading -0.3425  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/6971]
+  desc: phrases that indicate the influence of factors on outcomes related to public health and treatment effectiveness  | maxAct≈2.6, n_top_acts=63  | pos_logits: 'uximab' ' apoptosis' ' cytokine' ' neuronal' ' microglia'
+feat  1815  loading -0.3367  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/1815]
+  desc: technical and medical terminology related to respiratory conditions and treatments  | maxAct≈3.2, n_top_acts=58  | pos_logits: 's' 'Cs' '^+^' 'Ds' ' patients'
+
+----------------------------------------------------------------------------------------------------
+PC 7  (variance ratio = 0.0042, cumulative through this PC = 0.1351)
+----------------------------------------------------------------------------------------------------
+feat  2057  loading -0.5027  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/2057]
+  desc: concepts related to empirical research and academic methods  | maxAct≈2.0, n_top_acts=35  | pos_logits: '*](#' ')|$(' 'Study' ' study' ' Study'
+feat 25941  loading +0.4642  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/25941]
+  desc: numerical data and statistics related to measurements and records  | maxAct≈2.1, n_top_acts=63  | pos_logits: 'Īĺ' '              \n ' 'č\n           ' '                                  ' '    \n '
+feat  8152  loading -0.4195  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/8152]
+  desc: terms related to subscription management and system operations  | maxAct≈3.4, n_top_acts=54  | pos_logits: '()">' '())' '()));' '());' '()</'
+feat 23479  loading -0.4160  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/23479]
+  desc: terms related to scientific or medical concepts, particularly focusing on measurements, conditions, and classifications  | maxAct≈3.6, n_top_acts=50  | pos_logits: ' \n               ' '                                                  ' 'č\n               ' '\n\n\n     ' '\n                                          '
+feat 16184  loading -0.4003  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/16184]
+  desc: references to file operations or database queries in programming contexts  | maxAct≈1.8, n_top_acts=51  | pos_logits: '                  ' '            \n ' '\n\n            ' '\n          ' '                                             '
+feat  8591  loading +0.3917  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/8591]
+  desc: code snippets related to programming errors and debugging information  | maxAct≈5.6, n_top_acts=56  | pos_logits: '8080' 'latest' 'disable' '8000' '5555'
+feat 26690  loading +0.3774  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/26690]
+  desc: patterns related to programming tasks and syntax structures  | maxAct≈3.1, n_top_acts=56  | pos_logits: ' 255' ' 10000' ' 999' ' 1000000' ' 100000'
+feat 18998  loading -0.3769  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/18998]
+  desc: references to data management and technological applications  | maxAct≈2.1, n_top_acts=56  | pos_logits: '                  ' '\n\n                                         ' '                                                      ' '<|outofrange|>' '\n                                         '
+feat 31146  loading +0.3758  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/31146]
+  desc: references to dates or numerical quantities  | maxAct≈1.5, n_top_acts=60  | pos_logits: '\n  âĢĥ' '                                    ' '                                             ' '                                        ' 'č\n       '
+feat  9067  loading -0.3705  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/9067]
+  desc: terms related to finance and management in various contexts  | maxAct≈1.4, n_top_acts=33  | pos_logits: ')|$(' 'Association' 'Manager' ' Association' 'Office'
+
+----------------------------------------------------------------------------------------------------
+PC 8  (variance ratio = 0.0039, cumulative through this PC = 0.1390)
+----------------------------------------------------------------------------------------------------
+feat 32399  loading +0.3740  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/32399]
+  desc: numerical values and their formats  | maxAct≈4.9, n_top_acts=63  | pos_logits: ' 0' ' 00' ' 6' ' 8' ' 7'
+feat  1990  loading +0.3576  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/1990]
+  desc: numerical values and measurements  | maxAct≈3.7, n_top_acts=58  | pos_logits: '})}{' '}$)' '}$),' '}$).' '}})$,'
+feat 31430  loading +0.3464  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/31430]
+  desc: elements and properties related to user interface design and programming syntax  | maxAct≈2.4, n_top_acts=59  | pos_logits: '                            ' '\n\n    ' '\nĉ   ' '\n              ' '                                                                               '
+feat 27464  loading +0.3398  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/27464]
+  desc: formatting and structural elements of texts, such as numbers and punctuation  | maxAct≈5.8, n_top_acts=31  | pos_logits: '})}{' '})=\\' '})=' '})+' '}$)'
+feat 23489  loading +0.3389  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/23489]
+  desc: terms related to mathematical equations and operations in scientific contexts  | maxAct≈5.7, n_top_acts=55  | pos_logits: ' ^{' '^+\\' '^{-' ' _{\\' '^{'
+feat 22835  loading -0.3294  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/22835]
+  desc: negative aspects or themes in narratives  | maxAct≈5.2, n_top_acts=57  | pos_logits: 'Ĭ' 'Ł' '²' 'Ļª' 'Į'
+feat 21632  loading +0.3258  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/21632]
+  desc: programming and variable-related terms  | maxAct≈1.8, n_top_acts=28  | pos_logits: '$),' '}$),' '>";' '":{' '"){'
+feat 32270  loading +0.3227  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/32270]
+  desc: names of places or organizations, particularly governmental or official designations  | maxAct≈2.0, n_top_acts=50  | pos_logits: '·¸' '¯' 'ĨĴ' 'ĻĤ' 'ľĵ'
+feat 28003  loading +0.3173  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/28003]
+  desc: keywords and phrases related to technical or industrial terms  | maxAct≈1.6, n_top_acts=38  | pos_logits: '¿' '«' 'ĨĴ' '¯' '·¸'
+feat 18939  loading +0.3172  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/18939]
+  desc: numerical data and coding elements  | maxAct≈6.0, n_top_acts=28  | pos_logits: ']\\]).' '})\\' '}$),' '}$).' '})$,'
+
+----------------------------------------------------------------------------------------------------
+PC 9  (variance ratio = 0.0037, cumulative through this PC = 0.1427)
+----------------------------------------------------------------------------------------------------
+feat 30668  loading -0.3438  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/30668]
+  desc: elements related to programming syntax and logic structures  | maxAct≈1.7, n_top_acts=55  | pos_logits: ']{},' '_;' '*,' '*/' '**,'
+feat 21575  loading +0.3299  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/21575]
+  desc: technical terms related to web development  | maxAct≈4.5, n_top_acts=56  | pos_logits: ' application' ' instance' ' project' ' app' ' script'
+feat 13512  loading +0.3239  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/13512]
+  desc: technical terms and references related to programming languages and frameworks  | maxAct≈3.8, n_top_acts=58  | pos_logits: ' API' ' SDK' ' documentation' ' interface' ' docs'
+feat 12395  loading +0.3159  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/12395]
+  desc: adjectives and descriptors that convey a sense of quality or appeal  | maxAct≈3.1, n_top_acts=63  | pos_logits: ' Ways' ' Stories' ' Things' ' Questions' ' Words'
+feat 20184  loading +0.3043  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/20184]
+  desc: emotional descriptors and qualitative characteristics of experiences or narratives  | maxAct≈3.2, n_top_acts=65  | pos_logits: 'est' ' nature' 'ness' ' aspects' ' aspect'
+feat 23496  loading +0.3015  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/23496]
+  desc: references to memorials, commemorative events, and their associated traditions  | maxAct≈2.4, n_top_acts=60  | pos_logits: ' Day' ' Room' ' Square' ' Park' ' Gardens'
+feat 17532  loading +0.2978  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/17532]
+  desc: references to significant literary works and characters, particularly those related to personal and societal issues  | maxAct≈1.4, n_top_acts=57  | pos_logits: '.' '.[' '_.' '.).' '.]('
+feat  8680  loading -0.2952  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/8680]
+  desc: the word "under," particularly in contexts related to regulations or licenses  | maxAct≈18.5, n_top_acts=47  | pos_logits: '\n                                              ' '                                   ' '                             ' '\n  âĢĥ' '                                                                          '
+feat 19555  loading -0.2952  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/19555]
+  desc: terms and phrases related to software licensing, specifically the GNU Public License and its associated rules  | maxAct≈4.0, n_top_acts=55  | pos_logits: ' Redistributions' ' LICENSE' 'LICENSE' ' CONTRIBUTORS' ' BSD'
+feat 23913  loading -0.2946  [https://www.neuronpedia.org/pythia-70m-deduped/5-res-sm/23913]
+  desc: terms related to specific medical conditions and their classifications  | maxAct≈10.4, n_top_acts=50  | pos_logits: ' characterized' ' characterised' ' caused' ' defined' ' diagnosed'
+
+
+Saved to /Users/macn/Documents/embeddingexp/results_exp8.md
+Cache saved to /Users/macn/Documents/embeddingexp/exp8_neuronpedia_cache.pt

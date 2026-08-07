@@ -1,0 +1,47 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  25%|██▌       | 74/292 [00:00<00:00, 731.22it/s]Loading weights:  51%|█████     | 148/292 [00:00<00:00, 700.88it/s]Loading weights:  75%|███████▌  | 219/292 [00:00<00:00, 613.63it/s]Loading weights:  97%|█████████▋| 282/292 [00:00<00:00, 449.39it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 516.55it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+Collecting residuals for 489 words at ['embed', 0, 1, 2, 4, 8, 12] (last-token + mean-pooled)...
+  100/489
+  200/489
+  300/489
+  400/489
+
+Multi-token words: 267/489 (55%)
+  examples: [('abandoning', 3), ('accelerating', 3), ('advance', 2), ('advancing', 2), ('aided', 2), ('approaching', 2), ('arrive', 2), ('ascend', 2)]
+
+==============================================================================
+Emergence trajectory — per probe point (stripped, exp138 protocol)
+==============================================================================
+
+--- variant: last-token ---
+   probe   ERxBAL   EDxBAL  infl r_GloVe  infl r_PythiaL12  full r_PythiaL12
+   embed   -0.129   -0.123        +0.320            +0.604            +0.549
+       0   -0.185   -0.176        +0.293            +0.779            +0.764
+       1   -0.191   -0.167        +0.311            +0.831            +0.783
+       2   -0.229   -0.193        +0.283            +0.869            +0.863
+       4   -0.474   -0.495        +0.232            +0.916            +0.916
+       8   -0.381   -0.392        +0.177            +0.977            +0.981
+      12   -0.377   -0.346        +0.203            +1.000            +1.000
+
+--- variant: mean-token ---
+   probe   ERxBAL   EDxBAL  infl r_GloVe  infl r_PythiaL12  full r_PythiaL12
+   embed   -0.182   -0.055        +0.300            +0.705            +0.672
+       0   -0.221   -0.111        +0.226            +0.639            +0.703
+       1   -0.183   -0.037        +0.191            +0.576            +0.631
+       2   -0.193   -0.075        +0.200            +0.672            +0.711
+       4   -0.390   -0.300        +0.168            +0.846            +0.868
+       8   -0.411   -0.306        +0.122            +0.861            +0.873
+      12   -0.422   -0.306        +0.150            +0.874            +0.882
+
+Parity check vs exp138 (last-token):
+  L4: max |Δ| vs results_exp138.txt = 0.000 (ok)
+  L12: max |Δ| vs results_exp138.txt = 0.000 (ok)
+
+Reference: GloVe ERxBAL = -0.012, Pythia L12 ERxBAL = -0.377
+Reference: r(GloVe infl, Pythia L12 infl) = +0.203
+
+Saved exp153_emergence.png

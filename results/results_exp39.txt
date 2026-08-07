@@ -1,0 +1,115 @@
+Loading glove-wiki-gigaword-300...
+
+=== TEST 1: V/A loading of LOSS (and other candidates for reference) ===
+             axis    cos(V)    cos(A)     %V     %A
+          VALENCE    +1.000    -0.133  100.0%   1.8%
+        COHERENCE    +0.438    +0.111  19.2%   1.2%
+          SUCCESS    +0.454    -0.043  20.6%   0.2%
+             LOSS    +0.508    +0.022  25.8%   0.0%
+            EXIST    +0.343    +0.124  11.7%   1.5%
+               UD    +0.601    +0.182  36.1%   3.3%
+
+=== TEST 2: Pairwise cosines among candidate primitives (raw) ===
+               VALENCE  COHERENCE   SUCCESS      LOSS     EXIST        UD        FB
+     VALENCE    +1.000    +0.438    +0.454    +0.508    +0.343    +0.601    +0.344
+   COHERENCE    +0.438    +1.000    +0.152    +0.370    +0.313    +0.483    +0.406
+     SUCCESS    +0.454    +0.152    +1.000    +0.430    +0.322    +0.487    +0.234
+        LOSS    +0.508    +0.370    +0.430    +1.000    +0.438    +0.510    +0.268
+       EXIST    +0.343    +0.313    +0.322    +0.438    +1.000    +0.523    +0.427
+          UD    +0.601    +0.483    +0.487    +0.510    +0.523    +1.000    +0.520
+          FB    +0.344    +0.406    +0.234    +0.268    +0.427    +0.520    +1.000
+
+=== TEST 3: Pairwise cosines after V residualization (NOT V+A — only V) ===
+  Removing only valence to see if candidates remain related beyond pure goodbad.
+              COHERENCE   SUCCESS      LOSS     EXIST        UD        FB
+   COHERENCE    +1.000    -0.059    +0.190    +0.192    +0.305    +0.302
+     SUCCESS    -0.059    +1.000    +0.260    +0.199    +0.301    +0.093
+        LOSS    +0.190    +0.260    +1.000    +0.326    +0.297    +0.116
+       EXIST    +0.192    +0.199    +0.326    +1.000    +0.422    +0.351
+          UD    +0.305    +0.301    +0.297    +0.422    +1.000    +0.418
+          FB    +0.302    +0.093    +0.116    +0.351    +0.418    +1.000
+
+=== TEST 4: Pairwise cosines after V+A residualization ===
+              COHERENCE   SUCCESS      LOSS     EXIST        UD        FB
+   COHERENCE    +1.000    -0.064    +0.175    +0.164    +0.262    +0.257
+     SUCCESS    -0.064    +1.000    +0.259    +0.199    +0.311    +0.092
+        LOSS    +0.175    +0.259    +1.000    +0.315    +0.280    +0.085
+       EXIST    +0.164    +0.199    +0.315    +1.000    +0.391    +0.312
+          UD    +0.262    +0.311    +0.280    +0.391    +1.000    +0.343
+          FB    +0.257    +0.092    +0.085    +0.312    +0.343    +1.000
+
+=== TEST 5: LOSS vs UD-FB residual (after V+A+EXIST) ===
+  cos(residual, LOSS)     = +0.0431
+  cos(residual, LOSS_VA)  = +0.1113
+
+=== TEST 6: LOSS nearest neighbors ===
+  Positive pole (gain/security/abundance):
+    +0.3560  enjoyed
+    +0.3549  bought
+    +0.3495  purchased
+    +0.3433  exclusive
+    +0.3426  gained
+    +0.3136  invested
+    +0.3080  incorporated
+    +0.3073  acquired
+    +0.3051  expanded
+    +0.3045  enjoys
+    +0.3019  diversified
+    +0.2951  established
+    +0.2925  wealth
+    +0.2921  obtained
+    +0.2844  enjoy
+
+  Negative pole (loss/threat/scarcity):
+    +0.3992  starvation
+    +0.3989  demoralizing
+    +0.3981  lamenting
+    +0.3981  helpless
+    +0.3939  malnutrition
+    +0.3887  heartbreaking
+    +0.3870  malnourishment
+    +0.3854  woeful
+    +0.3796  compounded
+    +0.3681  suffering
+    +0.3680  avoidable
+    +0.3658  suffer
+    +0.3642  suffers
+    +0.3630  severely
+    +0.3629  hopelessness
+
+=== After V+A residualization (LOSS_VA) ===
+  Positive pole:
+    +0.2942  bought
+    +0.2918  gained
+    +0.2918  notoriety
+    +0.2892  transactions
+    +0.2854  wealth
+    +0.2772  barschak
+    +0.2749  fortune
+    +0.2736  amass
+    +0.2735  obtained
+    +0.2723  exclusive
+    +0.2710  amassed
+    +0.2670  purchased
+    +0.2609  secretly
+    +0.2591  acquired
+    +0.2551  laundered
+
+  Negative pole:
+    +0.3864  drought
+    +0.3404  malnutrition
+    +0.3399  famine
+    +0.3384  impaired
+    +0.3349  chronically
+    +0.3315  exhaustion
+    +0.3312  destitute
+    +0.3298  acute
+    +0.3291  hunger
+    +0.3232  chronic
+    +0.3192  blindness
+    +0.3189  despair
+    +0.3186  starvation
+    +0.3174  woeful
+    +0.3159  illiteracy
+
+Saved: exp39_results.npz

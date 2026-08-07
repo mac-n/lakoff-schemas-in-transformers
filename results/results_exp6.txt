@@ -1,0 +1,192 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Using device: mps
+
+Loading Pythia 410m...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 8918.98it/s]
+Model: 24 layers, d_model=1024
+
+Loading neutral corpus (wikitext-2)...
+  wikitext load failed: Invalid HF URI 'hf://datasets/wikitext@b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml'. Repository id must be 'namespace/name', got 'wikitext'.
+  Falling back to a small hardcoded diverse corpus.
+
+Collecting last-token MLP outputs from 500 sentences...
+  100/500
+  200/500
+  300/500
+  400/500
+Collected 500 samples per layer.
+
+Computing PCA per layer; identifying top 3 distractor directions...
+  Layer  0: top 1 PC = 100.0% var; top 3 PCs = 100.0% var
+  Layer  4: top 1 PC =  30.3% var; top 3 PCs =  68.4% var
+  Layer  8: top 1 PC =  27.0% var; top 3 PCs =  56.5% var
+  Layer 12: top 1 PC =  23.2% var; top 3 PCs =  53.0% var
+  Layer 16: top 1 PC =  29.1% var; top 3 PCs =  57.4% var
+  Layer 20: top 1 PC =  33.2% var; top 3 PCs =  73.3% var
+  Layer 23: top 1 PC =  41.2% var; top 3 PCs =  76.1% var
+
+Loading exp5 contrast vectors...
+Projecting contrast vectors onto orthogonal complement of distractor subspace...
+
+Saved to /Users/macn/Documents/embeddingexp/contrast_vectors_410m_corrected.pt
+
+================================================================================
+BEFORE vs AFTER distractor projection (top 3 PCs removed)
+================================================================================
+
+Layer 0:
+  pair                                   BEFORE     AFTER  notes
+  cos(UP     , LIGHT    )  -0.040   -0.038   
+  cos(UP     , IN       )  +0.016   +0.013   
+  cos(UP     , FORWARD  )  -0.027   -0.029   
+  cos(UP     , YANG     )  +0.023   +0.023   
+  cos(UP     , BEVERAGE )  +0.064   +0.063   sham (target ≈ 0)
+  cos(LIGHT  , IN       )  -0.025   -0.026   
+  cos(LIGHT  , FORWARD  )  -0.021   -0.019   
+  cos(LIGHT  , YANG     )  -0.007   -0.008   Niamh hypothesis
+  cos(LIGHT  , BEVERAGE )  +0.001   +0.003   sham (target ≈ 0)
+  cos(IN     , FORWARD  )  -0.043   -0.042   
+  cos(IN     , YANG     )  -0.016   -0.017   
+  cos(IN     , BEVERAGE )  +0.089   +0.091   sham (target ≈ 0)
+  cos(FORWARD, YANG     )  +0.087   +0.090   
+  cos(FORWARD, BEVERAGE )  -0.169   -0.172   sham (target ≈ 0)
+  cos(YANG   , BEVERAGE )  -0.026   -0.026   sham (target ≈ 0)
+
+Layer 4:
+  pair                                   BEFORE     AFTER  notes
+  cos(UP     , LIGHT    )  -0.185   -0.184   
+  cos(UP     , IN       )  -0.260   -0.260   
+  cos(UP     , FORWARD  )  +0.427   +0.426   
+  cos(UP     , YANG     )  +0.366   +0.364   
+  cos(UP     , BEVERAGE )  -0.297   -0.298   sham (target ≈ 0)
+  cos(LIGHT  , IN       )  +0.185   +0.184   
+  cos(LIGHT  , FORWARD  )  -0.331   -0.329   
+  cos(LIGHT  , YANG     )  -0.278   -0.274   Niamh hypothesis
+  cos(LIGHT  , BEVERAGE )  +0.262   +0.258   sham (target ≈ 0)
+  cos(IN     , FORWARD  )  -0.450   -0.449   
+  cos(IN     , YANG     )  -0.320   -0.319   
+  cos(IN     , BEVERAGE )  +0.314   +0.314   sham (target ≈ 0)
+  cos(FORWARD, YANG     )  +0.482   +0.480   
+  cos(FORWARD, BEVERAGE )  -0.457   -0.456   sham (target ≈ 0)
+  cos(YANG   , BEVERAGE )  -0.372   -0.371   sham (target ≈ 0)
+
+Layer 8:
+  pair                                   BEFORE     AFTER  notes
+  cos(UP     , LIGHT    )  -0.943   -0.943   
+  cos(UP     , IN       )  -0.959   -0.959   
+  cos(UP     , FORWARD  )  +0.969   +0.968   
+  cos(UP     , YANG     )  +0.960   +0.959   
+  cos(UP     , BEVERAGE )  -0.935   -0.935   sham (target ≈ 0)
+  cos(LIGHT  , IN       )  +0.965   +0.965   
+  cos(LIGHT  , FORWARD  )  -0.965   -0.965   
+  cos(LIGHT  , YANG     )  -0.957   -0.957   Niamh hypothesis
+  cos(LIGHT  , BEVERAGE )  +0.937   +0.937   sham (target ≈ 0)
+  cos(IN     , FORWARD  )  -0.985   -0.985   
+  cos(IN     , YANG     )  -0.974   -0.974   
+  cos(IN     , BEVERAGE )  +0.958   +0.958   sham (target ≈ 0)
+  cos(FORWARD, YANG     )  +0.980   +0.979   
+  cos(FORWARD, BEVERAGE )  -0.963   -0.962   sham (target ≈ 0)
+  cos(YANG   , BEVERAGE )  -0.952   -0.951   sham (target ≈ 0)
+
+Layer 12:
+  pair                                   BEFORE     AFTER  notes
+  cos(UP     , LIGHT    )  -0.263   -0.261   
+  cos(UP     , IN       )  -0.347   -0.342   
+  cos(UP     , FORWARD  )  +0.411   +0.407   
+  cos(UP     , YANG     )  +0.358   +0.356   
+  cos(UP     , BEVERAGE )  -0.226   -0.223   sham (target ≈ 0)
+  cos(LIGHT  , IN       )  +0.342   +0.343   
+  cos(LIGHT  , FORWARD  )  -0.406   -0.408   
+  cos(LIGHT  , YANG     )  -0.443   -0.443   Niamh hypothesis
+  cos(LIGHT  , BEVERAGE )  +0.204   +0.203   sham (target ≈ 0)
+  cos(IN     , FORWARD  )  -0.540   -0.535   
+  cos(IN     , YANG     )  -0.387   -0.383   
+  cos(IN     , BEVERAGE )  +0.292   +0.290   sham (target ≈ 0)
+  cos(FORWARD, YANG     )  +0.529   +0.527   
+  cos(FORWARD, BEVERAGE )  -0.386   -0.386   sham (target ≈ 0)
+  cos(YANG   , BEVERAGE )  -0.255   -0.254   sham (target ≈ 0)
+
+Layer 16:
+  pair                                   BEFORE     AFTER  notes
+  cos(UP     , LIGHT    )  -0.187   -0.185   
+  cos(UP     , IN       )  -0.345   -0.344   
+  cos(UP     , FORWARD  )  +0.416   +0.421   
+  cos(UP     , YANG     )  +0.443   +0.442   
+  cos(UP     , BEVERAGE )  -0.301   -0.301   sham (target ≈ 0)
+  cos(LIGHT  , IN       )  +0.309   +0.298   
+  cos(LIGHT  , FORWARD  )  -0.297   -0.293   
+  cos(LIGHT  , YANG     )  -0.341   -0.325   Niamh hypothesis
+  cos(LIGHT  , BEVERAGE )  +0.177   +0.164   sham (target ≈ 0)
+  cos(IN     , FORWARD  )  -0.482   -0.481   
+  cos(IN     , YANG     )  -0.310   -0.300   
+  cos(IN     , BEVERAGE )  +0.252   +0.243   sham (target ≈ 0)
+  cos(FORWARD, YANG     )  +0.519   +0.520   
+  cos(FORWARD, BEVERAGE )  -0.397   -0.395   sham (target ≈ 0)
+  cos(YANG   , BEVERAGE )  -0.343   -0.334   sham (target ≈ 0)
+
+Layer 20:
+  pair                                   BEFORE     AFTER  notes
+  cos(UP     , LIGHT    )  -0.763   -0.765   
+  cos(UP     , IN       )  -0.864   -0.865   
+  cos(UP     , FORWARD  )  +0.884   +0.884   
+  cos(UP     , YANG     )  +0.847   +0.850   
+  cos(UP     , BEVERAGE )  -0.759   -0.758   sham (target ≈ 0)
+  cos(LIGHT  , IN       )  +0.848   +0.854   
+  cos(LIGHT  , FORWARD  )  -0.861   -0.862   
+  cos(LIGHT  , YANG     )  -0.823   -0.831   Niamh hypothesis
+  cos(LIGHT  , BEVERAGE )  +0.762   +0.760   sham (target ≈ 0)
+  cos(IN     , FORWARD  )  -0.949   -0.950   
+  cos(IN     , YANG     )  -0.889   -0.891   
+  cos(IN     , BEVERAGE )  +0.822   +0.822   sham (target ≈ 0)
+  cos(FORWARD, YANG     )  +0.913   +0.915   
+  cos(FORWARD, BEVERAGE )  -0.849   -0.848   sham (target ≈ 0)
+  cos(YANG   , BEVERAGE )  -0.798   -0.800   sham (target ≈ 0)
+
+Layer 23:
+  pair                                   BEFORE     AFTER  notes
+  cos(UP     , LIGHT    )  -0.983   -0.986   
+  cos(UP     , IN       )  -0.996   -0.996   
+  cos(UP     , FORWARD  )  +0.999   +0.998   
+  cos(UP     , YANG     )  +0.994   +0.996   
+  cos(UP     , BEVERAGE )  -0.997   -0.996   sham (target ≈ 0)
+  cos(LIGHT  , IN       )  +0.990   +0.993   
+  cos(LIGHT  , FORWARD  )  -0.991   -0.992   
+  cos(LIGHT  , YANG     )  -0.994   -0.994   Niamh hypothesis
+  cos(LIGHT  , BEVERAGE )  +0.989   +0.991   sham (target ≈ 0)
+  cos(IN     , FORWARD  )  -0.999   -0.999   
+  cos(IN     , YANG     )  -0.994   -0.997   
+  cos(IN     , BEVERAGE )  +0.995   +0.995   sham (target ≈ 0)
+  cos(FORWARD, YANG     )  +0.997   +0.998   
+  cos(FORWARD, BEVERAGE )  -0.998   -0.997   sham (target ≈ 0)
+  cos(YANG   , BEVERAGE )  -0.996   -0.997   sham (target ≈ 0)
+
+================================================================================
+Summary: median |cos| across all 15 direction-pairs, per layer
+================================================================================
+  layer    BEFORE     AFTER
+      0     0.026     0.026
+      1     0.072     0.082
+      2     0.043     0.041
+      3     0.464     0.462
+      4     0.320     0.319
+      5     0.997     0.997
+      6     0.998     0.998
+      7     0.985     0.985
+      8     0.960     0.959
+      9     0.508     0.505
+     10     0.548     0.553
+     11     0.358     0.360
+     12     0.358     0.356
+     13     0.349     0.344
+     14     0.476     0.475
+     15     0.446     0.447
+     16     0.341     0.325
+     17     0.460     0.438
+     18     0.583     0.589
+     19     0.644     0.634
+     20     0.848     0.850
+     21     0.980     0.979
+     22     0.998     0.998
+     23     0.995     0.996
+
+Done.

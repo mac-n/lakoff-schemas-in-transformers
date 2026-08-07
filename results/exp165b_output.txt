@@ -1,0 +1,67 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+exp165b — ALL-LAYER causal BALANCE-steer (PREREG_exp165b.md)
+exp165b harness validation (no model load)
+============================================================
+  rule asserted vs prereg: Z_THRESH=-1.64, SCHEMA_MAJORITY=4
+  selftest_classifier: PASS (z-outlier CONFIRMED / within-cloud GENERIC / NULL / wrong-sign / fails-schema).
+  synthetic_steering_test: PASS (directional -> CONFIRMED; magnitude -> NULL).
+  prompts: exp166 set, checksum 4d54ff4297bd7e2c OK; dose [-0.5, -0.25, -0.1, -0.05, 0.0, 0.05, 0.1, 0.25, 0.5]
+HARNESS OK — safe to execute the model run.
+
+vocab: 489
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 9454.73it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+
+building all-layer directions + median norms...
+  median resid norms: L0 117.9 ... L12 205.6 ... L23 878.4
+
+steering BALANCE (all layers) across dose grid...
+steering 16 random all-layer directions...
+steering 7 schema all-layer directions...
+
+========================================================================
+GLOBAL DV (mean attn entropy over ALL layers)
+========================================================================
+  c:        -0.50  -0.25  -0.10  -0.05  +0.00  +0.05  +0.10  +0.25  +0.50
+  BAL ent:  0.763  0.519  0.448  0.416  0.397  0.393  0.420  0.497  0.604
+
+  slope_BAL = -0.1364  CI[-0.1401,-0.1328]  Spearman=-0.18
+  random null: mean +0.0137  sd 0.1118 (n=16)  min -0.2018 max +0.2275
+  z(BAL vs random cloud) = -1.34   (CONFIRM needs z < -1.64)
+  slope_BAL - mean_random: CI[-0.1528,-0.1474]
+  schema slopes: UP -0.029, IN -0.191, FORW +0.091, PATH +0.084, LIGH +0.073, FORC +0.044, DIFF +0.128
+  BALANCE steeper than 6/7 schemas (CONFIRM needs >= 4)
+
+  PER-LAYER BALANCE slope (where does entropy respond?):
+    L 0: +0.0000 
+    L 1: -0.2290 ########################################
+    L 2: -0.0745 ##############
+    L 3: -0.1928 ######################################
+    L 4: -0.3188 ########################################
+    L 5: -0.1162 #######################
+    L 6: -0.1765 ###################################
+    L 7: -0.1241 ########################
+    L 8: -0.0886 #################
+    L 9: -0.1134 ######################
+    L10: -0.1073 #####################
+    L11: -0.1451 #############################
+    L12: -0.0675 #############
+    L13: -0.2003 ########################################
+    L14: -0.1428 ############################
+    L15: -0.2111 ########################################
+    L16: -0.1730 ##################################
+    L17: +0.0022 
+    L18: -0.1277 #########################
+    L19: -0.0794 ###############
+    L20: -0.1859 #####################################
+    L21: -0.1644 ################################
+    L22: -0.1962 #######################################
+    L23: -0.0415 ########
+
+========================================================================
+VERDICT vs PREREG_exp165b.md:  >>> GENERIC_MAGNITUDE <<<
+========================================================================
+  CONFIRMED = BALANCE is a random-cloud outlier (causal & specific)
+  GENERIC   = real but within random cloud (matched push)
+  NULL      = no causal effect -> Arrow B (entropy->BALANCE)

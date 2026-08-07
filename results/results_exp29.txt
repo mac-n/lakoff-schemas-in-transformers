@@ -1,0 +1,45 @@
+Loading glove-wiki-gigaword-300 (cached)...
+
+=== Building axes ===
+  PATH built from 20 pairs
+
+Within-PATH cross-pair coherence: mean cos = +0.1141
+
+=== PATH vs everything ===
+  cos(PATH, VALENCE)   = -0.0072
+  cos(PATH, AROUSAL)   = +0.0920
+  cos(PATH,       UP-DOWN) = +0.0814
+  cos(PATH,        IN-OUT) = -0.0934
+  cos(PATH,  FORWARD-BACK) = +0.0516
+  cos(PATH,    LIGHT-DARK) = -0.0447
+  cos(PATH,    LEFT-RIGHT) = +0.0461
+
+=== Triple decomposition: schema = a*VAL + b*ARO + c*PATH + residual ===
+          schema   cos(VAL)   cos(ARO)   cos(PATH)   ||resid||
+         UP-DOWN    +0.5142    +0.1930     +0.0814      0.8170
+          IN-OUT    +0.2480    +0.0516     -0.0934      0.9608
+    FORWARD-BACK    +0.3140    +0.2380     +0.0516      0.9079
+      LIGHT-DARK    +0.5455    +0.1600     -0.0447      0.8066
+      LEFT-RIGHT    +0.0488    +0.0373     +0.0461      0.9969
+
+=== Pairwise cosines after triple residualization (V + A + PATH removed) ===
+                        UP-DOWN         IN-OUT   FORWARD-BACK     LIGHT-DARK     LEFT-RIGHT
+         UP-DOWN        +1.0000        +0.2294        +0.4016        +0.2549        -0.0748
+          IN-OUT        +0.2294        +1.0000        +0.2194        +0.0347        -0.0080
+    FORWARD-BACK        +0.4016        +0.2194        +1.0000        +0.1768        +0.0177
+      LIGHT-DARK        +0.2549        +0.0347        +0.1768        +1.0000        -0.1540
+      LEFT-RIGHT        -0.0748        -0.0080        +0.0177        -0.1540        +1.0000
+
+=== Comparison of UD-FB cosine across removal stages ===
+  raw UD-FB cosine                     = +0.5316
+  after VALENCE removal                = +0.4545
+  after VALENCE + AROUSAL removal      = +0.4027
+  after VALENCE + AROUSAL + PATH       = +0.4016
+
+=== Reading guide ===
+  Strong PATH alignment with UD and FB (both > +0.4) → PATH is real
+  Low PATH alignment with IO/LD/LR → PATH is independent of those
+  Triple-residualized UD-FB drops near zero → cluster is V + A + PATH
+  Triple-residualized UD-FB still substantial → there's a 4th axis we haven't named
+
+Saved: exp29_results.npz

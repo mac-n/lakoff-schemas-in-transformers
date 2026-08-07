@@ -1,0 +1,183 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:46,  2.72it/s]Loading weights:  45%|████▌     | 132/292 [00:00<00:00, 368.12it/s]Loading weights:  72%|███████▏  | 209/292 [00:00<00:00, 378.47it/s]Loading weights:  92%|█████████▏| 269/292 [00:00<00:00, 389.88it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 342.54it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+
+Extracting residuals at layers [0, 4, 8, 12, 16, 20, 23] for 141 words...
+  30/141
+  60/141
+  90/141
+  120/141
+
+==============================================================================
+PROJECTIONS at L4 (freq-stripped UP)
+==============================================================================
+
+  --- DIRECTIONAL ---
+            base                  comp                   sup
+        high=+0.110      higher=+0.103     highest=+0.093
+         low=-0.025       lower=-0.038      lowest=-0.103
+        tall=-0.148      taller=-0.094     tallest=-0.085
+        deep=-0.003      deeper=-0.131     deepest=-0.088
+     shallow=-0.153   shallower=-0.136  shallowest=-0.079
+       short=-0.017     shorter=-0.159    shortest=-0.090
+
+  --- MAGNITUDE ---
+            base                  comp                   sup
+         big=+0.007      bigger=-0.092     biggest=-0.046
+       small=-0.030     smaller=-0.165    smallest=-0.114
+       large=+0.016      larger=-0.067     largest=+0.049
+
+  --- VALENCE ---
+            base                  comp                   sup
+       happy=+0.050     happier=-0.084    happiest=-0.038
+         sad=-0.174      sadder=-0.144     saddest=-0.103
+        good=+0.011      better=+0.010        best=+0.022
+         bad=-0.028       worse=-0.098       worst=-0.081
+
+  --- NEUTRAL_COLOR ---
+            base                  comp                   sup
+         red=-0.011      redder=-0.128     reddest=-0.154
+        blue=-0.055       bluer=-0.096      bluest=-0.086
+       green=-0.012     greener=-0.114    greenest=-0.089
+      yellow=-0.026    yellower=-0.101   yellowest=-0.097
+
+  --- NEUTRAL_SHAPE ---
+            base                  comp                   sup
+       round=+0.021     rounder=-0.106    roundest=-0.087
+      square=+0.010     squarer=-0.090    squarest=-0.137
+
+  --- NEUTRAL_TEXTURE ---
+            base                  comp                   sup
+      smooth=+0.011    smoother=-0.108   smoothest=-0.023
+       rough=-0.004     rougher=-0.074    roughest=-0.020
+
+  --- NEUTRAL_TIME ---
+            base                  comp                   sup
+         old=-0.008       older=-0.017      oldest=-0.062
+         new=-0.002       newer=-0.087      newest=-0.076
+
+  --- NEUTRAL_SOUND ---
+            base                  comp                   sup
+        loud=-0.133      louder=-0.133     loudest=-0.072
+       quiet=+0.013     quieter=-0.121    quietest=-0.108
+
+  --- LAKOFF_FORCE ---
+            base                  comp                   sup
+        hard=-0.011      harder=-0.118     hardest=-0.076
+        soft=-0.027      softer=-0.109     softest=-0.081
+
+  --- LAKOFF_LIGHT ---
+            base                  comp                   sup
+       light=+0.007     lighter=-0.138    lightest=-0.066
+        dark=-0.012      darker=-0.119     darkest=-0.094
+
+  --- LAKOFF_TEMP ---
+            base                  comp                   sup
+        warm=+0.060      warmer=-0.093     warmest=-0.077
+        cold=-0.000      colder=-0.181     coldest=-0.090
+
+==============================================================================
+PROJECTIONS at L12 (freq-stripped UP)
+==============================================================================
+
+  --- DIRECTIONAL ---
+            base                  comp                   sup
+        high=+0.005      higher=+0.005     highest=+0.005
+         low=+0.001       lower=+0.001      lowest=-0.032
+        tall=-0.049      taller=+0.006     tallest=+0.040
+        deep=+0.001      deeper=-0.079     deepest=-0.029
+     shallow=-0.061   shallower=-0.071  shallowest=+0.018
+       short=+0.001     shorter=-0.044    shortest=-0.044
+
+  --- MAGNITUDE ---
+            base                  comp                   sup
+         big=+0.001      bigger=-0.022     biggest=+0.023
+       small=+0.001     smaller=-0.106    smallest=-0.056
+       large=+0.003      larger=-0.003     largest=+0.004
+
+  --- VALENCE ---
+            base                  comp                   sup
+       happy=+0.004     happier=+0.045    happiest=+0.096
+         sad=-0.042      sadder=-0.023     saddest=+0.014
+        good=+0.003      better=+0.003        best=+0.002
+         bad=+0.001       worse=-0.005       worst=-0.021
+
+  --- NEUTRAL_COLOR ---
+            base                  comp                   sup
+         red=+0.002      redder=-0.065     reddest=-0.062
+        blue=+0.001       bluer=-0.029      bluest=+0.001
+       green=+0.003     greener=+0.022    greenest=+0.027
+      yellow=+0.002    yellower=-0.047   yellowest=+0.010
+
+  --- NEUTRAL_SHAPE ---
+            base                  comp                   sup
+       round=+0.003     rounder=+0.018    roundest=+0.004
+      square=+0.002     squarer=-0.001    squarest=-0.060
+
+  --- NEUTRAL_TEXTURE ---
+            base                  comp                   sup
+      smooth=+0.003    smoother=+0.013   smoothest=+0.041
+       rough=+0.003     rougher=+0.001    roughest=+0.027
+
+  --- NEUTRAL_TIME ---
+            base                  comp                   sup
+         old=+0.002       older=+0.002      oldest=+0.019
+         new=+0.002       newer=-0.010      newest=-0.005
+
+  --- NEUTRAL_SOUND ---
+            base                  comp                   sup
+        loud=-0.029      louder=-0.037     loudest=+0.034
+       quiet=+0.003     quieter=-0.028    quietest=+0.011
+
+  --- LAKOFF_FORCE ---
+            base                  comp                   sup
+        hard=+0.002      harder=-0.028     hardest=-0.003
+        soft=+0.001      softer=-0.037     softest=+0.016
+
+  --- LAKOFF_LIGHT ---
+            base                  comp                   sup
+       light=+0.003     lighter=-0.026    lightest=+0.025
+        dark=+0.002      darker=-0.014     darkest=-0.014
+
+  --- LAKOFF_TEMP ---
+            base                  comp                   sup
+        warm=+0.004      warmer=-0.008     warmest=+0.049
+        cold=+0.002      colder=-0.080     coldest=+0.006
+
+==============================================================================
+MEAN |PROJECTION| per category per layer
+==============================================================================
+
+  category            L 0  L 4  L 8  L12  L16  L20  L23
+  DIRECTIONAL         0.062  0.092  0.044  0.028  0.041  0.016  0.070  
+  MAGNITUDE           0.052  0.065  0.039  0.024  0.037  0.017  0.096  
+  VALENCE             0.048  0.070  0.028  0.022  0.023  0.012  0.091  
+  NEUTRAL_COLOR       0.026  0.081  0.042  0.022  0.029  0.014  0.067  
+  NEUTRAL_SHAPE       0.031  0.075  0.030  0.015  0.032  0.013  0.094  
+  NEUTRAL_TEXTURE     0.060  0.040  0.019  0.014  0.016  0.007  0.101  
+  NEUTRAL_TIME        0.029  0.042  0.017  0.007  0.022  0.007  0.097  
+  NEUTRAL_SOUND       0.035  0.097  0.039  0.023  0.034  0.014  0.063  
+  LAKOFF_FORCE        0.016  0.070  0.039  0.015  0.032  0.006  0.064  
+  LAKOFF_LIGHT        0.012  0.072  0.031  0.014  0.026  0.010  0.077  
+  LAKOFF_TEMP         0.050  0.084  0.038  0.025  0.027  0.013  0.115  
+
+==============================================================================
+(comp − base) at L=4 by category — does -er amplify root's direction?
+==============================================================================
+  DIRECTIONAL         mean(comp-base) = -0.0365  std = 0.0728  items: ['-0.01', '-0.01', '+0.05', '-0.13', '+0.02', '-0.14']
+  MAGNITUDE           mean(comp-base) = -0.1051  std = 0.0217  items: ['-0.10', '-0.13', '-0.08']
+  VALENCE             mean(comp-base) = -0.0439  std = 0.0632  items: ['-0.13', '+0.03', '-0.00', '-0.07']
+  NEUTRAL_COLOR       mean(comp-base) = -0.0841  std = 0.0290  items: ['-0.12', '-0.04', '-0.10', '-0.08']
+  NEUTRAL_SHAPE       mean(comp-base) = -0.1140  std = 0.0138  items: ['-0.13', '-0.10']
+  NEUTRAL_TEXTURE     mean(comp-base) = -0.0943  std = 0.0247  items: ['-0.12', '-0.07']
+  NEUTRAL_TIME        mean(comp-base) = -0.0473  std = 0.0379  items: ['-0.01', '-0.09']
+  NEUTRAL_SOUND       mean(comp-base) = -0.0674  std = 0.0666  items: ['-0.00', '-0.13']
+  LAKOFF_FORCE        mean(comp-base) = -0.0942  std = 0.0123  items: ['-0.11', '-0.08']
+  LAKOFF_LIGHT        mean(comp-base) = -0.1261  std = 0.0189  items: ['-0.14', '-0.11']
+  LAKOFF_TEMP         mean(comp-base) = -0.1668  std = 0.0141  items: ['-0.15', '-0.18']
+
+Saved exp128_comparatives.png
+Saved exp128_results.npz

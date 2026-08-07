@@ -1,0 +1,198 @@
+Loading glove-wiki-gigaword-300...
+Loading exp60 basis...
+
+====================================================================
+Building SELECTION axis
+====================================================================
+  Used: 11/11 pairs
+    (selected, rejected)
+    (chose, refused)
+    (picked, discarded)
+    (admitted, denied)
+    (accepted, declined)
+    (kept, removed)
+    (chosen, eliminated)
+    (preferred, overlooked)
+    (favored, excluded)
+    (designated, omitted)
+    (highlighted, neglected)
+
+====================================================================
+Test 1+4 — cos(SELECTION, each basis axis)
+====================================================================
+      axis       cos  bar                                              meaning
+  --------  --------  ----------------------------------------  ------------------------------
+     C_rew  +0.2898  ##############                            integrated reward
+     W_wgt  -0.1940  #########                                 weight / cost
+     A_aff  +0.2156  ##########                                affect
+     G_pol  +0.1630  ########                                  policy precision
+     R_per  -0.0769  ###                                       perceptual precision
+     D_cmp  +0.0891  ####                                      compression
+    IO_blk  +0.0167                                            container-topology
+
+====================================================================
+Test 2 — SELECTION vs IO_CLEAN (the IO-reframe question)
+====================================================================
+  cos(SELECTION, IO_CLEAN) = +0.0167
+  → DISTINCT — SELECTION is not an IO reframe; they're independent primitives
+
+====================================================================
+Test 3 — SELECTION vs G (Thread 2.7c — does SELECTION subsume G?)
+====================================================================
+  cos(SELECTION, G_pol) = +0.1630
+  → WEAK OVERLAP — SELECTION and G are largely independent
+
+  Quantitative — G onto SELECTION:
+    γ (SELECTION coeff)              = +0.1630
+    |G - γ·SELECTION| / |G|          = 0.9866
+    variance of G explained by SEL   = 0.0266 (2.7%)
+    VERDICT: G keeps substantial independent content beyond SELECTION
+
+====================================================================
+Test 4 — A onto SELECTION alone (vs exp62's W+R bar of 6.6%)
+====================================================================
+  γ (SELECTION coeff)              = +0.2156
+  |A - γ·SELECTION| / |A|          = 0.9765
+  variance of A explained by SEL   = 0.0465 (4.6%)
+  ── for comparison ──
+  variance of A explained by (W, R)   = 6.6% (exp62)
+  variance of A explained by G alone  = 0.3148 (31.5%)
+
+====================================================================
+Test 5+6 — A onto multi-axis subspaces
+====================================================================
+
+  A onto (G, SELECTION):
+    coeffs: G=+0.5403, SELECTION=+0.1276
+    residual / |A| = 0.8182
+    variance explained = 0.3306 (33.1%)
+
+  A onto (W, R, SELECTION) — original Thread 2.7(b) framing:
+    coeffs: W=+0.2861, R=+0.1319, SELECTION=+0.2812
+    residual / |A| = 0.9262
+    variance explained = 0.1421 (14.2%)
+
+  A onto (W, R, G, SELECTION) — full four-axis decomposition:
+    coeffs: W=+0.1430, R=+0.0813, G=+0.4907, SELECTION=+0.1696
+    residual / |A| = 0.8035
+    variance explained = 0.3544 (35.4%)
+
+  IO_CLEAN onto SELECTION:
+    γ = +0.0167
+    |IO - γ·SELECTION| / |IO| = 0.9999
+    variance of IO explained by SEL = 0.0003 (0.0%)
+
+====================================================================
+Test 8 — Concept-word projections onto SELECTION
+====================================================================
+
+              word  cos(word, SEL)  cos(word, IO)  cos(word, G)
+  ----------------  --------------  -------------  ------------
+
+  -- IO-probe (self/other/boundary) --
+              self  +0.0855         +0.0285         +0.3183
+          selfhood  -0.0799         +0.0451         -0.2307
+          identity  -0.0276         +0.0711         +0.2521
+          boundary  -0.0054         +0.0648         +0.1123
+          intimacy  +0.0055         +0.0380         -0.0101
+         belonging  -0.0010         +0.2910         +0.1784
+        alienation  -0.1004         -0.0310         -0.0800
+         isolation  -0.0135         +0.0745         +0.1288
+         communion  -0.0440         +0.0499         -0.0261
+             exile  +0.0366         +0.0645         +0.1628
+        membership  +0.0181         +0.0171         +0.2280
+           kinship  +0.0084         +0.0130         -0.0356
+        loneliness  -0.0258         -0.0089         -0.1302
+      togetherness  +0.0141         +0.0070         -0.0901
+
+  -- Agency / action --
+            agency  -0.0190         +0.0082         +0.3369
+           freedom  +0.0731         -0.0027         +0.3152
+              hope  +0.1335         -0.0469         +0.3791
+            growth  +0.0343         +0.0035         +0.3270
+              play  +0.1709         -0.0736         +0.2856
+        creativity  +0.0750         -0.0171         +0.1538
+          decision  +0.0062         -0.0074         +0.3734
+            choice  +0.2737         +0.0406         +0.2506
+          judgment  -0.0149         -0.0701         +0.1807
+              will  +0.1392         +0.0540         +0.4021
+        preference  +0.1550         +0.0278         +0.0888
+
+  -- Clinical / affective --
+           anxiety  +0.0594         +0.0050         +0.0251
+              fear  -0.0411         -0.0126         +0.2269
+             panic  +0.0219         -0.0417         +0.0444
+            trauma  -0.0484         -0.0739         +0.0225
+        depression  +0.0279         +0.0387         +0.0541
+             shame  -0.0460         -0.1115         +0.0622
+             guilt  -0.1199         -0.0039         +0.0417
+              rage  +0.0167         -0.0007         +0.0500
+               joy  +0.0964         -0.0771         +0.0652
+              love  +0.1475         -0.0222         +0.2158
+
+  -- Contemplative --
+               awe  +0.1650         +0.0045         -0.0243
+           sublime  -0.0594         -0.0176         -0.0213
+     transcendence  -0.0300         +0.0023         -0.0789
+         ineffable  -0.0445         +0.0115         -0.2449
+          presence  +0.0206         +0.1175         +0.2559
+            ritual  +0.0246         +0.1033         +0.1337
+        meditation  +0.0599         +0.0478         +0.0507
+              flow  -0.0210         +0.0614         +0.1755
+
+  -- Random (control) --
+           sausage  -0.0399         +0.0887         -0.0853
+           pyjamas  +0.0477         -0.0529         -0.2044
+          marigold  +0.0320         -0.0436         -0.2578
+           stapler  -0.0755         +0.1047         -0.1921
+            pebble  -0.0383         -0.0495         +0.0075
+
+====================================================================
+Test 9 — Pole vocabulary (top-20 nearest-neighbour words each pole)
+====================================================================
+
+  POSITIVE pole (selected / chose / kept side):
+    chosen                     +0.4151
+    selecting                  +0.3781
+    selected                   +0.3741
+    choosing                   +0.3699
+    select                     +0.3688
+    chose                      +0.3443
+    favorite                   +0.3236
+    preferred                  +0.3168
+    choose                     +0.3154
+    suited                     +0.3105
+    pick                       +0.3064
+    selection                  +0.2955
+    best                       +0.2951
+    designated                 +0.2859
+    favourite                  +0.2800
+    renowned                   +0.2746
+    four-year                  +0.2740
+    choice                     +0.2737
+    nationally                 +0.2699
+    inaugural                  +0.2682
+
+  NEGATIVE pole (rejected / refused / removed side):
+    flatly                     +0.4630
+    categorically              +0.4297
+    refuted                    +0.4177
+    substantiate               +0.3865
+    assertions                 +0.3790
+    neglected                  +0.3775
+    untrue                     +0.3772
+    contentions                +0.3685
+    disproved                  +0.3636
+    rebutted                   +0.3616
+    mistreated                 +0.3596
+    excluded                   +0.3578
+    refiled                    +0.3572
+    exculpatory                +0.3541
+    abrogated                  +0.3538
+    overblown                  +0.3531
+    omitted                    +0.3499
+    squelched                  +0.3490
+    adamantly                  +0.3486
+    vehemently                 +0.3473
+
+Saved exp63_results.npz

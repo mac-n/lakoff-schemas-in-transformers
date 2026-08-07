@@ -1,0 +1,64 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Running verdict-logic selftest first (synthetic-test convention)...
+selftest_verdict158: all branches fire correctly.
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:  90%|█████████ | 264/292 [00:00<00:00, 2621.33it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 2278.94it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+Words: 489 total; d_load estimation set 285 (held out: suffix pairs, BALANCE, DIFFICULTY)
+Collecting residuals + MLP load for 489 words...
+  100/489
+  200/489
+  300/489
+  400/489
+
+==============================================================================
+exp158 — DIFFICULTY-BURDEN vs MLP compute load (Pythia 410M)
+==============================================================================
+
+--- Layer 4 ---
+  carrier: in-sample +0.557, out-of-sample +0.555
+  Δload burden−ease poles (tc-controlled, sd units): -0.08
+  cos(DIFFICULTY, d_load) = -0.099   [rank 7/8 among schemas]
+  cross-couplings: cos(DIFF, d_norm) = -0.124   cos(BAL, d_load) = +0.676   cos(BAL, d_norm) = +0.678
+  independence: cos(d_load, d_norm) = +0.942
+  all schemas vs d_load: UP +0.46, IN -0.19, FORWA +0.42, PATH +0.34, LIGHT +0.05, FORCE -0.36, BALAN +0.68, DIFFI -0.10
+
+--- Layer 8 ---
+  carrier: in-sample +0.811, out-of-sample +0.810
+  Δload burden−ease poles (tc-controlled, sd units): +0.19
+  cos(DIFFICULTY, d_load) = +0.053   [rank 8/8 among schemas]
+  cross-couplings: cos(DIFF, d_norm) = -0.048   cos(BAL, d_load) = -0.466   cos(BAL, d_norm) = +0.478
+  independence: cos(d_load, d_norm) = -0.991
+  all schemas vs d_load: UP -0.38, IN +0.09, FORWA -0.35, PATH -0.33, LIGHT -0.06, FORCE +0.17, BALAN -0.47, DIFFI +0.05
+
+--- Layer 12 ---
+  carrier: in-sample +0.801, out-of-sample +0.771
+  Δload burden−ease poles (tc-controlled, sd units): +0.08
+  cos(DIFFICULTY, d_load) = +0.065   [rank 7/8 among schemas]
+  cross-couplings: cos(DIFF, d_norm) = -0.073   cos(BAL, d_load) = -0.388   cos(BAL, d_norm) = +0.408
+  independence: cos(d_load, d_norm) = -0.995
+  all schemas vs d_load: UP -0.30, IN +0.10, FORWA -0.31, PATH -0.27, LIGHT -0.02, FORCE +0.18, BALAN -0.39, DIFFI +0.07
+
+--- Layer 16 ---
+  carrier: in-sample +0.755, out-of-sample +0.710
+  Δload burden−ease poles (tc-controlled, sd units): +0.06
+  cos(DIFFICULTY, d_load) = +0.086   [rank 7/8 among schemas]
+  cross-couplings: cos(DIFF, d_norm) = -0.101   cos(BAL, d_load) = -0.434   cos(BAL, d_norm) = +0.450
+  independence: cos(d_load, d_norm) = -0.995
+  all schemas vs d_load: UP -0.31, IN +0.13, FORWA -0.32, PATH -0.24, LIGHT -0.02, FORCE +0.19, BALAN -0.43, DIFFI +0.09
+
+--- Layer 20 ---
+  carrier: in-sample +0.682, out-of-sample +0.559
+  Δload burden−ease poles (tc-controlled, sd units): -0.45
+  cos(DIFFICULTY, d_load) = -0.042   [rank 8/8 among schemas]
+  cross-couplings: cos(DIFF, d_norm) = -0.082   cos(BAL, d_load) = +0.457   cos(BAL, d_norm) = +0.485
+  independence: cos(d_load, d_norm) = +0.943
+  all schemas vs d_load: UP +0.30, IN -0.14, FORWA +0.36, PATH +0.24, LIGHT +0.09, FORCE -0.28, BALAN +0.46, DIFFI -0.04
+
+==============================================================================
+VERDICT vs pre-registered decision rule
+==============================================================================
+  cos(DIFFICULTY, d_load) at decision layers: L8:+0.05, L12:+0.07, L16:+0.09, L20:-0.04
+  independence |cos(d_load,d_norm)|: L8:0.99, L12:1.00, L16:0.99, L20:0.94
+  -> D2: no recruitment — embodiment stays single-instance; next candidate LIGHT-DARK→attention-entropy (BURROWS).

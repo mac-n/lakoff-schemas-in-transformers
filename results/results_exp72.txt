@@ -1,0 +1,306 @@
+Loading glove-wiki-gigaword-300...
+  vocab size: 400000
+
+Building PCA-input axes (cluster set, 11 axes from exp40)...
+
+Building target axes (independent from PCA-input set)...
+  [target_SALIENCE] missing words (1): ['backgrounded']
+  target_SALIENCE built from 11/12 pairs
+  target_MOTION    built from 12/12 pairs
+  target_EQ_RUN    built from 14/14 pairs
+
+========================================================================
+PCA on cluster axes (11 axes — matches exp40 cluster-only run)
+========================================================================
+
+Variance per PC:
+  PC1:  20.6%   (cumulative:  20.6%)
+  PC2:  17.3%   (cumulative:  37.9%)
+  PC3:  12.4%   (cumulative:  50.3%)
+  PC4:  11.2%   (cumulative:  61.5%)
+  PC5:   9.3%   (cumulative:  70.9%)
+  PC6:   8.7%   (cumulative:  79.6%)
+  PC7:   6.3%   (cumulative:  85.9%)
+  PC8:   5.3%   (cumulative:  91.2%)
+  PC9:   4.5%   (cumulative:  95.7%)
+  PC10:   4.3%   (cumulative: 100.0%)
+
+========================================================================
+CENTRAL TEST: target-axis cosines with PCs
+========================================================================
+
+Predictions:
+  target_SALIENCE  high on PC1 if PC1 is salience-as-primitive;
+                   LOW on PC1 if PC1 is just the V x A diagonal
+  target_MOTION    high on PC2 if MOTION is a real primitive
+  target_EQ_RUN    high on PC3 if EQ-vs-RUNAWAY is a real primitive
+
+                      PC1      PC2      PC3      PC4      PC5      PC6    
+  --------------------------------------------------------------------
+  target_SALIENCE     -0.174  -0.280  -0.056  +0.024  -0.058  -0.039  
+  target_MOTION       -0.094  +0.051  +0.022  +0.054  +0.017  -0.072  
+  target_EQ_RUN       +0.290  +0.011  +0.205  -0.073  -0.124  -0.042  
+
+========================================================================
+Per-target deep dive
+========================================================================
+
+--- target_SALIENCE ---
+  Best PC alignments (sorted by |cos|):
+    PC2 (17.3% var): cos = -0.2797
+    PC7 ( 6.3% var): cos = +0.1974
+    PC1 (20.6% var): cos = -0.1743
+    PC5 ( 9.3% var): cos = -0.0583
+    PC3 (12.4% var): cos = -0.0556
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: +0.4861
+     COHERENCE: +0.4247
+           BAL: +0.3825
+            FB: +0.3625
+            UD: +0.3606
+  Positive pole words:
+    +0.5101  prominent
+    +0.4796  including
+    +0.4558  first
+    +0.4456  addition
+    +0.4374  major
+    +0.4366  notable
+    +0.4286  noted
+    +0.4277  also
+    +0.4192  important
+    +0.4160  one
+  Negative pole words:
+    +0.5190  valueless
+    +0.5184  unfocused
+    +0.4935  uninteresting
+    +0.4822  inoffensive
+    +0.4788  pathetically
+    +0.4783  inattentive
+    +0.4754  unimaginative
+    +0.4736  unimportant
+    +0.4712  inconsequential
+    +0.4657  inarticulate
+
+--- target_MOTION ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = -0.0937
+    PC7 ( 6.3% var): cos = -0.0735
+    PC6 ( 8.7% var): cos = -0.0721
+    PC8 ( 5.3% var): cos = +0.0674
+    PC4 (11.2% var): cos = +0.0538
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+          PATH: +0.2911
+            FB: +0.1925
+            UD: +0.1918
+       AROUSAL: +0.1823
+           BAL: +0.1424
+  Positive pole words:
+    +0.3876  skiing
+    +0.3869  racing
+    +0.3763  sprint
+    +0.3722  diving
+    +0.3711  spectacular
+    +0.3668  championships
+    +0.3593  speed
+    +0.3516  run
+    +0.3503  track
+    +0.3484  jump
+  Negative pole words:
+    +0.4883  kneeling
+    +0.4422  slouched
+    +0.4287  reclining
+    +0.4103  glumly
+    +0.3947  reclined
+    +0.3935  knelt
+    +0.3800  hunched
+    +0.3740  seated
+    +0.3730  slouching
+    +0.3711  lounging
+
+--- target_EQ_RUN ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = +0.2901
+    PC3 (12.4% var): cos = +0.2047
+    PC8 ( 5.3% var): cos = -0.1543
+    PC7 ( 6.3% var): cos = -0.1408
+    PC5 ( 9.3% var): cos = -0.1243
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: -0.2861
+            LD: +0.2180
+       VALENCE: +0.2167
+          LOSS: +0.1638
+     COHERENCE: +0.0871
+  Positive pole words:
+    +0.3360  restoring
+    +0.3153  interpreting
+    +0.3121  modifying
+    +0.3081  tempering
+    +0.3038  adjusting
+    +0.3024  atoning
+    +0.2969  effecting
+    +0.2965  erred
+    +0.2888  accomplishing
+    +0.2820  nyts
+  Negative pole words:
+    +0.4604  mushrooming
+    +0.4443  spiralling
+    +0.4424  spiraling
+    +0.4295  escalating
+    +0.4231  raging
+    +0.4213  engulfed
+    +0.4143  erupted
+    +0.3860  raged
+    +0.3851  escalated
+    +0.3807  sparked
+
+Saved: exp52_results.npz
+Loading glove-wiki-gigaword-300...
+Loading exp60 + exp64 + exp69 saved arrays...
+
+========================================================================
+TEST 1 — Build target_COST (non-somatic anchors)
+========================================================================
+
+Used 9/9 pairs:
+  (expensive, free)
+  (costly, cheap)
+  (demanding, easy)
+  (depleting, sustaining)
+  (consuming, replenishing)
+  (extracting, conserving)
+  (effortful, trivial)
+  (draining, renewing)
+  (intensive, minimal)
+
+COST positive pole (cost-side, top 12):
+  time-consuming             +0.4669
+  consuming                  +0.4417
+  costly                     +0.3910
+  arduous                    +0.3550
+  grueling                   +0.3537
+  computationally            +0.3520
+  acrimonious                +0.3487
+  intensive                  +0.3484
+  laborious                  +0.3462
+  labour-intensive           +0.3325
+  labor-intensive            +0.3261
+  painstaking                +0.3226
+
+COST negative pole (no-cost side, top 12):
+  goodness                   +0.2752
+  joking                     +0.2563
+  queer                      +0.2540
+  good                       +0.2526
+  perfect                    +0.2489
+  respecting                 +0.2487
+  converse                   +0.2427
+  notion                     +0.2402
+  hipster                    +0.2397
+  geek                       +0.2396
+  guide                      +0.2395
+  continuity                 +0.2391
+
+========================================================================
+TEST 2 — Cross-bleed and the Q1 key number
+========================================================================
+
+COST vs 9-axis basis:
+axis      cos(COST, .)
+C              -0.1507
+W              +0.2885  ←
+ATT            +0.0024
+INT            -0.0095
+R              -0.0564
+D              +0.0105
+IO             +0.0457
+DV             -0.0894
+MB             +0.0462
+
+Lakoff DIFF schema comparison:
+  cos(COST, DIFF) = +0.3288  (W-DIFF was +0.502 in exp60)
+  cos(W,    DIFF) = +0.5017
+
+==================================================
+  Q1 VERDICT: cos(COST, W) = +0.2885
+==================================================
+  → SEPARATE: W and COST are distinct primitives.
+            Somatic-weight isn't just cost; it carries its own content.
+
+========================================================================
+TEST 3 — 8-axis basis with EFE = unit(C - W) replacing C+W
+========================================================================
+
+cos(EFE, basis axes):
+  EFE-ATT   +0.2079
+  EFE-INT   -0.1044
+  EFE-R     -0.0360
+  EFE-D     +0.0292
+  EFE-IO    +0.0512
+  EFE-DV    +0.2951
+  EFE-MB    +0.0252
+
+Schema decomp: 9-axis (with C, W) vs 8-axis (with EFE)
+schema      9D expl  8D-EFE expl      Δ
+------------------------------------------
+  VALENCE     63.4%        62.6%   -0.8%
+  AROUSAL     44.0%        43.9%   -0.1%
+  COH         69.1%        68.1%   -1.0%
+  SUC         50.8%        48.6%   -2.2%
+  LOSS        56.8%        51.2%   -5.6%  ←lose>5%
+  UD          59.6%        55.7%   -3.9%
+  FB          45.9%        45.1%   -0.8%
+  LD          41.6%        41.5%   -0.1%
+  PATH        34.9%        32.6%   -2.3%
+  EXIST       63.5%        61.9%   -1.6%
+  FORCE       25.7%        23.0%   -2.7%
+  BAL         60.3%        59.8%   -0.5%
+  DIFF        60.4%        57.3%   -3.1%
+  IO_CLEAN   100.0%       100.0%   +0.0%
+
+Summary: 8-axis EFE decomp loss
+  mean Δ = -1.76%
+  median Δ = -1.32%
+  schemas losing >5%: 1/14
+  worst loss: -5.61% on LOSS
+  → COLLAPSE LOOKS VIABLE: average loss < 5%, basis can drop to 8 axes.
+
+========================================================================
+TEST 4 — 9-axis basis: COST replaces W
+========================================================================
+
+First check: cos(C, COST) = -0.1507  (vs cos(C, W) = -0.3436)
+
+Schema decomp: 9-axis-W vs 9-axis-COST
+schema       with W  with COST      Δ
+----------------------------------------
+  VALENCE     63.4%      61.5%   -1.9%
+  AROUSAL     44.0%      44.7%   +0.7%
+  COH         69.1%      69.8%   +0.7%
+  SUC         50.8%      51.0%   +0.3%
+  LOSS        56.8%      56.8%   -0.0%
+  UD          59.6%      61.2%   +1.6%
+  FB          45.9%      46.2%   +0.3%
+  LD          41.6%      39.2%   -2.4%
+  PATH        34.9%      36.7%   +1.8%
+  EXIST       63.5%      63.6%   +0.1%
+  FORCE       25.7%      24.9%   -0.8%
+  BAL         60.3%      61.2%   +0.9%
+  DIFF        60.4%      51.3%   -9.1%  ←DIFF (W's dominant schema)
+  IO_CLEAN   100.0%     100.0%   +0.0%
+
+Summary: COST-for-W swap
+  mean Δ = -0.55%
+  median Δ = +0.19%
+  schemas gaining: 8/14
+  schemas losing: 5/14
+
+9-axis-COST inter-axis cosines (the relevant top row):
+  cos(COST, MB)  = +0.0462
+  cos(COST, D)   = +0.0105
+  cos(COST, IO)  = +0.0457
+  cos(COST, R)   = -0.0564
+  cos(COST, DV)  = -0.0894
+  cos(COST, ATT) = +0.0024
+  cos(COST, INT) = -0.0095
+
+Saved exp72_results.npz

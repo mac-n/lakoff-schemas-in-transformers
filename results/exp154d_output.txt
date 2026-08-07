@@ -1,0 +1,53 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<00:30,  9.43it/s]Loading weights:  62%|██████▏   | 182/292 [00:00<00:00, 1041.19it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 1022.43it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+exp154c held-out reference (parsed): after-strip = {4: 0.002, 8: -0.09, 12: -0.108, 16: -0.121, 20: -0.116}
+Collecting residuals for 489 words at [4, 8, 12, 16, 20]...
+  100/489
+  200/489
+  300/489
+  400/489
+
+==============================================================================
+exp154d — size-matched random-subset d_norm control
+==============================================================================
+
+--- Layer 4 ---
+  sink before = -0.414 (exp154c parity: -0.414)
+  random size-312 subset strip, sink after (20 seeds): +0.052 ± 0.009 [+0.037, +0.077]
+  retained fraction band: [-9%, -19%] (mean -13%)
+  exp154c HELD-OUT sink after = +0.002 (retains -0%) -> OUTSIDE band, retains more (exclusion-specific)
+
+--- Layer 8 ---
+  sink before = -0.320 (exp154c parity: -0.320)
+  random size-312 subset strip, sink after (20 seeds): -0.003 ± 0.012 [-0.025, +0.015]
+  retained fraction band: [8%, -5%] (mean 1%)
+  exp154c HELD-OUT sink after = -0.090 (retains 28%) -> OUTSIDE band, retains more (exclusion-specific)
+
+--- Layer 12 ---
+  sink before = -0.285 (exp154c parity: -0.285)
+  random size-312 subset strip, sink after (20 seeds): -0.017 ± 0.013 [-0.041, +0.005]
+  retained fraction band: [14%, -2%] (mean 6%)
+  exp154c HELD-OUT sink after = -0.108 (retains 38%) -> OUTSIDE band, retains more (exclusion-specific)
+
+--- Layer 16 ---
+  sink before = -0.288 (exp154c parity: -0.288)
+  random size-312 subset strip, sink after (20 seeds): -0.031 ± 0.013 [-0.065, -0.005]
+  retained fraction band: [22%, 2%] (mean 11%)
+  exp154c HELD-OUT sink after = -0.121 (retains 42%) -> OUTSIDE band, retains more (exclusion-specific)
+
+--- Layer 20 ---
+  sink before = -0.280 (exp154c parity: -0.280)
+  random size-312 subset strip, sink after (20 seeds): -0.016 ± 0.012 [-0.054, +0.003]
+  retained fraction band: [19%, -1%] (mean 6%)
+  exp154c HELD-OUT sink after = -0.116 (retains 41%) -> OUTSIDE band, retains more (exclusion-specific)
+
+==============================================================================
+VERDICT vs pre-registered decision rule
+==============================================================================
+  decision layers [8, 12, 16, 20]: held-out retains more than entire band at 4/4, within band at 0/4
+  -> S1: exclusion-specific. exp154's extra collapse was circular;
+     exp154c's H3 (two-component) stands. Prefer held-out numbers.

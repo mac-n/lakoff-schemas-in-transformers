@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.DS_Store
+# large regenerable artifacts (activation caches, result tensors)
+*.pt
+*.npz
+*.npy
+# local environments
+lakoff/
+venv/
+.venv/

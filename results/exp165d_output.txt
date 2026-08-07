@@ -1,0 +1,27 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+exp165d — schema VERTEX map (descriptive; SEED=165, faithful to 165c)
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 10219.85it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+steering BALANCE + 7 schemas over 13-pt grid (all layers)...
+
+========================================================================
+  direction          curv k  vertex c*   argmin     asym
+  ---------------- -------- ---------- -------- --------
+  BALANCE            +1.084     +0.053    +0.05   +0.075
+  UP-DOWN            +0.999     +0.021    +0.00   +0.033
+  IN-OUT_CLEAN       +1.247     +0.067    +0.00   +0.111
+  FORWARD-BACK       +1.050     -0.050    +0.00   -0.078
+  PATH-MOTION        +1.392     -0.027    +0.00   -0.046
+  LIGHT-DARK         +1.087     -0.035    -0.05   -0.052
+  FORCE              +1.194     -0.019    -0.05   -0.033
+  DIFFICULTY-BURDEN   +0.908     -0.073    -0.10   -0.095
+
+  vertex c* summary (all 8 meaningful dirs):
+    mean -0.008  sd 0.050  range [-0.073, +0.067]
+    8/8 floor within |c*|<=0.10 of the natural state;  3/8 floor on the positive side
+
+  READ: if vertices cluster near 0 -> the natural state IS the joint
+  stability optimum across schema coords (Niamh's 'balance is the ground'
+  as resting-state equilibrium). If scattered -> each schema has its own
+  distinct optimum, no shared balance point.

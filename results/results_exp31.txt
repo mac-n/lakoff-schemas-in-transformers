@@ -1,0 +1,118 @@
+Loading glove-wiki-gigaword-300...
+
+=== Decomposition check: how much V/A is in each schema? ===
+          schema    cos(V)    cos(A)
+         UP-DOWN   +0.5142   +0.1930
+    FORWARD-BACK   +0.3140   +0.2380
+      LIGHT-DARK   +0.5455   +0.1600
+          IN-OUT   +0.2480   +0.0516
+
+=== Pairwise cosines between V+A-residualized schema axes ===
+  cos(FB_VA, UD_VA) = +0.4006
+  cos(FB_VA, LD_VA) = +0.1704
+  cos(FB_VA, IO_VA) = +0.2134
+  cos(LD_VA, UD_VA) = +0.2419
+  cos(IO_VA, UD_VA) = +0.2172
+  cos(IO_VA, LD_VA) = +0.0383
+
+=== LD residual vs shared UD-FB direction ===
+  cos(LD_VA, shared_UD_FB) = +0.2463
+  (high cosine = yang/yin is a single shared axis across UD/FB/LD)
+
+=== IO residual vs shared UD-FB direction (sanity — IO should NOT be yang/yin) ===
+  cos(IO_VA, shared_UD_FB) = +0.2573
+
+=== Yang/yin candidate axis (mean of UD_VA + FB_VA + LD_VA) ===
+  positive pole (yang):
+    +0.3464  hopefully
+    +0.3363  innovations
+    +0.3213  vigorous
+    +0.3097  rigorous
+    +0.3081  innovation
+    +0.3042  promoting
+    +0.3031  introduction
+    +0.3003  innovative
+    +0.2999  excellence
+    +0.2996  promote
+    +0.2961  consistent
+    +0.2914  breeze
+    +0.2904  competition
+    +0.2900  achieved
+    +0.2882  introducing
+    +0.2856  selection
+    +0.2794  develop
+    +0.2786  exciting
+    +0.2772  comprehensive
+    +0.2771  advancements
+
+  negative pole (yin):
+    +0.3335  deserted
+    +0.3275  plunged
+    +0.3262  zugdidi
+    +0.3081  plummeted
+    +0.3045  derelict
+    +0.3031  ransacked
+    +0.3006  23.73
+    +0.3004  comatose
+    +0.2956  dilapidated
+    +0.2950  pinnately
+    +0.2868  basements
+    +0.2849  88.51
+    +0.2840  mortally
+    +0.2836  plunging
+    +0.2827  ravine
+    +0.2825  unoccupied
+    +0.2807  nester
+    +0.2785  rigases
+    +0.2784  23.81
+    +0.2769  skidded
+
+=== LD_VA nearest neighbors (for comparison) ===
+  positive pole:
+    +0.3011  consistent
+    +0.2676  radiant
+    +0.2643  peierls
+    +0.2573  bossidy
+    +0.2543  teresa
+    +0.2539  emphatic
+    +0.2536  blushing
+    +0.2503  kors
+    +0.2490  breeze
+    +0.2470  vigorous
+    +0.2464  sustained
+    +0.2426  forceful
+    +0.2422  deserved
+    +0.2412  hopefully
+    +0.2377  dehydration
+
+  negative pole:
+    +0.3573  murky
+    +0.3391  shadowy
+    +0.3314  hidden
+    +0.3194  basements
+    +0.3091  storerooms
+    +0.3082  dank
+    +0.2991  gangsters
+    +0.2971  darkened
+    +0.2952  unexplored
+    +0.2922  alleys
+    +0.2910  alleyway
+    +0.2877  unacknowledged
+    +0.2860  yakuza
+    +0.2847  underfunded
+    +0.2819  ungoverned
+
+=== Cosines: yang/yin candidate vs each schema residual ===
+  cos(yangyin, UD_VA) = +0.7637
+  cos(yangyin, FB_VA) = +0.7304
+  cos(yangyin, LD_VA) = +0.6566
+  cos(yangyin, IO_VA) = +0.2180
+  cos(yangyin, V)    = +0.0570
+  cos(yangyin, A)    = -0.0000
+
+=== Reading guide ===
+  If cos(LD_VA, shared_UDFB) > +0.4 → yang/yin is the shared underlying axis
+  If yangyin pole nearest neighbors are clearly emergence vs collapse → confirmed
+  If IO_VA cosine with yangyin is small (~0) → IO is genuinely separate (good)
+
+Saved: exp31_results.npz

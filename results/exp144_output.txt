@@ -1,0 +1,263 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+
+==============================================================================
+MODEL: pythia-70m
+==============================================================================
+Loading weights:   0%|          | 0/76 [00:00<?, ?it/s]Loading weights: 100%|██████████| 76/76 [00:00<00:00, 6321.23it/s]
+Loaded pretrained model pythia-70m into HookedTransformer
+  n_layers=6, d_model=512
+  collecting residuals for 188 words at [1, 2, 3, 4]...
+
+  TEST A — extent words on MAG vs DIR axis at L3:
+  word              on MAG      on DIR   |MAG|>|DIR|
+  deep              -0.016      -0.021           DIR
+  deeper            +0.139      +0.050           MAG
+  deepest           -0.002      +0.004           DIR
+  abyss             +0.115      -0.052           MAG
+  tall              +0.018      +0.017           MAG
+  taller            +0.049      +0.045           MAG
+  tallest           +0.012      +0.016           DIR
+  TEST A summary: MAG wins 4/7, mean |MAG|/|DIR| = 1.71
+
+  TEST B — r(Δ‖residual‖, BALANCE projection) per suffix family:
+  layer   suffix family           r
+  L1      ER_comparative          +0.855
+  L1      EST_superlative         +0.884
+  L1      ING_progressive         +0.919
+  L1      ED_past                 +0.979
+  L1      UN_negation             +0.837
+  L1      RE_repetition           +0.936
+  L2      ER_comparative          +0.935
+  L2      EST_superlative         +0.954
+  L2      ING_progressive         +0.921
+  L2      ED_past                 +0.970
+  L2      UN_negation             +0.882
+  L2      RE_repetition           +0.979
+  L3      ER_comparative          +0.962
+  L3      EST_superlative         +0.964
+  L3      ING_progressive         +0.953
+  L3      ED_past                 +0.991
+  L3      UN_negation             +0.910
+  L3      RE_repetition           +0.975
+  L4      ER_comparative          +0.923
+  L4      EST_superlative         +0.943
+  L4      ING_progressive         +0.938
+  L4      ED_past                 +0.975
+  L4      UN_negation             +0.903
+  L4      RE_repetition           +0.950
+
+  TEST B aggregated by layer (mean r across suffix families):
+  L1: mean r = +0.902
+  L2: mean r = +0.940
+  L3: mean r = +0.959
+  L4: mean r = +0.939
+
+==============================================================================
+MODEL: pythia-160m
+==============================================================================
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|██████████| 148/148 [00:00<00:00, 2513.76it/s]
+Loaded pretrained model pythia-160m into HookedTransformer
+  n_layers=12, d_model=768
+  collecting residuals for 188 words at [2, 4, 6, 8, 10]...
+
+  TEST A — extent words on MAG vs DIR axis at L6:
+  word              on MAG      on DIR   |MAG|>|DIR|
+  deep              +0.001      -0.007           DIR
+  deeper            +0.049      -0.060           DIR
+  deepest           +0.099      -0.027           MAG
+  abyss             +0.082      -0.039           MAG
+  tall              +0.074      -0.009           MAG
+  taller            +0.049      +0.008           MAG
+  tallest           +0.095      +0.011           MAG
+  TEST A summary: MAG wins 5/7, mean |MAG|/|DIR| = 2.78
+
+  TEST B — r(Δ‖residual‖, BALANCE projection) per suffix family:
+  layer   suffix family           r
+  L2      ER_comparative          +0.893
+  L2      EST_superlative         +0.878
+  L2      ING_progressive         +0.921
+  L2      ED_past                 +0.931
+  L2      UN_negation             +0.922
+  L2      RE_repetition           +0.927
+  L4      ER_comparative          +0.953
+  L4      EST_superlative         +0.927
+  L4      ING_progressive         +0.982
+  L4      ED_past                 +0.971
+  L4      UN_negation             +0.929
+  L4      RE_repetition           +0.939
+  L6      ER_comparative          +0.951
+  L6      EST_superlative         +0.885
+  L6      ING_progressive         +0.982
+  L6      ED_past                 +0.952
+  L6      UN_negation             +0.913
+  L6      RE_repetition           +0.791
+  L8      ER_comparative          +0.970
+  L8      EST_superlative         +0.934
+  L8      ING_progressive         +0.934
+  L8      ED_past                 +0.969
+  L8      UN_negation             +0.896
+  L8      RE_repetition           +0.848
+  L10     ER_comparative          +0.918
+  L10     EST_superlative         +0.852
+  L10     ING_progressive         +0.831
+  L10     ED_past                 +0.444
+  L10     UN_negation             +0.908
+  L10     RE_repetition           +0.922
+
+  TEST B aggregated by layer (mean r across suffix families):
+  L2: mean r = +0.912
+  L4: mean r = +0.950
+  L6: mean r = +0.912
+  L8: mean r = +0.925
+  L10: mean r = +0.813
+
+==============================================================================
+MODEL: pythia-410m
+==============================================================================
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<00:43,  6.66it/s]Loading weights:  45%|████▌     | 132/292 [00:00<00:00, 633.44it/s]Loading weights:  71%|███████   | 208/292 [00:00<00:00, 547.68it/s]Loading weights:  93%|█████████▎| 271/292 [00:00<00:00, 527.61it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 507.10it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+  n_layers=24, d_model=1024
+  collecting residuals for 188 words at [4, 8, 12, 16, 22]...
+
+  TEST A — extent words on MAG vs DIR axis at L12:
+  word              on MAG      on DIR   |MAG|>|DIR|
+  deep              -0.001      -0.000           MAG
+  deeper            +0.130      -0.072           MAG
+  deepest           +0.136      -0.057           MAG
+  abyss             +0.061      -0.034           MAG
+  tall              +0.111      +0.019           MAG
+  taller            +0.050      +0.005           MAG
+  tallest           +0.104      +0.002           MAG
+  TEST A summary: MAG wins 7/7, mean |MAG|/|DIR| = 3.12
+
+  TEST B — r(Δ‖residual‖, BALANCE projection) per suffix family:
+  layer   suffix family           r
+  L4      ER_comparative          +0.928
+  L4      EST_superlative         +0.970
+  L4      ING_progressive         +0.864
+  L4      ED_past                 +0.909
+  L4      UN_negation             +0.939
+  L4      RE_repetition           +0.856
+  L8      ER_comparative          +0.969
+  L8      EST_superlative         +0.949
+  L8      ING_progressive         +0.940
+  L8      ED_past                 +0.975
+  L8      UN_negation             +0.946
+  L8      RE_repetition           +0.851
+  L12     ER_comparative          +0.954
+  L12     EST_superlative         +0.915
+  L12     ING_progressive         +0.954
+  L12     ED_past                 +0.944
+  L12     UN_negation             +0.917
+  L12     RE_repetition           +0.621
+  L16     ER_comparative          +0.945
+  L16     EST_superlative         +0.949
+  L16     ING_progressive         +0.968
+  L16     ED_past                 +0.900
+  L16     UN_negation             +0.883
+  L16     RE_repetition           +0.565
+  L22     ER_comparative          +0.909
+  L22     EST_superlative         +0.913
+  L22     ING_progressive         +0.960
+  L22     ED_past                 +0.863
+  L22     UN_negation             +0.863
+  L22     RE_repetition           -0.160
+
+  TEST B aggregated by layer (mean r across suffix families):
+  L4: mean r = +0.911
+  L8: mean r = +0.938
+  L12: mean r = +0.884
+  L16: mean r = +0.868
+  L22: mean r = +0.725
+
+==============================================================================
+MODEL: pythia-1.4b
+==============================================================================
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:56,  2.49it/s]Loading weights:  21%|██        | 60/292 [00:00<00:02, 78.55it/s]Loading weights:  23%|██▎       | 68/292 [00:01<00:04, 52.32it/s]Loading weights:  25%|██▌       | 73/292 [00:01<00:04, 47.84it/s]Loading weights:  27%|██▋       | 78/292 [00:01<00:04, 43.52it/s]Loading weights:  29%|██▉       | 84/292 [00:01<00:04, 45.33it/s]Loading weights:  30%|███       | 89/292 [00:01<00:04, 40.67it/s]Loading weights:  33%|███▎      | 96/292 [00:02<00:05, 38.24it/s]Loading weights:  36%|███▌      | 104/292 [00:02<00:04, 45.53it/s]Loading weights:  37%|███▋      | 109/292 [00:02<00:04, 42.35it/s]Loading weights:  39%|███▉      | 114/292 [00:02<00:04, 40.42it/s]Loading weights:  42%|████▏     | 122/292 [00:02<00:04, 38.36it/s]Loading weights:  45%|████▌     | 132/292 [00:03<00:04, 39.11it/s]Loading weights:  48%|████▊     | 140/292 [00:03<00:03, 41.71it/s]Loading weights:  50%|████▉     | 145/292 [00:03<00:04, 36.21it/s]Loading weights:  51%|█████     | 149/292 [00:03<00:04, 31.59it/s]Loading weights:  53%|█████▎    | 156/292 [00:03<00:03, 34.71it/s]Loading weights:  55%|█████▍    | 160/292 [00:03<00:04, 31.56it/s]Loading weights:  58%|█████▊    | 168/292 [00:04<00:04, 27.23it/s]Loading weights:  60%|██████    | 176/292 [00:04<00:03, 32.22it/s]Loading weights:  62%|██████▏   | 180/292 [00:04<00:04, 25.43it/s]Loading weights:  63%|██████▎   | 183/292 [00:04<00:04, 24.31it/s]Loading weights:  66%|██████▌   | 192/292 [00:05<00:03, 32.32it/s]Loading weights:  67%|██████▋   | 196/292 [00:05<00:03, 27.22it/s]Loading weights:  70%|██████▉   | 204/292 [00:05<00:02, 30.19it/s]Loading weights:  73%|███████▎  | 212/292 [00:05<00:02, 34.44it/s]Loading weights:  74%|███████▍  | 216/292 [00:05<00:02, 28.37it/s]Loading weights:  75%|███████▌  | 220/292 [00:06<00:02, 27.12it/s]Loading weights:  78%|███████▊  | 228/292 [00:06<00:01, 32.29it/s]Loading weights:  79%|███████▉  | 232/292 [00:06<00:02, 29.92it/s]Loading weights:  82%|████████▏ | 240/292 [00:06<00:01, 27.41it/s]Loading weights:  86%|████████▋ | 252/292 [00:06<00:01, 34.76it/s]Loading weights:  88%|████████▊ | 256/292 [00:07<00:01, 33.72it/s]Loading weights:  90%|█████████ | 264/292 [00:07<00:00, 39.77it/s]Loading weights:  92%|█████████▏| 269/292 [00:07<00:00, 39.47it/s]Loading weights:  95%|█████████▍| 276/292 [00:07<00:00, 36.29it/s]Loading weights:  99%|█████████▊| 288/292 [00:07<00:00, 45.93it/s]Loading weights: 100%|██████████| 292/292 [00:07<00:00, 37.48it/s]
+Loaded pretrained model pythia-1.4b into HookedTransformer
+  n_layers=24, d_model=2048
+  collecting residuals for 188 words at [4, 8, 12, 16, 22]...
+
+  TEST A — extent words on MAG vs DIR axis at L12:
+  word              on MAG      on DIR   |MAG|>|DIR|
+  deep              +0.000      -0.002           DIR
+  deeper            +0.070      -0.058           MAG
+  deepest           +0.117      -0.062           MAG
+  abyss             +0.000      +0.001           DIR
+  tall              +0.078      +0.017           MAG
+  taller            +0.067      -0.023           MAG
+  tallest           +0.101      -0.002           MAG
+  TEST A summary: MAG wins 5/7, mean |MAG|/|DIR| = 2.62
+
+  TEST B — r(Δ‖residual‖, BALANCE projection) per suffix family:
+  layer   suffix family           r
+  L4      ER_comparative          +0.979
+  L4      EST_superlative         +0.965
+  L4      ING_progressive         +0.986
+  L4      ED_past                 +0.995
+  L4      UN_negation             +0.863
+  L4      RE_repetition           +0.978
+  L8      ER_comparative          +0.985
+  L8      EST_superlative         +0.955
+  L8      ING_progressive         +0.967
+  L8      ED_past                 +0.978
+  L8      UN_negation             +0.852
+  L8      RE_repetition           +0.975
+  L12     ER_comparative          +0.978
+  L12     EST_superlative         +0.949
+  L12     ING_progressive         +0.971
+  L12     ED_past                 +0.955
+  L12     UN_negation             +0.933
+  L12     RE_repetition           +0.910
+  L16     ER_comparative          +0.953
+  L16     EST_superlative         +0.937
+  L16     ING_progressive         +0.958
+  L16     ED_past                 +0.963
+  L16     UN_negation             +0.938
+  L16     RE_repetition           +0.853
+  L22     ER_comparative          +0.952
+  L22     EST_superlative         +0.907
+  L22     ING_progressive         +0.949
+  L22     ED_past                 +0.795
+  L22     UN_negation             +0.937
+  L22     RE_repetition           +0.802
+
+  TEST B aggregated by layer (mean r across suffix families):
+  L4: mean r = +0.961
+  L8: mean r = +0.952
+  L12: mean r = +0.949
+  L16: mean r = +0.934
+  L22: mean r = +0.891
+
+==============================================================================
+CROSS-MODEL SUMMARY
+==============================================================================
+
+TEST A — extent words on MAG vs DIR (at middle layer)
+  model            L_mid    MAG wins   mean|MAG|   mean|DIR|     ratio
+  pythia-70m      L3      4/7             +0.050      +0.029      1.71
+  pythia-160m     L6      5/7             +0.064      +0.023      2.78
+  pythia-410m     L12     7/7             +0.085      +0.027      3.12
+  pythia-1.4b     L12     5/7             +0.062      +0.024      2.62
+
+TEST B — BALANCE-as-norm correlation (mean r across suffix families)
+  model           layer_means
+  pythia-70m      L1:+0.90  L2:+0.94  L3:+0.96  L4:+0.94
+  pythia-160m     L2:+0.91  L4:+0.95  L6:+0.91  L8:+0.93  L10:+0.81
+  pythia-410m     L4:+0.91  L8:+0.94  L12:+0.88  L16:+0.87  L22:+0.72
+  pythia-1.4b     L4:+0.96  L8:+0.95  L12:+0.95  L16:+0.93  L22:+0.89
+
+VERDICT (rule of thumb):
+  - extent-on-MAG holds if ratio > 1.3 across most model sizes
+  - BALANCE-as-norm holds if mean r > 0.7 across most layers / sizes
+
+  extent-on-MAG ratios across sizes: ['1.71', '2.78', '3.12', '2.62']
+  -> 4/4 sizes have ratio > 1.3
+
+  BALANCE-norm correlations (all layers, all sizes):
+    n = 19, mean = +0.909, min = +0.725, max = +0.961
+    19/19 > 0.7
+
+Done.

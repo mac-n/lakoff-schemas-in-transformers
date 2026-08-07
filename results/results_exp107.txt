@@ -1,0 +1,28 @@
+Loading GloVe...
+
+  frequency axis f = unit(regression of log-rank on embeddings)
+    spearman(X@f, rank) = +0.754   (linear R^2 of rank ~ X: 0.827)
+    cos(frequency axis, PC1) = +0.216
+  plural pairs: 18440
+
+==========================================================================
+PLURAL OPERATOR DECOMPOSITION under three frequency controls
+==========================================================================
+  control   cos id  cos op   ||E||  sigma1  rank@50%  cos(v1,f)  cos(u1,f)
+  raw        0.398   0.452    7.80   1.418        72      0.091      0.066
+  pc1        0.385   0.435   10.33   2.004        79      0.085      0.032
+  freq       0.398   0.453    7.98   1.438        72      0.000      0.000
+
+  Frequency coupling of the UNCONTROLLED (raw) plural operator:
+    ||E f|| / ||E||  (input couples to frequency):  0.052
+    ||f^T E|| / ||E|| (output couples to frequency): 0.048
+    fraction of ||E|| removed by deflating f both sides: 0.002
+
+READING
+  - cos(v1,f)/cos(u1,f) near 1 => the dominant component IS the frequency axis;
+    near 0 => the dominant component is something else (e.g. grammatical number).
+  - If 'cos op' and the dominant-direction words survive in the 'freq' row, the
+    plural operation is real beyond frequency. If they collapse, it was frequency.
+  - input/output coupling and the deflation 'removed' fraction say how much of the
+    raw operator is just a frequency shift.
+

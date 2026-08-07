@@ -1,0 +1,249 @@
+Loading glove-wiki-gigaword-300...
+  vocab size: 400000
+
+Building PCA-input axes (cluster set, 11 axes from exp40)...
+
+Building target axes (independent from PCA-input set)...
+  [target_SALIENCE] missing words (1): ['backgrounded']
+  target_SALIENCE built from 11/12 pairs
+  target_MOTION    built from 12/12 pairs
+  target_EQ_RUN    built from 14/14 pairs
+
+========================================================================
+PCA on cluster axes (11 axes — matches exp40 cluster-only run)
+========================================================================
+
+Variance per PC:
+  PC1:  20.6%   (cumulative:  20.6%)
+  PC2:  17.3%   (cumulative:  37.9%)
+  PC3:  12.4%   (cumulative:  50.3%)
+  PC4:  11.2%   (cumulative:  61.5%)
+  PC5:   9.3%   (cumulative:  70.9%)
+  PC6:   8.7%   (cumulative:  79.6%)
+  PC7:   6.3%   (cumulative:  85.9%)
+  PC8:   5.3%   (cumulative:  91.2%)
+  PC9:   4.5%   (cumulative:  95.7%)
+  PC10:   4.3%   (cumulative: 100.0%)
+
+========================================================================
+CENTRAL TEST: target-axis cosines with PCs
+========================================================================
+
+Predictions:
+  target_SALIENCE  high on PC1 if PC1 is salience-as-primitive;
+                   LOW on PC1 if PC1 is just the V x A diagonal
+  target_MOTION    high on PC2 if MOTION is a real primitive
+  target_EQ_RUN    high on PC3 if EQ-vs-RUNAWAY is a real primitive
+
+                      PC1      PC2      PC3      PC4      PC5      PC6    
+  --------------------------------------------------------------------
+  target_SALIENCE     -0.174  -0.280  -0.056  +0.024  -0.058  -0.039  
+  target_MOTION       -0.094  +0.051  +0.022  +0.054  +0.017  -0.072  
+  target_EQ_RUN       +0.290  +0.011  +0.205  -0.073  -0.124  -0.042  
+
+========================================================================
+Per-target deep dive
+========================================================================
+
+--- target_SALIENCE ---
+  Best PC alignments (sorted by |cos|):
+    PC2 (17.3% var): cos = -0.2797
+    PC7 ( 6.3% var): cos = +0.1974
+    PC1 (20.6% var): cos = -0.1743
+    PC5 ( 9.3% var): cos = -0.0583
+    PC3 (12.4% var): cos = -0.0556
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: +0.4861
+     COHERENCE: +0.4247
+           BAL: +0.3825
+            FB: +0.3625
+            UD: +0.3606
+  Positive pole words:
+    +0.5101  prominent
+    +0.4796  including
+    +0.4558  first
+    +0.4456  addition
+    +0.4374  major
+    +0.4366  notable
+    +0.4286  noted
+    +0.4277  also
+    +0.4192  important
+    +0.4160  one
+  Negative pole words:
+    +0.5190  valueless
+    +0.5184  unfocused
+    +0.4935  uninteresting
+    +0.4822  inoffensive
+    +0.4788  pathetically
+    +0.4783  inattentive
+    +0.4754  unimaginative
+    +0.4736  unimportant
+    +0.4712  inconsequential
+    +0.4657  inarticulate
+
+--- target_MOTION ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = -0.0937
+    PC7 ( 6.3% var): cos = -0.0735
+    PC6 ( 8.7% var): cos = -0.0721
+    PC8 ( 5.3% var): cos = +0.0674
+    PC4 (11.2% var): cos = +0.0538
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+          PATH: +0.2911
+            FB: +0.1925
+            UD: +0.1918
+       AROUSAL: +0.1823
+           BAL: +0.1424
+  Positive pole words:
+    +0.3876  skiing
+    +0.3869  racing
+    +0.3763  sprint
+    +0.3722  diving
+    +0.3711  spectacular
+    +0.3668  championships
+    +0.3593  speed
+    +0.3516  run
+    +0.3503  track
+    +0.3484  jump
+  Negative pole words:
+    +0.4883  kneeling
+    +0.4422  slouched
+    +0.4287  reclining
+    +0.4103  glumly
+    +0.3947  reclined
+    +0.3935  knelt
+    +0.3800  hunched
+    +0.3740  seated
+    +0.3730  slouching
+    +0.3711  lounging
+
+--- target_EQ_RUN ---
+  Best PC alignments (sorted by |cos|):
+    PC1 (20.6% var): cos = +0.2901
+    PC3 (12.4% var): cos = +0.2047
+    PC8 ( 5.3% var): cos = -0.1543
+    PC7 ( 6.3% var): cos = -0.1408
+    PC5 ( 9.3% var): cos = -0.1243
+  Cosines with INPUT axes (sanity check for vocabulary leakage):
+       AROUSAL: -0.2861
+            LD: +0.2180
+       VALENCE: +0.2167
+          LOSS: +0.1638
+     COHERENCE: +0.0871
+  Positive pole words:
+    +0.3360  restoring
+    +0.3153  interpreting
+    +0.3121  modifying
+    +0.3081  tempering
+    +0.3038  adjusting
+    +0.3024  atoning
+    +0.2969  effecting
+    +0.2965  erred
+    +0.2888  accomplishing
+    +0.2820  nyts
+  Negative pole words:
+    +0.4604  mushrooming
+    +0.4443  spiralling
+    +0.4424  spiraling
+    +0.4295  escalating
+    +0.4231  raging
+    +0.4213  engulfed
+    +0.4143  erupted
+    +0.3860  raged
+    +0.3851  escalated
+    +0.3807  sparked
+
+Saved: exp52_results.npz
+Loading GloVe...
+Building all candidate axes...
+
+==============================================================================
+PART A — UD residualized against VALENCE
+==============================================================================
+
+cos(UD_resid_VAL, VALENCE) = +0.0000  (should be ~0)
+cos(UD_resid_VAL, UD)      = +0.7991  (how much of UD remains)
+
+UD_resid_VAL positive pole (top 15):
+  strong                     +0.3882
+  forefront                  +0.3816
+  challenges                 +0.3799
+  religious                  +0.3798
+  raised                     +0.3690
+  challenge                  +0.3586
+  lofty                      +0.3541
+  islamic                    +0.3446
+  nationalistic              +0.3426
+  passions                   +0.3415
+  formidable                 +0.3396
+  ideals                     +0.3366
+  views                      +0.3329
+  create                     +0.3326
+  voices                     +0.3320
+
+UD_resid_VAL negative pole (top 15):
+  167.10                     +0.3968
+  88.51                      +0.3674
+  29.08                      +0.3514
+  34.58                      +0.3508
+  sabhai                     +0.3506
+  37.27                      +0.3434
+  25.81                      +0.3432
+  53.73                      +0.3378
+  40.27                      +0.3373
+  55.72                      +0.3368
+  64.13                      +0.3361
+  55.99                      +0.3349
+  28.54                      +0.3345
+  37.56                      +0.3343
+  40.68                      +0.3336
+
+cos(UD_resid_VAL, all cognitive axes):
+  C           +0.1995
+  W           +0.0676
+  ATT         +0.0673
+  INT         +0.2349
+  R           -0.0743
+  D           -0.0101
+  IO          +0.1015
+  DV          +0.2147
+  MB          +0.0217
+  EV          +0.0820
+  ABS         +0.0434
+  REAL_IMAG   -0.2338
+  UD          +0.7991
+  AROUSAL     +0.3282
+
+==============================================================================
+PART B — Iterative greedy basis-building
+==============================================================================
+
+At each step:
+  1. For every candidate axis, residualize against current basis
+  2. Compute coverage of each residualized candidate on a test corpus
+  3. Pick the highest, add to basis
+  4. Repeat
+
+
+step  selected        cov added   cum cov  next-3-candidates
+---------------------------------------------------------------------------
+  1    REAL_IMAG       +  5.91pp    5.91%  ← BAL (5.8%), COH (5.7%), UD (5.6%)
+  2    BAL             +  3.03pp    8.95%  ← COH (8.9%), ABS (8.8%), ATT (8.8%)
+  3    W               +  2.24pp   11.19%  ← IO (11.2%), ABS (11.2%), ATT (11.1%)
+  4    DIFF            +  1.93pp   13.12%  ← IO (13.1%), UD (13.0%), ABS (13.0%)
+  5    IO              +  1.62pp   14.74%  ← UD (14.7%), ABS (14.7%), COH (14.7%)
+  6    ABS             +  1.44pp   16.18%  ← UD (16.2%), ATT (16.1%), COH (16.1%)
+  7    UD              +  1.32pp   17.50%  ← ATT (17.5%), COH (17.5%), FORCE (17.4%)
+  8    ATT             +  1.21pp   18.71%  ← LOSS (18.7%), SUC (18.7%), MB (18.7%)
+  9    EXIST           +  1.14pp   19.85%  ← SUC (19.8%), LOSS (19.8%), COH (19.8%)
+  10   LOSS            +  1.09pp   20.94%  ← SUC (20.9%), MB (20.9%), COH (20.9%)
+  11   SUC             +  1.01pp   21.95%  ← MB (21.9%), INT (21.9%), COH (21.9%)
+  12   MB              +  0.94pp   22.90%  ← INT (22.9%), COH (22.9%), FB (22.9%)
+  (added coverage dropped below 1pp at step 12; stopping demo)
+
+Final greedy basis (12 axes): ['REAL_IMAG', 'BAL', 'W', 'DIFF', 'IO', 'ABS', 'UD', 'ATT', 'EXIST', 'LOSS', 'SUC', 'MB']
+Final coverage: 22.90%
+
+Reference: Cog-13b coverage on same sample = 23.39%
+
+Saved exp89_results.npz

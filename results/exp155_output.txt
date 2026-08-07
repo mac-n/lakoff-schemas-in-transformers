@@ -1,0 +1,77 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Reversed-frequency pairs verified: 11/20
+  stun (3.37) -> stunning (4.27)
+  gild (2.43) -> gilded (3.30)
+  renown (3.11) -> renowned (3.96)
+  scissor (2.91) -> scissors (3.58)
+  trouser (2.85) -> trousers (3.70)
+  outskirt (1.61) -> outskirts (3.56)
+  exasperate (1.90) -> exasperated (2.94)
+  allege (3.18) -> alleged (4.37)
+  gnarl (1.23) -> gnarled (2.37)
+  parch (1.45) -> parched (2.88)
+  tatter (1.28) -> tattered (2.83)
+
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<03:32,  1.37it/s]Loading weights:  37%|███▋      | 108/292 [00:00<00:01, 167.41it/s]Loading weights:  53%|█████▎    | 156/292 [00:01<00:00, 160.10it/s]Loading weights:  65%|██████▍   | 189/292 [00:01<00:00, 162.75it/s]Loading weights:  74%|███████▍  | 216/292 [00:01<00:00, 156.30it/s]Loading weights:  82%|████████▏ | 238/292 [00:01<00:00, 152.65it/s]Loading weights:  88%|████████▊ | 258/292 [00:01<00:00, 141.23it/s]Loading weights:  94%|█████████▍| 275/292 [00:02<00:00, 146.23it/s]Loading weights: 100%|██████████| 292/292 [00:02<00:00, 147.16it/s]Loading weights: 100%|██████████| 292/292 [00:02<00:00, 137.77it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+
+Collecting residuals for 511 words at [4, 8, 12, 16, 20]...
+  100/511
+  200/511
+  300/511
+  400/511
+  500/511
+
+==============================================================================
+exp155 — frequency vs markedness in the norm displacement
+==============================================================================
+
+--- Layer 4 ---
+  A0 word-level: corr(zipf, norm) = +0.606; corr(zipf, BAL-proj) = +0.554
+  A  inflectional pairs (n=65): mean Δnorm = -7.0, mean Δzipf = -0.63
+     Δnorm ~ Δzipf: slope = +4.5/zipf, intercept = -4.2 [95% CI -6.9, -1.4], R² = 0.12
+  B  Δzipf-matched pseudo-pairs (65/65 matched, 5 each): mean Δnorm = -2.7 (39% of morphological)
+     ΔBAL-proj: morph = -0.1577, pseudo = -0.0524 (33%)
+  C  reversed-freq pairs (n=11): mean Δnorm = +2.4 (3/11 negative); mean ΔBAL-proj = +0.0281
+
+--- Layer 8 ---
+  A0 word-level: corr(zipf, norm) = +0.712; corr(zipf, BAL-proj) = +0.560
+  A  inflectional pairs (n=65): mean Δnorm = -534.7, mean Δzipf = -0.63
+     Δnorm ~ Δzipf: slope = +330.6/zipf, intercept = -327.4 [95% CI -492.2, -160.4], R² = 0.14
+  B  Δzipf-matched pseudo-pairs (65/65 matched, 5 each): mean Δnorm = -256.5 (48% of morphological)
+     ΔBAL-proj: morph = -0.0787, pseudo = -0.0337 (43%)
+  C  reversed-freq pairs (n=11): mean Δnorm = +0.6 (5/11 negative); mean ΔBAL-proj = -0.0179
+
+--- Layer 12 ---
+  A0 word-level: corr(zipf, norm) = +0.712; corr(zipf, BAL-proj) = +0.539
+  A  inflectional pairs (n=65): mean Δnorm = -535.6, mean Δzipf = -0.63
+     Δnorm ~ Δzipf: slope = +330.8/zipf, intercept = -328.2 [95% CI -500.9, -149.1], R² = 0.14
+  B  Δzipf-matched pseudo-pairs (65/65 matched, 5 each): mean Δnorm = -278.0 (52% of morphological)
+     ΔBAL-proj: morph = -0.0717, pseudo = -0.0313 (44%)
+  C  reversed-freq pairs (n=11): mean Δnorm = +0.8 (4/11 negative); mean ΔBAL-proj = -0.0143
+
+--- Layer 16 ---
+  A0 word-level: corr(zipf, norm) = +0.712; corr(zipf, BAL-proj) = +0.523
+  A  inflectional pairs (n=65): mean Δnorm = -529.1, mean Δzipf = -0.63
+     Δnorm ~ Δzipf: slope = +326.7/zipf, intercept = -324.3 [95% CI -484.3, -150.6], R² = 0.14
+  B  Δzipf-matched pseudo-pairs (65/65 matched, 5 each): mean Δnorm = -200.2 (38% of morphological)
+     ΔBAL-proj: morph = -0.0611, pseudo = -0.0180 (29%)
+  C  reversed-freq pairs (n=11): mean Δnorm = +0.6 (4/11 negative); mean ΔBAL-proj = -0.0006
+
+--- Layer 20 ---
+  A0 word-level: corr(zipf, norm) = +0.712; corr(zipf, BAL-proj) = +0.511
+  A  inflectional pairs (n=65): mean Δnorm = -492.0, mean Δzipf = -0.63
+     Δnorm ~ Δzipf: slope = +303.8/zipf, intercept = -301.5 [95% CI -452.1, -145.6], R² = 0.14
+  B  Δzipf-matched pseudo-pairs (65/65 matched, 5 each): mean Δnorm = -139.9 (28% of morphological)
+     ΔBAL-proj: morph = -0.0376, pseudo = -0.0094 (25%)
+  C  reversed-freq pairs (n=11): mean Δnorm = +4.9 (3/11 negative); mean ΔBAL-proj = +0.0199
+
+==============================================================================
+VERDICT vs pre-registered decision rule
+==============================================================================
+  pseudo-pair fraction of morph Δnorm per layer: L4:39%, L8:48%, L12:52%, L16:38%, L20:28%
+  intercept 95% CI includes 0: L4:False, L8:False, L12:False, L16:False, L20:False
+  -> F3: mixed — report both components with magnitudes.

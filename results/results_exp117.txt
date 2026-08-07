@@ -1,0 +1,94 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Loading Pythia 1.4B...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:12,  4.04it/s]Loading weights:  25%|██▌       | 74/292 [00:00<00:00, 263.03it/s]Loading weights:  39%|███▉      | 115/292 [00:00<00:00, 307.15it/s]Loading weights:  53%|█████▎    | 155/292 [00:00<00:00, 322.30it/s]Loading weights:  66%|██████▌   | 193/292 [00:00<00:00, 247.50it/s]Loading weights:  77%|███████▋  | 224/292 [00:01<00:00, 106.15it/s]Loading weights:  84%|████████▍ | 246/292 [00:01<00:00, 110.77it/s]Loading weights:  91%|█████████ | 265/292 [00:01<00:00, 114.46it/s]Loading weights:  97%|█████████▋| 282/292 [00:02<00:00, 103.47it/s]Loading weights: 100%|██████████| 292/292 [00:02<00:00, 141.98it/s]
+Loaded pretrained model pythia-1.4b into HookedTransformer
+
+==============================================================================
+Classic analogies — cos(a-b, d-c)  (Mikolov: should be near +1)
+==============================================================================
+
+  Tokenisation check (single-token preferred):
+          GENDER/ROYALTY: king(1) man(1) woman(1) queen(2)
+           GENDER/PARENT: father(1) man(1) woman(1) mother(1)
+          GENDER/SIBLING: brother(1) man(1) woman(1) sister(2)
+            GENDER/ACTOR: actor(1) man(1) woman(1) actress(2)
+         CAPITAL/COUNTRY: paris(2) france(2) england(2) london(2)
+                  DEGREE: big(1) small(1) good(1) great(1)
+              MORPHOLOGY: walk(1) walking(2) swimming(2) swim(2)
+
+  Format: cos(a-b, d-c) in RAW / FREQ-STRIPPED activations
+
+        GENDER/ROYALTY: cos(raw) = +0.779   cos(freq-strip) = +0.104    ‖a-b‖ raw=42.9 strip=27.0
+         GENDER/PARENT: cos(raw) = -0.058   cos(freq-strip) = +0.409    ‖a-b‖ raw=105.4 strip=31.0
+        GENDER/SIBLING: cos(raw) = +0.692   cos(freq-strip) = +0.235    ‖a-b‖ raw=38.4 strip=28.0
+          GENDER/ACTOR: cos(raw) = +0.444   cos(freq-strip) = +0.161    ‖a-b‖ raw=30.5 strip=27.4
+       CAPITAL/COUNTRY: cos(raw) = +0.355   cos(freq-strip) = +0.354    ‖a-b‖ raw=39.4 strip=39.4
+                DEGREE: cos(raw) = +0.773   cos(freq-strip) = +0.082    ‖a-b‖ raw=61.9 strip=31.5
+            MORPHOLOGY: cos(raw) = -0.110   cos(freq-strip) = +0.166    ‖a-b‖ raw=1260.0 strip=43.6
+
+==============================================================================
+Nearest-neighbour search: king - man + woman, who's closest?
+==============================================================================
+
+Candidate-residual cosines with (king - man + woman):
+             word  tokens     cos RAW   cos STRIP
+              and       1      +1.000      +0.775
+              boy       1      +1.000      +0.797
+          brother       1      +1.000      +0.758
+            child       1      +1.000      +0.769
+            crown       2      +0.745      +0.548
+         daughter       1      +1.000      +0.811
+          duchess       3      +0.736      +0.495
+             duke       2      +0.744      +0.549
+          emperor       2      +0.766      +0.543
+          empress       2      +0.746      +0.573
+           father       1      +1.000      +0.817
+             girl       1      +1.000      +0.818
+            house       1      +1.000      +0.812
+            human       1      +0.999      +0.689
+          husband       2      +0.748      +0.530
+             king       1      +1.000      +0.919
+             lady       2      +0.753      +0.599
+           leader       1      +1.000      +0.829
+             lord       1      +0.999      +0.741
+              man       1      +0.999      +0.704
+          monarch       2      +0.755      +0.548
+           mother       1      +1.000      +0.827
+               of       1      +0.999      +0.728
+           person       1      +0.999      +0.671
+        president       1      +0.999      +0.663
+           prince       2      +0.750      +0.492
+         princess       2      +0.759      +0.539
+            queen       2      +0.742      +0.619
+            ruler       2      +0.758      +0.524
+           sister       2      +0.718      +0.538
+              son       1      +1.000      +0.760
+              the       1      +1.000      +0.793
+           throne       2      +0.743      +0.571
+             wife       1      +1.000      +0.814
+            woman       1      +1.000      +0.886
+
+  Top 5 RAW    : [('king', '+1.000'), ('woman', '+1.000'), ('mother', '+1.000'), ('leader', '+1.000'), ('girl', '+1.000')]
+  Top 5 STRIP  : [('king', '+0.919'), ('woman', '+0.886'), ('leader', '+0.829'), ('mother', '+0.827'), ('girl', '+0.818')]
+
+  EXCLUDING input words (Linzen-honest):
+  Top 5 RAW    : [('mother', '+1.000'), ('leader', '+1.000'), ('girl', '+1.000'), ('wife', '+1.000'), ('house', '+1.000')]
+  Top 5 STRIP  : [('leader', '+0.829'), ('mother', '+0.827'), ('girl', '+0.818'), ('father', '+0.817'), ('wife', '+0.814')]
+
+==============================================================================
+Gender direction stability across anchor pairs (cos with man-woman, RAW & STRIP)
+==============================================================================
+
+  Anchor pair        cos(pair_raw, man-woman_raw)   cos(pair_strip, man-woman_strip)
+  (     man,    woman)        +1.000                          +1.000
+  (     boy,     girl)        +0.585                          +0.189
+  (    king,    queen)        +0.924                          +0.032
+  (  father,   mother)        -0.848                          +0.027
+  ( brother,   sister)        +0.924                          +0.014
+  (   actor,  actress)        +0.926                          +0.128
+  ( husband,     wife)        -0.921                          +0.174
+
+==============================================================================
+DONE.

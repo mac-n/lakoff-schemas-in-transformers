@@ -1,0 +1,105 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<00:55,  5.22it/s]Loading weights:  44%|████▍     | 128/292 [00:00<00:00, 539.56it/s]Loading weights:  69%|██████▉   | 202/292 [00:00<00:00, 462.83it/s]Loading weights:  89%|████████▉ | 260/292 [00:00<00:00, 456.03it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 436.62it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+
+Extracting residuals for 489 words at all 24 layers...
+  50/489
+  100/489
+  150/489
+  200/489
+  250/489
+  300/489
+  350/489
+  400/489
+  450/489
+
+Computing morphology direction at each layer...
+
+==============================================================================
+MORPHOLOGY DIRECTION cross-layer cosine matrix
+==============================================================================
+
+          L 0    L 4    L 8    L12    L16    L20  
+  L 0   +1.00  +0.14  +0.07  +0.04  +0.01  -0.02 
+  L 2   +0.41  +0.41  +0.12  +0.08  +0.03  +0.01 
+  L 4   +0.14  +1.00  +0.58  +0.43  +0.37  +0.34 
+  L 6   +0.09  +0.66  +0.92  +0.74  +0.61  +0.55 
+  L 8   +0.07  +0.58  +1.00  +0.85  +0.64  +0.54 
+  L10   +0.06  +0.49  +0.94  +0.93  +0.68  +0.58 
+  L12   +0.04  +0.43  +0.85  +1.00  +0.81  +0.71 
+  L14   +0.01  +0.40  +0.76  +0.94  +0.92  +0.83 
+  L16   +0.01  +0.37  +0.64  +0.81  +1.00  +0.92 
+  L18   -0.00  +0.35  +0.57  +0.73  +0.93  +0.97 
+  L20   -0.02  +0.34  +0.54  +0.71  +0.92  +1.00 
+  L22   -0.02  +0.36  +0.55  +0.69  +0.88  +0.97 
+
+  Mean off-diagonal (cross-layer cos): +0.5117
+  Adjacent-layer cos (L_n vs L_{n+1}):
+    L 0 ↔ L1 : +0.594
+    L 1 ↔ L2 : +0.859
+    L 2 ↔ L3 : +0.567
+    L 3 ↔ L4 : +0.781
+    L 4 ↔ L5 : +0.680
+    L 5 ↔ L6 : +0.954
+    L 6 ↔ L7 : +0.962
+    L 7 ↔ L8 : +0.964
+    L 8 ↔ L9 : +0.971
+    L 9 ↔ L10: +0.973
+    L10 ↔ L11: +0.968
+    L11 ↔ L12: +0.971
+    L12 ↔ L13: +0.965
+    L13 ↔ L14: +0.977
+    L14 ↔ L15: +0.970
+    L15 ↔ L16: +0.945
+    L16 ↔ L17: +0.973
+    L17 ↔ L18: +0.975
+    L18 ↔ L19: +0.979
+    L19 ↔ L20: +0.995
+    L20 ↔ L21: +0.990
+    L21 ↔ L22: +0.987
+    L22 ↔ L23: +0.104
+
+==============================================================================
+SCHEMA DIRECTION cross-layer mean cosines (for comparison)
+==============================================================================
+  UP-DOWN               : mean off-diag = +0.678  adjacent-layer mean = +0.923
+  IN-OUT_CLEAN          : mean off-diag = +0.706  adjacent-layer mean = +0.931
+  FORWARD-BACK          : mean off-diag = +0.648  adjacent-layer mean = +0.920
+  PATH-MOTION           : mean off-diag = +0.627  adjacent-layer mean = +0.907
+  LIGHT-DARK            : mean off-diag = +0.683  adjacent-layer mean = +0.927
+  FORCE                 : mean off-diag = +0.663  adjacent-layer mean = +0.926
+  BALANCE               : mean off-diag = +0.592  adjacent-layer mean = +0.901
+  DIFFICULTY-BURDEN     : mean off-diag = +0.632  adjacent-layer mean = +0.916
+
+==============================================================================
+cos(morphology_L, schema_L) across layers — does morphology track a schema?
+==============================================================================
+
+  layer     UP-DOWN  IN-OUT_CL  FORWARD-B  PATH-MOTI  LIGHT-DAR      FORCE    BALANCE  DIFFICULT
+  L  0      +0.011    +0.064    -0.207    -0.006    +0.057    +0.217    -0.282    +0.244
+  L  2      -0.122    +0.042    -0.249    -0.038    +0.032    +0.161    -0.287    +0.122
+  L  4      -0.128    +0.073    -0.137    -0.062    +0.031    +0.120    -0.236    +0.052
+  L  6      -0.048    +0.003    -0.041    -0.023    -0.001    +0.049    -0.071    +0.003
+  L  8      -0.055    +0.012    -0.042    -0.040    -0.026    +0.047    -0.078    +0.043
+  L 10      -0.008    +0.005    -0.001    +0.016    +0.000    +0.029    -0.014    +0.006
+  L 12      -0.006    -0.037    +0.031    +0.014    +0.014    +0.078    -0.008    +0.008
+  L 14      +0.014    -0.036    +0.062    -0.011    +0.030    +0.116    +0.005    +0.031
+  L 16      +0.015    -0.052    +0.117    +0.015    +0.059    +0.126    -0.004    +0.009
+  L 18      +0.055    -0.045    +0.165    -0.014    +0.127    +0.090    -0.034    +0.049
+  L 20      +0.117    -0.021    +0.219    +0.072    +0.109    +0.098    -0.083    +0.105
+  L 22      +0.101    -0.009    +0.186    +0.068    +0.053    +0.076    -0.049    +0.130
+
+  schema:                  mean(m,schema)   std    range
+  UP-DOWN               :     -0.004   0.083    [-0.159, +0.137]
+  IN-OUT_CLEAN          :     -0.001   0.036    [-0.054, +0.073]
+  FORWARD-BACK          :     +0.006   0.143    [-0.249, +0.226]
+  PATH-MOTION           :     +0.003   0.041    [-0.082, +0.080]
+  LIGHT-DARK            :     +0.041   0.041    [-0.026, +0.127]
+  FORCE                 :     +0.084   0.069    [-0.146, +0.217]
+  BALANCE               :     -0.092   0.104    [-0.317, +0.011]
+  DIFFICULTY-BURDEN     :     +0.059   0.063    [-0.037, +0.244]
+
+Saved exp134_results.npz

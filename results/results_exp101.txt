@@ -1,0 +1,46 @@
+Loading GloVe...
+
+==========================================================================
+GLOBAL PC1  (explains 5.8% of centered variance)
+==========================================================================
+
+  PC1(+) pole — top 30 words:
+    ['afp03', 'afp04', 'hahb', 'hahk', 'jdg', 'yahp', 'druh', 'eupithecia', 'kloh', 'dehr', 'kich', 'zhoo', 'yahd', 'zhuh', 'shahm', 'veed', 'gahl', 'zahr', 'raht', 'yahr', 'suhn', 'thah', 'dj04', 'koht', 'bulbophyllum', 'sahd', 'notoc', 'coleophora', 'keem', 'kaht']
+
+  PC1(-) pole — bottom 30 words:
+    ['but', '.', 'this', 'so', 'well', 'only', 'which', 'all', 'same', 'time', 'that', 'as', 'even', 'one', ',', 'when', 'it', 'way', 'both', 'also', 'because', 'they', 'and', 'out', 'the', 'while', 'not', 'just', 'up', 'now']
+
+==========================================================================
+FREQUENCY TEST: is PC1 just frequency rank?
+==========================================================================
+  spearman(PC1 projection, frequency rank) over top-50000: rho = +0.873
+  (|rho| near 1 => PC1 is essentially frequency; near 0 => it is not)
+
+==========================================================================
+WHICH END OF HARDNESS <-> WHICH END OF PC1
+==========================================================================
+  cos(hardness, PC1) = -0.401   (hardness = hard - soft)
+
+  PC1 projection of each anchor word (centered+normalized cos with PC1):
+    HARD-pole words:
+      hard       cos(.,PC1)=-0.718   cos(.,hardness)=+0.446
+      firm       cos(.,PC1)=-0.571   cos(.,hardness)=+0.528
+      rigid      cos(.,PC1)=-0.418   cos(.,hardness)=+0.352
+      solid      cos(.,PC1)=-0.542   cos(.,hardness)=+0.458
+      stiff      cos(.,PC1)=-0.451   cos(.,hardness)=+0.243
+    SOFT-pole words:
+      soft       cos(.,PC1)=-0.533   cos(.,hardness)=-0.007
+      mushy      cos(.,PC1)=-0.219   cos(.,hardness)=-0.412
+      pliable    cos(.,PC1)=-0.160   cos(.,hardness)=-0.349
+      flimsy     cos(.,PC1)=-0.313   cos(.,hardness)=-0.189
+      squishy    cos(.,PC1)=-0.182   cos(.,hardness)=-0.264
+
+==========================================================================
+FOR REFERENCE: poles of the HARDNESS axis itself (top-50k)
+==========================================================================
+
+  HARD pole — top 30:
+    ['management', 'firm', 'company', 'determined', 'worked', 'maintained', 'followed', 'particular', 'moreover', 'commitment', 'working', 'industry', 'believes', 'managed', 'same', 'consistent', 'nevertheless', 'example', 'continued', 'addition', 'saw', 'following', 'previous', 'partnership', 'since', 'represents', 'both', 'initial', 'has', 'first']
+
+  SOFT pole — bottom 30:
+    ['mushy', 'mush', 'crispy', 'sauteed', 'buttery', 'braised', 'sugary', 'fluff', 'zucchini', 'hahb', 'thickened', 'crunchy', 'deliciously', 'savory', 'translucent', 'frothy', 'faintly', 'beguiling', 'flimsy', 'zuh', 'uninhabitable', 'marshland', 'tacky', 'paprika', 'nutty', 'fluffy', 'homey', 'silvery', 'bahs', 'fruity']

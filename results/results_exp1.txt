@@ -1,0 +1,90 @@
+Loading model...
+
+Building UP direction from word pairs...
+
+============================================================
+TEST: 'I feel sad' + UP direction
+============================================================
+
+alpha = 0.0 (UP strength):
+   1.000  I feel sad
+   0.699  I feel worse now
+   0.678  I feel down
+   0.656  I feel crushed
+   0.601  I feel better now
+
+alpha = 0.3 (UP strength):
+   0.956  I feel sad
+   0.671  I feel worse now
+   0.627  I feel crushed
+   0.615  I feel down
+   0.600  I feel better now
+
+alpha = 0.5 (UP strength):
+   0.889  I feel sad
+   0.626  I feel worse now
+   0.582  I feel crushed
+   0.580  I feel uplifted
+   0.573  I feel better now
+
+alpha = 1.0 (UP strength):
+   0.683  I feel sad
+   0.558  I feel uplifted
+   0.485  I feel worse now
+   0.473  I feel better now
+   0.447  I feel crushed
+
+alpha = 1.5 (UP strength):
+   0.515  I feel sad
+   0.512  I feel uplifted
+   0.400  My mood is lifting
+   0.383  I feel better now
+   0.369  I feel worse now
+
+============================================================
+BONUS: 'I am anxious' + DOWN-as-calming
+(testing whether DOWN -> calming/grounding rather than depressing)
+============================================================
+
+alpha = 0.0 (DOWN strength):
+   0.871  I am more anxious
+   0.678  I am panicking
+   0.646  I am calm
+   0.567  I am relaxed
+
+alpha = 0.5 (DOWN strength):
+   0.787  I am more anxious
+   0.646  I am panicking
+   0.575  I am calm
+   0.522  I am relaxed
+
+alpha = 1.0 (DOWN strength):
+   0.624  I am more anxious
+   0.538  I am panicking
+   0.449  I am calm
+   0.421  I am relaxed
+
+============================================================
+SANITY CHECK: 'I feel sad' + random direction
+(should produce noise, not a clean shift)
+============================================================
+
+alpha = 0.0 (random direction):
+   1.000  I feel sad
+   0.699  I feel worse now
+   0.678  I feel down
+   0.656  I feel crushed
+   0.601  I feel better now
+
+alpha = 1.0 (random direction):
+   0.703  I feel sad
+   0.458  I feel worse now
+   0.456  I feel down
+   0.414  I feel crushed
+   0.412  I feel better now
+
+============================================================
+Done. If UP works as a primitive, alpha > 0 should push the
+nearest neighbors toward the improvement cluster and away from
+the sad/decline cluster. The random direction shouldn't do this.
+============================================================

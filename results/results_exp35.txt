@@ -1,0 +1,264 @@
+Loading glove-wiki-gigaword-300...
+
+=== Building axes ===
+
+=== Preliminary: TIME alignment with other axes ===
+  cos(TIME, FB)       = +0.4723
+  cos(TIME, UD)       = +0.3118
+  cos(TIME, LD)       = +0.2330
+  cos(TIME, EXIST)    = +0.3871
+  cos(TIME, IO_CLEAN) = -0.0556
+  cos(TIME, VALENCE)  = +0.1543
+  cos(TIME, AROUSAL)  = +0.2631
+
+=== UD-FB shared residual after V+A+EXISTENCE: what is the 'fourth axis'? ===
+
+  cos(UD_VAE, FB_VAE)             = +0.2579  (the +0.26 residual)
+  cos(shared_residual, TIME)      = +0.2081
+  cos(shared_residual, PATH)      = -0.0182
+  cos(shared_residual, FORCE)     = +0.1298
+  cos(shared_residual, BAL)       = +0.2090
+  cos(shared_residual, DIFF)      = -0.0692
+
+  Shared residual nearest neighbors (the fourth axis):
+  Positive pole:
+    +0.3373  confident
+    +0.3358  continue
+    +0.3303  hope
+    +0.3251  hopes
+    +0.3244  progress
+    +0.3205  preparations
+    +0.3156  overcome
+    +0.3143  advance
+    +0.3132  competition
+    +0.3122  achieve
+    +0.3115  ahead
+    +0.3084  obstacles
+    +0.3055  hopefully
+    +0.3044  start
+    +0.3036  win
+
+  Negative pole:
+    +0.3126  glyceraldehyde
+    +0.3124  tanḥuma
+    +0.3066  atay
+    +0.3023  re-merged
+    +0.3012  sông
+    +0.3009  samegrelo
+    +0.3004  temagami
+    +0.2995  araria
+    +0.2933  erh
+    +0.2910  okruashvili
+    +0.2901  gazin
+    +0.2884  souichi
+    +0.2870  afps
+    +0.2869  wetted
+    +0.2847  metamorphosed
+
+
+========================================================================
+ITERATIVE GREEDY RESIDUAL PROJECTION
+========================================================================
+
+Greedy procedure: at each step, find the axis whose direction best explains
+the rest (highest sum of squared projections onto the others). Pick it as
+the next primitive. Subtract from all others. Repeat. The order discovered
+IS the empirical basis ordering.
+
+Interpretation:
+  - Axes picked first are most cluster-central / most load-bearing.
+  - Axes picked late (low explanation power) are most independent / most primitive.
+  - When an axis has very low residual norm after others are subtracted, it's
+    a derived composite.
+
+  Step  1: picked         UD  explanation_power =  1.567  axis_norm = 1.0000
+  Step  2: picked         IO  explanation_power =  0.299  axis_norm = 0.9828
+  Step  3: picked    VALENCE  explanation_power =  0.177  axis_norm = 0.7990
+  Step  4: picked         FB  explanation_power =  0.132  axis_norm = 0.8519
+  Step  5: picked       PATH  explanation_power =  0.103  axis_norm = 0.9771
+  Step  6: picked    AROUSAL  explanation_power =  0.062  axis_norm = 0.8987
+  Step  7: picked        BAL  explanation_power =  0.045  axis_norm = 0.7774
+  Step  8: picked         LD  explanation_power =  0.011  axis_norm = 0.8813
+  Step  9: picked       DIFF  explanation_power =  0.010  axis_norm = 0.8883
+  Step 10: picked      EXIST  explanation_power =  0.002  axis_norm = 0.7805
+  Step 11: picked   IO_CLEAN  explanation_power =  0.000  axis_norm = 0.8312
+  Step 12: picked      FORCE  explanation_power =  0.000  axis_norm = 0.9026
+
+Discovered ordering:
+   1.         UD  explanation_power= 1.567  axis_norm_at_pickup=1.0000
+   2.         IO  explanation_power= 0.299  axis_norm_at_pickup=0.9828
+   3.    VALENCE  explanation_power= 0.177  axis_norm_at_pickup=0.7990
+   4.         FB  explanation_power= 0.132  axis_norm_at_pickup=0.8519
+   5.       PATH  explanation_power= 0.103  axis_norm_at_pickup=0.9771
+   6.    AROUSAL  explanation_power= 0.062  axis_norm_at_pickup=0.8987
+   7.        BAL  explanation_power= 0.045  axis_norm_at_pickup=0.7774
+   8.         LD  explanation_power= 0.011  axis_norm_at_pickup=0.8813
+   9.       DIFF  explanation_power= 0.010  axis_norm_at_pickup=0.8883
+  10.      EXIST  explanation_power= 0.002  axis_norm_at_pickup=0.7805
+  11.   IO_CLEAN  explanation_power= 0.000  axis_norm_at_pickup=0.8312
+  12.      FORCE  explanation_power= 0.000  axis_norm_at_pickup=0.9026
+
+=== Nearest neighbors of axes at the point they were picked ===
+  (this shows what each axis represents AFTER prior axes have been subtracted)
+
+  Step 1 (UD) — at pickup:
+    Positive pole:
+      +0.4407  unique
+      +0.4195  strong
+      +0.4091  established
+      +0.4012  build
+      +0.4007  achieve
+      +0.4006  promote
+      +0.3979  establish
+      +0.3970  success
+    Negative pole:
+      +0.4376  167.10
+      +0.3935  77.74
+      +0.3833  bemoaning
+      +0.3775  359.58
+      +0.3758  re-allocation
+      +0.3726  18.27
+      +0.3695  79.07
+      +0.3683  76.26
+
+  Step 2 (IO) — at pickup:
+    Positive pole:
+      +0.3093  fathabad
+      +0.3049  underinvested
+      +0.3014  manufacture
+      +0.3009  churn
+      +0.3000  high-capacity
+      +0.2941  well-versed
+      +0.2901  draught
+      +0.2885  imbedded
+    Negative pole:
+      +0.4213  freed
+      +0.3509  shortly
+      +0.3422  dismissed
+      +0.3392  unharmed
+      +0.3388  reunited
+      +0.3318  withdrew
+      +0.3300  abruptly
+      +0.3207  released
+
+  Step 3 (VALENCE) — at pickup:
+    Positive pole:
+      +0.3065  leisurely
+      +0.2982  bistro
+      +0.2956  excellent
+      +0.2909  nice
+      +0.2883  delightful
+      +0.2767  lunch
+      +0.2740  dining
+      +0.2729  getaway
+    Negative pole:
+      +0.3990  confront
+      +0.3954  dangers
+      +0.3933  terrible
+      +0.3908  hateful
+      +0.3788  backlash
+      +0.3698  confronting
+      +0.3637  murderous
+      +0.3603  consequences
+
+  Step 4 (FB) — at pickup:
+    Positive pole:
+      +0.4800  upcoming
+      +0.4676  underway
+      +0.4499  advance
+      +0.4441  forthcoming
+      +0.4403  next
+      +0.4188  preparations
+      +0.4029  developing
+      +0.3997  breakthrough
+    Negative pole:
+      +0.3554  orneriness
+      +0.3475  folksy
+      +0.3327  craggy
+      +0.3306  forsaken
+      +0.3269  hacienda
+      +0.3222  loopy
+      +0.3204  utilitarians
+      +0.3198  mellowed
+
+  Step 5 (PATH) — at pickup:
+    Positive pole:
+      +0.3847  northwards
+      +0.3827  southwards
+      +0.3653  eastwards
+      +0.3527  southward
+      +0.3522  westward
+      +0.3487  northward
+      +0.3439  journeyed
+      +0.3431  westwards
+    Negative pole:
+      +0.4926  remained
+      +0.4189  remain
+      +0.4108  remains
+      +0.3888  unmoved
+      +0.3648  unaffected
+      +0.3444  lingered
+      +0.3396  intact
+      +0.3393  steadfast
+
+  Step 6 (AROUSAL) — at pickup:
+    Positive pole:
+      +0.4034  sparked
+      +0.3984  triggered
+      +0.3758  prompted
+      +0.3720  urgent
+      +0.3209  prompting
+      +0.3180  intense
+      +0.3176  provoked
+      +0.3162  sparking
+    Negative pole:
+      +0.3966  placid
+      +0.3865  coasting
+      +0.3837  leisurely
+      +0.3693  serenely
+      +0.3557  untroubled
+      +0.3529  nibble
+      +0.3434  sedate
+      +0.3432  inoffensive
+
+  Step 7 (BAL) — at pickup:
+    Positive pole:
+      +0.3551  normally
+      +0.3546  within
+      +0.3459  except
+      +0.3382  same
+      +0.3318  criminal
+      +0.3295  usually
+      +0.3285  per
+      +0.3199  instead
+    Negative pole:
+      +0.4390  wobbly
+      +0.3953  unsteady
+      +0.3852  teetering
+      +0.3705  tottering
+      +0.3688  hampers
+      +0.3587  skewed
+      +0.3572  eying
+      +0.3557  teeters
+
+  Step 8 (LD) — at pickup:
+    Positive pole:
+      +0.3224  uv
+      +0.3160  sunscreen
+      +0.2941  ultraviolet
+      +0.2922  noticeable
+      +0.2838  rebuff
+      +0.2827  brightness
+      +0.2790  consistent
+      +0.2785  scratches
+    Negative pole:
+      +0.3430  haunted
+      +0.3175  underworld
+      +0.3084  legends
+      +0.3067  doom
+      +0.2996  casbah
+      +0.2983  dungeon
+      +0.2935  darkness
+      +0.2909  foreboding
+
+Saved: exp35_results.npz

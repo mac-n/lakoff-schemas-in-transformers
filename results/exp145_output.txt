@@ -1,0 +1,97 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:31,  3.18it/s]Loading weights:  49%|████▉     | 144/292 [00:00<00:00, 435.13it/s]Loading weights:  76%|███████▌  | 221/292 [00:00<00:00, 437.79it/s]Loading weights:  97%|█████████▋| 283/292 [00:00<00:00, 423.39it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 368.40it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+
+Collecting single-word residuals for 156 words at all layers...
+  50/156
+  100/156
+  150/156
+
+Building clean axes at all layers...
+
+Sanity check at L12 — non-Lakoffian axes' alignment with Lakoff content:
+  cos(NOUN_VERB, UP)  = -0.005
+  cos(NOUN_VERB, VAL) = +0.037
+  cos(CONC_ABS, UP)   = -0.031
+  cos(CONC_ABS, VAL)  = +0.180
+  cos(ANIM_INAN, UP)  = +0.029
+  cos(ANIM_INAN, VAL) = +0.052
+
+==============================================================================
+MAIN EXPERIMENT — does ΔVAL appear under non-Lakoffian meaningful steering?
+==============================================================================
+
+Computing baseline residuals for 10 prompts (no steering)...
+
+--- Steering on UP (Lakoffian (reference)) ---
+  α=4 readout at L16: ΔMAG=+0.155  ΔVAL=+0.591  ΔDIR=+0.791
+
+--- Steering on NOUN_VERB (syntactic, non-Lakoffian) ---
+  α=4 readout at L16: ΔMAG=-0.199  ΔVAL=+0.284  ΔDIR=-0.214
+
+--- Steering on CONC_ABS (semantic, non-Lakoffian) ---
+  α=4 readout at L16: ΔMAG=-0.091  ΔVAL=+0.237  ΔDIR=+0.181
+
+--- Steering on ANIM_INAN (semantic, possible VAL bias) ---
+  α=4 readout at L16: ΔMAG=-0.219  ΔVAL=-0.081  ΔDIR=-0.050
+
+--- Steering on RAND (noise control) ---
+  α=4 readout at L16: ΔMAG=-0.068  ΔVAL=+0.089  ΔDIR=+0.138
+
+==============================================================================
+ΔVAL under each steering direction at α=4 (key result)
+==============================================================================
+
+  L_readout            UP   NOUN_VERB    CONC_ABS   ANIM_INAN        RAND
+  L14              +0.692      +0.203      +0.385      +0.069      -0.044  
+  L16              +0.591      +0.284      +0.237      -0.081      +0.089  
+  L18              +0.555      +0.189      +0.078      -0.163      +0.065  
+  L20              +0.495      +0.245      -0.148      -0.016      -0.338  
+  L22              +0.389      +0.351      -0.185      -0.042      -0.229  
+  L23              +0.465      +0.003      +0.051      -0.170      -0.256  
+
+ΔMAG under each steering direction at α=4
+
+  L_readout            UP   NOUN_VERB    CONC_ABS   ANIM_INAN        RAND
+  L14              +0.144      -0.101      -0.126      -0.236      +0.001  
+  L16              +0.155      -0.199      -0.091      -0.219      -0.068  
+  L18              +0.216      -0.099      -0.077      -0.122      -0.097  
+  L20              +0.226      +0.011      +0.027      -0.096      -0.112  
+  L22              +0.241      -0.174      +0.080      -0.187      +0.080  
+  L23              +0.452      +0.008      -0.065      -0.233      +0.026  
+
+ΔDIR under each steering direction at α=4
+
+  L_readout            UP   NOUN_VERB    CONC_ABS   ANIM_INAN        RAND
+  L14              +1.062      -0.243      +0.180      -0.041      +0.171  
+  L16              +0.791      -0.214      +0.181      -0.050      +0.138  
+  L18              +0.488      -0.197      +0.367      +0.077      +0.127  
+  L20              +0.204      -0.133      +0.896      -0.203      +0.529  
+  L22              +0.110      -0.268      +0.663      -0.059      +0.525  
+  L23              -0.258      -0.307      +0.734      -0.204      +0.360  
+
+Saved exp145_meaningful_nonlakoff.png
+
+==============================================================================
+VERDICT — which interpretation does the data support?
+==============================================================================
+
+  ΔVAL at L_readout=16, α=4:
+    UP            +0.591
+    NOUN_VERB     +0.284
+    CONC_ABS      +0.237
+    ANIM_INAN     -0.081
+    RAND          +0.089
+
+  UP ΔVAL:                 +0.591
+  Non-Lakoffian mean ΔVAL: +0.147
+  RAND ΔVAL:               +0.089
+
+  -> SUPPORTS INTERPRETATION A (selective UP→VAL learned mapping):
+     only UP-steering produces large ΔVAL; non-Lakoffian directions don't.
+     UP→VAL is a specifically learned cross-domain transformation.
+
+Done.
