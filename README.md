@@ -1,18 +1,18 @@
 # Embodied Cognition in Transformers
 
-Do Lakoff's image schemas (UP-DOWN, BALANCE, PATH, FORCE...) exist inside language models trained on text alone? This repository holds the full experimental record of a project that tested that question across 164 experiments, ten of them pre-registered, on three model families.
+Do Lakoff's image schemas (UP-DOWN, BALANCE, PATH, FORCE...) exist inside language models trained on text alone? This repository holds the complete experimental record, every script, raw output, pre-registration, and lab-notebook volume, of a project that tested that question on three model families.
 
 **Read the write-up:** the blog post is [`index.md`](index.md), also served as a web page via GitHub Pages.
 
 ## The five findings, briefly
 
 1. **Single words suffice.** The eight canonical Lakoff schemas exist as stable directions in the residual stream, recoverable from bare single-word activations, once a severe frequency confound is stripped (raw contrast vectors are ~99% frequency direction).
-2. **Steering on UP shifts valence.** HAPPY-IS-UP is causal: injecting the UP direction beats a random-direction control by +0.72 to +0.94, dose-responsively, as a cross-layer transformation.
+2. **Steering on UP shifts valence.** Injecting the UP direction causes metaphor-congruent valence shifts, beating a random-direction control by +0.72 to +0.94, dose-responsively.
 3. **The schemas form a relational system.** The predicted inter-schema couplings average +0.21; unpredicted pairs sit at +0.00. The configuration persists across the depth of Pythia 410M.
-4. **The transformer reorganises inflectional morphology onto the schema axes.** Static embeddings (GloVe, word2vec, fastText) trained on the same kind of co-occurrence statistics develop a different inflectional geometry: the BALANCE markedness sink is about −0.38 in Pythia and ~0.00 in the static spaces.
-5. **BALANCE is grounded on the model's own computational operations,** with the carrier varying by model: residual norm in Pythia, attention entropy in GPT-2 and Llama. The causal arrow is one-way, from operation to concept. Multiple realizability, in the wild.
+4. **The transformer reorganises inflectional morphology onto the schema axes.** Off-the-shelf static embeddings (GloVe, word2vec) learned from textual distribution develop a different inflectional geometry: the BALANCE markedness sink is about −0.38 in Pythia and ~0.00 in the static spaces.
+5. **BALANCE is coupled to the model's own computational operations,** with the carrier varying by model: residual norm in Pythia, attention entropy in GPT-2 and Llama. Causal evidence runs from operation to concept; the reverse test found nothing specific. A candidate case of multiple realizability.
 
-The claim is structural, not phenomenological: the specific organisation Lakoff said only a body can produce is present in systems that have none, grounded on the substrate they actually have.
+The claim is structural, not phenomenological: bodily origin, bodily implementation, and embodied-style structure are not the same thing, and these models force the distinction.
 
 ## Repository layout
 
