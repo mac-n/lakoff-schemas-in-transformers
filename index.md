@@ -2,6 +2,12 @@
 
 *Image schemas, metaphorical mappings, and substrate coupling in language models trained on text alone*
 
+> **Status: v0.1, working draft, shared early.** This research was conducted
+> collaboratively with Claude (Anthropic) across an extended series of
+> experiments. Claude drafted much of the present exposition from our shared
+> lab notebooks; I directed the research and am continuing to revise the
+> interpretation and writing. Public here does not mean canonical.
+
 ---
 
 **TL;DR.** Embodied cognition theory, principally Lakoff and Johnson, holds that abstract thought is organised by image schemas (UP-DOWN, BALANCE, PATH, FORCE) rooted in bodily experience. A common inference drawn from this: language models have no body, so their conceptual organisation must be structurally defective. We tested that inference directly, across three model families, with pre-registered confirmatory experiments. Text-only transformers turn out to exhibit a surprising amount of the conceptual organisation the theory associates with bodily experience:
