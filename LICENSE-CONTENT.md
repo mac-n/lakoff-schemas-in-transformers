@@ -8,4 +8,4 @@ under `notebooks/`, `prereg/`, `results/`, `data/`, and `figures/`) are licensed
 the Creative Commons Attribution 4.0 International License (CC BY 4.0):
 https://creativecommons.org/licenses/by/4.0/
 
-Attribution: Niamh McAllister, "Embodied Cognition in Transformers", 2026.
+Attribution: Niamh McCombe, "Embodied Cognition in Transformers", 2026.

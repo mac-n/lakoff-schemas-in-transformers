@@ -271,4 +271,4 @@ The research was conducted as a collaboration between the author and Claude (Ant
 
 ---
 
-*Niamh McAllister, 2026. Lab notebook and experiment code at the accompanying repository.*
+*Niamh McCombe, 2026. Lab notebook and experiment code at the accompanying repository.*

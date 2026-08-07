@@ -43,13 +43,13 @@ Models are fetched from the HuggingFace Hub on first run (Pythia 70M–1.4B, GPT
 
 The project's standing rule: when a finding seems big, name the control that would falsify it, then run it. The record includes the kills alongside the survivors: two of three behavioural measures in the original steering battery, a bulletproof-looking Pythia entropy band, the full-collapse version of the norm-strip analysis, and all eight mechanistic hypotheses died under their own controls. The pre-registrations in `prereg/` contain committed point predictions written before code execution; the confirmatory runs assert frozen prompt checksums at runtime.
 
-The research was conducted as a collaboration between Niamh McAllister and Claude (Anthropic) across many sessions, with continuity maintained through the lab-notebook tradition in `notebooks/` and handoff documents between sessions. A small number of personal and machine-local notes are redacted from the public notebook copies; all scientific content is unmodified.
+The research was conducted as a collaboration between Niamh McCombe and Claude (Anthropic) across many sessions, with continuity maintained through the lab-notebook tradition in `notebooks/` and handoff documents between sessions. A small number of personal and machine-local notes are redacted from the public notebook copies; all scientific content is unmodified.
 
 ## Citation
 
 If you use this work, please cite the blog post:
 
-> McAllister, N. (2026). *Embodied Cognition in Transformers: image schemas, metaphorical mappings, and computational grounding in language models trained on text alone.*
+> McCombe, N. (2026). *Embodied Cognition in Transformers: image schemas, metaphorical mappings, and computational grounding in language models trained on text alone.*
 
 A paper version is in preparation.
 
