@@ -35,7 +35,7 @@ There is an obvious objection, and it deserves to be stated before the evidence:
 Four findings, after a note on method:
 
 1. **Steering on a spatial UP vector shifts the model's valence.** HAPPY-IS-UP behaves as a causal, cross-layer mapping.
-2. **The schema axes form a stable relational system** across the depth of the model, with the specific couplings the theory predicts.
+2. **The schema axes couple with each other in exactly the pattern the theory predicts**, and the configuration is stable across depth.
 3. **Morphological operators position on the schema axes** in the transformer, but not in static embeddings.
 4. **BALANCE is coupled to computational operations**, with causal evidence running from operation to concept.
 
@@ -97,25 +97,25 @@ Could the mapping itself just be inherited from text statistics? Human writers d
 
 ---
 
-## Finding 2: A stable schema relational system
+## Finding 2: The relational system the theory predicts
 
-Eight recoverable directions would be interesting but not surprising; any clustering method finds directions. The real question is whether they form a *system*: do the schemas relate to each other the way the theory says they should, and does that relational structure persist across the model's depth?
+Eight recoverable directions would be interesting but not surprising; any clustering method finds directions. The real questions are whether the axes relate to each other the way the theory says they should, and whether that structure is stable across the model's depth.
 
-The embodied logic of the schemas predicts specific couplings: UP-DOWN with BALANCE (upsetting the balance) and with LIGHT-DARK (bright is up), FORWARD-BACK with PATH-MOTION, FORCE with DIFFICULTY. We declared six such couplings as predictions, then measured the 8×8 pairwise cosine matrix at every layer of Pythia 410M.
+The embodied logic of the schemas predicts specific couplings: UP-DOWN with BALANCE (upsetting the balance) and with LIGHT-DARK (bright is up), FORWARD-BACK with PATH-MOTION, FORCE with DIFFICULTY. We declared six such couplings as predictions, then measured the full 8×8 pairwise cosine matrix at every layer of Pythia 410M.
 
-The configuration holds. Cross-layer configuration similarity is +0.91, against a strong null (random anchor partitions, same words) of +0.79. All six predicted couplings come out positive on average: UP↔BALANCE +0.38 (positive at 23 of 24 layers), FORWARD-BACK↔PATH +0.28 (24/24), UP↔LIGHT-DARK +0.27 (24/24), FORCE↔DIFFICULTY +0.18 (24/24), LIGHT-DARK↔BALANCE +0.13 (24/24), and the weakest, UP↔FORCE, +0.05 (positive at 18 of 24). The predicted mean of +0.21 is over all six, weak one included. The 22 unpredicted couplings average +0.004. What's present is specifically the predicted system, not a generic clustering.
+The theory called it. All six predicted couplings come out positive on average: UP↔BALANCE +0.38 (positive at 23 of 24 layers), FORWARD-BACK↔PATH +0.28 (24/24), UP↔LIGHT-DARK +0.27 (24/24), FORCE↔DIFFICULTY +0.18 (24/24), LIGHT-DARK↔BALANCE +0.13 (24/24), and the weakest, UP↔FORCE, +0.05 (positive at 18 of 24). Predicted mean: +0.21. The 22 unpredicted pairs average +0.004, flat zero. Nothing in the measurement knows which pairs the theory predicted; the elevation lands on exactly those six.
 
 ![Schema couplings across layers](figures/exp123_couplings_across_layers.png)
 
 *Predicted (blue) vs unpredicted (grey) inter-schema couplings across the 24 layers.*
 
-Depth caveat up front: the configuration is established early and persists through the stack, but the final layer partially reorganises toward the output (L23's similarity to earlier layers drops to +0.46 to +0.86, against +0.9 mid-stream). Each individual axis is also cross-layer stable (mean cosines +0.74 to +0.83 across L4 to L22). A per-pair stability measure is more mixed: several BALANCE-involving pairs are individually less stable than the null. The configuration-level result is the one that holds.
+### The stability leg, and its floor
 
-### Not every word cluster does this
+The relational configuration is also stable in depth, but this is the weaker leg of the finding, and it's worth seeing why before the number impresses you. Cross-layer configuration similarity is +0.91. A strong null, the same 329 words randomly re-dealt into eight fake schemas, scores +0.79. That high floor is a fact about residual streams, not a bug in the null: a contrast axis is an average of word residuals, the layers transform all words with substantial shared structure, so the angles between any such axes drift slowly, like distances between cities under a smooth stretching of the map. Any word-difference matrix largely keeps its shape.
 
-We ran the same cross-layer matrix-preservation measure on other linguistic categories. Lakoff schemas (+0.91), quantifiers (+0.96), and determiners (+0.95) all preserve their inter-axis structure well above the null; logical operators sit at it (+0.78 vs +0.79). Not because the operator axes are unstable; individually they're among the most stable directions we measured. What logical operators lack is preserved *relational* structure. Schemas pattern with the grammatical core of the language, not with folk categories.
+So preservation can't certify a "coordinated system" on its own; it works as a relative instrument. Used that way, it still discriminates. Lakoff schemas (+0.91), quantifiers (+0.96), and determiners (+0.95) sit well above the floor; logical operators ("and", "or", "not", "if") sit on it (+0.78), even though their individual axes are among the most stable directions we measured. Schemas pattern with the grammatical core of the language, not with folk categories. (One limit: the null was built from the Lakoff anchors; we didn't build cluster-specific nulls for the other categories.)
 
-Two caveats. Generic word-difference matrices also preserve shape across layers, so this test works as a relative comparison between clusters, not as standalone proof of "coordinated system." And the null is the random-partition null built from the Lakoff anchors; we didn't build cluster-specific nulls. The predicted-vs-unpredicted coupling test (+0.21 vs +0.00) is the stronger evidence.
+Depth details: the configuration is established early and persists, with the final layer partially reorganising toward the output (L23's similarity to earlier layers drops to +0.46 to +0.86, against +0.9 mid-stream). Individual axes are cross-layer stable (mean cosines +0.74 to +0.83 across L4 to L22); a per-pair stability measure is more mixed, with several BALANCE-involving pairs less stable than the null. The predicted-vs-unpredicted result at the top of this section is the load-bearing evidence; the rest is supporting structure.
 
 ---
 
