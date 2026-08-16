@@ -2,7 +2,7 @@
 
 Do Lakoff's image schemas (UP-DOWN, BALANCE, PATH, FORCE...) exist inside language models trained on text alone? This repository holds the complete experimental record, every script, raw output, pre-registration, and lab-notebook volume, of a project that tested that question on three model families.
 
-**Read the write-up:** the blog post is [`index.md`](index.md), also served as a web page via GitHub Pages. It is a v0.2 working draft: the research was conducted collaboratively with Claude, who drafted much of the exposition from the shared lab notebooks; interpretation and writing are still being revised.
+**Read the write-up:** the blog post is [`index.md`](index.md), also served as a web page via GitHub Pages. It tells the project in the order it actually happened, confounds and dead ends included. The research was conducted collaboratively with Claude (Anthropic); the write-up is still being revised.
 
 ## The findings, briefly
 
