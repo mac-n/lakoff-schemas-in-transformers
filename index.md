@@ -121,7 +121,7 @@ Depth details: the configuration is established early and persists, with the fin
 
 ## Finding 3: Morphology on the schema axes, and the word2vec keystone
 
-If the schema system is the model's organising geometry for meaning, grammatical operators should live in the same geometry. We built contrast vectors for seven English morphological operators (-ING, -ED, -S, -ER, -EST, un-, re-) as pair-differences ("walking" minus "walk", averaged over many pairs) and projected them onto the schema axes, after per-layer anisotropy and frequency stripping (raw pair-difference vectors run |cos| ≈ 0.55 to 0.59 with the anisotropy direction, which collapses everything into superficial similarity).
+If the schema system is the model's organising geometry for meaning, grammatical operators should live in the same geometry. We built contrast vectors for seven English morphological operators (-ING, -ED, -S, -ER, -EST, un-, re-) as pair-differences ("walking" minus "walk", averaged over many pairs) and projected them onto the schema axes, after per-layer anisotropy and frequency stripping (raw pair-difference vectors run at absolute cosine ≈ 0.55 to 0.59 with the anisotropy direction, which collapses everything into superficial similarity).
 
 Two mappings are robust:
 
@@ -214,7 +214,7 @@ The BALANCE↔entropy coupling was originally found post-hoc, selected from an 8
 
 1. The confirmatory test was pre-registered with a specific hypothesis before any model ran (GPT-2, layers 8/12/16, negative sign, magnitude 0.10 to 0.30, fresh prompts). One pre-specified test, not a search. It passed.
 2. Orthogonalising against the other seven schemas strengthens rather than attenuates the coupling. "One of eight random directions came up lucky" predicts the opposite.
-3. At the decision layers, BALANCE is the clear standout; the runner-up (DIFFICULTY) is at 60 to 70% of the magnitude with *opposite sign*, and the other six sit at |r| ≤ 0.16.
+3. At the decision layers, BALANCE is the clear standout; the runner-up (DIFFICULTY) is at 60 to 70% of the magnitude with *opposite sign*, and the other six sit at absolute r ≤ 0.16.
 4. The GPT-2 coupling is negative with CIs excluding zero at 18 contiguous layers. Multiple testing produces scattered hits, not contiguous bands.
 5. Triple replication on independent prompt sets: L8 r = −0.21, −0.32, −0.27 across discovery, pre-registered confirmation, and a checksum-verified third set (L12: −0.26, −0.27, −0.32). The discovery value was the weakest, the opposite of a winner's-curse profile.
 
@@ -244,7 +244,7 @@ The question this opens is the one I find genuinely exciting: perhaps what matte
 
 The philosophical background is the embodied-cognition tradition, principally Lakoff & Johnson's *Metaphors We Live By* (1980) and *Philosophy in the Flesh* (1999), and Johnson's *The Body in the Mind* (1987), which develop image schemas as the bodily source of abstract conceptual structure. The best-known modern "no grounding from form alone" argument is Bender & Koller's "Climbing towards NLU" (ACL 2020); their target is communicative intention and world reference rather than internal conceptual structure, so these results pressure the disembodiment inference specifically, not the octopus argument as formulated.
 
-A growing literature shows text-only models recovering structure that mirrors perceptual spaces: Abdou et al. (CoNLL 2021) on colour, Patel & Pavlick (ICLR 2022) on grounded conceptual spaces, Gurnee & Tegmark (ICLR 2024) on space and time. This project asks a different question: not whether the geometry mirrors a perceptual domain, but whether the organisational architecture attributed to the body is present: a coordinated schema system, causally transferable cross-domain mappings, extension into grammar, and coupling to substrate-intrinsic operations. Findings 4 and 5, to my knowledge, have no precedent in that literature.
+A growing literature shows text-only models recovering structure that mirrors perceptual spaces: Abdou et al. (CoNLL 2021) on colour, Patel & Pavlick (ICLR 2022) on grounded conceptual spaces, Gurnee & Tegmark (ICLR 2024) on space and time. This project asks a different question: not whether the geometry mirrors a perceptual domain, but whether the organisational architecture attributed to the body is present: a coordinated schema system, causally transferable cross-domain mappings, extension into grammar, and coupling to substrate-intrinsic operations. Findings 3 and 4, to my knowledge, have no precedent in that literature.
 
 Methodologically the work builds on activation steering (Turner et al.'s ActAdd, arXiv:2308.10248; Zou et al. 2023) and the linear-representation tradition (Mikolov et al. 2013; Park et al., ICML 2024). Two known geometric hazards shaped the pipeline throughout: anisotropy of contextual spaces (Ethayarajh, EMNLP 2019) and massive activations (Sun et al., COLM 2024).
 
