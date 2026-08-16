@@ -127,7 +127,7 @@ Two mappings are robust:
 
 | Operator(s) | Schema | Stripped cosine across probed layers |
 |---|---|---|
-| all seven | BALANCE, negative (the shared "markedness sink") | −0.15 to −0.50 |
+| all seven | BALANCE, negative (the shared "markedness sink") | −0.09 to −0.66 |
 | -ED (past), re- (repetition) | FORWARD-BACK, negative | −0.12 to −0.40, every probed layer |
 
 The FORWARD-BACK mappings are conceptually coherent on the theory's own terms: the past is behind you, repetition goes back along the path. And every operator shares the BALANCE-negative component, which we initially read as inflection-as-departure-from-equilibrium (Finding 4 revises what that component actually is).
@@ -150,7 +150,7 @@ And this isn't because static embeddings lack morphology geometry. They have one
 
 *Suffix-schema matrices in GloVe (left) vs Pythia L12 (right). The inflectional BALANCE sink (bottom row) is present in Pythia and absent in GloVe.*
 
-In depth, the sink is partially written into Pythia's embedding matrix (−0.13 before any layers run), computed to full strength between layers 2 and 4 (−0.23 to −0.47), and plateaus by layer 8. Partly trained in, mostly computed. The dissociation replicates fully on Pythia 1.4B.
+In depth, the sink is partially written into Pythia's embedding matrix (−0.13 before any layers run), computed to full strength between layers 2 and 4 (−0.23 to −0.47), and plateaus by layer 8. Partly trained in, mostly computed. (The BALANCE-norm coupling underlying the sink replicates on Pythia 1.4B; see Finding 4.)
 
 ![Emergence of the inflectional sink across depth](figures/exp153_emergence.png)
 
