@@ -1,0 +1,31 @@
+
+Loading pythia-410m...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<00:36,  7.99it/s]Loading weights:  66%|██████▋   | 194/292 [00:00<00:00, 1024.12it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 976.12it/s] 
+Loaded pretrained model pythia-410m into HookedTransformer
+[pythia-410m L8] 129 directions; pool 194; non-binding axes []
+[pythia-410m L8] 20/129 directions done
+[pythia-410m L8] 40/129 directions done
+[pythia-410m L8] 60/129 directions done
+[pythia-410m L8] 80/129 directions done
+[pythia-410m L8] 100/129 directions done
+[pythia-410m L8] 120/129 directions done
+
+=== pythia-410m, layer 8: drop in later-layer agreement (unsteered 0.2539) ===
+  SCHEMA:UP-DOWN             drop +0.0218  (+d 0.2428, -d 0.2215)  KL 1.467
+  SCHEMA:VALENCE             drop +0.0325  (+d 0.2261, -d 0.2168)  KL 1.297
+  SCHEMA:BALANCE             drop +0.0194  (+d 0.2287, -d 0.2404)  KL 1.202
+  SCHEMA:DIFFICULTY-BURDEN   drop +0.0172  (+d 0.2475, -d 0.2261)  KL 1.540
+  SCHEMA:FORCE               drop +0.0099  (+d 0.2407, -d 0.2474)  KL 1.357
+  SCHEMA:FORWARD-BACK        drop +0.0210  (+d 0.2271, -d 0.2389)  KL 1.249
+  SCHEMA:IN-OUT_CLEAN        drop +0.0123  (+d 0.2511, -d 0.2320)  KL 1.310
+  SCHEMA:LIGHT-DARK          drop +0.0166  (+d 0.2521, -d 0.2226)  KL 1.386
+  SCHEMA:PATH-MOTION         drop +0.0133  (+d 0.2372, -d 0.2440)  KL 1.645
+  SINGLE                     drop median +0.0133 [5% +0.0036, 95% +0.0206]   KL median 1.635
+  PAIR                       drop median +0.0164 [5% +0.0056, 95% +0.0201]   KL median 1.542
+  MUSH                       drop median +0.0161 [5% +0.0090, 95% +0.0201]   KL median 1.460
+  GAUSS                      drop median +0.0111 [5% +0.0057, 95% +0.0165]   KL median 0.927
+  Q1: UP-DOWN drop +0.0218; largest SCHEMA:VALENCE (+0.0325); concentrated controls [+0.0041, +0.0202] -> UP_NOT_SPECIAL
+  Q2: mean schema drop +0.0182 -> CONCENTRATION_SUFFICIENT
+  Q3: corr(drop, KL) +0.13; corr(drop, entropy change) -0.08
+
+  >>> pythia-410m L8: UP_NOT_SPECIAL | CONCENTRATION_SUFFICIENT <<<

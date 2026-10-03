@@ -1,0 +1,10 @@
+exp199 — do instructions use the source/goal roles? (Llama-3.2-1B-Instruct; prereg frozen at 47e3112)
+
+  layer  LOO lit  INSTRUCT  SWAPPED  NO-TASK    shuf 5-95%   chat
+      3     0.74      0.72     0.77     0.41   0.38-0.66     0.70
+      6     0.97      0.72     0.66     0.53   0.34-0.67     0.69   <- primary
+      8     1.00      0.58     0.53     0.50   0.31-0.69     0.53
+     10     0.93      0.52     0.52     0.50   0.34-0.66     0.52
+     13     0.88      0.50     0.50     0.50   0.39-0.62     0.50
+
+  >>> Llama-3.2-1B-Instruct, layer 6: CUE_OR_NOUN (instruct 0.72, swapped 0.66, no-task 0.53, shuffle 95th 0.67); peak layer 3 <<<

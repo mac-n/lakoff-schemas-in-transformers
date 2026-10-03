@@ -1,0 +1,38 @@
+exp182 — position-by-position test (prereg frozen at 1a471e5); stimuli sha matches prereg
+SYNTHETIC SELF-TEST (real verdict path)
+  world rises_up_only: RISES_SPECIFIC (want RISES_SPECIFIC) ok
+  world rises_all: RISES_GENERIC (want RISES_GENERIC) ok
+  world fades: FADES (want FADES) ok
+  world flat: FLAT (want FLAT) ok
+SELF-TEST PASS
+
+Loading pythia-410m...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:39,  2.93it/s]Loading weights:  29%|██▉       | 84/292 [00:00<00:00, 225.22it/s]Loading weights:  41%|████▏     | 121/292 [00:00<00:00, 243.52it/s]Loading weights:  56%|█████▌    | 164/292 [00:00<00:00, 288.56it/s]Loading weights:  70%|██████▉   | 204/292 [00:00<00:00, 304.80it/s]Loading weights:  82%|████████▏ | 240/292 [00:00<00:00, 312.62it/s]Loading weights:  94%|█████████▍| 275/292 [00:01<00:00, 240.74it/s]Loading weights: 100%|██████████| 292/292 [00:01<00:00, 235.51it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+  layer averages over 29322 tokens (saved)
+MECHANICS CHECKS (common-word frames only)
+  own-state drop max KL 4.94e-07 | last-layer drop, later positions 3.33e-07 | earlier positions 3.22e-07 | real drop E_next 52.207 -> ok
+  own-state drop max KL 4.32e-07 | last-layer drop, later positions 2.68e-07 | earlier positions 3.02e-07 | real drop E_next 36.813 -> ok
+  own-state drop max KL 4.18e-07 | last-layer drop, later positions 3.46e-07 | earlier positions 3.02e-07 | real drop E_next 37.088 -> ok
+  own-state drop max KL 4.62e-07 | last-layer drop, later positions 2.80e-07 | earlier positions 3.25e-07 | real drop E_next 37.060 -> ok
+MECHANICS PASS
+  40/162 words (saved as they finish)
+  80/162 words (saved as they finish)
+  120/162 words (saved as they finish)
+  160/162 words (saved as they finish)
+
+========================================================================
+RESULTS — pythia-410m
+========================================================================
+  gap (first word minus second word, in ln KL) at each distance k from the word:
+     k:             0      1      2      3      4      5      6      7      8      9     10     11     12
+     vertical  -0.116 +0.484 +0.166 +0.070 -0.030 +0.089 -0.013 +0.017 -0.087 +0.002 -0.030 -0.045 -0.034
+     polar     +0.102 +0.373 +0.030 -0.006 -0.098 -0.056 -0.087 -0.141 -0.172 -0.144 -0.141 -0.068 -0.067
+     valence   +0.061 +0.064 -0.105 -0.131 -0.039 +0.023 +0.013 -0.270 -0.410 -0.275 -0.282 -0.153 -0.110
+  vertical slope over k=1..12: -0.0302 per position  d_z -1.20  p 0.0001  (4/31 pairs rising) | gap at the word itself -0.116 (p 0.1187) | mean gap k=1..12 +0.049 (p 0.1107)
+  polar    slope over k=1..12: -0.0255 per position  d_z -0.76  p 0.0005  (6/30 pairs rising) | gap at the word itself +0.102 (p 0.2216) | mean gap k=1..12 -0.048 (p 0.2092)
+  valence  slope over k=1..12: -0.0216 per position  d_z -0.85  p 0.0008  (4/20 pairs rising) | gap at the word itself +0.061 (p 0.6104) | mean gap k=1..12 -0.140 (p 0.0040)
+  vertical slope minus polar slope: -0.0047  p 0.5295
+
+  >>> pythia-410m: FADES <<<
+results saved to exp182_results_pythia-410m.json

@@ -1,0 +1,45 @@
+exp177 — fragment reading of the BALANCE<->entropy coupling — Llama-3.2-1B (prereg frozen at fa6339c)
+exp166 harness validation (no model load)
+============================================================
+  selftest_classifiers: PASS (gate (a) all-neg, contiguity, CI, floor, carrier-precondition, control, verdict).
+  synthetic_quad_stack_test: PASS  (leak c2=-0.66->c2q=-0.04 killed; genuine c2=-0.63->c2q=-0.64 spared).
+  prompts: 40 frozen, checksum 4d54ff4297bd7e2c OK, overlap check OK.
+HARNESS OK — safe to execute the model run.
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   1%|          | 1/146 [00:00<01:53,  1.27it/s]Loading weights:  88%|████████▊ | 129/146 [00:00<00:00, 189.81it/s]Loading weights: 100%|██████████| 146/146 [00:01<00:00, 144.12it/s]
+Loaded pretrained model meta-llama/Llama-3.2-1B into HookedTransformer
+
+BALANCE poles, one token as a bare word: 10/15 positive, 1/15 negative
+BALANCE poles, one token with a leading space: 15/15 positive, 9/15 negative
+  fragment-free axis uses: + ['aligned', 'balanced', 'centered', 'equal', 'even', 'firm', 'level', 'poised', 'settled', 'solid', 'stable', 'steady', 'symmetric', 'tight', 'upright']
+                           - ['fallen', 'shaky', 'skewed', 'slack', 'tilted', 'tipping', 'unequal', 'uneven', 'unstable']
+  C5 axis-word exclusion: 1 tokens dropped/layer-set
+  cloud tokens by type: WHOLE 334, INITIAL_PIECE 59, CONT_PIECE 70, OTHER 41
+
+========================================================================
+ANALYSES — C2q by layer (judged layers: [5, 6, 7])
+========================================================================
+  P0 exp166 exactly (gate)               n 504  L5 -0.139 [-0.24,-0.04]  L6 -0.168 [-0.26,-0.08]  L7 -0.202 [-0.32,-0.10]  L13 -0.268 [-0.35,-0.20]  carriers 0.65/0.73/0.75/0.64  -> FIRES
+  exp166 had {5: -0.139, 6: -0.168, 7: -0.202, 13: -0.268}  ->  REPLICATION GATE PASS
+  A  original axis, whole words only     n 334  L5 -0.093 [-0.25,+0.04]  L6 -0.130 [-0.26,-0.00]  L7 -0.068 [-0.23,+0.07]  L13 -0.189 [-0.30,-0.07]  carriers 0.65/0.73/0.75/0.64  -> NULL
+  B  tokenization direction controlled   n 504  L5 +0.132 [+0.01,+0.25]  L6 +0.109 [-0.01,+0.23]  L7 +0.054 [-0.09,+0.17]  L13 -0.046 [-0.16,+0.06]  carriers 0.65/0.73/0.75/0.64  -> NULL
+  C0 leading-space protocol, all poles   n 504  L5 +0.259 [+0.17,+0.33]  L6 +0.300 [+0.20,+0.39]  L7 +0.021 [-0.09,+0.13]  L13 -0.239 [-0.35,-0.15]  carriers 0.63/0.75/0.63/0.69  -> NULL
+  C  FRAGMENT-FREE AXIS, whole words     n 334  L5 +0.318 [+0.21,+0.42]  L6 +0.431 [+0.33,+0.53]  L7 +0.211 [+0.09,+0.34]  L13 +0.018 [-0.11,+0.14]  carriers 0.63/0.75/0.63/0.69  -> NULL
+
+Descriptive
+  L5  cos(BALANCE, d_tok_ho) -0.376 (d_tok carrier +0.92) | cos(BALANCE, fragment-free BALANCE) +0.683 | cos(BALANCE, leading-space BALANCE) +0.827
+       by token type — WHOLE: entropy 0.451, BALANCE -0.0627  INITIAL_PIECE: entropy 0.420, BALANCE -0.0447  CONT_PIECE: entropy 0.448, BALANCE -0.0920  OTHER: entropy 0.440, BALANCE -0.0618
+  L6  cos(BALANCE, d_tok_ho) -0.385 (d_tok carrier +0.90) | cos(BALANCE, fragment-free BALANCE) +0.649 | cos(BALANCE, leading-space BALANCE) +0.801
+       by token type — WHOLE: entropy 0.552, BALANCE -0.0592  INITIAL_PIECE: entropy 0.494, BALANCE -0.0444  CONT_PIECE: entropy 0.531, BALANCE -0.0971  OTHER: entropy 0.558, BALANCE -0.0315
+  L7  cos(BALANCE, d_tok_ho) -0.355 (d_tok carrier +0.89) | cos(BALANCE, fragment-free BALANCE) +0.662 | cos(BALANCE, leading-space BALANCE) +0.812
+       by token type — WHOLE: entropy 0.500, BALANCE -0.0683  INITIAL_PIECE: entropy 0.450, BALANCE -0.0493  CONT_PIECE: entropy 0.488, BALANCE -0.0976  OTHER: entropy 0.482, BALANCE -0.0504
+  L13 cos(BALANCE, d_tok_ho) -0.323 (d_tok carrier +0.83) | cos(BALANCE, fragment-free BALANCE) +0.760 | cos(BALANCE, leading-space BALANCE) +0.896
+       by token type — WHOLE: entropy 0.288, BALANCE -0.0462  INITIAL_PIECE: entropy 0.220, BALANCE -0.0095  CONT_PIECE: entropy 0.274, BALANCE -0.0516  OTHER: entropy 0.264, BALANCE -0.0231
+
+========================================================================
+VERDICT vs PREREG_exp177.md
+========================================================================
+  A NULL   B NULL   C0 NULL   C NULL
+
+  >>> Llama-3.2-1B: UNRESOLVED <<<
+
+results saved to exp177_results_Llama-3.2-1B.json

@@ -1,0 +1,47 @@
+exp178 — what produces the BALANCE<->entropy coupling? — gpt2-medium (prereg frozen at 2e0d682)
+exp166 harness validation (no model load)
+============================================================
+  selftest_classifiers: PASS (gate (a) all-neg, contiguity, CI, floor, carrier-precondition, control, verdict).
+  synthetic_quad_stack_test: PASS  (leak c2=-0.66->c2q=-0.04 killed; genuine c2=-0.63->c2q=-0.64 spared).
+  prompts: 40 frozen, checksum 4d54ff4297bd7e2c OK, overlap check OK.
+HARNESS OK — safe to execute the model run.
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 10186.28it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+  in-sentence states 200/514
+  in-sentence states 400/514
+
+pool 434 words: 192 single-token bare, 242 split; 381 single-token with a leading space
+real BALANCE token structure: positive 9 single + 6 split, negative 0 single + 15 split
+  C5 axis-word exclusion: 1 tokens dropped/layer-set
+
+========================================================================
+REPLICATION GATE
+========================================================================
+  original analysis                    n 513  L3 -0.322 [-0.39,-0.26]  L8 -0.266 [-0.37,-0.16]  L12 -0.320 [-0.40,-0.25]  L16 -0.145 [-0.24,-0.05]  carriers 0.83/0.72/0.64/0.75
+  exp166 had {3: -0.322, 8: -0.266, 12: -0.32, 16: -0.145}  ->  PASS
+
+========================================================================
+PART 1 — random axes with BALANCE's token split (bare-word protocol)
+========================================================================
+  L3  real BALANCE -0.322 | MATCHED fake axes: median -0.258 [5% -0.374, 95% -0.121]; real sits at the 17th percentile | SINGLE-ONLY fake axes: median +0.007 [5% -0.128, 95% +0.139]
+  L8  real BALANCE -0.266 | MATCHED fake axes: median -0.223 [5% -0.350, 95% -0.061]; real sits at the 30th percentile | SINGLE-ONLY fake axes: median +0.012 [5% -0.214, 95% +0.238]   (judged)
+  L12 real BALANCE -0.320 | MATCHED fake axes: median -0.256 [5% -0.400, 95% -0.063]; real sits at the 24th percentile | SINGLE-ONLY fake axes: median -0.003 [5% -0.198, 95% +0.221]   (judged)
+  L16 real BALANCE -0.145 | MATCHED fake axes: median -0.021 [5% -0.179, 95% +0.146]; real sits at the 12th percentile | SINGLE-ONLY fake axes: median -0.003 [5% -0.154, 95% +0.152]   (judged)
+
+  PART 1 VERDICT: TOKEN_STRUCTURE_SUFFICIENT   (real below the matched 5th percentile at 0/3 judged layers; matched median <= -0.1 at 2/3)
+
+========================================================================
+PART 2 — clean in-sentence BALANCE axis (27 balance words vs 22 imbalance words)
+========================================================================
+  clean axis, whole words (PRIMARY)    n 329  L3 +0.148 [+0.03,+0.25]  L8 -0.041 [-0.15,+0.07]  L12 -0.178 [-0.27,-0.08]  L16 -0.169 [-0.27,-0.08]  carriers 0.93/0.83/0.74/0.65
+  clean axis, all tokens               n 513  L3 +0.111 [+0.03,+0.18]  L8 -0.015 [-0.12,+0.10]  L12 -0.156 [-0.24,-0.08]  L16 -0.036 [-0.12,+0.05]  carriers 0.93/0.83/0.74/0.65
+  cos(original BALANCE, clean in-sentence BALANCE): L3 +0.178  L8 +0.459  L12 +0.579  L16 +0.606
+  L3  clean BALANCE +0.148 | CLEAN-RANDOM axes: median -0.004 [5% -0.174, 95% +0.183]; real sits at the 89th percentile
+  L8  clean BALANCE -0.041 | CLEAN-RANDOM axes: median +0.004 [5% -0.166, 95% +0.173]; real sits at the 34th percentile   (judged)
+  L12 clean BALANCE -0.178 | CLEAN-RANDOM axes: median +0.010 [5% -0.267, 95% +0.258]; real sits at the 15th percentile   (judged)
+  L16 clean BALANCE -0.169 | CLEAN-RANDOM axes: median +0.015 [5% -0.309, 95% +0.306]; real sits at the 20th percentile   (judged)
+
+  PART 2 VERDICT: CLEAN_COUPLING_PRESENT   (classifier PASS; positive-and-clear at 0/3 judged layers; outside the random 5–95% range at 0/3)
+
+  >>> gpt2-medium: Part 1 TOKEN_STRUCTURE_SUFFICIENT | Part 2 CLEAN_COUPLING_PRESENT <<<
+results saved to exp178_results_gpt2-medium.json

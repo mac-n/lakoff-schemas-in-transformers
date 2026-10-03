@@ -1,0 +1,27 @@
+
+Loading pythia-410m...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:18,  3.72it/s]Loading weights:  29%|██▉       | 86/292 [00:00<00:00, 293.63it/s]Loading weights:  48%|████▊     | 140/292 [00:00<00:00, 362.04it/s]Loading weights:  65%|██████▍   | 189/292 [00:00<00:00, 401.78it/s]Loading weights:  82%|████████▏ | 238/292 [00:00<00:00, 402.35it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 385.46it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+  clean axes built from 256 word states; cos(UP, VALENCE) by layer: L4 +0.207  L8 +0.216  L12 +0.232  L16 +0.177  L20 +0.142
+  tokens analysed: 1554 from 120 sentences; mean surprisal 4.59 nats; corr(surprisal, predictive entropy) -0.13
+
+============================================================================
+RESULTS — pythia-410m: partial correlation of the UP readout with each target
+============================================================================
+  [surprisal — PRIMARY]
+    L4  UP -0.091 [-0.144,-0.034] | random-word axes: median +0.000 [5% -0.164, 95% +0.158]; UP at the 20th percentile | VALENCE readout -0.020
+    L8  UP -0.051 [-0.113,+0.008] | random-word axes: median -0.012 [5% -0.134, 95% +0.119]; UP at the 34th percentile | VALENCE readout +0.012
+    L12 UP -0.063 [-0.120,-0.006] | random-word axes: median -0.014 [5% -0.161, 95% +0.147]; UP at the 34th percentile | VALENCE readout +0.069
+    L16 UP -0.067 [-0.132,-0.008] | random-word axes: median -0.013 [5% -0.169, 95% +0.160]; UP at the 36th percentile | VALENCE readout +0.109
+    L20 UP -0.026 [-0.090,+0.034] | random-word axes: median -0.006 [5% -0.077, 95% +0.060]; UP at the 33th percentile | VALENCE readout +0.150
+    -> NOT_BEYOND_RANDOM  (above random at 0/5 layers, below at 0/5)
+  [predictive entropy — secondary]
+    L4  UP +0.146 [+0.083,+0.205] | random-word axes: median -0.008 [5% -0.203, 95% +0.174]; UP at the 92th percentile | VALENCE readout -0.078
+    L8  UP +0.092 [+0.035,+0.149] | random-word axes: median -0.007 [5% -0.196, 95% +0.177]; UP at the 82th percentile | VALENCE readout -0.001
+    L12 UP +0.058 [-0.001,+0.114] | random-word axes: median +0.008 [5% -0.160, 95% +0.168]; UP at the 72th percentile | VALENCE readout +0.013
+    L16 UP +0.034 [-0.023,+0.091] | random-word axes: median +0.005 [5% -0.332, 95% +0.337]; UP at the 55th percentile | VALENCE readout +0.136
+    L20 UP +0.003 [-0.066,+0.063] | random-word axes: median +0.001 [5% -0.340, 95% +0.355]; UP at the 50th percentile | VALENCE readout +0.453
+    -> NOT_BEYOND_RANDOM  (above random at 0/5 layers, below at 0/5)
+
+  >>> pythia-410m: NOT_BEYOND_RANDOM <<<
+results saved to exp189_results_pythia-410m.json

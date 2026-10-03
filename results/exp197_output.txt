@@ -1,0 +1,11 @@
+exp197 PILOT — source/goal role transfer (rule frozen at 68e29db)
+Loaded pretrained model pythia-410m into HookedTransformer
+
+  layer  train fit  metaphor  cue-free  noun ctrl  shuffle 95%
+      4       1.00      0.70      0.62       0.77         0.69
+      8       1.00      0.92      0.81       0.76         0.64
+     12       1.00      0.80      0.69       0.73         0.62   <- primary
+     16       1.00      0.69      0.62       0.73         0.61
+     20       1.00      0.59      0.50       0.72         0.61
+
+  >>> layer 12: NOUN_LEAK (metaphor 0.80, control 0.73, shuffle 95th 0.62) <<<

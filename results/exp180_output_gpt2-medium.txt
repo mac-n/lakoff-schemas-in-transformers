@@ -1,0 +1,39 @@
+exp180 — paired-opposites retry (prereg frozen at 8b60ab6); stimuli sha matches prereg
+SYNTHETIC SELF-TEST (real verdict path)
+  world up_only: HOLDS_SPECIFIC (want HOLDS_SPECIFIC) ok
+  world all_pairs: HOLDS_GENERIC (want HOLDS_GENERIC) ok
+  world nothing: NULL (want NULL) ok
+  world frequency: NULL (want NULL) ok
+SELF-TEST PASS
+
+Loading gpt2-medium...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 10293.03it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+  layer averages over 20898 tokens (162 words x 8 frames) (saved)
+MECHANICS CHECKS (common-word frames only)
+  own-state drop max KL 6.49e-07 | last-layer drop, later positions 2.41e-07 | earlier positions 4.52e-07 | real drop E_next 60.646 -> ok
+  own-state drop max KL 5.45e-07 | last-layer drop, later positions 5.18e-07 | earlier positions 3.78e-07 | real drop E_next 82.922 -> ok
+  own-state drop max KL 2.98e-07 | last-layer drop, later positions 2.11e-07 | earlier positions 1.24e-07 | real drop E_next 60.892 -> ok
+  own-state drop max KL 4.52e-07 | last-layer drop, later positions 2.07e-07 | earlier positions 4.52e-07 | real drop E_next 33.169 -> ok
+MECHANICS PASS
+  holes 40/162 words (saved as they finish)
+  holes 80/162 words (saved as they finish)
+  holes 120/162 words (saved as they finish)
+  holes 160/162 words (saved as they finish)
+
+========================================================================
+RESULTS — gpt2-medium
+========================================================================
+  [reach (PRIMARY)]
+    vertical 31 pairs: first minus second = +0.145  d_z +0.50  sign-flip p 0.0075  (23/31 pairs positive)  | at equal frequency +0.143 CI[+0.043,+0.239]  (mean zipf gap +0.06)
+    polar    30 pairs: first minus second = +0.143  d_z +0.50  sign-flip p 0.0093  (23/30 pairs positive)  | at equal frequency +0.150 CI[+0.036,+0.266]  (mean zipf gap +0.28)
+    valence  20 pairs: first minus second = +0.031  d_z +0.13  sign-flip p 0.6002  (11/20 pairs positive)  | at equal frequency +0.276 CI[+0.097,+0.455]  (mean zipf gap +0.45)
+    vertical minus polar: +0.002  p 0.9729
+  [next-word readout (reported)]
+    vertical 31 pairs: first minus second = -0.158  d_z -0.37  sign-flip p 0.0468  (15/31 pairs positive)  | at equal frequency -0.172 CI[-0.338,-0.031]  (mean zipf gap +0.06)
+    polar    30 pairs: first minus second = +0.053  d_z +0.13  sign-flip p 0.4692  (19/30 pairs positive)  | at equal frequency +0.044 CI[-0.126,+0.206]  (mean zipf gap +0.28)
+    valence  20 pairs: first minus second = +0.169  d_z +0.42  sign-flip p 0.0785  (12/20 pairs positive)  | at equal frequency +0.066 CI[-0.184,+0.461]  (mean zipf gap +0.45)
+    vertical minus polar: -0.212  p 0.0496
+
+  >>> gpt2-medium: HOLDS_GENERIC <<<
+results saved to exp180_results_gpt2-medium.json

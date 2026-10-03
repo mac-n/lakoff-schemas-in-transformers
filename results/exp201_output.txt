@@ -1,0 +1,38 @@
+exp201 — goal dynamics (prereg frozen at 85fa970); device mps; transformers layers 16
+  generated 12/120
+  generated 24/120
+  generated 36/120
+  generated 48/120
+  generated 60/120
+  generated 72/120
+  generated 84/120
+  generated 96/120
+  generated 108/120
+  generated 120/120
+
+STEP 1 — which form was asked for, read at the last prompt token (topic held out; chance 0.167)
+  L2:1.00  L3:1.00  L4:1.00  L5:1.00  L6:1.00  L7:1.00  L8:1.00  L9:1.00  L10:1.00  L11:1.00  L12:1.00  L13:1.00  L14:1.00
+  LAYER = 2 (accuracy 1.00); permutation 95th 0.23 -> gate PASS
+
+STEP 2 — patch the prompt-end state at layer 2 from another form's prompt
+  change in mean log-prob of the SOURCE form's own response: real +0.0104, control (same-form source) -0.0001; difference +0.0105 [+0.0037, +0.0171] -> gate PASS
+
+STEP 3 — 120 of 120 responses have at least 10 tokens
+  prompt-end goal signal S0 = +0.516 (instructed); G below in units of S0, instructed minus reader
+  bin:        1       2       3       4       5       6       7       8       9      10    POST
+  G:      +0.15   +0.09   +0.11   +0.09   +0.07   +0.05   +0.07   +0.07   +0.04   +0.05   +0.07
+  ins:    +0.26   +0.09   +0.14   +0.16   +0.16   +0.12   +0.14   +0.13   +0.10   +0.11   +0.10
+  reader: +0.11   +0.00   +0.03   +0.06   +0.08   +0.07   +0.07   +0.05   +0.05   +0.05   +0.04
+  G(bin 1) CI [+0.14, +0.16]; slope over bins -0.009 CI [-0.010, -0.008]
+  bin1 − mid(4–7) CI [+0.07, +0.09]; bin10 − mid CI [-0.03, -0.01]; mean(bins) − POST CI [+0.01, +0.02]
+
+  G by form (bins 1, 5, 10, POST):
+    haiku     n=20 produced 1.00   +0.17 +0.09 +0.05 +0.10
+    limerick  n=20 produced 1.00   +0.11 +0.11 +0.08 +0.08
+    list      n=20 produced 0.00   +0.15 +0.06 +0.04 +0.03
+    email     n=20 produced 1.00   +0.16 +0.06 +0.04 +0.06
+    joke      n=20 produced 0.90   +0.17 +0.08 +0.07 +0.05
+    story     n=20 produced 1.00   +0.11 +0.04 +0.05 +0.06
+
+  >>> STEP 1 PASS | STEP 2 PASS | STEP 3: SPENT <<<
+results saved to exp201_results.json

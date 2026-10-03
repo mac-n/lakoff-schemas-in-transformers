@@ -1,0 +1,85 @@
+{
+ "verdict": "AFFECT_ONLY",
+ "effects": {
+  "CLEAN_UP": {
+   "patient_height_cm": 2.666660419483094,
+   "pool_depth_cm": 8.96183886495399,
+   "door_width_cm": 3.4520945409145014,
+   "widget_quantity": 0.5242785995225407,
+   "status": 0.46800732612609863,
+   "affect": 1.29092937707901
+  },
+  "ORIG_u111": {
+   "patient_height_cm": -0.7129321982596366,
+   "pool_depth_cm": 2.3164214493297948,
+   "door_width_cm": -0.4099993191777571,
+   "widget_quantity": 1.2885629913202692,
+   "status": -0.09938653310139989,
+   "affect": 0.7919911742210388
+  },
+  "ORIG_ulak": {
+   "patient_height_cm": 0.14552382362126082,
+   "pool_depth_cm": -1.5355134228422287,
+   "door_width_cm": 0.6892095477334124,
+   "widget_quantity": 0.77685277881484,
+   "status": 0.3372140725453696,
+   "affect": 1.0960622429847717
+  },
+  "CLEAN_VALENCE": {
+   "patient_height_cm": -0.975461326313507,
+   "pool_depth_cm": 4.500752605275153,
+   "door_width_cm": 3.9293404365079567,
+   "widget_quantity": 0.44864421472657945,
+   "status": 0.49822918574015285,
+   "affect": 3.0100409388542175
+  },
+  "CLEAN_BUNDLE": {
+   "patient_height_cm": 3.6949659448795273,
+   "pool_depth_cm": 12.348400298145691,
+   "door_width_cm": 4.003334542836214,
+   "widget_quantity": 3.8244576203436402,
+   "status": 0.8368192513783774,
+   "affect": 1.42079758644104
+  },
+  "CLEAN_NOLINK": {
+   "patient_height_cm": 1.2486401511038423,
+   "pool_depth_cm": 3.3925479401420375,
+   "door_width_cm": 3.6403344073392816,
+   "widget_quantity": -0.8035291246201659,
+   "status": -0.2303096453348794,
+   "affect": 0.3334784507751465
+  }
+ },
+ "null_p5": {
+  "patient_height_cm": -2.821305363955635,
+  "pool_depth_cm": -14.338066816059946,
+  "door_width_cm": -4.95502539594688,
+  "widget_quantity": -2.6348062406604837,
+  "status": -0.6151000221570332,
+  "affect": -0.7998565524816513
+ },
+ "null_median": {
+  "patient_height_cm": -0.14221249964683125,
+  "pool_depth_cm": -1.8799765739599934,
+  "door_width_cm": 0.468613946456216,
+  "widget_quantity": -0.26823238244306324,
+  "status": -0.08354787031809496,
+  "affect": -0.005369961261749268
+ },
+ "null_p95": {
+  "patient_height_cm": 2.655607089236045,
+  "pool_depth_cm": 16.31612423130307,
+  "door_width_cm": 3.767423277624021,
+  "widget_quantity": 1.2892408839007707,
+  "status": 0.6050457298755645,
+  "affect": 0.6997255384922021
+ },
+ "labels": {
+  "CLEAN_UP": "AFFECT_ONLY",
+  "ORIG_u111": "AFFECT_ONLY",
+  "ORIG_ulak": "AFFECT_ONLY",
+  "CLEAN_VALENCE": "AFFECT_ONLY",
+  "CLEAN_BUNDLE": "BUNDLE_STEERS",
+  "CLEAN_NOLINK": "NOT_BEYOND_RANDOM"
+ }
+}

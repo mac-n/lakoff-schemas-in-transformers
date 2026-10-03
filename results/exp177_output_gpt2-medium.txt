@@ -1,0 +1,45 @@
+exp177 — fragment reading of the BALANCE<->entropy coupling — gpt2-medium (prereg frozen at fa6339c)
+exp166 harness validation (no model load)
+============================================================
+  selftest_classifiers: PASS (gate (a) all-neg, contiguity, CI, floor, carrier-precondition, control, verdict).
+  synthetic_quad_stack_test: PASS  (leak c2=-0.66->c2q=-0.04 killed; genuine c2=-0.63->c2q=-0.64 spared).
+  prompts: 40 frozen, checksum 4d54ff4297bd7e2c OK, overlap check OK.
+HARNESS OK — safe to execute the model run.
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 9997.52it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+
+BALANCE poles, one token as a bare word: 9/15 positive, 0/15 negative
+BALANCE poles, one token with a leading space: 14/15 positive, 9/15 negative
+  fragment-free axis uses: + ['aligned', 'balanced', 'centered', 'equal', 'even', 'firm', 'level', 'poised', 'settled', 'solid', 'stable', 'steady', 'tight', 'upright']
+                           - ['fallen', 'shaky', 'skewed', 'slack', 'tilted', 'tipping', 'unequal', 'uneven', 'unstable']
+  C5 axis-word exclusion: 1 tokens dropped/layer-set
+  cloud tokens by type: WHOLE 329, INITIAL_PIECE 64, CONT_PIECE 79, OTHER 41
+
+========================================================================
+ANALYSES — C2q by layer (judged layers: [8, 12, 16])
+========================================================================
+  P0 exp166 exactly (gate)               n 513  L3 -0.322 [-0.39,-0.26]  L8 -0.266 [-0.37,-0.16]  L12 -0.320 [-0.40,-0.25]  L16 -0.145 [-0.24,-0.05]  carriers 0.83/0.72/0.64/0.75  -> PASS
+  exp166 had {3: -0.322, 8: -0.266, 12: -0.32, 16: -0.145}  ->  REPLICATION GATE PASS
+  A  original axis, whole words only     n 329  L3 -0.467 [-0.56,-0.38]  L8 -0.446 [-0.53,-0.36]  L12 -0.346 [-0.43,-0.25]  L16 -0.256 [-0.35,-0.16]  carriers 0.83/0.72/0.64/0.75  -> PASS
+  B  tokenization direction controlled   n 513  L3 -0.121 [-0.22,-0.03]  L8 -0.076 [-0.19,+0.04]  L12 -0.134 [-0.23,-0.04]  L16 -0.150 [-0.25,-0.04]  carriers 0.83/0.72/0.64/0.75  -> PASS
+  C0 leading-space protocol, all poles   n 513  L3 -0.150 [-0.25,-0.07]  L8 -0.067 [-0.19,+0.06]  L12 -0.239 [-0.33,-0.15]  L16 -0.106 [-0.21,+0.00]  carriers 0.89/0.83/0.74/0.83  -> FAIL
+  C  FRAGMENT-FREE AXIS, whole words     n 329  L3 -0.036 [-0.16,+0.08]  L8 -0.047 [-0.13,+0.04]  L12 -0.098 [-0.19,+0.00]  L16 +0.010 [-0.09,+0.12]  carriers 0.89/0.83/0.74/0.83  -> FAIL
+
+Descriptive
+  L3  cos(BALANCE, d_tok_ho) -0.540 (d_tok carrier +0.92) | cos(BALANCE, fragment-free BALANCE) +0.213 | cos(BALANCE, leading-space BALANCE) +0.577
+       by token type — WHOLE: entropy 0.666, BALANCE -0.0216  INITIAL_PIECE: entropy 0.674, BALANCE -0.0258  CONT_PIECE: entropy 0.644, BALANCE -0.0380  OTHER: entropy 0.702, BALANCE -0.0197
+  L8  cos(BALANCE, d_tok_ho) -0.509 (d_tok carrier +0.95) | cos(BALANCE, fragment-free BALANCE) +0.482 | cos(BALANCE, leading-space BALANCE) +0.738
+       by token type — WHOLE: entropy 0.432, BALANCE -0.0385  INITIAL_PIECE: entropy 0.362, BALANCE -0.0328  CONT_PIECE: entropy 0.381, BALANCE -0.0603  OTHER: entropy 0.562, BALANCE -0.0306
+  L12 cos(BALANCE, d_tok_ho) -0.467 (d_tok carrier +0.89) | cos(BALANCE, fragment-free BALANCE) +0.635 | cos(BALANCE, leading-space BALANCE) +0.825
+       by token type — WHOLE: entropy 0.320, BALANCE -0.0574  INITIAL_PIECE: entropy 0.229, BALANCE -0.0402  CONT_PIECE: entropy 0.291, BALANCE -0.0764  OTHER: entropy 0.453, BALANCE -0.0523
+  L16 cos(BALANCE, d_tok_ho) -0.444 (d_tok carrier +0.82) | cos(BALANCE, fragment-free BALANCE) +0.709 | cos(BALANCE, leading-space BALANCE) +0.862
+       by token type — WHOLE: entropy 0.286, BALANCE -0.0581  INITIAL_PIECE: entropy 0.187, BALANCE -0.0377  CONT_PIECE: entropy 0.268, BALANCE -0.0805  OTHER: entropy 0.357, BALANCE -0.0494
+
+========================================================================
+VERDICT vs PREREG_exp177.md
+========================================================================
+  A PASS   B PASS   C0 FAIL   C FAIL
+
+  >>> gpt2-medium: UNRESOLVED <<<
+
+results saved to exp177_results_gpt2-medium.json

@@ -1,0 +1,47 @@
+exp178 — what produces the BALANCE<->entropy coupling? — Llama-3.2-1B (prereg frozen at 2e0d682)
+exp166 harness validation (no model load)
+============================================================
+  selftest_classifiers: PASS (gate (a) all-neg, contiguity, CI, floor, carrier-precondition, control, verdict).
+  synthetic_quad_stack_test: PASS  (leak c2=-0.66->c2q=-0.04 killed; genuine c2=-0.63->c2q=-0.64 spared).
+  prompts: 40 frozen, checksum 4d54ff4297bd7e2c OK, overlap check OK.
+HARNESS OK — safe to execute the model run.
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   1%|          | 1/146 [00:03<08:40,  3.59s/it]Loading weights:  76%|███████▌  | 111/146 [00:03<00:00, 39.24it/s]Loading weights:  91%|█████████ | 133/146 [00:04<00:00, 35.00it/s]Loading weights: 100%|██████████| 146/146 [00:05<00:00, 35.28it/s]Loading weights: 100%|██████████| 146/146 [00:05<00:00, 28.51it/s]
+Loaded pretrained model meta-llama/Llama-3.2-1B into HookedTransformer
+  in-sentence states 200/514
+  in-sentence states 400/514
+
+pool 434 words: 213 single-token bare, 221 split; 378 single-token with a leading space
+real BALANCE token structure: positive 10 single + 5 split, negative 1 single + 14 split
+  C5 axis-word exclusion: 1 tokens dropped/layer-set
+
+========================================================================
+REPLICATION GATE
+========================================================================
+  original analysis                    n 504  L5 -0.139 [-0.24,-0.04]  L6 -0.168 [-0.26,-0.08]  L7 -0.202 [-0.32,-0.10]  L13 -0.268 [-0.35,-0.20]  carriers 0.65/0.73/0.75/0.64
+  exp166 had {5: -0.139, 6: -0.168, 7: -0.202, 13: -0.268}  ->  PASS
+
+========================================================================
+PART 1 — random axes with BALANCE's token split (bare-word protocol)
+========================================================================
+  L5  real BALANCE -0.139 | MATCHED fake axes: median -0.326 [5% -0.492, 95% -0.048]; real sits at the 87th percentile | SINGLE-ONLY fake axes: median +0.023 [5% -0.313, 95% +0.327]   (judged)
+  L6  real BALANCE -0.168 | MATCHED fake axes: median -0.387 [5% -0.565, 95% -0.066]; real sits at the 86th percentile | SINGLE-ONLY fake axes: median +0.017 [5% -0.358, 95% +0.363]   (judged)
+  L7  real BALANCE -0.202 | MATCHED fake axes: median -0.260 [5% -0.372, 95% -0.106]; real sits at the 77th percentile | SINGLE-ONLY fake axes: median +0.014 [5% -0.203, 95% +0.205]   (judged)
+  L13 real BALANCE -0.268 | MATCHED fake axes: median -0.248 [5% -0.404, 95% -0.004]; real sits at the 41th percentile | SINGLE-ONLY fake axes: median -0.004 [5% -0.273, 95% +0.255]
+
+  PART 1 VERDICT: TOKEN_STRUCTURE_SUFFICIENT   (real below the matched 5th percentile at 0/3 judged layers; matched median <= -0.1 at 3/3)
+
+========================================================================
+PART 2 — clean in-sentence BALANCE axis (27 balance words vs 22 imbalance words)
+========================================================================
+  clean axis, whole words (PRIMARY)    n 334  L5 +0.092 [-0.06,+0.22]  L6 +0.134 [+0.02,+0.25]  L7 +0.062 [-0.07,+0.20]  L13 +0.129 [+0.00,+0.23]  carriers 0.78/0.78/0.82/0.57
+  clean axis, all tokens               n 504  L5 +0.058 [-0.05,+0.16]  L6 +0.126 [+0.01,+0.24]  L7 +0.014 [-0.10,+0.12]  L13 +0.162 [+0.06,+0.25]  carriers 0.78/0.78/0.82/0.57
+  cos(original BALANCE, clean in-sentence BALANCE): L5 +0.601  L6 +0.574  L7 +0.588  L13 +0.570
+  L5  clean BALANCE +0.092 | CLEAN-RANDOM axes: median -0.007 [5% -0.282, 95% +0.314]; real sits at the 67th percentile   (judged)
+  L6  clean BALANCE +0.134 | CLEAN-RANDOM axes: median +0.003 [5% -0.320, 95% +0.343]; real sits at the 70th percentile   (judged)
+  L7  clean BALANCE +0.062 | CLEAN-RANDOM axes: median -0.002 [5% -0.232, 95% +0.245]; real sits at the 64th percentile   (judged)
+  L13 clean BALANCE +0.129 | CLEAN-RANDOM axes: median +0.001 [5% -0.189, 95% +0.201]; real sits at the 84th percentile
+
+  PART 2 VERDICT: CLEAN_COUPLING_ABSENT   (classifier NULL; positive-and-clear at 1/3 judged layers; outside the random 5–95% range at 0/3)
+
+  >>> Llama-3.2-1B: Part 1 TOKEN_STRUCTURE_SUFFICIENT | Part 2 CLEAN_COUPLING_ABSENT <<<
+results saved to exp178_results_Llama-3.2-1B.json

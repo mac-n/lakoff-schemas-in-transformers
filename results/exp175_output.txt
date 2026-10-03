@@ -1,0 +1,106 @@
+exp175 — is UP grounded in holding against gravity / effecting?  (prereg frozen at 1cbdb60)
+stimuli sha256 39cc3d1da0a1ff9dd3b0b25333016a6aff770f89cdbf19f4000023b9b2f23397 matches prereg; rule constants match prereg
+==============================================================================
+SYNTHETIC SELF-TEST (real verdict paths)
+==============================================================================
+  Part A world A1: d_raw +2.33 (p 0.000)  d_ctrl +2.34 (p 0.000)  UP rank 1 -> HOLDS_SPECIFIC  (want HOLDS_SPECIFIC) ok
+  Part A world A2: d_raw +2.33 (p 0.000)  d_ctrl +2.35 (p 0.000)  UP rank 2 -> HOLDS_GENERIC  (want HOLDS_GENERIC) ok
+  Part A world A3: d_raw +1.41 (p 0.000)  d_ctrl +0.29 (p 0.218)  UP rank 4 -> NULL  (want NULL/WEAK) ok
+  Part A world A4: d_raw +0.40 (p 0.095)  d_ctrl +0.41 (p 0.087)  UP rank 3 -> NULL  (want NULL) ok
+  Part B world B1: G1 d_z +3.05  T1 True  T2 True  T3 True -> STRONG_DISSOCIATION  (want STRONG_DISSOCIATION) ok
+  Part B world B2: G1 d_z +3.05  T1 False  T2 False  T3 False -> UP_FOLLOWS_VALENCE_ONLY  (want UP_FOLLOWS_VALENCE_ONLY) ok
+  Part B world B3: G1 d_z +3.05  T1 True  T2 True  T3 False -> PERPLEXITY_NOT_EFFECT  (want PERPLEXITY_NOT_EFFECT) ok
+  Part B world B4: G1 d_z -0.04  T1 False  T2 False  T3 True -> UNINFORMATIVE (G1 failed: scrambling did not move the size of the hole)  (want UNINFORMATIVE) ok
+SELF-TEST PASS
+
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 5629.42it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+
+==============================================================================
+PART A — words in frames
+==============================================================================
+  clean pass 100/314 words
+  clean pass 200/314 words
+  clean pass 300/314 words
+  clean pass done: 314 words x 3 frames; layer averages over 15114 tokens (saved)
+
+MECHANICS CHECKS (common-word frames only)
+  own-state drop max KL 4.57e-07 | last-layer drop, later positions 4.15e-07 | earlier positions 3.02e-07 | real drop E_next 35.763 -> ok
+  own-state drop max KL 4.09e-07 | last-layer drop, later positions 2.74e-07 | earlier positions 2.07e-07 | real drop E_next 53.389 -> ok
+  own-state drop max KL 2.91e-07 | last-layer drop, later positions 1.45e-07 | earlier positions 2.61e-07 | real drop E_next 39.874 -> ok
+  own-state drop max KL 5.21e-07 | last-layer drop, later positions 2.94e-07 | earlier positions 3.02e-07 | real drop E_next 29.619 -> ok
+MECHANICS PASS
+  holes 60/289 words (saved as they finish)
+  holes 120/289 words (saved as they finish)
+  holes 180/289 words (saved as they finish)
+  holes 240/289 words (saved as they finish)
+
+analysis words 289  word value = mean over 3 frames of ln E_reach: mean +0.675 sd 0.342
+  what else the value tracks: corr with word frequency -0.079, with distance from the average state +0.266
+BINDING: spatial UP (35 words) minus spatial DOWN (39 words)
+  raw ln E_reach: UP +0.800  DOWN +0.668  d +0.38  p 0.1038
+  frequency-controlled: d +0.40  p 0.0980   (mean zipf UP 4.55, DOWN 4.45)
+  also controlling distance from average: d +0.54  p 0.0236
+  next-word readout instead of reach: raw d -0.27 p 0.2580 | controlled d -0.29 p 0.2117
+  every contrast, frequency-controlled (positive pole minus negative pole):
+    BALANCE            n 15/6   d_ctrl +0.58  p 0.2396   raw d +0.44
+    FORWARD-BACK       n 22/15  d_ctrl -0.54  p 0.1160   raw d -0.52
+    UP                 n 35/39  d_ctrl +0.40  p 0.0980   raw d +0.38
+    PATH-MOTION        n 14/13  d_ctrl +0.34  p 0.3808   raw d +0.33
+    DIFFICULTY-BURDEN  n  8/10  d_ctrl -0.31  p 0.5354   raw d -0.31
+    LIGHT-DARK         n 19/15  d_ctrl -0.26  p 0.4623   raw d -0.29
+    FORCE              n 11/13  d_ctrl +0.25  p 0.5484   raw d +0.22
+    IN-OUT_CLEAN       n 10/9   d_ctrl -0.06  p 0.9013   raw d -0.04
+    VAL                n 22/19  d_ctrl -0.19  p 0.5317   raw d -0.24
+  UP rank among the eight by |d_ctrl|: 3
+
+PART A VERDICT (frozen rule): NULL
+  (Part A results saved to exp175_results.json)
+  axis check: cos(UP_spatial, UP_literal_bare) by layer: L4 +0.527  L8 +0.521  L12 +0.556  L16 +0.516  L20 +0.464 | cos(UP_spatial, VAL): L4 +0.219  L8 +0.226  L12 +0.233  L16 +0.198  L20 +0.171
+
+==============================================================================
+PART B — sentences: does the UP readout follow the hole, or follow happy?
+==============================================================================
+  480 texts (120 sentences x (1 intact + 3 scrambles)); token-identity assertions passed
+  layer averages over 7468 sentence tokens (saved)
+  texts 40/480 (rows saved as they finish)
+  texts 80/480 (rows saved as they finish)
+  texts 120/480 (rows saved as they finish)
+  texts 160/480 (rows saved as they finish)
+  texts 200/480 (rows saved as they finish)
+  texts 240/480 (rows saved as they finish)
+  texts 280/480 (rows saved as they finish)
+  texts 320/480 (rows saved as they finish)
+  texts 360/480 (rows saved as they finish)
+  texts 400/480 (rows saved as they finish)
+  texts 440/480 (rows saved as they finish)
+  texts 480/480 (rows saved as they finish)
+[axis: UP_spatial]  sentences 120  matched triples 40
+  mean ln E_reach: intact +0.482  scrambled -0.039 | ln E_next: intact +3.925  scrambled +3.141 | surprisal: intact 5.42  scrambled 8.23
+  G1 scrambling moves the hole (reach): d_z +1.61 -> PASS  (bigger hole in: intact)   [next-word version d_z +3.32]
+  G2 valence visible: PASS   T4 does valence move the hole (happy vs sad, intact): d_z +0.18   corr(E, surprisal) over cells -0.71
+  L4  G2 +2.25 | T0 happy-vs-sad on UP +1.57 | T1 happy +1.17 sad +0.59 neutral +0.96 | T2 -1.07 | T2b sad-intact vs happy-scrambled -1.07 | T3 beta_E +0.152 [+0.016,+0.278] beta_surp -0.013 [-0.138,+0.100]
+  L8  G2 +2.56 | T0 happy-vs-sad on UP +1.62 | T1 happy +0.27 sad -0.41 neutral +0.06 | T2 -1.59 | T2b sad-intact vs happy-scrambled -1.59 | T3 beta_E +0.053 [-0.096,+0.187] beta_surp +0.063 [-0.069,+0.182]
+  L12 G2 +3.01 | T0 happy-vs-sad on UP +1.40 | T1 happy -0.19 sad -0.41 neutral -0.27 | T2 -1.69 | T2b sad-intact vs happy-scrambled -1.69 | T3 beta_E +0.041 [-0.114,+0.181] beta_surp +0.127 [-0.005,+0.250]
+  L16 G2 +2.62 | T0 happy-vs-sad on UP +1.47 | T1 happy -1.22 sad -1.45 neutral -1.08 | T2 -2.12 | T2b sad-intact vs happy-scrambled -2.12 | T3 beta_E -0.103 [-0.244,+0.035] beta_surp +0.320 [+0.200,+0.431]
+  L20 G2 +2.15 | T0 happy-vs-sad on UP +1.22 | T1 happy -0.98 sad -1.67 neutral -1.40 | T2 -2.00 | T2b sad-intact vs happy-scrambled -2.00 | T3 beta_E -0.258 [-0.411,-0.104] beta_surp +0.272 [+0.153,+0.397]
+  T1 False  T2 False  T3 False  flat False
+
+PART B VERDICT (frozen rule, UP_spatial, reach): MIXED
+  D1 (descriptive) within intact sentences, token-level corr(ln E_reach, UP readout), position removed: L4 mean r -0.145 (t -5.7)  L8 mean r -0.067 (t -2.5)  L12 mean r -0.025 (t -0.9)  L16 mean r -0.020 (t -0.8)  L20 mean r +0.100 (t +3.8)
+
+Reported beside it, never substituting:
+[axis: UP_literal_bare]  sentences 120  matched triples 40
+  mean ln E_reach: intact +0.482  scrambled -0.039 | ln E_next: intact +3.925  scrambled +3.141 | surprisal: intact 5.42  scrambled 8.23
+  G1 scrambling moves the hole (reach): d_z +1.61 -> PASS  (bigger hole in: intact)   [next-word version d_z +3.32]
+  G2 valence visible: PASS   T4 does valence move the hole (happy vs sad, intact): d_z +0.18   corr(E, surprisal) over cells -0.71
+  L4  G2 +2.25 | T0 happy-vs-sad on UP +1.08 | T1 happy -0.29 sad -0.67 neutral -0.30 | T2 -1.33 | T2b sad-intact vs happy-scrambled -1.33 | T3 beta_E +0.099 [-0.064,+0.243] beta_surp +0.194 [+0.048,+0.325]
+  L8  G2 +2.56 | T0 happy-vs-sad on UP +1.44 | T1 happy -0.87 sad -1.13 neutral -0.97 | T2 -1.96 | T2b sad-intact vs happy-scrambled -1.96 | T3 beta_E +0.039 [-0.103,+0.170] beta_surp +0.324 [+0.201,+0.447]
+  L12 G2 +3.01 | T0 happy-vs-sad on UP +1.24 | T1 happy -0.44 sad -0.46 neutral -0.38 | T2 -1.51 | T2b sad-intact vs happy-scrambled -1.51 | T3 beta_E +0.021 [-0.124,+0.163] beta_surp +0.172 [+0.041,+0.286]
+  L16 G2 +2.62 | T0 happy-vs-sad on UP +1.11 | T1 happy +0.09 sad -0.01 neutral -0.01 | T2 -0.92 | T2b sad-intact vs happy-scrambled -0.92 | T3 beta_E -0.088 [-0.239,+0.061] beta_surp -0.043 [-0.186,+0.083]
+  L20 G2 +2.15 | T0 happy-vs-sad on UP +0.75 | T1 happy -0.38 sad -0.64 neutral -0.42 | T2 -0.85 | T2b sad-intact vs happy-scrambled -0.85 | T3 beta_E -0.240 [-0.400,-0.087] beta_surp +0.045 [-0.099,+0.191]
+  T1 False  T2 False  T3 False  flat False
+  (UP_literal_bare would read: MIXED)
+
+All results saved to exp175_results.json; rows in exp175_rows_words.jsonl and exp175_rows_texts.jsonl

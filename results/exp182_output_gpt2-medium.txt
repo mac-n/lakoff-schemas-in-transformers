@@ -1,0 +1,38 @@
+exp182 — position-by-position test (prereg frozen at 1a471e5); stimuli sha matches prereg
+SYNTHETIC SELF-TEST (real verdict path)
+  world rises_up_only: RISES_SPECIFIC (want RISES_SPECIFIC) ok
+  world rises_all: RISES_GENERIC (want RISES_GENERIC) ok
+  world fades: FADES (want FADES) ok
+  world flat: FLAT (want FLAT) ok
+SELF-TEST PASS
+
+Loading gpt2-medium...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 6007.73it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+  layer averages over 29160 tokens (saved)
+MECHANICS CHECKS (common-word frames only)
+  own-state drop max KL 3.83e-07 | last-layer drop, later positions 2.73e-07 | earlier positions 3.30e-07 | real drop E_next 66.494 -> ok
+  own-state drop max KL 5.21e-07 | last-layer drop, later positions 4.14e-07 | earlier positions 5.21e-07 | real drop E_next 27.604 -> ok
+  own-state drop max KL 5.04e-07 | last-layer drop, later positions 3.09e-07 | earlier positions 3.30e-07 | real drop E_next 51.447 -> ok
+  own-state drop max KL 6.68e-07 | last-layer drop, later positions 3.23e-07 | earlier positions 3.30e-07 | real drop E_next 33.202 -> ok
+MECHANICS PASS
+  40/162 words (saved as they finish)
+  80/162 words (saved as they finish)
+  120/162 words (saved as they finish)
+  160/162 words (saved as they finish)
+
+========================================================================
+RESULTS — gpt2-medium
+========================================================================
+  gap (first word minus second word, in ln KL) at each distance k from the word:
+     k:             0      1      2      3      4      5      6      7      8      9     10     11     12
+     vertical  -0.171 +0.239 +0.056 +0.017 +0.110 +0.105 +0.037 +0.046 +0.007 +0.040 +0.071 +0.044 +0.028
+     polar     +0.082 +0.388 +0.029 +0.029 -0.058 +0.001 -0.017 -0.088 -0.047 -0.056 -0.026 -0.037 -0.022
+     valence   +0.114 +0.048 -0.133 -0.064 -0.125 -0.028 -0.105 -0.195 -0.176 -0.152 -0.116 -0.102 -0.043
+  vertical slope over k=1..12: -0.0094 per position  d_z -0.36  p 0.0576  (9/31 pairs rising) | gap at the word itself -0.171 (p 0.0288) | mean gap k=1..12 +0.067 (p 0.0093)
+  polar    slope over k=1..12: -0.0199 per position  d_z -0.64  p 0.0019  (6/30 pairs rising) | gap at the word itself +0.082 (p 0.3336) | mean gap k=1..12 +0.008 (p 0.7635)
+  valence  slope over k=1..12: -0.0061 per position  d_z -0.35  p 0.1378  (7/20 pairs rising) | gap at the word itself +0.114 (p 0.2546) | mean gap k=1..12 -0.099 (p 0.0097)
+  vertical slope minus polar slope: +0.0105  p 0.1557
+
+  >>> gpt2-medium: FLAT <<<
+results saved to exp182_results_gpt2-medium.json

@@ -1,0 +1,66 @@
+exp202 — progress or distance? (prereg frozen at a5856b9); device mps
+  generated 16/160
+  generated 32/160
+  generated 48/160
+  generated 64/160
+  generated 80/160
+  generated 96/160
+  generated 112/160
+  generated 128/160
+  generated 144/160
+  generated 160/160
+  finished answers: 160 of 160
+
+=== layer 2 (PRIMARY): S0 +0.467; 76 pairs kept ===
+  pooled fraction-done curve: +0.11 +0.08 +0.09 +0.07 +0.06 +0.06 +0.06 +0.06 +0.04 +0.05 | POST +0.05; slope CI [-0.007, -0.005]
+  haiku     pairs 20, length ratio 3.7 (short ~18 tok)
+     by fraction done  short: +0.34 +0.26 +0.39 +0.27 +0.17 +0.14 +0.20 +0.24 +0.14 +0.09
+                       long:  +0.05 +0.04 +0.06 +0.06 +0.06 +0.04 +0.04 +0.06 +0.02 +0.04
+     by tokens         short: +0.34 +0.27 +0.30 +0.37 +0.19 +0.14 +0.19 +0.28 +0.16 +0.13
+                       long:  +0.14 +0.03 -0.06 +0.05 -0.00 +0.02 +0.08 +0.11 +0.05 +0.04
+  limerick  pairs 17, length ratio 3.1 (short ~38 tok)
+     by fraction done  short: +0.11 +0.08 +0.09 +0.05 +0.09 +0.05 +0.07 +0.07 +0.04 +0.06
+                       long:  +0.07 +0.05 +0.04 +0.05 +0.04 +0.03 +0.03 +0.03 +0.03 +0.03
+     by tokens         short: +0.11 +0.08 +0.11 +0.04 +0.08 +0.06 +0.06 +0.06 +0.05 +0.05
+                       long:  +0.11 +0.07 +0.05 +0.03 +0.06 +0.04 +0.04 +0.04 +0.03 +0.03
+  facts     pairs 19, length ratio 2.4 (short ~171 tok)
+     by fraction done  short: +0.03 +0.01 +0.01 +0.01 +0.00 +0.00 +0.00 -0.00 -0.00 -0.00
+                       long:  +0.02 -0.00 -0.00 -0.00 -0.00 -0.01 -0.01 -0.01 -0.01 -0.00
+     by tokens         short: +0.03 +0.01 +0.01 +0.00 +0.00 +0.00 -0.00 -0.00 -0.00 -0.00
+                       long:  +0.03 +0.00 +0.00 -0.00 +0.00 -0.00 -0.00 -0.00 -0.01 -0.00
+  story     pairs 20, length ratio 2.3 (short ~74 tok)
+     by fraction done  short: +0.17 +0.13 +0.07 +0.05 +0.06 +0.13 +0.08 +0.04 +0.03 +0.14
+                       long:  +0.10 +0.08 +0.05 +0.07 +0.06 +0.05 +0.06 +0.03 +0.06 +0.06
+     by tokens         short: +0.18 +0.14 +0.07 +0.05 +0.06 +0.11 +0.09 +0.05 +0.05 +0.13
+                       long:  +0.14 +0.09 +0.06 +0.09 +0.08 +0.05 +0.05 +0.10 +0.05 +0.05
+  Delta_p (long − short at same fraction done) -0.056 CI [-0.063, -0.048]
+  Delta_k (long − short at same token distance) -0.058 CI [-0.069, -0.047]
+  >>> layer 2: UNRESOLVED <<<
+
+=== layer 8: S0 +3.739; 76 pairs kept ===
+  pooled fraction-done curve: +0.11 +0.07 +0.05 +0.04 +0.04 +0.03 +0.04 +0.04 +0.03 +0.02 | POST +0.01; slope CI [-0.008, -0.006]
+  haiku     pairs 20, length ratio 3.7 (short ~18 tok)
+     by fraction done  short: +0.35 +0.26 +0.25 +0.13 +0.11 +0.10 +0.18 +0.21 +0.13 +0.06
+                       long:  +0.08 +0.05 +0.06 +0.05 +0.05 +0.04 +0.04 +0.05 +0.03 +0.04
+     by tokens         short: +0.35 +0.26 +0.24 +0.19 +0.10 +0.10 +0.17 +0.24 +0.15 +0.10
+                       long:  +0.11 +0.11 +0.03 +0.03 +0.04 +0.06 +0.07 +0.09 +0.05 +0.06
+  limerick  pairs 17, length ratio 3.1 (short ~38 tok)
+     by fraction done  short: +0.15 +0.11 +0.04 +0.05 +0.08 +0.06 +0.04 +0.05 +0.02 +0.06
+                       long:  +0.07 +0.03 +0.02 +0.04 +0.02 +0.02 +0.02 +0.02 +0.02 +0.01
+     by tokens         short: +0.15 +0.11 +0.05 +0.04 +0.08 +0.06 +0.05 +0.05 +0.03 +0.05
+                       long:  +0.14 +0.05 +0.04 +0.01 +0.04 +0.03 +0.03 +0.02 +0.01 +0.03
+  facts     pairs 19, length ratio 2.4 (short ~171 tok)
+     by fraction done  short: +0.05 -0.00 -0.01 -0.00 -0.00 -0.01 -0.00 -0.01 -0.00 -0.00
+                       long:  +0.04 -0.00 -0.01 -0.01 -0.01 -0.01 -0.00 -0.00 -0.00 -0.00
+     by tokens         short: +0.05 -0.00 -0.01 -0.00 -0.00 -0.01 -0.00 -0.00 -0.00 -0.00
+                       long:  +0.09 -0.00 -0.00 -0.00 -0.01 -0.01 -0.00 -0.01 -0.01 -0.01
+  story     pairs 20, length ratio 2.3 (short ~74 tok)
+     by fraction done  short: +0.08 +0.04 +0.03 +0.03 +0.02 +0.02 +0.02 +0.01 +0.00 -0.05
+                       long:  +0.05 +0.04 +0.03 +0.04 +0.04 +0.03 +0.03 +0.03 +0.03 +0.00
+     by tokens         short: +0.08 +0.04 +0.03 +0.03 +0.02 +0.02 +0.02 +0.01 -0.01 -0.04
+                       long:  +0.08 +0.04 +0.03 +0.03 +0.04 +0.03 +0.03 +0.05 +0.04 +0.04
+  Delta_p (long − short at same fraction done) -0.033 CI [-0.037, -0.028]
+  Delta_k (long − short at same token distance) -0.033 CI [-0.041, -0.024]
+  >>> layer 8: UNRESOLVED <<<
+
+  >>> exp202 (layer 2): UNRESOLVED <<<

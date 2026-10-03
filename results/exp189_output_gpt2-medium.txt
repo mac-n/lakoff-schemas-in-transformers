@@ -1,0 +1,27 @@
+
+Loading gpt2-medium...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 3345.40it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+  clean axes built from 256 word states; cos(UP, VALENCE) by layer: L4 +0.234  L8 +0.226  L12 +0.254  L16 +0.249  L20 +0.237
+  tokens analysed: 1536 from 120 sentences; mean surprisal 4.54 nats; corr(surprisal, predictive entropy) -0.20
+
+============================================================================
+RESULTS — gpt2-medium: partial correlation of the UP readout with each target
+============================================================================
+  [surprisal — PRIMARY]
+    L4  UP -0.030 [-0.091,+0.025] | random-word axes: median -0.000 [5% -0.084, 95% +0.098]; UP at the 30th percentile | VALENCE readout +0.030
+    L8  UP -0.029 [-0.092,+0.032] | random-word axes: median -0.004 [5% -0.112, 95% +0.110]; UP at the 38th percentile | VALENCE readout -0.008
+    L12 UP -0.069 [-0.130,-0.006] | random-word axes: median -0.013 [5% -0.137, 95% +0.123]; UP at the 25th percentile | VALENCE readout +0.028
+    L16 UP -0.060 [-0.122,+0.003] | random-word axes: median -0.010 [5% -0.159, 95% +0.144]; UP at the 37th percentile | VALENCE readout +0.048
+    L20 UP -0.064 [-0.124,-0.003] | random-word axes: median -0.015 [5% -0.165, 95% +0.160]; UP at the 38th percentile | VALENCE readout +0.072
+    -> NOT_BEYOND_RANDOM  (above random at 0/5 layers, below at 0/5)
+  [predictive entropy — secondary]
+    L4  UP +0.047 [-0.006,+0.096] | random-word axes: median +0.000 [5% -0.164, 95% +0.143]; UP at the 68th percentile | VALENCE readout -0.113
+    L8  UP +0.104 [+0.052,+0.155] | random-word axes: median +0.005 [5% -0.206, 95% +0.192]; UP at the 80th percentile | VALENCE readout -0.051
+    L12 UP +0.105 [+0.058,+0.153] | random-word axes: median +0.007 [5% -0.216, 95% +0.192]; UP at the 82th percentile | VALENCE readout -0.050
+    L16 UP +0.125 [+0.076,+0.177] | random-word axes: median -0.004 [5% -0.190, 95% +0.190]; UP at the 85th percentile | VALENCE readout -0.083
+    L20 UP +0.019 [-0.036,+0.075] | random-word axes: median -0.001 [5% -0.257, 95% +0.242]; UP at the 58th percentile | VALENCE readout -0.017
+    -> NOT_BEYOND_RANDOM  (above random at 0/5 layers, below at 0/5)
+
+  >>> gpt2-medium: NOT_BEYOND_RANDOM <<<
+results saved to exp189_results_gpt2-medium.json

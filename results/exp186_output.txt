@@ -1,0 +1,38 @@
+exp186 — un- morphology control for the causal effect — gpt2-medium (prereg frozen at 0b2c8ad)
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 6249.29it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+BALANCE without the four un- pairs: 11 against 11; token split positive 5 single + 6 split, negative 0 single + 11 split
+
+========================================================================
+LAYER 3 (PRIMARY)
+========================================================================
+  tau 0.5 done
+  tau 0.7 done
+  tau 0.85 done
+  tau 1.0 done
+  tau 1.25 done
+  tau 1.5 done
+  tau 2.0 done
+  real BALANCE slope -0.0083 (exp168 / exp179 had -0.0083) -> REPLICATION GATE PASS
+  UN-AXES (15 word / un-word pairs, unrelated concepts): median -0.0061 [5% -0.0081, 95% -0.0041], 100% negative; real BALANCE sits at the 4th percentile
+  BALANCE without its four un- pairs: slope -0.0047 | MATCHED_NO_UN: median +0.0005 [5% -0.0057, 95% +0.0078]; sits at the 9th percentile
+
+  VERDICT: UNRESOLVED
+
+========================================================================
+LAYER 8 (reported)
+========================================================================
+  tau 0.5 done
+  tau 0.7 done
+  tau 0.85 done
+  tau 1.0 done
+  tau 1.25 done
+  tau 1.5 done
+  tau 2.0 done
+  real BALANCE slope -0.0018 (exp168 / exp179 had -0.0018) -> REPLICATION GATE PASS
+  UN-AXES (15 word / un-word pairs, unrelated concepts): median -0.0018 [5% -0.0027, 95% -0.0008], 100% negative; real BALANCE sits at the 52th percentile
+  BALANCE without its four un- pairs: slope -0.0010 | MATCHED_NO_UN: median +0.0002 [5% -0.0031, 95% +0.0033]; sits at the 26th percentile
+
+  at this layer the rule would read: NEGATION_SUFFICIENT
+
+results saved to exp186_results.json

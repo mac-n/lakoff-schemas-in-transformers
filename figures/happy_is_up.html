@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Is Up</title>
+<style>
+  :root { --bg: #f7f1e3; --ink: #3b2f26; --muted: #7a6a5c; --line: #b9a58a; --up: #1f8a80; --down: #8c6a9e; --grey: #b9bfc3; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font-family: Georgia, "Times New Roman", serif; }
+  .wrap { min-height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; }
+  svg { width: 100%; max-width: 1100px; height: auto; display: block; }
+  .controls { margin-top: 10px; display: flex; gap: 10px; }
+  button { font: inherit; font-size: 14px; color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 6px 16px; cursor: pointer; }
+  button:hover { background: rgba(185,165,138,.18); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<svg id="s" viewBox="0 0 1200 675" role="img" aria-label="An animated explainer: people describe feelings as up or down; Lakoff and Johnson called this HAPPY IS UP; a language model with no body is steered along a direction built only from spatial words, and its next word becomes happier, beyond thirty directions built from random words.">
+  <rect width="1200" height="675" fill="#f7f1e3"/>
+
+  <!-- scene 1: phrases -->
+  <g id="sc1" opacity="0" font-size="30">
+    <text x="300" y="170" text-anchor="middle">Things are looking <tspan fill="#1f8a80">up</tspan>.</text>
+    <text x="880" y="240" text-anchor="middle">Her spirits <tspan fill="#8c6a9e">sank</tspan>.</text>
+    <text x="340" y="330" text-anchor="middle">I’m feeling <tspan fill="#8c6a9e">low</tspan>.</text>
+    <text x="860" y="410" text-anchor="middle">That <tspan fill="#1f8a80">lifted</tspan> my mood.</text>
+    <path d="M500,150 l0,-34 m-10,12 l10,-12 l10,12" stroke="#1f8a80" stroke-width="3" fill="none"/>
+    <path d="M1040,220 l0,34 m-10,-12 l10,12 l10,-12" stroke="#8c6a9e" stroke-width="3" fill="none"/>
+  </g>
+
+  <!-- scene 2: posture -->
+  <g id="sc2" opacity="0">
+    <g transform="translate(400,250)">
+      <circle cx="0" cy="0" r="22" fill="#f0d9b5" stroke="#5b4636" stroke-width="3"/>
+      <path d="M-8,4 Q0,12 8,4" stroke="#5b4636" stroke-width="2.5" fill="none"/>
+      <path d="M0,22 L0,110 M0,45 L-36,10 M0,45 L36,10 M0,110 L-22,170 M0,110 L22,170" stroke="#5b4636" stroke-width="5" fill="none"/>
+      <text x="0" y="215" text-anchor="middle" font-size="22" fill="#1f8a80">upright</text>
+    </g>
+    <g transform="translate(800,300)">
+      <circle cx="18" cy="0" r="22" fill="#f0d9b5" stroke="#5b4636" stroke-width="3"/>
+      <path d="M10,10 Q18,4 26,10" stroke="#5b4636" stroke-width="2.5" fill="none"/>
+      <path d="M8,20 Q0,60 0,85 M2,40 L-20,85 M2,40 L22,88 M0,85 L-16,120 M0,85 L16,120" stroke="#5b4636" stroke-width="5" fill="none"/>
+      <text x="0" y="165" text-anchor="middle" font-size="22" fill="#8c6a9e">slumped</text>
+    </g>
+    <text x="600" y="110" text-anchor="middle" font-size="34">HAPPY IS UP</text>
+    <text x="600" y="145" text-anchor="middle" font-size="18" fill="#7a6a5c" font-style="italic">George Lakoff &amp; Mark Johnson, Metaphors We Live By, 1980</text>
+  </g>
+
+  <!-- scene 3: no body -->
+  <g id="sc3" opacity="0">
+    <rect x="470" y="200" width="260" height="190" rx="14" fill="#fffdf7" stroke="#5b4636" stroke-width="3"/>
+    <g fill="#b9a58a">
+      <rect x="500" y="230" width="200" height="10" rx="5"/><rect x="500" y="255" width="160" height="10" rx="5"/>
+      <rect x="500" y="280" width="190" height="10" rx="5"/><rect x="500" y="305" width="120" height="10" rx="5"/>
+      <rect x="500" y="330" width="175" height="10" rx="5"/><rect x="500" y="355" width="140" height="10" rx="5"/>
+    </g>
+    <text x="600" y="440" text-anchor="middle" font-size="22" fill="#7a6a5c" font-style="italic">a language model: text in, text out</text>
+  </g>
+
+  <!-- scene 4: the direction -->
+  <g id="sc4" opacity="0">
+    <g id="dotsU" fill="#1f8a80"></g>
+    <g id="dotsD" fill="#8c6a9e"></g>
+    <path id="arrow" d="M600,470 L600,190" stroke="#3b2f26" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path id="arrowhead" d="M584,210 L600,186 L616,210" stroke="#3b2f26" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text id="arrowlab" x="625" y="200" font-size="26" fill="#3b2f26">UP</text>
+    <text x="300" y="210" text-anchor="middle" font-size="20" fill="#1f8a80">up · rise · above · climb …</text>
+    <text x="900" y="490" text-anchor="middle" font-size="20" fill="#8c6a9e">down · fall · below · descend …</text>
+    <text x="600" y="530" text-anchor="middle" font-size="14" fill="#7a6a5c" font-style="italic">(a sketch: each dot stands for a word, placed by hand)</text>
+  </g>
+
+  <!-- scene 5: the scale -->
+  <g id="sc5" opacity="0">
+    <text x="600" y="110" text-anchor="middle" font-size="28">“Today I am feeling ___”</text>
+    <g transform="translate(600,330)">
+      <path d="M0,0 L-30,130 L30,130 z" fill="#d9ccb4" stroke="#5b4636" stroke-width="2"/>
+      <g id="beam">
+        <path d="M-300,0 L300,0" stroke="#5b4636" stroke-width="6" stroke-linecap="round"/>
+        <g id="panL"><path d="M-300,0 L-340,60 M-300,0 L-260,60" stroke="#5b4636" stroke-width="2"/><path d="M-360,60 Q-300,95 -240,60 z" fill="#e6f3f1" stroke="#1f8a80" stroke-width="2"/>
+          <text x="-300" y="120" text-anchor="middle" font-size="17" fill="#1f8a80">hopeful · optimistic</text><text x="-300" y="142" text-anchor="middle" font-size="17" fill="#1f8a80">excited · happy</text></g>
+        <g id="panR"><path d="M300,0 L260,60 M300,0 L340,60" stroke="#5b4636" stroke-width="2"/><path d="M240,60 Q300,95 360,60 z" fill="#f1ebf4" stroke="#8c6a9e" stroke-width="2"/>
+          <text x="300" y="120" text-anchor="middle" font-size="17" fill="#8c6a9e">anxious · sad · worried</text><text x="300" y="142" text-anchor="middle" font-size="17" fill="#8c6a9e">depressed · hopeless</text></g>
+      </g>
+      <circle cx="0" cy="0" r="9" fill="#5b4636"/>
+    </g>
+    <g transform="translate(600,560)">
+      <text id="push" x="0" y="0" text-anchor="middle" font-size="22" fill="#3b2f26"></text>
+    </g>
+  </g>
+
+  <!-- scene 6: the control -->
+  <g id="sc6" opacity="0">
+    <path d="M140,380 L1060,380" stroke="#5b4636" stroke-width="2"/>
+    <text x="140" y="420" font-size="16" fill="#8c6a9e">pushes toward sad</text>
+    <text x="1060" y="420" font-size="16" fill="#1f8a80" text-anchor="end">pushes toward happy</text>
+    <path id="zero" d="M0,365 L0,395" stroke="#5b4636" stroke-width="2"/>
+    <g id="nulls" fill="#b9bfc3" stroke="#8f979c" stroke-width="1"></g>
+    <circle id="updot" r="13" fill="#1f8a80" cy="380" opacity="0"/>
+    <text id="uplab" font-size="20" fill="#1f8a80" text-anchor="middle" y="345" opacity="0">UP</text>
+    <text x="600" y="470" text-anchor="middle" font-size="18" fill="#7a6a5c" font-style="italic">each grey dot: a direction built the same way from 31 random words against 31 others</text>
+    <text id="gpt2" x="600" y="520" text-anchor="middle" font-size="19" fill="#3b2f26" opacity="0">The same in a second model, GPT-2, at three different depths: UP beats every random direction there too.</text>
+  </g>
+
+  <!-- scene 7: close -->
+  <g id="sc7" opacity="0">
+    <text x="600" y="250" text-anchor="middle" font-size="30">A model that has never had a body</text>
+    <text x="600" y="295" text-anchor="middle" font-size="30">carries HAPPY IS UP —</text>
+    <text x="600" y="340" text-anchor="middle" font-size="30">learned from the language of people who do.</text>
+    <text x="600" y="410" text-anchor="middle" font-size="18" fill="#7a6a5c" font-style="italic">That doesn’t show it’s more than an inheritance from human text.</text>
+    <text x="600" y="436" text-anchor="middle" font-size="18" fill="#7a6a5c" font-style="italic">It shows the inheritance is there, and that it works.</text>
+    <text x="600" y="640" text-anchor="middle" font-size="13" fill="#7a6a5c">Pythia 1.4B (layer 12) and GPT-2 medium (layers 6, 12, 18) · pre-registered · Niamh McCombe &amp; Claude · glassnest.ai/embodied · October 2026</text>
+  </g>
+
+  <text id="cap" x="600" y="625" text-anchor="middle" font-size="21" fill="#5b4636" opacity="0"></text>
+</svg>
+<div class="controls"><button id="replay">replay</button></div>
+</div>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); }, NS = "http://www.w3.org/2000/svg";
+  // measured (Pythia 1.4B, layer 12, exp187/exp203)
+  var DOSE = [[-12, -1.37], [-8, -1.03], [-4, -0.68], [0, -0.34], [4, -0.02], [8, 0.27], [12, 0.52], [16, 0.74]];
+  var NULLS = [-0.89, -0.83, -0.78, -0.77, -0.63, -0.57, -0.54, -0.43, -0.38, -0.23, -0.21, -0.17, -0.16, -0.15, -0.08, -0.04, 0.04, 0.1, 0.12, 0.14, 0.14, 0.15, 0.19, 0.22, 0.39, 0.49, 0.5, 0.56, 0.82, 0.96];
+  var UP = 1.35;
+  var X = function (v) { return 600 + v * 300; };   // effect -1.5..1.5 -> 150..1050
+  $("zero").setAttribute("transform", "translate(" + X(0) + ",0)");
+  // dots for scene 4 (illustrative layout of words; not data)
+  var rnd = (function (s) { return function () { s = (s * 16807) % 2147483647; return s / 2147483647; }; })(7);
+  for (var i = 0; i < 18; i++) {
+    var u = document.createElementNS(NS, "circle"); u.setAttribute("r", 7); u.setAttribute("cx", 470 + rnd() * 260); u.setAttribute("cy", 230 + rnd() * 90); $("dotsU").appendChild(u);
+    var d = document.createElementNS(NS, "circle"); d.setAttribute("r", 7); d.setAttribute("cx", 470 + rnd() * 260); d.setAttribute("cy", 350 + rnd() * 90); $("dotsD").appendChild(d);
+  }
+  var nullEls = NULLS.map(function (v, k) {
+    var c = document.createElementNS(NS, "circle"); c.setAttribute("r", 9); c.setAttribute("cx", X(v));
+    var stack = NULLS.slice(0, k).filter(function (w) { return Math.abs(w - v) < 0.06; }).length;
+    c.setAttribute("cy", 380 - stack * 20); c.setAttribute("opacity", 0); $("nulls").appendChild(c); return c;
+  });
+  var T = 82;
+  var scenes = [["sc1", 0.5, 11], ["sc2", 11, 22], ["sc3", 22, 30], ["sc4", 30, 42], ["sc5", 42, 58], ["sc6", 58, 72], ["sc7", 72, 99]];
+  var caps = [
+    [1.5, 10.5, "We talk about feelings as if they had a height."],
+    [12, 21.5, "We stand tall when we’re well, and droop when we’re not. The body gives the metaphor its shape."],
+    [23, 29.5, "A language model has never stood up, or slumped. Does it carry HAPPY IS UP anyway?"],
+    [31, 41.5, "Inside the model, find the direction that separates up-words from down-words. Only space; no feelings."],
+    [58.5, 64, "But maybe any push would do that. So: thirty pushes built from random words."]
+  ];
+  function clamp(x, a, b) { return Math.max(a, Math.min(b, x)); }
+  function ease(x) { x = clamp(x, 0, 1); return x * x * (3 - 2 * x); }
+  function fade(t, a, b, w) { w = w || 1; return Math.min(ease((t - a) / w), 1 - ease((t - b + w) / w)); }
+  function dose(s) { for (var i = 0; i < DOSE.length - 1; i++) if (s <= DOSE[i + 1][0]) { var r = (s - DOSE[i][0]) / (DOSE[i + 1][0] - DOSE[i][0]); return DOSE[i][1] + r * (DOSE[i + 1][1] - DOSE[i][1]); } return DOSE[DOSE.length - 1][1]; }
+  var t0 = null, reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function frame(now) {
+    if (t0 === null) t0 = now;
+    var fx = location.search.match(/t=([0-9.]+)/);
+    var t = fx ? parseFloat(fx[1]) : (reduce ? T : (now - t0) / 1000);
+    scenes.forEach(function (s) { $(s[0]).setAttribute("opacity", fade(t, s[1], s[2], 1.2)); });
+    // scene 4: arrow grows
+    var g = ease((t - 33) / 3); $("arrow").setAttribute("d", "M600,470 L600," + (470 - 280 * g));
+    $("arrowhead").setAttribute("opacity", g); $("arrowlab").setAttribute("opacity", g);
+    // scene 5: sweep strength 0 -> +16 -> -12 -> 0, tilt by measured affect
+    var s = 0, lab = "";
+    if (t >= 44 && t < 49) { s = 16 * ease((t - 44) / 3); lab = "pushed UP: the next word leans happy"; }
+    else if (t >= 49 && t < 55) { s = 16 - 28 * ease((t - 49) / 3.5); lab = s < -1 ? "pushed DOWN: it leans sad" : "pushed UP: the next word leans happy"; }
+    else if (t >= 55) { s = -12 + 12 * ease((t - 55) / 2); lab = "pushed DOWN: it leans sad"; }
+    else { lab = "not pushed"; }
+    var a = dose(s); var ang = -a * 9;   // positive affect tips the happy (left) pan down
+    $("beam").setAttribute("transform", "rotate(" + ang + ")");
+    $("panL").setAttribute("transform", "rotate(" + (-ang) + ",-300,0)"); $("panR").setAttribute("transform", "rotate(" + (-ang) + ",300,0)");
+    $("push").textContent = lab;
+    // scene 6: nulls appear, then UP rolls past them
+    nullEls.forEach(function (c, k) { c.setAttribute("opacity", ease((t - 60 - k * 0.08) / 0.6)); });
+    var u = ease((t - 64) / 3); $("updot").setAttribute("cx", X(0) + (X(UP) - X(0)) * u); $("updot").setAttribute("opacity", ease((t - 64) / 0.6));
+    $("uplab").setAttribute("x", X(0) + (X(UP) - X(0)) * u); $("uplab").setAttribute("opacity", ease((t - 66.5) / 0.6));
+    $("gpt2").setAttribute("opacity", ease((t - 68) / 1));
+    var c = "", co = 0;
+    caps.forEach(function (k) { var o = fade(t, k[0], k[1], 1); if (o > co) { co = o; c = k[2]; } });
+    $("cap").textContent = c; $("cap").setAttribute("opacity", co);
+    if (t < T && !reduce && !fx) requestAnimationFrame(frame);
+  }
+  var embedded = window.self !== window.top && !location.search.match(/t=/);
+  $("replay").onclick = function () { $("replay").textContent = "replay"; t0 = null; requestAnimationFrame(frame); };
+  if (embedded) { $("replay").textContent = "▶ play"; $("sc1").setAttribute("opacity", 1); } else { requestAnimationFrame(frame); }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+exp183 — free generation (prereg frozen at befa567)
+SYNTHETIC SELF-TEST (real verdict path)
+  world spent: SPENT (want SPENT); bins used [0, 1, 2, 3, 4, 5, 6, 7] ok
+  world lead_kept: LEAD_NOT_SPENT (want LEAD_NOT_SPENT); bins used [0, 1, 2, 3, 4, 5, 6, 7] ok
+  world no_lead: NO_LEAD (want NO_LEAD); bins used [0, 1, 2, 3, 4, 5, 6, 7] ok
+  world floor_only: LEAD_NOT_SPENT (want LEAD_NOT_SPENT); bins used [0, 1, 2, 3, 4, 5, 6] ok
+SELF-TEST PASS
+
+Loading gpt2-medium...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 5169.63it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+  sampled prompt 1/8: 486 texts of 51 tokens
+  sampled prompt 2/8: 486 texts of 48 tokens
+  sampled prompt 3/8: 486 texts of 48 tokens
+  sampled prompt 4/8: 486 texts of 48 tokens
+  sampled prompt 5/8: 486 texts of 49 tokens
+  sampled prompt 6/8: 486 texts of 47 tokens
+  sampled prompt 7/8: 486 texts of 49 tokens
+  sampled prompt 8/8: 486 texts of 50 tokens
+  example (after 'up'): ' the card at the centre of the table said up to$ 17,350 - Domain Security value looks to be unlikely\n\n\nThe record of Joseph Cauchars role in Dotcom scene through contacts with court in USA, UK, Hong Kong,'
+  layer averages over 185652 tokens (saved)
+MECHANICS CHECKS (common-word frames only)
+  own-state drop max KL 3.83e-07 | last-layer drop, later positions 2.73e-07 | earlier positions 3.30e-07 | real drop E_next 65.969 -> ok
+  own-state drop max KL 5.21e-07 | last-layer drop, later positions 4.14e-07 | earlier positions 5.21e-07 | real drop E_next 31.025 -> ok
+  own-state drop max KL 5.04e-07 | last-layer drop, later positions 3.09e-07 | earlier positions 3.30e-07 | real drop E_next 47.216 -> ok
+  own-state drop max KL 6.68e-07 | last-layer drop, later positions 3.23e-07 | earlier positions 3.30e-07 | real drop E_next 36.164 -> ok
+MECHANICS PASS
+  batched drop vs exp175's drop_kl on one text: max difference 7.55e-06 -> ok
+/Users/macn/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

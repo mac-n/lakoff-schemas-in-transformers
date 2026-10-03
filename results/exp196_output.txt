@@ -1,0 +1,16 @@
+exp196 — SAE calibration of the agreement measure (prereg frozen at 9a7e37c)
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<00:39,  7.44it/s]Loading weights:  70%|██████▉   | 204/292 [00:00<00:00, 1037.22it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 973.30it/s] 
+Loaded pretrained model pythia-410m into HookedTransformer
+  latents firing on at least one token: 16718 of 65536; USED fire on 818..92 tokens; UNUSED fire on none
+  20/60 SAE directions done
+  40/60 SAE directions done
+  60/60 SAE directions done
+
+=== exp196: drop in later-layer agreement (unsteered 0.2220; strength 1.0 x site norm, as exp193) ===
+  concentrated controls (exp193 SINGLE + PAIR): 5% -0.0091, 95% +0.0115
+  USED SAE features   (30): median +0.0009 [5% -0.0136, 95% +0.0173]  KL median 1.261
+  UNUSED SAE features (30): median +0.0039 [5% -0.0005, 95% +0.0187]  KL median 1.369
+  UP-DOWN (exp193): +0.0377, at the 100th percentile of USED
+
+  >>> USE_NOT_SPECIAL <<<
+results saved to exp196_results.json

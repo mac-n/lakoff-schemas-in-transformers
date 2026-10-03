@@ -1,0 +1,68 @@
+
+Loading pythia-410m...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<03:10,  1.53it/s]Loading weights:  34%|███▎      | 98/292 [00:00<00:01, 174.42it/s]Loading weights:  53%|█████▎    | 155/292 [00:01<00:00, 165.25it/s]Loading weights:  66%|██████▌   | 193/292 [00:01<00:00, 163.83it/s]Loading weights:  76%|███████▋  | 223/292 [00:01<00:00, 179.84it/s]Loading weights:  86%|████████▌ | 251/292 [00:01<00:00, 163.90it/s]Loading weights:  94%|█████████▍| 274/292 [00:01<00:00, 162.41it/s]Loading weights: 100%|██████████| 292/292 [00:01<00:00, 152.23it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+[pythia-410m L4] site norm 20.52; unsteered straight 0.2220  write_cos 0.0401  end_norm 50.6900
+[pythia-410m L4] 25/106 directions x strengths done
+[pythia-410m L4] 50/106 directions x strengths done
+[pythia-410m L4] 75/106 directions x strengths done
+[pythia-410m L4] 100/106 directions x strengths done
+[pythia-410m L4] cell complete
+
+Loading pythia-410m...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<01:01,  4.71it/s]Loading weights:  19%|█▉        | 56/292 [00:00<00:01, 171.59it/s]Loading weights:  26%|██▌       | 75/292 [00:00<00:01, 161.50it/s]Loading weights:  42%|████▏     | 122/292 [00:00<00:00, 203.96it/s]Loading weights:  49%|████▉     | 143/292 [00:00<00:00, 203.24it/s]Loading weights:  56%|█████▌    | 164/292 [00:01<00:00, 143.42it/s]Loading weights:  62%|██████▏   | 181/292 [00:01<00:00, 126.34it/s]Loading weights:  70%|██████▉   | 204/292 [00:01<00:00, 144.46it/s]Loading weights:  76%|███████▌  | 221/292 [00:01<00:00, 146.66it/s]Loading weights:  82%|████████▏ | 238/292 [00:01<00:00, 152.02it/s]Loading weights:  87%|████████▋ | 255/292 [00:01<00:00, 143.31it/s]Loading weights:  93%|█████████▎| 271/292 [00:01<00:00, 142.65it/s]Loading weights:  99%|█████████▊| 288/292 [00:01<00:00, 145.69it/s]Loading weights: 100%|██████████| 292/292 [00:01<00:00, 150.12it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+[pythia-410m L8] site norm 20.02; unsteered straight 0.2539  write_cos 0.0642  end_norm 50.6900
+[pythia-410m L8] 25/106 directions x strengths done
+[pythia-410m L8] 50/106 directions x strengths done
+[pythia-410m L8] 75/106 directions x strengths done
+[pythia-410m L8] 100/106 directions x strengths done
+[pythia-410m L8] cell complete
+
+Loading gpt2-medium...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 4972.92it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+[gpt2-medium L4] site norm 149.44; unsteered straight 0.6553  write_cos 0.3666  end_norm 902.4851
+[gpt2-medium L4] 25/106 directions x strengths done
+[gpt2-medium L4] 50/106 directions x strengths done
+[gpt2-medium L4] 75/106 directions x strengths done
+[gpt2-medium L4] 100/106 directions x strengths done
+[gpt2-medium L4] cell complete
+
+Loading gpt2-medium...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 10312.62it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+[gpt2-medium L8] site norm 177.71; unsteered straight 0.6943  write_cos 0.4421  end_norm 902.4851
+[gpt2-medium L8] 25/106 directions x strengths done
+[gpt2-medium L8] 50/106 directions x strengths done
+[gpt2-medium L8] 75/106 directions x strengths done
+[gpt2-medium L8] 100/106 directions x strengths done
+[gpt2-medium L8] cell complete
+
+============================================================================
+exp190 RESULTS — A = measure with +d minus measure with −d, mean over 120 sentences
+============================================================================
+
+--- pythia-410m, steering at layer 4 ---
+  straight  A(UP) +0.02745 (p 0.0001, 120/120) | null 5% -0.02927, 95% +0.02583; UP at the 95th percentile  HOLDS | VALENCE +0.00210 (67th) | UP by strength [0.5, 1.0, 1.5]: -0.0030 +0.0275 +0.0094
+  write_cos A(UP) +0.02715 (p 0.0001, 120/120) | null 5% -0.04552, 95% +0.03010; UP at the 90th percentile | VALENCE +0.03629 (97th) | UP by strength [0.5, 1.0, 1.5]: +0.0140 +0.0272 +0.0210
+  end_norm  A(UP) +4.35339 (p 0.0001, 110/120) | null 5% -13.85597, 95% +10.17193; UP at the 78th percentile | VALENCE -2.57214 (46th) | UP by strength [0.5, 1.0, 1.5]: -1.1260 +4.3534 -1.8364
+
+--- pythia-410m, steering at layer 8 ---
+  straight  A(UP) +0.01742 (p 0.0001, 119/120) | null 5% -0.02282, 95% +0.02227; UP at the 89th percentile | VALENCE -0.00632 (34th) | UP by strength [0.5, 1.0, 1.5]: +0.0105 +0.0174 +0.0135
+  write_cos A(UP) +0.00929 (p 0.0001, 103/120) | null 5% -0.03228, 95% +0.03681; UP at the 56th percentile | VALENCE -0.01189 (25th) | UP by strength [0.5, 1.0, 1.5]: +0.0098 +0.0093 +0.0107
+  end_norm  A(UP) +2.23172 (p 0.0001, 106/120) | null 5% -8.66860, 95% +9.43393; UP at the 63th percentile | VALENCE +0.26024 (50th) | UP by strength [0.5, 1.0, 1.5]: +1.2237 +2.2317 +2.7041
+
+--- gpt2-medium, steering at layer 4 ---
+  straight  A(UP) +0.02423 (p 0.0001, 104/120) | null 5% -0.08767, 95% +0.11992; UP at the 72th percentile | VALENCE +0.08595 (92th) | UP by strength [0.5, 1.0, 1.5]: +0.0159 +0.0242 -0.0079
+  write_cos A(UP) +0.02027 (p 0.0001, 108/120) | null 5% -0.09475, 95% +0.10027; UP at the 69th percentile | VALENCE +0.08337 (89th) | UP by strength [0.5, 1.0, 1.5]: +0.0125 +0.0203 +0.0047
+  end_norm  A(UP) +21.03834 (p 0.0013, 72/120) | null 5% -238.91215, 95% +296.84527; UP at the 67th percentile | VALENCE +109.02363 (82th) | UP by strength [0.5, 1.0, 1.5]: +25.8941 +21.0383 -73.2504
+
+--- gpt2-medium, steering at layer 8 ---
+  straight  A(UP) -0.01508 (p 0.0001, 13/120) | null 5% -0.07896, 95% +0.07995; UP at the 38th percentile | VALENCE +0.01186 (58th) | UP by strength [0.5, 1.0, 1.5]: +0.0130 -0.0151 -0.0520
+  write_cos A(UP) -0.01293 (p 0.0001, 26/120) | null 5% -0.07676, 95% +0.08169; UP at the 40th percentile | VALENCE +0.03268 (69th) | UP by strength [0.5, 1.0, 1.5]: +0.0144 -0.0129 -0.0596
+  end_norm  A(UP) -65.85037 (p 0.0001, 1/120) | null 5% -212.62746, 95% +219.76196; UP at the 30th percentile | VALENCE -74.19683 (28th) | UP by strength [0.5, 1.0, 1.5]: +28.0513 -65.8504 -150.0307
+
+  cells holding on STRAIGHT at strength 1.0: 1 of 4
+  >>> LEAD_FAILS <<<
+results saved to exp190_results.json

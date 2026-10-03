@@ -1,0 +1,107 @@
+exp181 — attention entropy on request (prereg frozen at 300a2e2)
+SYNTHETIC SELF-TEST (real verdict path)
+  world control: CONTROL_ON_REQUEST (want CONTROL_ON_REQUEST) ok
+  world words: WORD_EFFECT_ONLY (want WORD_EFFECT_ONLY) ok
+  world nothing: NULL (want NULL) ok
+  world reversed: REVERSED (want REVERSED) ok
+SELF-TEST PASS
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   1%|          | 1/146 [00:01<03:37,  1.50s/it]Loading weights:  82%|████████▏ | 120/146 [00:01<00:00, 96.39it/s]Loading weights: 100%|██████████| 146/146 [00:01<00:00, 76.00it/s]
+[instruct plain] sentences 20/120 (saved as they finish)
+[instruct plain] sentences 40/120 (saved as they finish)
+[instruct plain] sentences 60/120 (saved as they finish)
+[instruct plain] sentences 80/120 (saved as they finish)
+[instruct plain] sentences 100/120 (saved as they finish)
+[instruct plain] sentences 120/120 (saved as they finish)
+[instruct chat] sentences 20/120 (saved as they finish)
+[instruct chat] sentences 40/120 (saved as they finish)
+[instruct chat] sentences 60/120 (saved as they finish)
+[instruct chat] sentences 80/120 (saved as they finish)
+[instruct chat] sentences 100/120 (saved as they finish)
+[instruct chat] sentences 120/120 (saved as they finish)
+exp181 — attention entropy on request (prereg frozen at 300a2e2)
+SYNTHETIC SELF-TEST (real verdict path)
+  world control: CONTROL_ON_REQUEST (want CONTROL_ON_REQUEST) ok
+  world words: WORD_EFFECT_ONLY (want WORD_EFFECT_ONLY) ok
+  world nothing: NULL (want NULL) ok
+  world reversed: REVERSED (want REVERSED) ok
+SELF-TEST PASS
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   1%|          | 1/146 [00:00<01:46,  1.36it/s]Loading weights:  88%|████████▊ | 129/146 [00:00<00:00, 191.76it/s]Loading weights: 100%|██████████| 146/146 [00:01<00:00, 85.21it/s] 
+[base plain] sentences 20/120 (saved as they finish)
+[base plain] sentences 40/120 (saved as they finish)
+[base plain] sentences 60/120 (saved as they finish)
+[base plain] sentences 80/120 (saved as they finish)
+[base plain] sentences 100/120 (saved as they finish)
+[base plain] sentences 120/120 (saved as they finish)
+exp181 — attention entropy on request (prereg frozen at 300a2e2)
+SYNTHETIC SELF-TEST (real verdict path)
+  world control: CONTROL_ON_REQUEST (want CONTROL_ON_REQUEST) ok
+  world words: WORD_EFFECT_ONLY (want WORD_EFFECT_ONLY) ok
+  world nothing: NULL (want NULL) ok
+  world reversed: REVERSED (want REVERSED) ok
+SELF-TEST PASS
+
+========================================================================
+instruct model, chat format   (PRIMARY)
+========================================================================
+  within-text entropy (PRIMARY measure): focus minus relax
+     addressed to the model  +0.00112  d_z +1.12  p 0.0001
+     about someone else      +0.00024  d_z +0.26  p 0.0028
+     difference (I)          +0.00088  d_z +1.21  p 0.0001
+     (neutral-instruction level of the measure: 0.7453)
+  >>> instruct chat: REVERSED <<<
+     per layer, D_you: -0.0000 +0.0001 +0.0005 +0.0024 +0.0003 +0.0004 +0.0017 +0.0026 +0.0046 -0.0001 -0.0000 +0.0005 +0.0008 +0.0004 +0.0020 +0.0016
+     per layer, I:     -0.0000 +0.0000 +0.0002 +0.0005 -0.0001 +0.0010 -0.0004 -0.0003 +0.0005 -0.0002 +0.0015 +0.0021 +0.0018 +0.0022 +0.0026 +0.0027
+  entropy over everything visible: focus minus relax
+     addressed to the model  -0.00059  d_z -0.67  p 0.0001
+     about someone else      -0.00145  d_z -1.94  p 0.0001
+     difference (I)          +0.00086  d_z +1.37  p 0.0001
+  share of attention on the instruction: focus minus relax
+     addressed to the model  -0.00122  d_z -2.04  p 0.0001
+     about someone else      -0.00164  d_z -2.13  p 0.0001
+     difference (I)          +0.00042  d_z +1.09  p 0.0001
+
+========================================================================
+instruct model, plain format
+========================================================================
+  within-text entropy (PRIMARY measure): focus minus relax
+     addressed to the model  +0.00008  d_z +0.09  p 0.3196
+     about someone else      +0.00031  d_z +0.33  p 0.0001
+     difference (I)          -0.00022  d_z -0.26  p 0.0061
+     (neutral-instruction level of the measure: 0.7525)
+  >>> instruct plain: NULL <<<
+     per layer, D_you: -0.0000 +0.0002 +0.0002 +0.0010 -0.0004 +0.0004 -0.0022 +0.0008 +0.0026 -0.0021 -0.0001 -0.0015 -0.0006 -0.0002 +0.0009 +0.0024
+     per layer, I:     -0.0000 +0.0000 +0.0001 +0.0007 -0.0007 -0.0004 -0.0030 -0.0007 +0.0000 -0.0026 +0.0005 -0.0006 -0.0004 +0.0007 +0.0012 +0.0015
+  entropy over everything visible: focus minus relax
+     addressed to the model  -0.00203  d_z -1.81  p 0.0001
+     about someone else      -0.00364  d_z -3.36  p 0.0001
+     difference (I)          +0.00161  d_z +2.01  p 0.0001
+  share of attention on the instruction: focus minus relax
+     addressed to the model  -0.00171  d_z -2.16  p 0.0001
+     about someone else      -0.00246  d_z -2.57  p 0.0001
+     difference (I)          +0.00075  d_z +1.26  p 0.0001
+
+========================================================================
+base model, plain format
+========================================================================
+  within-text entropy (PRIMARY measure): focus minus relax
+     addressed to the model  -0.00093  d_z -0.90  p 0.0001
+     about someone else      -0.00046  d_z -0.47  p 0.0001
+     difference (I)          -0.00047  d_z -0.50  p 0.0001
+     (neutral-instruction level of the measure: 0.7411)
+  >>> base plain: CONTROL_ON_REQUEST <<<
+     per layer, D_you: -0.0000 -0.0003 +0.0003 -0.0007 +0.0004 -0.0009 -0.0016 -0.0015 -0.0022 -0.0021 -0.0009 -0.0016 -0.0010 -0.0016 -0.0005 -0.0006
+     per layer, I:     +0.0000 +0.0000 +0.0004 +0.0003 -0.0004 -0.0011 -0.0008 -0.0005 -0.0034 -0.0011 -0.0000 -0.0003 -0.0009 +0.0005 -0.0000 -0.0002
+  entropy over everything visible: focus minus relax
+     addressed to the model  -0.00176  d_z -1.53  p 0.0001
+     about someone else      -0.00291  d_z -2.11  p 0.0001
+     difference (I)          +0.00115  d_z +1.11  p 0.0001
+  share of attention on the instruction: focus minus relax
+     addressed to the model  -0.00174  d_z -2.19  p 0.0001
+     about someone else      -0.00231  d_z -2.40  p 0.0001
+     difference (I)          +0.00057  d_z +0.91  p 0.0001
+
+TUNING = I(instruct, plain) − I(base, plain): +0.00024  d_z +0.22  p 0.0172
+
+results saved to exp181_results.json

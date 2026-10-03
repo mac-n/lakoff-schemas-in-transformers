@@ -1,0 +1,39 @@
+exp180 — paired-opposites retry (prereg frozen at 8b60ab6); stimuli sha matches prereg
+SYNTHETIC SELF-TEST (real verdict path)
+  world up_only: HOLDS_SPECIFIC (want HOLDS_SPECIFIC) ok
+  world all_pairs: HOLDS_GENERIC (want HOLDS_GENERIC) ok
+  world nothing: NULL (want NULL) ok
+  world frequency: NULL (want NULL) ok
+SELF-TEST PASS
+
+Loading pythia-410m...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<00:33,  8.80it/s]Loading weights:  68%|██████▊   | 200/292 [00:00<00:00, 1106.61it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 1030.02it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+  layer averages over 20898 tokens (162 words x 8 frames) (saved)
+MECHANICS CHECKS (common-word frames only)
+  own-state drop max KL 4.56e-07 | last-layer drop, later positions 1.89e-07 | earlier positions 2.79e-07 | real drop E_next 43.197 -> ok
+  own-state drop max KL 4.93e-07 | last-layer drop, later positions 1.44e-07 | earlier positions 2.07e-07 | real drop E_next 35.999 -> ok
+  own-state drop max KL 3.22e-07 | last-layer drop, later positions 1.95e-07 | earlier positions 2.60e-07 | real drop E_next 58.940 -> ok
+  own-state drop max KL 3.98e-07 | last-layer drop, later positions 3.08e-07 | earlier positions 2.79e-07 | real drop E_next 33.279 -> ok
+MECHANICS PASS
+  holes 40/162 words (saved as they finish)
+  holes 80/162 words (saved as they finish)
+  holes 120/162 words (saved as they finish)
+  holes 160/162 words (saved as they finish)
+
+========================================================================
+RESULTS — pythia-410m
+========================================================================
+  [reach (PRIMARY)]
+    vertical 31 pairs: first minus second = +0.203  d_z +0.94  sign-flip p 0.0001  (27/31 pairs positive)  | at equal frequency +0.199 CI[+0.123,+0.276]  (mean zipf gap +0.06)
+    polar    30 pairs: first minus second = +0.160  d_z +0.47  sign-flip p 0.0157  (19/30 pairs positive)  | at equal frequency +0.216 CI[+0.088,+0.345]  (mean zipf gap +0.28)
+    valence  20 pairs: first minus second = -0.004  d_z -0.02  sign-flip p 0.9510  (8/20 pairs positive)  | at equal frequency +0.275 CI[+0.107,+0.404]  (mean zipf gap +0.45)
+    vertical minus polar: +0.043  p 0.5619
+  [next-word readout (reported)]
+    vertical 31 pairs: first minus second = -0.136  d_z -0.33  sign-flip p 0.0682  (13/31 pairs positive)  | at equal frequency -0.151 CI[-0.328,-0.016]  (mean zipf gap +0.06)
+    polar    30 pairs: first minus second = +0.125  d_z +0.28  sign-flip p 0.1284  (19/30 pairs positive)  | at equal frequency +0.127 CI[-0.053,+0.317]  (mean zipf gap +0.28)
+    valence  20 pairs: first minus second = +0.094  d_z +0.19  sign-flip p 0.4226  (11/20 pairs positive)  | at equal frequency -0.116 CI[-0.477,+0.363]  (mean zipf gap +0.45)
+    vertical minus polar: -0.261  p 0.0173
+
+  >>> pythia-410m: HOLDS_GENERIC <<<
+results saved to exp180_results_pythia-410m.json

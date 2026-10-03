@@ -1,0 +1,6 @@
+exp203 (GPT-2 medium L6/12/18) — affect without uplifted/low; directions and scoring from exp194
+  clean word states: 256 words x 8 sentences
+  affect candidates: ([17836, 16915, 6568, 3772], [18116, 6507, 7960, 19095, 23292])
+  L12: CLEAN_UP +0.589 | CLEAN_VALENCE +1.356 | null median +0.037, 95th +0.397, max +0.513 -> SURVIVES
+  L6: CLEAN_UP +0.465 | CLEAN_VALENCE +0.985 | null median -0.027, 95th +0.311, max +0.372 -> SURVIVES
+  L18: CLEAN_UP +0.252 | CLEAN_VALENCE +0.457 | null median -0.003, 95th +0.128, max +0.196 -> SURVIVES

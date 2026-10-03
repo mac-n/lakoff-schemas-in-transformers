@@ -1,0 +1,148 @@
+/Users/macn/Documents/embeddingexp/lakoff/lib/python3.12/site-packages/transformer_lens/config/HookedTransformerConfig.py:354: UserWarning: MPS backend may produce silently incorrect results (PyTorch 2.12.0). Set TRANSFORMERLENS_ALLOW_MPS=1 to suppress this warning. See: https://github.com/TransformerLensOrg/TransformerLens/issues/1178
+  warn_if_mps(self.device)
+exp174 — is UP grounded in layer agreement?  (prereg frozen at commit f2e30a4)
+stimuli sha256 f50c7eff0f99a4e4c80e8c039c3ef3197f8a585aabe709cd93f7f020fffffc84 matches prereg; rule constants match prereg
+==============================================================================
+SYNTHETIC SELF-TEST (real verdict paths)
+==============================================================================
+  compute_C: stable tokens +0.989 (want > 0.9), wandering tokens +0.000 (want ~0) -> ok
+  Part A world A: cos(UP, single) +0.112  orig +0.773  perm95 0.178  part95 0.148  cv carrier +0.031  UP rank [1, 3, 7, 4, 6] -> UNINFORMATIVE  (want NULL/UNINFORMATIVE) ok
+  Part A world B: cos(UP, single) +0.794  orig +0.829  perm95 0.284  part95 0.368  cv carrier +0.887  UP rank [1, 1, 1, 1, 1] -> COUPLED_SPECIFIC  (want COUPLED_SPECIFIC) ok
+  Part A world C: cos(UP, single) +0.741  orig +0.771  perm95 0.299  part95 0.443  cv carrier +0.920  UP rank [2, 2, 2, 2, 2] -> COUPLED_GENERIC  (want COUPLED_GENERIC) ok
+  Part A world D: cos(UP, single) -0.030  orig -0.092  perm95 0.201  part95 0.209  cv carrier +0.765  UP rank [3, 4, 7, 5, 7] -> NULL  (want NULL) ok
+  Part A world E: cos(UP, single) -0.891  orig -0.893  perm95 0.874  part95 0.978  cv carrier +0.963  UP rank [2, 2, 2, 2, 2] -> WEAK  (want NULL/WEAK) ok
+  Part B world B1: G1 d_z +3.22  T1 True  T2 True  T3 True -> STRONG_DISSOCIATION  (want STRONG_DISSOCIATION) ok
+  Part B world B2: G1 d_z +3.22  T1 False  T2 False  T3 False -> UP_FOLLOWS_VALENCE_ONLY  (want UP_FOLLOWS_VALENCE_ONLY) ok
+  Part B world B3: G1 d_z +3.22  T1 True  T2 True  T3 False -> PERPLEXITY_NOT_COHERENCE  (want PERPLEXITY_NOT_COHERENCE) ok
+  Part B world B4: G1 d_z +0.04  T1 False  T2 False  T3 True -> UNINFORMATIVE (G1 failed: scrambling did not move layer agreement)  (want UNINFORMATIVE) ok
+SELF-TEST PASS
+
+Loading Pythia 410M...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<03:59,  1.22it/s]Loading weights:  37%|███▋      | 108/292 [00:00<00:01, 151.47it/s]Loading weights:  53%|█████▎    | 155/292 [00:01<00:00, 165.62it/s]Loading weights:  65%|██████▌   | 190/292 [00:01<00:00, 158.72it/s]Loading weights:  74%|███████▍  | 217/292 [00:01<00:00, 166.01it/s]Loading weights:  83%|████████▎ | 241/292 [00:01<00:00, 166.15it/s]Loading weights:  90%|█████████ | 263/292 [00:01<00:00, 164.04it/s]Loading weights:  97%|█████████▋| 283/292 [00:02<00:00, 156.63it/s]Loading weights: 100%|██████████| 292/292 [00:02<00:00, 140.62it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+Collecting residuals for 500 words at all 24 layers...
+  100/500 (saved)
+  200/500 (saved)
+  300/500 (saved)
+  400/500 (saved)
+  500/500 (saved)
+
+==============================================================================
+REPLICATION GATE on exp170's word set (489 words; exp170 had 489, 219 single-token; here single-token 219)
+  L4  cos(BALANCE, d_norm_orig) +0.784  target +0.784  ok
+  L8  cos(BALANCE, d_norm_orig) +0.729  target +0.729  ok
+  L12 cos(BALANCE, d_norm_orig) +0.701  target +0.701  ok
+  L16 cos(BALANCE, d_norm_orig) +0.718  target +0.718  ok
+  L20 cos(BALANCE, d_norm_orig) +0.729  target +0.729  ok
+REPLICATION GATE PASS
+
+==============================================================================
+PART A — word-level coupling of UP to layer agreement
+==============================================================================
+words 500  single-token 227  held-out single-token (no UP/DOWN anchors) 169
+C_adj all words: mean +0.898 sd 0.010 | single-token: mean +0.894 sd 0.007
+INSTRUMENT CHECKS (what else C_adj tracks)
+  corr(C, token count)        all -0.416
+  corr(C, path length)        all +0.450   single -0.168   (strongly negative = agreement by inaction)
+  corr(C, zipf frequency)     all +0.206   single -0.113
+  L4  corr(C, norm) all +0.526 single +0.487 | resid var ratio 0.827
+  L8  corr(C, norm) all +0.453 single +0.469 | resid var ratio 0.827
+  L12 corr(C, norm) all +0.453 single +0.477 | resid var ratio 0.827
+  L16 corr(C, norm) all +0.453 single +0.330 | resid var ratio 0.827
+  L20 corr(C, norm) all +0.452 single -0.087 | resid var ratio 0.827
+PLAIN VERSION: do UP words have more layer agreement than DOWN words?
+  single-token UP words n=3 mean C +0.8952 | DOWN words n=5 mean C +0.8955 | Cohen d -0.04 | label-shuffle p 0.981 (exploratory)
+--- Layer 4 ---
+  carrier d_coh_single: cross-validated +0.691 (in-sample +0.792) | d_coh_resid: cv +0.278 (in-sample +0.353)
+  HEADLINE cos(UP_literal, d_coh_single) = +0.005   nulls: shuffled-carrier 95% 0.124, random-partition 95% 0.282
+  UP_literal vs: resid +0.181  resid2 -0.037  orig +0.254  heldout +0.014  tokcount -0.266  norm_single +0.037
+  UP_bundle  vs: single -0.030 (shuffled-carrier 95% 0.155)  resid +0.221  heldout -0.002
+  all eight vs d_coh_single, by |cos|: DIFFICULTY-BURDEN -0.252  FORWARD-BACK +0.190  PATH-MOTION -0.114  BALANCE +0.083  LIGHT-DARK -0.051  FORCE -0.030  UP_literal +0.005  IN-OUT_CLEAN -0.002   (UP rank 7)
+  valence: cos(VAL, d_coh_single) +0.001  cos(UP, VAL) +0.275  UP with VAL removed vs d_coh_single +0.005
+  exploratory: held-out words, corr(position on UP axis, C) +0.044  permutation p 0.576
+  confound: cos(d_single, d_tok) -0.206  cos(d_orig, d_tok) -0.940  cos(d_single, d_norm_single) +0.525
+--- Layer 8 ---
+  carrier d_coh_single: cross-validated +0.618 (in-sample +0.737) | d_coh_resid: cv +0.320 (in-sample +0.386)
+  HEADLINE cos(UP_literal, d_coh_single) = -0.015   nulls: shuffled-carrier 95% 0.162, random-partition 95% 0.250
+  UP_literal vs: resid +0.163  resid2 -0.003  orig +0.275  heldout -0.011  tokcount -0.296  norm_single -0.023
+  UP_bundle  vs: single -0.181 (shuffled-carrier 95% 0.208)  resid +0.048  heldout -0.163
+  all eight vs d_coh_single, by |cos|: LIGHT-DARK -0.150  DIFFICULTY-BURDEN -0.137  FORWARD-BACK +0.132  PATH-MOTION -0.070  BALANCE -0.039  UP_literal -0.015  IN-OUT_CLEAN +0.012  FORCE -0.004   (UP rank 6)
+  valence: cos(VAL, d_coh_single) -0.179  cos(UP, VAL) +0.315  UP with VAL removed vs d_coh_single +0.044
+  exploratory: held-out words, corr(position on UP axis, C) -0.027  permutation p 0.717
+  confound: cos(d_single, d_tok) -0.137  cos(d_orig, d_tok) -0.826  cos(d_single, d_norm_single) +0.538
+--- Layer 12 ---
+  carrier d_coh_single: cross-validated +0.524 (in-sample +0.667) | d_coh_resid: cv +0.302 (in-sample +0.361)
+  HEADLINE cos(UP_literal, d_coh_single) = +0.009   nulls: shuffled-carrier 95% 0.167, random-partition 95% 0.307
+  UP_literal vs: resid +0.160  resid2 +0.027  orig +0.251  heldout +0.007  tokcount -0.258  norm_single +0.054
+  UP_bundle  vs: single -0.110 (shuffled-carrier 95% 0.198)  resid +0.073  heldout -0.094
+  all eight vs d_coh_single, by |cos|: FORWARD-BACK +0.163  LIGHT-DARK -0.147  DIFFICULTY-BURDEN -0.115  PATH-MOTION -0.038  FORCE -0.020  BALANCE +0.017  UP_literal +0.009  IN-OUT_CLEAN +0.006   (UP rank 7)
+  valence: cos(VAL, d_coh_single) -0.165  cos(UP, VAL) +0.256  UP with VAL removed vs d_coh_single +0.053
+  exploratory: held-out words, corr(position on UP axis, C) +0.015  permutation p 0.835
+  confound: cos(d_single, d_tok) -0.158  cos(d_orig, d_tok) -0.815  cos(d_single, d_norm_single) +0.558
+--- Layer 16 ---
+  carrier d_coh_single: cross-validated +0.501 (in-sample +0.640) | d_coh_resid: cv +0.290 (in-sample +0.351)
+  HEADLINE cos(UP_literal, d_coh_single) = -0.005   nulls: shuffled-carrier 95% 0.159, random-partition 95% 0.297
+  UP_literal vs: resid +0.148  resid2 +0.001  orig +0.261  heldout -0.008  tokcount -0.279  norm_single +0.107
+  UP_bundle  vs: single -0.098 (shuffled-carrier 95% 0.202)  resid +0.074  heldout -0.088
+  all eight vs d_coh_single, by |cos|: DIFFICULTY-BURDEN -0.154  FORWARD-BACK +0.149  LIGHT-DARK -0.116  IN-OUT_CLEAN -0.041  PATH-MOTION -0.024  FORCE +0.018  UP_literal -0.005  BALANCE +0.005   (UP rank 7)
+  valence: cos(VAL, d_coh_single) -0.172  cos(UP, VAL) +0.251  UP with VAL removed vs d_coh_single +0.039
+  exploratory: held-out words, corr(position on UP axis, C) -0.017  permutation p 0.829
+  confound: cos(d_single, d_tok) -0.105  cos(d_orig, d_tok) -0.812  cos(d_single, d_norm_single) +0.443
+--- Layer 20 ---
+  carrier d_coh_single: cross-validated +0.471 (in-sample +0.637) | d_coh_resid: cv +0.269 (in-sample +0.349)
+  HEADLINE cos(UP_literal, d_coh_single) = -0.032   nulls: shuffled-carrier 95% 0.160, random-partition 95% 0.313
+  UP_literal vs: resid +0.113  resid2 -0.030  orig +0.234  heldout -0.042  tokcount -0.262  norm_single +0.113
+  UP_bundle  vs: single -0.139 (shuffled-carrier 95% 0.189)  resid +0.028  heldout -0.142
+  all eight vs d_coh_single, by |cos|: DIFFICULTY-BURDEN -0.217  LIGHT-DARK -0.131  FORWARD-BACK +0.110  PATH-MOTION -0.087  FORCE +0.050  BALANCE -0.038  UP_literal -0.032  IN-OUT_CLEAN -0.028   (UP rank 7)
+  valence: cos(VAL, d_coh_single) -0.184  cos(UP, VAL) +0.215  UP with VAL removed vs d_coh_single +0.008
+  exploratory: held-out words, corr(position on UP axis, C) -0.075  permutation p 0.329
+  confound: cos(d_single, d_tok) -0.069  cos(d_orig, d_tok) -0.801  cos(d_single, d_norm_single) -0.188
+
+PART A VERDICT (frozen rule, UP_literal vs d_coh_single): NULL
+SECONDARY carrier C_straight (non-binding): cos(UP_literal, d_single) by layer: L4 +0.081 (perm95 0.116, cv +0.39)  L8 +0.085 (perm95 0.152, cv +0.52)  L12 +0.082 (perm95 0.150, cv +0.61)  L16 +0.081 (perm95 0.145, cv +0.64)  L20 +0.062 (perm95 0.155, cv +0.67)
+  (Part A results saved to exp174_results.json)
+
+==============================================================================
+PART B — the happy / incoherent dissociation
+==============================================================================
+Part B: 720 texts (120 sentences x (1 intact + 5 scrambles)), each presented twice in a row; token-identity assertions passed
+  centring pass 180/720
+  centring pass 360/720
+  centring pass 540/720
+  centring pass 720/720
+  centring mean over 22104 stimulus tokens (saved)
+  texts 120/720 (rows saved as they finish)
+  texts 240/720 (rows saved as they finish)
+  texts 360/720 (rows saved as they finish)
+  texts 480/720 (rows saved as they finish)
+  texts 600/720 (rows saved as they finish)
+  texts 720/720 (rows saved as they finish)
+[axis: UP_literal]  sentences 120  matched triples 40
+  mean C_adj: intact p1 +0.8889  scrambled p1 +0.8922  intact p2 +0.8716  scrambled p2 +0.8706
+  mean surprisal (nats): intact p1 4.65  scrambled p1 7.96  intact p2 1.18  scrambled p2 1.21
+  G1 scrambling moves agreement: d_z -1.37 -> PASS  (higher agreement in: shuffled)
+  G2 valence visible: PASS   G3 repeat halves scrambled surprisal: PASS
+  L4  G2 d_z +1.44 | T0 happy-vs-sad on UP +1.43 | T1 happy -0.15 sad -0.15 neutral +0.33 | T2 -1.62 | T3 beta_C -0.578 [-0.695,-0.464] beta_surp -0.173 [-0.278,-0.068]
+  L8  G2 d_z +1.90 | T0 happy-vs-sad on UP +1.78 | T1 happy +0.91 sad +1.12 neutral +1.26 | T2 -1.06 | T3 beta_C -0.888 [-1.007,-0.791] beta_surp +0.180 [+0.090,+0.287]
+  L12 G2 d_z +1.91 | T0 happy-vs-sad on UP +1.76 | T1 happy +0.52 sad +0.81 neutral +0.46 | T2 -1.24 | T3 beta_C -0.853 [-0.978,-0.737] beta_surp +0.169 [+0.063,+0.283]
+  L16 G2 d_z +1.52 | T0 happy-vs-sad on UP +1.20 | T1 happy -0.30 sad -0.23 neutral +0.14 | T2 -1.21 | T3 beta_C -0.824 [-0.907,-0.747] beta_surp -0.057 [-0.131,+0.020]
+  L20 G2 d_z +1.40 | T0 happy-vs-sad on UP +1.09 | T1 happy -0.17 sad +0.02 neutral +0.27 | T2 -1.02 | T3 beta_C -0.912 [-0.979,-0.851] beta_surp -0.018 [-0.079,+0.049]
+  T1 False  T2 False  T3 False  flat False
+
+PART B VERDICT (frozen rule, UP_literal): MIXED
+
+Reported beside it, never substituting:
+[axis: UP_bundle]  sentences 120  matched triples 40
+  mean C_adj: intact p1 +0.8889  scrambled p1 +0.8922  intact p2 +0.8716  scrambled p2 +0.8706
+  mean surprisal (nats): intact p1 4.65  scrambled p1 7.96  intact p2 1.18  scrambled p2 1.21
+  G1 scrambling moves agreement: d_z -1.37 -> PASS  (higher agreement in: shuffled)
+  G2 valence visible: PASS   G3 repeat halves scrambled surprisal: PASS
+  L4  G2 d_z +1.44 | T0 happy-vs-sad on UP +2.25 | T1 happy -1.48 sad -1.77 neutral -1.73 | T2 -2.74 | T3 beta_C -0.339 [-0.430,-0.257] beta_surp -0.468 [-0.543,-0.387]
+  L8  G2 d_z +1.90 | T0 happy-vs-sad on UP +2.87 | T1 happy -0.06 sad +0.88 neutral +0.36 | T2 -2.35 | T3 beta_C -0.560 [-0.686,-0.450] beta_surp -0.053 [-0.149,+0.053]
+  L12 G2 d_z +1.91 | T0 happy-vs-sad on UP +3.04 | T1 happy +0.85 sad +1.78 neutral +1.24 | T2 -1.81 | T3 beta_C -0.527 [-0.684,-0.379] beta_surp +0.252 [+0.121,+0.388]
+  L16 G2 d_z +1.52 | T0 happy-vs-sad on UP +2.83 | T1 happy -0.14 sad +0.62 neutral +0.22 | T2 -2.32 | T3 beta_C -0.610 [-0.735,-0.501] beta_surp -0.045 [-0.140,+0.061]
+  L20 G2 d_z +1.40 | T0 happy-vs-sad on UP +2.08 | T1 happy +0.48 sad +1.12 neutral +0.41 | T2 -1.20 | T3 beta_C +0.467 [+0.340,+0.602] beta_surp +0.405 [+0.278,+0.520]
+  T1 False  T2 False  T3 False  flat False
+  (UP_bundle would read: MIXED)
+
+All results saved to exp174_results.json; per-text rows in exp174_rows.jsonl

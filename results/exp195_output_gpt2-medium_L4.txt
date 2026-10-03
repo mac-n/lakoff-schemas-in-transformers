@@ -1,0 +1,31 @@
+
+Loading gpt2-medium...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 9733.65it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+[gpt2-medium L4] 129 directions; pool 193; non-binding axes []
+[gpt2-medium L4] 20/129 directions done
+[gpt2-medium L4] 40/129 directions done
+[gpt2-medium L4] 60/129 directions done
+[gpt2-medium L4] 80/129 directions done
+[gpt2-medium L4] 100/129 directions done
+[gpt2-medium L4] 120/129 directions done
+
+=== gpt2-medium, layer 4: drop in later-layer agreement (unsteered 0.6553) ===
+  SCHEMA:UP-DOWN             drop +0.0632  (+d 0.6014, -d 0.5826)  KL 2.569
+  SCHEMA:VALENCE             drop +0.1014  (+d 0.5884, -d 0.5193)  KL 2.411
+  SCHEMA:BALANCE             drop +0.0620  (+d 0.5985, -d 0.5880)  KL 2.655
+  SCHEMA:DIFFICULTY-BURDEN   drop +0.0560  (+d 0.6410, -d 0.5575)  KL 2.841
+  SCHEMA:FORCE               drop +0.0737  (+d 0.5580, -d 0.6051)  KL 2.585
+  SCHEMA:FORWARD-BACK        drop +0.0727  (+d 0.5728, -d 0.5924)  KL 2.578
+  SCHEMA:IN-OUT_CLEAN        drop +0.0282  (+d 0.6293, -d 0.6248)  KL 2.695
+  SCHEMA:LIGHT-DARK          drop +0.0808  (+d 0.5909, -d 0.5579)  KL 2.664
+  SCHEMA:PATH-MOTION         drop +0.0794  (+d 0.5677, -d 0.5841)  KL 3.182
+  SINGLE                     drop median +0.0668 [5% +0.0492, 95% +0.1492]   KL median 3.256
+  PAIR                       drop median +0.0700 [5% +0.0417, 95% +0.1421]   KL median 3.174
+  MUSH                       drop median +0.0756 [5% +0.0433, 95% +0.1389]   KL median 2.912
+  GAUSS                      drop median +0.1300 [5% +0.0865, 95% +0.1715]   KL median 2.620
+  Q1: UP-DOWN drop +0.0632; largest SCHEMA:VALENCE (+0.1014); concentrated controls [+0.0458, +0.1428] -> UP_NOT_SPECIAL
+  Q2: mean schema drop +0.0686 -> CONCENTRATION_SUFFICIENT
+  Q3: corr(drop, KL) +0.15; corr(drop, entropy change) -0.20
+
+  >>> gpt2-medium L4: UP_NOT_SPECIAL | CONCENTRATION_SUFFICIENT <<<

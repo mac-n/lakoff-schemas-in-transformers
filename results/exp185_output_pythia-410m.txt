@@ -1,0 +1,21 @@
+
+Loading pythia-410m...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<04:06,  1.18it/s]Loading weights:  33%|███▎      | 96/292 [00:00<00:01, 131.87it/s]Loading weights:  47%|████▋     | 138/292 [00:01<00:01, 139.55it/s]Loading weights:  58%|█████▊    | 168/292 [00:01<00:00, 140.16it/s]Loading weights:  66%|██████▌   | 192/292 [00:01<00:00, 139.21it/s]Loading weights:  73%|███████▎  | 213/292 [00:01<00:00, 148.00it/s]Loading weights:  80%|███████▉  | 233/292 [00:01<00:00, 141.08it/s]Loading weights:  86%|████████▌ | 251/292 [00:02<00:00, 145.08it/s]Loading weights:  93%|█████████▎| 272/292 [00:02<00:00, 157.39it/s]Loading weights: 100%|██████████| 292/292 [00:02<00:00, 131.50it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+MECHANICS CHECKS (common-word frames only)
+  own-state drop max KL 4.56e-07 | last-layer drop, later positions 1.89e-07 | earlier positions 2.79e-07 | real drop E_next 43.197 -> ok
+  own-state drop max KL 4.93e-07 | last-layer drop, later positions 1.44e-07 | earlier positions 2.07e-07 | real drop E_next 35.999 -> ok
+  own-state drop max KL 3.22e-07 | last-layer drop, later positions 1.95e-07 | earlier positions 2.60e-07 | real drop E_next 58.940 -> ok
+  own-state drop max KL 3.98e-07 | last-layer drop, later positions 3.08e-07 | earlier positions 2.79e-07 | real drop E_next 33.279 -> ok
+MECHANICS PASS
+  'big' recomputed against exp180's saved value: difference 0.00e+00 -> ok
+
+========================================================================
+RESULTS — pythia-410m
+========================================================================
+  BUNDLE  32 pairs: first minus second +0.132  d_z +0.43  p 0.0184  (22/32 positive) | at equal frequency +0.195 CI[+0.071,+0.291] -> HOLDS
+  NO-LINK 29 pairs: first minus second +0.224  d_z +0.51  p 0.0095  (20/29 positive) | at equal frequency +0.253 CI[+0.102,+0.386] -> HOLDS
+  BUNDLE minus NO-LINK: -0.092  p 0.3445
+  by source (descriptive): BUNDLE old +0.228 (p 0.002, 13/16) | NO-LINK old +0.123 (p 0.306, 5/9) | BUNDLE new +0.036 (p 0.659, 9/16) | NO-LINK new +0.270 (p 0.021, 15/20)
+
+  >>> pythia-410m: ANY_DEFAULT <<<

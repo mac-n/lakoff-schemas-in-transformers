@@ -1,0 +1,21 @@
+
+Loading gpt2-medium...
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 4091.59it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+MECHANICS CHECKS (common-word frames only)
+  own-state drop max KL 6.49e-07 | last-layer drop, later positions 2.41e-07 | earlier positions 4.52e-07 | real drop E_next 60.646 -> ok
+  own-state drop max KL 5.45e-07 | last-layer drop, later positions 5.18e-07 | earlier positions 3.78e-07 | real drop E_next 82.922 -> ok
+  own-state drop max KL 2.98e-07 | last-layer drop, later positions 2.11e-07 | earlier positions 1.24e-07 | real drop E_next 60.892 -> ok
+  own-state drop max KL 4.52e-07 | last-layer drop, later positions 2.07e-07 | earlier positions 4.52e-07 | real drop E_next 33.169 -> ok
+MECHANICS PASS
+  'big' recomputed against exp180's saved value: difference 0.00e+00 -> ok
+
+========================================================================
+RESULTS — gpt2-medium
+========================================================================
+  BUNDLE  32 pairs: first minus second +0.066  d_z +0.27  p 0.1462  (21/32 positive) | at equal frequency +0.111 CI[+0.032,+0.176] -> does not hold
+  NO-LINK 29 pairs: first minus second +0.299  d_z +0.92  p 0.0001  (25/29 positive) | at equal frequency +0.313 CI[+0.191,+0.425] -> HOLDS
+  BUNDLE minus NO-LINK: -0.233  p 0.0026
+  by source (descriptive): BUNDLE old +0.150 (p 0.030, 13/16) | NO-LINK old +0.173 (p 0.082, 8/9) | BUNDLE new -0.019 (p 0.713, 8/16) | NO-LINK new +0.356 (p 0.000, 17/20)
+
+  >>> gpt2-medium: UNCLEAR <<<

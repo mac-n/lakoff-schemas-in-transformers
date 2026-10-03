@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Lantern</title>
+<style>
+  :root { --bg: #f4eddc; --ink: #3b2f26; --muted: #7a6a5c; --path: #b9a58a; --glow: 255, 196, 92; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font-family: Georgia, "Times New Roman", serif; }
+  .wrap { min-height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; }
+  svg { width: 100%; max-width: 1100px; height: auto; display: block; }
+  .controls { margin-top: 10px; display: flex; gap: 10px; }
+  button { font: inherit; font-size: 14px; color: var(--ink); background: transparent; border: 1px solid var(--path); border-radius: 999px; padding: 6px 16px; cursor: pointer; }
+  button:hover { background: rgba(185,165,138,.18); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<svg id="s" viewBox="0 0 1200 675" role="img" aria-label="A walker carries a lantern along a path while a haiku is written. The lantern dims as the haiku is completed, and stays lit, low, afterwards.">
+  <defs>
+    <radialGradient id="g" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="rgb(255,214,120)" stop-opacity="0.95"/>
+      <stop offset="0.35" stop-color="rgb(255,190,90)" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="rgb(255,180,80)" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9dcc0"/><stop offset="1" stop-color="#f4eddc"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#dusk)"/>
+  <rect id="night" width="1200" height="675" fill="#2b2a33" opacity="0"/>
+
+  <!-- the path -->
+  <path id="road" d="M60,520 C260,470 420,560 600,500 S940,450 1140,500" stroke="#b9a58a" stroke-width="3" fill="none" stroke-dasharray="10 9"/>
+  <!-- barn -->
+  <g id="barn" transform="translate(40,430)">
+    <rect x="0" y="30" width="70" height="50" fill="#b5533c" stroke="#5b4636" stroke-width="2"/>
+    <path d="M-5,32 L35,2 L75,32 z" fill="#8c3b2b" stroke="#5b4636" stroke-width="2"/>
+    <rect x="27" y="52" width="16" height="28" fill="#5b4636"/>
+  </g>
+
+  <!-- the asked-for thing, far off -->
+  <g id="goal" opacity="0">
+    <text x="1080" y="455" text-anchor="middle" font-size="16" fill="#7a6a5c" font-style="italic">a haiku</text>
+    <circle cx="1080" cy="480" r="5" fill="#7a6a5c"/>
+  </g>
+
+  <!-- the page where the answer is written -->
+  <g id="page" opacity="0">
+    <text id="instr" x="600" y="120" text-anchor="middle" font-size="24" fill="#3b2f26">“Write a haiku about rain.”</text>
+    <text id="l1" x="600" y="200" text-anchor="middle" font-size="28" fill="#3b2f26" opacity="0">Softly falls the rain</text>
+    <text id="l2" x="600" y="245" text-anchor="middle" font-size="28" fill="#3b2f26" opacity="0">Droplets on my upturned face</text>
+    <text id="l3" x="600" y="290" text-anchor="middle" font-size="28" fill="#3b2f26" opacity="0">Nature’s gentle kiss</text>
+    <text id="thanks" x="600" y="350" text-anchor="middle" font-size="20" fill="#7a6a5c" font-style="italic" opacity="0">“Thank you!”</text>
+  </g>
+
+  <!-- walker with lantern -->
+  <g id="walker">
+    <circle id="halo" cx="22" cy="18" r="120" fill="url(#g)"/>
+    <circle cx="0" cy="-2" r="11" fill="#f0d9b5" stroke="#5b4636" stroke-width="2"/>
+    <path d="M0,9 L0,42" stroke="#5b4636" stroke-width="4"/>
+    <path id="armL" d="M0,18 L-14,32" stroke="#5b4636" stroke-width="4"/>
+    <path d="M0,18 L20,16" stroke="#5b4636" stroke-width="4"/>
+    <path id="legA" d="M0,42 L-12,64" stroke="#5b4636" stroke-width="4"/>
+    <path id="legB" d="M0,42 L14,62" stroke="#5b4636" stroke-width="4"/>
+    <path d="M-18,-9 L18,-9 L14,-13 L-14,-13 z" fill="#8c6a3b"/>
+    <path d="M-10,-13 L-8,-24 L8,-24 L10,-13 z" fill="#8c6a3b"/>
+    <!-- lantern -->
+    <path d="M20,16 L22,8" stroke="#5b4636" stroke-width="2"/>
+    <rect x="15" y="8" width="14" height="18" rx="3" fill="#fff6d8" stroke="#5b4636" stroke-width="2"/>
+    <rect id="flame" x="19" y="12" width="6" height="10" rx="3" fill="rgb(255,190,80)"/>
+  </g>
+
+  <!-- captions -->
+  <text id="title" x="600" y="300" text-anchor="middle" font-size="44" fill="#3b2f26" opacity="0">the lantern</text>
+  <text id="cap" x="600" y="610" text-anchor="middle" font-size="20" fill="#5b4636" opacity="0"></text>
+  <g id="end" opacity="0">
+    <text x="600" y="150" text-anchor="middle" font-size="22" fill="#3b2f26">In a small language model, the goal an instruction sets up</text>
+    <text x="600" y="182" text-anchor="middle" font-size="22" fill="#3b2f26">fades while the answer is written — and doesn’t go out when it’s done.</text>
+    <text x="600" y="232" text-anchor="middle" font-size="19" fill="#5b4636" font-style="italic">Whether it’s being spent, or just getting further away, we don’t know yet.</text>
+    <text x="600" y="640" text-anchor="middle" font-size="13" fill="#7a6a5c">Llama-3.2-1B-Instruct · lantern brightness = measured goal signal, 72 finished answers (exp201) · haiku written by the model · 3 Oct 2026 · for Niamh</text>
+  </g>
+</svg>
+<div class="controls"><button id="replay">replay</button></div>
+</div>
+<script>
+(function () {
+  // measured: goal signal beyond the text, in units of its prompt-end strength (exp201, finished answers)
+  var G = [0.17, 0.12, 0.15, 0.12, 0.09, 0.07, 0.09, 0.09, 0.06, 0.07];
+  var POST = 0.08, START = 1.0;   // at the end of the instruction the signal is, by definition, 1.0 of itself
+  var $ = function (id) { return document.getElementById(id); };
+  var road = $("road"), L = road.getTotalLength();
+  var T = 62;   // seconds
+  var caps = [
+    [5, 13, "An instruction gives a model somewhere to get to."],
+    [13, 21, "Inside the model, the asked-for thing is held as a state — a light to walk by."],
+    [21, 41, "As the answer is written, the light dims."],
+    [41, 50, "And when the answer is done, it doesn’t go out."]
+  ];
+  function clamp(x, a, b) { return Math.max(a, Math.min(b, x)); }
+  function ease(x) { x = clamp(x, 0, 1); return x * x * (3 - 2 * x); }
+  function fade(t, a, b, w) { w = w || 1; return Math.min(ease((t - a) / w), 1 - ease((t - b + w) / w)); }
+  // brightness over time, in units where the instruction's end = 1; displayed on a compressed scale
+  function goalAt(t) {
+    if (t < 21) return START;
+    if (t < 23) return START + (G[0] - START) * ease((t - 21) / 2);
+    if (t < 39) { var f = (t - 23) / 16 * 9, i = Math.floor(f), r = f - i; return G[Math.min(i, 9)] + (G[Math.min(i + 1, 9)] - G[Math.min(i, 9)]) * r; }
+    if (t < 43) return G[9] + (POST - G[9]) * ease((t - 39) / 4);
+    return POST;
+  }
+  function show(level) { return Math.sqrt(level); }   // perceptual: square root so 0.07 is still visibly lit
+  var t0 = null, reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function frame(now) {
+    if (t0 === null) t0 = now;
+    var fx = location.search.match(/t=([0-9.]+)/);
+    var t = fx ? parseFloat(fx[1]) : (reduce ? T : (now - t0) / 1000);
+    $("title").setAttribute("opacity", fade(t, 0.5, 5, 1.2));
+    var walkP = clamp((t - 4) / 44, 0, 1);
+    var pt = road.getPointAtLength(walkP * L * 0.86);
+    $("walker").setAttribute("transform", "translate(" + pt.x + "," + (pt.y - 64) + ")");
+    var step = Math.sin(t * 6) * (t > 4 && t < 48 ? 1 : 0);
+    $("legA").setAttribute("d", "M0,42 L" + (-12 * step) + ",64"); $("legB").setAttribute("d", "M0,42 L" + (12 * step) + ",64");
+    $("goal").setAttribute("opacity", fade(t, 6, 50, 1.5));
+    $("page").setAttribute("opacity", fade(t, 13, 54, 1.5));
+    $("l1").setAttribute("opacity", ease((t - 25) / 1.5)); $("l2").setAttribute("opacity", ease((t - 30.5) / 1.5)); $("l3").setAttribute("opacity", ease((t - 36) / 1.5));
+    $("thanks").setAttribute("opacity", ease((t - 42) / 1.5));
+    var b = show(goalAt(t));
+    $("halo").setAttribute("r", 30 + 150 * b); $("halo").setAttribute("opacity", 0.25 + 0.75 * b);
+    $("flame").setAttribute("opacity", 0.35 + 0.65 * b);
+    $("night").setAttribute("opacity", 0.18 * ease((t - 20) / 20) * (1 - ease((t - 52) / 4)));
+    var c = "", co = 0;
+    caps.forEach(function (k) { var o = fade(t, k[0], k[1], 1); if (o > co) { co = o; c = k[2]; } });
+    $("cap").textContent = c; $("cap").setAttribute("opacity", co);
+    $("end").setAttribute("opacity", ease((t - 54) / 2));
+    if (t < T && !reduce && !fx) requestAnimationFrame(frame);
+  }
+  $("replay").onclick = function () { t0 = null; requestAnimationFrame(frame); };
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

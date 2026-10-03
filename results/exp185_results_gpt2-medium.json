@@ -1,0 +1,101 @@
+{
+ "model": "gpt2-medium",
+ "bundle": {
+  "n": 32,
+  "mean": 0.06554389678266008,
+  "d_z": 0.26921566609407294,
+  "p": 0.1461853814618538,
+  "n_positive": 21,
+  "intercept": 0.11092922069287722,
+  "intercept_ci": [
+   0.03174350241939596,
+   0.17640595548507282
+  ],
+  "mean_zipf_diff": 0.38625
+ },
+ "nolink": {
+  "n": 29,
+  "mean": 0.2987533689531415,
+  "d_z": 0.9167627453455183,
+  "p": 9.999000099990002e-05,
+  "n_positive": 25,
+  "intercept": 0.3125765175698094,
+  "intercept_ci": [
+   0.19129400126218313,
+   0.42471915453489173
+  ],
+  "mean_zipf_diff": 0.0651724137931034
+ },
+ "spec": {
+  "diff": -0.23320947217048138,
+  "p": 0.0025997400259974
+ },
+ "verdict": "UNCLEAR",
+ "pair_diffs": {
+  "bundle": {
+   "big/small": 0.064,
+   "large/little": 0.258,
+   "long/short": 0.168,
+   "wide/narrow": 0.136,
+   "fast/slow": -0.091,
+   "hot/cold": 0.142,
+   "thick/thin": 0.165,
+   "strong/weak": 0.143,
+   "full/empty": 0.013,
+   "rich/poor": 0.203,
+   "loud/quiet": 0.43,
+   "bright/dark": 0.105,
+   "many/few": -0.18,
+   "more/less": -0.36,
+   "major/minor": 0.395,
+   "plus/minus": 0.803,
+   "huge/tiny": -0.078,
+   "maximum/minimum": -0.24,
+   "increase/decrease": 0.064,
+   "gain/loss": 0.173,
+   "grow/shrink": 0.012,
+   "add/subtract": -0.319,
+   "winner/loser": 0.216,
+   "superior/inferior": -0.047,
+   "senior/junior": -0.008,
+   "awake/asleep": 0.175,
+   "alive/dead": 0.198,
+   "healthy/sick": 0.006,
+   "active/passive": -0.015,
+   "master/slave": -0.479,
+   "majority/minority": -0.104,
+   "abundant/scarce": 0.148
+  },
+  "nolink": {
+   "near/far": -0.303,
+   "front/back": 0.412,
+   "forward/backward": 0.016,
+   "inside/outside": 0.047,
+   "before/after": 0.516,
+   "in/out": 0.221,
+   "early/late": 0.203,
+   "open/closed": 0.187,
+   "wet/dry": 0.256,
+   "here/there": 0.693,
+   "this/that": 0.033,
+   "now/then": -0.234,
+   "come/go": 0.639,
+   "give/take": 0.411,
+   "push/pull": 0.605,
+   "buy/sell": 0.383,
+   "left/right": 0.584,
+   "north/south": 0.138,
+   "east/west": 0.528,
+   "male/female": 0.194,
+   "day/night": -0.294,
+   "land/sea": -0.148,
+   "start/finish": 0.506,
+   "begin/end": 0.779,
+   "send/receive": 0.054,
+   "read/write": 0.207,
+   "question/answer": 0.958,
+   "cause/effect": 0.658,
+   "input/output": 0.417
+  }
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "verdict": "NOUN_LEAK",
+ "results": {
+  "4": {
+   "train": 1.0,
+   "metaphor": 0.703125,
+   "cue_free": 0.625,
+   "control": 0.765625,
+   "shuffle_p95": 0.6875,
+   "shuffle_median": 0.5
+  },
+  "8": {
+   "train": 1.0,
+   "metaphor": 0.921875,
+   "cue_free": 0.8125,
+   "control": 0.7578125,
+   "shuffle_p95": 0.640625,
+   "shuffle_median": 0.5
+  },
+  "12": {
+   "train": 1.0,
+   "metaphor": 0.796875,
+   "cue_free": 0.6875,
+   "control": 0.7265625,
+   "shuffle_p95": 0.625,
+   "shuffle_median": 0.5
+  },
+  "16": {
+   "train": 1.0,
+   "metaphor": 0.6875,
+   "cue_free": 0.625,
+   "control": 0.734375,
+   "shuffle_p95": 0.609375,
+   "shuffle_median": 0.5
+  },
+  "20": {
+   "train": 1.0,
+   "metaphor": 0.59375,
+   "cue_free": 0.5,
+   "control": 0.71875,
+   "shuffle_p95": 0.609375,
+   "shuffle_median": 0.5
+  }
+ }
+}

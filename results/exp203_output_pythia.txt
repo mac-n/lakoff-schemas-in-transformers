@@ -1,0 +1,6 @@
+exp203 (Pythia 1.4B L12) — affect without uplifted/low; directions and scoring from exp187
+  clean word states: 256 words x 8 sentences
+  cos(CLEAN_UP, ORIG_ulak) +0.511  cos(CLEAN_UP, ORIG_u111) +0.525  cos(CLEAN_UP, CLEAN_VALENCE) +0.165  cos(CLEAN_UP, CLEAN_BUNDLE) +0.406
+  affect candidates: ([29874, 28684, 9049, 5211], [20138, 8872, 11926, 23201, 29281])
+  CLEAN_UP +1.348 | CLEAN_VALENCE +3.028 | null median -0.063, 95th +0.702, max +0.965
+  >>> Pythia L12: SURVIVES <<<

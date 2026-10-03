@@ -1,0 +1,10 @@
+exp200 — is goal a role given to what an instruction asks for? (Llama-3.2-1B-Instruct; prereg frozen at d8bad61)
+
+  layer  goal-only shift  frac>0  source-only shift  frac<0   shuffle 5-95%
+      3           +0.059    0.69             -0.038    0.69  -0.172/+0.208 
+      6           +0.017    0.59             -0.202    0.91  -0.321/+0.381    <- primary
+      8           +0.152    0.88             -0.016    0.62  -0.373/+0.366 
+     10           +0.367    1.00             +0.081    0.25  -0.295/+0.278 
+     13           +0.404    1.00             +0.150    0.16  -0.322/+0.330 
+
+  >>> Llama-3.2-1B-Instruct, layer 6: NOT_A_ROLE (goal-only shift +0.017, source-only shift -0.202, shuffle [-0.321, +0.381]) <<<

@@ -1,0 +1,73 @@
+exp176 — Pythia BALANCE<->entropy with a start token (prereg frozen at 238a03d)
+exp166 harness validation (no model load)
+============================================================
+  selftest_classifiers: PASS (gate (a) all-neg, contiguity, CI, floor, carrier-precondition, control, verdict).
+  synthetic_quad_stack_test: PASS  (leak c2=-0.66->c2q=-0.04 killed; genuine c2=-0.63->c2q=-0.64 spared).
+  prompts: 40 frozen, checksum 4d54ff4297bd7e2c OK, overlap check OK.
+HARNESS OK — safe to execute the model run.
+
+vocab: 489 words (est 312 / test 177)
+
+========================================================================
+1. REPLICATION GATE — pythia-410m WITHOUT a start token (as exp166)
+========================================================================
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:01<05:44,  1.18s/it]Loading weights:  31%|███       | 90/292 [00:01<00:02, 95.20it/s]Loading weights:  47%|████▋     | 136/292 [00:01<00:01, 99.12it/s]Loading weights:  57%|█████▋    | 166/292 [00:02<00:01, 97.66it/s]Loading weights:  64%|██████▍   | 188/292 [00:02<00:01, 94.34it/s]Loading weights:  70%|███████   | 205/292 [00:02<00:00, 102.01it/s]Loading weights:  76%|███████▌  | 222/292 [00:02<00:00, 104.80it/s]Loading weights:  81%|████████  | 237/292 [00:02<00:00, 100.04it/s]Loading weights:  86%|████████▌ | 250/292 [00:02<00:00, 101.44it/s]Loading weights:  90%|█████████ | 264/292 [00:03<00:00, 98.71it/s] Loading weights:  95%|█████████▍| 276/292 [00:03<00:00, 102.31it/s]Loading weights: 100%|██████████| 292/292 [00:03<00:00, 91.08it/s] 
+Loaded pretrained model pythia-410m into HookedTransformer
+  C5 axis-word exclusion: 2 tokens dropped/layer-set
+    L  carrier   C2(lin)  C2q(quad)         C2q 95%CI     n  cos(BAL,d_norm_ho)
+    5     0.96    -0.058     -0.047 [-0.167,+0.055]   473  +0.716  
+   11     0.92    -0.010     -0.007 [-0.109,+0.098]   473  +0.633  exp166 band
+   12     0.91    -0.061     -0.048 [-0.149,+0.051]   473  +0.638  exp166 band
+   18     0.89    +0.025     +0.007 [-0.097,+0.113]   473  +0.655  
+  exp166 had C2q {5: -0.047, 11: -0.007, 12: -0.048, 18: 0.007}, carriers {5: 0.96, 11: 0.92, 12: 0.91, 18: 0.89}, n 473
+REPLICATION GATE PASS
+
+  (descriptive) the same no-start-token run read at the test layers:
+    L  carrier   C2(lin)  C2q(quad)         C2q 95%CI     n  cos(BAL,d_norm_ho)
+    3     0.94    -0.057     -0.045 [-0.150,+0.071]   473  +0.726  
+    5     0.96    -0.058     -0.047 [-0.148,+0.058]   473  +0.716  
+    8     0.94    +0.051     +0.066 [-0.041,+0.157]   473  +0.678  primary
+   11     0.92    -0.010     -0.007 [-0.109,+0.092]   473  +0.633  
+   12     0.91    -0.061     -0.048 [-0.153,+0.055]   473  +0.638  primary
+   16     0.90    +0.004     +0.018 [-0.077,+0.114]   473  +0.652  primary
+   18     0.89    +0.025     +0.007 [-0.111,+0.113]   473  +0.655  
+   20     0.87    +0.207     +0.210 [+0.127,+0.291]   473  +0.663  
+
+========================================================================
+3. THE TEST — pythia-410m WITH a start token
+========================================================================
+  C5 axis-word exclusion: 2 tokens dropped/layer-set
+    L  carrier   C2(lin)  C2q(quad)         C2q 95%CI     n  cos(BAL,d_norm_ho)
+    3     0.85    +0.310     +0.264 [+0.167,+0.355]   513  +0.460  
+    5     0.76    -0.000     -0.007 [-0.100,+0.087]   513  +0.425  
+    8     0.71    -0.186     -0.196 [-0.268,-0.121]   513  +0.314  primary
+   11     0.73    -0.039     -0.062 [-0.151,+0.020]   513  -0.041  secondary band
+   12     0.72    +0.014     -0.009 [-0.105,+0.087]   513  -0.053  primary
+   16     0.77    -0.012     -0.016 [-0.122,+0.082]   513  +0.014  primary
+   18     0.80    +0.087     +0.084 [-0.019,+0.176]   513  -0.078  
+   20     0.84    +0.151     +0.176 [+0.072,+0.261]   513  -0.122  
+
+========================================================================
+2. POSITIVE CONTROL — gpt2-medium, untouched
+========================================================================
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 6961.66it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+  C5 axis-word exclusion: 1 tokens dropped/layer-set
+    L  carrier   C2(lin)  C2q(quad)         C2q 95%CI     n  cos(BAL,d_norm_ho)
+    3     0.83    -0.361     -0.322 [-0.395,-0.259]   513  +0.491  
+    8     0.72    -0.229     -0.266 [-0.372,-0.164]   513  +0.258  control
+   12     0.64    -0.319     -0.320 [-0.403,-0.247]   513  +0.181  control
+   16     0.75    -0.140     -0.145 [-0.238,-0.051]   513  -0.264  control
+  exp166 had C2q {3: -0.322, 8: -0.266, 12: -0.32, 16: -0.145}
+POSITIVE CONTROL PASS; matches exp166 within 0.02: True
+
+========================================================================
+VERDICT vs PREREG_exp176.md
+========================================================================
+  PRIMARY {8,12,16} with a start token:    L8:-0.196[-0.27,-0.12](car0.71), L12:-0.009[-0.11,+0.09](car0.72), L16:-0.016[-0.12,+0.08](car0.77)
+  same layers without a start token:       L8:+0.066[-0.04,+0.16](car0.94), L12:-0.048[-0.15,+0.06](car0.91), L16:+0.018[-0.08,+0.11](car0.90)
+  SECONDARY band {11,12} with start token: NULL  (no contiguous >=2 run clears CI+floor)  L11:-0.062[-0.15,+0.02](car0.73), L12:-0.009[-0.11,+0.09](car0.72)
+
+  >>> NULL <<<
+
+results saved to exp176_results.json

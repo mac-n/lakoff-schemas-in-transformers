@@ -1,0 +1,28 @@
+rows 1440
+
+POST-HOC DESCRIPTIVE (not registered). UP_literal readout, cell means x1000, pass 1
+ L 4: hap-int  -53.36  hap-shu  -53.76  neu-int  -63.41  neu-shu  -62.31  sad-int  -63.32  sad-shu  -63.79
+ L 8: hap-int  -18.09  hap-shu  -13.62  neu-int  -32.44  neu-shu  -25.66  sad-int  -33.64  sad-shu  -27.56
+ L12: hap-int  -12.75  hap-shu  -10.48  neu-int  -22.31  neu-shu  -19.89  sad-int  -27.86  sad-shu  -24.01
+ L16: hap-int  -22.93  hap-shu  -24.24  neu-int  -32.10  neu-shu  -31.33  sad-int  -33.12  sad-shu  -34.27
+ L20: hap-int   +5.40  hap-shu   +4.49  neu-int   -1.22  neu-shu   +0.47  sad-int   -2.20  sad-shu   -2.10
+
+The crossing Niamh named (text coherence): sad-INTACT vs happy-SCRAMBLED on UP_literal, d_z by triple (positive = the coherent sad text reads more UP)
+  L4 -1.14  L8 -2.12  L12 -1.83  L16 -0.96  L20 -0.84
+
+Pass effect on UP_literal readout (pass2 - pass1, intact), d_z over 120 sentences; and on C
+  UP: L4 +6.44  L8 +5.33  L12 +2.87  L16 +5.45  L20 +6.65
+  C: -5.10
+
+Within pass 1 only: across sentences, corr( C(intact)-C(scrambled), UP(intact)-UP(scrambled) )
+  L4: r = +0.103
+  L8: r = -0.261
+  L12: r = -0.333
+  L16: r = -0.345
+  L20: r = -0.241
+
+Scramble effect on path length and straightness, pass 1 (intact - scrambled) d_z
+  path -1.33  straight -3.34
+  norm: L4 +2.13  L8 +1.25  L12 +0.95  L16 -1.02  L20 -2.06
+
+Valence effect on C (happy vs sad, intact p1, by triple) d_z: 0.0

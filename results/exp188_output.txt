@@ -1,0 +1,66 @@
+exp188 — steering UP and layer agreement (prereg frozen at d9d6704)
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:00<00:34,  8.41it/s]Loading weights:  66%|██████▌   | 192/292 [00:00<00:00, 1035.76it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 991.25it/s] 
+Loaded pretrained model pythia-410m into HookedTransformer
+  directions: UP, VALENCE, 40 random-word; pool 215 words; cos(UP, VALENCE) +0.219
+  mean state norm at layer 4: 20.52
+  unsteered: straight 0.2220  write_cos 0.0401  end_norm 50.6900  path 238.1997  net 52.9459
+  UP done
+  VALENCE done
+  NULL_00 done
+  NULL_01 done
+  NULL_02 done
+  NULL_03 done
+  NULL_04 done
+  NULL_05 done
+  NULL_06 done
+  NULL_07 done
+  NULL_08 done
+  NULL_09 done
+  NULL_10 done
+  NULL_11 done
+  NULL_12 done
+  NULL_13 done
+  NULL_14 done
+  NULL_15 done
+  NULL_16 done
+  NULL_17 done
+  NULL_18 done
+  NULL_19 done
+  NULL_20 done
+  NULL_21 done
+  NULL_22 done
+  NULL_23 done
+  NULL_24 done
+  NULL_25 done
+  NULL_26 done
+  NULL_27 done
+  NULL_28 done
+  NULL_29 done
+  NULL_30 done
+  NULL_31 done
+  NULL_32 done
+  NULL_33 done
+  NULL_34 done
+  NULL_35 done
+  NULL_36 done
+  NULL_37 done
+  NULL_38 done
+  NULL_39 done
+
+============================================================================
+A(d, C) = measure with +C*d minus measure with −C*d, mean over 120 sentences
+============================================================================
+  straight  C=0.5: A(UP) -0.00029 (p 0.6207, 60/120 sentences) | random-word null: median +0.00057 [5% -0.00897, 95% +0.00995]; UP at the 45th percentile | A(VALENCE) +0.00023 | vs unsteered: +UP -0.00450, −UP -0.00421
+  straight  C=1.0: A(UP) +0.02581 (p 0.0001, 120/120 sentences) | random-word null: median +0.00035 [5% -0.02159, 95% +0.02131]; UP at the 98th percentile | A(VALENCE) +0.01906 | vs unsteered: +UP -0.02479, −UP -0.05060
+  write_cos C=0.5: A(UP) +0.01337 (p 0.0001, 103/120 sentences) | random-word null: median -0.00306 [5% -0.02271, 95% +0.01095]; UP at the 95th percentile | A(VALENCE) -0.00173 | vs unsteered: +UP +0.00342, −UP -0.00995
+  write_cos C=1.0: A(UP) +0.02739 (p 0.0001, 120/120 sentences) | random-word null: median -0.00405 [5% -0.04442, 95% +0.02816]; UP at the 92th percentile | A(VALENCE) +0.04307 | vs unsteered: +UP -0.04045, −UP -0.06784
+  end_norm  C=0.5: A(UP) -0.91784 (p 0.0001, 43/120 sentences) | random-word null: median +0.46105 [5% -2.92003, 95% +4.10797]; UP at the 35th percentile | A(VALENCE) +0.33918 | vs unsteered: +UP -0.07936, −UP +0.83848
+  end_norm  C=1.0: A(UP) +3.20205 (p 0.0001, 104/120 sentences) | random-word null: median -0.42465 [5% -8.97276, 95% +8.96848]; UP at the 60th percentile | A(VALENCE) +5.48008 | vs unsteered: +UP -2.32775, −UP -5.52980
+  path      C=0.5: A(UP) -1.35249 (p 0.0457, 52/120 sentences) | random-word null: median +2.50752 [5% -7.39690, 95% +9.31705]; UP at the 35th percentile | A(VALENCE) -1.79671 | vs unsteered: +UP +7.78865, −UP +9.14114
+  path      C=1.0: A(UP) -22.34340 (p 0.0001, 0/120 sentences) | random-word null: median +9.13571 [5% -25.01134, 95% +27.95305]; UP at the 8th percentile | A(VALENCE) -8.37033 | vs unsteered: +UP +29.87920, −UP +52.22260
+  net       C=0.5: A(UP) -0.46945 (p 0.0140, 53/120 sentences) | random-word null: median +0.74795 [5% -2.16271, 95% +3.66570]; UP at the 38th percentile | A(VALENCE) -0.41120 | vs unsteered: +UP +0.56086, −UP +1.03031
+  net       C=1.0: A(UP) +3.14128 (p 0.0001, 106/120 sentences) | random-word null: median +0.08292 [5% -7.66633, 95% +11.37491]; UP at the 60th percentile | A(VALENCE) +3.24076 | vs unsteered: +UP -0.31188, −UP -3.45316
+
+  >>> STRAIGHT (primary): NOT_BEYOND_RANDOM <<<
+  same rule on WRITE_COS: NOT_BEYOND_RANDOM; on the endpoint norm: NOT_BEYOND_RANDOM
+results saved to exp188_results.json

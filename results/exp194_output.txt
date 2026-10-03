@@ -1,0 +1,49 @@
+exp194 — clean UP steering in GPT-2-medium (prereg frozen at c70dac8)
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 9937.33it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+  clean word states: 256 words x 8 sentences
+
+--- layer 12 (PRIMARY) ---
+  CLEAN_UP dose curve:     s  patient_heig  pool_depth_c  door_width_c  widget_quant        status        affect
+                         -12       175.258       161.494       107.592        17.937         1.821        -0.081
+                          -8       175.332       162.795       108.054        18.264         1.916         0.079
+                          -4       175.408       163.984       108.491        18.585         2.015         0.235
+                          -2       175.446       164.542       108.699        18.741         2.065         0.311
+                          +0       175.484       165.077       108.900        18.894         2.116         0.386
+                          +2       175.521       165.594       109.095        19.043         2.167         0.458
+                          +4       175.557       166.092       109.283        19.187         2.219         0.529
+                          +8       175.626       167.046       109.639        19.460         2.322         0.665
+                         +12       175.689       167.952       109.968        19.713         2.425         0.793
+                         +16       175.746       168.824       110.271        19.945         2.527         0.911
+    effect (+8 minus -8)  patient_heig  pool_depth_c  door_width_c  widget_quant        status        affect
+                 null 5%        -1.466        -5.910        -1.995        -1.058        -0.231        -0.327
+                null 95%        +1.593        +5.099        +1.976        +1.120        +0.253        +0.400
+                CLEAN_UP        +0.294         +4.250         +1.585         +1.196*        +0.406*        +0.586*
+           CLEAN_VALENCE        +0.088         -1.958         -1.479         +0.449         +0.106         +1.352*
+            CLEAN_BUNDLE        +1.517         +6.520*        +0.257         +1.895*        +0.454*        +0.527*
+            CLEAN_NOLINK        +0.134         +4.775         -0.088         +0.008         +0.057         +0.211 
+  sanity gate (valence moves affect): PASS  ->  layer 12: REPLICATES   [status moves: True, widgets move: True]
+
+--- layer 6 ---
+    effect (+8 minus -8)  patient_heig  pool_depth_c  door_width_c  widget_quant        status        affect
+                 null 5%        -1.465        -5.818        -1.454        -1.334        -0.180        -0.377
+                null 95%        +1.159        +5.736        +1.861        +1.071        +0.379        +0.313
+                CLEAN_UP        -0.427         +3.812         +1.746         +0.750         +0.504*        +0.455*
+           CLEAN_VALENCE        +0.422         -4.635         -0.630         +0.082         +0.281         +0.975*
+            CLEAN_BUNDLE        +1.004         +5.425         +0.585         +0.542         +0.459*        +0.359*
+            CLEAN_NOLINK        +0.253         +6.437*        +1.074         -0.054         +0.006         +0.179 
+  sanity gate (valence moves affect): PASS  ->  layer 6: REPLICATES   [status moves: True, widgets move: False]
+
+--- layer 18 ---
+    effect (+8 minus -8)  patient_heig  pool_depth_c  door_width_c  widget_quant        status        affect
+                 null 5%        -0.665        -3.395        -1.515        -0.557        -0.104        -0.163
+                null 95%        +0.828        +2.325        +1.900        +0.668        +0.124        +0.132
+                CLEAN_UP        +0.110         +1.695         +1.146         +0.154         +0.093         +0.255*
+           CLEAN_VALENCE        +0.164         -0.518         -0.165         +0.440         +0.000         +0.455*
+            CLEAN_BUNDLE        +1.254*        +0.123         -0.091         +0.784*        +0.129*        +0.173*
+            CLEAN_NOLINK        +0.440         -0.511         +0.199         +0.037         +0.040         +0.084 
+  sanity gate (valence moves affect): PASS  ->  layer 18: REPLICATES   [status moves: False, widgets move: False]
+
+  >>> GPT-2-medium, layer 12: REPLICATES <<<
+  other layers: L6 REPLICATES, L18 REPLICATES
+results saved to exp194_results.json; every cell in exp194_cells.json

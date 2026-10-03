@@ -1,0 +1,28 @@
+exp179 — causal test against matched controls — gpt2-medium (prereg frozen at 18f9d41)
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 5770.28it/s]
+Loaded pretrained model gpt2-medium into HookedTransformer
+real BALANCE token structure: positive 9 single + 6 split, negative 0 single + 15 split
+
+========================================================================
+LAYER 3 (PRIMARY)
+========================================================================
+  achieved entropy by tau: 0.50:0.378  0.70:0.515  0.85:0.599  1.00:0.666  1.25:0.750  1.50:0.807  2.00:0.877   monotone: YES
+  real BALANCE slope -0.0083 CI[-0.0088,-0.0078] Spearman -1.00   exp168 had -0.0083  ->  REPLICATION GATE PASS
+  MATCHED fake axes (same token split): median +0.0005 [5% -0.0053, 95% +0.0071], 44% negative; real BALANCE sits at the 0th percentile
+  SINGLE-ONLY fake axes: median +0.0003 [5% -0.0050, 95% +0.0051], 45% negative
+  CLEAN in-sentence BALANCE slope +0.0020 CI[+0.0016,+0.0024] | CLEAN-RANDOM: median +0.0001 [5% -0.0054, 95% +0.0057]; clean BALANCE sits at the 71th percentile
+
+  VERDICT: CAUSAL_BALANCE_SPECIFIC | CLEAN_CAUSAL_NOT_SPECIFIC
+
+========================================================================
+LAYER 8 (reported)
+========================================================================
+  achieved entropy by tau: 0.50:0.164  0.70:0.265  0.85:0.347  1.00:0.426  1.25:0.544  1.50:0.638  2.00:0.766   monotone: YES
+  real BALANCE slope -0.0018 CI[-0.0023,-0.0012] Spearman -1.00   exp168 had -0.0018  ->  REPLICATION GATE PASS
+  MATCHED fake axes (same token split): median +0.0001 [5% -0.0027, 95% +0.0026], 47% negative; real BALANCE sits at the 12th percentile
+  SINGLE-ONLY fake axes: median +0.0001 [5% -0.0031, 95% +0.0029], 48% negative
+  CLEAN in-sentence BALANCE slope -0.0026 CI[-0.0031,-0.0020] | CLEAN-RANDOM: median -0.0003 [5% -0.0027, 95% +0.0025]; clean BALANCE sits at the 6th percentile
+
+  at this layer the rule would read: CAUSAL_NEITHER | CLEAN_CAUSAL_NOT_SPECIFIC
+
+results saved to exp179_results.json

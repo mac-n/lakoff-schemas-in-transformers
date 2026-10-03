@@ -1,0 +1,11 @@
+exp198 — source/goal role transfer, cue-disjoint (pythia-410m; prereg frozen at 5326a4c)
+  cue words shared between LITERAL-CF and ABSTRACT-CF after stop-words: ['came']
+
+  layer  LOO lit  ABSTRACT-CF  SWAPPED  NO-JOURNEY    shuf 5-95%  FT->FT  CF->FT
+      4     0.56         0.59     0.47        0.53   0.39-0.61      0.73    0.67
+      8     0.88         0.67     0.66        0.50   0.38-0.61      1.00    0.98   <- primary
+     12     0.88         0.73     0.70        0.48   0.38-0.64      0.94    0.90
+     16     0.83         0.70     0.70        0.50   0.39-0.64      0.92    0.88
+     20     0.83         0.73     0.66        0.50   0.34-0.64      0.77    0.83
+
+  >>> pythia-410m, layer 8: TRANSFERS (abstract 0.67, swapped 0.66, no-journey 0.50, shuffle 95th 0.61); peak layer 12 <<<

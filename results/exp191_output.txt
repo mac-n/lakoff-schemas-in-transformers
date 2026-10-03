@@ -1,0 +1,91 @@
+exp191 — the suffix finding, clean (prereg frozen at 85b306c)
+  single-token pairs after exclusions: ER 19, EST 10, ING 26, ED 23, S 27, UN 17, RE 9
+  words: 673; null pool 363
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights:   0%|          | 1/292 [00:01<05:27,  1.13s/it]Loading weights:  33%|███▎      | 96/292 [00:01<00:01, 103.58it/s]Loading weights:  47%|████▋     | 138/292 [00:01<00:01, 110.29it/s]Loading weights:  57%|█████▋    | 166/292 [00:01<00:01, 110.38it/s]Loading weights:  64%|██████▍   | 188/292 [00:02<00:00, 113.01it/s]Loading weights:  71%|███████   | 207/292 [00:02<00:00, 115.75it/s]Loading weights:  77%|███████▋  | 224/292 [00:02<00:00, 123.09it/s]Loading weights:  83%|████████▎ | 241/292 [00:02<00:00, 119.18it/s]Loading weights:  88%|████████▊ | 256/292 [00:02<00:00, 113.04it/s]Loading weights:  92%|█████████▏| 269/292 [00:02<00:00, 113.01it/s]Loading weights:  97%|█████████▋| 282/292 [00:02<00:00, 114.86it/s]Loading weights: 100%|██████████| 292/292 [00:02<00:00, 102.00it/s]
+Loaded pretrained model pythia-410m into HookedTransformer
+  Pythia word states 150/673
+  Pythia word states 300/673
+  Pythia word states 450/673
+  Pythia word states 600/673
+
+--- Pythia 410M, layer 4 ---
+  suffix           pairs    BALANCE   UP-DOWN DIFFICULT     FORCE FORWARD-B IN-OUT_CL LIGHT-DAR PATH-MOTI   BALANCE percentile among random axes
+  ER_comparative      19     -0.072    +0.029    -0.050    -0.074    -0.040    +0.023    +0.046    +0.012   20th
+  EST_superlative     10     -0.011    +0.029    -0.025    -0.080    -0.036    +0.006    +0.052    -0.025   43th
+  ING_progressive     26     -0.218    -0.014    +0.064    -0.024    -0.013    -0.024    +0.011    +0.135   5th
+  ED_past             23     -0.020    -0.043    +0.188    +0.040    -0.073    +0.047    -0.030    -0.114   45th
+  S_plural            27     -0.074    +0.032    -0.003    +0.040    +0.011    +0.019    +0.004    -0.011   6th
+  UN_negation         17     -0.427    -0.147    +0.152    +0.007    -0.067    -0.058    -0.390    -0.058   0th
+  RE_repetition        9     -0.132    -0.062    -0.028    -0.125    -0.101    -0.054    -0.082    -0.061   8th
+  sink = mean of the inflectional suffixes on BALANCE: -0.079 | random-word axes: median +0.001 [5% -0.121, 95% +0.117]; at the 16th percentile -> SINK_GONE
+  -ed on FORWARD-BACK: -0.073 (32th percentile among random axes)
+
+--- Pythia 410M, layer 8 ---
+  suffix           pairs    BALANCE   UP-DOWN DIFFICULT     FORCE FORWARD-B IN-OUT_CL LIGHT-DAR PATH-MOTI   BALANCE percentile among random axes
+  ER_comparative      19     -0.051    +0.018    +0.002    -0.054    -0.065    -0.008    +0.081    +0.026   31th
+  EST_superlative     10     +0.011    +0.038    -0.033    -0.105    -0.044    -0.000    +0.098    -0.011   52th
+  ING_progressive     26     -0.229    -0.003    +0.112    -0.017    -0.033    -0.024    -0.012    +0.129   6th
+  ED_past             23     -0.033    -0.061    +0.239    +0.031    -0.077    +0.041    -0.026    -0.129   42th
+  S_plural            27     -0.085    +0.045    +0.042    +0.021    +0.009    -0.004    +0.004    -0.004   7th
+  UN_negation         17     -0.490    -0.148    +0.153    -0.008    -0.063    -0.062    -0.472    -0.091   0th
+  RE_repetition        9     -0.116    -0.056    -0.017    -0.147    -0.094    -0.077    -0.045    -0.083   11th
+  sink = mean of the inflectional suffixes on BALANCE: -0.077 | random-word axes: median +0.007 [5% -0.132, 95% +0.147]; at the 20th percentile -> SINK_GONE
+  -ed on FORWARD-BACK: -0.077 (33th percentile among random axes)
+
+--- Pythia 410M, layer 12 (PRIMARY) ---
+  suffix           pairs    BALANCE   UP-DOWN DIFFICULT     FORCE FORWARD-B IN-OUT_CL LIGHT-DAR PATH-MOTI   BALANCE percentile among random axes
+  ER_comparative      19     -0.086    +0.037    +0.001    -0.077    -0.035    -0.011    +0.087    +0.050   20th
+  EST_superlative     10     -0.007    +0.038    -0.032    -0.113    -0.024    -0.007    +0.123    -0.019   44th
+  ING_progressive     26     -0.266    -0.012    +0.080    -0.055    -0.018    -0.020    -0.023    +0.154   3th
+  ED_past             23     -0.035    -0.078    +0.216    +0.013    -0.110    +0.044    -0.039    -0.096   41th
+  S_plural            27     -0.069    +0.049    +0.031    -0.011    +0.031    -0.015    +0.035    -0.023   15th
+  UN_negation         17     -0.456    -0.108    +0.150    +0.017    -0.051    -0.078    -0.454    -0.056   0th
+  RE_repetition        9     -0.100    -0.018    -0.028    -0.170    -0.130    -0.078    -0.022    -0.057   14th
+  sink = mean of the inflectional suffixes on BALANCE: -0.093 | random-word axes: median +0.004 [5% -0.131, 95% +0.134]; at the 15th percentile -> SINK_GONE
+  -ed on FORWARD-BACK: -0.110 (26th percentile among random axes)
+
+--- Pythia 410M, layer 16 ---
+  suffix           pairs    BALANCE   UP-DOWN DIFFICULT     FORCE FORWARD-B IN-OUT_CL LIGHT-DAR PATH-MOTI   BALANCE percentile among random axes
+  ER_comparative      19     -0.071    +0.020    -0.009    -0.112    -0.008    +0.016    +0.084    +0.060   27th
+  EST_superlative     10     -0.020    +0.018    -0.018    -0.112    -0.006    +0.003    +0.105    -0.009   38th
+  ING_progressive     26     -0.234    -0.012    +0.085    -0.066    -0.019    +0.000    -0.032    +0.143   4th
+  ED_past             23     -0.023    -0.051    +0.185    -0.017    -0.105    +0.076    -0.040    -0.045   43th
+  S_plural            27     -0.072    +0.044    +0.011    -0.034    +0.014    +0.023    +0.034    +0.007   19th
+  UN_negation         17     -0.417    -0.076    +0.098    -0.044    -0.033    -0.028    -0.414    -0.025   0th
+  RE_repetition        9     -0.073    -0.023    -0.022    -0.160    -0.097    -0.095    -0.040    -0.031   18th
+  sink = mean of the inflectional suffixes on BALANCE: -0.084 | random-word axes: median +0.010 [5% -0.133, 95% +0.138]; at the 17th percentile -> SINK_GONE
+  -ed on FORWARD-BACK: -0.105 (24th percentile among random axes)
+
+--- Pythia 410M, layer 20 ---
+  suffix           pairs    BALANCE   UP-DOWN DIFFICULT     FORCE FORWARD-B IN-OUT_CL LIGHT-DAR PATH-MOTI   BALANCE percentile among random axes
+  ER_comparative      19     -0.087    +0.053    -0.080    -0.259    -0.073    +0.038    +0.102    +0.099   33th
+  EST_superlative     10     -0.018    +0.028    -0.062    -0.158    -0.013    -0.003    +0.088    -0.002   42th
+  ING_progressive     26     -0.203    +0.025    +0.021    -0.173    -0.075    +0.069    -0.015    +0.122   13th
+  ED_past             23     -0.047    -0.006    +0.056    -0.137    -0.114    +0.120    -0.055    -0.022   39th
+  S_plural            27     -0.057    +0.057    -0.035    -0.105    -0.018    +0.062    +0.046    -0.016   32th
+  UN_negation         17     -0.305    -0.042    +0.054    -0.067    -0.073    +0.042    -0.353    -0.056   1th
+  RE_repetition        9     -0.070    -0.018    -0.022    -0.184    -0.094    -0.110    -0.007    -0.004   17th
+  sink = mean of the inflectional suffixes on BALANCE: -0.082 | random-word axes: median +0.002 [5% -0.239, 95% +0.235]; at the 32th percentile -> SINK_GONE
+  -ed on FORWARD-BACK: -0.114 (30th percentile among random axes)
+
+Loading glove-wiki-gigaword-300 ...
+  vocabulary hit 673/673
+
+--- GloVe (static) ---
+  suffix           pairs    BALANCE   UP-DOWN DIFFICULT     FORCE FORWARD-B IN-OUT_CL LIGHT-DAR PATH-MOTI   BALANCE percentile among random axes
+  ER_comparative      19     +0.038    +0.031    +0.047    +0.002    +0.001    +0.030    +0.119    +0.056   68th
+  EST_superlative     10     +0.015    -0.015    -0.094    -0.005    +0.071    +0.076    +0.114    -0.036   61th
+  ING_progressive     26     -0.134    +0.026    +0.062    -0.046    +0.027    -0.145    -0.058    +0.042   9th
+  ED_past             23     -0.101    -0.056    +0.215    -0.016    -0.205    -0.033    -0.103    -0.052   24th
+  S_plural            27     +0.048    +0.002    +0.109    +0.036    -0.003    +0.131    -0.013    +0.018   68th
+  UN_negation         17     -0.448    -0.212    +0.194    -0.049    -0.246    -0.076    -0.394    -0.187   0th
+  RE_repetition        9     -0.215    -0.130    +0.037    -0.063    -0.180    -0.111    -0.055    -0.092   1th
+  sink = mean of the inflectional suffixes on BALANCE: -0.027 | random-word axes: median -0.003 [5% -0.087, 95% +0.079]; at the 33th percentile -> SINK_GONE
+  -ed on FORWARD-BACK: -0.205 (5th percentile among random axes)
+
+============================================================================
+  >>> Pythia layer 12: SINK_GONE (sink -0.093, 15th percentile of random axes) <<<
+  >>> GloVe: sink -0.027, 33th percentile of its random axes (SINK_GONE) <<<
+  >>> DISSOCIATION_NOT_SUPPORTED <<<
+  Pythia by layer: L4 -0.079 (16th, SINK_GONE)  L8 -0.077 (20th, SINK_GONE)  L12 -0.093 (15th, SINK_GONE)  L16 -0.084 (17th, SINK_GONE)  L20 -0.082 (32th, SINK_GONE)
+results saved to exp191_results.json
