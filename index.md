@@ -2,6 +2,8 @@
 
 *Image schemas, metaphorical mappings, and substrate coupling in language models trained on text alone*
 
+> **Correction, 3 October 2026.** This write-up is the September 2026 version, kept as it was. An audit on 2–3 October found two faults in the instrument behind several findings below (Pythia run without a start token; word lists unevenly mixing whole-word tokens and word fragments) and that results had been judged against zero rather than against directions built from random words. Re-tested with all three fixed: **HAPPY IS UP stands** (clean steering beats every random-word direction, in Pythia 1.4B and GPT-2 medium) and **the predicted schema system stands** (without BALANCE at its centre). **Withdrawn:** the suffixes sinking onto BALANCE; the transformer-versus-word2vec contrast built on it; BALANCE coupled to residual norm and to attention entropy, including the abstract's claim about BALANCE; and the causal-direction and checkpoint results built on those. Details, pre-registrations and results: [audit_2026-10/](https://github.com/mac-n/lakoff-schemas-in-transformers/tree/main/audit_2026-10). Current summary: [glassnest.ai/embodied](https://glassnest.ai/embodied/).
+
 <!-- HTML comments throughout name the raw output files in results/ that back each number,
      so any figure in the text is one file away from its source. -->
 
